@@ -19,19 +19,19 @@ final class DownloadWorkflowRunAttemptLogs
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the workflow run.**/
-    private int $run_id;
+    private int $runId;
     /**The attempt number of the workflow run.**/
-    private int $attempt_number;
-    public function __construct(string $owner, string $repo, int $run_id, int $attempt_number)
+    private int $attemptNumber;
+    public function __construct(string $owner, string $repo, int $runId, int $attemptNumber)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->run_id = $run_id;
-        $this->attempt_number = $attempt_number;
+        $this->runId = $runId;
+        $this->attemptNumber = $attemptNumber;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}'), array($this->owner, $this->repo, $this->run_id, $this->attempt_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{run_id}', '{attempt_number}'), array($this->owner, $this->repo, $this->runId, $this->attemptNumber), self::PATH));
     }
     /**
      * @return array{code: int,location: string}

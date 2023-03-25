@@ -60,12 +60,12 @@ class Downloads implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'download_url';
-                goto after_download_url;
+                goto after_downloadUrl;
             }
 
-            $properties['download_url'] = $value;
+            $properties['downloadUrl'] = $value;
 
-            after_download_url:
+            after_downloadUrl:
 
             $value = $payload['filename'] ?? null;
 
@@ -81,24 +81,24 @@ class Downloads implements ObjectMapper
             $value = $payload['temp_download_token'] ?? null;
 
             if ($value === null) {
-                $properties['temp_download_token'] = null;
-                goto after_temp_download_token;
+                $properties['tempDownloadToken'] = null;
+                goto after_tempDownloadToken;
             }
 
-            $properties['temp_download_token'] = $value;
+            $properties['tempDownloadToken'] = $value;
 
-            after_temp_download_token:
+            after_tempDownloadToken:
 
             $value = $payload['sha256_checksum'] ?? null;
 
             if ($value === null) {
-                $properties['sha256_checksum'] = null;
-                goto after_sha256_checksum;
+                $properties['sha256Checksum'] = null;
+                goto after_sha256Checksum;
             }
 
-            $properties['sha256_checksum'] = $value;
+            $properties['sha256Checksum'] = $value;
 
-            after_sha256_checksum:
+            after_sha256Checksum:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerApplication', $exception, stack: $this->hydrationStack);
@@ -233,28 +233,28 @@ class Downloads implements ObjectMapper
         after_architecture:        $result['architecture'] = $architecture;
 
         
-        $download_url = $object->download_url;
-        after_download_url:        $result['download_url'] = $download_url;
+        $downloadUrl = $object->downloadUrl;
+        after_downloadUrl:        $result['download_url'] = $downloadUrl;
 
         
         $filename = $object->filename;
         after_filename:        $result['filename'] = $filename;
 
         
-        $temp_download_token = $object->temp_download_token;
+        $tempDownloadToken = $object->tempDownloadToken;
 
-        if ($temp_download_token === null) {
-            goto after_temp_download_token;
+        if ($tempDownloadToken === null) {
+            goto after_tempDownloadToken;
         }
-        after_temp_download_token:        $result['temp_download_token'] = $temp_download_token;
+        after_tempDownloadToken:        $result['temp_download_token'] = $tempDownloadToken;
 
         
-        $sha256_checksum = $object->sha256_checksum;
+        $sha256Checksum = $object->sha256Checksum;
 
-        if ($sha256_checksum === null) {
-            goto after_sha256_checksum;
+        if ($sha256Checksum === null) {
+            goto after_sha256Checksum;
         }
-        after_sha256_checksum:        $result['sha256_checksum'] = $sha256_checksum;
+        after_sha256Checksum:        $result['sha256_checksum'] = $sha256Checksum;
 
 
         return $result;

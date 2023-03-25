@@ -25,26 +25,26 @@ final class ListCommentsForRepo
     /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
     private string $sort;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
         $this->direction = $direction;
         $this->since = $since;
         $this->sort = $sort;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->per_page, $this->page), self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page), self::PATH . '?direction={direction}&since={since}&sort={sort}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\IssueComment>

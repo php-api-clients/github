@@ -60,12 +60,12 @@ class Packages implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'package_type';
-                goto after_package_type;
+                goto after_packageType;
             }
 
-            $properties['package_type'] = $value;
+            $properties['packageType'] = $value;
 
-            after_package_type:
+            after_packageType:
 
             $value = $payload['url'] ?? null;
 
@@ -82,23 +82,23 @@ class Packages implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['version_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'version_count';
-                goto after_version_count;
+                goto after_versionCount;
             }
 
-            $properties['version_count'] = $value;
+            $properties['versionCount'] = $value;
 
-            after_version_count:
+            after_versionCount:
 
             $value = $payload['visibility'] ?? null;
 
@@ -137,23 +137,23 @@ class Packages implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Package', $exception, stack: $this->hydrationStack);
@@ -288,20 +288,20 @@ class Packages implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $package_type = $object->package_type;
-        after_package_type:        $result['package_type'] = $package_type;
+        $packageType = $object->packageType;
+        after_packageType:        $result['package_type'] = $packageType;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $version_count = $object->version_count;
-        after_version_count:        $result['version_count'] = $version_count;
+        $versionCount = $object->versionCount;
+        after_versionCount:        $result['version_count'] = $versionCount;
 
         
         $visibility = $object->visibility;
@@ -324,12 +324,12 @@ class Packages implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
 
         return $result;

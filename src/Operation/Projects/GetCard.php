@@ -15,18 +15,18 @@ final class GetCard
     private const METHOD = 'GET';
     private const PATH = '/projects/columns/cards/{card_id}';
     /**The unique identifier of the card.**/
-    private int $card_id;
+    private int $cardId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Projects\Columns\Cards\CbCardIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\Cards\CbCardIdRcb $hydrator, int $card_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\Cards\CbCardIdRcb $hydrator, int $cardId)
     {
-        $this->card_id = $card_id;
+        $this->cardId = $cardId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{card_id}'), array($this->card_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{card_id}'), array($this->cardId), self::PATH));
     }
     /**
      * @return Schema\ProjectCard

@@ -15,18 +15,18 @@ final class GetSubscriptionPlanForAccount
     private const METHOD = 'GET';
     private const PATH = '/marketplace_listing/accounts/{account_id}';
     /**account_id parameter**/
-    private int $account_id;
+    private int $accountId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\MarketplaceListing\Accounts\CbAccountIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Accounts\CbAccountIdRcb $hydrator, int $account_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Accounts\CbAccountIdRcb $hydrator, int $accountId)
     {
-        $this->account_id = $account_id;
+        $this->accountId = $accountId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{account_id}'), array($this->account_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{account_id}'), array($this->accountId), self::PATH));
     }
     /**
      * @return Schema\MarketplacePurchase

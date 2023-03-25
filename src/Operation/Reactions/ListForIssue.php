@@ -19,29 +19,29 @@ final class ListForIssue
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the issue.**/
-    private int $issue_number;
+    private int $issueNumber;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue.**/
     private string $content;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Reactions $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Reactions $hydrator, string $owner, string $repo, int $issue_number, string $content, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Reactions $hydrator, string $owner, string $repo, int $issueNumber, string $content, int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->issue_number = $issue_number;
+        $this->issueNumber = $issueNumber;
         $this->content = $content;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{content}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->issue_number, $this->content, $this->per_page, $this->page), self::PATH . '?content={content}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{content}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->issueNumber, $this->content, $this->perPage, $this->page), self::PATH . '?content={content}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Reaction>

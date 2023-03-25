@@ -17,21 +17,21 @@ final class RedeliverWebhookDelivery
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the hook.**/
-    private int $hook_id;
-    private int $delivery_id;
+    private int $hookId;
+    private int $deliveryId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb\Attempts $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb\Attempts $hydrator, string $org, int $hook_id, int $delivery_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb\Attempts $hydrator, string $org, int $hookId, int $deliveryId)
     {
         $this->org = $org;
-        $this->hook_id = $hook_id;
-        $this->delivery_id = $delivery_id;
+        $this->hookId = $hookId;
+        $this->deliveryId = $deliveryId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{hook_id}', '{delivery_id}'), array($this->org, $this->hook_id, $this->delivery_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{hook_id}', '{delivery_id}'), array($this->org, $this->hookId, $this->deliveryId), self::PATH));
     }
     /**
      * @return Schema\WebhookDeploymentCreated\Deployment\Payload

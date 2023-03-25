@@ -42,34 +42,34 @@ class Deployment implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'status_url';
-                goto after_status_url;
+                goto after_statusUrl;
             }
 
-            $properties['status_url'] = $value;
+            $properties['statusUrl'] = $value;
 
-            after_status_url:
+            after_statusUrl:
 
             $value = $payload['page_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'page_url';
-                goto after_page_url;
+                goto after_pageUrl;
             }
 
-            $properties['page_url'] = $value;
+            $properties['pageUrl'] = $value;
 
-            after_page_url:
+            after_pageUrl:
 
             $value = $payload['preview_url'] ?? null;
 
             if ($value === null) {
-                $properties['preview_url'] = null;
-                goto after_preview_url;
+                $properties['previewUrl'] = null;
+                goto after_previewUrl;
             }
 
-            $properties['preview_url'] = $value;
+            $properties['previewUrl'] = $value;
 
-            after_preview_url:
+            after_previewUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageDeployment', $exception, stack: $this->hydrationStack);
@@ -106,13 +106,13 @@ class Deployment implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -171,13 +171,13 @@ class Deployment implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -259,12 +259,12 @@ class Deployment implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -503,20 +503,20 @@ class Deployment implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PageDeployment);
         $result = [];
 
-        $status_url = $object->status_url;
-        after_status_url:        $result['status_url'] = $status_url;
+        $statusUrl = $object->statusUrl;
+        after_statusUrl:        $result['status_url'] = $statusUrl;
 
         
-        $page_url = $object->page_url;
-        after_page_url:        $result['page_url'] = $page_url;
+        $pageUrl = $object->pageUrl;
+        after_pageUrl:        $result['page_url'] = $pageUrl;
 
         
-        $preview_url = $object->preview_url;
+        $previewUrl = $object->previewUrl;
 
-        if ($preview_url === null) {
-            goto after_preview_url;
+        if ($previewUrl === null) {
+            goto after_previewUrl;
         }
-        after_preview_url:        $result['preview_url'] = $preview_url;
+        after_previewUrl:        $result['preview_url'] = $previewUrl;
 
 
         return $result;
@@ -536,12 +536,12 @@ class Deployment implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -577,12 +577,12 @@ class Deployment implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;
@@ -638,8 +638,8 @@ class Deployment implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

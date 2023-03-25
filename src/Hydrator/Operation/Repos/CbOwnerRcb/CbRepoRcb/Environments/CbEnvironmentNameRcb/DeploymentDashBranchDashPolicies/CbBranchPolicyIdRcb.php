@@ -48,13 +48,13 @@ class CbBranchPolicyIdRcb implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -200,12 +200,12 @@ class CbBranchPolicyIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;

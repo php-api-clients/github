@@ -15,22 +15,22 @@ final class CreateUsingTemplate
     private const METHOD = 'POST';
     private const PATH = '/repos/{template_owner}/{template_repo}/generate';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
-    private string $template_owner;
-    private string $template_repo;
+    private string $templateOwner;
+    private string $templateRepo;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb\Generate $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb\Generate $hydrator, string $template_owner, string $template_repo)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb\Generate $hydrator, string $templateOwner, string $templateRepo)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->template_owner = $template_owner;
-        $this->template_repo = $template_repo;
+        $this->templateOwner = $templateOwner;
+        $this->templateRepo = $templateRepo;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Repos\CreateUsingTemplate\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{template_owner}', '{template_repo}'), array($this->template_owner, $this->template_repo), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{template_owner}', '{template_repo}'), array($this->templateOwner, $this->templateRepo), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
      * @return Schema\Repository

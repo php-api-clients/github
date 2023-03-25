@@ -56,23 +56,23 @@ class Alerts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['url'] ?? null;
 
@@ -89,23 +89,23 @@ class Alerts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['instances_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'instances_url';
-                goto after_instances_url;
+                goto after_instancesUrl;
             }
 
-            $properties['instances_url'] = $value;
+            $properties['instancesUrl'] = $value;
 
-            after_instances_url:
+            after_instancesUrl:
 
             $value = $payload['state'] ?? null;
 
@@ -121,57 +121,57 @@ class Alerts implements ObjectMapper
             $value = $payload['fixed_at'] ?? null;
 
             if ($value === null) {
-                $properties['fixed_at'] = null;
-                goto after_fixed_at;
+                $properties['fixedAt'] = null;
+                goto after_fixedAt;
             }
 
-            $properties['fixed_at'] = $value;
+            $properties['fixedAt'] = $value;
 
-            after_fixed_at:
+            after_fixedAt:
 
             $value = $payload['dismissed_by'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_by'] = null;
-                goto after_dismissed_by;
+                $properties['dismissedBy'] = null;
+                goto after_dismissedBy;
             }
 
-            $properties['dismissed_by'] = $value;
+            $properties['dismissedBy'] = $value;
 
-            after_dismissed_by:
+            after_dismissedBy:
 
             $value = $payload['dismissed_at'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_at'] = null;
-                goto after_dismissed_at;
+                $properties['dismissedAt'] = null;
+                goto after_dismissedAt;
             }
 
-            $properties['dismissed_at'] = $value;
+            $properties['dismissedAt'] = $value;
 
-            after_dismissed_at:
+            after_dismissedAt:
 
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_reason'] = null;
-                goto after_dismissed_reason;
+                $properties['dismissedReason'] = null;
+                goto after_dismissedReason;
             }
 
-            $properties['dismissed_reason'] = $value;
+            $properties['dismissedReason'] = $value;
 
-            after_dismissed_reason:
+            after_dismissedReason:
 
             $value = $payload['dismissed_comment'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_comment'] = null;
-                goto after_dismissed_comment;
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
             }
 
-            $properties['dismissed_comment'] = $value;
+            $properties['dismissedComment'] = $value;
 
-            after_dismissed_comment:
+            after_dismissedComment:
 
             $value = $payload['rule'] ?? null;
 
@@ -217,21 +217,21 @@ class Alerts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'most_recent_instance';
-                goto after_most_recent_instance;
+                goto after_mostRecentInstance;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'most_recent_instance';
+                    $this->hydrationStack[] = 'mostRecentInstance';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['most_recent_instance'] = $value;
+            $properties['mostRecentInstance'] = $value;
 
-            after_most_recent_instance:
+            after_mostRecentInstance:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAlertItems', $exception, stack: $this->hydrationStack);
@@ -398,13 +398,13 @@ class Alerts implements ObjectMapper
             $value = $payload['analysis_key'] ?? null;
 
             if ($value === null) {
-                $properties['analysis_key'] = null;
-                goto after_analysis_key;
+                $properties['analysisKey'] = null;
+                goto after_analysisKey;
             }
 
-            $properties['analysis_key'] = $value;
+            $properties['analysisKey'] = $value;
 
-            after_analysis_key:
+            after_analysisKey:
 
             $value = $payload['environment'] ?? null;
 
@@ -442,13 +442,13 @@ class Alerts implements ObjectMapper
             $value = $payload['commit_sha'] ?? null;
 
             if ($value === null) {
-                $properties['commit_sha'] = null;
-                goto after_commit_sha;
+                $properties['commitSha'] = null;
+                goto after_commitSha;
             }
 
-            $properties['commit_sha'] = $value;
+            $properties['commitSha'] = $value;
 
-            after_commit_sha:
+            after_commitSha:
 
             $value = $payload['message'] ?? null;
 
@@ -493,13 +493,13 @@ class Alerts implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['classifications'] ?? null;
 
@@ -579,46 +579,46 @@ class Alerts implements ObjectMapper
             $value = $payload['start_line'] ?? null;
 
             if ($value === null) {
-                $properties['start_line'] = null;
-                goto after_start_line;
+                $properties['startLine'] = null;
+                goto after_startLine;
             }
 
-            $properties['start_line'] = $value;
+            $properties['startLine'] = $value;
 
-            after_start_line:
+            after_startLine:
 
             $value = $payload['end_line'] ?? null;
 
             if ($value === null) {
-                $properties['end_line'] = null;
-                goto after_end_line;
+                $properties['endLine'] = null;
+                goto after_endLine;
             }
 
-            $properties['end_line'] = $value;
+            $properties['endLine'] = $value;
 
-            after_end_line:
+            after_endLine:
 
             $value = $payload['start_column'] ?? null;
 
             if ($value === null) {
-                $properties['start_column'] = null;
-                goto after_start_column;
+                $properties['startColumn'] = null;
+                goto after_startColumn;
             }
 
-            $properties['start_column'] = $value;
+            $properties['startColumn'] = $value;
 
-            after_start_column:
+            after_startColumn:
 
             $value = $payload['end_column'] ?? null;
 
             if ($value === null) {
-                $properties['end_column'] = null;
-                goto after_end_column;
+                $properties['endColumn'] = null;
+                goto after_endColumn;
             }
 
-            $properties['end_column'] = $value;
+            $properties['endColumn'] = $value;
 
-            after_end_column:
+            after_endColumn:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAlertLocation', $exception, stack: $this->hydrationStack);
@@ -655,13 +655,13 @@ class Alerts implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -731,13 +731,13 @@ class Alerts implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -875,72 +875,72 @@ class Alerts implements ObjectMapper
         after_number:        $result['number'] = $number;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $instances_url = $object->instances_url;
-        after_instances_url:        $result['instances_url'] = $instances_url;
+        $instancesUrl = $object->instancesUrl;
+        after_instancesUrl:        $result['instances_url'] = $instancesUrl;
 
         
         $state = $object->state;
         after_state:        $result['state'] = $state;
 
         
-        $fixed_at = $object->fixed_at;
+        $fixedAt = $object->fixedAt;
 
-        if ($fixed_at === null) {
-            goto after_fixed_at;
+        if ($fixedAt === null) {
+            goto after_fixedAt;
         }
-        after_fixed_at:        $result['fixed_at'] = $fixed_at;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         
-        $dismissed_by = $object->dismissed_by;
+        $dismissedBy = $object->dismissedBy;
 
-        if ($dismissed_by === null) {
-            goto after_dismissed_by;
+        if ($dismissedBy === null) {
+            goto after_dismissedBy;
         }
-        after_dismissed_by:        $result['dismissed_by'] = $dismissed_by;
+        after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
         
-        $dismissed_at = $object->dismissed_at;
+        $dismissedAt = $object->dismissedAt;
 
-        if ($dismissed_at === null) {
-            goto after_dismissed_at;
+        if ($dismissedAt === null) {
+            goto after_dismissedAt;
         }
-        after_dismissed_at:        $result['dismissed_at'] = $dismissed_at;
+        after_dismissedAt:        $result['dismissed_at'] = $dismissedAt;
 
         
-        $dismissed_reason = $object->dismissed_reason;
+        $dismissedReason = $object->dismissedReason;
 
-        if ($dismissed_reason === null) {
-            goto after_dismissed_reason;
+        if ($dismissedReason === null) {
+            goto after_dismissedReason;
         }
-        after_dismissed_reason:        $result['dismissed_reason'] = $dismissed_reason;
+        after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
 
         
-        $dismissed_comment = $object->dismissed_comment;
+        $dismissedComment = $object->dismissedComment;
 
-        if ($dismissed_comment === null) {
-            goto after_dismissed_comment;
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
         }
-        after_dismissed_comment:        $result['dismissed_comment'] = $dismissed_comment;
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
 
         
         $rule = $object->rule;
@@ -953,9 +953,9 @@ class Alerts implements ObjectMapper
         after_tool:        $result['tool'] = $tool;
 
         
-        $most_recent_instance = $object->most_recent_instance;
-        $most_recent_instance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance($most_recent_instance);
-        after_most_recent_instance:        $result['most_recent_instance'] = $most_recent_instance;
+        $mostRecentInstance = $object->mostRecentInstance;
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance($mostRecentInstance);
+        after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
 
         return $result;
@@ -1065,12 +1065,12 @@ class Alerts implements ObjectMapper
         after_ref:        $result['ref'] = $ref;
 
         
-        $analysis_key = $object->analysis_key;
+        $analysisKey = $object->analysisKey;
 
-        if ($analysis_key === null) {
-            goto after_analysis_key;
+        if ($analysisKey === null) {
+            goto after_analysisKey;
         }
-        after_analysis_key:        $result['analysis_key'] = $analysis_key;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
 
         
         $environment = $object->environment;
@@ -1097,12 +1097,12 @@ class Alerts implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $commit_sha = $object->commit_sha;
+        $commitSha = $object->commitSha;
 
-        if ($commit_sha === null) {
-            goto after_commit_sha;
+        if ($commitSha === null) {
+            goto after_commitSha;
         }
-        after_commit_sha:        $result['commit_sha'] = $commit_sha;
+        after_commitSha:        $result['commit_sha'] = $commitSha;
 
         
         $message = $object->message;
@@ -1123,12 +1123,12 @@ class Alerts implements ObjectMapper
         after_location:        $result['location'] = $location;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $classifications = $object->classifications;
@@ -1181,36 +1181,36 @@ class Alerts implements ObjectMapper
         after_path:        $result['path'] = $path;
 
         
-        $start_line = $object->start_line;
+        $startLine = $object->startLine;
 
-        if ($start_line === null) {
-            goto after_start_line;
+        if ($startLine === null) {
+            goto after_startLine;
         }
-        after_start_line:        $result['start_line'] = $start_line;
+        after_startLine:        $result['start_line'] = $startLine;
 
         
-        $end_line = $object->end_line;
+        $endLine = $object->endLine;
 
-        if ($end_line === null) {
-            goto after_end_line;
+        if ($endLine === null) {
+            goto after_endLine;
         }
-        after_end_line:        $result['end_line'] = $end_line;
+        after_endLine:        $result['end_line'] = $endLine;
 
         
-        $start_column = $object->start_column;
+        $startColumn = $object->startColumn;
 
-        if ($start_column === null) {
-            goto after_start_column;
+        if ($startColumn === null) {
+            goto after_startColumn;
         }
-        after_start_column:        $result['start_column'] = $start_column;
+        after_startColumn:        $result['start_column'] = $startColumn;
 
         
-        $end_column = $object->end_column;
+        $endColumn = $object->endColumn;
 
-        if ($end_column === null) {
-            goto after_end_column;
+        if ($endColumn === null) {
+            goto after_endColumn;
         }
-        after_end_column:        $result['end_column'] = $end_column;
+        after_endColumn:        $result['end_column'] = $endColumn;
 
 
         return $result;
@@ -1230,12 +1230,12 @@ class Alerts implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -1279,12 +1279,12 @@ class Alerts implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;

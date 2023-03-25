@@ -17,21 +17,21 @@ final class DownloadArchiveForOrgStreaming
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Archive $hydrator;
     private readonly \React\Http\Browser $browser;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Archive $hydrator, \React\Http\Browser $browser, string $org, int $migration_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Archive $hydrator, \React\Http\Browser $browser, string $org, int $migrationId)
     {
         $this->org = $org;
-        $this->migration_id = $migration_id;
+        $this->migrationId = $migrationId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
         $this->browser = $browser;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}'), array($this->org, $this->migration_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}'), array($this->org, $this->migrationId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

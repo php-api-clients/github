@@ -15,18 +15,18 @@ final class Fork
     private const METHOD = 'POST';
     private const PATH = '/gists/{gist_id}/forks';
     /**The unique identifier of the gist.**/
-    private string $gist_id;
+    private string $gistId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Gists\CbGistIdRcb\Forks $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\Forks $hydrator, string $gist_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\Forks $hydrator, string $gistId)
     {
-        $this->gist_id = $gist_id;
+        $this->gistId = $gistId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}'), array($this->gist_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}'), array($this->gistId), self::PATH));
     }
     /**
      * @return Schema\BaseGist

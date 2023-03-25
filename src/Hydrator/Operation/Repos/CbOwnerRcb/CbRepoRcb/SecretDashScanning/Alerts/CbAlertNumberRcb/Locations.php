@@ -103,89 +103,89 @@ class Locations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'start_line';
-                goto after_start_line;
+                goto after_startLine;
             }
 
-            $properties['start_line'] = $value;
+            $properties['startLine'] = $value;
 
-            after_start_line:
+            after_startLine:
 
             $value = $payload['end_line'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'end_line';
-                goto after_end_line;
+                goto after_endLine;
             }
 
-            $properties['end_line'] = $value;
+            $properties['endLine'] = $value;
 
-            after_end_line:
+            after_endLine:
 
             $value = $payload['start_column'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'start_column';
-                goto after_start_column;
+                goto after_startColumn;
             }
 
-            $properties['start_column'] = $value;
+            $properties['startColumn'] = $value;
 
-            after_start_column:
+            after_startColumn:
 
             $value = $payload['end_column'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'end_column';
-                goto after_end_column;
+                goto after_endColumn;
             }
 
-            $properties['end_column'] = $value;
+            $properties['endColumn'] = $value;
 
-            after_end_column:
+            after_endColumn:
 
             $value = $payload['blob_sha'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blob_sha';
-                goto after_blob_sha;
+                goto after_blobSha;
             }
 
-            $properties['blob_sha'] = $value;
+            $properties['blobSha'] = $value;
 
-            after_blob_sha:
+            after_blobSha:
 
             $value = $payload['blob_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blob_url';
-                goto after_blob_url;
+                goto after_blobUrl;
             }
 
-            $properties['blob_url'] = $value;
+            $properties['blobUrl'] = $value;
 
-            after_blob_url:
+            after_blobUrl:
 
             $value = $payload['commit_sha'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commit_sha';
-                goto after_commit_sha;
+                goto after_commitSha;
             }
 
-            $properties['commit_sha'] = $value;
+            $properties['commitSha'] = $value;
 
-            after_commit_sha:
+            after_commitSha:
 
             $value = $payload['commit_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commit_url';
-                goto after_commit_url;
+                goto after_commitUrl;
             }
 
-            $properties['commit_url'] = $value;
+            $properties['commitUrl'] = $value;
 
-            after_commit_url:
+            after_commitUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit', $exception, stack: $this->hydrationStack);
@@ -233,13 +233,13 @@ class Locations implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -390,36 +390,36 @@ class Locations implements ObjectMapper
         after_path:        $result['path'] = $path;
 
         
-        $start_line = $object->start_line;
-        after_start_line:        $result['start_line'] = $start_line;
+        $startLine = $object->startLine;
+        after_startLine:        $result['start_line'] = $startLine;
 
         
-        $end_line = $object->end_line;
-        after_end_line:        $result['end_line'] = $end_line;
+        $endLine = $object->endLine;
+        after_endLine:        $result['end_line'] = $endLine;
 
         
-        $start_column = $object->start_column;
-        after_start_column:        $result['start_column'] = $start_column;
+        $startColumn = $object->startColumn;
+        after_startColumn:        $result['start_column'] = $startColumn;
 
         
-        $end_column = $object->end_column;
-        after_end_column:        $result['end_column'] = $end_column;
+        $endColumn = $object->endColumn;
+        after_endColumn:        $result['end_column'] = $endColumn;
 
         
-        $blob_sha = $object->blob_sha;
-        after_blob_sha:        $result['blob_sha'] = $blob_sha;
+        $blobSha = $object->blobSha;
+        after_blobSha:        $result['blob_sha'] = $blobSha;
 
         
-        $blob_url = $object->blob_url;
-        after_blob_url:        $result['blob_url'] = $blob_url;
+        $blobUrl = $object->blobUrl;
+        after_blobUrl:        $result['blob_url'] = $blobUrl;
 
         
-        $commit_sha = $object->commit_sha;
-        after_commit_sha:        $result['commit_sha'] = $commit_sha;
+        $commitSha = $object->commitSha;
+        after_commitSha:        $result['commit_sha'] = $commitSha;
 
         
-        $commit_url = $object->commit_url;
-        after_commit_url:        $result['commit_url'] = $commit_url;
+        $commitUrl = $object->commitUrl;
+        after_commitUrl:        $result['commit_url'] = $commitUrl;
 
 
         return $result;
@@ -447,12 +447,12 @@ class Locations implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;

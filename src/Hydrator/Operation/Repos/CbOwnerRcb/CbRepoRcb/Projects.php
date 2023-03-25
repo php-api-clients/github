@@ -40,12 +40,12 @@ class Projects implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'owner_url';
-                goto after_owner_url;
+                goto after_ownerUrl;
             }
 
-            $properties['owner_url'] = $value;
+            $properties['ownerUrl'] = $value;
 
-            after_owner_url:
+            after_ownerUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -62,23 +62,23 @@ class Projects implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['columns_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'columns_url';
-                goto after_columns_url;
+                goto after_columnsUrl;
             }
 
-            $properties['columns_url'] = $value;
+            $properties['columnsUrl'] = $value;
 
-            after_columns_url:
+            after_columnsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -95,12 +95,12 @@ class Projects implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -161,34 +161,34 @@ class Projects implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['organization_permission'] ?? null;
 
             if ($value === null) {
-                $properties['organization_permission'] = null;
-                goto after_organization_permission;
+                $properties['organizationPermission'] = null;
+                goto after_organizationPermission;
             }
 
-            $properties['organization_permission'] = $value;
+            $properties['organizationPermission'] = $value;
 
-            after_organization_permission:
+            after_organizationPermission:
 
             $value = $payload['private'] ?? null;
 
@@ -236,13 +236,13 @@ class Projects implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -302,12 +302,12 @@ class Projects implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -447,28 +447,28 @@ class Projects implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Project);
         $result = [];
 
-        $owner_url = $object->owner_url;
-        after_owner_url:        $result['owner_url'] = $owner_url;
+        $ownerUrl = $object->ownerUrl;
+        after_ownerUrl:        $result['owner_url'] = $ownerUrl;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $columns_url = $object->columns_url;
-        after_columns_url:        $result['columns_url'] = $columns_url;
+        $columnsUrl = $object->columnsUrl;
+        after_columnsUrl:        $result['columns_url'] = $columnsUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -499,20 +499,20 @@ class Projects implements ObjectMapper
         after_creator:        $result['creator'] = $creator;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $organization_permission = $object->organization_permission;
+        $organizationPermission = $object->organizationPermission;
 
-        if ($organization_permission === null) {
-            goto after_organization_permission;
+        if ($organizationPermission === null) {
+            goto after_organizationPermission;
         }
-        after_organization_permission:        $result['organization_permission'] = $organization_permission;
+        after_organizationPermission:        $result['organization_permission'] = $organizationPermission;
 
         
         $private = $object->private;
@@ -540,12 +540,12 @@ class Projects implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -577,8 +577,8 @@ class Projects implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

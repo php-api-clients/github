@@ -19,26 +19,26 @@ final class ListLabelsForMilestone
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the milestone.**/
-    private int $milestone_number;
+    private int $milestoneNumber;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb\Labels $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb\Labels $hydrator, string $owner, string $repo, int $milestone_number, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb\Labels $hydrator, string $owner, string $repo, int $milestoneNumber, int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->milestone_number = $milestone_number;
-        $this->per_page = $per_page;
+        $this->milestoneNumber = $milestoneNumber;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{milestone_number}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->milestone_number, $this->per_page, $this->page), self::PATH . '?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{milestone_number}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->milestoneNumber, $this->perPage, $this->page), self::PATH . '?perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Label>

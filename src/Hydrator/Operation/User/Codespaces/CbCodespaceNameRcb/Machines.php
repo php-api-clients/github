@@ -40,12 +40,12 @@ class Machines implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['machines'] ?? null;
 
@@ -104,45 +104,45 @@ class Machines implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'display_name';
-                goto after_display_name;
+                goto after_displayName;
             }
 
-            $properties['display_name'] = $value;
+            $properties['displayName'] = $value;
 
-            after_display_name:
+            after_displayName:
 
             $value = $payload['operating_system'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'operating_system';
-                goto after_operating_system;
+                goto after_operatingSystem;
             }
 
-            $properties['operating_system'] = $value;
+            $properties['operatingSystem'] = $value;
 
-            after_operating_system:
+            after_operatingSystem:
 
             $value = $payload['storage_in_bytes'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'storage_in_bytes';
-                goto after_storage_in_bytes;
+                goto after_storageInBytes;
             }
 
-            $properties['storage_in_bytes'] = $value;
+            $properties['storageInBytes'] = $value;
 
-            after_storage_in_bytes:
+            after_storageInBytes:
 
             $value = $payload['memory_in_bytes'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'memory_in_bytes';
-                goto after_memory_in_bytes;
+                goto after_memoryInBytes;
             }
 
-            $properties['memory_in_bytes'] = $value;
+            $properties['memoryInBytes'] = $value;
 
-            after_memory_in_bytes:
+            after_memoryInBytes:
 
             $value = $payload['cpus'] ?? null;
 
@@ -158,13 +158,13 @@ class Machines implements ObjectMapper
             $value = $payload['prebuild_availability'] ?? null;
 
             if ($value === null) {
-                $properties['prebuild_availability'] = null;
-                goto after_prebuild_availability;
+                $properties['prebuildAvailability'] = null;
+                goto after_prebuildAvailability;
             }
 
-            $properties['prebuild_availability'] = $value;
+            $properties['prebuildAvailability'] = $value;
 
-            after_prebuild_availability:
+            after_prebuildAvailability:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceMachine', $exception, stack: $this->hydrationStack);
@@ -201,13 +201,13 @@ class Machines implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -358,8 +358,8 @@ class Machines implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Codespaces\RepoMachinesForAuthenticatedUser\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $machines = $object->machines;
@@ -388,32 +388,32 @@ class Machines implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $display_name = $object->display_name;
-        after_display_name:        $result['display_name'] = $display_name;
+        $displayName = $object->displayName;
+        after_displayName:        $result['display_name'] = $displayName;
 
         
-        $operating_system = $object->operating_system;
-        after_operating_system:        $result['operating_system'] = $operating_system;
+        $operatingSystem = $object->operatingSystem;
+        after_operatingSystem:        $result['operating_system'] = $operatingSystem;
 
         
-        $storage_in_bytes = $object->storage_in_bytes;
-        after_storage_in_bytes:        $result['storage_in_bytes'] = $storage_in_bytes;
+        $storageInBytes = $object->storageInBytes;
+        after_storageInBytes:        $result['storage_in_bytes'] = $storageInBytes;
 
         
-        $memory_in_bytes = $object->memory_in_bytes;
-        after_memory_in_bytes:        $result['memory_in_bytes'] = $memory_in_bytes;
+        $memoryInBytes = $object->memoryInBytes;
+        after_memoryInBytes:        $result['memory_in_bytes'] = $memoryInBytes;
 
         
         $cpus = $object->cpus;
         after_cpus:        $result['cpus'] = $cpus;
 
         
-        $prebuild_availability = $object->prebuild_availability;
+        $prebuildAvailability = $object->prebuildAvailability;
 
-        if ($prebuild_availability === null) {
-            goto after_prebuild_availability;
+        if ($prebuildAvailability === null) {
+            goto after_prebuildAvailability;
         }
-        after_prebuild_availability:        $result['prebuild_availability'] = $prebuild_availability;
+        after_prebuildAvailability:        $result['prebuild_availability'] = $prebuildAvailability;
 
 
         return $result;
@@ -433,12 +433,12 @@ class Machines implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

@@ -70,34 +70,34 @@ class Tags implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'zipball_url';
-                goto after_zipball_url;
+                goto after_zipballUrl;
             }
 
-            $properties['zipball_url'] = $value;
+            $properties['zipballUrl'] = $value;
 
-            after_zipball_url:
+            after_zipballUrl:
 
             $value = $payload['tarball_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'tarball_url';
-                goto after_tarball_url;
+                goto after_tarballUrl;
             }
 
-            $properties['tarball_url'] = $value;
+            $properties['tarballUrl'] = $value;
 
-            after_tarball_url:
+            after_tarballUrl:
 
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Tag', $exception, stack: $this->hydrationStack);
@@ -277,16 +277,16 @@ class Tags implements ObjectMapper
         after_commit:        $result['commit'] = $commit;
 
         
-        $zipball_url = $object->zipball_url;
-        after_zipball_url:        $result['zipball_url'] = $zipball_url;
+        $zipballUrl = $object->zipballUrl;
+        after_zipballUrl:        $result['zipball_url'] = $zipballUrl;
 
         
-        $tarball_url = $object->tarball_url;
-        after_tarball_url:        $result['tarball_url'] = $tarball_url;
+        $tarballUrl = $object->tarballUrl;
+        after_tarballUrl:        $result['tarball_url'] = $tarballUrl;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
 
         return $result;

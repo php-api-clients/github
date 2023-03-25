@@ -38,12 +38,12 @@ class Access implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'access_level';
-                goto after_access_level;
+                goto after_accessLevel;
             }
 
-            $properties['access_level'] = $value;
+            $properties['accessLevel'] = $value;
 
-            after_access_level:
+            after_accessLevel:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsWorkflowAccessToRepository', $exception, stack: $this->hydrationStack);
@@ -170,8 +170,8 @@ class Access implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsWorkflowAccessToRepository);
         $result = [];
 
-        $access_level = $object->access_level;
-        after_access_level:        $result['access_level'] = $access_level;
+        $accessLevel = $object->accessLevel;
+        after_accessLevel:        $result['access_level'] = $accessLevel;
 
 
         return $result;

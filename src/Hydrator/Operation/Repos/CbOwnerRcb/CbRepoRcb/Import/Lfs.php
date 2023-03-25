@@ -52,46 +52,46 @@ class Lfs implements ObjectMapper
             $value = $payload['use_lfs'] ?? null;
 
             if ($value === null) {
-                $properties['use_lfs'] = null;
-                goto after_use_lfs;
+                $properties['useLfs'] = null;
+                goto after_useLfs;
             }
 
-            $properties['use_lfs'] = $value;
+            $properties['useLfs'] = $value;
 
-            after_use_lfs:
+            after_useLfs:
 
             $value = $payload['vcs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'vcs_url';
-                goto after_vcs_url;
+                goto after_vcsUrl;
             }
 
-            $properties['vcs_url'] = $value;
+            $properties['vcsUrl'] = $value;
 
-            after_vcs_url:
+            after_vcsUrl:
 
             $value = $payload['svc_root'] ?? null;
 
             if ($value === null) {
-                $properties['svc_root'] = null;
-                goto after_svc_root;
+                $properties['svcRoot'] = null;
+                goto after_svcRoot;
             }
 
-            $properties['svc_root'] = $value;
+            $properties['svcRoot'] = $value;
 
-            after_svc_root:
+            after_svcRoot:
 
             $value = $payload['tfvc_project'] ?? null;
 
             if ($value === null) {
-                $properties['tfvc_project'] = null;
-                goto after_tfvc_project;
+                $properties['tfvcProject'] = null;
+                goto after_tfvcProject;
             }
 
-            $properties['tfvc_project'] = $value;
+            $properties['tfvcProject'] = $value;
 
-            after_tfvc_project:
+            after_tfvcProject:
 
             $value = $payload['status'] ?? null;
 
@@ -107,122 +107,122 @@ class Lfs implements ObjectMapper
             $value = $payload['status_text'] ?? null;
 
             if ($value === null) {
-                $properties['status_text'] = null;
-                goto after_status_text;
+                $properties['statusText'] = null;
+                goto after_statusText;
             }
 
-            $properties['status_text'] = $value;
+            $properties['statusText'] = $value;
 
-            after_status_text:
+            after_statusText:
 
             $value = $payload['failed_step'] ?? null;
 
             if ($value === null) {
-                $properties['failed_step'] = null;
-                goto after_failed_step;
+                $properties['failedStep'] = null;
+                goto after_failedStep;
             }
 
-            $properties['failed_step'] = $value;
+            $properties['failedStep'] = $value;
 
-            after_failed_step:
+            after_failedStep:
 
             $value = $payload['error_message'] ?? null;
 
             if ($value === null) {
-                $properties['error_message'] = null;
-                goto after_error_message;
+                $properties['errorMessage'] = null;
+                goto after_errorMessage;
             }
 
-            $properties['error_message'] = $value;
+            $properties['errorMessage'] = $value;
 
-            after_error_message:
+            after_errorMessage:
 
             $value = $payload['import_percent'] ?? null;
 
             if ($value === null) {
-                $properties['import_percent'] = null;
-                goto after_import_percent;
+                $properties['importPercent'] = null;
+                goto after_importPercent;
             }
 
-            $properties['import_percent'] = $value;
+            $properties['importPercent'] = $value;
 
-            after_import_percent:
+            after_importPercent:
 
             $value = $payload['commit_count'] ?? null;
 
             if ($value === null) {
-                $properties['commit_count'] = null;
-                goto after_commit_count;
+                $properties['commitCount'] = null;
+                goto after_commitCount;
             }
 
-            $properties['commit_count'] = $value;
+            $properties['commitCount'] = $value;
 
-            after_commit_count:
+            after_commitCount:
 
             $value = $payload['push_percent'] ?? null;
 
             if ($value === null) {
-                $properties['push_percent'] = null;
-                goto after_push_percent;
+                $properties['pushPercent'] = null;
+                goto after_pushPercent;
             }
 
-            $properties['push_percent'] = $value;
+            $properties['pushPercent'] = $value;
 
-            after_push_percent:
+            after_pushPercent:
 
             $value = $payload['has_large_files'] ?? null;
 
             if ($value === null) {
-                $properties['has_large_files'] = null;
-                goto after_has_large_files;
+                $properties['hasLargeFiles'] = null;
+                goto after_hasLargeFiles;
             }
 
-            $properties['has_large_files'] = $value;
+            $properties['hasLargeFiles'] = $value;
 
-            after_has_large_files:
+            after_hasLargeFiles:
 
             $value = $payload['large_files_size'] ?? null;
 
             if ($value === null) {
-                $properties['large_files_size'] = null;
-                goto after_large_files_size;
+                $properties['largeFilesSize'] = null;
+                goto after_largeFilesSize;
             }
 
-            $properties['large_files_size'] = $value;
+            $properties['largeFilesSize'] = $value;
 
-            after_large_files_size:
+            after_largeFilesSize:
 
             $value = $payload['large_files_count'] ?? null;
 
             if ($value === null) {
-                $properties['large_files_count'] = null;
-                goto after_large_files_count;
+                $properties['largeFilesCount'] = null;
+                goto after_largeFilesCount;
             }
 
-            $properties['large_files_count'] = $value;
+            $properties['largeFilesCount'] = $value;
 
-            after_large_files_count:
+            after_largeFilesCount:
 
             $value = $payload['project_choices'] ?? null;
 
             if ($value === null) {
-                $properties['project_choices'] = null;
-                goto after_project_choices;
+                $properties['projectChoices'] = null;
+                goto after_projectChoices;
             }
 
-            static $project_choicesCaster1;
+            static $projectChoicesCaster1;
 
-            if ($project_choicesCaster1 === null) {
-                $project_choicesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($projectChoicesCaster1 === null) {
+                $projectChoicesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Import\\ProjectChoices',
 ));
             }
 
-            $value = $project_choicesCaster1->cast($value, $this);
+            $value = $projectChoicesCaster1->cast($value, $this);
 
-            $properties['project_choices'] = $value;
+            $properties['projectChoices'] = $value;
 
-            after_project_choices:
+            after_projectChoices:
 
             $value = $payload['message'] ?? null;
 
@@ -238,13 +238,13 @@ class Lfs implements ObjectMapper
             $value = $payload['authors_count'] ?? null;
 
             if ($value === null) {
-                $properties['authors_count'] = null;
-                goto after_authors_count;
+                $properties['authorsCount'] = null;
+                goto after_authorsCount;
             }
 
-            $properties['authors_count'] = $value;
+            $properties['authorsCount'] = $value;
 
-            after_authors_count:
+            after_authorsCount:
 
             $value = $payload['url'] ?? null;
 
@@ -261,45 +261,45 @@ class Lfs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['authors_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'authors_url';
-                goto after_authors_url;
+                goto after_authorsUrl;
             }
 
-            $properties['authors_url'] = $value;
+            $properties['authorsUrl'] = $value;
 
-            after_authors_url:
+            after_authorsUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_url';
-                goto after_repository_url;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
             $value = $payload['svn_root'] ?? null;
 
             if ($value === null) {
-                $properties['svn_root'] = null;
-                goto after_svn_root;
+                $properties['svnRoot'] = null;
+                goto after_svnRoot;
             }
 
-            $properties['svn_root'] = $value;
+            $properties['svnRoot'] = $value;
 
-            after_svn_root:
+            after_svnRoot:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Import', $exception, stack: $this->hydrationStack);
@@ -336,24 +336,24 @@ class Lfs implements ObjectMapper
             $value = $payload['tfvc_project'] ?? null;
 
             if ($value === null) {
-                $properties['tfvc_project'] = null;
-                goto after_tfvc_project;
+                $properties['tfvcProject'] = null;
+                goto after_tfvcProject;
             }
 
-            $properties['tfvc_project'] = $value;
+            $properties['tfvcProject'] = $value;
 
-            after_tfvc_project:
+            after_tfvcProject:
 
             $value = $payload['human_name'] ?? null;
 
             if ($value === null) {
-                $properties['human_name'] = null;
-                goto after_human_name;
+                $properties['humanName'] = null;
+                goto after_humanName;
             }
 
-            $properties['human_name'] = $value;
+            $properties['humanName'] = $value;
 
-            after_human_name:
+            after_humanName:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Import\ProjectChoices', $exception, stack: $this->hydrationStack);
@@ -391,12 +391,12 @@ class Lfs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -541,13 +541,13 @@ class Lfs implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -708,125 +708,125 @@ class Lfs implements ObjectMapper
         after_vcs:        $result['vcs'] = $vcs;
 
         
-        $use_lfs = $object->use_lfs;
+        $useLfs = $object->useLfs;
 
-        if ($use_lfs === null) {
-            goto after_use_lfs;
+        if ($useLfs === null) {
+            goto after_useLfs;
         }
-        after_use_lfs:        $result['use_lfs'] = $use_lfs;
+        after_useLfs:        $result['use_lfs'] = $useLfs;
 
         
-        $vcs_url = $object->vcs_url;
-        after_vcs_url:        $result['vcs_url'] = $vcs_url;
+        $vcsUrl = $object->vcsUrl;
+        after_vcsUrl:        $result['vcs_url'] = $vcsUrl;
 
         
-        $svc_root = $object->svc_root;
+        $svcRoot = $object->svcRoot;
 
-        if ($svc_root === null) {
-            goto after_svc_root;
+        if ($svcRoot === null) {
+            goto after_svcRoot;
         }
-        after_svc_root:        $result['svc_root'] = $svc_root;
+        after_svcRoot:        $result['svc_root'] = $svcRoot;
 
         
-        $tfvc_project = $object->tfvc_project;
+        $tfvcProject = $object->tfvcProject;
 
-        if ($tfvc_project === null) {
-            goto after_tfvc_project;
+        if ($tfvcProject === null) {
+            goto after_tfvcProject;
         }
-        after_tfvc_project:        $result['tfvc_project'] = $tfvc_project;
+        after_tfvcProject:        $result['tfvc_project'] = $tfvcProject;
 
         
         $status = $object->status;
         after_status:        $result['status'] = $status;
 
         
-        $status_text = $object->status_text;
+        $statusText = $object->statusText;
 
-        if ($status_text === null) {
-            goto after_status_text;
+        if ($statusText === null) {
+            goto after_statusText;
         }
-        after_status_text:        $result['status_text'] = $status_text;
+        after_statusText:        $result['status_text'] = $statusText;
 
         
-        $failed_step = $object->failed_step;
+        $failedStep = $object->failedStep;
 
-        if ($failed_step === null) {
-            goto after_failed_step;
+        if ($failedStep === null) {
+            goto after_failedStep;
         }
-        after_failed_step:        $result['failed_step'] = $failed_step;
+        after_failedStep:        $result['failed_step'] = $failedStep;
 
         
-        $error_message = $object->error_message;
+        $errorMessage = $object->errorMessage;
 
-        if ($error_message === null) {
-            goto after_error_message;
+        if ($errorMessage === null) {
+            goto after_errorMessage;
         }
-        after_error_message:        $result['error_message'] = $error_message;
+        after_errorMessage:        $result['error_message'] = $errorMessage;
 
         
-        $import_percent = $object->import_percent;
+        $importPercent = $object->importPercent;
 
-        if ($import_percent === null) {
-            goto after_import_percent;
+        if ($importPercent === null) {
+            goto after_importPercent;
         }
-        after_import_percent:        $result['import_percent'] = $import_percent;
+        after_importPercent:        $result['import_percent'] = $importPercent;
 
         
-        $commit_count = $object->commit_count;
+        $commitCount = $object->commitCount;
 
-        if ($commit_count === null) {
-            goto after_commit_count;
+        if ($commitCount === null) {
+            goto after_commitCount;
         }
-        after_commit_count:        $result['commit_count'] = $commit_count;
+        after_commitCount:        $result['commit_count'] = $commitCount;
 
         
-        $push_percent = $object->push_percent;
+        $pushPercent = $object->pushPercent;
 
-        if ($push_percent === null) {
-            goto after_push_percent;
+        if ($pushPercent === null) {
+            goto after_pushPercent;
         }
-        after_push_percent:        $result['push_percent'] = $push_percent;
+        after_pushPercent:        $result['push_percent'] = $pushPercent;
 
         
-        $has_large_files = $object->has_large_files;
+        $hasLargeFiles = $object->hasLargeFiles;
 
-        if ($has_large_files === null) {
-            goto after_has_large_files;
+        if ($hasLargeFiles === null) {
+            goto after_hasLargeFiles;
         }
-        after_has_large_files:        $result['has_large_files'] = $has_large_files;
+        after_hasLargeFiles:        $result['has_large_files'] = $hasLargeFiles;
 
         
-        $large_files_size = $object->large_files_size;
+        $largeFilesSize = $object->largeFilesSize;
 
-        if ($large_files_size === null) {
-            goto after_large_files_size;
+        if ($largeFilesSize === null) {
+            goto after_largeFilesSize;
         }
-        after_large_files_size:        $result['large_files_size'] = $large_files_size;
+        after_largeFilesSize:        $result['large_files_size'] = $largeFilesSize;
 
         
-        $large_files_count = $object->large_files_count;
+        $largeFilesCount = $object->largeFilesCount;
 
-        if ($large_files_count === null) {
-            goto after_large_files_count;
+        if ($largeFilesCount === null) {
+            goto after_largeFilesCount;
         }
-        after_large_files_count:        $result['large_files_count'] = $large_files_count;
+        after_largeFilesCount:        $result['large_files_count'] = $largeFilesCount;
 
         
-        $project_choices = $object->project_choices;
+        $projectChoices = $object->projectChoices;
 
-        if ($project_choices === null) {
-            goto after_project_choices;
+        if ($projectChoices === null) {
+            goto after_projectChoices;
         }
-        static $project_choicesSerializer0;
+        static $projectChoicesSerializer0;
 
-        if ($project_choicesSerializer0 === null) {
-            $project_choicesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($projectChoicesSerializer0 === null) {
+            $projectChoicesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Import\\ProjectChoices',
 ));
         }
         
-        $project_choices = $project_choicesSerializer0->serialize($project_choices, $this);
-        after_project_choices:        $result['project_choices'] = $project_choices;
+        $projectChoices = $projectChoicesSerializer0->serialize($projectChoices, $this);
+        after_projectChoices:        $result['project_choices'] = $projectChoices;
 
         
         $message = $object->message;
@@ -837,36 +837,36 @@ class Lfs implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $authors_count = $object->authors_count;
+        $authorsCount = $object->authorsCount;
 
-        if ($authors_count === null) {
-            goto after_authors_count;
+        if ($authorsCount === null) {
+            goto after_authorsCount;
         }
-        after_authors_count:        $result['authors_count'] = $authors_count;
+        after_authorsCount:        $result['authors_count'] = $authorsCount;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $authors_url = $object->authors_url;
-        after_authors_url:        $result['authors_url'] = $authors_url;
+        $authorsUrl = $object->authorsUrl;
+        after_authorsUrl:        $result['authors_url'] = $authorsUrl;
 
         
-        $repository_url = $object->repository_url;
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        $repositoryUrl = $object->repositoryUrl;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
         
-        $svn_root = $object->svn_root;
+        $svnRoot = $object->svnRoot;
 
-        if ($svn_root === null) {
-            goto after_svn_root;
+        if ($svnRoot === null) {
+            goto after_svnRoot;
         }
-        after_svn_root:        $result['svn_root'] = $svn_root;
+        after_svnRoot:        $result['svn_root'] = $svnRoot;
 
 
         return $result;
@@ -886,20 +886,20 @@ class Lfs implements ObjectMapper
         after_vcs:        $result['vcs'] = $vcs;
 
         
-        $tfvc_project = $object->tfvc_project;
+        $tfvcProject = $object->tfvcProject;
 
-        if ($tfvc_project === null) {
-            goto after_tfvc_project;
+        if ($tfvcProject === null) {
+            goto after_tfvcProject;
         }
-        after_tfvc_project:        $result['tfvc_project'] = $tfvc_project;
+        after_tfvcProject:        $result['tfvc_project'] = $tfvcProject;
 
         
-        $human_name = $object->human_name;
+        $humanName = $object->humanName;
 
-        if ($human_name === null) {
-            goto after_human_name;
+        if ($humanName === null) {
+            goto after_humanName;
         }
-        after_human_name:        $result['human_name'] = $human_name;
+        after_humanName:        $result['human_name'] = $humanName;
 
 
         return $result;
@@ -915,8 +915,8 @@ class Lfs implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;
@@ -1006,12 +1006,12 @@ class Lfs implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

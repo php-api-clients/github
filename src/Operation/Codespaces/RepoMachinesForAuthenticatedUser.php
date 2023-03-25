@@ -21,21 +21,21 @@ final class RepoMachinesForAuthenticatedUser
     /**The location to check for available machines. Assigned by IP if not provided.**/
     private string $location;
     /**IP for location auto-detection when proxying a request**/
-    private string $client_ip;
+    private string $clientIp;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces\Machines $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $client_ip)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $clientIp)
     {
         $this->owner = $owner;
         $this->repo = $repo;
         $this->location = $location;
-        $this->client_ip = $client_ip;
+        $this->clientIp = $clientIp;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{location}', '{client_ip}'), array($this->owner, $this->repo, $this->location, $this->client_ip), self::PATH . '?location={location}&client_ip={client_ip}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{location}', '{client_ip}'), array($this->owner, $this->repo, $this->location, $this->clientIp), self::PATH . '?location={location}&clientIp={client_ip}'));
     }
     /**
      * @return Schema\Operation\Codespaces\RepoMachinesForAuthenticatedUser\Response\Applicationjson\H200

@@ -129,55 +129,55 @@ class Readme implements ObjectMapper
             $value = $payload['git_url'] ?? null;
 
             if ($value === null) {
-                $properties['git_url'] = null;
-                goto after_git_url;
+                $properties['gitUrl'] = null;
+                goto after_gitUrl;
             }
 
-            $properties['git_url'] = $value;
+            $properties['gitUrl'] = $value;
 
-            after_git_url:
+            after_gitUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['download_url'] ?? null;
 
             if ($value === null) {
-                $properties['download_url'] = null;
-                goto after_download_url;
+                $properties['downloadUrl'] = null;
+                goto after_downloadUrl;
             }
 
-            $properties['download_url'] = $value;
+            $properties['downloadUrl'] = $value;
 
-            after_download_url:
+            after_downloadUrl:
 
             $value = $payload['_links'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = '_links';
-                goto after__links;
+                goto after_links;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = '_links';
+                    $this->hydrationStack[] = 'links';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['_links'] = $value;
+            $properties['links'] = $value;
 
-            after__links:
+            after_links:
 
             $value = $payload['target'] ?? null;
 
@@ -193,13 +193,13 @@ class Readme implements ObjectMapper
             $value = $payload['submodule_git_url'] ?? null;
 
             if ($value === null) {
-                $properties['submodule_git_url'] = null;
-                goto after_submodule_git_url;
+                $properties['submoduleGitUrl'] = null;
+                goto after_submoduleGitUrl;
             }
 
-            $properties['submodule_git_url'] = $value;
+            $properties['submoduleGitUrl'] = $value;
 
-            after_submodule_git_url:
+            after_submoduleGitUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentFile', $exception, stack: $this->hydrationStack);
@@ -290,13 +290,13 @@ class Readme implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -356,12 +356,12 @@ class Readme implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -632,33 +632,33 @@ class Readme implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $git_url = $object->git_url;
+        $gitUrl = $object->gitUrl;
 
-        if ($git_url === null) {
-            goto after_git_url;
+        if ($gitUrl === null) {
+            goto after_gitUrl;
         }
-        after_git_url:        $result['git_url'] = $git_url;
+        after_gitUrl:        $result['git_url'] = $gitUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $download_url = $object->download_url;
+        $downloadUrl = $object->downloadUrl;
 
-        if ($download_url === null) {
-            goto after_download_url;
+        if ($downloadUrl === null) {
+            goto after_downloadUrl;
         }
-        after_download_url:        $result['download_url'] = $download_url;
+        after_downloadUrl:        $result['download_url'] = $downloadUrl;
 
         
-        $_links = $object->_links;
-        $_links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($_links);
-        after__links:        $result['_links'] = $_links;
+        $links = $object->links;
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($links);
+        after_links:        $result['_links'] = $links;
 
         
         $target = $object->target;
@@ -669,12 +669,12 @@ class Readme implements ObjectMapper
         after_target:        $result['target'] = $target;
 
         
-        $submodule_git_url = $object->submodule_git_url;
+        $submoduleGitUrl = $object->submoduleGitUrl;
 
-        if ($submodule_git_url === null) {
-            goto after_submodule_git_url;
+        if ($submoduleGitUrl === null) {
+            goto after_submoduleGitUrl;
         }
-        after_submodule_git_url:        $result['submodule_git_url'] = $submodule_git_url;
+        after_submoduleGitUrl:        $result['submodule_git_url'] = $submoduleGitUrl;
 
 
         return $result;
@@ -723,12 +723,12 @@ class Readme implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -760,8 +760,8 @@ class Readme implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

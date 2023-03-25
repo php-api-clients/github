@@ -19,20 +19,20 @@ final class DeleteTagProtection
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the tag protection.**/
-    private int $tag_protection_id;
+    private int $tagProtectionId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Tags\Protection\CbTagProtectionIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Tags\Protection\CbTagProtectionIdRcb $hydrator, string $owner, string $repo, int $tag_protection_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Tags\Protection\CbTagProtectionIdRcb $hydrator, string $owner, string $repo, int $tagProtectionId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->tag_protection_id = $tag_protection_id;
+        $this->tagProtectionId = $tagProtectionId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tag_protection_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tag_protection_id}'), array($this->owner, $this->repo, $this->tagProtectionId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

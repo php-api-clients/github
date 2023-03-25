@@ -39,12 +39,12 @@ class Secrets implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['secrets'] ?? null;
 
@@ -103,23 +103,23 @@ class Secrets implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['visibility'] ?? null;
 
@@ -135,13 +135,13 @@ class Secrets implements ObjectMapper
             $value = $payload['selected_repositories_url'] ?? null;
 
             if ($value === null) {
-                $properties['selected_repositories_url'] = null;
-                goto after_selected_repositories_url;
+                $properties['selectedRepositoriesUrl'] = null;
+                goto after_selectedRepositoriesUrl;
             }
 
-            $properties['selected_repositories_url'] = $value;
+            $properties['selectedRepositoriesUrl'] = $value;
 
-            after_selected_repositories_url:
+            after_selectedRepositoriesUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesOrgSecret', $exception, stack: $this->hydrationStack);
@@ -269,8 +269,8 @@ class Secrets implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListOrgSecrets\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $secrets = $object->secrets;
@@ -299,24 +299,24 @@ class Secrets implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $visibility = $object->visibility;
         after_visibility:        $result['visibility'] = $visibility;
 
         
-        $selected_repositories_url = $object->selected_repositories_url;
+        $selectedRepositoriesUrl = $object->selectedRepositoriesUrl;
 
-        if ($selected_repositories_url === null) {
-            goto after_selected_repositories_url;
+        if ($selectedRepositoriesUrl === null) {
+            goto after_selectedRepositoriesUrl;
         }
-        after_selected_repositories_url:        $result['selected_repositories_url'] = $selected_repositories_url;
+        after_selectedRepositoriesUrl:        $result['selected_repositories_url'] = $selectedRepositoriesUrl;
 
 
         return $result;

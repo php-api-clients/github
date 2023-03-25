@@ -14,12 +14,12 @@ final readonly class CodeScanningDefaultSetupUpdateResponse
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = 'You can use `run_url` to track the status of the run. This includes a property status and conclusion.
 You should not rely on this always being an actions workflow run object.';
-    public const SCHEMA_EXAMPLE_DATA = '{"run_id":13,"run_url":"generated_run_url_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"runId":13,"runUrl":"generated_run_url_null"}';
     /**
-     * run_id: ID of the corresponding run.
-     * run_url: URL of the corresponding run.
+     * runId: ID of the corresponding run.
+     * runUrl: URL of the corresponding run.
      */
-    public function __construct(public ?int $run_id, public ?string $run_url)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('run_id')] public ?int $runId, #[\EventSauce\ObjectHydrator\MapFrom('run_url')] public ?string $runUrl)
     {
     }
 }

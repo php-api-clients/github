@@ -61,12 +61,12 @@ class CbStatusIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['state'] ?? null;
 
@@ -116,89 +116,89 @@ class CbStatusIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'target_url';
-                goto after_target_url;
+                goto after_targetUrl;
             }
 
-            $properties['target_url'] = $value;
+            $properties['targetUrl'] = $value;
 
-            after_target_url:
+            after_targetUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['deployment_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'deployment_url';
-                goto after_deployment_url;
+                goto after_deploymentUrl;
             }
 
-            $properties['deployment_url'] = $value;
+            $properties['deploymentUrl'] = $value;
 
-            after_deployment_url:
+            after_deploymentUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_url';
-                goto after_repository_url;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
             $value = $payload['environment_url'] ?? null;
 
             if ($value === null) {
-                $properties['environment_url'] = null;
-                goto after_environment_url;
+                $properties['environmentUrl'] = null;
+                goto after_environmentUrl;
             }
 
-            $properties['environment_url'] = $value;
+            $properties['environmentUrl'] = $value;
 
-            after_environment_url:
+            after_environmentUrl:
 
             $value = $payload['log_url'] ?? null;
 
             if ($value === null) {
-                $properties['log_url'] = null;
-                goto after_log_url;
+                $properties['logUrl'] = null;
+                goto after_logUrl;
             }
 
-            $properties['log_url'] = $value;
+            $properties['logUrl'] = $value;
 
-            after_log_url:
+            after_logUrl:
 
             $value = $payload['performed_via_github_app'] ?? null;
 
             if ($value === null) {
-                $properties['performed_via_github_app'] = null;
-                goto after_performed_via_github_app;
+                $properties['performedViaGithubApp'] = null;
+                goto after_performedViaGithubApp;
             }
 
-            $properties['performed_via_github_app'] = $value;
+            $properties['performedViaGithubApp'] = $value;
 
-            after_performed_via_github_app:
+            after_performedViaGithubApp:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentStatus', $exception, stack: $this->hydrationStack);
@@ -235,13 +235,13 @@ class CbStatusIdRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -399,8 +399,8 @@ class CbStatusIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $state = $object->state;
@@ -427,48 +427,48 @@ class CbStatusIdRcb implements ObjectMapper
         after_environment:        $result['environment'] = $environment;
 
         
-        $target_url = $object->target_url;
-        after_target_url:        $result['target_url'] = $target_url;
+        $targetUrl = $object->targetUrl;
+        after_targetUrl:        $result['target_url'] = $targetUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $deployment_url = $object->deployment_url;
-        after_deployment_url:        $result['deployment_url'] = $deployment_url;
+        $deploymentUrl = $object->deploymentUrl;
+        after_deploymentUrl:        $result['deployment_url'] = $deploymentUrl;
 
         
-        $repository_url = $object->repository_url;
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        $repositoryUrl = $object->repositoryUrl;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
         
-        $environment_url = $object->environment_url;
+        $environmentUrl = $object->environmentUrl;
 
-        if ($environment_url === null) {
-            goto after_environment_url;
+        if ($environmentUrl === null) {
+            goto after_environmentUrl;
         }
-        after_environment_url:        $result['environment_url'] = $environment_url;
+        after_environmentUrl:        $result['environment_url'] = $environmentUrl;
 
         
-        $log_url = $object->log_url;
+        $logUrl = $object->logUrl;
 
-        if ($log_url === null) {
-            goto after_log_url;
+        if ($logUrl === null) {
+            goto after_logUrl;
         }
-        after_log_url:        $result['log_url'] = $log_url;
+        after_logUrl:        $result['log_url'] = $logUrl;
 
         
-        $performed_via_github_app = $object->performed_via_github_app;
+        $performedViaGithubApp = $object->performedViaGithubApp;
 
-        if ($performed_via_github_app === null) {
-            goto after_performed_via_github_app;
+        if ($performedViaGithubApp === null) {
+            goto after_performedViaGithubApp;
         }
-        after_performed_via_github_app:        $result['performed_via_github_app'] = $performed_via_github_app;
+        after_performedViaGithubApp:        $result['performed_via_github_app'] = $performedViaGithubApp;
 
 
         return $result;
@@ -488,12 +488,12 @@ class CbStatusIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

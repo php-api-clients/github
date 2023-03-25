@@ -83,12 +83,12 @@ class CbKeyIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['verified'] ?? null;
 
@@ -105,12 +105,12 @@ class CbKeyIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'read_only';
-                goto after_read_only;
+                goto after_readOnly;
             }
 
-            $properties['read_only'] = $value;
+            $properties['readOnly'] = $value;
 
-            after_read_only:
+            after_readOnly:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Key', $exception, stack: $this->hydrationStack);
@@ -147,13 +147,13 @@ class CbKeyIdRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -319,16 +319,16 @@ class CbKeyIdRcb implements ObjectMapper
         after_title:        $result['title'] = $title;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
         $verified = $object->verified;
         after_verified:        $result['verified'] = $verified;
 
         
-        $read_only = $object->read_only;
-        after_read_only:        $result['read_only'] = $read_only;
+        $readOnly = $object->readOnly;
+        after_readOnly:        $result['read_only'] = $readOnly;
 
 
         return $result;
@@ -348,12 +348,12 @@ class CbKeyIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

@@ -19,16 +19,16 @@ final class DeleteActionsCacheById
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the GitHub Actions cache.**/
-    private int $cache_id;
-    public function __construct(string $owner, string $repo, int $cache_id)
+    private int $cacheId;
+    public function __construct(string $owner, string $repo, int $cacheId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->cache_id = $cache_id;
+        $this->cacheId = $cacheId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{cache_id}'), array($this->owner, $this->repo, $this->cache_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{cache_id}'), array($this->owner, $this->repo, $this->cacheId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

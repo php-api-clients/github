@@ -15,21 +15,21 @@ final class GetExportDetailsForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/codespaces/{codespace_name}/exports/{export_id}';
     /**The name of the codespace.**/
-    private string $codespace_name;
+    private string $codespaceName;
     /**The ID of the export operation, or `latest`. Currently only `latest` is currently supported.**/
-    private string $export_id;
+    private string $exportId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator, string $codespace_name, string $export_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator, string $codespaceName, string $exportId)
     {
-        $this->codespace_name = $codespace_name;
-        $this->export_id = $export_id;
+        $this->codespaceName = $codespaceName;
+        $this->exportId = $exportId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespace_name, $this->export_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespaceName, $this->exportId), self::PATH));
     }
     /**
      * @return Schema\CodespaceExportDetails

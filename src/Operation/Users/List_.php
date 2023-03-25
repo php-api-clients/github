@@ -17,19 +17,19 @@ final class List_
     /**A user ID. Only return users with an ID greater than this ID.**/
     private int $since;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Users $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users $hydrator, int $since, int $per_page = 30)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users $hydrator, int $since, int $perPage = 30)
     {
         $this->since = $since;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{per_page}'), array($this->since, $this->per_page), self::PATH . '?since={since}&per_page={per_page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{per_page}'), array($this->since, $this->perPage), self::PATH . '?since={since}&perPage={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\SimpleUser>

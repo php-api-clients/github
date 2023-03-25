@@ -40,12 +40,12 @@ class Jobs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['jobs'] ?? null;
 
@@ -104,56 +104,56 @@ class Jobs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'run_id';
-                goto after_run_id;
+                goto after_runId;
             }
 
-            $properties['run_id'] = $value;
+            $properties['runId'] = $value;
 
-            after_run_id:
+            after_runId:
 
             $value = $payload['run_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'run_url';
-                goto after_run_url;
+                goto after_runUrl;
             }
 
-            $properties['run_url'] = $value;
+            $properties['runUrl'] = $value;
 
-            after_run_url:
+            after_runUrl:
 
             $value = $payload['run_attempt'] ?? null;
 
             if ($value === null) {
-                $properties['run_attempt'] = null;
-                goto after_run_attempt;
+                $properties['runAttempt'] = null;
+                goto after_runAttempt;
             }
 
-            $properties['run_attempt'] = $value;
+            $properties['runAttempt'] = $value;
 
-            after_run_attempt:
+            after_runAttempt:
 
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['head_sha'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'head_sha';
-                goto after_head_sha;
+                goto after_headSha;
             }
 
-            $properties['head_sha'] = $value;
+            $properties['headSha'] = $value;
 
-            after_head_sha:
+            after_headSha:
 
             $value = $payload['url'] ?? null;
 
@@ -169,13 +169,13 @@ class Jobs implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['status'] ?? null;
 
@@ -203,34 +203,34 @@ class Jobs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['started_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'started_at';
-                goto after_started_at;
+                goto after_startedAt;
             }
 
-            $properties['started_at'] = $value;
+            $properties['startedAt'] = $value;
 
-            after_started_at:
+            after_startedAt:
 
             $value = $payload['completed_at'] ?? null;
 
             if ($value === null) {
-                $properties['completed_at'] = null;
-                goto after_completed_at;
+                $properties['completedAt'] = null;
+                goto after_completedAt;
             }
 
-            $properties['completed_at'] = $value;
+            $properties['completedAt'] = $value;
 
-            after_completed_at:
+            after_completedAt:
 
             $value = $payload['name'] ?? null;
 
@@ -268,12 +268,12 @@ class Jobs implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'check_run_url';
-                goto after_check_run_url;
+                goto after_checkRunUrl;
             }
 
-            $properties['check_run_url'] = $value;
+            $properties['checkRunUrl'] = $value;
 
-            after_check_run_url:
+            after_checkRunUrl:
 
             $value = $payload['labels'] ?? null;
 
@@ -289,68 +289,68 @@ class Jobs implements ObjectMapper
             $value = $payload['runner_id'] ?? null;
 
             if ($value === null) {
-                $properties['runner_id'] = null;
-                goto after_runner_id;
+                $properties['runnerId'] = null;
+                goto after_runnerId;
             }
 
-            $properties['runner_id'] = $value;
+            $properties['runnerId'] = $value;
 
-            after_runner_id:
+            after_runnerId:
 
             $value = $payload['runner_name'] ?? null;
 
             if ($value === null) {
-                $properties['runner_name'] = null;
-                goto after_runner_name;
+                $properties['runnerName'] = null;
+                goto after_runnerName;
             }
 
-            $properties['runner_name'] = $value;
+            $properties['runnerName'] = $value;
 
-            after_runner_name:
+            after_runnerName:
 
             $value = $payload['runner_group_id'] ?? null;
 
             if ($value === null) {
-                $properties['runner_group_id'] = null;
-                goto after_runner_group_id;
+                $properties['runnerGroupId'] = null;
+                goto after_runnerGroupId;
             }
 
-            $properties['runner_group_id'] = $value;
+            $properties['runnerGroupId'] = $value;
 
-            after_runner_group_id:
+            after_runnerGroupId:
 
             $value = $payload['runner_group_name'] ?? null;
 
             if ($value === null) {
-                $properties['runner_group_name'] = null;
-                goto after_runner_group_name;
+                $properties['runnerGroupName'] = null;
+                goto after_runnerGroupName;
             }
 
-            $properties['runner_group_name'] = $value;
+            $properties['runnerGroupName'] = $value;
 
-            after_runner_group_name:
+            after_runnerGroupName:
 
             $value = $payload['workflow_name'] ?? null;
 
             if ($value === null) {
-                $properties['workflow_name'] = null;
-                goto after_workflow_name;
+                $properties['workflowName'] = null;
+                goto after_workflowName;
             }
 
-            $properties['workflow_name'] = $value;
+            $properties['workflowName'] = $value;
 
-            after_workflow_name:
+            after_workflowName:
 
             $value = $payload['head_branch'] ?? null;
 
             if ($value === null) {
-                $properties['head_branch'] = null;
-                goto after_head_branch;
+                $properties['headBranch'] = null;
+                goto after_headBranch;
             }
 
-            $properties['head_branch'] = $value;
+            $properties['headBranch'] = $value;
 
-            after_head_branch:
+            after_headBranch:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job', $exception, stack: $this->hydrationStack);
@@ -420,24 +420,24 @@ class Jobs implements ObjectMapper
             $value = $payload['started_at'] ?? null;
 
             if ($value === null) {
-                $properties['started_at'] = null;
-                goto after_started_at;
+                $properties['startedAt'] = null;
+                goto after_startedAt;
             }
 
-            $properties['started_at'] = $value;
+            $properties['startedAt'] = $value;
 
-            after_started_at:
+            after_startedAt:
 
             $value = $payload['completed_at'] ?? null;
 
             if ($value === null) {
-                $properties['completed_at'] = null;
-                goto after_completed_at;
+                $properties['completedAt'] = null;
+                goto after_completedAt;
             }
 
-            $properties['completed_at'] = $value;
+            $properties['completedAt'] = $value;
 
-            after_completed_at:
+            after_completedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job\Steps', $exception, stack: $this->hydrationStack);
@@ -566,8 +566,8 @@ class Jobs implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $jobs = $object->jobs;
@@ -596,40 +596,40 @@ class Jobs implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $run_id = $object->run_id;
-        after_run_id:        $result['run_id'] = $run_id;
+        $runId = $object->runId;
+        after_runId:        $result['run_id'] = $runId;
 
         
-        $run_url = $object->run_url;
-        after_run_url:        $result['run_url'] = $run_url;
+        $runUrl = $object->runUrl;
+        after_runUrl:        $result['run_url'] = $runUrl;
 
         
-        $run_attempt = $object->run_attempt;
+        $runAttempt = $object->runAttempt;
 
-        if ($run_attempt === null) {
-            goto after_run_attempt;
+        if ($runAttempt === null) {
+            goto after_runAttempt;
         }
-        after_run_attempt:        $result['run_attempt'] = $run_attempt;
+        after_runAttempt:        $result['run_attempt'] = $runAttempt;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $head_sha = $object->head_sha;
-        after_head_sha:        $result['head_sha'] = $head_sha;
+        $headSha = $object->headSha;
+        after_headSha:        $result['head_sha'] = $headSha;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $status = $object->status;
@@ -644,20 +644,20 @@ class Jobs implements ObjectMapper
         after_conclusion:        $result['conclusion'] = $conclusion;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $started_at = $object->started_at;
-        after_started_at:        $result['started_at'] = $started_at;
+        $startedAt = $object->startedAt;
+        after_startedAt:        $result['started_at'] = $startedAt;
 
         
-        $completed_at = $object->completed_at;
+        $completedAt = $object->completedAt;
 
-        if ($completed_at === null) {
-            goto after_completed_at;
+        if ($completedAt === null) {
+            goto after_completedAt;
         }
-        after_completed_at:        $result['completed_at'] = $completed_at;
+        after_completedAt:        $result['completed_at'] = $completedAt;
 
         
         $name = $object->name;
@@ -681,8 +681,8 @@ class Jobs implements ObjectMapper
         after_steps:        $result['steps'] = $steps;
 
         
-        $check_run_url = $object->check_run_url;
-        after_check_run_url:        $result['check_run_url'] = $check_run_url;
+        $checkRunUrl = $object->checkRunUrl;
+        after_checkRunUrl:        $result['check_run_url'] = $checkRunUrl;
 
         
         $labels = $object->labels;
@@ -697,52 +697,52 @@ class Jobs implements ObjectMapper
         after_labels:        $result['labels'] = $labels;
 
         
-        $runner_id = $object->runner_id;
+        $runnerId = $object->runnerId;
 
-        if ($runner_id === null) {
-            goto after_runner_id;
+        if ($runnerId === null) {
+            goto after_runnerId;
         }
-        after_runner_id:        $result['runner_id'] = $runner_id;
+        after_runnerId:        $result['runner_id'] = $runnerId;
 
         
-        $runner_name = $object->runner_name;
+        $runnerName = $object->runnerName;
 
-        if ($runner_name === null) {
-            goto after_runner_name;
+        if ($runnerName === null) {
+            goto after_runnerName;
         }
-        after_runner_name:        $result['runner_name'] = $runner_name;
+        after_runnerName:        $result['runner_name'] = $runnerName;
 
         
-        $runner_group_id = $object->runner_group_id;
+        $runnerGroupId = $object->runnerGroupId;
 
-        if ($runner_group_id === null) {
-            goto after_runner_group_id;
+        if ($runnerGroupId === null) {
+            goto after_runnerGroupId;
         }
-        after_runner_group_id:        $result['runner_group_id'] = $runner_group_id;
+        after_runnerGroupId:        $result['runner_group_id'] = $runnerGroupId;
 
         
-        $runner_group_name = $object->runner_group_name;
+        $runnerGroupName = $object->runnerGroupName;
 
-        if ($runner_group_name === null) {
-            goto after_runner_group_name;
+        if ($runnerGroupName === null) {
+            goto after_runnerGroupName;
         }
-        after_runner_group_name:        $result['runner_group_name'] = $runner_group_name;
+        after_runnerGroupName:        $result['runner_group_name'] = $runnerGroupName;
 
         
-        $workflow_name = $object->workflow_name;
+        $workflowName = $object->workflowName;
 
-        if ($workflow_name === null) {
-            goto after_workflow_name;
+        if ($workflowName === null) {
+            goto after_workflowName;
         }
-        after_workflow_name:        $result['workflow_name'] = $workflow_name;
+        after_workflowName:        $result['workflow_name'] = $workflowName;
 
         
-        $head_branch = $object->head_branch;
+        $headBranch = $object->headBranch;
 
-        if ($head_branch === null) {
-            goto after_head_branch;
+        if ($headBranch === null) {
+            goto after_headBranch;
         }
-        after_head_branch:        $result['head_branch'] = $head_branch;
+        after_headBranch:        $result['head_branch'] = $headBranch;
 
 
         return $result;
@@ -774,20 +774,20 @@ class Jobs implements ObjectMapper
         after_number:        $result['number'] = $number;
 
         
-        $started_at = $object->started_at;
+        $startedAt = $object->startedAt;
 
-        if ($started_at === null) {
-            goto after_started_at;
+        if ($startedAt === null) {
+            goto after_startedAt;
         }
-        after_started_at:        $result['started_at'] = $started_at;
+        after_startedAt:        $result['started_at'] = $startedAt;
 
         
-        $completed_at = $object->completed_at;
+        $completedAt = $object->completedAt;
 
-        if ($completed_at === null) {
-            goto after_completed_at;
+        if ($completedAt === null) {
+            goto after_completedAt;
         }
-        after_completed_at:        $result['completed_at'] = $completed_at;
+        after_completedAt:        $result['completed_at'] = $completedAt;
 
 
         return $result;

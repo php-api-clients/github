@@ -40,12 +40,12 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'change_type';
-                goto after_change_type;
+                goto after_changeType;
             }
 
-            $properties['change_type'] = $value;
+            $properties['changeType'] = $value;
 
-            after_change_type:
+            after_changeType:
 
             $value = $payload['manifest'] ?? null;
 
@@ -94,13 +94,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['package_url'] ?? null;
 
             if ($value === null) {
-                $properties['package_url'] = null;
-                goto after_package_url;
+                $properties['packageUrl'] = null;
+                goto after_packageUrl;
             }
 
-            $properties['package_url'] = $value;
+            $properties['packageUrl'] = $value;
 
-            after_package_url:
+            after_packageUrl:
 
             $value = $payload['license'] ?? null;
 
@@ -116,13 +116,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['source_repository_url'] ?? null;
 
             if ($value === null) {
-                $properties['source_repository_url'] = null;
-                goto after_source_repository_url;
+                $properties['sourceRepositoryUrl'] = null;
+                goto after_sourceRepositoryUrl;
             }
 
-            $properties['source_repository_url'] = $value;
+            $properties['sourceRepositoryUrl'] = $value;
 
-            after_source_repository_url:
+            after_sourceRepositoryUrl:
 
             $value = $payload['vulnerabilities'] ?? null;
 
@@ -192,34 +192,34 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'advisory_ghsa_id';
-                goto after_advisory_ghsa_id;
+                goto after_advisoryGhsaId;
             }
 
-            $properties['advisory_ghsa_id'] = $value;
+            $properties['advisoryGhsaId'] = $value;
 
-            after_advisory_ghsa_id:
+            after_advisoryGhsaId:
 
             $value = $payload['advisory_summary'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'advisory_summary';
-                goto after_advisory_summary;
+                goto after_advisorySummary;
             }
 
-            $properties['advisory_summary'] = $value;
+            $properties['advisorySummary'] = $value;
 
-            after_advisory_summary:
+            after_advisorySummary:
 
             $value = $payload['advisory_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'advisory_url';
-                goto after_advisory_url;
+                goto after_advisoryUrl;
             }
 
-            $properties['advisory_url'] = $value;
+            $properties['advisoryUrl'] = $value;
 
-            after_advisory_url:
+            after_advisoryUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities', $exception, stack: $this->hydrationStack);
@@ -256,13 +256,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -413,8 +413,8 @@ class CbBaseheadRcb implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphDiff);
         $result = [];
 
-        $change_type = $object->change_type;
-        after_change_type:        $result['change_type'] = $change_type;
+        $changeType = $object->changeType;
+        after_changeType:        $result['change_type'] = $changeType;
 
         
         $manifest = $object->manifest;
@@ -433,12 +433,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_version:        $result['version'] = $version;
 
         
-        $package_url = $object->package_url;
+        $packageUrl = $object->packageUrl;
 
-        if ($package_url === null) {
-            goto after_package_url;
+        if ($packageUrl === null) {
+            goto after_packageUrl;
         }
-        after_package_url:        $result['package_url'] = $package_url;
+        after_packageUrl:        $result['package_url'] = $packageUrl;
 
         
         $license = $object->license;
@@ -449,12 +449,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_license:        $result['license'] = $license;
 
         
-        $source_repository_url = $object->source_repository_url;
+        $sourceRepositoryUrl = $object->sourceRepositoryUrl;
 
-        if ($source_repository_url === null) {
-            goto after_source_repository_url;
+        if ($sourceRepositoryUrl === null) {
+            goto after_sourceRepositoryUrl;
         }
-        after_source_repository_url:        $result['source_repository_url'] = $source_repository_url;
+        after_sourceRepositoryUrl:        $result['source_repository_url'] = $sourceRepositoryUrl;
 
         
         $vulnerabilities = $object->vulnerabilities;
@@ -487,16 +487,16 @@ class CbBaseheadRcb implements ObjectMapper
         after_severity:        $result['severity'] = $severity;
 
         
-        $advisory_ghsa_id = $object->advisory_ghsa_id;
-        after_advisory_ghsa_id:        $result['advisory_ghsa_id'] = $advisory_ghsa_id;
+        $advisoryGhsaId = $object->advisoryGhsaId;
+        after_advisoryGhsaId:        $result['advisory_ghsa_id'] = $advisoryGhsaId;
 
         
-        $advisory_summary = $object->advisory_summary;
-        after_advisory_summary:        $result['advisory_summary'] = $advisory_summary;
+        $advisorySummary = $object->advisorySummary;
+        after_advisorySummary:        $result['advisory_summary'] = $advisorySummary;
 
         
-        $advisory_url = $object->advisory_url;
-        after_advisory_url:        $result['advisory_url'] = $advisory_url;
+        $advisoryUrl = $object->advisoryUrl;
+        after_advisoryUrl:        $result['advisory_url'] = $advisoryUrl;
 
 
         return $result;
@@ -516,12 +516,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

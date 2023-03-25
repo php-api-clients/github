@@ -15,24 +15,24 @@ final class ListReposForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/migrations/{migration_id}/repositories';
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repositories $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repositories $hydrator, int $migration_id, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repositories $hydrator, int $migrationId, int $perPage = 30, int $page = 1)
     {
-        $this->migration_id = $migration_id;
-        $this->per_page = $per_page;
+        $this->migrationId = $migrationId;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{per_page}', '{page}'), array($this->migration_id, $this->per_page, $this->page), self::PATH . '?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{per_page}', '{page}'), array($this->migrationId, $this->perPage, $this->page), self::PATH . '?perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\MinimalRepository>

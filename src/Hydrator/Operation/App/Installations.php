@@ -71,78 +71,78 @@ class Installations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'repository_selection';
-                goto after_repository_selection;
+                goto after_repositorySelection;
             }
 
-            $properties['repository_selection'] = $value;
+            $properties['repositorySelection'] = $value;
 
-            after_repository_selection:
+            after_repositorySelection:
 
             $value = $payload['access_tokens_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'access_tokens_url';
-                goto after_access_tokens_url;
+                goto after_accessTokensUrl;
             }
 
-            $properties['access_tokens_url'] = $value;
+            $properties['accessTokensUrl'] = $value;
 
-            after_access_tokens_url:
+            after_accessTokensUrl:
 
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repositories_url';
-                goto after_repositories_url;
+                goto after_repositoriesUrl;
             }
 
-            $properties['repositories_url'] = $value;
+            $properties['repositoriesUrl'] = $value;
 
-            after_repositories_url:
+            after_repositoriesUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['app_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'app_id';
-                goto after_app_id;
+                goto after_appId;
             }
 
-            $properties['app_id'] = $value;
+            $properties['appId'] = $value;
 
-            after_app_id:
+            after_appId:
 
             $value = $payload['target_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'target_id';
-                goto after_target_id;
+                goto after_targetId;
             }
 
-            $properties['target_id'] = $value;
+            $properties['targetId'] = $value;
 
-            after_target_id:
+            after_targetId:
 
             $value = $payload['target_type'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'target_type';
-                goto after_target_type;
+                goto after_targetType;
             }
 
-            $properties['target_type'] = $value;
+            $properties['targetType'] = $value;
 
-            after_target_type:
+            after_targetType:
 
             $value = $payload['permissions'] ?? null;
 
@@ -179,100 +179,100 @@ class Installations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['single_file_name'] ?? null;
 
             if ($value === null) {
-                $properties['single_file_name'] = null;
-                goto after_single_file_name;
+                $properties['singleFileName'] = null;
+                goto after_singleFileName;
             }
 
-            $properties['single_file_name'] = $value;
+            $properties['singleFileName'] = $value;
 
-            after_single_file_name:
+            after_singleFileName:
 
             $value = $payload['has_multiple_single_files'] ?? null;
 
             if ($value === null) {
-                $properties['has_multiple_single_files'] = null;
-                goto after_has_multiple_single_files;
+                $properties['hasMultipleSingleFiles'] = null;
+                goto after_hasMultipleSingleFiles;
             }
 
-            $properties['has_multiple_single_files'] = $value;
+            $properties['hasMultipleSingleFiles'] = $value;
 
-            after_has_multiple_single_files:
+            after_hasMultipleSingleFiles:
 
             $value = $payload['single_file_paths'] ?? null;
 
             if ($value === null) {
-                $properties['single_file_paths'] = null;
-                goto after_single_file_paths;
+                $properties['singleFilePaths'] = null;
+                goto after_singleFilePaths;
             }
 
-            $properties['single_file_paths'] = $value;
+            $properties['singleFilePaths'] = $value;
 
-            after_single_file_paths:
+            after_singleFilePaths:
 
             $value = $payload['app_slug'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'app_slug';
-                goto after_app_slug;
+                goto after_appSlug;
             }
 
-            $properties['app_slug'] = $value;
+            $properties['appSlug'] = $value;
 
-            after_app_slug:
+            after_appSlug:
 
             $value = $payload['suspended_by'] ?? null;
 
             if ($value === null) {
-                $properties['suspended_by'] = null;
-                goto after_suspended_by;
+                $properties['suspendedBy'] = null;
+                goto after_suspendedBy;
             }
 
-            $properties['suspended_by'] = $value;
+            $properties['suspendedBy'] = $value;
 
-            after_suspended_by:
+            after_suspendedBy:
 
             $value = $payload['suspended_at'] ?? null;
 
             if ($value === null) {
-                $properties['suspended_at'] = null;
-                goto after_suspended_at;
+                $properties['suspendedAt'] = null;
+                goto after_suspendedAt;
             }
 
-            $properties['suspended_at'] = $value;
+            $properties['suspendedAt'] = $value;
 
-            after_suspended_at:
+            after_suspendedAt:
 
             $value = $payload['contact_email'] ?? null;
 
             if ($value === null) {
-                $properties['contact_email'] = null;
-                goto after_contact_email;
+                $properties['contactEmail'] = null;
+                goto after_contactEmail;
             }
 
-            $properties['contact_email'] = $value;
+            $properties['contactEmail'] = $value;
 
-            after_contact_email:
+            after_contactEmail:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Installation', $exception, stack: $this->hydrationStack);
@@ -343,34 +343,34 @@ class Installations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -387,111 +387,111 @@ class Installations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -508,23 +508,23 @@ class Installations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -660,57 +660,57 @@ class Installations implements ObjectMapper
             $value = $payload['pull_requests'] ?? null;
 
             if ($value === null) {
-                $properties['pull_requests'] = null;
-                goto after_pull_requests;
+                $properties['pullRequests'] = null;
+                goto after_pullRequests;
             }
 
-            $properties['pull_requests'] = $value;
+            $properties['pullRequests'] = $value;
 
-            after_pull_requests:
+            after_pullRequests:
 
             $value = $payload['repository_announcement_banners'] ?? null;
 
             if ($value === null) {
-                $properties['repository_announcement_banners'] = null;
-                goto after_repository_announcement_banners;
+                $properties['repositoryAnnouncementBanners'] = null;
+                goto after_repositoryAnnouncementBanners;
             }
 
-            $properties['repository_announcement_banners'] = $value;
+            $properties['repositoryAnnouncementBanners'] = $value;
 
-            after_repository_announcement_banners:
+            after_repositoryAnnouncementBanners:
 
             $value = $payload['repository_hooks'] ?? null;
 
             if ($value === null) {
-                $properties['repository_hooks'] = null;
-                goto after_repository_hooks;
+                $properties['repositoryHooks'] = null;
+                goto after_repositoryHooks;
             }
 
-            $properties['repository_hooks'] = $value;
+            $properties['repositoryHooks'] = $value;
 
-            after_repository_hooks:
+            after_repositoryHooks:
 
             $value = $payload['repository_projects'] ?? null;
 
             if ($value === null) {
-                $properties['repository_projects'] = null;
-                goto after_repository_projects;
+                $properties['repositoryProjects'] = null;
+                goto after_repositoryProjects;
             }
 
-            $properties['repository_projects'] = $value;
+            $properties['repositoryProjects'] = $value;
 
-            after_repository_projects:
+            after_repositoryProjects:
 
             $value = $payload['secret_scanning_alerts'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_alerts'] = null;
-                goto after_secret_scanning_alerts;
+                $properties['secretScanningAlerts'] = null;
+                goto after_secretScanningAlerts;
             }
 
-            $properties['secret_scanning_alerts'] = $value;
+            $properties['secretScanningAlerts'] = $value;
 
-            after_secret_scanning_alerts:
+            after_secretScanningAlerts:
 
             $value = $payload['secrets'] ?? null;
 
@@ -726,24 +726,24 @@ class Installations implements ObjectMapper
             $value = $payload['security_events'] ?? null;
 
             if ($value === null) {
-                $properties['security_events'] = null;
-                goto after_security_events;
+                $properties['securityEvents'] = null;
+                goto after_securityEvents;
             }
 
-            $properties['security_events'] = $value;
+            $properties['securityEvents'] = $value;
 
-            after_security_events:
+            after_securityEvents:
 
             $value = $payload['single_file'] ?? null;
 
             if ($value === null) {
-                $properties['single_file'] = null;
-                goto after_single_file;
+                $properties['singleFile'] = null;
+                goto after_singleFile;
             }
 
-            $properties['single_file'] = $value;
+            $properties['singleFile'] = $value;
 
-            after_single_file:
+            after_singleFile:
 
             $value = $payload['statuses'] ?? null;
 
@@ -759,13 +759,13 @@ class Installations implements ObjectMapper
             $value = $payload['vulnerability_alerts'] ?? null;
 
             if ($value === null) {
-                $properties['vulnerability_alerts'] = null;
-                goto after_vulnerability_alerts;
+                $properties['vulnerabilityAlerts'] = null;
+                goto after_vulnerabilityAlerts;
             }
 
-            $properties['vulnerability_alerts'] = $value;
+            $properties['vulnerabilityAlerts'] = $value;
 
-            after_vulnerability_alerts:
+            after_vulnerabilityAlerts:
 
             $value = $payload['workflows'] ?? null;
 
@@ -792,123 +792,145 @@ class Installations implements ObjectMapper
             $value = $payload['organization_administration'] ?? null;
 
             if ($value === null) {
-                $properties['organization_administration'] = null;
-                goto after_organization_administration;
+                $properties['organizationAdministration'] = null;
+                goto after_organizationAdministration;
             }
 
-            $properties['organization_administration'] = $value;
+            $properties['organizationAdministration'] = $value;
 
-            after_organization_administration:
+            after_organizationAdministration:
 
             $value = $payload['organization_custom_roles'] ?? null;
 
             if ($value === null) {
-                $properties['organization_custom_roles'] = null;
-                goto after_organization_custom_roles;
+                $properties['organizationCustomRoles'] = null;
+                goto after_organizationCustomRoles;
             }
 
-            $properties['organization_custom_roles'] = $value;
+            $properties['organizationCustomRoles'] = $value;
 
-            after_organization_custom_roles:
+            after_organizationCustomRoles:
 
             $value = $payload['organization_announcement_banners'] ?? null;
 
             if ($value === null) {
-                $properties['organization_announcement_banners'] = null;
-                goto after_organization_announcement_banners;
+                $properties['organizationAnnouncementBanners'] = null;
+                goto after_organizationAnnouncementBanners;
             }
 
-            $properties['organization_announcement_banners'] = $value;
+            $properties['organizationAnnouncementBanners'] = $value;
 
-            after_organization_announcement_banners:
+            after_organizationAnnouncementBanners:
 
             $value = $payload['organization_hooks'] ?? null;
 
             if ($value === null) {
-                $properties['organization_hooks'] = null;
-                goto after_organization_hooks;
+                $properties['organizationHooks'] = null;
+                goto after_organizationHooks;
             }
 
-            $properties['organization_hooks'] = $value;
+            $properties['organizationHooks'] = $value;
 
-            after_organization_hooks:
+            after_organizationHooks:
+
+            $value = $payload['organization_personal_access_tokens'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationPersonalAccessTokens'] = null;
+                goto after_organizationPersonalAccessTokens;
+            }
+
+            $properties['organizationPersonalAccessTokens'] = $value;
+
+            after_organizationPersonalAccessTokens:
+
+            $value = $payload['organization_personal_access_token_requests'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationPersonalAccessTokenRequests'] = null;
+                goto after_organizationPersonalAccessTokenRequests;
+            }
+
+            $properties['organizationPersonalAccessTokenRequests'] = $value;
+
+            after_organizationPersonalAccessTokenRequests:
 
             $value = $payload['organization_plan'] ?? null;
 
             if ($value === null) {
-                $properties['organization_plan'] = null;
-                goto after_organization_plan;
+                $properties['organizationPlan'] = null;
+                goto after_organizationPlan;
             }
 
-            $properties['organization_plan'] = $value;
+            $properties['organizationPlan'] = $value;
 
-            after_organization_plan:
+            after_organizationPlan:
 
             $value = $payload['organization_projects'] ?? null;
 
             if ($value === null) {
-                $properties['organization_projects'] = null;
-                goto after_organization_projects;
+                $properties['organizationProjects'] = null;
+                goto after_organizationProjects;
             }
 
-            $properties['organization_projects'] = $value;
+            $properties['organizationProjects'] = $value;
 
-            after_organization_projects:
+            after_organizationProjects:
 
             $value = $payload['organization_packages'] ?? null;
 
             if ($value === null) {
-                $properties['organization_packages'] = null;
-                goto after_organization_packages;
+                $properties['organizationPackages'] = null;
+                goto after_organizationPackages;
             }
 
-            $properties['organization_packages'] = $value;
+            $properties['organizationPackages'] = $value;
 
-            after_organization_packages:
+            after_organizationPackages:
 
             $value = $payload['organization_secrets'] ?? null;
 
             if ($value === null) {
-                $properties['organization_secrets'] = null;
-                goto after_organization_secrets;
+                $properties['organizationSecrets'] = null;
+                goto after_organizationSecrets;
             }
 
-            $properties['organization_secrets'] = $value;
+            $properties['organizationSecrets'] = $value;
 
-            after_organization_secrets:
+            after_organizationSecrets:
 
             $value = $payload['organization_self_hosted_runners'] ?? null;
 
             if ($value === null) {
-                $properties['organization_self_hosted_runners'] = null;
-                goto after_organization_self_hosted_runners;
+                $properties['organizationSelfHostedRunners'] = null;
+                goto after_organizationSelfHostedRunners;
             }
 
-            $properties['organization_self_hosted_runners'] = $value;
+            $properties['organizationSelfHostedRunners'] = $value;
 
-            after_organization_self_hosted_runners:
+            after_organizationSelfHostedRunners:
 
             $value = $payload['organization_user_blocking'] ?? null;
 
             if ($value === null) {
-                $properties['organization_user_blocking'] = null;
-                goto after_organization_user_blocking;
+                $properties['organizationUserBlocking'] = null;
+                goto after_organizationUserBlocking;
             }
 
-            $properties['organization_user_blocking'] = $value;
+            $properties['organizationUserBlocking'] = $value;
 
-            after_organization_user_blocking:
+            after_organizationUserBlocking:
 
             $value = $payload['team_discussions'] ?? null;
 
             if ($value === null) {
-                $properties['team_discussions'] = null;
-                goto after_team_discussions;
+                $properties['teamDiscussions'] = null;
+                goto after_teamDiscussions;
             }
 
-            $properties['team_discussions'] = $value;
+            $properties['teamDiscussions'] = $value;
 
-            after_team_discussions:
+            after_teamDiscussions:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AppPermissions', $exception, stack: $this->hydrationStack);
@@ -1046,32 +1068,32 @@ class Installations implements ObjectMapper
         after_account:        $result['account'] = $account;
 
         
-        $repository_selection = $object->repository_selection;
-        after_repository_selection:        $result['repository_selection'] = $repository_selection;
+        $repositorySelection = $object->repositorySelection;
+        after_repositorySelection:        $result['repository_selection'] = $repositorySelection;
 
         
-        $access_tokens_url = $object->access_tokens_url;
-        after_access_tokens_url:        $result['access_tokens_url'] = $access_tokens_url;
+        $accessTokensUrl = $object->accessTokensUrl;
+        after_accessTokensUrl:        $result['access_tokens_url'] = $accessTokensUrl;
 
         
-        $repositories_url = $object->repositories_url;
-        after_repositories_url:        $result['repositories_url'] = $repositories_url;
+        $repositoriesUrl = $object->repositoriesUrl;
+        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $app_id = $object->app_id;
-        after_app_id:        $result['app_id'] = $app_id;
+        $appId = $object->appId;
+        after_appId:        $result['app_id'] = $appId;
 
         
-        $target_id = $object->target_id;
-        after_target_id:        $result['target_id'] = $target_id;
+        $targetId = $object->targetId;
+        after_targetId:        $result['target_id'] = $targetId;
 
         
-        $target_type = $object->target_type;
-        after_target_type:        $result['target_type'] = $target_type;
+        $targetType = $object->targetType;
+        after_targetType:        $result['target_type'] = $targetType;
 
         
         $permissions = $object->permissions;
@@ -1091,72 +1113,72 @@ class Installations implements ObjectMapper
         after_events:        $result['events'] = $events;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $single_file_name = $object->single_file_name;
+        $singleFileName = $object->singleFileName;
 
-        if ($single_file_name === null) {
-            goto after_single_file_name;
+        if ($singleFileName === null) {
+            goto after_singleFileName;
         }
-        after_single_file_name:        $result['single_file_name'] = $single_file_name;
+        after_singleFileName:        $result['single_file_name'] = $singleFileName;
 
         
-        $has_multiple_single_files = $object->has_multiple_single_files;
+        $hasMultipleSingleFiles = $object->hasMultipleSingleFiles;
 
-        if ($has_multiple_single_files === null) {
-            goto after_has_multiple_single_files;
+        if ($hasMultipleSingleFiles === null) {
+            goto after_hasMultipleSingleFiles;
         }
-        after_has_multiple_single_files:        $result['has_multiple_single_files'] = $has_multiple_single_files;
+        after_hasMultipleSingleFiles:        $result['has_multiple_single_files'] = $hasMultipleSingleFiles;
 
         
-        $single_file_paths = $object->single_file_paths;
+        $singleFilePaths = $object->singleFilePaths;
 
-        if ($single_file_paths === null) {
-            goto after_single_file_paths;
+        if ($singleFilePaths === null) {
+            goto after_singleFilePaths;
         }
-        static $single_file_pathsSerializer0;
+        static $singleFilePathsSerializer0;
 
-        if ($single_file_pathsSerializer0 === null) {
-            $single_file_pathsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+        if ($singleFilePathsSerializer0 === null) {
+            $singleFilePathsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         
-        $single_file_paths = $single_file_pathsSerializer0->serialize($single_file_paths, $this);
-        after_single_file_paths:        $result['single_file_paths'] = $single_file_paths;
+        $singleFilePaths = $singleFilePathsSerializer0->serialize($singleFilePaths, $this);
+        after_singleFilePaths:        $result['single_file_paths'] = $singleFilePaths;
 
         
-        $app_slug = $object->app_slug;
-        after_app_slug:        $result['app_slug'] = $app_slug;
+        $appSlug = $object->appSlug;
+        after_appSlug:        $result['app_slug'] = $appSlug;
 
         
-        $suspended_by = $object->suspended_by;
+        $suspendedBy = $object->suspendedBy;
 
-        if ($suspended_by === null) {
-            goto after_suspended_by;
+        if ($suspendedBy === null) {
+            goto after_suspendedBy;
         }
-        after_suspended_by:        $result['suspended_by'] = $suspended_by;
+        after_suspendedBy:        $result['suspended_by'] = $suspendedBy;
 
         
-        $suspended_at = $object->suspended_at;
+        $suspendedAt = $object->suspendedAt;
 
-        if ($suspended_at === null) {
-            goto after_suspended_at;
+        if ($suspendedAt === null) {
+            goto after_suspendedAt;
         }
-        after_suspended_at:        $result['suspended_at'] = $suspended_at;
+        after_suspendedAt:        $result['suspended_at'] = $suspendedAt;
 
         
-        $contact_email = $object->contact_email;
+        $contactEmail = $object->contactEmail;
 
-        if ($contact_email === null) {
-            goto after_contact_email;
+        if ($contactEmail === null) {
+            goto after_contactEmail;
         }
-        after_contact_email:        $result['contact_email'] = $contact_email;
+        after_contactEmail:        $result['contact_email'] = $contactEmail;
 
 
         return $result;
@@ -1192,80 +1214,80 @@ class Installations implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -1357,44 +1379,44 @@ class Installations implements ObjectMapper
         after_pages:        $result['pages'] = $pages;
 
         
-        $pull_requests = $object->pull_requests;
+        $pullRequests = $object->pullRequests;
 
-        if ($pull_requests === null) {
-            goto after_pull_requests;
+        if ($pullRequests === null) {
+            goto after_pullRequests;
         }
-        after_pull_requests:        $result['pull_requests'] = $pull_requests;
+        after_pullRequests:        $result['pull_requests'] = $pullRequests;
 
         
-        $repository_announcement_banners = $object->repository_announcement_banners;
+        $repositoryAnnouncementBanners = $object->repositoryAnnouncementBanners;
 
-        if ($repository_announcement_banners === null) {
-            goto after_repository_announcement_banners;
+        if ($repositoryAnnouncementBanners === null) {
+            goto after_repositoryAnnouncementBanners;
         }
-        after_repository_announcement_banners:        $result['repository_announcement_banners'] = $repository_announcement_banners;
+        after_repositoryAnnouncementBanners:        $result['repository_announcement_banners'] = $repositoryAnnouncementBanners;
 
         
-        $repository_hooks = $object->repository_hooks;
+        $repositoryHooks = $object->repositoryHooks;
 
-        if ($repository_hooks === null) {
-            goto after_repository_hooks;
+        if ($repositoryHooks === null) {
+            goto after_repositoryHooks;
         }
-        after_repository_hooks:        $result['repository_hooks'] = $repository_hooks;
+        after_repositoryHooks:        $result['repository_hooks'] = $repositoryHooks;
 
         
-        $repository_projects = $object->repository_projects;
+        $repositoryProjects = $object->repositoryProjects;
 
-        if ($repository_projects === null) {
-            goto after_repository_projects;
+        if ($repositoryProjects === null) {
+            goto after_repositoryProjects;
         }
-        after_repository_projects:        $result['repository_projects'] = $repository_projects;
+        after_repositoryProjects:        $result['repository_projects'] = $repositoryProjects;
 
         
-        $secret_scanning_alerts = $object->secret_scanning_alerts;
+        $secretScanningAlerts = $object->secretScanningAlerts;
 
-        if ($secret_scanning_alerts === null) {
-            goto after_secret_scanning_alerts;
+        if ($secretScanningAlerts === null) {
+            goto after_secretScanningAlerts;
         }
-        after_secret_scanning_alerts:        $result['secret_scanning_alerts'] = $secret_scanning_alerts;
+        after_secretScanningAlerts:        $result['secret_scanning_alerts'] = $secretScanningAlerts;
 
         
         $secrets = $object->secrets;
@@ -1405,20 +1427,20 @@ class Installations implements ObjectMapper
         after_secrets:        $result['secrets'] = $secrets;
 
         
-        $security_events = $object->security_events;
+        $securityEvents = $object->securityEvents;
 
-        if ($security_events === null) {
-            goto after_security_events;
+        if ($securityEvents === null) {
+            goto after_securityEvents;
         }
-        after_security_events:        $result['security_events'] = $security_events;
+        after_securityEvents:        $result['security_events'] = $securityEvents;
 
         
-        $single_file = $object->single_file;
+        $singleFile = $object->singleFile;
 
-        if ($single_file === null) {
-            goto after_single_file;
+        if ($singleFile === null) {
+            goto after_singleFile;
         }
-        after_single_file:        $result['single_file'] = $single_file;
+        after_singleFile:        $result['single_file'] = $singleFile;
 
         
         $statuses = $object->statuses;
@@ -1429,12 +1451,12 @@ class Installations implements ObjectMapper
         after_statuses:        $result['statuses'] = $statuses;
 
         
-        $vulnerability_alerts = $object->vulnerability_alerts;
+        $vulnerabilityAlerts = $object->vulnerabilityAlerts;
 
-        if ($vulnerability_alerts === null) {
-            goto after_vulnerability_alerts;
+        if ($vulnerabilityAlerts === null) {
+            goto after_vulnerabilityAlerts;
         }
-        after_vulnerability_alerts:        $result['vulnerability_alerts'] = $vulnerability_alerts;
+        after_vulnerabilityAlerts:        $result['vulnerability_alerts'] = $vulnerabilityAlerts;
 
         
         $workflows = $object->workflows;
@@ -1453,92 +1475,108 @@ class Installations implements ObjectMapper
         after_members:        $result['members'] = $members;
 
         
-        $organization_administration = $object->organization_administration;
+        $organizationAdministration = $object->organizationAdministration;
 
-        if ($organization_administration === null) {
-            goto after_organization_administration;
+        if ($organizationAdministration === null) {
+            goto after_organizationAdministration;
         }
-        after_organization_administration:        $result['organization_administration'] = $organization_administration;
+        after_organizationAdministration:        $result['organization_administration'] = $organizationAdministration;
 
         
-        $organization_custom_roles = $object->organization_custom_roles;
+        $organizationCustomRoles = $object->organizationCustomRoles;
 
-        if ($organization_custom_roles === null) {
-            goto after_organization_custom_roles;
+        if ($organizationCustomRoles === null) {
+            goto after_organizationCustomRoles;
         }
-        after_organization_custom_roles:        $result['organization_custom_roles'] = $organization_custom_roles;
+        after_organizationCustomRoles:        $result['organization_custom_roles'] = $organizationCustomRoles;
 
         
-        $organization_announcement_banners = $object->organization_announcement_banners;
+        $organizationAnnouncementBanners = $object->organizationAnnouncementBanners;
 
-        if ($organization_announcement_banners === null) {
-            goto after_organization_announcement_banners;
+        if ($organizationAnnouncementBanners === null) {
+            goto after_organizationAnnouncementBanners;
         }
-        after_organization_announcement_banners:        $result['organization_announcement_banners'] = $organization_announcement_banners;
+        after_organizationAnnouncementBanners:        $result['organization_announcement_banners'] = $organizationAnnouncementBanners;
 
         
-        $organization_hooks = $object->organization_hooks;
+        $organizationHooks = $object->organizationHooks;
 
-        if ($organization_hooks === null) {
-            goto after_organization_hooks;
+        if ($organizationHooks === null) {
+            goto after_organizationHooks;
         }
-        after_organization_hooks:        $result['organization_hooks'] = $organization_hooks;
+        after_organizationHooks:        $result['organization_hooks'] = $organizationHooks;
 
         
-        $organization_plan = $object->organization_plan;
+        $organizationPersonalAccessTokens = $object->organizationPersonalAccessTokens;
 
-        if ($organization_plan === null) {
-            goto after_organization_plan;
+        if ($organizationPersonalAccessTokens === null) {
+            goto after_organizationPersonalAccessTokens;
         }
-        after_organization_plan:        $result['organization_plan'] = $organization_plan;
+        after_organizationPersonalAccessTokens:        $result['organization_personal_access_tokens'] = $organizationPersonalAccessTokens;
 
         
-        $organization_projects = $object->organization_projects;
+        $organizationPersonalAccessTokenRequests = $object->organizationPersonalAccessTokenRequests;
 
-        if ($organization_projects === null) {
-            goto after_organization_projects;
+        if ($organizationPersonalAccessTokenRequests === null) {
+            goto after_organizationPersonalAccessTokenRequests;
         }
-        after_organization_projects:        $result['organization_projects'] = $organization_projects;
+        after_organizationPersonalAccessTokenRequests:        $result['organization_personal_access_token_requests'] = $organizationPersonalAccessTokenRequests;
 
         
-        $organization_packages = $object->organization_packages;
+        $organizationPlan = $object->organizationPlan;
 
-        if ($organization_packages === null) {
-            goto after_organization_packages;
+        if ($organizationPlan === null) {
+            goto after_organizationPlan;
         }
-        after_organization_packages:        $result['organization_packages'] = $organization_packages;
+        after_organizationPlan:        $result['organization_plan'] = $organizationPlan;
 
         
-        $organization_secrets = $object->organization_secrets;
+        $organizationProjects = $object->organizationProjects;
 
-        if ($organization_secrets === null) {
-            goto after_organization_secrets;
+        if ($organizationProjects === null) {
+            goto after_organizationProjects;
         }
-        after_organization_secrets:        $result['organization_secrets'] = $organization_secrets;
+        after_organizationProjects:        $result['organization_projects'] = $organizationProjects;
 
         
-        $organization_self_hosted_runners = $object->organization_self_hosted_runners;
+        $organizationPackages = $object->organizationPackages;
 
-        if ($organization_self_hosted_runners === null) {
-            goto after_organization_self_hosted_runners;
+        if ($organizationPackages === null) {
+            goto after_organizationPackages;
         }
-        after_organization_self_hosted_runners:        $result['organization_self_hosted_runners'] = $organization_self_hosted_runners;
+        after_organizationPackages:        $result['organization_packages'] = $organizationPackages;
 
         
-        $organization_user_blocking = $object->organization_user_blocking;
+        $organizationSecrets = $object->organizationSecrets;
 
-        if ($organization_user_blocking === null) {
-            goto after_organization_user_blocking;
+        if ($organizationSecrets === null) {
+            goto after_organizationSecrets;
         }
-        after_organization_user_blocking:        $result['organization_user_blocking'] = $organization_user_blocking;
+        after_organizationSecrets:        $result['organization_secrets'] = $organizationSecrets;
 
         
-        $team_discussions = $object->team_discussions;
+        $organizationSelfHostedRunners = $object->organizationSelfHostedRunners;
 
-        if ($team_discussions === null) {
-            goto after_team_discussions;
+        if ($organizationSelfHostedRunners === null) {
+            goto after_organizationSelfHostedRunners;
         }
-        after_team_discussions:        $result['team_discussions'] = $team_discussions;
+        after_organizationSelfHostedRunners:        $result['organization_self_hosted_runners'] = $organizationSelfHostedRunners;
+
+        
+        $organizationUserBlocking = $object->organizationUserBlocking;
+
+        if ($organizationUserBlocking === null) {
+            goto after_organizationUserBlocking;
+        }
+        after_organizationUserBlocking:        $result['organization_user_blocking'] = $organizationUserBlocking;
+
+        
+        $teamDiscussions = $object->teamDiscussions;
+
+        if ($teamDiscussions === null) {
+            goto after_teamDiscussions;
+        }
+        after_teamDiscussions:        $result['team_discussions'] = $teamDiscussions;
 
 
         return $result;

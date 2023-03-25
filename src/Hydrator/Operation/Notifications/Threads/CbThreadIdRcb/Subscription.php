@@ -71,13 +71,13 @@ class Subscription implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['url'] ?? null;
 
@@ -93,24 +93,24 @@ class Subscription implements ObjectMapper
             $value = $payload['thread_url'] ?? null;
 
             if ($value === null) {
-                $properties['thread_url'] = null;
-                goto after_thread_url;
+                $properties['threadUrl'] = null;
+                goto after_threadUrl;
             }
 
-            $properties['thread_url'] = $value;
+            $properties['threadUrl'] = $value;
 
-            after_thread_url:
+            after_threadUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
-                $properties['repository_url'] = null;
-                goto after_repository_url;
+                $properties['repositoryUrl'] = null;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ThreadSubscription', $exception, stack: $this->hydrationStack);
@@ -147,13 +147,13 @@ class Subscription implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -319,32 +319,32 @@ class Subscription implements ObjectMapper
         after_reason:        $result['reason'] = $reason;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $thread_url = $object->thread_url;
+        $threadUrl = $object->threadUrl;
 
-        if ($thread_url === null) {
-            goto after_thread_url;
+        if ($threadUrl === null) {
+            goto after_threadUrl;
         }
-        after_thread_url:        $result['thread_url'] = $thread_url;
+        after_threadUrl:        $result['thread_url'] = $threadUrl;
 
         
-        $repository_url = $object->repository_url;
+        $repositoryUrl = $object->repositoryUrl;
 
-        if ($repository_url === null) {
-            goto after_repository_url;
+        if ($repositoryUrl === null) {
+            goto after_repositoryUrl;
         }
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
 
         return $result;
@@ -364,12 +364,12 @@ class Subscription implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

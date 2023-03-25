@@ -40,12 +40,12 @@ class Runners implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['runners'] ?? null;
 
@@ -346,8 +346,8 @@ class Runners implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListSelfHostedRunnersForOrg\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $runners = $object->runners;

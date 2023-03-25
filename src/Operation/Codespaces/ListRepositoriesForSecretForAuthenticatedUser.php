@@ -15,18 +15,18 @@ final class ListRepositoriesForSecretForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/codespaces/secrets/{secret_name}/repositories';
     /**The name of the secret.**/
-    private string $secret_name;
+    private string $secretName;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories $hydrator, string $secret_name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories $hydrator, string $secretName)
     {
-        $this->secret_name = $secret_name;
+        $this->secretName = $secretName;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}'), array($this->secret_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}'), array($this->secretName), self::PATH));
     }
     /**
      * @return Schema\Operation\Actions\ListSelectedReposForOrgSecret\Response\Applicationjson\H200

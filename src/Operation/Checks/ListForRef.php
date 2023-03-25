@@ -21,35 +21,35 @@ final class ListForRef
     /**ref parameter**/
     private string $ref;
     /**Returns check runs with the specified `name`.**/
-    private string $check_name;
+    private string $checkName;
     /**Returns check runs with the specified `status`.**/
     private string $status;
-    private int $app_id;
+    private int $appId;
     /**Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.**/
     private string $filter;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbRefRcb\CheckRuns $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbRefRcb\CheckRuns $hydrator, string $owner, string $repo, string $ref, string $check_name, string $status, int $app_id, string $filter = 'latest', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbRefRcb\CheckRuns $hydrator, string $owner, string $repo, string $ref, string $checkName, string $status, int $appId, string $filter = 'latest', int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
         $this->ref = $ref;
-        $this->check_name = $check_name;
+        $this->checkName = $checkName;
         $this->status = $status;
-        $this->app_id = $app_id;
+        $this->appId = $appId;
         $this->filter = $filter;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{app_id}', '{filter}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->ref, $this->check_name, $this->status, $this->app_id, $this->filter, $this->per_page, $this->page), self::PATH . '?check_name={check_name}&status={status}&app_id={app_id}&filter={filter}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{app_id}', '{filter}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->ref, $this->checkName, $this->status, $this->appId, $this->filter, $this->perPage, $this->page), self::PATH . '?checkName={check_name}&status={status}&appId={app_id}&filter={filter}&perPage={per_page}&page={page}'));
     }
     /**
      * @return Schema\Operation\Checks\ListForSuite\Response\Applicationjson\H200

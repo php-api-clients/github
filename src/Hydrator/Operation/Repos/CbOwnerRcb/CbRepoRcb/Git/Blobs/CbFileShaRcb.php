@@ -96,23 +96,23 @@ class CbFileShaRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['highlighted_content'] ?? null;
 
             if ($value === null) {
-                $properties['highlighted_content'] = null;
-                goto after_highlighted_content;
+                $properties['highlightedContent'] = null;
+                goto after_highlightedContent;
             }
 
-            $properties['highlighted_content'] = $value;
+            $properties['highlightedContent'] = $value;
 
-            after_highlighted_content:
+            after_highlightedContent:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Blob', $exception, stack: $this->hydrationStack);
@@ -149,13 +149,13 @@ class CbFileShaRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -215,12 +215,12 @@ class CbFileShaRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -482,16 +482,16 @@ class CbFileShaRcb implements ObjectMapper
         after_size:        $result['size'] = $size;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $highlighted_content = $object->highlighted_content;
+        $highlightedContent = $object->highlightedContent;
 
-        if ($highlighted_content === null) {
-            goto after_highlighted_content;
+        if ($highlightedContent === null) {
+            goto after_highlightedContent;
         }
-        after_highlighted_content:        $result['highlighted_content'] = $highlighted_content;
+        after_highlightedContent:        $result['highlighted_content'] = $highlightedContent;
 
 
         return $result;
@@ -511,12 +511,12 @@ class CbFileShaRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -548,8 +548,8 @@ class CbFileShaRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

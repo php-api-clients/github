@@ -90,22 +90,22 @@ class Forks implements ObjectMapper
             $value = $payload['fork_of'] ?? null;
 
             if ($value === null) {
-                $properties['fork_of'] = null;
-                goto after_fork_of;
+                $properties['forkOf'] = null;
+                goto after_forkOf;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'fork_of';
+                    $this->hydrationStack[] = 'forkOf';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['fork_of'] = $value;
+            $properties['forkOf'] = $value;
 
-            after_fork_of:
+            after_forkOf:
 
             $value = $payload['url'] ?? null;
 
@@ -121,24 +121,24 @@ class Forks implements ObjectMapper
             $value = $payload['forks_url'] ?? null;
 
             if ($value === null) {
-                $properties['forks_url'] = null;
-                goto after_forks_url;
+                $properties['forksUrl'] = null;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
-                $properties['commits_url'] = null;
-                goto after_commits_url;
+                $properties['commitsUrl'] = null;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -154,46 +154,46 @@ class Forks implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['git_pull_url'] ?? null;
 
             if ($value === null) {
-                $properties['git_pull_url'] = null;
-                goto after_git_pull_url;
+                $properties['gitPullUrl'] = null;
+                goto after_gitPullUrl;
             }
 
-            $properties['git_pull_url'] = $value;
+            $properties['gitPullUrl'] = $value;
 
-            after_git_pull_url:
+            after_gitPullUrl:
 
             $value = $payload['git_push_url'] ?? null;
 
             if ($value === null) {
-                $properties['git_push_url'] = null;
-                goto after_git_push_url;
+                $properties['gitPushUrl'] = null;
+                goto after_gitPushUrl;
             }
 
-            $properties['git_push_url'] = $value;
+            $properties['gitPushUrl'] = $value;
 
-            after_git_push_url:
+            after_gitPushUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['files'] ?? null;
 
@@ -220,24 +220,24 @@ class Forks implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['description'] ?? null;
 
@@ -275,13 +275,13 @@ class Forks implements ObjectMapper
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
-                $properties['comments_url'] = null;
-                goto after_comments_url;
+                $properties['commentsUrl'] = null;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['owner'] ?? null;
 
@@ -380,24 +380,24 @@ class Forks implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistSimple\Forks', $exception, stack: $this->hydrationStack);
@@ -446,34 +446,34 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -490,111 +490,111 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -611,12 +611,12 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['name'] ?? null;
 
@@ -698,35 +698,35 @@ class Forks implements ObjectMapper
             $value = $payload['twitter_username'] ?? null;
 
             if ($value === null) {
-                $properties['twitter_username'] = null;
-                goto after_twitter_username;
+                $properties['twitterUsername'] = null;
+                goto after_twitterUsername;
             }
 
-            $properties['twitter_username'] = $value;
+            $properties['twitterUsername'] = $value;
 
-            after_twitter_username:
+            after_twitterUsername:
 
             $value = $payload['public_repos'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_repos';
-                goto after_public_repos;
+                goto after_publicRepos;
             }
 
-            $properties['public_repos'] = $value;
+            $properties['publicRepos'] = $value;
 
-            after_public_repos:
+            after_publicRepos:
 
             $value = $payload['public_gists'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_gists';
-                goto after_public_gists;
+                goto after_publicGists;
             }
 
-            $properties['public_gists'] = $value;
+            $properties['publicGists'] = $value;
 
-            after_public_gists:
+            after_publicGists:
 
             $value = $payload['followers'] ?? null;
 
@@ -754,23 +754,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['plan'] ?? null;
 
@@ -795,57 +795,57 @@ class Forks implements ObjectMapper
             $value = $payload['suspended_at'] ?? null;
 
             if ($value === null) {
-                $properties['suspended_at'] = null;
-                goto after_suspended_at;
+                $properties['suspendedAt'] = null;
+                goto after_suspendedAt;
             }
 
-            $properties['suspended_at'] = $value;
+            $properties['suspendedAt'] = $value;
 
-            after_suspended_at:
+            after_suspendedAt:
 
             $value = $payload['private_gists'] ?? null;
 
             if ($value === null) {
-                $properties['private_gists'] = null;
-                goto after_private_gists;
+                $properties['privateGists'] = null;
+                goto after_privateGists;
             }
 
-            $properties['private_gists'] = $value;
+            $properties['privateGists'] = $value;
 
-            after_private_gists:
+            after_privateGists:
 
             $value = $payload['total_private_repos'] ?? null;
 
             if ($value === null) {
-                $properties['total_private_repos'] = null;
-                goto after_total_private_repos;
+                $properties['totalPrivateRepos'] = null;
+                goto after_totalPrivateRepos;
             }
 
-            $properties['total_private_repos'] = $value;
+            $properties['totalPrivateRepos'] = $value;
 
-            after_total_private_repos:
+            after_totalPrivateRepos:
 
             $value = $payload['owned_private_repos'] ?? null;
 
             if ($value === null) {
-                $properties['owned_private_repos'] = null;
-                goto after_owned_private_repos;
+                $properties['ownedPrivateRepos'] = null;
+                goto after_ownedPrivateRepos;
             }
 
-            $properties['owned_private_repos'] = $value;
+            $properties['ownedPrivateRepos'] = $value;
 
-            after_owned_private_repos:
+            after_ownedPrivateRepos:
 
             $value = $payload['disk_usage'] ?? null;
 
             if ($value === null) {
-                $properties['disk_usage'] = null;
-                goto after_disk_usage;
+                $properties['diskUsage'] = null;
+                goto after_diskUsage;
             }
 
-            $properties['disk_usage'] = $value;
+            $properties['diskUsage'] = $value;
 
-            after_disk_usage:
+            after_diskUsage:
 
             $value = $payload['collaborators'] ?? null;
 
@@ -916,12 +916,12 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'private_repos';
-                goto after_private_repos;
+                goto after_privateRepos;
             }
 
-            $properties['private_repos'] = $value;
+            $properties['privateRepos'] = $value;
 
-            after_private_repos:
+            after_privateRepos:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PublicUser\Plan', $exception, stack: $this->hydrationStack);
@@ -969,33 +969,33 @@ class Forks implements ObjectMapper
             $value = $payload['committed_at'] ?? null;
 
             if ($value === null) {
-                $properties['committed_at'] = null;
-                goto after_committed_at;
+                $properties['committedAt'] = null;
+                goto after_committedAt;
             }
 
-            $properties['committed_at'] = $value;
+            $properties['committedAt'] = $value;
 
-            after_committed_at:
+            after_committedAt:
 
             $value = $payload['change_status'] ?? null;
 
             if ($value === null) {
-                $properties['change_status'] = null;
-                goto after_change_status;
+                $properties['changeStatus'] = null;
+                goto after_changeStatus;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'change_status';
+                    $this->hydrationStack[] = 'changeStatus';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['change_status'] = $value;
+            $properties['changeStatus'] = $value;
 
-            after_change_status:
+            after_changeStatus:
 
             $value = $payload['url'] ?? null;
 
@@ -1098,23 +1098,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'forks_url';
-                goto after_forks_url;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commits_url';
-                goto after_commits_url;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -1131,45 +1131,45 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['git_pull_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_pull_url';
-                goto after_git_pull_url;
+                goto after_gitPullUrl;
             }
 
-            $properties['git_pull_url'] = $value;
+            $properties['gitPullUrl'] = $value;
 
-            after_git_pull_url:
+            after_gitPullUrl:
 
             $value = $payload['git_push_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_push_url';
-                goto after_git_push_url;
+                goto after_gitPushUrl;
             }
 
-            $properties['git_push_url'] = $value;
+            $properties['gitPushUrl'] = $value;
 
-            after_git_push_url:
+            after_gitPushUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['files'] ?? null;
 
@@ -1197,23 +1197,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['description'] ?? null;
 
@@ -1252,12 +1252,12 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['owner'] ?? null;
 
@@ -1372,34 +1372,34 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -1416,111 +1416,111 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -1537,23 +1537,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -1590,13 +1590,13 @@ class Forks implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -1656,23 +1656,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'forks_url';
-                goto after_forks_url;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commits_url';
-                goto after_commits_url;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -1689,45 +1689,45 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['git_pull_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_pull_url';
-                goto after_git_pull_url;
+                goto after_gitPullUrl;
             }
 
-            $properties['git_pull_url'] = $value;
+            $properties['gitPullUrl'] = $value;
 
-            after_git_pull_url:
+            after_gitPullUrl:
 
             $value = $payload['git_push_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_push_url';
-                goto after_git_push_url;
+                goto after_gitPushUrl;
             }
 
-            $properties['git_push_url'] = $value;
+            $properties['gitPushUrl'] = $value;
 
-            after_git_push_url:
+            after_gitPushUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['files'] ?? null;
 
@@ -1755,23 +1755,23 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['description'] ?? null;
 
@@ -1810,12 +1810,12 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['owner'] ?? null;
 
@@ -1906,12 +1906,12 @@ class Forks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -2191,13 +2191,13 @@ class Forks implements ObjectMapper
         after_history:        $result['history'] = $history;
 
         
-        $fork_of = $object->fork_of;
+        $forkOf = $object->forkOf;
 
-        if ($fork_of === null) {
-            goto after_fork_of;
+        if ($forkOf === null) {
+            goto after_forkOf;
         }
-        $fork_of = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf($fork_of);
-        after_fork_of:        $result['fork_of'] = $fork_of;
+        $forkOf = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf($forkOf);
+        after_forkOf:        $result['fork_of'] = $forkOf;
 
         
         $url = $object->url;
@@ -2208,20 +2208,20 @@ class Forks implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $forks_url = $object->forks_url;
+        $forksUrl = $object->forksUrl;
 
-        if ($forks_url === null) {
-            goto after_forks_url;
+        if ($forksUrl === null) {
+            goto after_forksUrl;
         }
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $commits_url = $object->commits_url;
+        $commitsUrl = $object->commitsUrl;
 
-        if ($commits_url === null) {
-            goto after_commits_url;
+        if ($commitsUrl === null) {
+            goto after_commitsUrl;
         }
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
         $id = $object->id;
@@ -2232,36 +2232,36 @@ class Forks implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $git_pull_url = $object->git_pull_url;
+        $gitPullUrl = $object->gitPullUrl;
 
-        if ($git_pull_url === null) {
-            goto after_git_pull_url;
+        if ($gitPullUrl === null) {
+            goto after_gitPullUrl;
         }
-        after_git_pull_url:        $result['git_pull_url'] = $git_pull_url;
+        after_gitPullUrl:        $result['git_pull_url'] = $gitPullUrl;
 
         
-        $git_push_url = $object->git_push_url;
+        $gitPushUrl = $object->gitPushUrl;
 
-        if ($git_push_url === null) {
-            goto after_git_push_url;
+        if ($gitPushUrl === null) {
+            goto after_gitPushUrl;
         }
-        after_git_push_url:        $result['git_push_url'] = $git_push_url;
+        after_gitPushUrl:        $result['git_push_url'] = $gitPushUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $files = $object->files;
@@ -2280,20 +2280,20 @@ class Forks implements ObjectMapper
         after_public:        $result['public'] = $public;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $description = $object->description;
@@ -2320,12 +2320,12 @@ class Forks implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $comments_url = $object->comments_url;
+        $commentsUrl = $object->commentsUrl;
 
-        if ($comments_url === null) {
-            goto after_comments_url;
+        if ($commentsUrl === null) {
+            goto after_commentsUrl;
         }
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
         $owner = $object->owner;
@@ -2379,20 +2379,20 @@ class Forks implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
 
         return $result;
@@ -2412,72 +2412,72 @@ class Forks implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
         $name = $object->name;
@@ -2536,20 +2536,20 @@ class Forks implements ObjectMapper
         after_bio:        $result['bio'] = $bio;
 
         
-        $twitter_username = $object->twitter_username;
+        $twitterUsername = $object->twitterUsername;
 
-        if ($twitter_username === null) {
-            goto after_twitter_username;
+        if ($twitterUsername === null) {
+            goto after_twitterUsername;
         }
-        after_twitter_username:        $result['twitter_username'] = $twitter_username;
+        after_twitterUsername:        $result['twitter_username'] = $twitterUsername;
 
         
-        $public_repos = $object->public_repos;
-        after_public_repos:        $result['public_repos'] = $public_repos;
+        $publicRepos = $object->publicRepos;
+        after_publicRepos:        $result['public_repos'] = $publicRepos;
 
         
-        $public_gists = $object->public_gists;
-        after_public_gists:        $result['public_gists'] = $public_gists;
+        $publicGists = $object->publicGists;
+        after_publicGists:        $result['public_gists'] = $publicGists;
 
         
         $followers = $object->followers;
@@ -2560,12 +2560,12 @@ class Forks implements ObjectMapper
         after_following:        $result['following'] = $following;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $plan = $object->plan;
@@ -2577,44 +2577,44 @@ class Forks implements ObjectMapper
         after_plan:        $result['plan'] = $plan;
 
         
-        $suspended_at = $object->suspended_at;
+        $suspendedAt = $object->suspendedAt;
 
-        if ($suspended_at === null) {
-            goto after_suspended_at;
+        if ($suspendedAt === null) {
+            goto after_suspendedAt;
         }
-        after_suspended_at:        $result['suspended_at'] = $suspended_at;
+        after_suspendedAt:        $result['suspended_at'] = $suspendedAt;
 
         
-        $private_gists = $object->private_gists;
+        $privateGists = $object->privateGists;
 
-        if ($private_gists === null) {
-            goto after_private_gists;
+        if ($privateGists === null) {
+            goto after_privateGists;
         }
-        after_private_gists:        $result['private_gists'] = $private_gists;
+        after_privateGists:        $result['private_gists'] = $privateGists;
 
         
-        $total_private_repos = $object->total_private_repos;
+        $totalPrivateRepos = $object->totalPrivateRepos;
 
-        if ($total_private_repos === null) {
-            goto after_total_private_repos;
+        if ($totalPrivateRepos === null) {
+            goto after_totalPrivateRepos;
         }
-        after_total_private_repos:        $result['total_private_repos'] = $total_private_repos;
+        after_totalPrivateRepos:        $result['total_private_repos'] = $totalPrivateRepos;
 
         
-        $owned_private_repos = $object->owned_private_repos;
+        $ownedPrivateRepos = $object->ownedPrivateRepos;
 
-        if ($owned_private_repos === null) {
-            goto after_owned_private_repos;
+        if ($ownedPrivateRepos === null) {
+            goto after_ownedPrivateRepos;
         }
-        after_owned_private_repos:        $result['owned_private_repos'] = $owned_private_repos;
+        after_ownedPrivateRepos:        $result['owned_private_repos'] = $ownedPrivateRepos;
 
         
-        $disk_usage = $object->disk_usage;
+        $diskUsage = $object->diskUsage;
 
-        if ($disk_usage === null) {
-            goto after_disk_usage;
+        if ($diskUsage === null) {
+            goto after_diskUsage;
         }
-        after_disk_usage:        $result['disk_usage'] = $disk_usage;
+        after_diskUsage:        $result['disk_usage'] = $diskUsage;
 
         
         $collaborators = $object->collaborators;
@@ -2646,8 +2646,8 @@ class Forks implements ObjectMapper
         after_space:        $result['space'] = $space;
 
         
-        $private_repos = $object->private_repos;
-        after_private_repos:        $result['private_repos'] = $private_repos;
+        $privateRepos = $object->privateRepos;
+        after_privateRepos:        $result['private_repos'] = $privateRepos;
 
 
         return $result;
@@ -2675,21 +2675,21 @@ class Forks implements ObjectMapper
         after_version:        $result['version'] = $version;
 
         
-        $committed_at = $object->committed_at;
+        $committedAt = $object->committedAt;
 
-        if ($committed_at === null) {
-            goto after_committed_at;
+        if ($committedAt === null) {
+            goto after_committedAt;
         }
-        after_committed_at:        $result['committed_at'] = $committed_at;
+        after_committedAt:        $result['committed_at'] = $committedAt;
 
         
-        $change_status = $object->change_status;
+        $changeStatus = $object->changeStatus;
 
-        if ($change_status === null) {
-            goto after_change_status;
+        if ($changeStatus === null) {
+            goto after_changeStatus;
         }
-        $change_status = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($change_status);
-        after_change_status:        $result['change_status'] = $change_status;
+        $changeStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($changeStatus);
+        after_changeStatus:        $result['change_status'] = $changeStatus;
 
         
         $url = $object->url;
@@ -2746,32 +2746,32 @@ class Forks implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $forks_url = $object->forks_url;
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        $forksUrl = $object->forksUrl;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $commits_url = $object->commits_url;
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        $commitsUrl = $object->commitsUrl;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $git_pull_url = $object->git_pull_url;
-        after_git_pull_url:        $result['git_pull_url'] = $git_pull_url;
+        $gitPullUrl = $object->gitPullUrl;
+        after_gitPullUrl:        $result['git_pull_url'] = $gitPullUrl;
 
         
-        $git_push_url = $object->git_push_url;
-        after_git_push_url:        $result['git_push_url'] = $git_push_url;
+        $gitPushUrl = $object->gitPushUrl;
+        after_gitPushUrl:        $result['git_push_url'] = $gitPushUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $files = $object->files;
@@ -2786,12 +2786,12 @@ class Forks implements ObjectMapper
         after_public:        $result['public'] = $public;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $description = $object->description;
@@ -2814,8 +2814,8 @@ class Forks implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
         $owner = $object->owner;
@@ -2899,80 +2899,80 @@ class Forks implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -2992,12 +2992,12 @@ class Forks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -3029,32 +3029,32 @@ class Forks implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $forks_url = $object->forks_url;
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        $forksUrl = $object->forksUrl;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $commits_url = $object->commits_url;
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        $commitsUrl = $object->commitsUrl;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $git_pull_url = $object->git_pull_url;
-        after_git_pull_url:        $result['git_pull_url'] = $git_pull_url;
+        $gitPullUrl = $object->gitPullUrl;
+        after_gitPullUrl:        $result['git_pull_url'] = $gitPullUrl;
 
         
-        $git_push_url = $object->git_push_url;
-        after_git_push_url:        $result['git_push_url'] = $git_push_url;
+        $gitPushUrl = $object->gitPushUrl;
+        after_gitPushUrl:        $result['git_push_url'] = $gitPushUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $files = $object->files;
@@ -3069,12 +3069,12 @@ class Forks implements ObjectMapper
         after_public:        $result['public'] = $public;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $description = $object->description;
@@ -3097,8 +3097,8 @@ class Forks implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
         $owner = $object->owner;
@@ -3163,8 +3163,8 @@ class Forks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

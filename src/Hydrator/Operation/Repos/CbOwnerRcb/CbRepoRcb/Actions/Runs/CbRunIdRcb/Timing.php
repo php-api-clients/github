@@ -60,13 +60,13 @@ class Timing implements ObjectMapper
             $value = $payload['run_duration_ms'] ?? null;
 
             if ($value === null) {
-                $properties['run_duration_ms'] = null;
-                goto after_run_duration_ms;
+                $properties['runDurationMs'] = null;
+                goto after_runDurationMs;
             }
 
-            $properties['run_duration_ms'] = $value;
+            $properties['runDurationMs'] = $value;
 
-            after_run_duration_ms:
+            after_runDurationMs:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage', $exception, stack: $this->hydrationStack);
@@ -89,65 +89,65 @@ class Timing implements ObjectMapper
         $properties = []; 
         $missingFields = [];
         try {
-            $value = $payload['u_b_u_n_t_u'] ?? null;
+            $value = $payload['UBUNTU'] ?? null;
 
             if ($value === null) {
-                $properties['UBUNTU'] = null;
-                goto after_UBUNTU;
+                $properties['ubuntu'] = null;
+                goto after_ubuntu;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'UBUNTU';
+                    $this->hydrationStack[] = 'ubuntu';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['UBUNTU'] = $value;
+            $properties['ubuntu'] = $value;
 
-            after_UBUNTU:
+            after_ubuntu:
 
-            $value = $payload['m_a_c_o_s'] ?? null;
+            $value = $payload['MACOS'] ?? null;
 
             if ($value === null) {
-                $properties['MACOS'] = null;
-                goto after_MACOS;
+                $properties['macos'] = null;
+                goto after_macos;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'MACOS';
+                    $this->hydrationStack[] = 'macos';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['MACOS'] = $value;
+            $properties['macos'] = $value;
 
-            after_MACOS:
+            after_macos:
 
-            $value = $payload['w_i_n_d_o_w_s'] ?? null;
+            $value = $payload['WINDOWS'] ?? null;
 
             if ($value === null) {
-                $properties['WINDOWS'] = null;
-                goto after_WINDOWS;
+                $properties['windows'] = null;
+                goto after_windows;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'WINDOWS';
+                    $this->hydrationStack[] = 'windows';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['WINDOWS'] = $value;
+            $properties['windows'] = $value;
 
-            after_WINDOWS:
+            after_windows:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable', $exception, stack: $this->hydrationStack);
@@ -174,12 +174,12 @@ class Timing implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_ms';
-                goto after_total_ms;
+                goto after_totalMs;
             }
 
-            $properties['total_ms'] = $value;
+            $properties['totalMs'] = $value;
 
-            after_total_ms:
+            after_totalMs:
 
             $value = $payload['jobs'] ?? null;
 
@@ -195,23 +195,23 @@ class Timing implements ObjectMapper
             $value = $payload['job_runs'] ?? null;
 
             if ($value === null) {
-                $properties['job_runs'] = null;
-                goto after_job_runs;
+                $properties['jobRuns'] = null;
+                goto after_jobRuns;
             }
 
-            static $job_runsCaster1;
+            static $jobRunsCaster1;
 
-            if ($job_runsCaster1 === null) {
-                $job_runsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($jobRunsCaster1 === null) {
+                $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
-            $value = $job_runsCaster1->cast($value, $this);
+            $value = $jobRunsCaster1->cast($value, $this);
 
-            $properties['job_runs'] = $value;
+            $properties['jobRuns'] = $value;
 
-            after_job_runs:
+            after_jobRuns:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
@@ -238,23 +238,23 @@ class Timing implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'job_id';
-                goto after_job_id;
+                goto after_jobId;
             }
 
-            $properties['job_id'] = $value;
+            $properties['jobId'] = $value;
 
-            after_job_id:
+            after_jobId:
 
             $value = $payload['duration_ms'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'duration_ms';
-                goto after_duration_ms;
+                goto after_durationMs;
             }
 
-            $properties['duration_ms'] = $value;
+            $properties['durationMs'] = $value;
 
-            after_duration_ms:
+            after_durationMs:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns', $exception, stack: $this->hydrationStack);
@@ -389,12 +389,12 @@ class Timing implements ObjectMapper
         after_billable:        $result['billable'] = $billable;
 
         
-        $run_duration_ms = $object->run_duration_ms;
+        $runDurationMs = $object->runDurationMs;
 
-        if ($run_duration_ms === null) {
-            goto after_run_duration_ms;
+        if ($runDurationMs === null) {
+            goto after_runDurationMs;
         }
-        after_run_duration_ms:        $result['run_duration_ms'] = $run_duration_ms;
+        after_runDurationMs:        $result['run_duration_ms'] = $runDurationMs;
 
 
         return $result;
@@ -406,31 +406,31 @@ class Timing implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable);
         $result = [];
 
-        $UBUNTU = $object->UBUNTU;
+        $ubuntu = $object->ubuntu;
 
-        if ($UBUNTU === null) {
-            goto after_UBUNTU;
+        if ($ubuntu === null) {
+            goto after_ubuntu;
         }
-        $UBUNTU = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($UBUNTU);
-        after_UBUNTU:        $result['u_b_u_n_t_u'] = $UBUNTU;
+        $ubuntu = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($ubuntu);
+        after_ubuntu:        $result['UBUNTU'] = $ubuntu;
 
         
-        $MACOS = $object->MACOS;
+        $macos = $object->macos;
 
-        if ($MACOS === null) {
-            goto after_MACOS;
+        if ($macos === null) {
+            goto after_macos;
         }
-        $MACOS = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($MACOS);
-        after_MACOS:        $result['m_a_c_o_s'] = $MACOS;
+        $macos = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($macos);
+        after_macos:        $result['MACOS'] = $macos;
 
         
-        $WINDOWS = $object->WINDOWS;
+        $windows = $object->windows;
 
-        if ($WINDOWS === null) {
-            goto after_WINDOWS;
+        if ($windows === null) {
+            goto after_windows;
         }
-        $WINDOWS = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($WINDOWS);
-        after_WINDOWS:        $result['w_i_n_d_o_w_s'] = $WINDOWS;
+        $windows = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($windows);
+        after_windows:        $result['WINDOWS'] = $windows;
 
 
         return $result;
@@ -442,29 +442,29 @@ class Timing implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu);
         $result = [];
 
-        $total_ms = $object->total_ms;
-        after_total_ms:        $result['total_ms'] = $total_ms;
+        $totalMs = $object->totalMs;
+        after_totalMs:        $result['total_ms'] = $totalMs;
 
         
         $jobs = $object->jobs;
         after_jobs:        $result['jobs'] = $jobs;
 
         
-        $job_runs = $object->job_runs;
+        $jobRuns = $object->jobRuns;
 
-        if ($job_runs === null) {
-            goto after_job_runs;
+        if ($jobRuns === null) {
+            goto after_jobRuns;
         }
-        static $job_runsSerializer0;
+        static $jobRunsSerializer0;
 
-        if ($job_runsSerializer0 === null) {
-            $job_runsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($jobRunsSerializer0 === null) {
+            $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         
-        $job_runs = $job_runsSerializer0->serialize($job_runs, $this);
-        after_job_runs:        $result['job_runs'] = $job_runs;
+        $jobRuns = $jobRunsSerializer0->serialize($jobRuns, $this);
+        after_jobRuns:        $result['job_runs'] = $jobRuns;
 
 
         return $result;
@@ -476,12 +476,12 @@ class Timing implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns);
         $result = [];
 
-        $job_id = $object->job_id;
-        after_job_id:        $result['job_id'] = $job_id;
+        $jobId = $object->jobId;
+        after_jobId:        $result['job_id'] = $jobId;
 
         
-        $duration_ms = $object->duration_ms;
-        after_duration_ms:        $result['duration_ms'] = $duration_ms;
+        $durationMs = $object->durationMs;
+        after_durationMs:        $result['duration_ms'] = $durationMs;
 
 
         return $result;

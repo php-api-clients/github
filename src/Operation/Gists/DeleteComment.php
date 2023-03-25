@@ -15,21 +15,21 @@ final class DeleteComment
     private const METHOD = 'DELETE';
     private const PATH = '/gists/{gist_id}/comments/{comment_id}';
     /**The unique identifier of the gist.**/
-    private string $gist_id;
+    private string $gistId;
     /**The unique identifier of the comment.**/
-    private int $comment_id;
+    private int $commentId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb $hydrator, string $gist_id, int $comment_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb $hydrator, string $gistId, int $commentId)
     {
-        $this->gist_id = $gist_id;
-        $this->comment_id = $comment_id;
+        $this->gistId = $gistId;
+        $this->commentId = $commentId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}', '{comment_id}'), array($this->gist_id, $this->comment_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}', '{comment_id}'), array($this->gistId, $this->commentId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

@@ -38,34 +38,34 @@ class Usage implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'full_name';
-                goto after_full_name;
+                goto after_fullName;
             }
 
-            $properties['full_name'] = $value;
+            $properties['fullName'] = $value;
 
-            after_full_name:
+            after_fullName:
 
             $value = $payload['active_caches_size_in_bytes'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'active_caches_size_in_bytes';
-                goto after_active_caches_size_in_bytes;
+                goto after_activeCachesSizeInBytes;
             }
 
-            $properties['active_caches_size_in_bytes'] = $value;
+            $properties['activeCachesSizeInBytes'] = $value;
 
-            after_active_caches_size_in_bytes:
+            after_activeCachesSizeInBytes:
 
             $value = $payload['active_caches_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'active_caches_count';
-                goto after_active_caches_count;
+                goto after_activeCachesCount;
             }
 
-            $properties['active_caches_count'] = $value;
+            $properties['activeCachesCount'] = $value;
 
-            after_active_caches_count:
+            after_activeCachesCount:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
@@ -192,16 +192,16 @@ class Usage implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository);
         $result = [];
 
-        $full_name = $object->full_name;
-        after_full_name:        $result['full_name'] = $full_name;
+        $fullName = $object->fullName;
+        after_fullName:        $result['full_name'] = $fullName;
 
         
-        $active_caches_size_in_bytes = $object->active_caches_size_in_bytes;
-        after_active_caches_size_in_bytes:        $result['active_caches_size_in_bytes'] = $active_caches_size_in_bytes;
+        $activeCachesSizeInBytes = $object->activeCachesSizeInBytes;
+        after_activeCachesSizeInBytes:        $result['active_caches_size_in_bytes'] = $activeCachesSizeInBytes;
 
         
-        $active_caches_count = $object->active_caches_count;
-        after_active_caches_count:        $result['active_caches_count'] = $active_caches_count;
+        $activeCachesCount = $object->activeCachesCount;
+        after_activeCachesCount:        $result['active_caches_count'] = $activeCachesCount;
 
 
         return $result;

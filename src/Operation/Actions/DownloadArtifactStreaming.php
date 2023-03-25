@@ -19,24 +19,24 @@ final class DownloadArtifactStreaming
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the artifact.**/
-    private int $artifact_id;
-    private string $archive_format;
+    private int $artifactId;
+    private string $archiveFormat;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Artifacts\CbArtifactIdRcb\CbArchiveFormatRcb $hydrator;
     private readonly \React\Http\Browser $browser;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Artifacts\CbArtifactIdRcb\CbArchiveFormatRcb $hydrator, \React\Http\Browser $browser, string $owner, string $repo, int $artifact_id, string $archive_format)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Artifacts\CbArtifactIdRcb\CbArchiveFormatRcb $hydrator, \React\Http\Browser $browser, string $owner, string $repo, int $artifactId, string $archiveFormat)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->artifact_id = $artifact_id;
-        $this->archive_format = $archive_format;
+        $this->artifactId = $artifactId;
+        $this->archiveFormat = $archiveFormat;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
         $this->browser = $browser;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{artifact_id}', '{archive_format}'), array($this->owner, $this->repo, $this->artifact_id, $this->archive_format), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{artifact_id}', '{archive_format}'), array($this->owner, $this->repo, $this->artifactId, $this->archiveFormat), self::PATH));
     }
     /**
      * @return \Rx\Observable<string>

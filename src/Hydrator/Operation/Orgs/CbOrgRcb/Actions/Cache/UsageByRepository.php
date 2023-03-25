@@ -39,33 +39,33 @@ class UsageByRepository implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['repository_cache_usages'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_cache_usages';
-                goto after_repository_cache_usages;
+                goto after_repositoryCacheUsages;
             }
 
-            static $repository_cache_usagesCaster1;
+            static $repositoryCacheUsagesCaster1;
 
-            if ($repository_cache_usagesCaster1 === null) {
-                $repository_cache_usagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($repositoryCacheUsagesCaster1 === null) {
+                $repositoryCacheUsagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageByRepository',
 ));
             }
 
-            $value = $repository_cache_usagesCaster1->cast($value, $this);
+            $value = $repositoryCacheUsagesCaster1->cast($value, $this);
 
-            $properties['repository_cache_usages'] = $value;
+            $properties['repositoryCacheUsages'] = $value;
 
-            after_repository_cache_usages:
+            after_repositoryCacheUsages:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
@@ -92,34 +92,34 @@ class UsageByRepository implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'full_name';
-                goto after_full_name;
+                goto after_fullName;
             }
 
-            $properties['full_name'] = $value;
+            $properties['fullName'] = $value;
 
-            after_full_name:
+            after_fullName:
 
             $value = $payload['active_caches_size_in_bytes'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'active_caches_size_in_bytes';
-                goto after_active_caches_size_in_bytes;
+                goto after_activeCachesSizeInBytes;
             }
 
-            $properties['active_caches_size_in_bytes'] = $value;
+            $properties['activeCachesSizeInBytes'] = $value;
 
-            after_active_caches_size_in_bytes:
+            after_activeCachesSizeInBytes:
 
             $value = $payload['active_caches_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'active_caches_count';
-                goto after_active_caches_count;
+                goto after_activeCachesCount;
             }
 
-            $properties['active_caches_count'] = $value;
+            $properties['activeCachesCount'] = $value;
 
-            after_active_caches_count:
+            after_activeCachesCount:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
@@ -247,21 +247,21 @@ class UsageByRepository implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $repository_cache_usages = $object->repository_cache_usages;
-        static $repository_cache_usagesSerializer0;
+        $repositoryCacheUsages = $object->repositoryCacheUsages;
+        static $repositoryCacheUsagesSerializer0;
 
-        if ($repository_cache_usagesSerializer0 === null) {
-            $repository_cache_usagesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($repositoryCacheUsagesSerializer0 === null) {
+            $repositoryCacheUsagesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageByRepository',
 ));
         }
         
-        $repository_cache_usages = $repository_cache_usagesSerializer0->serialize($repository_cache_usages, $this);
-        after_repository_cache_usages:        $result['repository_cache_usages'] = $repository_cache_usages;
+        $repositoryCacheUsages = $repositoryCacheUsagesSerializer0->serialize($repositoryCacheUsages, $this);
+        after_repositoryCacheUsages:        $result['repository_cache_usages'] = $repositoryCacheUsages;
 
 
         return $result;
@@ -273,16 +273,16 @@ class UsageByRepository implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository);
         $result = [];
 
-        $full_name = $object->full_name;
-        after_full_name:        $result['full_name'] = $full_name;
+        $fullName = $object->fullName;
+        after_fullName:        $result['full_name'] = $fullName;
 
         
-        $active_caches_size_in_bytes = $object->active_caches_size_in_bytes;
-        after_active_caches_size_in_bytes:        $result['active_caches_size_in_bytes'] = $active_caches_size_in_bytes;
+        $activeCachesSizeInBytes = $object->activeCachesSizeInBytes;
+        after_activeCachesSizeInBytes:        $result['active_caches_size_in_bytes'] = $activeCachesSizeInBytes;
 
         
-        $active_caches_count = $object->active_caches_count;
-        after_active_caches_count:        $result['active_caches_count'] = $active_caches_count;
+        $activeCachesCount = $object->activeCachesCount;
+        after_activeCachesCount:        $result['active_caches_count'] = $activeCachesCount;
 
 
         return $result;

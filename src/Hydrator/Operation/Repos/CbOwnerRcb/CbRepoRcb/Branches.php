@@ -123,13 +123,13 @@ class Branches implements ObjectMapper
             $value = $payload['protection_url'] ?? null;
 
             if ($value === null) {
-                $properties['protection_url'] = null;
-                goto after_protection_url;
+                $properties['protectionUrl'] = null;
+                goto after_protectionUrl;
             }
 
-            $properties['protection_url'] = $value;
+            $properties['protectionUrl'] = $value;
 
-            after_protection_url:
+            after_protectionUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ShortBranch', $exception, stack: $this->hydrationStack);
@@ -220,62 +220,62 @@ class Branches implements ObjectMapper
             $value = $payload['required_status_checks'] ?? null;
 
             if ($value === null) {
-                $properties['required_status_checks'] = null;
-                goto after_required_status_checks;
+                $properties['requiredStatusChecks'] = null;
+                goto after_requiredStatusChecks;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'required_status_checks';
+                    $this->hydrationStack[] = 'requiredStatusChecks';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchRequiredStatusCheck($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['required_status_checks'] = $value;
+            $properties['requiredStatusChecks'] = $value;
 
-            after_required_status_checks:
+            after_requiredStatusChecks:
 
             $value = $payload['enforce_admins'] ?? null;
 
             if ($value === null) {
-                $properties['enforce_admins'] = null;
-                goto after_enforce_admins;
+                $properties['enforceAdmins'] = null;
+                goto after_enforceAdmins;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'enforce_admins';
+                    $this->hydrationStack[] = 'enforceAdmins';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchAdminEnforced($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['enforce_admins'] = $value;
+            $properties['enforceAdmins'] = $value;
 
-            after_enforce_admins:
+            after_enforceAdmins:
 
             $value = $payload['required_pull_request_reviews'] ?? null;
 
             if ($value === null) {
-                $properties['required_pull_request_reviews'] = null;
-                goto after_required_pull_request_reviews;
+                $properties['requiredPullRequestReviews'] = null;
+                goto after_requiredPullRequestReviews;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'required_pull_request_reviews';
+                    $this->hydrationStack[] = 'requiredPullRequestReviews';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['required_pull_request_reviews'] = $value;
+            $properties['requiredPullRequestReviews'] = $value;
 
-            after_required_pull_request_reviews:
+            after_requiredPullRequestReviews:
 
             $value = $payload['restrictions'] ?? null;
 
@@ -300,102 +300,102 @@ class Branches implements ObjectMapper
             $value = $payload['required_linear_history'] ?? null;
 
             if ($value === null) {
-                $properties['required_linear_history'] = null;
-                goto after_required_linear_history;
+                $properties['requiredLinearHistory'] = null;
+                goto after_requiredLinearHistory;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'required_linear_history';
+                    $this->hydrationStack[] = 'requiredLinearHistory';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['required_linear_history'] = $value;
+            $properties['requiredLinearHistory'] = $value;
 
-            after_required_linear_history:
+            after_requiredLinearHistory:
 
             $value = $payload['allow_force_pushes'] ?? null;
 
             if ($value === null) {
-                $properties['allow_force_pushes'] = null;
-                goto after_allow_force_pushes;
+                $properties['allowForcePushes'] = null;
+                goto after_allowForcePushes;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'allow_force_pushes';
+                    $this->hydrationStack[] = 'allowForcePushes';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['allow_force_pushes'] = $value;
+            $properties['allowForcePushes'] = $value;
 
-            after_allow_force_pushes:
+            after_allowForcePushes:
 
             $value = $payload['allow_deletions'] ?? null;
 
             if ($value === null) {
-                $properties['allow_deletions'] = null;
-                goto after_allow_deletions;
+                $properties['allowDeletions'] = null;
+                goto after_allowDeletions;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'allow_deletions';
+                    $this->hydrationStack[] = 'allowDeletions';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['allow_deletions'] = $value;
+            $properties['allowDeletions'] = $value;
 
-            after_allow_deletions:
+            after_allowDeletions:
 
             $value = $payload['block_creations'] ?? null;
 
             if ($value === null) {
-                $properties['block_creations'] = null;
-                goto after_block_creations;
+                $properties['blockCreations'] = null;
+                goto after_blockCreations;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'block_creations';
+                    $this->hydrationStack[] = 'blockCreations';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['block_creations'] = $value;
+            $properties['blockCreations'] = $value;
 
-            after_block_creations:
+            after_blockCreations:
 
             $value = $payload['required_conversation_resolution'] ?? null;
 
             if ($value === null) {
-                $properties['required_conversation_resolution'] = null;
-                goto after_required_conversation_resolution;
+                $properties['requiredConversationResolution'] = null;
+                goto after_requiredConversationResolution;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'required_conversation_resolution';
+                    $this->hydrationStack[] = 'requiredConversationResolution';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['required_conversation_resolution'] = $value;
+            $properties['requiredConversationResolution'] = $value;
 
-            after_required_conversation_resolution:
+            after_requiredConversationResolution:
 
             $value = $payload['name'] ?? null;
 
@@ -411,73 +411,73 @@ class Branches implements ObjectMapper
             $value = $payload['protection_url'] ?? null;
 
             if ($value === null) {
-                $properties['protection_url'] = null;
-                goto after_protection_url;
+                $properties['protectionUrl'] = null;
+                goto after_protectionUrl;
             }
 
-            $properties['protection_url'] = $value;
+            $properties['protectionUrl'] = $value;
 
-            after_protection_url:
+            after_protectionUrl:
 
             $value = $payload['required_signatures'] ?? null;
 
             if ($value === null) {
-                $properties['required_signatures'] = null;
-                goto after_required_signatures;
+                $properties['requiredSignatures'] = null;
+                goto after_requiredSignatures;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'required_signatures';
+                    $this->hydrationStack[] = 'requiredSignatures';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredSignatures($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['required_signatures'] = $value;
+            $properties['requiredSignatures'] = $value;
 
-            after_required_signatures:
+            after_requiredSignatures:
 
             $value = $payload['lock_branch'] ?? null;
 
             if ($value === null) {
-                $properties['lock_branch'] = null;
-                goto after_lock_branch;
+                $properties['lockBranch'] = null;
+                goto after_lockBranch;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'lock_branch';
+                    $this->hydrationStack[] = 'lockBranch';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️LockBranch($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['lock_branch'] = $value;
+            $properties['lockBranch'] = $value;
 
-            after_lock_branch:
+            after_lockBranch:
 
             $value = $payload['allow_fork_syncing'] ?? null;
 
             if ($value === null) {
-                $properties['allow_fork_syncing'] = null;
-                goto after_allow_fork_syncing;
+                $properties['allowForkSyncing'] = null;
+                goto after_allowForkSyncing;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'allow_fork_syncing';
+                    $this->hydrationStack[] = 'allowForkSyncing';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️AllowForkSyncing($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['allow_fork_syncing'] = $value;
+            $properties['allowForkSyncing'] = $value;
 
-            after_allow_fork_syncing:
+            after_allowForkSyncing:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchProtection', $exception, stack: $this->hydrationStack);
@@ -514,13 +514,13 @@ class Branches implements ObjectMapper
             $value = $payload['enforcement_level'] ?? null;
 
             if ($value === null) {
-                $properties['enforcement_level'] = null;
-                goto after_enforcement_level;
+                $properties['enforcementLevel'] = null;
+                goto after_enforcementLevel;
             }
 
-            $properties['enforcement_level'] = $value;
+            $properties['enforcementLevel'] = $value;
 
-            after_enforcement_level:
+            after_enforcementLevel:
 
             $value = $payload['contexts'] ?? null;
 
@@ -557,13 +557,13 @@ class Branches implements ObjectMapper
             $value = $payload['contexts_url'] ?? null;
 
             if ($value === null) {
-                $properties['contexts_url'] = null;
-                goto after_contexts_url;
+                $properties['contextsUrl'] = null;
+                goto after_contextsUrl;
             }
 
-            $properties['contexts_url'] = $value;
+            $properties['contextsUrl'] = $value;
 
-            after_contexts_url:
+            after_contextsUrl:
 
             $value = $payload['strict'] ?? null;
 
@@ -611,13 +611,13 @@ class Branches implements ObjectMapper
             $value = $payload['app_id'] ?? null;
 
             if ($value === null) {
-                $properties['app_id'] = null;
-                goto after_app_id;
+                $properties['appId'] = null;
+                goto after_appId;
             }
 
-            $properties['app_id'] = $value;
+            $properties['appId'] = $value;
 
-            after_app_id:
+            after_appId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProtectedBranchRequiredStatusCheck\Checks', $exception, stack: $this->hydrationStack);
@@ -697,86 +697,86 @@ class Branches implements ObjectMapper
             $value = $payload['dismissal_restrictions'] ?? null;
 
             if ($value === null) {
-                $properties['dismissal_restrictions'] = null;
-                goto after_dismissal_restrictions;
+                $properties['dismissalRestrictions'] = null;
+                goto after_dismissalRestrictions;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'dismissal_restrictions';
+                    $this->hydrationStack[] = 'dismissalRestrictions';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️DismissalRestrictions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['dismissal_restrictions'] = $value;
+            $properties['dismissalRestrictions'] = $value;
 
-            after_dismissal_restrictions:
+            after_dismissalRestrictions:
 
             $value = $payload['bypass_pull_request_allowances'] ?? null;
 
             if ($value === null) {
-                $properties['bypass_pull_request_allowances'] = null;
-                goto after_bypass_pull_request_allowances;
+                $properties['bypassPullRequestAllowances'] = null;
+                goto after_bypassPullRequestAllowances;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'bypass_pull_request_allowances';
+                    $this->hydrationStack[] = 'bypassPullRequestAllowances';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️BypassPullRequestAllowances($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['bypass_pull_request_allowances'] = $value;
+            $properties['bypassPullRequestAllowances'] = $value;
 
-            after_bypass_pull_request_allowances:
+            after_bypassPullRequestAllowances:
 
             $value = $payload['dismiss_stale_reviews'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'dismiss_stale_reviews';
-                goto after_dismiss_stale_reviews;
+                goto after_dismissStaleReviews;
             }
 
-            $properties['dismiss_stale_reviews'] = $value;
+            $properties['dismissStaleReviews'] = $value;
 
-            after_dismiss_stale_reviews:
+            after_dismissStaleReviews:
 
             $value = $payload['require_code_owner_reviews'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'require_code_owner_reviews';
-                goto after_require_code_owner_reviews;
+                goto after_requireCodeOwnerReviews;
             }
 
-            $properties['require_code_owner_reviews'] = $value;
+            $properties['requireCodeOwnerReviews'] = $value;
 
-            after_require_code_owner_reviews:
+            after_requireCodeOwnerReviews:
 
             $value = $payload['required_approving_review_count'] ?? null;
 
             if ($value === null) {
-                $properties['required_approving_review_count'] = null;
-                goto after_required_approving_review_count;
+                $properties['requiredApprovingReviewCount'] = null;
+                goto after_requiredApprovingReviewCount;
             }
 
-            $properties['required_approving_review_count'] = $value;
+            $properties['requiredApprovingReviewCount'] = $value;
 
-            after_required_approving_review_count:
+            after_requiredApprovingReviewCount:
 
             $value = $payload['require_last_push_approval'] ?? null;
 
             if ($value === null) {
-                $properties['require_last_push_approval'] = null;
-                goto after_require_last_push_approval;
+                $properties['requireLastPushApproval'] = null;
+                goto after_requireLastPushApproval;
             }
 
-            $properties['require_last_push_approval'] = $value;
+            $properties['requireLastPushApproval'] = $value;
 
-            after_require_last_push_approval:
+            after_requireLastPushApproval:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview', $exception, stack: $this->hydrationStack);
@@ -876,24 +876,24 @@ class Branches implements ObjectMapper
             $value = $payload['users_url'] ?? null;
 
             if ($value === null) {
-                $properties['users_url'] = null;
-                goto after_users_url;
+                $properties['usersUrl'] = null;
+                goto after_usersUrl;
             }
 
-            $properties['users_url'] = $value;
+            $properties['usersUrl'] = $value;
 
-            after_users_url:
+            after_usersUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
-                $properties['teams_url'] = null;
-                goto after_teams_url;
+                $properties['teamsUrl'] = null;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview\DismissalRestrictions', $exception, stack: $this->hydrationStack);
@@ -964,34 +964,34 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -1008,111 +1008,111 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -1129,23 +1129,23 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -1183,12 +1183,12 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -1280,34 +1280,34 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'members_url';
-                goto after_members_url;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repositories_url';
-                goto after_repositories_url;
+                goto after_repositoriesUrl;
             }
 
-            $properties['repositories_url'] = $value;
+            $properties['repositoriesUrl'] = $value;
 
-            after_repositories_url:
+            after_repositoriesUrl:
 
             $value = $payload['parent'] ?? null;
 
@@ -1443,12 +1443,12 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['owner'] ?? null;
 
@@ -1487,45 +1487,45 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'external_url';
-                goto after_external_url;
+                goto after_externalUrl;
             }
 
-            $properties['external_url'] = $value;
+            $properties['externalUrl'] = $value;
 
-            after_external_url:
+            after_externalUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['permissions'] ?? null;
 
@@ -1561,46 +1561,46 @@ class Branches implements ObjectMapper
             $value = $payload['installations_count'] ?? null;
 
             if ($value === null) {
-                $properties['installations_count'] = null;
-                goto after_installations_count;
+                $properties['installationsCount'] = null;
+                goto after_installationsCount;
             }
 
-            $properties['installations_count'] = $value;
+            $properties['installationsCount'] = $value;
 
-            after_installations_count:
+            after_installationsCount:
 
             $value = $payload['client_id'] ?? null;
 
             if ($value === null) {
-                $properties['client_id'] = null;
-                goto after_client_id;
+                $properties['clientId'] = null;
+                goto after_clientId;
             }
 
-            $properties['client_id'] = $value;
+            $properties['clientId'] = $value;
 
-            after_client_id:
+            after_clientId:
 
             $value = $payload['client_secret'] ?? null;
 
             if ($value === null) {
-                $properties['client_secret'] = null;
-                goto after_client_secret;
+                $properties['clientSecret'] = null;
+                goto after_clientSecret;
             }
 
-            $properties['client_secret'] = $value;
+            $properties['clientSecret'] = $value;
 
-            after_client_secret:
+            after_clientSecret:
 
             $value = $payload['webhook_secret'] ?? null;
 
             if ($value === null) {
-                $properties['webhook_secret'] = null;
-                goto after_webhook_secret;
+                $properties['webhookSecret'] = null;
+                goto after_webhookSecret;
             }
 
-            $properties['webhook_secret'] = $value;
+            $properties['webhookSecret'] = $value;
 
-            after_webhook_secret:
+            after_webhookSecret:
 
             $value = $payload['pem'] ?? null;
 
@@ -1809,34 +1809,34 @@ class Branches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'users_url';
-                goto after_users_url;
+                goto after_usersUrl;
             }
 
-            $properties['users_url'] = $value;
+            $properties['usersUrl'] = $value;
 
-            after_users_url:
+            after_usersUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'teams_url';
-                goto after_teams_url;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
             $value = $payload['apps_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'apps_url';
-                goto after_apps_url;
+                goto after_appsUrl;
             }
 
-            $properties['apps_url'] = $value;
+            $properties['appsUrl'] = $value;
 
-            after_apps_url:
+            after_appsUrl:
 
             $value = $payload['users'] ?? null;
 
@@ -1947,35 +1947,35 @@ class Branches implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -1991,112 +1991,112 @@ class Branches implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
-                $properties['followers_url'] = null;
-                goto after_followers_url;
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
-                $properties['following_url'] = null;
-                goto after_following_url;
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
-                $properties['gists_url'] = null;
-                goto after_gists_url;
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
-                $properties['starred_url'] = null;
-                goto after_starred_url;
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
-                $properties['subscriptions_url'] = null;
-                goto after_subscriptions_url;
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
-                $properties['organizations_url'] = null;
-                goto after_organizations_url;
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
-                $properties['repos_url'] = null;
-                goto after_repos_url;
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
-                $properties['events_url'] = null;
-                goto after_events_url;
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
-                $properties['received_events_url'] = null;
-                goto after_received_events_url;
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -2112,13 +2112,13 @@ class Branches implements ObjectMapper
             $value = $payload['site_admin'] ?? null;
 
             if ($value === null) {
-                $properties['site_admin'] = null;
-                goto after_site_admin;
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
@@ -2155,13 +2155,13 @@ class Branches implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -2177,13 +2177,13 @@ class Branches implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['name'] ?? null;
 
@@ -2243,24 +2243,24 @@ class Branches implements ObjectMapper
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
-                $properties['members_url'] = null;
-                goto after_members_url;
+                $properties['membersUrl'] = null;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
-                $properties['repositories_url'] = null;
-                goto after_repositories_url;
+                $properties['repositoriesUrl'] = null;
+                goto after_repositoriesUrl;
             }
 
-            $properties['repositories_url'] = $value;
+            $properties['repositoriesUrl'] = $value;
 
-            after_repositories_url:
+            after_repositoriesUrl:
 
             $value = $payload['parent'] ?? null;
 
@@ -2319,13 +2319,13 @@ class Branches implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['owner'] ?? null;
 
@@ -2372,46 +2372,46 @@ class Branches implements ObjectMapper
             $value = $payload['external_url'] ?? null;
 
             if ($value === null) {
-                $properties['external_url'] = null;
-                goto after_external_url;
+                $properties['externalUrl'] = null;
+                goto after_externalUrl;
             }
 
-            $properties['external_url'] = $value;
+            $properties['externalUrl'] = $value;
 
-            after_external_url:
+            after_externalUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['permissions'] ?? null;
 
@@ -2490,13 +2490,13 @@ class Branches implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -2512,79 +2512,79 @@ class Branches implements ObjectMapper
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
-                $properties['repos_url'] = null;
-                goto after_repos_url;
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
-                $properties['events_url'] = null;
-                goto after_events_url;
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
-                $properties['hooks_url'] = null;
-                goto after_hooks_url;
+                $properties['hooksUrl'] = null;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
-                $properties['issues_url'] = null;
-                goto after_issues_url;
+                $properties['issuesUrl'] = null;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
-                $properties['members_url'] = null;
-                goto after_members_url;
+                $properties['membersUrl'] = null;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
-                $properties['public_members_url'] = null;
-                goto after_public_members_url;
+                $properties['publicMembersUrl'] = null;
+                goto after_publicMembersUrl;
             }
 
-            $properties['public_members_url'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_public_members_url:
+            after_publicMembersUrl:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -2600,101 +2600,101 @@ class Branches implements ObjectMapper
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
-                $properties['followers_url'] = null;
-                goto after_followers_url;
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
-                $properties['following_url'] = null;
-                goto after_following_url;
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
-                $properties['gists_url'] = null;
-                goto after_gists_url;
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
-                $properties['starred_url'] = null;
-                goto after_starred_url;
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
-                $properties['subscriptions_url'] = null;
-                goto after_subscriptions_url;
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
-                $properties['organizations_url'] = null;
-                goto after_organizations_url;
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
-                $properties['received_events_url'] = null;
-                goto after_received_events_url;
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -2710,13 +2710,13 @@ class Branches implements ObjectMapper
             $value = $payload['site_admin'] ?? null;
 
             if ($value === null) {
-                $properties['site_admin'] = null;
-                goto after_site_admin;
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
@@ -2775,13 +2775,13 @@ class Branches implements ObjectMapper
             $value = $payload['single_file'] ?? null;
 
             if ($value === null) {
-                $properties['single_file'] = null;
-                goto after_single_file;
+                $properties['singleFile'] = null;
+                goto after_singleFile;
             }
 
-            $properties['single_file'] = $value;
+            $properties['singleFile'] = $value;
 
-            after_single_file:
+            after_singleFile:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
@@ -2957,13 +2957,13 @@ class Branches implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -3158,12 +3158,12 @@ class Branches implements ObjectMapper
         after_protection:        $result['protection'] = $protection;
 
         
-        $protection_url = $object->protection_url;
+        $protectionUrl = $object->protectionUrl;
 
-        if ($protection_url === null) {
-            goto after_protection_url;
+        if ($protectionUrl === null) {
+            goto after_protectionUrl;
         }
-        after_protection_url:        $result['protection_url'] = $protection_url;
+        after_protectionUrl:        $result['protection_url'] = $protectionUrl;
 
 
         return $result;
@@ -3208,31 +3208,31 @@ class Branches implements ObjectMapper
         after_enabled:        $result['enabled'] = $enabled;
 
         
-        $required_status_checks = $object->required_status_checks;
+        $requiredStatusChecks = $object->requiredStatusChecks;
 
-        if ($required_status_checks === null) {
-            goto after_required_status_checks;
+        if ($requiredStatusChecks === null) {
+            goto after_requiredStatusChecks;
         }
-        $required_status_checks = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchRequiredStatusCheck($required_status_checks);
-        after_required_status_checks:        $result['required_status_checks'] = $required_status_checks;
+        $requiredStatusChecks = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchRequiredStatusCheck($requiredStatusChecks);
+        after_requiredStatusChecks:        $result['required_status_checks'] = $requiredStatusChecks;
 
         
-        $enforce_admins = $object->enforce_admins;
+        $enforceAdmins = $object->enforceAdmins;
 
-        if ($enforce_admins === null) {
-            goto after_enforce_admins;
+        if ($enforceAdmins === null) {
+            goto after_enforceAdmins;
         }
-        $enforce_admins = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchAdminEnforced($enforce_admins);
-        after_enforce_admins:        $result['enforce_admins'] = $enforce_admins;
+        $enforceAdmins = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchAdminEnforced($enforceAdmins);
+        after_enforceAdmins:        $result['enforce_admins'] = $enforceAdmins;
 
         
-        $required_pull_request_reviews = $object->required_pull_request_reviews;
+        $requiredPullRequestReviews = $object->requiredPullRequestReviews;
 
-        if ($required_pull_request_reviews === null) {
-            goto after_required_pull_request_reviews;
+        if ($requiredPullRequestReviews === null) {
+            goto after_requiredPullRequestReviews;
         }
-        $required_pull_request_reviews = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview($required_pull_request_reviews);
-        after_required_pull_request_reviews:        $result['required_pull_request_reviews'] = $required_pull_request_reviews;
+        $requiredPullRequestReviews = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview($requiredPullRequestReviews);
+        after_requiredPullRequestReviews:        $result['required_pull_request_reviews'] = $requiredPullRequestReviews;
 
         
         $restrictions = $object->restrictions;
@@ -3244,49 +3244,49 @@ class Branches implements ObjectMapper
         after_restrictions:        $result['restrictions'] = $restrictions;
 
         
-        $required_linear_history = $object->required_linear_history;
+        $requiredLinearHistory = $object->requiredLinearHistory;
 
-        if ($required_linear_history === null) {
-            goto after_required_linear_history;
+        if ($requiredLinearHistory === null) {
+            goto after_requiredLinearHistory;
         }
-        $required_linear_history = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($required_linear_history);
-        after_required_linear_history:        $result['required_linear_history'] = $required_linear_history;
+        $requiredLinearHistory = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($requiredLinearHistory);
+        after_requiredLinearHistory:        $result['required_linear_history'] = $requiredLinearHistory;
 
         
-        $allow_force_pushes = $object->allow_force_pushes;
+        $allowForcePushes = $object->allowForcePushes;
 
-        if ($allow_force_pushes === null) {
-            goto after_allow_force_pushes;
+        if ($allowForcePushes === null) {
+            goto after_allowForcePushes;
         }
-        $allow_force_pushes = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($allow_force_pushes);
-        after_allow_force_pushes:        $result['allow_force_pushes'] = $allow_force_pushes;
+        $allowForcePushes = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($allowForcePushes);
+        after_allowForcePushes:        $result['allow_force_pushes'] = $allowForcePushes;
 
         
-        $allow_deletions = $object->allow_deletions;
+        $allowDeletions = $object->allowDeletions;
 
-        if ($allow_deletions === null) {
-            goto after_allow_deletions;
+        if ($allowDeletions === null) {
+            goto after_allowDeletions;
         }
-        $allow_deletions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($allow_deletions);
-        after_allow_deletions:        $result['allow_deletions'] = $allow_deletions;
+        $allowDeletions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($allowDeletions);
+        after_allowDeletions:        $result['allow_deletions'] = $allowDeletions;
 
         
-        $block_creations = $object->block_creations;
+        $blockCreations = $object->blockCreations;
 
-        if ($block_creations === null) {
-            goto after_block_creations;
+        if ($blockCreations === null) {
+            goto after_blockCreations;
         }
-        $block_creations = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($block_creations);
-        after_block_creations:        $result['block_creations'] = $block_creations;
+        $blockCreations = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($blockCreations);
+        after_blockCreations:        $result['block_creations'] = $blockCreations;
 
         
-        $required_conversation_resolution = $object->required_conversation_resolution;
+        $requiredConversationResolution = $object->requiredConversationResolution;
 
-        if ($required_conversation_resolution === null) {
-            goto after_required_conversation_resolution;
+        if ($requiredConversationResolution === null) {
+            goto after_requiredConversationResolution;
         }
-        $required_conversation_resolution = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($required_conversation_resolution);
-        after_required_conversation_resolution:        $result['required_conversation_resolution'] = $required_conversation_resolution;
+        $requiredConversationResolution = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredLinearHistory($requiredConversationResolution);
+        after_requiredConversationResolution:        $result['required_conversation_resolution'] = $requiredConversationResolution;
 
         
         $name = $object->name;
@@ -3297,39 +3297,39 @@ class Branches implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $protection_url = $object->protection_url;
+        $protectionUrl = $object->protectionUrl;
 
-        if ($protection_url === null) {
-            goto after_protection_url;
+        if ($protectionUrl === null) {
+            goto after_protectionUrl;
         }
-        after_protection_url:        $result['protection_url'] = $protection_url;
+        after_protectionUrl:        $result['protection_url'] = $protectionUrl;
 
         
-        $required_signatures = $object->required_signatures;
+        $requiredSignatures = $object->requiredSignatures;
 
-        if ($required_signatures === null) {
-            goto after_required_signatures;
+        if ($requiredSignatures === null) {
+            goto after_requiredSignatures;
         }
-        $required_signatures = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredSignatures($required_signatures);
-        after_required_signatures:        $result['required_signatures'] = $required_signatures;
+        $requiredSignatures = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️RequiredSignatures($requiredSignatures);
+        after_requiredSignatures:        $result['required_signatures'] = $requiredSignatures;
 
         
-        $lock_branch = $object->lock_branch;
+        $lockBranch = $object->lockBranch;
 
-        if ($lock_branch === null) {
-            goto after_lock_branch;
+        if ($lockBranch === null) {
+            goto after_lockBranch;
         }
-        $lock_branch = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️LockBranch($lock_branch);
-        after_lock_branch:        $result['lock_branch'] = $lock_branch;
+        $lockBranch = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️LockBranch($lockBranch);
+        after_lockBranch:        $result['lock_branch'] = $lockBranch;
 
         
-        $allow_fork_syncing = $object->allow_fork_syncing;
+        $allowForkSyncing = $object->allowForkSyncing;
 
-        if ($allow_fork_syncing === null) {
-            goto after_allow_fork_syncing;
+        if ($allowForkSyncing === null) {
+            goto after_allowForkSyncing;
         }
-        $allow_fork_syncing = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️AllowForkSyncing($allow_fork_syncing);
-        after_allow_fork_syncing:        $result['allow_fork_syncing'] = $allow_fork_syncing;
+        $allowForkSyncing = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchProtection⚡️AllowForkSyncing($allowForkSyncing);
+        after_allowForkSyncing:        $result['allow_fork_syncing'] = $allowForkSyncing;
 
 
         return $result;
@@ -3349,12 +3349,12 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $enforcement_level = $object->enforcement_level;
+        $enforcementLevel = $object->enforcementLevel;
 
-        if ($enforcement_level === null) {
-            goto after_enforcement_level;
+        if ($enforcementLevel === null) {
+            goto after_enforcementLevel;
         }
-        after_enforcement_level:        $result['enforcement_level'] = $enforcement_level;
+        after_enforcementLevel:        $result['enforcement_level'] = $enforcementLevel;
 
         
         $contexts = $object->contexts;
@@ -3382,12 +3382,12 @@ class Branches implements ObjectMapper
         after_checks:        $result['checks'] = $checks;
 
         
-        $contexts_url = $object->contexts_url;
+        $contextsUrl = $object->contextsUrl;
 
-        if ($contexts_url === null) {
-            goto after_contexts_url;
+        if ($contextsUrl === null) {
+            goto after_contextsUrl;
         }
-        after_contexts_url:        $result['contexts_url'] = $contexts_url;
+        after_contextsUrl:        $result['contexts_url'] = $contextsUrl;
 
         
         $strict = $object->strict;
@@ -3411,12 +3411,12 @@ class Branches implements ObjectMapper
         after_context:        $result['context'] = $context;
 
         
-        $app_id = $object->app_id;
+        $appId = $object->appId;
 
-        if ($app_id === null) {
-            goto after_app_id;
+        if ($appId === null) {
+            goto after_appId;
         }
-        after_app_id:        $result['app_id'] = $app_id;
+        after_appId:        $result['app_id'] = $appId;
 
 
         return $result;
@@ -3453,46 +3453,46 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $dismissal_restrictions = $object->dismissal_restrictions;
+        $dismissalRestrictions = $object->dismissalRestrictions;
 
-        if ($dismissal_restrictions === null) {
-            goto after_dismissal_restrictions;
+        if ($dismissalRestrictions === null) {
+            goto after_dismissalRestrictions;
         }
-        $dismissal_restrictions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️DismissalRestrictions($dismissal_restrictions);
-        after_dismissal_restrictions:        $result['dismissal_restrictions'] = $dismissal_restrictions;
+        $dismissalRestrictions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️DismissalRestrictions($dismissalRestrictions);
+        after_dismissalRestrictions:        $result['dismissal_restrictions'] = $dismissalRestrictions;
 
         
-        $bypass_pull_request_allowances = $object->bypass_pull_request_allowances;
+        $bypassPullRequestAllowances = $object->bypassPullRequestAllowances;
 
-        if ($bypass_pull_request_allowances === null) {
-            goto after_bypass_pull_request_allowances;
+        if ($bypassPullRequestAllowances === null) {
+            goto after_bypassPullRequestAllowances;
         }
-        $bypass_pull_request_allowances = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️BypassPullRequestAllowances($bypass_pull_request_allowances);
-        after_bypass_pull_request_allowances:        $result['bypass_pull_request_allowances'] = $bypass_pull_request_allowances;
+        $bypassPullRequestAllowances = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProtectedBranchPullRequestReview⚡️BypassPullRequestAllowances($bypassPullRequestAllowances);
+        after_bypassPullRequestAllowances:        $result['bypass_pull_request_allowances'] = $bypassPullRequestAllowances;
 
         
-        $dismiss_stale_reviews = $object->dismiss_stale_reviews;
-        after_dismiss_stale_reviews:        $result['dismiss_stale_reviews'] = $dismiss_stale_reviews;
+        $dismissStaleReviews = $object->dismissStaleReviews;
+        after_dismissStaleReviews:        $result['dismiss_stale_reviews'] = $dismissStaleReviews;
 
         
-        $require_code_owner_reviews = $object->require_code_owner_reviews;
-        after_require_code_owner_reviews:        $result['require_code_owner_reviews'] = $require_code_owner_reviews;
+        $requireCodeOwnerReviews = $object->requireCodeOwnerReviews;
+        after_requireCodeOwnerReviews:        $result['require_code_owner_reviews'] = $requireCodeOwnerReviews;
 
         
-        $required_approving_review_count = $object->required_approving_review_count;
+        $requiredApprovingReviewCount = $object->requiredApprovingReviewCount;
 
-        if ($required_approving_review_count === null) {
-            goto after_required_approving_review_count;
+        if ($requiredApprovingReviewCount === null) {
+            goto after_requiredApprovingReviewCount;
         }
-        after_required_approving_review_count:        $result['required_approving_review_count'] = $required_approving_review_count;
+        after_requiredApprovingReviewCount:        $result['required_approving_review_count'] = $requiredApprovingReviewCount;
 
         
-        $require_last_push_approval = $object->require_last_push_approval;
+        $requireLastPushApproval = $object->requireLastPushApproval;
 
-        if ($require_last_push_approval === null) {
-            goto after_require_last_push_approval;
+        if ($requireLastPushApproval === null) {
+            goto after_requireLastPushApproval;
         }
-        after_require_last_push_approval:        $result['require_last_push_approval'] = $require_last_push_approval;
+        after_requireLastPushApproval:        $result['require_last_push_approval'] = $requireLastPushApproval;
 
 
         return $result;
@@ -3563,20 +3563,20 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $users_url = $object->users_url;
+        $usersUrl = $object->usersUrl;
 
-        if ($users_url === null) {
-            goto after_users_url;
+        if ($usersUrl === null) {
+            goto after_usersUrl;
         }
-        after_users_url:        $result['users_url'] = $users_url;
+        after_usersUrl:        $result['users_url'] = $usersUrl;
 
         
-        $teams_url = $object->teams_url;
+        $teamsUrl = $object->teamsUrl;
 
-        if ($teams_url === null) {
-            goto after_teams_url;
+        if ($teamsUrl === null) {
+            goto after_teamsUrl;
         }
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
 
         return $result;
@@ -3612,80 +3612,80 @@ class Branches implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -3701,8 +3701,8 @@ class Branches implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -3746,16 +3746,16 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $members_url = $object->members_url;
-        after_members_url:        $result['members_url'] = $members_url;
+        $membersUrl = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $repositories_url = $object->repositories_url;
-        after_repositories_url:        $result['repositories_url'] = $repositories_url;
+        $repositoriesUrl = $object->repositoriesUrl;
+        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
 
         
         $parent = $object->parent;
@@ -3816,8 +3816,8 @@ class Branches implements ObjectMapper
         after_slug:        $result['slug'] = $slug;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $owner = $object->owner;
@@ -3840,20 +3840,20 @@ class Branches implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $external_url = $object->external_url;
-        after_external_url:        $result['external_url'] = $external_url;
+        $externalUrl = $object->externalUrl;
+        after_externalUrl:        $result['external_url'] = $externalUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $permissions = $object->permissions;
@@ -3873,36 +3873,36 @@ class Branches implements ObjectMapper
         after_events:        $result['events'] = $events;
 
         
-        $installations_count = $object->installations_count;
+        $installationsCount = $object->installationsCount;
 
-        if ($installations_count === null) {
-            goto after_installations_count;
+        if ($installationsCount === null) {
+            goto after_installationsCount;
         }
-        after_installations_count:        $result['installations_count'] = $installations_count;
+        after_installationsCount:        $result['installations_count'] = $installationsCount;
 
         
-        $client_id = $object->client_id;
+        $clientId = $object->clientId;
 
-        if ($client_id === null) {
-            goto after_client_id;
+        if ($clientId === null) {
+            goto after_clientId;
         }
-        after_client_id:        $result['client_id'] = $client_id;
+        after_clientId:        $result['client_id'] = $clientId;
 
         
-        $client_secret = $object->client_secret;
+        $clientSecret = $object->clientSecret;
 
-        if ($client_secret === null) {
-            goto after_client_secret;
+        if ($clientSecret === null) {
+            goto after_clientSecret;
         }
-        after_client_secret:        $result['client_secret'] = $client_secret;
+        after_clientSecret:        $result['client_secret'] = $clientSecret;
 
         
-        $webhook_secret = $object->webhook_secret;
+        $webhookSecret = $object->webhookSecret;
 
-        if ($webhook_secret === null) {
-            goto after_webhook_secret;
+        if ($webhookSecret === null) {
+            goto after_webhookSecret;
         }
-        after_webhook_secret:        $result['webhook_secret'] = $webhook_secret;
+        after_webhookSecret:        $result['webhook_secret'] = $webhookSecret;
 
         
         $pem = $object->pem;
@@ -4035,16 +4035,16 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $users_url = $object->users_url;
-        after_users_url:        $result['users_url'] = $users_url;
+        $usersUrl = $object->usersUrl;
+        after_usersUrl:        $result['users_url'] = $usersUrl;
 
         
-        $teams_url = $object->teams_url;
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        $teamsUrl = $object->teamsUrl;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
         
-        $apps_url = $object->apps_url;
-        after_apps_url:        $result['apps_url'] = $apps_url;
+        $appsUrl = $object->appsUrl;
+        after_appsUrl:        $result['apps_url'] = $appsUrl;
 
         
         $users = $object->users;
@@ -4111,28 +4111,28 @@ class Branches implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
@@ -4143,84 +4143,84 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
+        $followersUrl = $object->followersUrl;
 
-        if ($followers_url === null) {
-            goto after_followers_url;
+        if ($followersUrl === null) {
+            goto after_followersUrl;
         }
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
+        $followingUrl = $object->followingUrl;
 
-        if ($following_url === null) {
-            goto after_following_url;
+        if ($followingUrl === null) {
+            goto after_followingUrl;
         }
-        after_following_url:        $result['following_url'] = $following_url;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
+        $gistsUrl = $object->gistsUrl;
 
-        if ($gists_url === null) {
-            goto after_gists_url;
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
         }
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
+        $starredUrl = $object->starredUrl;
 
-        if ($starred_url === null) {
-            goto after_starred_url;
+        if ($starredUrl === null) {
+            goto after_starredUrl;
         }
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
 
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
         }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
 
-        if ($organizations_url === null) {
-            goto after_organizations_url;
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
         }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
+        $reposUrl = $object->reposUrl;
 
-        if ($repos_url === null) {
-            goto after_repos_url;
+        if ($reposUrl === null) {
+            goto after_reposUrl;
         }
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
+        $eventsUrl = $object->eventsUrl;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
         }
-        after_events_url:        $result['events_url'] = $events_url;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
 
-        if ($received_events_url === null) {
-            goto after_received_events_url;
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
         }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
@@ -4231,12 +4231,12 @@ class Branches implements ObjectMapper
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
+        $siteAdmin = $object->siteAdmin;
 
-        if ($site_admin === null) {
-            goto after_site_admin;
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
         }
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
 
         return $result;
@@ -4256,12 +4256,12 @@ class Branches implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
@@ -4272,12 +4272,12 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $name = $object->name;
@@ -4320,20 +4320,20 @@ class Branches implements ObjectMapper
         after_permission:        $result['permission'] = $permission;
 
         
-        $members_url = $object->members_url;
+        $membersUrl = $object->membersUrl;
 
-        if ($members_url === null) {
-            goto after_members_url;
+        if ($membersUrl === null) {
+            goto after_membersUrl;
         }
-        after_members_url:        $result['members_url'] = $members_url;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $repositories_url = $object->repositories_url;
+        $repositoriesUrl = $object->repositoriesUrl;
 
-        if ($repositories_url === null) {
-            goto after_repositories_url;
+        if ($repositoriesUrl === null) {
+            goto after_repositoriesUrl;
         }
-        after_repositories_url:        $result['repositories_url'] = $repositories_url;
+        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
 
         
         $parent = $object->parent;
@@ -4369,12 +4369,12 @@ class Branches implements ObjectMapper
         after_slug:        $result['slug'] = $slug;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $owner = $object->owner;
@@ -4402,36 +4402,36 @@ class Branches implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $external_url = $object->external_url;
+        $externalUrl = $object->externalUrl;
 
-        if ($external_url === null) {
-            goto after_external_url;
+        if ($externalUrl === null) {
+            goto after_externalUrl;
         }
-        after_external_url:        $result['external_url'] = $external_url;
+        after_externalUrl:        $result['external_url'] = $externalUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $permissions = $object->permissions;
@@ -4484,12 +4484,12 @@ class Branches implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
@@ -4500,60 +4500,60 @@ class Branches implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $repos_url = $object->repos_url;
+        $reposUrl = $object->reposUrl;
 
-        if ($repos_url === null) {
-            goto after_repos_url;
+        if ($reposUrl === null) {
+            goto after_reposUrl;
         }
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
+        $eventsUrl = $object->eventsUrl;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
         }
-        after_events_url:        $result['events_url'] = $events_url;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $hooks_url = $object->hooks_url;
+        $hooksUrl = $object->hooksUrl;
 
-        if ($hooks_url === null) {
-            goto after_hooks_url;
+        if ($hooksUrl === null) {
+            goto after_hooksUrl;
         }
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issues_url = $object->issues_url;
+        $issuesUrl = $object->issuesUrl;
 
-        if ($issues_url === null) {
-            goto after_issues_url;
+        if ($issuesUrl === null) {
+            goto after_issuesUrl;
         }
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $members_url = $object->members_url;
+        $membersUrl = $object->membersUrl;
 
-        if ($members_url === null) {
-            goto after_members_url;
+        if ($membersUrl === null) {
+            goto after_membersUrl;
         }
-        after_members_url:        $result['members_url'] = $members_url;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $public_members_url = $object->public_members_url;
+        $publicMembersUrl = $object->publicMembersUrl;
 
-        if ($public_members_url === null) {
-            goto after_public_members_url;
+        if ($publicMembersUrl === null) {
+            goto after_publicMembersUrl;
         }
-        after_public_members_url:        $result['public_members_url'] = $public_members_url;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
 
         
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $description = $object->description;
@@ -4564,76 +4564,76 @@ class Branches implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
+        $followersUrl = $object->followersUrl;
 
-        if ($followers_url === null) {
-            goto after_followers_url;
+        if ($followersUrl === null) {
+            goto after_followersUrl;
         }
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
+        $followingUrl = $object->followingUrl;
 
-        if ($following_url === null) {
-            goto after_following_url;
+        if ($followingUrl === null) {
+            goto after_followingUrl;
         }
-        after_following_url:        $result['following_url'] = $following_url;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
+        $gistsUrl = $object->gistsUrl;
 
-        if ($gists_url === null) {
-            goto after_gists_url;
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
         }
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
+        $starredUrl = $object->starredUrl;
 
-        if ($starred_url === null) {
-            goto after_starred_url;
+        if ($starredUrl === null) {
+            goto after_starredUrl;
         }
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
 
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
         }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
 
-        if ($organizations_url === null) {
-            goto after_organizations_url;
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
         }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $received_events_url = $object->received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
 
-        if ($received_events_url === null) {
-            goto after_received_events_url;
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
         }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
@@ -4644,12 +4644,12 @@ class Branches implements ObjectMapper
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
+        $siteAdmin = $object->siteAdmin;
 
-        if ($site_admin === null) {
-            goto after_site_admin;
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
         }
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
 
         return $result;
@@ -4685,12 +4685,12 @@ class Branches implements ObjectMapper
         after_issues:        $result['issues'] = $issues;
 
         
-        $single_file = $object->single_file;
+        $singleFile = $object->singleFile;
 
-        if ($single_file === null) {
-            goto after_single_file;
+        if ($singleFile === null) {
+            goto after_singleFile;
         }
-        after_single_file:        $result['single_file'] = $single_file;
+        after_singleFile:        $result['single_file'] = $singleFile;
 
 
         return $result;
@@ -4778,12 +4778,12 @@ class Branches implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

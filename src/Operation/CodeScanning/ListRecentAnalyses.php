@@ -19,33 +19,33 @@ final class ListRecentAnalyses
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.**/
-    private string $tool_name;
+    private string $toolName;
     /**The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.**/
-    private string|null $tool_guid;
+    private string|null $toolGuid;
     /**The Git reference for the analyses you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
     private string $ref;
     /**Filter analyses belonging to the same SARIF upload.**/
-    private string $sarif_id;
+    private string $sarifId;
     /**Page number of the results to fetch.**/
     private int $page;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**The direction to sort the results by.**/
     private string $direction;
     /**The property by which to sort the results.**/
     private string $sort;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Analyses $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Analyses $hydrator, string $owner, string $repo, string $tool_name, string|null $tool_guid, string $ref, string $sarif_id, int $page = 1, int $per_page = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeScanning\Analyses $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->tool_name = $tool_name;
-        $this->tool_guid = $tool_guid;
+        $this->toolName = $toolName;
+        $this->toolGuid = $toolGuid;
         $this->ref = $ref;
-        $this->sarif_id = $sarif_id;
+        $this->sarifId = $sarifId;
         $this->page = $page;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->direction = $direction;
         $this->sort = $sort;
         $this->responseSchemaValidator = $responseSchemaValidator;
@@ -53,7 +53,7 @@ final class ListRecentAnalyses
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{sarif_id}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->owner, $this->repo, $this->tool_name, $this->tool_guid, $this->ref, $this->sarif_id, $this->page, $this->per_page, $this->direction, $this->sort), self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&sarif_id={sarif_id}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{sarif_id}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->sarifId, $this->page, $this->perPage, $this->direction, $this->sort), self::PATH . '?toolName={tool_name}&toolGuid={tool_guid}&ref={ref}&sarifId={sarif_id}&page={page}&perPage={per_page}&direction={direction}&sort={sort}'));
     }
     /**
      * @return \Rx\Observable<Schema\CodeScanningAnalysis>

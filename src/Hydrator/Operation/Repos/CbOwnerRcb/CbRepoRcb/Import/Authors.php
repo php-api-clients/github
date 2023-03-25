@@ -50,23 +50,23 @@ class Authors implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'remote_id';
-                goto after_remote_id;
+                goto after_remoteId;
             }
 
-            $properties['remote_id'] = $value;
+            $properties['remoteId'] = $value;
 
-            after_remote_id:
+            after_remoteId:
 
             $value = $payload['remote_name'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'remote_name';
-                goto after_remote_name;
+                goto after_remoteName;
             }
 
-            $properties['remote_name'] = $value;
+            $properties['remoteName'] = $value;
 
-            after_remote_name:
+            after_remoteName:
 
             $value = $payload['email'] ?? null;
 
@@ -105,12 +105,12 @@ class Authors implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'import_url';
-                goto after_import_url;
+                goto after_importUrl;
             }
 
-            $properties['import_url'] = $value;
+            $properties['importUrl'] = $value;
 
-            after_import_url:
+            after_importUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PorterAuthor', $exception, stack: $this->hydrationStack);
@@ -147,13 +147,13 @@ class Authors implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -307,12 +307,12 @@ class Authors implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $remote_id = $object->remote_id;
-        after_remote_id:        $result['remote_id'] = $remote_id;
+        $remoteId = $object->remoteId;
+        after_remoteId:        $result['remote_id'] = $remoteId;
 
         
-        $remote_name = $object->remote_name;
-        after_remote_name:        $result['remote_name'] = $remote_name;
+        $remoteName = $object->remoteName;
+        after_remoteName:        $result['remote_name'] = $remoteName;
 
         
         $email = $object->email;
@@ -327,8 +327,8 @@ class Authors implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $import_url = $object->import_url;
-        after_import_url:        $result['import_url'] = $import_url;
+        $importUrl = $object->importUrl;
+        after_importUrl:        $result['import_url'] = $importUrl;
 
 
         return $result;
@@ -348,12 +348,12 @@ class Authors implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

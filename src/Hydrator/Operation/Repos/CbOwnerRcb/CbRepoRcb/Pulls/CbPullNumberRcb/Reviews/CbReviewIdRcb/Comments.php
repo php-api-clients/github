@@ -52,13 +52,13 @@ class Comments implements ObjectMapper
             $value = $payload['pull_request_review_id'] ?? null;
 
             if ($value === null) {
-                $properties['pull_request_review_id'] = null;
-                goto after_pull_request_review_id;
+                $properties['pullRequestReviewId'] = null;
+                goto after_pullRequestReviewId;
             }
 
-            $properties['pull_request_review_id'] = $value;
+            $properties['pullRequestReviewId'] = $value;
 
-            after_pull_request_review_id:
+            after_pullRequestReviewId:
 
             $value = $payload['id'] ?? null;
 
@@ -75,23 +75,23 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['diff_hunk'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'diff_hunk';
-                goto after_diff_hunk;
+                goto after_diffHunk;
             }
 
-            $properties['diff_hunk'] = $value;
+            $properties['diffHunk'] = $value;
 
-            after_diff_hunk:
+            after_diffHunk:
 
             $value = $payload['path'] ?? null;
 
@@ -119,45 +119,45 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'original_position';
-                goto after_original_position;
+                goto after_originalPosition;
             }
 
-            $properties['original_position'] = $value;
+            $properties['originalPosition'] = $value;
 
-            after_original_position:
+            after_originalPosition:
 
             $value = $payload['commit_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commit_id';
-                goto after_commit_id;
+                goto after_commitId;
             }
 
-            $properties['commit_id'] = $value;
+            $properties['commitId'] = $value;
 
-            after_commit_id:
+            after_commitId:
 
             $value = $payload['original_commit_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'original_commit_id';
-                goto after_original_commit_id;
+                goto after_originalCommitId;
             }
 
-            $properties['original_commit_id'] = $value;
+            $properties['originalCommitId'] = $value;
 
-            after_original_commit_id:
+            after_originalCommitId:
 
             $value = $payload['in_reply_to_id'] ?? null;
 
             if ($value === null) {
-                $properties['in_reply_to_id'] = null;
-                goto after_in_reply_to_id;
+                $properties['inReplyToId'] = null;
+                goto after_inReplyToId;
             }
 
-            $properties['in_reply_to_id'] = $value;
+            $properties['inReplyToId'] = $value;
 
-            after_in_reply_to_id:
+            after_inReplyToId:
 
             $value = $payload['user'] ?? null;
 
@@ -185,98 +185,98 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['pull_request_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pull_request_url';
-                goto after_pull_request_url;
+                goto after_pullRequestUrl;
             }
 
-            $properties['pull_request_url'] = $value;
+            $properties['pullRequestUrl'] = $value;
 
-            after_pull_request_url:
+            after_pullRequestUrl:
 
             $value = $payload['author_association'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'author_association';
-                goto after_author_association;
+                goto after_authorAssociation;
             }
 
-            $properties['author_association'] = $value;
+            $properties['authorAssociation'] = $value;
 
-            after_author_association:
+            after_authorAssociation:
 
             $value = $payload['_links'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = '_links';
-                goto after__links;
+                goto after_links;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = '_links';
+                    $this->hydrationStack[] = 'links';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReviewComment⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['_links'] = $value;
+            $properties['links'] = $value;
 
-            after__links:
+            after_links:
 
             $value = $payload['body_text'] ?? null;
 
             if ($value === null) {
-                $properties['body_text'] = null;
-                goto after_body_text;
+                $properties['bodyText'] = null;
+                goto after_bodyText;
             }
 
-            $properties['body_text'] = $value;
+            $properties['bodyText'] = $value;
 
-            after_body_text:
+            after_bodyText:
 
             $value = $payload['body_html'] ?? null;
 
             if ($value === null) {
-                $properties['body_html'] = null;
-                goto after_body_html;
+                $properties['bodyHtml'] = null;
+                goto after_bodyHtml;
             }
 
-            $properties['body_html'] = $value;
+            $properties['bodyHtml'] = $value;
 
-            after_body_html:
+            after_bodyHtml:
 
             $value = $payload['reactions'] ?? null;
 
@@ -312,13 +312,13 @@ class Comments implements ObjectMapper
             $value = $payload['start_side'] ?? null;
 
             if ($value === null) {
-                $properties['start_side'] = null;
-                goto after_start_side;
+                $properties['startSide'] = null;
+                goto after_startSide;
             }
 
-            $properties['start_side'] = $value;
+            $properties['startSide'] = $value;
 
-            after_start_side:
+            after_startSide:
 
             $value = $payload['line'] ?? null;
 
@@ -334,35 +334,35 @@ class Comments implements ObjectMapper
             $value = $payload['original_line'] ?? null;
 
             if ($value === null) {
-                $properties['original_line'] = null;
-                goto after_original_line;
+                $properties['originalLine'] = null;
+                goto after_originalLine;
             }
 
-            $properties['original_line'] = $value;
+            $properties['originalLine'] = $value;
 
-            after_original_line:
+            after_originalLine:
 
             $value = $payload['start_line'] ?? null;
 
             if ($value === null) {
-                $properties['start_line'] = null;
-                goto after_start_line;
+                $properties['startLine'] = null;
+                goto after_startLine;
             }
 
-            $properties['start_line'] = $value;
+            $properties['startLine'] = $value;
 
-            after_start_line:
+            after_startLine:
 
             $value = $payload['original_start_line'] ?? null;
 
             if ($value === null) {
-                $properties['original_start_line'] = null;
-                goto after_original_start_line;
+                $properties['originalStartLine'] = null;
+                goto after_originalStartLine;
             }
 
-            $properties['original_start_line'] = $value;
+            $properties['originalStartLine'] = $value;
 
-            after_original_start_line:
+            after_originalStartLine:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ReviewComment', $exception, stack: $this->hydrationStack);
@@ -429,21 +429,21 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'pull_request';
-                goto after_pull_request;
+                goto after_pullRequest;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'pull_request';
+                    $this->hydrationStack[] = 'pullRequest';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Link($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['pull_request'] = $value;
+            $properties['pullRequest'] = $value;
 
-            after_pull_request:
+            after_pullRequest:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ReviewComment\Links', $exception, stack: $this->hydrationStack);
@@ -513,34 +513,34 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
-            $value = $payload['__p_l_u_s_e_s_1'] ?? null;
+            $value = $payload['_PLUSES_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__p_l_u_s_e_s_1';
-                goto after__PLUSES_1;
+                $missingFields[] = '_PLUSES_1';
+                goto after_pluses1;
             }
 
-            $properties['_PLUSES_1'] = $value;
+            $properties['pluses1'] = $value;
 
-            after__PLUSES_1:
+            after_pluses1:
 
-            $value = $payload['__m_i_n_u_s_1'] ?? null;
+            $value = $payload['_MINUS_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__m_i_n_u_s_1';
-                goto after__MINUS_1;
+                $missingFields[] = '_MINUS_1';
+                goto after_minus1;
             }
 
-            $properties['_MINUS_1'] = $value;
+            $properties['minus1'] = $value;
 
-            after__MINUS_1:
+            after_minus1:
 
             $value = $payload['laugh'] ?? null;
 
@@ -643,13 +643,13 @@ class Comments implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -806,24 +806,24 @@ class Comments implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $pull_request_review_id = $object->pull_request_review_id;
+        $pullRequestReviewId = $object->pullRequestReviewId;
 
-        if ($pull_request_review_id === null) {
-            goto after_pull_request_review_id;
+        if ($pullRequestReviewId === null) {
+            goto after_pullRequestReviewId;
         }
-        after_pull_request_review_id:        $result['pull_request_review_id'] = $pull_request_review_id;
+        after_pullRequestReviewId:        $result['pull_request_review_id'] = $pullRequestReviewId;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $diff_hunk = $object->diff_hunk;
-        after_diff_hunk:        $result['diff_hunk'] = $diff_hunk;
+        $diffHunk = $object->diffHunk;
+        after_diffHunk:        $result['diff_hunk'] = $diffHunk;
 
         
         $path = $object->path;
@@ -838,24 +838,24 @@ class Comments implements ObjectMapper
         after_position:        $result['position'] = $position;
 
         
-        $original_position = $object->original_position;
-        after_original_position:        $result['original_position'] = $original_position;
+        $originalPosition = $object->originalPosition;
+        after_originalPosition:        $result['original_position'] = $originalPosition;
 
         
-        $commit_id = $object->commit_id;
-        after_commit_id:        $result['commit_id'] = $commit_id;
+        $commitId = $object->commitId;
+        after_commitId:        $result['commit_id'] = $commitId;
 
         
-        $original_commit_id = $object->original_commit_id;
-        after_original_commit_id:        $result['original_commit_id'] = $original_commit_id;
+        $originalCommitId = $object->originalCommitId;
+        after_originalCommitId:        $result['original_commit_id'] = $originalCommitId;
 
         
-        $in_reply_to_id = $object->in_reply_to_id;
+        $inReplyToId = $object->inReplyToId;
 
-        if ($in_reply_to_id === null) {
-            goto after_in_reply_to_id;
+        if ($inReplyToId === null) {
+            goto after_inReplyToId;
         }
-        after_in_reply_to_id:        $result['in_reply_to_id'] = $in_reply_to_id;
+        after_inReplyToId:        $result['in_reply_to_id'] = $inReplyToId;
 
         
         $user = $object->user;
@@ -870,45 +870,45 @@ class Comments implements ObjectMapper
         after_body:        $result['body'] = $body;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $pull_request_url = $object->pull_request_url;
-        after_pull_request_url:        $result['pull_request_url'] = $pull_request_url;
+        $pullRequestUrl = $object->pullRequestUrl;
+        after_pullRequestUrl:        $result['pull_request_url'] = $pullRequestUrl;
 
         
-        $author_association = $object->author_association;
-        after_author_association:        $result['author_association'] = $author_association;
+        $authorAssociation = $object->authorAssociation;
+        after_authorAssociation:        $result['author_association'] = $authorAssociation;
 
         
-        $_links = $object->_links;
-        $_links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReviewComment⚡️Links($_links);
-        after__links:        $result['_links'] = $_links;
+        $links = $object->links;
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReviewComment⚡️Links($links);
+        after_links:        $result['_links'] = $links;
 
         
-        $body_text = $object->body_text;
+        $bodyText = $object->bodyText;
 
-        if ($body_text === null) {
-            goto after_body_text;
+        if ($bodyText === null) {
+            goto after_bodyText;
         }
-        after_body_text:        $result['body_text'] = $body_text;
+        after_bodyText:        $result['body_text'] = $bodyText;
 
         
-        $body_html = $object->body_html;
+        $bodyHtml = $object->bodyHtml;
 
-        if ($body_html === null) {
-            goto after_body_html;
+        if ($bodyHtml === null) {
+            goto after_bodyHtml;
         }
-        after_body_html:        $result['body_html'] = $body_html;
+        after_bodyHtml:        $result['body_html'] = $bodyHtml;
 
         
         $reactions = $object->reactions;
@@ -928,12 +928,12 @@ class Comments implements ObjectMapper
         after_side:        $result['side'] = $side;
 
         
-        $start_side = $object->start_side;
+        $startSide = $object->startSide;
 
-        if ($start_side === null) {
-            goto after_start_side;
+        if ($startSide === null) {
+            goto after_startSide;
         }
-        after_start_side:        $result['start_side'] = $start_side;
+        after_startSide:        $result['start_side'] = $startSide;
 
         
         $line = $object->line;
@@ -944,28 +944,28 @@ class Comments implements ObjectMapper
         after_line:        $result['line'] = $line;
 
         
-        $original_line = $object->original_line;
+        $originalLine = $object->originalLine;
 
-        if ($original_line === null) {
-            goto after_original_line;
+        if ($originalLine === null) {
+            goto after_originalLine;
         }
-        after_original_line:        $result['original_line'] = $original_line;
+        after_originalLine:        $result['original_line'] = $originalLine;
 
         
-        $start_line = $object->start_line;
+        $startLine = $object->startLine;
 
-        if ($start_line === null) {
-            goto after_start_line;
+        if ($startLine === null) {
+            goto after_startLine;
         }
-        after_start_line:        $result['start_line'] = $start_line;
+        after_startLine:        $result['start_line'] = $startLine;
 
         
-        $original_start_line = $object->original_start_line;
+        $originalStartLine = $object->originalStartLine;
 
-        if ($original_start_line === null) {
-            goto after_original_start_line;
+        if ($originalStartLine === null) {
+            goto after_originalStartLine;
         }
-        after_original_start_line:        $result['original_start_line'] = $original_start_line;
+        after_originalStartLine:        $result['original_start_line'] = $originalStartLine;
 
 
         return $result;
@@ -987,9 +987,9 @@ class Comments implements ObjectMapper
         after_html:        $result['html'] = $html;
 
         
-        $pull_request = $object->pull_request;
-        $pull_request = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Link($pull_request);
-        after_pull_request:        $result['pull_request'] = $pull_request;
+        $pullRequest = $object->pullRequest;
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Link($pullRequest);
+        after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 
         return $result;
@@ -1018,16 +1018,16 @@ class Comments implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $_PLUSES_1 = $object->_PLUSES_1;
-        after__PLUSES_1:        $result['__p_l_u_s_e_s_1'] = $_PLUSES_1;
+        $pluses1 = $object->pluses1;
+        after_pluses1:        $result['_PLUSES_1'] = $pluses1;
 
         
-        $_MINUS_1 = $object->_MINUS_1;
-        after__MINUS_1:        $result['__m_i_n_u_s_1'] = $_MINUS_1;
+        $minus1 = $object->minus1;
+        after_minus1:        $result['_MINUS_1'] = $minus1;
 
         
         $laugh = $object->laugh;
@@ -1071,12 +1071,12 @@ class Comments implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

@@ -18,23 +18,23 @@ final class ListInstallations
     private string $since;
     private string $outdated;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\App\Installations $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations $hydrator, string $since, string $outdated, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations $hydrator, string $since, string $outdated, int $perPage = 30, int $page = 1)
     {
         $this->since = $since;
         $this->outdated = $outdated;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{outdated}', '{per_page}', '{page}'), array($this->since, $this->outdated, $this->per_page, $this->page), self::PATH . '?since={since}&outdated={outdated}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{outdated}', '{per_page}', '{page}'), array($this->since, $this->outdated, $this->perPage, $this->page), self::PATH . '?since={since}&outdated={outdated}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Installation>

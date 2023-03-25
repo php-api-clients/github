@@ -96,12 +96,12 @@ class RequiredStatusChecks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'contexts_url';
-                goto after_contexts_url;
+                goto after_contextsUrl;
             }
 
-            $properties['contexts_url'] = $value;
+            $properties['contextsUrl'] = $value;
 
-            after_contexts_url:
+            after_contextsUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\StatusCheckPolicy', $exception, stack: $this->hydrationStack);
@@ -138,13 +138,13 @@ class RequiredStatusChecks implements ObjectMapper
             $value = $payload['app_id'] ?? null;
 
             if ($value === null) {
-                $properties['app_id'] = null;
-                goto after_app_id;
+                $properties['appId'] = null;
+                goto after_appId;
             }
 
-            $properties['app_id'] = $value;
+            $properties['appId'] = $value;
 
-            after_app_id:
+            after_appId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\StatusCheckPolicy\Checks', $exception, stack: $this->hydrationStack);
@@ -181,13 +181,13 @@ class RequiredStatusChecks implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -247,12 +247,12 @@ class RequiredStatusChecks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -524,8 +524,8 @@ class RequiredStatusChecks implements ObjectMapper
         after_checks:        $result['checks'] = $checks;
 
         
-        $contexts_url = $object->contexts_url;
-        after_contexts_url:        $result['contexts_url'] = $contexts_url;
+        $contextsUrl = $object->contextsUrl;
+        after_contextsUrl:        $result['contexts_url'] = $contextsUrl;
 
 
         return $result;
@@ -541,12 +541,12 @@ class RequiredStatusChecks implements ObjectMapper
         after_context:        $result['context'] = $context;
 
         
-        $app_id = $object->app_id;
+        $appId = $object->appId;
 
-        if ($app_id === null) {
-            goto after_app_id;
+        if ($appId === null) {
+            goto after_appId;
         }
-        after_app_id:        $result['app_id'] = $app_id;
+        after_appId:        $result['app_id'] = $appId;
 
 
         return $result;
@@ -566,12 +566,12 @@ class RequiredStatusChecks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -603,8 +603,8 @@ class RequiredStatusChecks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

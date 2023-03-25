@@ -13,11 +13,11 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"required":["access_token"],"type":"object","properties":{"access_token":{"type":"string","description":"The OAuth access token used to authenticate to the GitHub API."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"access_token":"generated_access_token_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"accessToken":"generated_access_token_null"}';
     /**
-     * access_token: The OAuth access token used to authenticate to the GitHub API.
+     * accessToken: The OAuth access token used to authenticate to the GitHub API.
      */
-    public function __construct(public string $access_token)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('access_token')] public string $accessToken)
     {
     }
 }

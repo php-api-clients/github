@@ -31,12 +31,12 @@ final class List_
     /**The direction to sort the results by.**/
     private string $direction;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Issues $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Issues $hydrator, string $labels, string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Issues $hydrator, string $labels, string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
         $this->labels = $labels;
         $this->since = $since;
@@ -48,14 +48,14 @@ final class List_
         $this->state = $state;
         $this->sort = $sort;
         $this->direction = $direction;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{labels}', '{since}', '{collab}', '{orgs}', '{owned}', '{pulls}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->labels, $this->since, $this->collab, $this->orgs, $this->owned, $this->pulls, $this->filter, $this->state, $this->sort, $this->direction, $this->per_page, $this->page), self::PATH . '?labels={labels}&since={since}&collab={collab}&orgs={orgs}&owned={owned}&pulls={pulls}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{labels}', '{since}', '{collab}', '{orgs}', '{owned}', '{pulls}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->labels, $this->since, $this->collab, $this->orgs, $this->owned, $this->pulls, $this->filter, $this->state, $this->sort, $this->direction, $this->perPage, $this->page), self::PATH . '?labels={labels}&since={since}&collab={collab}&orgs={orgs}&owned={owned}&pulls={pulls}&filter={filter}&state={state}&sort={sort}&direction={direction}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Issue>

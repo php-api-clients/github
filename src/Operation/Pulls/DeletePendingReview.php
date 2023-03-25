@@ -19,23 +19,23 @@ final class DeletePendingReview
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the pull request.**/
-    private int $pull_number;
+    private int $pullNumber;
     /**The unique identifier of the review.**/
-    private int $review_id;
+    private int $reviewId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews\CbReviewIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews\CbReviewIdRcb $hydrator, string $owner, string $repo, int $pull_number, int $review_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Reviews\CbReviewIdRcb $hydrator, string $owner, string $repo, int $pullNumber, int $reviewId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->pull_number = $pull_number;
-        $this->review_id = $review_id;
+        $this->pullNumber = $pullNumber;
+        $this->reviewId = $reviewId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{pull_number}', '{review_id}'), array($this->owner, $this->repo, $this->pull_number, $this->review_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{pull_number}', '{review_id}'), array($this->owner, $this->repo, $this->pullNumber, $this->reviewId), self::PATH));
     }
     /**
      * @return Schema\PullRequestReview

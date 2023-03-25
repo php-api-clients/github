@@ -52,12 +52,12 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -85,75 +85,75 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['protection_rules'] ?? null;
 
             if ($value === null) {
-                $properties['protection_rules'] = null;
-                goto after_protection_rules;
+                $properties['protectionRules'] = null;
+                goto after_protectionRules;
             }
 
-            static $protection_rulesCaster1;
+            static $protectionRulesCaster1;
 
-            if ($protection_rulesCaster1 === null) {
-                $protection_rulesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($protectionRulesCaster1 === null) {
+                $protectionRulesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment\\ProtectionRules',
 ));
             }
 
-            $value = $protection_rulesCaster1->cast($value, $this);
+            $value = $protectionRulesCaster1->cast($value, $this);
 
-            $properties['protection_rules'] = $value;
+            $properties['protectionRules'] = $value;
 
-            after_protection_rules:
+            after_protectionRules:
 
             $value = $payload['deployment_branch_policy'] ?? null;
 
             if ($value === null) {
-                $properties['deployment_branch_policy'] = null;
-                goto after_deployment_branch_policy;
+                $properties['deploymentBranchPolicy'] = null;
+                goto after_deploymentBranchPolicy;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'deployment_branch_policy';
+                    $this->hydrationStack[] = 'deploymentBranchPolicy';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['deployment_branch_policy'] = $value;
+            $properties['deploymentBranchPolicy'] = $value;
 
-            after_deployment_branch_policy:
+            after_deploymentBranchPolicy:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
@@ -191,12 +191,12 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['type'] ?? null;
 
@@ -212,13 +212,13 @@ class CbEnvironmentNameRcb implements ObjectMapper
             $value = $payload['wait_timer'] ?? null;
 
             if ($value === null) {
-                $properties['wait_timer'] = null;
-                goto after_wait_timer;
+                $properties['waitTimer'] = null;
+                goto after_waitTimer;
             }
 
-            $properties['wait_timer'] = $value;
+            $properties['waitTimer'] = $value;
 
-            after_wait_timer:
+            after_waitTimer:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
@@ -245,23 +245,23 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'protected_branches';
-                goto after_protected_branches;
+                goto after_protectedBranches;
             }
 
-            $properties['protected_branches'] = $value;
+            $properties['protectedBranches'] = $value;
 
-            after_protected_branches:
+            after_protectedBranches:
 
             $value = $payload['custom_branch_policies'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'custom_branch_policies';
-                goto after_custom_branch_policies;
+                goto after_customBranchPolicies;
             }
 
-            $properties['custom_branch_policies'] = $value;
+            $properties['customBranchPolicies'] = $value;
 
-            after_custom_branch_policies:
+            after_customBranchPolicies:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
@@ -298,13 +298,13 @@ class CbEnvironmentNameRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -460,8 +460,8 @@ class CbEnvironmentNameRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -472,42 +472,42 @@ class CbEnvironmentNameRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $protection_rules = $object->protection_rules;
+        $protectionRules = $object->protectionRules;
 
-        if ($protection_rules === null) {
-            goto after_protection_rules;
+        if ($protectionRules === null) {
+            goto after_protectionRules;
         }
-        static $protection_rulesSerializer0;
+        static $protectionRulesSerializer0;
 
-        if ($protection_rulesSerializer0 === null) {
-            $protection_rulesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($protectionRulesSerializer0 === null) {
+            $protectionRulesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment\\ProtectionRules',
 ));
         }
         
-        $protection_rules = $protection_rulesSerializer0->serialize($protection_rules, $this);
-        after_protection_rules:        $result['protection_rules'] = $protection_rules;
+        $protectionRules = $protectionRulesSerializer0->serialize($protectionRules, $this);
+        after_protectionRules:        $result['protection_rules'] = $protectionRules;
 
         
-        $deployment_branch_policy = $object->deployment_branch_policy;
+        $deploymentBranchPolicy = $object->deploymentBranchPolicy;
 
-        if ($deployment_branch_policy === null) {
-            goto after_deployment_branch_policy;
+        if ($deploymentBranchPolicy === null) {
+            goto after_deploymentBranchPolicy;
         }
-        $deployment_branch_policy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($deployment_branch_policy);
-        after_deployment_branch_policy:        $result['deployment_branch_policy'] = $deployment_branch_policy;
+        $deploymentBranchPolicy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($deploymentBranchPolicy);
+        after_deploymentBranchPolicy:        $result['deployment_branch_policy'] = $deploymentBranchPolicy;
 
 
         return $result;
@@ -523,20 +523,20 @@ class CbEnvironmentNameRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $wait_timer = $object->wait_timer;
+        $waitTimer = $object->waitTimer;
 
-        if ($wait_timer === null) {
-            goto after_wait_timer;
+        if ($waitTimer === null) {
+            goto after_waitTimer;
         }
-        after_wait_timer:        $result['wait_timer'] = $wait_timer;
+        after_waitTimer:        $result['wait_timer'] = $waitTimer;
 
 
         return $result;
@@ -548,12 +548,12 @@ class CbEnvironmentNameRcb implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings);
         $result = [];
 
-        $protected_branches = $object->protected_branches;
-        after_protected_branches:        $result['protected_branches'] = $protected_branches;
+        $protectedBranches = $object->protectedBranches;
+        after_protectedBranches:        $result['protected_branches'] = $protectedBranches;
 
         
-        $custom_branch_policies = $object->custom_branch_policies;
-        after_custom_branch_policies:        $result['custom_branch_policies'] = $custom_branch_policies;
+        $customBranchPolicies = $object->customBranchPolicies;
+        after_customBranchPolicies:        $result['custom_branch_policies'] = $customBranchPolicies;
 
 
         return $result;
@@ -573,12 +573,12 @@ class CbEnvironmentNameRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

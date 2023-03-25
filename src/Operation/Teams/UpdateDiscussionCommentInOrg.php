@@ -18,27 +18,27 @@ final class UpdateDiscussionCommentInOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The slug of the team name.**/
-    private string $team_slug;
+    private string $teamSlug;
     /**The number that identifies the discussion.**/
-    private int $discussion_number;
+    private int $discussionNumber;
     /**The number that identifies the comment.**/
-    private int $comment_number;
+    private int $commentNumber;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator, string $org, string $team_slug, int $discussion_number, int $comment_number)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Teams\CbTeamSlugRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator, string $org, string $teamSlug, int $discussionNumber, int $commentNumber)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->org = $org;
-        $this->team_slug = $team_slug;
-        $this->discussion_number = $discussion_number;
-        $this->comment_number = $comment_number;
+        $this->teamSlug = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
+        $this->commentNumber = $commentNumber;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Teams\CreateDiscussionCommentInOrg\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{comment_number}'), array($this->org, $this->team_slug, $this->discussion_number, $this->comment_number), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{comment_number}'), array($this->org, $this->teamSlug, $this->discussionNumber, $this->commentNumber), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
      * @return Schema\TeamDiscussionComment

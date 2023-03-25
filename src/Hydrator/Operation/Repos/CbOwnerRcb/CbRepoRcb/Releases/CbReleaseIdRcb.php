@@ -53,56 +53,56 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['assets_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'assets_url';
-                goto after_assets_url;
+                goto after_assetsUrl;
             }
 
-            $properties['assets_url'] = $value;
+            $properties['assetsUrl'] = $value;
 
-            after_assets_url:
+            after_assetsUrl:
 
             $value = $payload['upload_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'upload_url';
-                goto after_upload_url;
+                goto after_uploadUrl;
             }
 
-            $properties['upload_url'] = $value;
+            $properties['uploadUrl'] = $value;
 
-            after_upload_url:
+            after_uploadUrl:
 
             $value = $payload['tarball_url'] ?? null;
 
             if ($value === null) {
-                $properties['tarball_url'] = null;
-                goto after_tarball_url;
+                $properties['tarballUrl'] = null;
+                goto after_tarballUrl;
             }
 
-            $properties['tarball_url'] = $value;
+            $properties['tarballUrl'] = $value;
 
-            after_tarball_url:
+            after_tarballUrl:
 
             $value = $payload['zipball_url'] ?? null;
 
             if ($value === null) {
-                $properties['zipball_url'] = null;
-                goto after_zipball_url;
+                $properties['zipballUrl'] = null;
+                goto after_zipballUrl;
             }
 
-            $properties['zipball_url'] = $value;
+            $properties['zipballUrl'] = $value;
 
-            after_zipball_url:
+            after_zipballUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -119,34 +119,34 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['tag_name'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'tag_name';
-                goto after_tag_name;
+                goto after_tagName;
             }
 
-            $properties['tag_name'] = $value;
+            $properties['tagName'] = $value;
 
-            after_tag_name:
+            after_tagName:
 
             $value = $payload['target_commitish'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'target_commitish';
-                goto after_target_commitish;
+                goto after_targetCommitish;
             }
 
-            $properties['target_commitish'] = $value;
+            $properties['targetCommitish'] = $value;
 
-            after_target_commitish:
+            after_targetCommitish:
 
             $value = $payload['name'] ?? null;
 
@@ -196,23 +196,23 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['published_at'] ?? null;
 
             if ($value === null) {
-                $properties['published_at'] = null;
-                goto after_published_at;
+                $properties['publishedAt'] = null;
+                goto after_publishedAt;
             }
 
-            $properties['published_at'] = $value;
+            $properties['publishedAt'] = $value;
 
-            after_published_at:
+            after_publishedAt:
 
             $value = $payload['author'] ?? null;
 
@@ -258,46 +258,46 @@ class CbReleaseIdRcb implements ObjectMapper
             $value = $payload['body_html'] ?? null;
 
             if ($value === null) {
-                $properties['body_html'] = null;
-                goto after_body_html;
+                $properties['bodyHtml'] = null;
+                goto after_bodyHtml;
             }
 
-            $properties['body_html'] = $value;
+            $properties['bodyHtml'] = $value;
 
-            after_body_html:
+            after_bodyHtml:
 
             $value = $payload['body_text'] ?? null;
 
             if ($value === null) {
-                $properties['body_text'] = null;
-                goto after_body_text;
+                $properties['bodyText'] = null;
+                goto after_bodyText;
             }
 
-            $properties['body_text'] = $value;
+            $properties['bodyText'] = $value;
 
-            after_body_text:
+            after_bodyText:
 
             $value = $payload['mentions_count'] ?? null;
 
             if ($value === null) {
-                $properties['mentions_count'] = null;
-                goto after_mentions_count;
+                $properties['mentionsCount'] = null;
+                goto after_mentionsCount;
             }
 
-            $properties['mentions_count'] = $value;
+            $properties['mentionsCount'] = $value;
 
-            after_mentions_count:
+            after_mentionsCount:
 
             $value = $payload['discussion_url'] ?? null;
 
             if ($value === null) {
-                $properties['discussion_url'] = null;
-                goto after_discussion_url;
+                $properties['discussionUrl'] = null;
+                goto after_discussionUrl;
             }
 
-            $properties['discussion_url'] = $value;
+            $properties['discussionUrl'] = $value;
 
-            after_discussion_url:
+            after_discussionUrl:
 
             $value = $payload['reactions'] ?? null;
 
@@ -388,34 +388,34 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -432,111 +432,111 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -553,23 +553,23 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -607,12 +607,12 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'browser_download_url';
-                goto after_browser_download_url;
+                goto after_browserDownloadUrl;
             }
 
-            $properties['browser_download_url'] = $value;
+            $properties['browserDownloadUrl'] = $value;
 
-            after_browser_download_url:
+            after_browserDownloadUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -629,12 +629,12 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -673,12 +673,12 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'content_type';
-                goto after_content_type;
+                goto after_contentType;
             }
 
-            $properties['content_type'] = $value;
+            $properties['contentType'] = $value;
 
-            after_content_type:
+            after_contentType:
 
             $value = $payload['size'] ?? null;
 
@@ -695,34 +695,34 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'download_count';
-                goto after_download_count;
+                goto after_downloadCount;
             }
 
-            $properties['download_count'] = $value;
+            $properties['downloadCount'] = $value;
 
-            after_download_count:
+            after_downloadCount:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['uploader'] ?? null;
 
@@ -771,34 +771,34 @@ class CbReleaseIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
-            $value = $payload['__p_l_u_s_e_s_1'] ?? null;
+            $value = $payload['_PLUSES_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__p_l_u_s_e_s_1';
-                goto after__PLUSES_1;
+                $missingFields[] = '_PLUSES_1';
+                goto after_pluses1;
             }
 
-            $properties['_PLUSES_1'] = $value;
+            $properties['pluses1'] = $value;
 
-            after__PLUSES_1:
+            after_pluses1:
 
-            $value = $payload['__m_i_n_u_s_1'] ?? null;
+            $value = $payload['_MINUS_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__m_i_n_u_s_1';
-                goto after__MINUS_1;
+                $missingFields[] = '_MINUS_1';
+                goto after_minus1;
             }
 
-            $properties['_MINUS_1'] = $value;
+            $properties['minus1'] = $value;
 
-            after__MINUS_1:
+            after_minus1:
 
             $value = $payload['laugh'] ?? null;
 
@@ -901,13 +901,13 @@ class CbReleaseIdRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -1064,48 +1064,48 @@ class CbReleaseIdRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $assets_url = $object->assets_url;
-        after_assets_url:        $result['assets_url'] = $assets_url;
+        $assetsUrl = $object->assetsUrl;
+        after_assetsUrl:        $result['assets_url'] = $assetsUrl;
 
         
-        $upload_url = $object->upload_url;
-        after_upload_url:        $result['upload_url'] = $upload_url;
+        $uploadUrl = $object->uploadUrl;
+        after_uploadUrl:        $result['upload_url'] = $uploadUrl;
 
         
-        $tarball_url = $object->tarball_url;
+        $tarballUrl = $object->tarballUrl;
 
-        if ($tarball_url === null) {
-            goto after_tarball_url;
+        if ($tarballUrl === null) {
+            goto after_tarballUrl;
         }
-        after_tarball_url:        $result['tarball_url'] = $tarball_url;
+        after_tarballUrl:        $result['tarball_url'] = $tarballUrl;
 
         
-        $zipball_url = $object->zipball_url;
+        $zipballUrl = $object->zipballUrl;
 
-        if ($zipball_url === null) {
-            goto after_zipball_url;
+        if ($zipballUrl === null) {
+            goto after_zipballUrl;
         }
-        after_zipball_url:        $result['zipball_url'] = $zipball_url;
+        after_zipballUrl:        $result['zipball_url'] = $zipballUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $tag_name = $object->tag_name;
-        after_tag_name:        $result['tag_name'] = $tag_name;
+        $tagName = $object->tagName;
+        after_tagName:        $result['tag_name'] = $tagName;
 
         
-        $target_commitish = $object->target_commitish;
-        after_target_commitish:        $result['target_commitish'] = $target_commitish;
+        $targetCommitish = $object->targetCommitish;
+        after_targetCommitish:        $result['target_commitish'] = $targetCommitish;
 
         
         $name = $object->name;
@@ -1132,16 +1132,16 @@ class CbReleaseIdRcb implements ObjectMapper
         after_prerelease:        $result['prerelease'] = $prerelease;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $published_at = $object->published_at;
+        $publishedAt = $object->publishedAt;
 
-        if ($published_at === null) {
-            goto after_published_at;
+        if ($publishedAt === null) {
+            goto after_publishedAt;
         }
-        after_published_at:        $result['published_at'] = $published_at;
+        after_publishedAt:        $result['published_at'] = $publishedAt;
 
         
         $author = $object->author;
@@ -1162,36 +1162,36 @@ class CbReleaseIdRcb implements ObjectMapper
         after_assets:        $result['assets'] = $assets;
 
         
-        $body_html = $object->body_html;
+        $bodyHtml = $object->bodyHtml;
 
-        if ($body_html === null) {
-            goto after_body_html;
+        if ($bodyHtml === null) {
+            goto after_bodyHtml;
         }
-        after_body_html:        $result['body_html'] = $body_html;
+        after_bodyHtml:        $result['body_html'] = $bodyHtml;
 
         
-        $body_text = $object->body_text;
+        $bodyText = $object->bodyText;
 
-        if ($body_text === null) {
-            goto after_body_text;
+        if ($bodyText === null) {
+            goto after_bodyText;
         }
-        after_body_text:        $result['body_text'] = $body_text;
+        after_bodyText:        $result['body_text'] = $bodyText;
 
         
-        $mentions_count = $object->mentions_count;
+        $mentionsCount = $object->mentionsCount;
 
-        if ($mentions_count === null) {
-            goto after_mentions_count;
+        if ($mentionsCount === null) {
+            goto after_mentionsCount;
         }
-        after_mentions_count:        $result['mentions_count'] = $mentions_count;
+        after_mentionsCount:        $result['mentions_count'] = $mentionsCount;
 
         
-        $discussion_url = $object->discussion_url;
+        $discussionUrl = $object->discussionUrl;
 
-        if ($discussion_url === null) {
-            goto after_discussion_url;
+        if ($discussionUrl === null) {
+            goto after_discussionUrl;
         }
-        after_discussion_url:        $result['discussion_url'] = $discussion_url;
+        after_discussionUrl:        $result['discussion_url'] = $discussionUrl;
 
         
         $reactions = $object->reactions;
@@ -1236,80 +1236,80 @@ class CbReleaseIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -1325,16 +1325,16 @@ class CbReleaseIdRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $browser_download_url = $object->browser_download_url;
-        after_browser_download_url:        $result['browser_download_url'] = $browser_download_url;
+        $browserDownloadUrl = $object->browserDownloadUrl;
+        after_browserDownloadUrl:        $result['browser_download_url'] = $browserDownloadUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -1353,24 +1353,24 @@ class CbReleaseIdRcb implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $content_type = $object->content_type;
-        after_content_type:        $result['content_type'] = $content_type;
+        $contentType = $object->contentType;
+        after_contentType:        $result['content_type'] = $contentType;
 
         
         $size = $object->size;
         after_size:        $result['size'] = $size;
 
         
-        $download_count = $object->download_count;
-        after_download_count:        $result['download_count'] = $download_count;
+        $downloadCount = $object->downloadCount;
+        after_downloadCount:        $result['download_count'] = $downloadCount;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $uploader = $object->uploader;
@@ -1394,16 +1394,16 @@ class CbReleaseIdRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $_PLUSES_1 = $object->_PLUSES_1;
-        after__PLUSES_1:        $result['__p_l_u_s_e_s_1'] = $_PLUSES_1;
+        $pluses1 = $object->pluses1;
+        after_pluses1:        $result['_PLUSES_1'] = $pluses1;
 
         
-        $_MINUS_1 = $object->_MINUS_1;
-        after__MINUS_1:        $result['__m_i_n_u_s_1'] = $_MINUS_1;
+        $minus1 = $object->minus1;
+        after_minus1:        $result['_MINUS_1'] = $minus1;
 
         
         $laugh = $object->laugh;
@@ -1447,12 +1447,12 @@ class CbReleaseIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

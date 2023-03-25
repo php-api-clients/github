@@ -55,34 +55,34 @@ class Restrictions implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'users_url';
-                goto after_users_url;
+                goto after_usersUrl;
             }
 
-            $properties['users_url'] = $value;
+            $properties['usersUrl'] = $value;
 
-            after_users_url:
+            after_usersUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'teams_url';
-                goto after_teams_url;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
             $value = $payload['apps_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'apps_url';
-                goto after_apps_url;
+                goto after_appsUrl;
             }
 
-            $properties['apps_url'] = $value;
+            $properties['appsUrl'] = $value;
 
-            after_apps_url:
+            after_appsUrl:
 
             $value = $payload['users'] ?? null;
 
@@ -193,35 +193,35 @@ class Restrictions implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -237,112 +237,112 @@ class Restrictions implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
-                $properties['followers_url'] = null;
-                goto after_followers_url;
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
-                $properties['following_url'] = null;
-                goto after_following_url;
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
-                $properties['gists_url'] = null;
-                goto after_gists_url;
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
-                $properties['starred_url'] = null;
-                goto after_starred_url;
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
-                $properties['subscriptions_url'] = null;
-                goto after_subscriptions_url;
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
-                $properties['organizations_url'] = null;
-                goto after_organizations_url;
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
-                $properties['repos_url'] = null;
-                goto after_repos_url;
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
-                $properties['events_url'] = null;
-                goto after_events_url;
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
-                $properties['received_events_url'] = null;
-                goto after_received_events_url;
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -358,13 +358,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['site_admin'] ?? null;
 
             if ($value === null) {
-                $properties['site_admin'] = null;
-                goto after_site_admin;
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
@@ -401,13 +401,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -423,13 +423,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['name'] ?? null;
 
@@ -489,24 +489,24 @@ class Restrictions implements ObjectMapper
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
-                $properties['members_url'] = null;
-                goto after_members_url;
+                $properties['membersUrl'] = null;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
-                $properties['repositories_url'] = null;
-                goto after_repositories_url;
+                $properties['repositoriesUrl'] = null;
+                goto after_repositoriesUrl;
             }
 
-            $properties['repositories_url'] = $value;
+            $properties['repositoriesUrl'] = $value;
 
-            after_repositories_url:
+            after_repositoriesUrl:
 
             $value = $payload['parent'] ?? null;
 
@@ -565,13 +565,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['owner'] ?? null;
 
@@ -618,46 +618,46 @@ class Restrictions implements ObjectMapper
             $value = $payload['external_url'] ?? null;
 
             if ($value === null) {
-                $properties['external_url'] = null;
-                goto after_external_url;
+                $properties['externalUrl'] = null;
+                goto after_externalUrl;
             }
 
-            $properties['external_url'] = $value;
+            $properties['externalUrl'] = $value;
 
-            after_external_url:
+            after_externalUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['permissions'] ?? null;
 
@@ -736,13 +736,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -758,79 +758,79 @@ class Restrictions implements ObjectMapper
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
-                $properties['repos_url'] = null;
-                goto after_repos_url;
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
-                $properties['events_url'] = null;
-                goto after_events_url;
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
-                $properties['hooks_url'] = null;
-                goto after_hooks_url;
+                $properties['hooksUrl'] = null;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
-                $properties['issues_url'] = null;
-                goto after_issues_url;
+                $properties['issuesUrl'] = null;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
-                $properties['members_url'] = null;
-                goto after_members_url;
+                $properties['membersUrl'] = null;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
-                $properties['public_members_url'] = null;
-                goto after_public_members_url;
+                $properties['publicMembersUrl'] = null;
+                goto after_publicMembersUrl;
             }
 
-            $properties['public_members_url'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_public_members_url:
+            after_publicMembersUrl:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -846,101 +846,101 @@ class Restrictions implements ObjectMapper
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
-                $properties['followers_url'] = null;
-                goto after_followers_url;
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
-                $properties['following_url'] = null;
-                goto after_following_url;
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
-                $properties['gists_url'] = null;
-                goto after_gists_url;
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
-                $properties['starred_url'] = null;
-                goto after_starred_url;
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
-                $properties['subscriptions_url'] = null;
-                goto after_subscriptions_url;
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
-                $properties['organizations_url'] = null;
-                goto after_organizations_url;
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
-                $properties['received_events_url'] = null;
-                goto after_received_events_url;
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -956,13 +956,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['site_admin'] ?? null;
 
             if ($value === null) {
-                $properties['site_admin'] = null;
-                goto after_site_admin;
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Owner', $exception, stack: $this->hydrationStack);
@@ -1021,13 +1021,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['single_file'] ?? null;
 
             if ($value === null) {
-                $properties['single_file'] = null;
-                goto after_single_file;
+                $properties['singleFile'] = null;
+                goto after_singleFile;
             }
 
-            $properties['single_file'] = $value;
+            $properties['singleFile'] = $value;
 
-            after_single_file:
+            after_singleFile:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy\Apps\Permissions', $exception, stack: $this->hydrationStack);
@@ -1064,13 +1064,13 @@ class Restrictions implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -1229,16 +1229,16 @@ class Restrictions implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $users_url = $object->users_url;
-        after_users_url:        $result['users_url'] = $users_url;
+        $usersUrl = $object->usersUrl;
+        after_usersUrl:        $result['users_url'] = $usersUrl;
 
         
-        $teams_url = $object->teams_url;
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        $teamsUrl = $object->teamsUrl;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
         
-        $apps_url = $object->apps_url;
-        after_apps_url:        $result['apps_url'] = $apps_url;
+        $appsUrl = $object->appsUrl;
+        after_appsUrl:        $result['apps_url'] = $appsUrl;
 
         
         $users = $object->users;
@@ -1305,28 +1305,28 @@ class Restrictions implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
@@ -1337,84 +1337,84 @@ class Restrictions implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
+        $followersUrl = $object->followersUrl;
 
-        if ($followers_url === null) {
-            goto after_followers_url;
+        if ($followersUrl === null) {
+            goto after_followersUrl;
         }
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
+        $followingUrl = $object->followingUrl;
 
-        if ($following_url === null) {
-            goto after_following_url;
+        if ($followingUrl === null) {
+            goto after_followingUrl;
         }
-        after_following_url:        $result['following_url'] = $following_url;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
+        $gistsUrl = $object->gistsUrl;
 
-        if ($gists_url === null) {
-            goto after_gists_url;
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
         }
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
+        $starredUrl = $object->starredUrl;
 
-        if ($starred_url === null) {
-            goto after_starred_url;
+        if ($starredUrl === null) {
+            goto after_starredUrl;
         }
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
 
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
         }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
 
-        if ($organizations_url === null) {
-            goto after_organizations_url;
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
         }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
+        $reposUrl = $object->reposUrl;
 
-        if ($repos_url === null) {
-            goto after_repos_url;
+        if ($reposUrl === null) {
+            goto after_reposUrl;
         }
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
+        $eventsUrl = $object->eventsUrl;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
         }
-        after_events_url:        $result['events_url'] = $events_url;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
 
-        if ($received_events_url === null) {
-            goto after_received_events_url;
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
         }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
@@ -1425,12 +1425,12 @@ class Restrictions implements ObjectMapper
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
+        $siteAdmin = $object->siteAdmin;
 
-        if ($site_admin === null) {
-            goto after_site_admin;
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
         }
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
 
         return $result;
@@ -1450,12 +1450,12 @@ class Restrictions implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
@@ -1466,12 +1466,12 @@ class Restrictions implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $name = $object->name;
@@ -1514,20 +1514,20 @@ class Restrictions implements ObjectMapper
         after_permission:        $result['permission'] = $permission;
 
         
-        $members_url = $object->members_url;
+        $membersUrl = $object->membersUrl;
 
-        if ($members_url === null) {
-            goto after_members_url;
+        if ($membersUrl === null) {
+            goto after_membersUrl;
         }
-        after_members_url:        $result['members_url'] = $members_url;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $repositories_url = $object->repositories_url;
+        $repositoriesUrl = $object->repositoriesUrl;
 
-        if ($repositories_url === null) {
-            goto after_repositories_url;
+        if ($repositoriesUrl === null) {
+            goto after_repositoriesUrl;
         }
-        after_repositories_url:        $result['repositories_url'] = $repositories_url;
+        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
 
         
         $parent = $object->parent;
@@ -1563,12 +1563,12 @@ class Restrictions implements ObjectMapper
         after_slug:        $result['slug'] = $slug;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $owner = $object->owner;
@@ -1596,36 +1596,36 @@ class Restrictions implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $external_url = $object->external_url;
+        $externalUrl = $object->externalUrl;
 
-        if ($external_url === null) {
-            goto after_external_url;
+        if ($externalUrl === null) {
+            goto after_externalUrl;
         }
-        after_external_url:        $result['external_url'] = $external_url;
+        after_externalUrl:        $result['external_url'] = $externalUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $permissions = $object->permissions;
@@ -1678,12 +1678,12 @@ class Restrictions implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
@@ -1694,60 +1694,60 @@ class Restrictions implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $repos_url = $object->repos_url;
+        $reposUrl = $object->reposUrl;
 
-        if ($repos_url === null) {
-            goto after_repos_url;
+        if ($reposUrl === null) {
+            goto after_reposUrl;
         }
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
+        $eventsUrl = $object->eventsUrl;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
         }
-        after_events_url:        $result['events_url'] = $events_url;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $hooks_url = $object->hooks_url;
+        $hooksUrl = $object->hooksUrl;
 
-        if ($hooks_url === null) {
-            goto after_hooks_url;
+        if ($hooksUrl === null) {
+            goto after_hooksUrl;
         }
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issues_url = $object->issues_url;
+        $issuesUrl = $object->issuesUrl;
 
-        if ($issues_url === null) {
-            goto after_issues_url;
+        if ($issuesUrl === null) {
+            goto after_issuesUrl;
         }
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $members_url = $object->members_url;
+        $membersUrl = $object->membersUrl;
 
-        if ($members_url === null) {
-            goto after_members_url;
+        if ($membersUrl === null) {
+            goto after_membersUrl;
         }
-        after_members_url:        $result['members_url'] = $members_url;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $public_members_url = $object->public_members_url;
+        $publicMembersUrl = $object->publicMembersUrl;
 
-        if ($public_members_url === null) {
-            goto after_public_members_url;
+        if ($publicMembersUrl === null) {
+            goto after_publicMembersUrl;
         }
-        after_public_members_url:        $result['public_members_url'] = $public_members_url;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
 
         
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $description = $object->description;
@@ -1758,76 +1758,76 @@ class Restrictions implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
+        $followersUrl = $object->followersUrl;
 
-        if ($followers_url === null) {
-            goto after_followers_url;
+        if ($followersUrl === null) {
+            goto after_followersUrl;
         }
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
+        $followingUrl = $object->followingUrl;
 
-        if ($following_url === null) {
-            goto after_following_url;
+        if ($followingUrl === null) {
+            goto after_followingUrl;
         }
-        after_following_url:        $result['following_url'] = $following_url;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
+        $gistsUrl = $object->gistsUrl;
 
-        if ($gists_url === null) {
-            goto after_gists_url;
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
         }
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
+        $starredUrl = $object->starredUrl;
 
-        if ($starred_url === null) {
-            goto after_starred_url;
+        if ($starredUrl === null) {
+            goto after_starredUrl;
         }
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
 
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
         }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
 
-        if ($organizations_url === null) {
-            goto after_organizations_url;
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
         }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $received_events_url = $object->received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
 
-        if ($received_events_url === null) {
-            goto after_received_events_url;
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
         }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
@@ -1838,12 +1838,12 @@ class Restrictions implements ObjectMapper
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
+        $siteAdmin = $object->siteAdmin;
 
-        if ($site_admin === null) {
-            goto after_site_admin;
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
         }
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
 
         return $result;
@@ -1879,12 +1879,12 @@ class Restrictions implements ObjectMapper
         after_issues:        $result['issues'] = $issues;
 
         
-        $single_file = $object->single_file;
+        $singleFile = $object->singleFile;
 
-        if ($single_file === null) {
-            goto after_single_file;
+        if ($singleFile === null) {
+            goto after_singleFile;
         }
-        after_single_file:        $result['single_file'] = $single_file;
+        after_singleFile:        $result['single_file'] = $singleFile;
 
 
         return $result;
@@ -1904,12 +1904,12 @@ class Restrictions implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

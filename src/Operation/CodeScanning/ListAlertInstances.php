@@ -19,29 +19,29 @@ final class ListAlertInstances
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.**/
-    private int $alert_number;
+    private int $alertNumber;
     /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
     private string $ref;
     /**Page number of the results to fetch.**/
     private int $page;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Alerts\CbAlertNumberRcb\Instances $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Alerts\CbAlertNumberRcb\Instances $hydrator, string $owner, string $repo, int $alert_number, string $ref, int $page = 1, int $per_page = 30)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Alerts\CbAlertNumberRcb\Instances $hydrator, string $owner, string $repo, int $alertNumber, string $ref, int $page = 1, int $perPage = 30)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->alert_number = $alert_number;
+        $this->alertNumber = $alertNumber;
         $this->ref = $ref;
         $this->page = $page;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'), array($this->owner, $this->repo, $this->alert_number, $this->ref, $this->page, $this->per_page), self::PATH . '?ref={ref}&page={page}&per_page={per_page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'), array($this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage), self::PATH . '?ref={ref}&page={page}&perPage={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\CodeScanningAlertInstance>

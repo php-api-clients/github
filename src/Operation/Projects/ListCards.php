@@ -15,27 +15,27 @@ final class ListCards
     private const METHOD = 'GET';
     private const PATH = '/projects/columns/{column_id}/cards';
     /**The unique identifier of the column.**/
-    private int $column_id;
+    private int $columnId;
     /**Filters the project cards that are returned by the card's state.**/
-    private string $archived_state;
+    private string $archivedState;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Projects\Columns\CbColumnIdRcb\Cards $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\CbColumnIdRcb\Cards $hydrator, int $column_id, string $archived_state = 'not_archived', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\CbColumnIdRcb\Cards $hydrator, int $columnId, string $archivedState = 'not_archived', int $perPage = 30, int $page = 1)
     {
-        $this->column_id = $column_id;
-        $this->archived_state = $archived_state;
-        $this->per_page = $per_page;
+        $this->columnId = $columnId;
+        $this->archivedState = $archivedState;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{column_id}', '{archived_state}', '{per_page}', '{page}'), array($this->column_id, $this->archived_state, $this->per_page, $this->page), self::PATH . '?archived_state={archived_state}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{column_id}', '{archived_state}', '{per_page}', '{page}'), array($this->columnId, $this->archivedState, $this->perPage, $this->page), self::PATH . '?archivedState={archived_state}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\ProjectCard>

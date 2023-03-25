@@ -19,16 +19,16 @@ final class DeleteReleaseAsset
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the asset.**/
-    private int $asset_id;
-    public function __construct(string $owner, string $repo, int $asset_id)
+    private int $assetId;
+    public function __construct(string $owner, string $repo, int $assetId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->asset_id = $asset_id;
+        $this->assetId = $assetId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{asset_id}'), array($this->owner, $this->repo, $this->asset_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{asset_id}'), array($this->owner, $this->repo, $this->assetId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

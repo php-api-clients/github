@@ -45,23 +45,23 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['incomplete_results'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'incomplete_results';
-                goto after_incomplete_results;
+                goto after_incompleteResults;
             }
 
-            $properties['incomplete_results'] = $value;
+            $properties['incompleteResults'] = $value;
 
-            after_incomplete_results:
+            after_incompleteResults:
 
             $value = $payload['items'] ?? null;
 
@@ -120,12 +120,12 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -142,12 +142,12 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'full_name';
-                goto after_full_name;
+                goto after_fullName;
             }
 
-            $properties['full_name'] = $value;
+            $properties['fullName'] = $value;
 
-            after_full_name:
+            after_fullName:
 
             $value = $payload['owner'] ?? null;
 
@@ -175,12 +175,12 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -219,34 +219,34 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['pushed_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pushed_at';
-                goto after_pushed_at;
+                goto after_pushedAt;
             }
 
-            $properties['pushed_at'] = $value;
+            $properties['pushedAt'] = $value;
 
-            after_pushed_at:
+            after_pushedAt:
 
             $value = $payload['homepage'] ?? null;
 
@@ -274,23 +274,23 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'stargazers_count';
-                goto after_stargazers_count;
+                goto after_stargazersCount;
             }
 
-            $properties['stargazers_count'] = $value;
+            $properties['stargazersCount'] = $value;
 
-            after_stargazers_count:
+            after_stargazersCount:
 
             $value = $payload['watchers_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'watchers_count';
-                goto after_watchers_count;
+                goto after_watchersCount;
             }
 
-            $properties['watchers_count'] = $value;
+            $properties['watchersCount'] = $value;
 
-            after_watchers_count:
+            after_watchersCount:
 
             $value = $payload['language'] ?? null;
 
@@ -307,45 +307,45 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'forks_count';
-                goto after_forks_count;
+                goto after_forksCount;
             }
 
-            $properties['forks_count'] = $value;
+            $properties['forksCount'] = $value;
 
-            after_forks_count:
+            after_forksCount:
 
             $value = $payload['open_issues_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'open_issues_count';
-                goto after_open_issues_count;
+                goto after_openIssuesCount;
             }
 
-            $properties['open_issues_count'] = $value;
+            $properties['openIssuesCount'] = $value;
 
-            after_open_issues_count:
+            after_openIssuesCount:
 
             $value = $payload['master_branch'] ?? null;
 
             if ($value === null) {
-                $properties['master_branch'] = null;
-                goto after_master_branch;
+                $properties['masterBranch'] = null;
+                goto after_masterBranch;
             }
 
-            $properties['master_branch'] = $value;
+            $properties['masterBranch'] = $value;
 
-            after_master_branch:
+            after_masterBranch:
 
             $value = $payload['default_branch'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'default_branch';
-                goto after_default_branch;
+                goto after_defaultBranch;
             }
 
-            $properties['default_branch'] = $value;
+            $properties['defaultBranch'] = $value;
 
-            after_default_branch:
+            after_defaultBranch:
 
             $value = $payload['score'] ?? null;
 
@@ -362,441 +362,441 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'forks_url';
-                goto after_forks_url;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['keys_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'keys_url';
-                goto after_keys_url;
+                goto after_keysUrl;
             }
 
-            $properties['keys_url'] = $value;
+            $properties['keysUrl'] = $value;
 
-            after_keys_url:
+            after_keysUrl:
 
             $value = $payload['collaborators_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'collaborators_url';
-                goto after_collaborators_url;
+                goto after_collaboratorsUrl;
             }
 
-            $properties['collaborators_url'] = $value;
+            $properties['collaboratorsUrl'] = $value;
 
-            after_collaborators_url:
+            after_collaboratorsUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'teams_url';
-                goto after_teams_url;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issue_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_events_url';
-                goto after_issue_events_url;
+                goto after_issueEventsUrl;
             }
 
-            $properties['issue_events_url'] = $value;
+            $properties['issueEventsUrl'] = $value;
 
-            after_issue_events_url:
+            after_issueEventsUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['assignees_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'assignees_url';
-                goto after_assignees_url;
+                goto after_assigneesUrl;
             }
 
-            $properties['assignees_url'] = $value;
+            $properties['assigneesUrl'] = $value;
 
-            after_assignees_url:
+            after_assigneesUrl:
 
             $value = $payload['branches_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'branches_url';
-                goto after_branches_url;
+                goto after_branchesUrl;
             }
 
-            $properties['branches_url'] = $value;
+            $properties['branchesUrl'] = $value;
 
-            after_branches_url:
+            after_branchesUrl:
 
             $value = $payload['tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'tags_url';
-                goto after_tags_url;
+                goto after_tagsUrl;
             }
 
-            $properties['tags_url'] = $value;
+            $properties['tagsUrl'] = $value;
 
-            after_tags_url:
+            after_tagsUrl:
 
             $value = $payload['blobs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blobs_url';
-                goto after_blobs_url;
+                goto after_blobsUrl;
             }
 
-            $properties['blobs_url'] = $value;
+            $properties['blobsUrl'] = $value;
 
-            after_blobs_url:
+            after_blobsUrl:
 
             $value = $payload['git_tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_tags_url';
-                goto after_git_tags_url;
+                goto after_gitTagsUrl;
             }
 
-            $properties['git_tags_url'] = $value;
+            $properties['gitTagsUrl'] = $value;
 
-            after_git_tags_url:
+            after_gitTagsUrl:
 
             $value = $payload['git_refs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_refs_url';
-                goto after_git_refs_url;
+                goto after_gitRefsUrl;
             }
 
-            $properties['git_refs_url'] = $value;
+            $properties['gitRefsUrl'] = $value;
 
-            after_git_refs_url:
+            after_gitRefsUrl:
 
             $value = $payload['trees_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'trees_url';
-                goto after_trees_url;
+                goto after_treesUrl;
             }
 
-            $properties['trees_url'] = $value;
+            $properties['treesUrl'] = $value;
 
-            after_trees_url:
+            after_treesUrl:
 
             $value = $payload['statuses_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'statuses_url';
-                goto after_statuses_url;
+                goto after_statusesUrl;
             }
 
-            $properties['statuses_url'] = $value;
+            $properties['statusesUrl'] = $value;
 
-            after_statuses_url:
+            after_statusesUrl:
 
             $value = $payload['languages_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'languages_url';
-                goto after_languages_url;
+                goto after_languagesUrl;
             }
 
-            $properties['languages_url'] = $value;
+            $properties['languagesUrl'] = $value;
 
-            after_languages_url:
+            after_languagesUrl:
 
             $value = $payload['stargazers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'stargazers_url';
-                goto after_stargazers_url;
+                goto after_stargazersUrl;
             }
 
-            $properties['stargazers_url'] = $value;
+            $properties['stargazersUrl'] = $value;
 
-            after_stargazers_url:
+            after_stargazersUrl:
 
             $value = $payload['contributors_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contributors_url';
-                goto after_contributors_url;
+                goto after_contributorsUrl;
             }
 
-            $properties['contributors_url'] = $value;
+            $properties['contributorsUrl'] = $value;
 
-            after_contributors_url:
+            after_contributorsUrl:
 
             $value = $payload['subscribers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscribers_url';
-                goto after_subscribers_url;
+                goto after_subscribersUrl;
             }
 
-            $properties['subscribers_url'] = $value;
+            $properties['subscribersUrl'] = $value;
 
-            after_subscribers_url:
+            after_subscribersUrl:
 
             $value = $payload['subscription_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscription_url';
-                goto after_subscription_url;
+                goto after_subscriptionUrl;
             }
 
-            $properties['subscription_url'] = $value;
+            $properties['subscriptionUrl'] = $value;
 
-            after_subscription_url:
+            after_subscriptionUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commits_url';
-                goto after_commits_url;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['git_commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_commits_url';
-                goto after_git_commits_url;
+                goto after_gitCommitsUrl;
             }
 
-            $properties['git_commits_url'] = $value;
+            $properties['gitCommitsUrl'] = $value;
 
-            after_git_commits_url:
+            after_gitCommitsUrl:
 
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['issue_comment_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_comment_url';
-                goto after_issue_comment_url;
+                goto after_issueCommentUrl;
             }
 
-            $properties['issue_comment_url'] = $value;
+            $properties['issueCommentUrl'] = $value;
 
-            after_issue_comment_url:
+            after_issueCommentUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['compare_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'compare_url';
-                goto after_compare_url;
+                goto after_compareUrl;
             }
 
-            $properties['compare_url'] = $value;
+            $properties['compareUrl'] = $value;
 
-            after_compare_url:
+            after_compareUrl:
 
             $value = $payload['merges_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'merges_url';
-                goto after_merges_url;
+                goto after_mergesUrl;
             }
 
-            $properties['merges_url'] = $value;
+            $properties['mergesUrl'] = $value;
 
-            after_merges_url:
+            after_mergesUrl:
 
             $value = $payload['archive_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'archive_url';
-                goto after_archive_url;
+                goto after_archiveUrl;
             }
 
-            $properties['archive_url'] = $value;
+            $properties['archiveUrl'] = $value;
 
-            after_archive_url:
+            after_archiveUrl:
 
             $value = $payload['downloads_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'downloads_url';
-                goto after_downloads_url;
+                goto after_downloadsUrl;
             }
 
-            $properties['downloads_url'] = $value;
+            $properties['downloadsUrl'] = $value;
 
-            after_downloads_url:
+            after_downloadsUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['pulls_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pulls_url';
-                goto after_pulls_url;
+                goto after_pullsUrl;
             }
 
-            $properties['pulls_url'] = $value;
+            $properties['pullsUrl'] = $value;
 
-            after_pulls_url:
+            after_pullsUrl:
 
             $value = $payload['milestones_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'milestones_url';
-                goto after_milestones_url;
+                goto after_milestonesUrl;
             }
 
-            $properties['milestones_url'] = $value;
+            $properties['milestonesUrl'] = $value;
 
-            after_milestones_url:
+            after_milestonesUrl:
 
             $value = $payload['notifications_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'notifications_url';
-                goto after_notifications_url;
+                goto after_notificationsUrl;
             }
 
-            $properties['notifications_url'] = $value;
+            $properties['notificationsUrl'] = $value;
 
-            after_notifications_url:
+            after_notificationsUrl:
 
             $value = $payload['labels_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'labels_url';
-                goto after_labels_url;
+                goto after_labelsUrl;
             }
 
-            $properties['labels_url'] = $value;
+            $properties['labelsUrl'] = $value;
 
-            after_labels_url:
+            after_labelsUrl:
 
             $value = $payload['releases_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'releases_url';
-                goto after_releases_url;
+                goto after_releasesUrl;
             }
 
-            $properties['releases_url'] = $value;
+            $properties['releasesUrl'] = $value;
 
-            after_releases_url:
+            after_releasesUrl:
 
             $value = $payload['deployments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'deployments_url';
-                goto after_deployments_url;
+                goto after_deploymentsUrl;
             }
 
-            $properties['deployments_url'] = $value;
+            $properties['deploymentsUrl'] = $value;
 
-            after_deployments_url:
+            after_deploymentsUrl:
 
             $value = $payload['git_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_url';
-                goto after_git_url;
+                goto after_gitUrl;
             }
 
-            $properties['git_url'] = $value;
+            $properties['gitUrl'] = $value;
 
-            after_git_url:
+            after_gitUrl:
 
             $value = $payload['ssh_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'ssh_url';
-                goto after_ssh_url;
+                goto after_sshUrl;
             }
 
-            $properties['ssh_url'] = $value;
+            $properties['sshUrl'] = $value;
 
-            after_ssh_url:
+            after_sshUrl:
 
             $value = $payload['clone_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'clone_url';
-                goto after_clone_url;
+                goto after_cloneUrl;
             }
 
-            $properties['clone_url'] = $value;
+            $properties['cloneUrl'] = $value;
 
-            after_clone_url:
+            after_cloneUrl:
 
             $value = $payload['svn_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'svn_url';
-                goto after_svn_url;
+                goto after_svnUrl;
             }
 
-            $properties['svn_url'] = $value;
+            $properties['svnUrl'] = $value;
 
-            after_svn_url:
+            after_svnUrl:
 
             $value = $payload['forks'] ?? null;
 
@@ -813,12 +813,12 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'open_issues';
-                goto after_open_issues;
+                goto after_openIssues;
             }
 
-            $properties['open_issues'] = $value;
+            $properties['openIssues'] = $value;
 
-            after_open_issues:
+            after_openIssues:
 
             $value = $payload['watchers'] ?? null;
 
@@ -845,79 +845,79 @@ class Repositories implements ObjectMapper
             $value = $payload['mirror_url'] ?? null;
 
             if ($value === null) {
-                $properties['mirror_url'] = null;
-                goto after_mirror_url;
+                $properties['mirrorUrl'] = null;
+                goto after_mirrorUrl;
             }
 
-            $properties['mirror_url'] = $value;
+            $properties['mirrorUrl'] = $value;
 
-            after_mirror_url:
+            after_mirrorUrl:
 
             $value = $payload['has_issues'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_issues';
-                goto after_has_issues;
+                goto after_hasIssues;
             }
 
-            $properties['has_issues'] = $value;
+            $properties['hasIssues'] = $value;
 
-            after_has_issues:
+            after_hasIssues:
 
             $value = $payload['has_projects'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_projects';
-                goto after_has_projects;
+                goto after_hasProjects;
             }
 
-            $properties['has_projects'] = $value;
+            $properties['hasProjects'] = $value;
 
-            after_has_projects:
+            after_hasProjects:
 
             $value = $payload['has_pages'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_pages';
-                goto after_has_pages;
+                goto after_hasPages;
             }
 
-            $properties['has_pages'] = $value;
+            $properties['hasPages'] = $value;
 
-            after_has_pages:
+            after_hasPages:
 
             $value = $payload['has_wiki'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_wiki';
-                goto after_has_wiki;
+                goto after_hasWiki;
             }
 
-            $properties['has_wiki'] = $value;
+            $properties['hasWiki'] = $value;
 
-            after_has_wiki:
+            after_hasWiki:
 
             $value = $payload['has_downloads'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_downloads';
-                goto after_has_downloads;
+                goto after_hasDownloads;
             }
 
-            $properties['has_downloads'] = $value;
+            $properties['hasDownloads'] = $value;
 
-            after_has_downloads:
+            after_hasDownloads:
 
             $value = $payload['has_discussions'] ?? null;
 
             if ($value === null) {
-                $properties['has_discussions'] = null;
-                goto after_has_discussions;
+                $properties['hasDiscussions'] = null;
+                goto after_hasDiscussions;
             }
 
-            $properties['has_discussions'] = $value;
+            $properties['hasDiscussions'] = $value;
 
-            after_has_discussions:
+            after_hasDiscussions:
 
             $value = $payload['archived'] ?? null;
 
@@ -986,122 +986,122 @@ class Repositories implements ObjectMapper
             $value = $payload['text_matches'] ?? null;
 
             if ($value === null) {
-                $properties['text_matches'] = null;
-                goto after_text_matches;
+                $properties['textMatches'] = null;
+                goto after_textMatches;
             }
 
-            static $text_matchesCaster1;
+            static $textMatchesCaster1;
 
-            if ($text_matchesCaster1 === null) {
-                $text_matchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($textMatchesCaster1 === null) {
+                $textMatchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
             }
 
-            $value = $text_matchesCaster1->cast($value, $this);
+            $value = $textMatchesCaster1->cast($value, $this);
 
-            $properties['text_matches'] = $value;
+            $properties['textMatches'] = $value;
 
-            after_text_matches:
+            after_textMatches:
 
             $value = $payload['temp_clone_token'] ?? null;
 
             if ($value === null) {
-                $properties['temp_clone_token'] = null;
-                goto after_temp_clone_token;
+                $properties['tempCloneToken'] = null;
+                goto after_tempCloneToken;
             }
 
-            $properties['temp_clone_token'] = $value;
+            $properties['tempCloneToken'] = $value;
 
-            after_temp_clone_token:
+            after_tempCloneToken:
 
             $value = $payload['allow_merge_commit'] ?? null;
 
             if ($value === null) {
-                $properties['allow_merge_commit'] = null;
-                goto after_allow_merge_commit;
+                $properties['allowMergeCommit'] = null;
+                goto after_allowMergeCommit;
             }
 
-            $properties['allow_merge_commit'] = $value;
+            $properties['allowMergeCommit'] = $value;
 
-            after_allow_merge_commit:
+            after_allowMergeCommit:
 
             $value = $payload['allow_squash_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_squash_merge'] = null;
-                goto after_allow_squash_merge;
+                $properties['allowSquashMerge'] = null;
+                goto after_allowSquashMerge;
             }
 
-            $properties['allow_squash_merge'] = $value;
+            $properties['allowSquashMerge'] = $value;
 
-            after_allow_squash_merge:
+            after_allowSquashMerge:
 
             $value = $payload['allow_rebase_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_rebase_merge'] = null;
-                goto after_allow_rebase_merge;
+                $properties['allowRebaseMerge'] = null;
+                goto after_allowRebaseMerge;
             }
 
-            $properties['allow_rebase_merge'] = $value;
+            $properties['allowRebaseMerge'] = $value;
 
-            after_allow_rebase_merge:
+            after_allowRebaseMerge:
 
             $value = $payload['allow_auto_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_auto_merge'] = null;
-                goto after_allow_auto_merge;
+                $properties['allowAutoMerge'] = null;
+                goto after_allowAutoMerge;
             }
 
-            $properties['allow_auto_merge'] = $value;
+            $properties['allowAutoMerge'] = $value;
 
-            after_allow_auto_merge:
+            after_allowAutoMerge:
 
             $value = $payload['delete_branch_on_merge'] ?? null;
 
             if ($value === null) {
-                $properties['delete_branch_on_merge'] = null;
-                goto after_delete_branch_on_merge;
+                $properties['deleteBranchOnMerge'] = null;
+                goto after_deleteBranchOnMerge;
             }
 
-            $properties['delete_branch_on_merge'] = $value;
+            $properties['deleteBranchOnMerge'] = $value;
 
-            after_delete_branch_on_merge:
+            after_deleteBranchOnMerge:
 
             $value = $payload['allow_forking'] ?? null;
 
             if ($value === null) {
-                $properties['allow_forking'] = null;
-                goto after_allow_forking;
+                $properties['allowForking'] = null;
+                goto after_allowForking;
             }
 
-            $properties['allow_forking'] = $value;
+            $properties['allowForking'] = $value;
 
-            after_allow_forking:
+            after_allowForking:
 
             $value = $payload['is_template'] ?? null;
 
             if ($value === null) {
-                $properties['is_template'] = null;
-                goto after_is_template;
+                $properties['isTemplate'] = null;
+                goto after_isTemplate;
             }
 
-            $properties['is_template'] = $value;
+            $properties['isTemplate'] = $value;
 
-            after_is_template:
+            after_isTemplate:
 
             $value = $payload['web_commit_signoff_required'] ?? null;
 
             if ($value === null) {
-                $properties['web_commit_signoff_required'] = null;
-                goto after_web_commit_signoff_required;
+                $properties['webCommitSignoffRequired'] = null;
+                goto after_webCommitSignoffRequired;
             }
 
-            $properties['web_commit_signoff_required'] = $value;
+            $properties['webCommitSignoffRequired'] = $value;
 
-            after_web_commit_signoff_required:
+            after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepoSearchResultItem', $exception, stack: $this->hydrationStack);
@@ -1203,24 +1203,24 @@ class Repositories implements ObjectMapper
             $value = $payload['object_url'] ?? null;
 
             if ($value === null) {
-                $properties['object_url'] = null;
-                goto after_object_url;
+                $properties['objectUrl'] = null;
+                goto after_objectUrl;
             }
 
-            $properties['object_url'] = $value;
+            $properties['objectUrl'] = $value;
 
-            after_object_url:
+            after_objectUrl:
 
             $value = $payload['object_type'] ?? null;
 
             if ($value === null) {
-                $properties['object_type'] = null;
-                goto after_object_type;
+                $properties['objectType'] = null;
+                goto after_objectType;
             }
 
-            $properties['object_type'] = $value;
+            $properties['objectType'] = $value;
 
-            after_object_type:
+            after_objectType:
 
             $value = $payload['property'] ?? null;
 
@@ -1354,13 +1354,13 @@ class Repositories implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -1398,12 +1398,12 @@ class Repositories implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -1645,12 +1645,12 @@ class Repositories implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Search\Repos\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $incomplete_results = $object->incomplete_results;
-        after_incomplete_results:        $result['incomplete_results'] = $incomplete_results;
+        $incompleteResults = $object->incompleteResults;
+        after_incompleteResults:        $result['incomplete_results'] = $incompleteResults;
 
         
         $items = $object->items;
@@ -1679,16 +1679,16 @@ class Repositories implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
-        $full_name = $object->full_name;
-        after_full_name:        $result['full_name'] = $full_name;
+        $fullName = $object->fullName;
+        after_fullName:        $result['full_name'] = $fullName;
 
         
         $owner = $object->owner;
@@ -1703,8 +1703,8 @@ class Repositories implements ObjectMapper
         after_private:        $result['private'] = $private;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $description = $object->description;
@@ -1723,16 +1723,16 @@ class Repositories implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $pushed_at = $object->pushed_at;
-        after_pushed_at:        $result['pushed_at'] = $pushed_at;
+        $pushedAt = $object->pushedAt;
+        after_pushedAt:        $result['pushed_at'] = $pushedAt;
 
         
         $homepage = $object->homepage;
@@ -1747,12 +1747,12 @@ class Repositories implements ObjectMapper
         after_size:        $result['size'] = $size;
 
         
-        $stargazers_count = $object->stargazers_count;
-        after_stargazers_count:        $result['stargazers_count'] = $stargazers_count;
+        $stargazersCount = $object->stargazersCount;
+        after_stargazersCount:        $result['stargazers_count'] = $stargazersCount;
 
         
-        $watchers_count = $object->watchers_count;
-        after_watchers_count:        $result['watchers_count'] = $watchers_count;
+        $watchersCount = $object->watchersCount;
+        after_watchersCount:        $result['watchers_count'] = $watchersCount;
 
         
         $language = $object->language;
@@ -1763,196 +1763,196 @@ class Repositories implements ObjectMapper
         after_language:        $result['language'] = $language;
 
         
-        $forks_count = $object->forks_count;
-        after_forks_count:        $result['forks_count'] = $forks_count;
+        $forksCount = $object->forksCount;
+        after_forksCount:        $result['forks_count'] = $forksCount;
 
         
-        $open_issues_count = $object->open_issues_count;
-        after_open_issues_count:        $result['open_issues_count'] = $open_issues_count;
+        $openIssuesCount = $object->openIssuesCount;
+        after_openIssuesCount:        $result['open_issues_count'] = $openIssuesCount;
 
         
-        $master_branch = $object->master_branch;
+        $masterBranch = $object->masterBranch;
 
-        if ($master_branch === null) {
-            goto after_master_branch;
+        if ($masterBranch === null) {
+            goto after_masterBranch;
         }
-        after_master_branch:        $result['master_branch'] = $master_branch;
+        after_masterBranch:        $result['master_branch'] = $masterBranch;
 
         
-        $default_branch = $object->default_branch;
-        after_default_branch:        $result['default_branch'] = $default_branch;
+        $defaultBranch = $object->defaultBranch;
+        after_defaultBranch:        $result['default_branch'] = $defaultBranch;
 
         
         $score = $object->score;
         after_score:        $result['score'] = $score;
 
         
-        $forks_url = $object->forks_url;
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        $forksUrl = $object->forksUrl;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $keys_url = $object->keys_url;
-        after_keys_url:        $result['keys_url'] = $keys_url;
+        $keysUrl = $object->keysUrl;
+        after_keysUrl:        $result['keys_url'] = $keysUrl;
 
         
-        $collaborators_url = $object->collaborators_url;
-        after_collaborators_url:        $result['collaborators_url'] = $collaborators_url;
+        $collaboratorsUrl = $object->collaboratorsUrl;
+        after_collaboratorsUrl:        $result['collaborators_url'] = $collaboratorsUrl;
 
         
-        $teams_url = $object->teams_url;
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        $teamsUrl = $object->teamsUrl;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issue_events_url = $object->issue_events_url;
-        after_issue_events_url:        $result['issue_events_url'] = $issue_events_url;
+        $issueEventsUrl = $object->issueEventsUrl;
+        after_issueEventsUrl:        $result['issue_events_url'] = $issueEventsUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $assignees_url = $object->assignees_url;
-        after_assignees_url:        $result['assignees_url'] = $assignees_url;
+        $assigneesUrl = $object->assigneesUrl;
+        after_assigneesUrl:        $result['assignees_url'] = $assigneesUrl;
 
         
-        $branches_url = $object->branches_url;
-        after_branches_url:        $result['branches_url'] = $branches_url;
+        $branchesUrl = $object->branchesUrl;
+        after_branchesUrl:        $result['branches_url'] = $branchesUrl;
 
         
-        $tags_url = $object->tags_url;
-        after_tags_url:        $result['tags_url'] = $tags_url;
+        $tagsUrl = $object->tagsUrl;
+        after_tagsUrl:        $result['tags_url'] = $tagsUrl;
 
         
-        $blobs_url = $object->blobs_url;
-        after_blobs_url:        $result['blobs_url'] = $blobs_url;
+        $blobsUrl = $object->blobsUrl;
+        after_blobsUrl:        $result['blobs_url'] = $blobsUrl;
 
         
-        $git_tags_url = $object->git_tags_url;
-        after_git_tags_url:        $result['git_tags_url'] = $git_tags_url;
+        $gitTagsUrl = $object->gitTagsUrl;
+        after_gitTagsUrl:        $result['git_tags_url'] = $gitTagsUrl;
 
         
-        $git_refs_url = $object->git_refs_url;
-        after_git_refs_url:        $result['git_refs_url'] = $git_refs_url;
+        $gitRefsUrl = $object->gitRefsUrl;
+        after_gitRefsUrl:        $result['git_refs_url'] = $gitRefsUrl;
 
         
-        $trees_url = $object->trees_url;
-        after_trees_url:        $result['trees_url'] = $trees_url;
+        $treesUrl = $object->treesUrl;
+        after_treesUrl:        $result['trees_url'] = $treesUrl;
 
         
-        $statuses_url = $object->statuses_url;
-        after_statuses_url:        $result['statuses_url'] = $statuses_url;
+        $statusesUrl = $object->statusesUrl;
+        after_statusesUrl:        $result['statuses_url'] = $statusesUrl;
 
         
-        $languages_url = $object->languages_url;
-        after_languages_url:        $result['languages_url'] = $languages_url;
+        $languagesUrl = $object->languagesUrl;
+        after_languagesUrl:        $result['languages_url'] = $languagesUrl;
 
         
-        $stargazers_url = $object->stargazers_url;
-        after_stargazers_url:        $result['stargazers_url'] = $stargazers_url;
+        $stargazersUrl = $object->stargazersUrl;
+        after_stargazersUrl:        $result['stargazers_url'] = $stargazersUrl;
 
         
-        $contributors_url = $object->contributors_url;
-        after_contributors_url:        $result['contributors_url'] = $contributors_url;
+        $contributorsUrl = $object->contributorsUrl;
+        after_contributorsUrl:        $result['contributors_url'] = $contributorsUrl;
 
         
-        $subscribers_url = $object->subscribers_url;
-        after_subscribers_url:        $result['subscribers_url'] = $subscribers_url;
+        $subscribersUrl = $object->subscribersUrl;
+        after_subscribersUrl:        $result['subscribers_url'] = $subscribersUrl;
 
         
-        $subscription_url = $object->subscription_url;
-        after_subscription_url:        $result['subscription_url'] = $subscription_url;
+        $subscriptionUrl = $object->subscriptionUrl;
+        after_subscriptionUrl:        $result['subscription_url'] = $subscriptionUrl;
 
         
-        $commits_url = $object->commits_url;
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        $commitsUrl = $object->commitsUrl;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
-        $git_commits_url = $object->git_commits_url;
-        after_git_commits_url:        $result['git_commits_url'] = $git_commits_url;
+        $gitCommitsUrl = $object->gitCommitsUrl;
+        after_gitCommitsUrl:        $result['git_commits_url'] = $gitCommitsUrl;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
-        $issue_comment_url = $object->issue_comment_url;
-        after_issue_comment_url:        $result['issue_comment_url'] = $issue_comment_url;
+        $issueCommentUrl = $object->issueCommentUrl;
+        after_issueCommentUrl:        $result['issue_comment_url'] = $issueCommentUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
-        $compare_url = $object->compare_url;
-        after_compare_url:        $result['compare_url'] = $compare_url;
+        $compareUrl = $object->compareUrl;
+        after_compareUrl:        $result['compare_url'] = $compareUrl;
 
         
-        $merges_url = $object->merges_url;
-        after_merges_url:        $result['merges_url'] = $merges_url;
+        $mergesUrl = $object->mergesUrl;
+        after_mergesUrl:        $result['merges_url'] = $mergesUrl;
 
         
-        $archive_url = $object->archive_url;
-        after_archive_url:        $result['archive_url'] = $archive_url;
+        $archiveUrl = $object->archiveUrl;
+        after_archiveUrl:        $result['archive_url'] = $archiveUrl;
 
         
-        $downloads_url = $object->downloads_url;
-        after_downloads_url:        $result['downloads_url'] = $downloads_url;
+        $downloadsUrl = $object->downloadsUrl;
+        after_downloadsUrl:        $result['downloads_url'] = $downloadsUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $pulls_url = $object->pulls_url;
-        after_pulls_url:        $result['pulls_url'] = $pulls_url;
+        $pullsUrl = $object->pullsUrl;
+        after_pullsUrl:        $result['pulls_url'] = $pullsUrl;
 
         
-        $milestones_url = $object->milestones_url;
-        after_milestones_url:        $result['milestones_url'] = $milestones_url;
+        $milestonesUrl = $object->milestonesUrl;
+        after_milestonesUrl:        $result['milestones_url'] = $milestonesUrl;
 
         
-        $notifications_url = $object->notifications_url;
-        after_notifications_url:        $result['notifications_url'] = $notifications_url;
+        $notificationsUrl = $object->notificationsUrl;
+        after_notificationsUrl:        $result['notifications_url'] = $notificationsUrl;
 
         
-        $labels_url = $object->labels_url;
-        after_labels_url:        $result['labels_url'] = $labels_url;
+        $labelsUrl = $object->labelsUrl;
+        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
         
-        $releases_url = $object->releases_url;
-        after_releases_url:        $result['releases_url'] = $releases_url;
+        $releasesUrl = $object->releasesUrl;
+        after_releasesUrl:        $result['releases_url'] = $releasesUrl;
 
         
-        $deployments_url = $object->deployments_url;
-        after_deployments_url:        $result['deployments_url'] = $deployments_url;
+        $deploymentsUrl = $object->deploymentsUrl;
+        after_deploymentsUrl:        $result['deployments_url'] = $deploymentsUrl;
 
         
-        $git_url = $object->git_url;
-        after_git_url:        $result['git_url'] = $git_url;
+        $gitUrl = $object->gitUrl;
+        after_gitUrl:        $result['git_url'] = $gitUrl;
 
         
-        $ssh_url = $object->ssh_url;
-        after_ssh_url:        $result['ssh_url'] = $ssh_url;
+        $sshUrl = $object->sshUrl;
+        after_sshUrl:        $result['ssh_url'] = $sshUrl;
 
         
-        $clone_url = $object->clone_url;
-        after_clone_url:        $result['clone_url'] = $clone_url;
+        $cloneUrl = $object->cloneUrl;
+        after_cloneUrl:        $result['clone_url'] = $cloneUrl;
 
         
-        $svn_url = $object->svn_url;
-        after_svn_url:        $result['svn_url'] = $svn_url;
+        $svnUrl = $object->svnUrl;
+        after_svnUrl:        $result['svn_url'] = $svnUrl;
 
         
         $forks = $object->forks;
         after_forks:        $result['forks'] = $forks;
 
         
-        $open_issues = $object->open_issues;
-        after_open_issues:        $result['open_issues'] = $open_issues;
+        $openIssues = $object->openIssues;
+        after_openIssues:        $result['open_issues'] = $openIssues;
 
         
         $watchers = $object->watchers;
@@ -1975,40 +1975,40 @@ class Repositories implements ObjectMapper
         after_topics:        $result['topics'] = $topics;
 
         
-        $mirror_url = $object->mirror_url;
+        $mirrorUrl = $object->mirrorUrl;
 
-        if ($mirror_url === null) {
-            goto after_mirror_url;
+        if ($mirrorUrl === null) {
+            goto after_mirrorUrl;
         }
-        after_mirror_url:        $result['mirror_url'] = $mirror_url;
+        after_mirrorUrl:        $result['mirror_url'] = $mirrorUrl;
 
         
-        $has_issues = $object->has_issues;
-        after_has_issues:        $result['has_issues'] = $has_issues;
+        $hasIssues = $object->hasIssues;
+        after_hasIssues:        $result['has_issues'] = $hasIssues;
 
         
-        $has_projects = $object->has_projects;
-        after_has_projects:        $result['has_projects'] = $has_projects;
+        $hasProjects = $object->hasProjects;
+        after_hasProjects:        $result['has_projects'] = $hasProjects;
 
         
-        $has_pages = $object->has_pages;
-        after_has_pages:        $result['has_pages'] = $has_pages;
+        $hasPages = $object->hasPages;
+        after_hasPages:        $result['has_pages'] = $hasPages;
 
         
-        $has_wiki = $object->has_wiki;
-        after_has_wiki:        $result['has_wiki'] = $has_wiki;
+        $hasWiki = $object->hasWiki;
+        after_hasWiki:        $result['has_wiki'] = $hasWiki;
 
         
-        $has_downloads = $object->has_downloads;
-        after_has_downloads:        $result['has_downloads'] = $has_downloads;
+        $hasDownloads = $object->hasDownloads;
+        after_hasDownloads:        $result['has_downloads'] = $hasDownloads;
 
         
-        $has_discussions = $object->has_discussions;
+        $hasDiscussions = $object->hasDiscussions;
 
-        if ($has_discussions === null) {
-            goto after_has_discussions;
+        if ($hasDiscussions === null) {
+            goto after_hasDiscussions;
         }
-        after_has_discussions:        $result['has_discussions'] = $has_discussions;
+        after_hasDiscussions:        $result['has_discussions'] = $hasDiscussions;
 
         
         $archived = $object->archived;
@@ -2044,93 +2044,93 @@ class Repositories implements ObjectMapper
         after_permissions:        $result['permissions'] = $permissions;
 
         
-        $text_matches = $object->text_matches;
+        $textMatches = $object->textMatches;
 
-        if ($text_matches === null) {
-            goto after_text_matches;
+        if ($textMatches === null) {
+            goto after_textMatches;
         }
-        static $text_matchesSerializer0;
+        static $textMatchesSerializer0;
 
-        if ($text_matchesSerializer0 === null) {
-            $text_matchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($textMatchesSerializer0 === null) {
+            $textMatchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
         }
         
-        $text_matches = $text_matchesSerializer0->serialize($text_matches, $this);
-        after_text_matches:        $result['text_matches'] = $text_matches;
+        $textMatches = $textMatchesSerializer0->serialize($textMatches, $this);
+        after_textMatches:        $result['text_matches'] = $textMatches;
 
         
-        $temp_clone_token = $object->temp_clone_token;
+        $tempCloneToken = $object->tempCloneToken;
 
-        if ($temp_clone_token === null) {
-            goto after_temp_clone_token;
+        if ($tempCloneToken === null) {
+            goto after_tempCloneToken;
         }
-        after_temp_clone_token:        $result['temp_clone_token'] = $temp_clone_token;
+        after_tempCloneToken:        $result['temp_clone_token'] = $tempCloneToken;
 
         
-        $allow_merge_commit = $object->allow_merge_commit;
+        $allowMergeCommit = $object->allowMergeCommit;
 
-        if ($allow_merge_commit === null) {
-            goto after_allow_merge_commit;
+        if ($allowMergeCommit === null) {
+            goto after_allowMergeCommit;
         }
-        after_allow_merge_commit:        $result['allow_merge_commit'] = $allow_merge_commit;
+        after_allowMergeCommit:        $result['allow_merge_commit'] = $allowMergeCommit;
 
         
-        $allow_squash_merge = $object->allow_squash_merge;
+        $allowSquashMerge = $object->allowSquashMerge;
 
-        if ($allow_squash_merge === null) {
-            goto after_allow_squash_merge;
+        if ($allowSquashMerge === null) {
+            goto after_allowSquashMerge;
         }
-        after_allow_squash_merge:        $result['allow_squash_merge'] = $allow_squash_merge;
+        after_allowSquashMerge:        $result['allow_squash_merge'] = $allowSquashMerge;
 
         
-        $allow_rebase_merge = $object->allow_rebase_merge;
+        $allowRebaseMerge = $object->allowRebaseMerge;
 
-        if ($allow_rebase_merge === null) {
-            goto after_allow_rebase_merge;
+        if ($allowRebaseMerge === null) {
+            goto after_allowRebaseMerge;
         }
-        after_allow_rebase_merge:        $result['allow_rebase_merge'] = $allow_rebase_merge;
+        after_allowRebaseMerge:        $result['allow_rebase_merge'] = $allowRebaseMerge;
 
         
-        $allow_auto_merge = $object->allow_auto_merge;
+        $allowAutoMerge = $object->allowAutoMerge;
 
-        if ($allow_auto_merge === null) {
-            goto after_allow_auto_merge;
+        if ($allowAutoMerge === null) {
+            goto after_allowAutoMerge;
         }
-        after_allow_auto_merge:        $result['allow_auto_merge'] = $allow_auto_merge;
+        after_allowAutoMerge:        $result['allow_auto_merge'] = $allowAutoMerge;
 
         
-        $delete_branch_on_merge = $object->delete_branch_on_merge;
+        $deleteBranchOnMerge = $object->deleteBranchOnMerge;
 
-        if ($delete_branch_on_merge === null) {
-            goto after_delete_branch_on_merge;
+        if ($deleteBranchOnMerge === null) {
+            goto after_deleteBranchOnMerge;
         }
-        after_delete_branch_on_merge:        $result['delete_branch_on_merge'] = $delete_branch_on_merge;
+        after_deleteBranchOnMerge:        $result['delete_branch_on_merge'] = $deleteBranchOnMerge;
 
         
-        $allow_forking = $object->allow_forking;
+        $allowForking = $object->allowForking;
 
-        if ($allow_forking === null) {
-            goto after_allow_forking;
+        if ($allowForking === null) {
+            goto after_allowForking;
         }
-        after_allow_forking:        $result['allow_forking'] = $allow_forking;
+        after_allowForking:        $result['allow_forking'] = $allowForking;
 
         
-        $is_template = $object->is_template;
+        $isTemplate = $object->isTemplate;
 
-        if ($is_template === null) {
-            goto after_is_template;
+        if ($isTemplate === null) {
+            goto after_isTemplate;
         }
-        after_is_template:        $result['is_template'] = $is_template;
+        after_isTemplate:        $result['is_template'] = $isTemplate;
 
         
-        $web_commit_signoff_required = $object->web_commit_signoff_required;
+        $webCommitSignoffRequired = $object->webCommitSignoffRequired;
 
-        if ($web_commit_signoff_required === null) {
-            goto after_web_commit_signoff_required;
+        if ($webCommitSignoffRequired === null) {
+            goto after_webCommitSignoffRequired;
         }
-        after_web_commit_signoff_required:        $result['web_commit_signoff_required'] = $web_commit_signoff_required;
+        after_webCommitSignoffRequired:        $result['web_commit_signoff_required'] = $webCommitSignoffRequired;
 
 
         return $result;
@@ -2179,20 +2179,20 @@ class Repositories implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SearchResultTextMatches);
         $result = [];
 
-        $object_url = $object->object_url;
+        $objectUrl = $object->objectUrl;
 
-        if ($object_url === null) {
-            goto after_object_url;
+        if ($objectUrl === null) {
+            goto after_objectUrl;
         }
-        after_object_url:        $result['object_url'] = $object_url;
+        after_objectUrl:        $result['object_url'] = $objectUrl;
 
         
-        $object_type = $object->object_type;
+        $objectType = $object->objectType;
 
-        if ($object_type === null) {
-            goto after_object_type;
+        if ($objectType === null) {
+            goto after_objectType;
         }
-        after_object_type:        $result['object_type'] = $object_type;
+        after_objectType:        $result['object_type'] = $objectType;
 
         
         $property = $object->property;
@@ -2286,12 +2286,12 @@ class Repositories implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;
@@ -2307,8 +2307,8 @@ class Repositories implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

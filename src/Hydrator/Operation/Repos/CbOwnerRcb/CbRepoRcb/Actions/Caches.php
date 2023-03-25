@@ -39,33 +39,33 @@ class Caches implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['actions_caches'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'actions_caches';
-                goto after_actions_caches;
+                goto after_actionsCaches;
             }
 
-            static $actions_cachesCaster1;
+            static $actionsCachesCaster1;
 
-            if ($actions_cachesCaster1 === null) {
-                $actions_cachesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($actionsCachesCaster1 === null) {
+                $actionsCachesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheList\\ActionsCaches',
 ));
             }
 
-            $value = $actions_cachesCaster1->cast($value, $this);
+            $value = $actionsCachesCaster1->cast($value, $this);
 
-            $properties['actions_caches'] = $value;
+            $properties['actionsCaches'] = $value;
 
-            after_actions_caches:
+            after_actionsCaches:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList', $exception, stack: $this->hydrationStack);
@@ -135,35 +135,35 @@ class Caches implements ObjectMapper
             $value = $payload['last_accessed_at'] ?? null;
 
             if ($value === null) {
-                $properties['last_accessed_at'] = null;
-                goto after_last_accessed_at;
+                $properties['lastAccessedAt'] = null;
+                goto after_lastAccessedAt;
             }
 
-            $properties['last_accessed_at'] = $value;
+            $properties['lastAccessedAt'] = $value;
 
-            after_last_accessed_at:
+            after_lastAccessedAt:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['size_in_bytes'] ?? null;
 
             if ($value === null) {
-                $properties['size_in_bytes'] = null;
-                goto after_size_in_bytes;
+                $properties['sizeInBytes'] = null;
+                goto after_sizeInBytes;
             }
 
-            $properties['size_in_bytes'] = $value;
+            $properties['sizeInBytes'] = $value;
 
-            after_size_in_bytes:
+            after_sizeInBytes:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches', $exception, stack: $this->hydrationStack);
@@ -291,21 +291,21 @@ class Caches implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheList);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $actions_caches = $object->actions_caches;
-        static $actions_cachesSerializer0;
+        $actionsCaches = $object->actionsCaches;
+        static $actionsCachesSerializer0;
 
-        if ($actions_cachesSerializer0 === null) {
-            $actions_cachesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($actionsCachesSerializer0 === null) {
+            $actionsCachesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheList\\ActionsCaches',
 ));
         }
         
-        $actions_caches = $actions_cachesSerializer0->serialize($actions_caches, $this);
-        after_actions_caches:        $result['actions_caches'] = $actions_caches;
+        $actionsCaches = $actionsCachesSerializer0->serialize($actionsCaches, $this);
+        after_actionsCaches:        $result['actions_caches'] = $actionsCaches;
 
 
         return $result;
@@ -349,28 +349,28 @@ class Caches implements ObjectMapper
         after_version:        $result['version'] = $version;
 
         
-        $last_accessed_at = $object->last_accessed_at;
+        $lastAccessedAt = $object->lastAccessedAt;
 
-        if ($last_accessed_at === null) {
-            goto after_last_accessed_at;
+        if ($lastAccessedAt === null) {
+            goto after_lastAccessedAt;
         }
-        after_last_accessed_at:        $result['last_accessed_at'] = $last_accessed_at;
+        after_lastAccessedAt:        $result['last_accessed_at'] = $lastAccessedAt;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $size_in_bytes = $object->size_in_bytes;
+        $sizeInBytes = $object->sizeInBytes;
 
-        if ($size_in_bytes === null) {
-            goto after_size_in_bytes;
+        if ($sizeInBytes === null) {
+            goto after_sizeInBytes;
         }
-        after_size_in_bytes:        $result['size_in_bytes'] = $size_in_bytes;
+        after_sizeInBytes:        $result['size_in_bytes'] = $sizeInBytes;
 
 
         return $result;

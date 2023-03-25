@@ -17,15 +17,15 @@ final class DeleteRequiredWorkflow
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the required workflow.**/
-    private int $required_workflow_id;
-    public function __construct(string $org, int $required_workflow_id)
+    private int $requiredWorkflowId;
+    public function __construct(string $org, int $requiredWorkflowId)
     {
         $this->org = $org;
-        $this->required_workflow_id = $required_workflow_id;
+        $this->requiredWorkflowId = $requiredWorkflowId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{required_workflow_id}'), array($this->org, $this->required_workflow_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{required_workflow_id}'), array($this->org, $this->requiredWorkflowId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

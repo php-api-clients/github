@@ -25,23 +25,23 @@ final class ListNotificationsForAuthenticatedUser
     /**Page number of the results to fetch.**/
     private int $page;
     /**The number of results per page (max 50).**/
-    private int $per_page;
+    private int $perPage;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Notifications $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Notifications $hydrator, string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $per_page = 50)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Notifications $hydrator, string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50)
     {
         $this->since = $since;
         $this->before = $before;
         $this->all = $all;
         $this->participating = $participating;
         $this->page = $page;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{before}', '{all}', '{participating}', '{page}', '{per_page}'), array($this->since, $this->before, $this->all, $this->participating, $this->page, $this->per_page), self::PATH . '?since={since}&before={before}&all={all}&participating={participating}&page={page}&per_page={per_page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}', '{before}', '{all}', '{participating}', '{page}', '{per_page}'), array($this->since, $this->before, $this->all, $this->participating, $this->page, $this->perPage), self::PATH . '?since={since}&before={before}&all={all}&participating={participating}&page={page}&perPage={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Thread>

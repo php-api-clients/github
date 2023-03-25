@@ -95,45 +95,45 @@ class Keys implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['read_only'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'read_only';
-                goto after_read_only;
+                goto after_readOnly;
             }
 
-            $properties['read_only'] = $value;
+            $properties['readOnly'] = $value;
 
-            after_read_only:
+            after_readOnly:
 
             $value = $payload['added_by'] ?? null;
 
             if ($value === null) {
-                $properties['added_by'] = null;
-                goto after_added_by;
+                $properties['addedBy'] = null;
+                goto after_addedBy;
             }
 
-            $properties['added_by'] = $value;
+            $properties['addedBy'] = $value;
 
-            after_added_by:
+            after_addedBy:
 
             $value = $payload['last_used'] ?? null;
 
             if ($value === null) {
-                $properties['last_used'] = null;
-                goto after_last_used;
+                $properties['lastUsed'] = null;
+                goto after_lastUsed;
             }
 
-            $properties['last_used'] = $value;
+            $properties['lastUsed'] = $value;
 
-            after_last_used:
+            after_lastUsed:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeployKey', $exception, stack: $this->hydrationStack);
@@ -171,12 +171,12 @@ class Keys implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -433,28 +433,28 @@ class Keys implements ObjectMapper
         after_verified:        $result['verified'] = $verified;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $read_only = $object->read_only;
-        after_read_only:        $result['read_only'] = $read_only;
+        $readOnly = $object->readOnly;
+        after_readOnly:        $result['read_only'] = $readOnly;
 
         
-        $added_by = $object->added_by;
+        $addedBy = $object->addedBy;
 
-        if ($added_by === null) {
-            goto after_added_by;
+        if ($addedBy === null) {
+            goto after_addedBy;
         }
-        after_added_by:        $result['added_by'] = $added_by;
+        after_addedBy:        $result['added_by'] = $addedBy;
 
         
-        $last_used = $object->last_used;
+        $lastUsed = $object->lastUsed;
 
-        if ($last_used === null) {
-            goto after_last_used;
+        if ($lastUsed === null) {
+            goto after_lastUsed;
         }
-        after_last_used:        $result['last_used'] = $last_used;
+        after_lastUsed:        $result['last_used'] = $lastUsed;
 
 
         return $result;
@@ -470,8 +470,8 @@ class Keys implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

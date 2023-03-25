@@ -64,35 +64,35 @@ class GpgKeys implements ObjectMapper
             $value = $payload['primary_key_id'] ?? null;
 
             if ($value === null) {
-                $properties['primary_key_id'] = null;
-                goto after_primary_key_id;
+                $properties['primaryKeyId'] = null;
+                goto after_primaryKeyId;
             }
 
-            $properties['primary_key_id'] = $value;
+            $properties['primaryKeyId'] = $value;
 
-            after_primary_key_id:
+            after_primaryKeyId:
 
             $value = $payload['key_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'key_id';
-                goto after_key_id;
+                goto after_keyId;
             }
 
-            $properties['key_id'] = $value;
+            $properties['keyId'] = $value;
 
-            after_key_id:
+            after_keyId:
 
             $value = $payload['public_key'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_key';
-                goto after_public_key;
+                goto after_publicKey;
             }
 
-            $properties['public_key'] = $value;
+            $properties['publicKey'] = $value;
 
-            after_public_key:
+            after_publicKey:
 
             $value = $payload['emails'] ?? null;
 
@@ -140,67 +140,67 @@ class GpgKeys implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'can_sign';
-                goto after_can_sign;
+                goto after_canSign;
             }
 
-            $properties['can_sign'] = $value;
+            $properties['canSign'] = $value;
 
-            after_can_sign:
+            after_canSign:
 
             $value = $payload['can_encrypt_comms'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'can_encrypt_comms';
-                goto after_can_encrypt_comms;
+                goto after_canEncryptComms;
             }
 
-            $properties['can_encrypt_comms'] = $value;
+            $properties['canEncryptComms'] = $value;
 
-            after_can_encrypt_comms:
+            after_canEncryptComms:
 
             $value = $payload['can_encrypt_storage'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'can_encrypt_storage';
-                goto after_can_encrypt_storage;
+                goto after_canEncryptStorage;
             }
 
-            $properties['can_encrypt_storage'] = $value;
+            $properties['canEncryptStorage'] = $value;
 
-            after_can_encrypt_storage:
+            after_canEncryptStorage:
 
             $value = $payload['can_certify'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'can_certify';
-                goto after_can_certify;
+                goto after_canCertify;
             }
 
-            $properties['can_certify'] = $value;
+            $properties['canCertify'] = $value;
 
-            after_can_certify:
+            after_canCertify:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['expires_at'] ?? null;
 
             if ($value === null) {
-                $properties['expires_at'] = null;
-                goto after_expires_at;
+                $properties['expiresAt'] = null;
+                goto after_expiresAt;
             }
 
-            $properties['expires_at'] = $value;
+            $properties['expiresAt'] = $value;
 
-            after_expires_at:
+            after_expiresAt:
 
             $value = $payload['revoked'] ?? null;
 
@@ -216,13 +216,13 @@ class GpgKeys implements ObjectMapper
             $value = $payload['raw_key'] ?? null;
 
             if ($value === null) {
-                $properties['raw_key'] = null;
-                goto after_raw_key;
+                $properties['rawKey'] = null;
+                goto after_rawKey;
             }
 
-            $properties['raw_key'] = $value;
+            $properties['rawKey'] = $value;
 
-            after_raw_key:
+            after_rawKey:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GpgKey', $exception, stack: $this->hydrationStack);
@@ -302,35 +302,35 @@ class GpgKeys implements ObjectMapper
             $value = $payload['primary_key_id'] ?? null;
 
             if ($value === null) {
-                $properties['primary_key_id'] = null;
-                goto after_primary_key_id;
+                $properties['primaryKeyId'] = null;
+                goto after_primaryKeyId;
             }
 
-            $properties['primary_key_id'] = $value;
+            $properties['primaryKeyId'] = $value;
 
-            after_primary_key_id:
+            after_primaryKeyId:
 
             $value = $payload['key_id'] ?? null;
 
             if ($value === null) {
-                $properties['key_id'] = null;
-                goto after_key_id;
+                $properties['keyId'] = null;
+                goto after_keyId;
             }
 
-            $properties['key_id'] = $value;
+            $properties['keyId'] = $value;
 
-            after_key_id:
+            after_keyId:
 
             $value = $payload['public_key'] ?? null;
 
             if ($value === null) {
-                $properties['public_key'] = null;
-                goto after_public_key;
+                $properties['publicKey'] = null;
+                goto after_publicKey;
             }
 
-            $properties['public_key'] = $value;
+            $properties['publicKey'] = $value;
 
-            after_public_key:
+            after_publicKey:
 
             $value = $payload['emails'] ?? null;
 
@@ -357,79 +357,79 @@ class GpgKeys implements ObjectMapper
             $value = $payload['can_sign'] ?? null;
 
             if ($value === null) {
-                $properties['can_sign'] = null;
-                goto after_can_sign;
+                $properties['canSign'] = null;
+                goto after_canSign;
             }
 
-            $properties['can_sign'] = $value;
+            $properties['canSign'] = $value;
 
-            after_can_sign:
+            after_canSign:
 
             $value = $payload['can_encrypt_comms'] ?? null;
 
             if ($value === null) {
-                $properties['can_encrypt_comms'] = null;
-                goto after_can_encrypt_comms;
+                $properties['canEncryptComms'] = null;
+                goto after_canEncryptComms;
             }
 
-            $properties['can_encrypt_comms'] = $value;
+            $properties['canEncryptComms'] = $value;
 
-            after_can_encrypt_comms:
+            after_canEncryptComms:
 
             $value = $payload['can_encrypt_storage'] ?? null;
 
             if ($value === null) {
-                $properties['can_encrypt_storage'] = null;
-                goto after_can_encrypt_storage;
+                $properties['canEncryptStorage'] = null;
+                goto after_canEncryptStorage;
             }
 
-            $properties['can_encrypt_storage'] = $value;
+            $properties['canEncryptStorage'] = $value;
 
-            after_can_encrypt_storage:
+            after_canEncryptStorage:
 
             $value = $payload['can_certify'] ?? null;
 
             if ($value === null) {
-                $properties['can_certify'] = null;
-                goto after_can_certify;
+                $properties['canCertify'] = null;
+                goto after_canCertify;
             }
 
-            $properties['can_certify'] = $value;
+            $properties['canCertify'] = $value;
 
-            after_can_certify:
+            after_canCertify:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['expires_at'] ?? null;
 
             if ($value === null) {
-                $properties['expires_at'] = null;
-                goto after_expires_at;
+                $properties['expiresAt'] = null;
+                goto after_expiresAt;
             }
 
-            $properties['expires_at'] = $value;
+            $properties['expiresAt'] = $value;
 
-            after_expires_at:
+            after_expiresAt:
 
             $value = $payload['raw_key'] ?? null;
 
             if ($value === null) {
-                $properties['raw_key'] = null;
-                goto after_raw_key;
+                $properties['rawKey'] = null;
+                goto after_rawKey;
             }
 
-            $properties['raw_key'] = $value;
+            $properties['rawKey'] = $value;
 
-            after_raw_key:
+            after_rawKey:
 
             $value = $payload['revoked'] ?? null;
 
@@ -477,13 +477,13 @@ class GpgKeys implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -543,12 +543,12 @@ class GpgKeys implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -800,20 +800,20 @@ class GpgKeys implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $primary_key_id = $object->primary_key_id;
+        $primaryKeyId = $object->primaryKeyId;
 
-        if ($primary_key_id === null) {
-            goto after_primary_key_id;
+        if ($primaryKeyId === null) {
+            goto after_primaryKeyId;
         }
-        after_primary_key_id:        $result['primary_key_id'] = $primary_key_id;
+        after_primaryKeyId:        $result['primary_key_id'] = $primaryKeyId;
 
         
-        $key_id = $object->key_id;
-        after_key_id:        $result['key_id'] = $key_id;
+        $keyId = $object->keyId;
+        after_keyId:        $result['key_id'] = $keyId;
 
         
-        $public_key = $object->public_key;
-        after_public_key:        $result['public_key'] = $public_key;
+        $publicKey = $object->publicKey;
+        after_publicKey:        $result['public_key'] = $publicKey;
 
         
         $emails = $object->emails;
@@ -842,44 +842,44 @@ class GpgKeys implements ObjectMapper
         after_subkeys:        $result['subkeys'] = $subkeys;
 
         
-        $can_sign = $object->can_sign;
-        after_can_sign:        $result['can_sign'] = $can_sign;
+        $canSign = $object->canSign;
+        after_canSign:        $result['can_sign'] = $canSign;
 
         
-        $can_encrypt_comms = $object->can_encrypt_comms;
-        after_can_encrypt_comms:        $result['can_encrypt_comms'] = $can_encrypt_comms;
+        $canEncryptComms = $object->canEncryptComms;
+        after_canEncryptComms:        $result['can_encrypt_comms'] = $canEncryptComms;
 
         
-        $can_encrypt_storage = $object->can_encrypt_storage;
-        after_can_encrypt_storage:        $result['can_encrypt_storage'] = $can_encrypt_storage;
+        $canEncryptStorage = $object->canEncryptStorage;
+        after_canEncryptStorage:        $result['can_encrypt_storage'] = $canEncryptStorage;
 
         
-        $can_certify = $object->can_certify;
-        after_can_certify:        $result['can_certify'] = $can_certify;
+        $canCertify = $object->canCertify;
+        after_canCertify:        $result['can_certify'] = $canCertify;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $expires_at = $object->expires_at;
+        $expiresAt = $object->expiresAt;
 
-        if ($expires_at === null) {
-            goto after_expires_at;
+        if ($expiresAt === null) {
+            goto after_expiresAt;
         }
-        after_expires_at:        $result['expires_at'] = $expires_at;
+        after_expiresAt:        $result['expires_at'] = $expiresAt;
 
         
         $revoked = $object->revoked;
         after_revoked:        $result['revoked'] = $revoked;
 
         
-        $raw_key = $object->raw_key;
+        $rawKey = $object->rawKey;
 
-        if ($raw_key === null) {
-            goto after_raw_key;
+        if ($rawKey === null) {
+            goto after_rawKey;
         }
-        after_raw_key:        $result['raw_key'] = $raw_key;
+        after_rawKey:        $result['raw_key'] = $rawKey;
 
 
         return $result;
@@ -924,28 +924,28 @@ class GpgKeys implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $primary_key_id = $object->primary_key_id;
+        $primaryKeyId = $object->primaryKeyId;
 
-        if ($primary_key_id === null) {
-            goto after_primary_key_id;
+        if ($primaryKeyId === null) {
+            goto after_primaryKeyId;
         }
-        after_primary_key_id:        $result['primary_key_id'] = $primary_key_id;
+        after_primaryKeyId:        $result['primary_key_id'] = $primaryKeyId;
 
         
-        $key_id = $object->key_id;
+        $keyId = $object->keyId;
 
-        if ($key_id === null) {
-            goto after_key_id;
+        if ($keyId === null) {
+            goto after_keyId;
         }
-        after_key_id:        $result['key_id'] = $key_id;
+        after_keyId:        $result['key_id'] = $keyId;
 
         
-        $public_key = $object->public_key;
+        $publicKey = $object->publicKey;
 
-        if ($public_key === null) {
-            goto after_public_key;
+        if ($publicKey === null) {
+            goto after_publicKey;
         }
-        after_public_key:        $result['public_key'] = $public_key;
+        after_publicKey:        $result['public_key'] = $publicKey;
 
         
         $emails = $object->emails;
@@ -980,60 +980,60 @@ class GpgKeys implements ObjectMapper
         after_subkeys:        $result['subkeys'] = $subkeys;
 
         
-        $can_sign = $object->can_sign;
+        $canSign = $object->canSign;
 
-        if ($can_sign === null) {
-            goto after_can_sign;
+        if ($canSign === null) {
+            goto after_canSign;
         }
-        after_can_sign:        $result['can_sign'] = $can_sign;
+        after_canSign:        $result['can_sign'] = $canSign;
 
         
-        $can_encrypt_comms = $object->can_encrypt_comms;
+        $canEncryptComms = $object->canEncryptComms;
 
-        if ($can_encrypt_comms === null) {
-            goto after_can_encrypt_comms;
+        if ($canEncryptComms === null) {
+            goto after_canEncryptComms;
         }
-        after_can_encrypt_comms:        $result['can_encrypt_comms'] = $can_encrypt_comms;
+        after_canEncryptComms:        $result['can_encrypt_comms'] = $canEncryptComms;
 
         
-        $can_encrypt_storage = $object->can_encrypt_storage;
+        $canEncryptStorage = $object->canEncryptStorage;
 
-        if ($can_encrypt_storage === null) {
-            goto after_can_encrypt_storage;
+        if ($canEncryptStorage === null) {
+            goto after_canEncryptStorage;
         }
-        after_can_encrypt_storage:        $result['can_encrypt_storage'] = $can_encrypt_storage;
+        after_canEncryptStorage:        $result['can_encrypt_storage'] = $canEncryptStorage;
 
         
-        $can_certify = $object->can_certify;
+        $canCertify = $object->canCertify;
 
-        if ($can_certify === null) {
-            goto after_can_certify;
+        if ($canCertify === null) {
+            goto after_canCertify;
         }
-        after_can_certify:        $result['can_certify'] = $can_certify;
+        after_canCertify:        $result['can_certify'] = $canCertify;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $expires_at = $object->expires_at;
+        $expiresAt = $object->expiresAt;
 
-        if ($expires_at === null) {
-            goto after_expires_at;
+        if ($expiresAt === null) {
+            goto after_expiresAt;
         }
-        after_expires_at:        $result['expires_at'] = $expires_at;
+        after_expiresAt:        $result['expires_at'] = $expiresAt;
 
         
-        $raw_key = $object->raw_key;
+        $rawKey = $object->rawKey;
 
-        if ($raw_key === null) {
-            goto after_raw_key;
+        if ($rawKey === null) {
+            goto after_rawKey;
         }
-        after_raw_key:        $result['raw_key'] = $raw_key;
+        after_rawKey:        $result['raw_key'] = $rawKey;
 
         
         $revoked = $object->revoked;
@@ -1061,12 +1061,12 @@ class GpgKeys implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -1098,8 +1098,8 @@ class GpgKeys implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

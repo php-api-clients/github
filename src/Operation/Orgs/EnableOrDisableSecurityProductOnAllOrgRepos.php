@@ -17,21 +17,21 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The security feature to enable or disable.**/
-    private string $security_product;
+    private string $securityProduct;
     /**The action to take.
     
     `enable_all` means to enable the specified security feature for all repositories in the organization.
     `disable_all` means to disable the specified security feature for all repositories in the organization.**/
     private string $enablement;
-    public function __construct(string $org, string $security_product, string $enablement)
+    public function __construct(string $org, string $securityProduct, string $enablement)
     {
         $this->org = $org;
-        $this->security_product = $security_product;
+        $this->securityProduct = $securityProduct;
         $this->enablement = $enablement;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{security_product}', '{enablement}'), array($this->org, $this->security_product, $this->enablement), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{security_product}', '{enablement}'), array($this->org, $this->securityProduct, $this->enablement), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

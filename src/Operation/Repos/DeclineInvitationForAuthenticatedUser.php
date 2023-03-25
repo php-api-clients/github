@@ -15,18 +15,18 @@ final class DeclineInvitationForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/repository_invitations/{invitation_id}';
     /**The unique identifier of the invitation.**/
-    private int $invitation_id;
+    private int $invitationId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\RepositoryInvitations\CbInvitationIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\RepositoryInvitations\CbInvitationIdRcb $hydrator, int $invitation_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\RepositoryInvitations\CbInvitationIdRcb $hydrator, int $invitationId)
     {
-        $this->invitation_id = $invitation_id;
+        $this->invitationId = $invitationId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{invitation_id}'), array($this->invitation_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{invitation_id}'), array($this->invitationId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

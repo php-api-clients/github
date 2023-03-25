@@ -15,27 +15,27 @@ final class ListEnvironmentSecrets
     private const METHOD = 'GET';
     private const PATH = '/repositories/{repository_id}/environments/{environment_name}/secrets';
     /**The unique identifier of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The name of the environment.**/
-    private string $environment_name;
+    private string $environmentName;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets $hydrator, int $repository_id, string $environment_name, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets $hydrator, int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1)
     {
-        $this->repository_id = $repository_id;
-        $this->environment_name = $environment_name;
-        $this->per_page = $per_page;
+        $this->repositoryId = $repositoryId;
+        $this->environmentName = $environmentName;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{environment_name}', '{per_page}', '{page}'), array($this->repository_id, $this->environment_name, $this->per_page, $this->page), self::PATH . '?per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{environment_name}', '{per_page}', '{page}'), array($this->repositoryId, $this->environmentName, $this->perPage, $this->page), self::PATH . '?perPage={per_page}&page={page}'));
     }
     /**
      * @return Schema\Operation\Actions\ListRepoOrganizationSecrets\Response\Applicationjson\H200

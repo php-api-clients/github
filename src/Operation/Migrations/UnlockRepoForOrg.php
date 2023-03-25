@@ -17,22 +17,22 @@ final class UnlockRepoForOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     /**repo_name parameter**/
-    private string $repo_name;
+    private string $repoName;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator, string $org, int $migration_id, string $repo_name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator, string $org, int $migrationId, string $repoName)
     {
         $this->org = $org;
-        $this->migration_id = $migration_id;
-        $this->repo_name = $repo_name;
+        $this->migrationId = $migrationId;
+        $this->repoName = $repoName;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}', '{repo_name}'), array($this->org, $this->migration_id, $this->repo_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}', '{repo_name}'), array($this->org, $this->migrationId, $this->repoName), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

@@ -18,23 +18,23 @@ final class GetTree
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
-    private string $tree_sha;
+    private string $treeSha;
     /**Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `"true"`, and `"false"`. Omit this parameter to prevent recursively returning objects or subtrees.**/
     private string $recursive;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git\Trees\CbTreeShaRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git\Trees\CbTreeShaRcb $hydrator, string $owner, string $repo, string $tree_sha, string $recursive)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git\Trees\CbTreeShaRcb $hydrator, string $owner, string $repo, string $treeSha, string $recursive)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->tree_sha = $tree_sha;
+        $this->treeSha = $treeSha;
         $this->recursive = $recursive;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tree_sha}', '{recursive}'), array($this->owner, $this->repo, $this->tree_sha, $this->recursive), self::PATH . '?recursive={recursive}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tree_sha}', '{recursive}'), array($this->owner, $this->repo, $this->treeSha, $this->recursive), self::PATH . '?recursive={recursive}'));
     }
     /**
      * @return Schema\GitTree

@@ -61,12 +61,12 @@ class App implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['owner'] ?? null;
 
@@ -105,45 +105,45 @@ class App implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'external_url';
-                goto after_external_url;
+                goto after_externalUrl;
             }
 
-            $properties['external_url'] = $value;
+            $properties['externalUrl'] = $value;
 
-            after_external_url:
+            after_externalUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['permissions'] ?? null;
 
@@ -179,46 +179,46 @@ class App implements ObjectMapper
             $value = $payload['installations_count'] ?? null;
 
             if ($value === null) {
-                $properties['installations_count'] = null;
-                goto after_installations_count;
+                $properties['installationsCount'] = null;
+                goto after_installationsCount;
             }
 
-            $properties['installations_count'] = $value;
+            $properties['installationsCount'] = $value;
 
-            after_installations_count:
+            after_installationsCount:
 
             $value = $payload['client_id'] ?? null;
 
             if ($value === null) {
-                $properties['client_id'] = null;
-                goto after_client_id;
+                $properties['clientId'] = null;
+                goto after_clientId;
             }
 
-            $properties['client_id'] = $value;
+            $properties['clientId'] = $value;
 
-            after_client_id:
+            after_clientId:
 
             $value = $payload['client_secret'] ?? null;
 
             if ($value === null) {
-                $properties['client_secret'] = null;
-                goto after_client_secret;
+                $properties['clientSecret'] = null;
+                goto after_clientSecret;
             }
 
-            $properties['client_secret'] = $value;
+            $properties['clientSecret'] = $value;
 
-            after_client_secret:
+            after_clientSecret:
 
             $value = $payload['webhook_secret'] ?? null;
 
             if ($value === null) {
-                $properties['webhook_secret'] = null;
-                goto after_webhook_secret;
+                $properties['webhookSecret'] = null;
+                goto after_webhookSecret;
             }
 
-            $properties['webhook_secret'] = $value;
+            $properties['webhookSecret'] = $value;
 
-            after_webhook_secret:
+            after_webhookSecret:
 
             $value = $payload['pem'] ?? null;
 
@@ -445,8 +445,8 @@ class App implements ObjectMapper
         after_slug:        $result['slug'] = $slug;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $owner = $object->owner;
@@ -469,20 +469,20 @@ class App implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $external_url = $object->external_url;
-        after_external_url:        $result['external_url'] = $external_url;
+        $externalUrl = $object->externalUrl;
+        after_externalUrl:        $result['external_url'] = $externalUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $permissions = $object->permissions;
@@ -502,36 +502,36 @@ class App implements ObjectMapper
         after_events:        $result['events'] = $events;
 
         
-        $installations_count = $object->installations_count;
+        $installationsCount = $object->installationsCount;
 
-        if ($installations_count === null) {
-            goto after_installations_count;
+        if ($installationsCount === null) {
+            goto after_installationsCount;
         }
-        after_installations_count:        $result['installations_count'] = $installations_count;
+        after_installationsCount:        $result['installations_count'] = $installationsCount;
 
         
-        $client_id = $object->client_id;
+        $clientId = $object->clientId;
 
-        if ($client_id === null) {
-            goto after_client_id;
+        if ($clientId === null) {
+            goto after_clientId;
         }
-        after_client_id:        $result['client_id'] = $client_id;
+        after_clientId:        $result['client_id'] = $clientId;
 
         
-        $client_secret = $object->client_secret;
+        $clientSecret = $object->clientSecret;
 
-        if ($client_secret === null) {
-            goto after_client_secret;
+        if ($clientSecret === null) {
+            goto after_clientSecret;
         }
-        after_client_secret:        $result['client_secret'] = $client_secret;
+        after_clientSecret:        $result['client_secret'] = $clientSecret;
 
         
-        $webhook_secret = $object->webhook_secret;
+        $webhookSecret = $object->webhookSecret;
 
-        if ($webhook_secret === null) {
-            goto after_webhook_secret;
+        if ($webhookSecret === null) {
+            goto after_webhookSecret;
         }
-        after_webhook_secret:        $result['webhook_secret'] = $webhook_secret;
+        after_webhookSecret:        $result['webhook_secret'] = $webhookSecret;
 
         
         $pem = $object->pem;

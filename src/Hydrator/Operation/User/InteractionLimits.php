@@ -62,12 +62,12 @@ class InteractionLimits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'expires_at';
-                goto after_expires_at;
+                goto after_expiresAt;
             }
 
-            $properties['expires_at'] = $value;
+            $properties['expiresAt'] = $value;
 
-            after_expires_at:
+            after_expiresAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
@@ -105,12 +105,12 @@ class InteractionLimits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -355,8 +355,8 @@ class InteractionLimits implements ObjectMapper
         after_origin:        $result['origin'] = $origin;
 
         
-        $expires_at = $object->expires_at;
-        after_expires_at:        $result['expires_at'] = $expires_at;
+        $expiresAt = $object->expiresAt;
+        after_expiresAt:        $result['expires_at'] = $expiresAt;
 
 
         return $result;
@@ -372,8 +372,8 @@ class InteractionLimits implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

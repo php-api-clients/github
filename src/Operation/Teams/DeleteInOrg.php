@@ -17,15 +17,15 @@ final class DeleteInOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The slug of the team name.**/
-    private string $team_slug;
-    public function __construct(string $org, string $team_slug)
+    private string $teamSlug;
+    public function __construct(string $org, string $teamSlug)
     {
         $this->org = $org;
-        $this->team_slug = $team_slug;
+        $this->teamSlug = $teamSlug;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}'), array($this->org, $this->team_slug), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}'), array($this->org, $this->teamSlug), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

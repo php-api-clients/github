@@ -15,24 +15,24 @@ final class GetEnvironmentVariable
     private const METHOD = 'GET';
     private const PATH = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     /**The unique identifier of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The name of the environment.**/
-    private string $environment_name;
+    private string $environmentName;
     /**The name of the variable.**/
     private string $name;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables\CbNameRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables\CbNameRcb $hydrator, int $repository_id, string $environment_name, string $name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables\CbNameRcb $hydrator, int $repositoryId, string $environmentName, string $name)
     {
-        $this->repository_id = $repository_id;
-        $this->environment_name = $environment_name;
+        $this->repositoryId = $repositoryId;
+        $this->environmentName = $environmentName;
         $this->name = $name;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{environment_name}', '{name}'), array($this->repository_id, $this->environment_name, $this->name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{environment_name}', '{name}'), array($this->repositoryId, $this->environmentName, $this->name), self::PATH));
     }
     /**
      * @return Schema\ActionsVariable

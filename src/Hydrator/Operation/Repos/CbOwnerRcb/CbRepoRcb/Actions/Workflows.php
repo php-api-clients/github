@@ -39,12 +39,12 @@ class Workflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['workflows'] ?? null;
 
@@ -103,12 +103,12 @@ class Workflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -147,23 +147,23 @@ class Workflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['url'] ?? null;
 
@@ -180,34 +180,34 @@ class Workflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['badge_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'badge_url';
-                goto after_badge_url;
+                goto after_badgeUrl;
             }
 
-            $properties['badge_url'] = $value;
+            $properties['badgeUrl'] = $value;
 
-            after_badge_url:
+            after_badgeUrl:
 
             $value = $payload['deleted_at'] ?? null;
 
             if ($value === null) {
-                $properties['deleted_at'] = null;
-                goto after_deleted_at;
+                $properties['deletedAt'] = null;
+                goto after_deletedAt;
             }
 
-            $properties['deleted_at'] = $value;
+            $properties['deletedAt'] = $value;
 
-            after_deleted_at:
+            after_deletedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Workflow', $exception, stack: $this->hydrationStack);
@@ -335,8 +335,8 @@ class Workflows implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoWorkflows\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $workflows = $object->workflows;
@@ -365,8 +365,8 @@ class Workflows implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -381,32 +381,32 @@ class Workflows implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $badge_url = $object->badge_url;
-        after_badge_url:        $result['badge_url'] = $badge_url;
+        $badgeUrl = $object->badgeUrl;
+        after_badgeUrl:        $result['badge_url'] = $badgeUrl;
 
         
-        $deleted_at = $object->deleted_at;
+        $deletedAt = $object->deletedAt;
 
-        if ($deleted_at === null) {
-            goto after_deleted_at;
+        if ($deletedAt === null) {
+            goto after_deletedAt;
         }
-        after_deleted_at:        $result['deleted_at'] = $deleted_at;
+        after_deletedAt:        $result['deleted_at'] = $deletedAt;
 
 
         return $result;

@@ -52,23 +52,23 @@ class CbSecretNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['visibility'] ?? null;
 
@@ -84,13 +84,13 @@ class CbSecretNameRcb implements ObjectMapper
             $value = $payload['selected_repositories_url'] ?? null;
 
             if ($value === null) {
-                $properties['selected_repositories_url'] = null;
-                goto after_selected_repositories_url;
+                $properties['selectedRepositoriesUrl'] = null;
+                goto after_selectedRepositoriesUrl;
             }
 
-            $properties['selected_repositories_url'] = $value;
+            $properties['selectedRepositoriesUrl'] = $value;
 
-            after_selected_repositories_url:
+            after_selectedRepositoriesUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesOrgSecret', $exception, stack: $this->hydrationStack);
@@ -127,13 +127,13 @@ class CbSecretNameRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -193,12 +193,12 @@ class CbSecretNameRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -440,24 +440,24 @@ class CbSecretNameRcb implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $visibility = $object->visibility;
         after_visibility:        $result['visibility'] = $visibility;
 
         
-        $selected_repositories_url = $object->selected_repositories_url;
+        $selectedRepositoriesUrl = $object->selectedRepositoriesUrl;
 
-        if ($selected_repositories_url === null) {
-            goto after_selected_repositories_url;
+        if ($selectedRepositoriesUrl === null) {
+            goto after_selectedRepositoriesUrl;
         }
-        after_selected_repositories_url:        $result['selected_repositories_url'] = $selected_repositories_url;
+        after_selectedRepositoriesUrl:        $result['selected_repositories_url'] = $selectedRepositoriesUrl;
 
 
         return $result;
@@ -477,12 +477,12 @@ class CbSecretNameRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -514,8 +514,8 @@ class CbSecretNameRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

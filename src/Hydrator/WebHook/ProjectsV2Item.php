@@ -127,21 +127,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -187,22 +187,22 @@ class ProjectsV2Item implements ObjectMapper
             $value = $payload['archived_at'] ?? null;
 
             if ($value === null) {
-                $properties['archived_at'] = null;
-                goto after_archived_at;
+                $properties['archivedAt'] = null;
+                goto after_archivedAt;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'archived_at';
+                    $this->hydrationStack[] = 'archivedAt';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemArchived⚡️Changes⚡️ArchivedAt($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['archived_at'] = $value;
+            $properties['archivedAt'] = $value;
 
-            after_archived_at:
+            after_archivedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemArchived\Changes', $exception, stack: $this->hydrationStack);
@@ -283,12 +283,12 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
@@ -337,12 +337,12 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -359,78 +359,78 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'members_url';
-                goto after_members_url;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_members_url';
-                goto after_public_members_url;
+                goto after_publicMembersUrl;
             }
 
-            $properties['public_members_url'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_public_members_url:
+            after_publicMembersUrl:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -478,46 +478,46 @@ class ProjectsV2Item implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['project_node_id'] ?? null;
 
             if ($value === null) {
-                $properties['project_node_id'] = null;
-                goto after_project_node_id;
+                $properties['projectNodeId'] = null;
+                goto after_projectNodeId;
             }
 
-            $properties['project_node_id'] = $value;
+            $properties['projectNodeId'] = $value;
 
-            after_project_node_id:
+            after_projectNodeId:
 
             $value = $payload['content_node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'content_node_id';
-                goto after_content_node_id;
+                goto after_contentNodeId;
             }
 
-            $properties['content_node_id'] = $value;
+            $properties['contentNodeId'] = $value;
 
-            after_content_node_id:
+            after_contentNodeId:
 
             $value = $payload['content_type'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'content_type';
-                goto after_content_type;
+                goto after_contentType;
             }
 
-            $properties['content_type'] = $value;
+            $properties['contentType'] = $value;
 
-            after_content_type:
+            after_contentType:
 
             $value = $payload['creator'] ?? null;
 
@@ -543,34 +543,34 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['archived_at'] ?? null;
 
             if ($value === null) {
-                $properties['archived_at'] = null;
-                goto after_archived_at;
+                $properties['archivedAt'] = null;
+                goto after_archivedAt;
             }
 
-            $properties['archived_at'] = $value;
+            $properties['archivedAt'] = $value;
 
-            after_archived_at:
+            after_archivedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProjectsV2Item', $exception, stack: $this->hydrationStack);
@@ -641,34 +641,34 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -685,111 +685,111 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -806,23 +806,23 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -920,21 +920,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -980,22 +980,22 @@ class ProjectsV2Item implements ObjectMapper
             $value = $payload['content_type'] ?? null;
 
             if ($value === null) {
-                $properties['content_type'] = null;
-                goto after_content_type;
+                $properties['contentType'] = null;
+                goto after_contentType;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'content_type';
+                    $this->hydrationStack[] = 'contentType';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemConverted⚡️Changes⚡️ContentType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['content_type'] = $value;
+            $properties['contentType'] = $value;
 
-            after_content_type:
+            after_contentType:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemConverted\Changes', $exception, stack: $this->hydrationStack);
@@ -1116,21 +1116,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -1228,21 +1228,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -1360,21 +1360,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -1421,21 +1421,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'field_value';
-                goto after_field_value;
+                goto after_fieldValue;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'field_value';
+                    $this->hydrationStack[] = 'fieldValue';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['field_value'] = $value;
+            $properties['fieldValue'] = $value;
 
-            after_field_value:
+            after_fieldValue:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes', $exception, stack: $this->hydrationStack);
@@ -1461,24 +1461,24 @@ class ProjectsV2Item implements ObjectMapper
             $value = $payload['field_node_id'] ?? null;
 
             if ($value === null) {
-                $properties['field_node_id'] = null;
-                goto after_field_node_id;
+                $properties['fieldNodeId'] = null;
+                goto after_fieldNodeId;
             }
 
-            $properties['field_node_id'] = $value;
+            $properties['fieldNodeId'] = $value;
 
-            after_field_node_id:
+            after_fieldNodeId:
 
             $value = $payload['field_type'] ?? null;
 
             if ($value === null) {
-                $properties['field_type'] = null;
-                goto after_field_type;
+                $properties['fieldType'] = null;
+                goto after_fieldType;
             }
 
-            $properties['field_type'] = $value;
+            $properties['fieldType'] = $value;
 
-            after_field_type:
+            after_fieldType:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue', $exception, stack: $this->hydrationStack);
@@ -1576,21 +1576,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -1636,22 +1636,22 @@ class ProjectsV2Item implements ObjectMapper
             $value = $payload['previous_projects_v2_item_node_id'] ?? null;
 
             if ($value === null) {
-                $properties['previous_projects_v2_item_node_id'] = null;
-                goto after_previous_projects_v2_item_node_id;
+                $properties['previousProjectsV2ItemNodeId'] = null;
+                goto after_previousProjectsV2ItemNodeId;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'previous_projects_v2_item_node_id';
+                    $this->hydrationStack[] = 'previousProjectsV2ItemNodeId';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['previous_projects_v2_item_node_id'] = $value;
+            $properties['previousProjectsV2ItemNodeId'] = $value;
 
-            after_previous_projects_v2_item_node_id:
+            after_previousProjectsV2ItemNodeId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered\Changes', $exception, stack: $this->hydrationStack);
@@ -1792,21 +1792,21 @@ class ProjectsV2Item implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'projects_v2_item';
-                goto after_projects_v2_item;
+                goto after_projectsV2Item;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'projects_v2_item';
+                    $this->hydrationStack[] = 'projectsV2Item';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['projects_v2_item'] = $value;
+            $properties['projectsV2Item'] = $value;
 
-            after_projects_v2_item:
+            after_projectsV2Item:
 
             $value = $payload['sender'] ?? null;
 
@@ -1994,9 +1994,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2013,13 +2013,13 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemArchived\Changes);
         $result = [];
 
-        $archived_at = $object->archived_at;
+        $archivedAt = $object->archivedAt;
 
-        if ($archived_at === null) {
-            goto after_archived_at;
+        if ($archivedAt === null) {
+            goto after_archivedAt;
         }
-        $archived_at = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemArchived⚡️Changes⚡️ArchivedAt($archived_at);
-        after_archived_at:        $result['archived_at'] = $archived_at;
+        $archivedAt = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemArchived⚡️Changes⚡️ArchivedAt($archivedAt);
+        after_archivedAt:        $result['archived_at'] = $archivedAt;
 
 
         return $result;
@@ -2060,8 +2060,8 @@ class ProjectsV2Item implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
 
         return $result;
@@ -2081,40 +2081,40 @@ class ProjectsV2Item implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $members_url = $object->members_url;
-        after_members_url:        $result['members_url'] = $members_url;
+        $membersUrl = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $public_members_url = $object->public_members_url;
-        after_public_members_url:        $result['public_members_url'] = $public_members_url;
+        $publicMembersUrl = $object->publicMembersUrl;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $description = $object->description;
@@ -2138,28 +2138,28 @@ class ProjectsV2Item implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $project_node_id = $object->project_node_id;
+        $projectNodeId = $object->projectNodeId;
 
-        if ($project_node_id === null) {
-            goto after_project_node_id;
+        if ($projectNodeId === null) {
+            goto after_projectNodeId;
         }
-        after_project_node_id:        $result['project_node_id'] = $project_node_id;
+        after_projectNodeId:        $result['project_node_id'] = $projectNodeId;
 
         
-        $content_node_id = $object->content_node_id;
-        after_content_node_id:        $result['content_node_id'] = $content_node_id;
+        $contentNodeId = $object->contentNodeId;
+        after_contentNodeId:        $result['content_node_id'] = $contentNodeId;
 
         
-        $content_type = $object->content_type;
-        after_content_type:        $result['content_type'] = $content_type;
+        $contentType = $object->contentType;
+        after_contentType:        $result['content_type'] = $contentType;
 
         
         $creator = $object->creator;
@@ -2171,20 +2171,20 @@ class ProjectsV2Item implements ObjectMapper
         after_creator:        $result['creator'] = $creator;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $archived_at = $object->archived_at;
+        $archivedAt = $object->archivedAt;
 
-        if ($archived_at === null) {
-            goto after_archived_at;
+        if ($archivedAt === null) {
+            goto after_archivedAt;
         }
-        after_archived_at:        $result['archived_at'] = $archived_at;
+        after_archivedAt:        $result['archived_at'] = $archivedAt;
 
 
         return $result;
@@ -2220,80 +2220,80 @@ class ProjectsV2Item implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -2328,9 +2328,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2347,13 +2347,13 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemConverted\Changes);
         $result = [];
 
-        $content_type = $object->content_type;
+        $contentType = $object->contentType;
 
-        if ($content_type === null) {
-            goto after_content_type;
+        if ($contentType === null) {
+            goto after_contentType;
         }
-        $content_type = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemConverted⚡️Changes⚡️ContentType($content_type);
-        after_content_type:        $result['content_type'] = $content_type;
+        $contentType = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemConverted⚡️Changes⚡️ContentType($contentType);
+        after_contentType:        $result['content_type'] = $contentType;
 
 
         return $result;
@@ -2408,9 +2408,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2445,9 +2445,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2491,9 +2491,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2510,9 +2510,9 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes);
         $result = [];
 
-        $field_value = $object->field_value;
-        $field_value = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($field_value);
-        after_field_value:        $result['field_value'] = $field_value;
+        $fieldValue = $object->fieldValue;
+        $fieldValue = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemEdited⚡️Changes⚡️FieldValue($fieldValue);
+        after_fieldValue:        $result['field_value'] = $fieldValue;
 
 
         return $result;
@@ -2524,20 +2524,20 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemEdited\Changes\FieldValue);
         $result = [];
 
-        $field_node_id = $object->field_node_id;
+        $fieldNodeId = $object->fieldNodeId;
 
-        if ($field_node_id === null) {
-            goto after_field_node_id;
+        if ($fieldNodeId === null) {
+            goto after_fieldNodeId;
         }
-        after_field_node_id:        $result['field_node_id'] = $field_node_id;
+        after_fieldNodeId:        $result['field_node_id'] = $fieldNodeId;
 
         
-        $field_type = $object->field_type;
+        $fieldType = $object->fieldType;
 
-        if ($field_type === null) {
-            goto after_field_type;
+        if ($fieldType === null) {
+            goto after_fieldType;
         }
-        after_field_type:        $result['field_type'] = $field_type;
+        after_fieldType:        $result['field_type'] = $fieldType;
 
 
         return $result;
@@ -2572,9 +2572,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;
@@ -2591,13 +2591,13 @@ class ProjectsV2Item implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectsV2ItemReordered\Changes);
         $result = [];
 
-        $previous_projects_v2_item_node_id = $object->previous_projects_v2_item_node_id;
+        $previousProjectsV2ItemNodeId = $object->previousProjectsV2ItemNodeId;
 
-        if ($previous_projects_v2_item_node_id === null) {
-            goto after_previous_projects_v2_item_node_id;
+        if ($previousProjectsV2ItemNodeId === null) {
+            goto after_previousProjectsV2ItemNodeId;
         }
-        $previous_projects_v2_item_node_id = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($previous_projects_v2_item_node_id);
-        after_previous_projects_v2_item_node_id:        $result['previous_projects_v2_item_node_id'] = $previous_projects_v2_item_node_id;
+        $previousProjectsV2ItemNodeId = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMemberEdited⚡️Changes⚡️Permission($previousProjectsV2ItemNodeId);
+        after_previousProjectsV2ItemNodeId:        $result['previous_projects_v2_item_node_id'] = $previousProjectsV2ItemNodeId;
 
 
         return $result;
@@ -2657,9 +2657,9 @@ class ProjectsV2Item implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         
-        $projects_v2_item = $object->projects_v2_item;
-        $projects_v2_item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projects_v2_item);
-        after_projects_v2_item:        $result['projects_v2_item'] = $projects_v2_item;
+        $projectsV2Item = $object->projectsV2Item;
+        $projectsV2Item = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ProjectsV2Item($projectsV2Item);
+        after_projectsV2Item:        $result['projects_v2_item'] = $projectsV2Item;
 
         
         $sender = $object->sender;

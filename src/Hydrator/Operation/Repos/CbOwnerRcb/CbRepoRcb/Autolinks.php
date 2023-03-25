@@ -51,34 +51,34 @@ class Autolinks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'key_prefix';
-                goto after_key_prefix;
+                goto after_keyPrefix;
             }
 
-            $properties['key_prefix'] = $value;
+            $properties['keyPrefix'] = $value;
 
-            after_key_prefix:
+            after_keyPrefix:
 
             $value = $payload['url_template'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'url_template';
-                goto after_url_template;
+                goto after_urlTemplate;
             }
 
-            $properties['url_template'] = $value;
+            $properties['urlTemplate'] = $value;
 
-            after_url_template:
+            after_urlTemplate:
 
             $value = $payload['is_alphanumeric'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'is_alphanumeric';
-                goto after_is_alphanumeric;
+                goto after_isAlphanumeric;
             }
 
-            $properties['is_alphanumeric'] = $value;
+            $properties['isAlphanumeric'] = $value;
 
-            after_is_alphanumeric:
+            after_isAlphanumeric:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Autolink', $exception, stack: $this->hydrationStack);
@@ -116,12 +116,12 @@ class Autolinks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -362,16 +362,16 @@ class Autolinks implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $key_prefix = $object->key_prefix;
-        after_key_prefix:        $result['key_prefix'] = $key_prefix;
+        $keyPrefix = $object->keyPrefix;
+        after_keyPrefix:        $result['key_prefix'] = $keyPrefix;
 
         
-        $url_template = $object->url_template;
-        after_url_template:        $result['url_template'] = $url_template;
+        $urlTemplate = $object->urlTemplate;
+        after_urlTemplate:        $result['url_template'] = $urlTemplate;
 
         
-        $is_alphanumeric = $object->is_alphanumeric;
-        after_is_alphanumeric:        $result['is_alphanumeric'] = $is_alphanumeric;
+        $isAlphanumeric = $object->isAlphanumeric;
+        after_isAlphanumeric:        $result['is_alphanumeric'] = $isAlphanumeric;
 
 
         return $result;
@@ -387,8 +387,8 @@ class Autolinks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

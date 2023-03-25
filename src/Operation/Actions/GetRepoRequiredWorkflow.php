@@ -19,20 +19,20 @@ final class GetRepoRequiredWorkflow
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The ID of the required workflow that has run at least once in a repository.**/
-    private int $required_workflow_id_for_repo;
+    private int $requiredWorkflowIdForRepo;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOrgRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOrgRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb $hydrator, string $org, string $repo, int $required_workflow_id_for_repo)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOrgRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb $hydrator, string $org, string $repo, int $requiredWorkflowIdForRepo)
     {
         $this->org = $org;
         $this->repo = $repo;
-        $this->required_workflow_id_for_repo = $required_workflow_id_for_repo;
+        $this->requiredWorkflowIdForRepo = $requiredWorkflowIdForRepo;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{repo}', '{required_workflow_id_for_repo}'), array($this->org, $this->repo, $this->required_workflow_id_for_repo), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{repo}', '{required_workflow_id_for_repo}'), array($this->org, $this->repo, $this->requiredWorkflowIdForRepo), self::PATH));
     }
     /**
      * @return Schema\RepoRequiredWorkflow

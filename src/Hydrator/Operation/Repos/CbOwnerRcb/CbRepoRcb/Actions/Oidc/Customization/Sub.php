@@ -41,23 +41,23 @@ class Sub implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'use_default';
-                goto after_use_default;
+                goto after_useDefault;
             }
 
-            $properties['use_default'] = $value;
+            $properties['useDefault'] = $value;
 
-            after_use_default:
+            after_useDefault:
 
             $value = $payload['include_claim_keys'] ?? null;
 
             if ($value === null) {
-                $properties['include_claim_keys'] = null;
-                goto after_include_claim_keys;
+                $properties['includeClaimKeys'] = null;
+                goto after_includeClaimKeys;
             }
 
-            $properties['include_claim_keys'] = $value;
+            $properties['includeClaimKeys'] = $value;
 
-            after_include_claim_keys:
+            after_includeClaimKeys:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OidcCustomSubRepo', $exception, stack: $this->hydrationStack);
@@ -94,13 +94,13 @@ class Sub implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -159,13 +159,13 @@ class Sub implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -247,12 +247,12 @@ class Sub implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -393,24 +393,24 @@ class Sub implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\OidcCustomSubRepo);
         $result = [];
 
-        $use_default = $object->use_default;
-        after_use_default:        $result['use_default'] = $use_default;
+        $useDefault = $object->useDefault;
+        after_useDefault:        $result['use_default'] = $useDefault;
 
         
-        $include_claim_keys = $object->include_claim_keys;
+        $includeClaimKeys = $object->includeClaimKeys;
 
-        if ($include_claim_keys === null) {
-            goto after_include_claim_keys;
+        if ($includeClaimKeys === null) {
+            goto after_includeClaimKeys;
         }
-        static $include_claim_keysSerializer0;
+        static $includeClaimKeysSerializer0;
 
-        if ($include_claim_keysSerializer0 === null) {
-            $include_claim_keysSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+        if ($includeClaimKeysSerializer0 === null) {
+            $includeClaimKeysSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         
-        $include_claim_keys = $include_claim_keysSerializer0->serialize($include_claim_keys, $this);
-        after_include_claim_keys:        $result['include_claim_keys'] = $include_claim_keys;
+        $includeClaimKeys = $includeClaimKeysSerializer0->serialize($includeClaimKeys, $this);
+        after_includeClaimKeys:        $result['include_claim_keys'] = $includeClaimKeys;
 
 
         return $result;
@@ -430,12 +430,12 @@ class Sub implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -471,12 +471,12 @@ class Sub implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;
@@ -532,8 +532,8 @@ class Sub implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

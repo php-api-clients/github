@@ -19,22 +19,22 @@ final class CheckUserCanBeAssignedToIssue
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the issue.**/
-    private int $issue_number;
+    private int $issueNumber;
     private string $assignee;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Assignees\CbAssigneeRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Assignees\CbAssigneeRcb $hydrator, string $owner, string $repo, int $issue_number, string $assignee)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Assignees\CbAssigneeRcb $hydrator, string $owner, string $repo, int $issueNumber, string $assignee)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->issue_number = $issue_number;
+        $this->issueNumber = $issueNumber;
         $this->assignee = $assignee;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{assignee}'), array($this->owner, $this->repo, $this->issue_number, $this->assignee), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{assignee}'), array($this->owner, $this->repo, $this->issueNumber, $this->assignee), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

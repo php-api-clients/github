@@ -52,23 +52,23 @@ class Milestones implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['labels_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'labels_url';
-                goto after_labels_url;
+                goto after_labelsUrl;
             }
 
-            $properties['labels_url'] = $value;
+            $properties['labelsUrl'] = $value;
 
-            after_labels_url:
+            after_labelsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -85,12 +85,12 @@ class Milestones implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['number'] ?? null;
 
@@ -151,67 +151,67 @@ class Milestones implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'open_issues';
-                goto after_open_issues;
+                goto after_openIssues;
             }
 
-            $properties['open_issues'] = $value;
+            $properties['openIssues'] = $value;
 
-            after_open_issues:
+            after_openIssues:
 
             $value = $payload['closed_issues'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'closed_issues';
-                goto after_closed_issues;
+                goto after_closedIssues;
             }
 
-            $properties['closed_issues'] = $value;
+            $properties['closedIssues'] = $value;
 
-            after_closed_issues:
+            after_closedIssues:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['closed_at'] ?? null;
 
             if ($value === null) {
-                $properties['closed_at'] = null;
-                goto after_closed_at;
+                $properties['closedAt'] = null;
+                goto after_closedAt;
             }
 
-            $properties['closed_at'] = $value;
+            $properties['closedAt'] = $value;
 
-            after_closed_at:
+            after_closedAt:
 
             $value = $payload['due_on'] ?? null;
 
             if ($value === null) {
-                $properties['due_on'] = null;
-                goto after_due_on;
+                $properties['dueOn'] = null;
+                goto after_dueOn;
             }
 
-            $properties['due_on'] = $value;
+            $properties['dueOn'] = $value;
 
-            after_due_on:
+            after_dueOn:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Milestone', $exception, stack: $this->hydrationStack);
@@ -248,13 +248,13 @@ class Milestones implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -314,12 +314,12 @@ class Milestones implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -561,20 +561,20 @@ class Milestones implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $labels_url = $object->labels_url;
-        after_labels_url:        $result['labels_url'] = $labels_url;
+        $labelsUrl = $object->labelsUrl;
+        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $number = $object->number;
@@ -605,36 +605,36 @@ class Milestones implements ObjectMapper
         after_creator:        $result['creator'] = $creator;
 
         
-        $open_issues = $object->open_issues;
-        after_open_issues:        $result['open_issues'] = $open_issues;
+        $openIssues = $object->openIssues;
+        after_openIssues:        $result['open_issues'] = $openIssues;
 
         
-        $closed_issues = $object->closed_issues;
-        after_closed_issues:        $result['closed_issues'] = $closed_issues;
+        $closedIssues = $object->closedIssues;
+        after_closedIssues:        $result['closed_issues'] = $closedIssues;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $closed_at = $object->closed_at;
+        $closedAt = $object->closedAt;
 
-        if ($closed_at === null) {
-            goto after_closed_at;
+        if ($closedAt === null) {
+            goto after_closedAt;
         }
-        after_closed_at:        $result['closed_at'] = $closed_at;
+        after_closedAt:        $result['closed_at'] = $closedAt;
 
         
-        $due_on = $object->due_on;
+        $dueOn = $object->dueOn;
 
-        if ($due_on === null) {
-            goto after_due_on;
+        if ($dueOn === null) {
+            goto after_dueOn;
         }
-        after_due_on:        $result['due_on'] = $due_on;
+        after_dueOn:        $result['due_on'] = $dueOn;
 
 
         return $result;
@@ -654,12 +654,12 @@ class Milestones implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -691,8 +691,8 @@ class Milestones implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

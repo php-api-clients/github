@@ -39,33 +39,33 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['branch_policies'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'branch_policies';
-                goto after_branch_policies;
+                goto after_branchPolicies;
             }
 
-            static $branch_policiesCaster1;
+            static $branchPoliciesCaster1;
 
-            if ($branch_policiesCaster1 === null) {
-                $branch_policiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($branchPoliciesCaster1 === null) {
+                $branchPoliciesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DeploymentBranchPolicy',
 ));
             }
 
-            $value = $branch_policiesCaster1->cast($value, $this);
+            $value = $branchPoliciesCaster1->cast($value, $this);
 
-            $properties['branch_policies'] = $value;
+            $properties['branchPolicies'] = $value;
 
-            after_branch_policies:
+            after_branchPolicies:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
@@ -102,13 +102,13 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -247,21 +247,21 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $branch_policies = $object->branch_policies;
-        static $branch_policiesSerializer0;
+        $branchPolicies = $object->branchPolicies;
+        static $branchPoliciesSerializer0;
 
-        if ($branch_policiesSerializer0 === null) {
-            $branch_policiesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($branchPoliciesSerializer0 === null) {
+            $branchPoliciesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\DeploymentBranchPolicy',
 ));
         }
         
-        $branch_policies = $branch_policiesSerializer0->serialize($branch_policies, $this);
-        after_branch_policies:        $result['branch_policies'] = $branch_policies;
+        $branchPolicies = $branchPoliciesSerializer0->serialize($branchPolicies, $this);
+        after_branchPolicies:        $result['branch_policies'] = $branchPolicies;
 
 
         return $result;
@@ -281,12 +281,12 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;

@@ -62,12 +62,12 @@ class CbOrgRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -84,78 +84,78 @@ class CbOrgRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'members_url';
-                goto after_members_url;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_members_url';
-                goto after_public_members_url;
+                goto after_publicMembersUrl;
             }
 
-            $properties['public_members_url'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_public_members_url:
+            after_publicMembersUrl:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -226,68 +226,68 @@ class CbOrgRcb implements ObjectMapper
             $value = $payload['twitter_username'] ?? null;
 
             if ($value === null) {
-                $properties['twitter_username'] = null;
-                goto after_twitter_username;
+                $properties['twitterUsername'] = null;
+                goto after_twitterUsername;
             }
 
-            $properties['twitter_username'] = $value;
+            $properties['twitterUsername'] = $value;
 
-            after_twitter_username:
+            after_twitterUsername:
 
             $value = $payload['is_verified'] ?? null;
 
             if ($value === null) {
-                $properties['is_verified'] = null;
-                goto after_is_verified;
+                $properties['isVerified'] = null;
+                goto after_isVerified;
             }
 
-            $properties['is_verified'] = $value;
+            $properties['isVerified'] = $value;
 
-            after_is_verified:
+            after_isVerified:
 
             $value = $payload['has_organization_projects'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_organization_projects';
-                goto after_has_organization_projects;
+                goto after_hasOrganizationProjects;
             }
 
-            $properties['has_organization_projects'] = $value;
+            $properties['hasOrganizationProjects'] = $value;
 
-            after_has_organization_projects:
+            after_hasOrganizationProjects:
 
             $value = $payload['has_repository_projects'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_repository_projects';
-                goto after_has_repository_projects;
+                goto after_hasRepositoryProjects;
             }
 
-            $properties['has_repository_projects'] = $value;
+            $properties['hasRepositoryProjects'] = $value;
 
-            after_has_repository_projects:
+            after_hasRepositoryProjects:
 
             $value = $payload['public_repos'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_repos';
-                goto after_public_repos;
+                goto after_publicRepos;
             }
 
-            $properties['public_repos'] = $value;
+            $properties['publicRepos'] = $value;
 
-            after_public_repos:
+            after_publicRepos:
 
             $value = $payload['public_gists'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_gists';
-                goto after_public_gists;
+                goto after_publicGists;
             }
 
-            $properties['public_gists'] = $value;
+            $properties['publicGists'] = $value;
 
-            after_public_gists:
+            after_publicGists:
 
             $value = $payload['followers'] ?? null;
 
@@ -315,23 +315,23 @@ class CbOrgRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['type'] ?? null;
 
@@ -347,46 +347,46 @@ class CbOrgRcb implements ObjectMapper
             $value = $payload['total_private_repos'] ?? null;
 
             if ($value === null) {
-                $properties['total_private_repos'] = null;
-                goto after_total_private_repos;
+                $properties['totalPrivateRepos'] = null;
+                goto after_totalPrivateRepos;
             }
 
-            $properties['total_private_repos'] = $value;
+            $properties['totalPrivateRepos'] = $value;
 
-            after_total_private_repos:
+            after_totalPrivateRepos:
 
             $value = $payload['owned_private_repos'] ?? null;
 
             if ($value === null) {
-                $properties['owned_private_repos'] = null;
-                goto after_owned_private_repos;
+                $properties['ownedPrivateRepos'] = null;
+                goto after_ownedPrivateRepos;
             }
 
-            $properties['owned_private_repos'] = $value;
+            $properties['ownedPrivateRepos'] = $value;
 
-            after_owned_private_repos:
+            after_ownedPrivateRepos:
 
             $value = $payload['private_gists'] ?? null;
 
             if ($value === null) {
-                $properties['private_gists'] = null;
-                goto after_private_gists;
+                $properties['privateGists'] = null;
+                goto after_privateGists;
             }
 
-            $properties['private_gists'] = $value;
+            $properties['privateGists'] = $value;
 
-            after_private_gists:
+            after_privateGists:
 
             $value = $payload['disk_usage'] ?? null;
 
             if ($value === null) {
-                $properties['disk_usage'] = null;
-                goto after_disk_usage;
+                $properties['diskUsage'] = null;
+                goto after_diskUsage;
             }
 
-            $properties['disk_usage'] = $value;
+            $properties['diskUsage'] = $value;
 
-            after_disk_usage:
+            after_diskUsage:
 
             $value = $payload['collaborators'] ?? null;
 
@@ -402,13 +402,13 @@ class CbOrgRcb implements ObjectMapper
             $value = $payload['billing_email'] ?? null;
 
             if ($value === null) {
-                $properties['billing_email'] = null;
-                goto after_billing_email;
+                $properties['billingEmail'] = null;
+                goto after_billingEmail;
             }
 
-            $properties['billing_email'] = $value;
+            $properties['billingEmail'] = $value;
 
-            after_billing_email:
+            after_billingEmail:
 
             $value = $payload['plan'] ?? null;
 
@@ -433,233 +433,233 @@ class CbOrgRcb implements ObjectMapper
             $value = $payload['default_repository_permission'] ?? null;
 
             if ($value === null) {
-                $properties['default_repository_permission'] = null;
-                goto after_default_repository_permission;
+                $properties['defaultRepositoryPermission'] = null;
+                goto after_defaultRepositoryPermission;
             }
 
-            $properties['default_repository_permission'] = $value;
+            $properties['defaultRepositoryPermission'] = $value;
 
-            after_default_repository_permission:
+            after_defaultRepositoryPermission:
 
             $value = $payload['members_can_create_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_repositories'] = null;
-                goto after_members_can_create_repositories;
+                $properties['membersCanCreateRepositories'] = null;
+                goto after_membersCanCreateRepositories;
             }
 
-            $properties['members_can_create_repositories'] = $value;
+            $properties['membersCanCreateRepositories'] = $value;
 
-            after_members_can_create_repositories:
+            after_membersCanCreateRepositories:
 
             $value = $payload['two_factor_requirement_enabled'] ?? null;
 
             if ($value === null) {
-                $properties['two_factor_requirement_enabled'] = null;
-                goto after_two_factor_requirement_enabled;
+                $properties['twoFactorRequirementEnabled'] = null;
+                goto after_twoFactorRequirementEnabled;
             }
 
-            $properties['two_factor_requirement_enabled'] = $value;
+            $properties['twoFactorRequirementEnabled'] = $value;
 
-            after_two_factor_requirement_enabled:
+            after_twoFactorRequirementEnabled:
 
             $value = $payload['members_allowed_repository_creation_type'] ?? null;
 
             if ($value === null) {
-                $properties['members_allowed_repository_creation_type'] = null;
-                goto after_members_allowed_repository_creation_type;
+                $properties['membersAllowedRepositoryCreationType'] = null;
+                goto after_membersAllowedRepositoryCreationType;
             }
 
-            $properties['members_allowed_repository_creation_type'] = $value;
+            $properties['membersAllowedRepositoryCreationType'] = $value;
 
-            after_members_allowed_repository_creation_type:
+            after_membersAllowedRepositoryCreationType:
 
             $value = $payload['members_can_create_public_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_public_repositories'] = null;
-                goto after_members_can_create_public_repositories;
+                $properties['membersCanCreatePublicRepositories'] = null;
+                goto after_membersCanCreatePublicRepositories;
             }
 
-            $properties['members_can_create_public_repositories'] = $value;
+            $properties['membersCanCreatePublicRepositories'] = $value;
 
-            after_members_can_create_public_repositories:
+            after_membersCanCreatePublicRepositories:
 
             $value = $payload['members_can_create_private_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_private_repositories'] = null;
-                goto after_members_can_create_private_repositories;
+                $properties['membersCanCreatePrivateRepositories'] = null;
+                goto after_membersCanCreatePrivateRepositories;
             }
 
-            $properties['members_can_create_private_repositories'] = $value;
+            $properties['membersCanCreatePrivateRepositories'] = $value;
 
-            after_members_can_create_private_repositories:
+            after_membersCanCreatePrivateRepositories:
 
             $value = $payload['members_can_create_internal_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_internal_repositories'] = null;
-                goto after_members_can_create_internal_repositories;
+                $properties['membersCanCreateInternalRepositories'] = null;
+                goto after_membersCanCreateInternalRepositories;
             }
 
-            $properties['members_can_create_internal_repositories'] = $value;
+            $properties['membersCanCreateInternalRepositories'] = $value;
 
-            after_members_can_create_internal_repositories:
+            after_membersCanCreateInternalRepositories:
 
             $value = $payload['members_can_create_pages'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_pages'] = null;
-                goto after_members_can_create_pages;
+                $properties['membersCanCreatePages'] = null;
+                goto after_membersCanCreatePages;
             }
 
-            $properties['members_can_create_pages'] = $value;
+            $properties['membersCanCreatePages'] = $value;
 
-            after_members_can_create_pages:
+            after_membersCanCreatePages:
 
             $value = $payload['members_can_create_public_pages'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_public_pages'] = null;
-                goto after_members_can_create_public_pages;
+                $properties['membersCanCreatePublicPages'] = null;
+                goto after_membersCanCreatePublicPages;
             }
 
-            $properties['members_can_create_public_pages'] = $value;
+            $properties['membersCanCreatePublicPages'] = $value;
 
-            after_members_can_create_public_pages:
+            after_membersCanCreatePublicPages:
 
             $value = $payload['members_can_create_private_pages'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_create_private_pages'] = null;
-                goto after_members_can_create_private_pages;
+                $properties['membersCanCreatePrivatePages'] = null;
+                goto after_membersCanCreatePrivatePages;
             }
 
-            $properties['members_can_create_private_pages'] = $value;
+            $properties['membersCanCreatePrivatePages'] = $value;
 
-            after_members_can_create_private_pages:
+            after_membersCanCreatePrivatePages:
 
             $value = $payload['members_can_fork_private_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['members_can_fork_private_repositories'] = null;
-                goto after_members_can_fork_private_repositories;
+                $properties['membersCanForkPrivateRepositories'] = null;
+                goto after_membersCanForkPrivateRepositories;
             }
 
-            $properties['members_can_fork_private_repositories'] = $value;
+            $properties['membersCanForkPrivateRepositories'] = $value;
 
-            after_members_can_fork_private_repositories:
+            after_membersCanForkPrivateRepositories:
 
             $value = $payload['web_commit_signoff_required'] ?? null;
 
             if ($value === null) {
-                $properties['web_commit_signoff_required'] = null;
-                goto after_web_commit_signoff_required;
+                $properties['webCommitSignoffRequired'] = null;
+                goto after_webCommitSignoffRequired;
             }
 
-            $properties['web_commit_signoff_required'] = $value;
+            $properties['webCommitSignoffRequired'] = $value;
 
-            after_web_commit_signoff_required:
+            after_webCommitSignoffRequired:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['advanced_security_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['advanced_security_enabled_for_new_repositories'] = null;
-                goto after_advanced_security_enabled_for_new_repositories;
+                $properties['advancedSecurityEnabledForNewRepositories'] = null;
+                goto after_advancedSecurityEnabledForNewRepositories;
             }
 
-            $properties['advanced_security_enabled_for_new_repositories'] = $value;
+            $properties['advancedSecurityEnabledForNewRepositories'] = $value;
 
-            after_advanced_security_enabled_for_new_repositories:
+            after_advancedSecurityEnabledForNewRepositories:
 
             $value = $payload['dependabot_alerts_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['dependabot_alerts_enabled_for_new_repositories'] = null;
-                goto after_dependabot_alerts_enabled_for_new_repositories;
+                $properties['dependabotAlertsEnabledForNewRepositories'] = null;
+                goto after_dependabotAlertsEnabledForNewRepositories;
             }
 
-            $properties['dependabot_alerts_enabled_for_new_repositories'] = $value;
+            $properties['dependabotAlertsEnabledForNewRepositories'] = $value;
 
-            after_dependabot_alerts_enabled_for_new_repositories:
+            after_dependabotAlertsEnabledForNewRepositories:
 
             $value = $payload['dependabot_security_updates_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['dependabot_security_updates_enabled_for_new_repositories'] = null;
-                goto after_dependabot_security_updates_enabled_for_new_repositories;
+                $properties['dependabotSecurityUpdatesEnabledForNewRepositories'] = null;
+                goto after_dependabotSecurityUpdatesEnabledForNewRepositories;
             }
 
-            $properties['dependabot_security_updates_enabled_for_new_repositories'] = $value;
+            $properties['dependabotSecurityUpdatesEnabledForNewRepositories'] = $value;
 
-            after_dependabot_security_updates_enabled_for_new_repositories:
+            after_dependabotSecurityUpdatesEnabledForNewRepositories:
 
             $value = $payload['dependency_graph_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['dependency_graph_enabled_for_new_repositories'] = null;
-                goto after_dependency_graph_enabled_for_new_repositories;
+                $properties['dependencyGraphEnabledForNewRepositories'] = null;
+                goto after_dependencyGraphEnabledForNewRepositories;
             }
 
-            $properties['dependency_graph_enabled_for_new_repositories'] = $value;
+            $properties['dependencyGraphEnabledForNewRepositories'] = $value;
 
-            after_dependency_graph_enabled_for_new_repositories:
+            after_dependencyGraphEnabledForNewRepositories:
 
             $value = $payload['secret_scanning_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_enabled_for_new_repositories'] = null;
-                goto after_secret_scanning_enabled_for_new_repositories;
+                $properties['secretScanningEnabledForNewRepositories'] = null;
+                goto after_secretScanningEnabledForNewRepositories;
             }
 
-            $properties['secret_scanning_enabled_for_new_repositories'] = $value;
+            $properties['secretScanningEnabledForNewRepositories'] = $value;
 
-            after_secret_scanning_enabled_for_new_repositories:
+            after_secretScanningEnabledForNewRepositories:
 
             $value = $payload['secret_scanning_push_protection_enabled_for_new_repositories'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_push_protection_enabled_for_new_repositories'] = null;
-                goto after_secret_scanning_push_protection_enabled_for_new_repositories;
+                $properties['secretScanningPushProtectionEnabledForNewRepositories'] = null;
+                goto after_secretScanningPushProtectionEnabledForNewRepositories;
             }
 
-            $properties['secret_scanning_push_protection_enabled_for_new_repositories'] = $value;
+            $properties['secretScanningPushProtectionEnabledForNewRepositories'] = $value;
 
-            after_secret_scanning_push_protection_enabled_for_new_repositories:
+            after_secretScanningPushProtectionEnabledForNewRepositories:
 
             $value = $payload['secret_scanning_push_protection_custom_link_enabled'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_push_protection_custom_link_enabled'] = null;
-                goto after_secret_scanning_push_protection_custom_link_enabled;
+                $properties['secretScanningPushProtectionCustomLinkEnabled'] = null;
+                goto after_secretScanningPushProtectionCustomLinkEnabled;
             }
 
-            $properties['secret_scanning_push_protection_custom_link_enabled'] = $value;
+            $properties['secretScanningPushProtectionCustomLinkEnabled'] = $value;
 
-            after_secret_scanning_push_protection_custom_link_enabled:
+            after_secretScanningPushProtectionCustomLinkEnabled:
 
             $value = $payload['secret_scanning_push_protection_custom_link'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_push_protection_custom_link'] = null;
-                goto after_secret_scanning_push_protection_custom_link;
+                $properties['secretScanningPushProtectionCustomLink'] = null;
+                goto after_secretScanningPushProtectionCustomLink;
             }
 
-            $properties['secret_scanning_push_protection_custom_link'] = $value;
+            $properties['secretScanningPushProtectionCustomLink'] = $value;
 
-            after_secret_scanning_push_protection_custom_link:
+            after_secretScanningPushProtectionCustomLink:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationFull', $exception, stack: $this->hydrationStack);
@@ -708,23 +708,23 @@ class CbOrgRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'private_repos';
-                goto after_private_repos;
+                goto after_privateRepos;
             }
 
-            $properties['private_repos'] = $value;
+            $properties['privateRepos'] = $value;
 
-            after_private_repos:
+            after_privateRepos:
 
             $value = $payload['filled_seats'] ?? null;
 
             if ($value === null) {
-                $properties['filled_seats'] = null;
-                goto after_filled_seats;
+                $properties['filledSeats'] = null;
+                goto after_filledSeats;
             }
 
-            $properties['filled_seats'] = $value;
+            $properties['filledSeats'] = $value;
 
-            after_filled_seats:
+            after_filledSeats:
 
             $value = $payload['seats'] ?? null;
 
@@ -772,13 +772,13 @@ class CbOrgRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -937,40 +937,40 @@ class CbOrgRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $members_url = $object->members_url;
-        after_members_url:        $result['members_url'] = $members_url;
+        $membersUrl = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $public_members_url = $object->public_members_url;
-        after_public_members_url:        $result['public_members_url'] = $public_members_url;
+        $publicMembersUrl = $object->publicMembersUrl;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $description = $object->description;
@@ -1021,36 +1021,36 @@ class CbOrgRcb implements ObjectMapper
         after_email:        $result['email'] = $email;
 
         
-        $twitter_username = $object->twitter_username;
+        $twitterUsername = $object->twitterUsername;
 
-        if ($twitter_username === null) {
-            goto after_twitter_username;
+        if ($twitterUsername === null) {
+            goto after_twitterUsername;
         }
-        after_twitter_username:        $result['twitter_username'] = $twitter_username;
+        after_twitterUsername:        $result['twitter_username'] = $twitterUsername;
 
         
-        $is_verified = $object->is_verified;
+        $isVerified = $object->isVerified;
 
-        if ($is_verified === null) {
-            goto after_is_verified;
+        if ($isVerified === null) {
+            goto after_isVerified;
         }
-        after_is_verified:        $result['is_verified'] = $is_verified;
+        after_isVerified:        $result['is_verified'] = $isVerified;
 
         
-        $has_organization_projects = $object->has_organization_projects;
-        after_has_organization_projects:        $result['has_organization_projects'] = $has_organization_projects;
+        $hasOrganizationProjects = $object->hasOrganizationProjects;
+        after_hasOrganizationProjects:        $result['has_organization_projects'] = $hasOrganizationProjects;
 
         
-        $has_repository_projects = $object->has_repository_projects;
-        after_has_repository_projects:        $result['has_repository_projects'] = $has_repository_projects;
+        $hasRepositoryProjects = $object->hasRepositoryProjects;
+        after_hasRepositoryProjects:        $result['has_repository_projects'] = $hasRepositoryProjects;
 
         
-        $public_repos = $object->public_repos;
-        after_public_repos:        $result['public_repos'] = $public_repos;
+        $publicRepos = $object->publicRepos;
+        after_publicRepos:        $result['public_repos'] = $publicRepos;
 
         
-        $public_gists = $object->public_gists;
-        after_public_gists:        $result['public_gists'] = $public_gists;
+        $publicGists = $object->publicGists;
+        after_publicGists:        $result['public_gists'] = $publicGists;
 
         
         $followers = $object->followers;
@@ -1061,48 +1061,48 @@ class CbOrgRcb implements ObjectMapper
         after_following:        $result['following'] = $following;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $total_private_repos = $object->total_private_repos;
+        $totalPrivateRepos = $object->totalPrivateRepos;
 
-        if ($total_private_repos === null) {
-            goto after_total_private_repos;
+        if ($totalPrivateRepos === null) {
+            goto after_totalPrivateRepos;
         }
-        after_total_private_repos:        $result['total_private_repos'] = $total_private_repos;
+        after_totalPrivateRepos:        $result['total_private_repos'] = $totalPrivateRepos;
 
         
-        $owned_private_repos = $object->owned_private_repos;
+        $ownedPrivateRepos = $object->ownedPrivateRepos;
 
-        if ($owned_private_repos === null) {
-            goto after_owned_private_repos;
+        if ($ownedPrivateRepos === null) {
+            goto after_ownedPrivateRepos;
         }
-        after_owned_private_repos:        $result['owned_private_repos'] = $owned_private_repos;
+        after_ownedPrivateRepos:        $result['owned_private_repos'] = $ownedPrivateRepos;
 
         
-        $private_gists = $object->private_gists;
+        $privateGists = $object->privateGists;
 
-        if ($private_gists === null) {
-            goto after_private_gists;
+        if ($privateGists === null) {
+            goto after_privateGists;
         }
-        after_private_gists:        $result['private_gists'] = $private_gists;
+        after_privateGists:        $result['private_gists'] = $privateGists;
 
         
-        $disk_usage = $object->disk_usage;
+        $diskUsage = $object->diskUsage;
 
-        if ($disk_usage === null) {
-            goto after_disk_usage;
+        if ($diskUsage === null) {
+            goto after_diskUsage;
         }
-        after_disk_usage:        $result['disk_usage'] = $disk_usage;
+        after_diskUsage:        $result['disk_usage'] = $diskUsage;
 
         
         $collaborators = $object->collaborators;
@@ -1113,12 +1113,12 @@ class CbOrgRcb implements ObjectMapper
         after_collaborators:        $result['collaborators'] = $collaborators;
 
         
-        $billing_email = $object->billing_email;
+        $billingEmail = $object->billingEmail;
 
-        if ($billing_email === null) {
-            goto after_billing_email;
+        if ($billingEmail === null) {
+            goto after_billingEmail;
         }
-        after_billing_email:        $result['billing_email'] = $billing_email;
+        after_billingEmail:        $result['billing_email'] = $billingEmail;
 
         
         $plan = $object->plan;
@@ -1130,168 +1130,168 @@ class CbOrgRcb implements ObjectMapper
         after_plan:        $result['plan'] = $plan;
 
         
-        $default_repository_permission = $object->default_repository_permission;
+        $defaultRepositoryPermission = $object->defaultRepositoryPermission;
 
-        if ($default_repository_permission === null) {
-            goto after_default_repository_permission;
+        if ($defaultRepositoryPermission === null) {
+            goto after_defaultRepositoryPermission;
         }
-        after_default_repository_permission:        $result['default_repository_permission'] = $default_repository_permission;
+        after_defaultRepositoryPermission:        $result['default_repository_permission'] = $defaultRepositoryPermission;
 
         
-        $members_can_create_repositories = $object->members_can_create_repositories;
+        $membersCanCreateRepositories = $object->membersCanCreateRepositories;
 
-        if ($members_can_create_repositories === null) {
-            goto after_members_can_create_repositories;
+        if ($membersCanCreateRepositories === null) {
+            goto after_membersCanCreateRepositories;
         }
-        after_members_can_create_repositories:        $result['members_can_create_repositories'] = $members_can_create_repositories;
+        after_membersCanCreateRepositories:        $result['members_can_create_repositories'] = $membersCanCreateRepositories;
 
         
-        $two_factor_requirement_enabled = $object->two_factor_requirement_enabled;
+        $twoFactorRequirementEnabled = $object->twoFactorRequirementEnabled;
 
-        if ($two_factor_requirement_enabled === null) {
-            goto after_two_factor_requirement_enabled;
+        if ($twoFactorRequirementEnabled === null) {
+            goto after_twoFactorRequirementEnabled;
         }
-        after_two_factor_requirement_enabled:        $result['two_factor_requirement_enabled'] = $two_factor_requirement_enabled;
+        after_twoFactorRequirementEnabled:        $result['two_factor_requirement_enabled'] = $twoFactorRequirementEnabled;
 
         
-        $members_allowed_repository_creation_type = $object->members_allowed_repository_creation_type;
+        $membersAllowedRepositoryCreationType = $object->membersAllowedRepositoryCreationType;
 
-        if ($members_allowed_repository_creation_type === null) {
-            goto after_members_allowed_repository_creation_type;
+        if ($membersAllowedRepositoryCreationType === null) {
+            goto after_membersAllowedRepositoryCreationType;
         }
-        after_members_allowed_repository_creation_type:        $result['members_allowed_repository_creation_type'] = $members_allowed_repository_creation_type;
+        after_membersAllowedRepositoryCreationType:        $result['members_allowed_repository_creation_type'] = $membersAllowedRepositoryCreationType;
 
         
-        $members_can_create_public_repositories = $object->members_can_create_public_repositories;
+        $membersCanCreatePublicRepositories = $object->membersCanCreatePublicRepositories;
 
-        if ($members_can_create_public_repositories === null) {
-            goto after_members_can_create_public_repositories;
+        if ($membersCanCreatePublicRepositories === null) {
+            goto after_membersCanCreatePublicRepositories;
         }
-        after_members_can_create_public_repositories:        $result['members_can_create_public_repositories'] = $members_can_create_public_repositories;
+        after_membersCanCreatePublicRepositories:        $result['members_can_create_public_repositories'] = $membersCanCreatePublicRepositories;
 
         
-        $members_can_create_private_repositories = $object->members_can_create_private_repositories;
+        $membersCanCreatePrivateRepositories = $object->membersCanCreatePrivateRepositories;
 
-        if ($members_can_create_private_repositories === null) {
-            goto after_members_can_create_private_repositories;
+        if ($membersCanCreatePrivateRepositories === null) {
+            goto after_membersCanCreatePrivateRepositories;
         }
-        after_members_can_create_private_repositories:        $result['members_can_create_private_repositories'] = $members_can_create_private_repositories;
+        after_membersCanCreatePrivateRepositories:        $result['members_can_create_private_repositories'] = $membersCanCreatePrivateRepositories;
 
         
-        $members_can_create_internal_repositories = $object->members_can_create_internal_repositories;
+        $membersCanCreateInternalRepositories = $object->membersCanCreateInternalRepositories;
 
-        if ($members_can_create_internal_repositories === null) {
-            goto after_members_can_create_internal_repositories;
+        if ($membersCanCreateInternalRepositories === null) {
+            goto after_membersCanCreateInternalRepositories;
         }
-        after_members_can_create_internal_repositories:        $result['members_can_create_internal_repositories'] = $members_can_create_internal_repositories;
+        after_membersCanCreateInternalRepositories:        $result['members_can_create_internal_repositories'] = $membersCanCreateInternalRepositories;
 
         
-        $members_can_create_pages = $object->members_can_create_pages;
+        $membersCanCreatePages = $object->membersCanCreatePages;
 
-        if ($members_can_create_pages === null) {
-            goto after_members_can_create_pages;
+        if ($membersCanCreatePages === null) {
+            goto after_membersCanCreatePages;
         }
-        after_members_can_create_pages:        $result['members_can_create_pages'] = $members_can_create_pages;
+        after_membersCanCreatePages:        $result['members_can_create_pages'] = $membersCanCreatePages;
 
         
-        $members_can_create_public_pages = $object->members_can_create_public_pages;
+        $membersCanCreatePublicPages = $object->membersCanCreatePublicPages;
 
-        if ($members_can_create_public_pages === null) {
-            goto after_members_can_create_public_pages;
+        if ($membersCanCreatePublicPages === null) {
+            goto after_membersCanCreatePublicPages;
         }
-        after_members_can_create_public_pages:        $result['members_can_create_public_pages'] = $members_can_create_public_pages;
+        after_membersCanCreatePublicPages:        $result['members_can_create_public_pages'] = $membersCanCreatePublicPages;
 
         
-        $members_can_create_private_pages = $object->members_can_create_private_pages;
+        $membersCanCreatePrivatePages = $object->membersCanCreatePrivatePages;
 
-        if ($members_can_create_private_pages === null) {
-            goto after_members_can_create_private_pages;
+        if ($membersCanCreatePrivatePages === null) {
+            goto after_membersCanCreatePrivatePages;
         }
-        after_members_can_create_private_pages:        $result['members_can_create_private_pages'] = $members_can_create_private_pages;
+        after_membersCanCreatePrivatePages:        $result['members_can_create_private_pages'] = $membersCanCreatePrivatePages;
 
         
-        $members_can_fork_private_repositories = $object->members_can_fork_private_repositories;
+        $membersCanForkPrivateRepositories = $object->membersCanForkPrivateRepositories;
 
-        if ($members_can_fork_private_repositories === null) {
-            goto after_members_can_fork_private_repositories;
+        if ($membersCanForkPrivateRepositories === null) {
+            goto after_membersCanForkPrivateRepositories;
         }
-        after_members_can_fork_private_repositories:        $result['members_can_fork_private_repositories'] = $members_can_fork_private_repositories;
+        after_membersCanForkPrivateRepositories:        $result['members_can_fork_private_repositories'] = $membersCanForkPrivateRepositories;
 
         
-        $web_commit_signoff_required = $object->web_commit_signoff_required;
+        $webCommitSignoffRequired = $object->webCommitSignoffRequired;
 
-        if ($web_commit_signoff_required === null) {
-            goto after_web_commit_signoff_required;
+        if ($webCommitSignoffRequired === null) {
+            goto after_webCommitSignoffRequired;
         }
-        after_web_commit_signoff_required:        $result['web_commit_signoff_required'] = $web_commit_signoff_required;
+        after_webCommitSignoffRequired:        $result['web_commit_signoff_required'] = $webCommitSignoffRequired;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $advanced_security_enabled_for_new_repositories = $object->advanced_security_enabled_for_new_repositories;
+        $advancedSecurityEnabledForNewRepositories = $object->advancedSecurityEnabledForNewRepositories;
 
-        if ($advanced_security_enabled_for_new_repositories === null) {
-            goto after_advanced_security_enabled_for_new_repositories;
+        if ($advancedSecurityEnabledForNewRepositories === null) {
+            goto after_advancedSecurityEnabledForNewRepositories;
         }
-        after_advanced_security_enabled_for_new_repositories:        $result['advanced_security_enabled_for_new_repositories'] = $advanced_security_enabled_for_new_repositories;
+        after_advancedSecurityEnabledForNewRepositories:        $result['advanced_security_enabled_for_new_repositories'] = $advancedSecurityEnabledForNewRepositories;
 
         
-        $dependabot_alerts_enabled_for_new_repositories = $object->dependabot_alerts_enabled_for_new_repositories;
+        $dependabotAlertsEnabledForNewRepositories = $object->dependabotAlertsEnabledForNewRepositories;
 
-        if ($dependabot_alerts_enabled_for_new_repositories === null) {
-            goto after_dependabot_alerts_enabled_for_new_repositories;
+        if ($dependabotAlertsEnabledForNewRepositories === null) {
+            goto after_dependabotAlertsEnabledForNewRepositories;
         }
-        after_dependabot_alerts_enabled_for_new_repositories:        $result['dependabot_alerts_enabled_for_new_repositories'] = $dependabot_alerts_enabled_for_new_repositories;
+        after_dependabotAlertsEnabledForNewRepositories:        $result['dependabot_alerts_enabled_for_new_repositories'] = $dependabotAlertsEnabledForNewRepositories;
 
         
-        $dependabot_security_updates_enabled_for_new_repositories = $object->dependabot_security_updates_enabled_for_new_repositories;
+        $dependabotSecurityUpdatesEnabledForNewRepositories = $object->dependabotSecurityUpdatesEnabledForNewRepositories;
 
-        if ($dependabot_security_updates_enabled_for_new_repositories === null) {
-            goto after_dependabot_security_updates_enabled_for_new_repositories;
+        if ($dependabotSecurityUpdatesEnabledForNewRepositories === null) {
+            goto after_dependabotSecurityUpdatesEnabledForNewRepositories;
         }
-        after_dependabot_security_updates_enabled_for_new_repositories:        $result['dependabot_security_updates_enabled_for_new_repositories'] = $dependabot_security_updates_enabled_for_new_repositories;
+        after_dependabotSecurityUpdatesEnabledForNewRepositories:        $result['dependabot_security_updates_enabled_for_new_repositories'] = $dependabotSecurityUpdatesEnabledForNewRepositories;
 
         
-        $dependency_graph_enabled_for_new_repositories = $object->dependency_graph_enabled_for_new_repositories;
+        $dependencyGraphEnabledForNewRepositories = $object->dependencyGraphEnabledForNewRepositories;
 
-        if ($dependency_graph_enabled_for_new_repositories === null) {
-            goto after_dependency_graph_enabled_for_new_repositories;
+        if ($dependencyGraphEnabledForNewRepositories === null) {
+            goto after_dependencyGraphEnabledForNewRepositories;
         }
-        after_dependency_graph_enabled_for_new_repositories:        $result['dependency_graph_enabled_for_new_repositories'] = $dependency_graph_enabled_for_new_repositories;
+        after_dependencyGraphEnabledForNewRepositories:        $result['dependency_graph_enabled_for_new_repositories'] = $dependencyGraphEnabledForNewRepositories;
 
         
-        $secret_scanning_enabled_for_new_repositories = $object->secret_scanning_enabled_for_new_repositories;
+        $secretScanningEnabledForNewRepositories = $object->secretScanningEnabledForNewRepositories;
 
-        if ($secret_scanning_enabled_for_new_repositories === null) {
-            goto after_secret_scanning_enabled_for_new_repositories;
+        if ($secretScanningEnabledForNewRepositories === null) {
+            goto after_secretScanningEnabledForNewRepositories;
         }
-        after_secret_scanning_enabled_for_new_repositories:        $result['secret_scanning_enabled_for_new_repositories'] = $secret_scanning_enabled_for_new_repositories;
+        after_secretScanningEnabledForNewRepositories:        $result['secret_scanning_enabled_for_new_repositories'] = $secretScanningEnabledForNewRepositories;
 
         
-        $secret_scanning_push_protection_enabled_for_new_repositories = $object->secret_scanning_push_protection_enabled_for_new_repositories;
+        $secretScanningPushProtectionEnabledForNewRepositories = $object->secretScanningPushProtectionEnabledForNewRepositories;
 
-        if ($secret_scanning_push_protection_enabled_for_new_repositories === null) {
-            goto after_secret_scanning_push_protection_enabled_for_new_repositories;
+        if ($secretScanningPushProtectionEnabledForNewRepositories === null) {
+            goto after_secretScanningPushProtectionEnabledForNewRepositories;
         }
-        after_secret_scanning_push_protection_enabled_for_new_repositories:        $result['secret_scanning_push_protection_enabled_for_new_repositories'] = $secret_scanning_push_protection_enabled_for_new_repositories;
+        after_secretScanningPushProtectionEnabledForNewRepositories:        $result['secret_scanning_push_protection_enabled_for_new_repositories'] = $secretScanningPushProtectionEnabledForNewRepositories;
 
         
-        $secret_scanning_push_protection_custom_link_enabled = $object->secret_scanning_push_protection_custom_link_enabled;
+        $secretScanningPushProtectionCustomLinkEnabled = $object->secretScanningPushProtectionCustomLinkEnabled;
 
-        if ($secret_scanning_push_protection_custom_link_enabled === null) {
-            goto after_secret_scanning_push_protection_custom_link_enabled;
+        if ($secretScanningPushProtectionCustomLinkEnabled === null) {
+            goto after_secretScanningPushProtectionCustomLinkEnabled;
         }
-        after_secret_scanning_push_protection_custom_link_enabled:        $result['secret_scanning_push_protection_custom_link_enabled'] = $secret_scanning_push_protection_custom_link_enabled;
+        after_secretScanningPushProtectionCustomLinkEnabled:        $result['secret_scanning_push_protection_custom_link_enabled'] = $secretScanningPushProtectionCustomLinkEnabled;
 
         
-        $secret_scanning_push_protection_custom_link = $object->secret_scanning_push_protection_custom_link;
+        $secretScanningPushProtectionCustomLink = $object->secretScanningPushProtectionCustomLink;
 
-        if ($secret_scanning_push_protection_custom_link === null) {
-            goto after_secret_scanning_push_protection_custom_link;
+        if ($secretScanningPushProtectionCustomLink === null) {
+            goto after_secretScanningPushProtectionCustomLink;
         }
-        after_secret_scanning_push_protection_custom_link:        $result['secret_scanning_push_protection_custom_link'] = $secret_scanning_push_protection_custom_link;
+        after_secretScanningPushProtectionCustomLink:        $result['secret_scanning_push_protection_custom_link'] = $secretScanningPushProtectionCustomLink;
 
 
         return $result;
@@ -1311,16 +1311,16 @@ class CbOrgRcb implements ObjectMapper
         after_space:        $result['space'] = $space;
 
         
-        $private_repos = $object->private_repos;
-        after_private_repos:        $result['private_repos'] = $private_repos;
+        $privateRepos = $object->privateRepos;
+        after_privateRepos:        $result['private_repos'] = $privateRepos;
 
         
-        $filled_seats = $object->filled_seats;
+        $filledSeats = $object->filledSeats;
 
-        if ($filled_seats === null) {
-            goto after_filled_seats;
+        if ($filledSeats === null) {
+            goto after_filledSeats;
         }
-        after_filled_seats:        $result['filled_seats'] = $filled_seats;
+        after_filledSeats:        $result['filled_seats'] = $filledSeats;
 
         
         $seats = $object->seats;
@@ -1348,12 +1348,12 @@ class CbOrgRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

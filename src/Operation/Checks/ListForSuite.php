@@ -19,35 +19,35 @@ final class ListForSuite
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the check suite.**/
-    private int $check_suite_id;
+    private int $checkSuiteId;
     /**Returns check runs with the specified `name`.**/
-    private string $check_name;
+    private string $checkName;
     /**Returns check runs with the specified `status`.**/
     private string $status;
     /**Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.**/
     private string $filter;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CheckDashSuites\CbCheckSuiteIdRcb\CheckDashRuns $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CheckDashSuites\CbCheckSuiteIdRcb\CheckDashRuns $hydrator, string $owner, string $repo, int $check_suite_id, string $check_name, string $status, string $filter = 'latest', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CheckDashSuites\CbCheckSuiteIdRcb\CheckDashRuns $hydrator, string $owner, string $repo, int $checkSuiteId, string $checkName, string $status, string $filter = 'latest', int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->check_suite_id = $check_suite_id;
-        $this->check_name = $check_name;
+        $this->checkSuiteId = $checkSuiteId;
+        $this->checkName = $checkName;
         $this->status = $status;
         $this->filter = $filter;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{check_suite_id}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->check_suite_id, $this->check_name, $this->status, $this->filter, $this->per_page, $this->page), self::PATH . '?check_name={check_name}&status={status}&filter={filter}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{check_suite_id}', '{check_name}', '{status}', '{filter}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->checkSuiteId, $this->checkName, $this->status, $this->filter, $this->perPage, $this->page), self::PATH . '?checkName={check_name}&status={status}&filter={filter}&perPage={per_page}&page={page}'));
     }
     /**
      * @return Schema\Operation\Checks\ListForSuite\Response\Applicationjson\H200

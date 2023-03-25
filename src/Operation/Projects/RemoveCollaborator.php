@@ -15,21 +15,21 @@ final class RemoveCollaborator
     private const METHOD = 'DELETE';
     private const PATH = '/projects/{project_id}/collaborators/{username}';
     /**The unique identifier of the project.**/
-    private int $project_id;
+    private int $projectId;
     /**The handle for the GitHub user account.**/
     private string $username;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb $hydrator, int $project_id, string $username)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators\CbUsernameRcb $hydrator, int $projectId, string $username)
     {
-        $this->project_id = $project_id;
+        $this->projectId = $projectId;
         $this->username = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{project_id}', '{username}'), array($this->project_id, $this->username), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{project_id}', '{username}'), array($this->projectId, $this->username), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

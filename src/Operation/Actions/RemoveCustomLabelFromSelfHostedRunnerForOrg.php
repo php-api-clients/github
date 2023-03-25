@@ -17,22 +17,22 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**Unique identifier of the self-hosted runner.**/
-    private int $runner_id;
+    private int $runnerId;
     /**The name of a self-hosted runner's custom label.**/
     private string $name;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\CbRunnerIdRcb\Labels\CbNameRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\CbRunnerIdRcb\Labels\CbNameRcb $hydrator, string $org, int $runner_id, string $name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\CbRunnerIdRcb\Labels\CbNameRcb $hydrator, string $org, int $runnerId, string $name)
     {
         $this->org = $org;
-        $this->runner_id = $runner_id;
+        $this->runnerId = $runnerId;
         $this->name = $name;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{runner_id}', '{name}'), array($this->org, $this->runner_id, $this->name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{runner_id}', '{name}'), array($this->org, $this->runnerId, $this->name), self::PATH));
     }
     /**
      * @return Schema\Operation\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\Applicationjson\H200

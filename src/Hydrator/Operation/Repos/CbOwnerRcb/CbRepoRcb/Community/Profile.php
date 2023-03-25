@@ -39,12 +39,12 @@ class Profile implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'health_percentage';
-                goto after_health_percentage;
+                goto after_healthPercentage;
             }
 
-            $properties['health_percentage'] = $value;
+            $properties['healthPercentage'] = $value;
 
-            after_health_percentage:
+            after_healthPercentage:
 
             $value = $payload['description'] ?? null;
 
@@ -91,24 +91,24 @@ class Profile implements ObjectMapper
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['content_reports_enabled'] ?? null;
 
             if ($value === null) {
-                $properties['content_reports_enabled'] = null;
-                goto after_content_reports_enabled;
+                $properties['contentReportsEnabled'] = null;
+                goto after_contentReportsEnabled;
             }
 
-            $properties['content_reports_enabled'] = $value;
+            $properties['contentReportsEnabled'] = $value;
 
-            after_content_reports_enabled:
+            after_contentReportsEnabled:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
@@ -134,24 +134,24 @@ class Profile implements ObjectMapper
             $value = $payload['code_of_conduct'] ?? null;
 
             if ($value === null) {
-                $properties['code_of_conduct'] = null;
-                goto after_code_of_conduct;
+                $properties['codeOfConduct'] = null;
+                goto after_codeOfConduct;
             }
 
-            $properties['code_of_conduct'] = $value;
+            $properties['codeOfConduct'] = $value;
 
-            after_code_of_conduct:
+            after_codeOfConduct:
 
             $value = $payload['code_of_conduct_file'] ?? null;
 
             if ($value === null) {
-                $properties['code_of_conduct_file'] = null;
-                goto after_code_of_conduct_file;
+                $properties['codeOfConductFile'] = null;
+                goto after_codeOfConductFile;
             }
 
-            $properties['code_of_conduct_file'] = $value;
+            $properties['codeOfConductFile'] = $value;
 
-            after_code_of_conduct_file:
+            after_codeOfConductFile:
 
             $value = $payload['license'] ?? null;
 
@@ -189,24 +189,24 @@ class Profile implements ObjectMapper
             $value = $payload['issue_template'] ?? null;
 
             if ($value === null) {
-                $properties['issue_template'] = null;
-                goto after_issue_template;
+                $properties['issueTemplate'] = null;
+                goto after_issueTemplate;
             }
 
-            $properties['issue_template'] = $value;
+            $properties['issueTemplate'] = $value;
 
-            after_issue_template:
+            after_issueTemplate:
 
             $value = $payload['pull_request_template'] ?? null;
 
             if ($value === null) {
-                $properties['pull_request_template'] = null;
-                goto after_pull_request_template;
+                $properties['pullRequestTemplate'] = null;
+                goto after_pullRequestTemplate;
             }
 
-            $properties['pull_request_template'] = $value;
+            $properties['pullRequestTemplate'] = $value;
 
-            after_pull_request_template:
+            after_pullRequestTemplate:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
@@ -334,8 +334,8 @@ class Profile implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile);
         $result = [];
 
-        $health_percentage = $object->health_percentage;
-        after_health_percentage:        $result['health_percentage'] = $health_percentage;
+        $healthPercentage = $object->healthPercentage;
+        after_healthPercentage:        $result['health_percentage'] = $healthPercentage;
 
         
         $description = $object->description;
@@ -359,20 +359,20 @@ class Profile implements ObjectMapper
         after_files:        $result['files'] = $files;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $content_reports_enabled = $object->content_reports_enabled;
+        $contentReportsEnabled = $object->contentReportsEnabled;
 
-        if ($content_reports_enabled === null) {
-            goto after_content_reports_enabled;
+        if ($contentReportsEnabled === null) {
+            goto after_contentReportsEnabled;
         }
-        after_content_reports_enabled:        $result['content_reports_enabled'] = $content_reports_enabled;
+        after_contentReportsEnabled:        $result['content_reports_enabled'] = $contentReportsEnabled;
 
 
         return $result;
@@ -384,20 +384,20 @@ class Profile implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile\Files);
         $result = [];
 
-        $code_of_conduct = $object->code_of_conduct;
+        $codeOfConduct = $object->codeOfConduct;
 
-        if ($code_of_conduct === null) {
-            goto after_code_of_conduct;
+        if ($codeOfConduct === null) {
+            goto after_codeOfConduct;
         }
-        after_code_of_conduct:        $result['code_of_conduct'] = $code_of_conduct;
+        after_codeOfConduct:        $result['code_of_conduct'] = $codeOfConduct;
 
         
-        $code_of_conduct_file = $object->code_of_conduct_file;
+        $codeOfConductFile = $object->codeOfConductFile;
 
-        if ($code_of_conduct_file === null) {
-            goto after_code_of_conduct_file;
+        if ($codeOfConductFile === null) {
+            goto after_codeOfConductFile;
         }
-        after_code_of_conduct_file:        $result['code_of_conduct_file'] = $code_of_conduct_file;
+        after_codeOfConductFile:        $result['code_of_conduct_file'] = $codeOfConductFile;
 
         
         $license = $object->license;
@@ -424,20 +424,20 @@ class Profile implements ObjectMapper
         after_readme:        $result['readme'] = $readme;
 
         
-        $issue_template = $object->issue_template;
+        $issueTemplate = $object->issueTemplate;
 
-        if ($issue_template === null) {
-            goto after_issue_template;
+        if ($issueTemplate === null) {
+            goto after_issueTemplate;
         }
-        after_issue_template:        $result['issue_template'] = $issue_template;
+        after_issueTemplate:        $result['issue_template'] = $issueTemplate;
 
         
-        $pull_request_template = $object->pull_request_template;
+        $pullRequestTemplate = $object->pullRequestTemplate;
 
-        if ($pull_request_template === null) {
-            goto after_pull_request_template;
+        if ($pullRequestTemplate === null) {
+            goto after_pullRequestTemplate;
         }
-        after_pull_request_template:        $result['pull_request_template'] = $pull_request_template;
+        after_pullRequestTemplate:        $result['pull_request_template'] = $pullRequestTemplate;
 
 
         return $result;

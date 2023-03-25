@@ -18,17 +18,17 @@ final class SetSelectedReposForOrgSecret
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The name of the secret.**/
-    private string $secret_name;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, string $org, string $secret_name)
+    private string $secretName;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, string $org, string $secretName)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->org = $org;
-        $this->secret_name = $secret_name;
+        $this->secretName = $secretName;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Actions\SetSelectedReposForOrgSecret\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{secret_name}'), array($this->org, $this->secret_name), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{secret_name}'), array($this->org, $this->secretName), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

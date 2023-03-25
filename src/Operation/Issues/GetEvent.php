@@ -18,20 +18,20 @@ final class GetEvent
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
-    private int $event_id;
+    private int $eventId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Events\CbEventIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Events\CbEventIdRcb $hydrator, string $owner, string $repo, int $event_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Events\CbEventIdRcb $hydrator, string $owner, string $repo, int $eventId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->event_id = $event_id;
+        $this->eventId = $eventId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{event_id}'), array($this->owner, $this->repo, $this->event_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{event_id}'), array($this->owner, $this->repo, $this->eventId), self::PATH));
     }
     /**
      * @return Schema\IssueEvent

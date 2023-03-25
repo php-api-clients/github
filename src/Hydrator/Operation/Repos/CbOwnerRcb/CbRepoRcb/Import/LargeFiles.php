@@ -39,12 +39,12 @@ class LargeFiles implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'ref_name';
-                goto after_ref_name;
+                goto after_refName;
             }
 
-            $properties['ref_name'] = $value;
+            $properties['refName'] = $value;
 
-            after_ref_name:
+            after_refName:
 
             $value = $payload['path'] ?? null;
 
@@ -114,13 +114,13 @@ class LargeFiles implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -270,8 +270,8 @@ class LargeFiles implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PorterLargeFile);
         $result = [];
 
-        $ref_name = $object->ref_name;
-        after_ref_name:        $result['ref_name'] = $ref_name;
+        $refName = $object->refName;
+        after_refName:        $result['ref_name'] = $refName;
 
         
         $path = $object->path;
@@ -303,12 +303,12 @@ class LargeFiles implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

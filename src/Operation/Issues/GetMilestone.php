@@ -19,20 +19,20 @@ final class GetMilestone
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the milestone.**/
-    private int $milestone_number;
+    private int $milestoneNumber;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb $hydrator, string $owner, string $repo, int $milestone_number)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb $hydrator, string $owner, string $repo, int $milestoneNumber)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->milestone_number = $milestone_number;
+        $this->milestoneNumber = $milestoneNumber;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{milestone_number}'), array($this->owner, $this->repo, $this->milestone_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{milestone_number}'), array($this->owner, $this->repo, $this->milestoneNumber), self::PATH));
     }
     /**
      * @return Schema\Milestone

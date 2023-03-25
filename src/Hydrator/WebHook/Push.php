@@ -60,13 +60,13 @@ class Push implements ObjectMapper
             $value = $payload['base_ref'] ?? null;
 
             if ($value === null) {
-                $properties['base_ref'] = null;
-                goto after_base_ref;
+                $properties['baseRef'] = null;
+                goto after_baseRef;
             }
 
-            $properties['base_ref'] = $value;
+            $properties['baseRef'] = $value;
 
-            after_base_ref:
+            after_baseRef:
 
             $value = $payload['before'] ?? null;
 
@@ -167,22 +167,22 @@ class Push implements ObjectMapper
             $value = $payload['head_commit'] ?? null;
 
             if ($value === null) {
-                $properties['head_commit'] = null;
-                goto after_head_commit;
+                $properties['headCommit'] = null;
+                goto after_headCommit;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'head_commit';
+                    $this->hydrationStack[] = 'headCommit';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️HeadCommit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['head_commit'] = $value;
+            $properties['headCommit'] = $value;
 
-            after_head_commit:
+            after_headCommit:
 
             $value = $payload['installation'] ?? null;
 
@@ -437,12 +437,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'tree_id';
-                goto after_tree_id;
+                goto after_treeId;
             }
 
-            $properties['tree_id'] = $value;
+            $properties['treeId'] = $value;
 
-            after_tree_id:
+            after_treeId:
 
             $value = $payload['url'] ?? null;
 
@@ -556,23 +556,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['website_url'] ?? null;
 
             if ($value === null) {
-                $properties['website_url'] = null;
-                goto after_website_url;
+                $properties['websiteUrl'] = null;
+                goto after_websiteUrl;
             }
 
-            $properties['website_url'] = $value;
+            $properties['websiteUrl'] = $value;
 
-            after_website_url:
+            after_websiteUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -589,12 +589,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -621,35 +621,35 @@ class Push implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Enterprise', $exception, stack: $this->hydrationStack);
@@ -793,12 +793,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'tree_id';
-                goto after_tree_id;
+                goto after_treeId;
             }
 
-            $properties['tree_id'] = $value;
+            $properties['treeId'] = $value;
 
-            after_tree_id:
+            after_treeId:
 
             $value = $payload['url'] ?? null;
 
@@ -847,12 +847,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
@@ -901,12 +901,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -923,78 +923,78 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'members_url';
-                goto after_members_url;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_members_url';
-                goto after_public_members_url;
+                goto after_publicMembersUrl;
             }
 
-            $properties['public_members_url'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_public_members_url:
+            after_publicMembersUrl:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -1096,79 +1096,79 @@ class Push implements ObjectMapper
             $value = $payload['allow_auto_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_auto_merge'] = null;
-                goto after_allow_auto_merge;
+                $properties['allowAutoMerge'] = null;
+                goto after_allowAutoMerge;
             }
 
-            $properties['allow_auto_merge'] = $value;
+            $properties['allowAutoMerge'] = $value;
 
-            after_allow_auto_merge:
+            after_allowAutoMerge:
 
             $value = $payload['allow_forking'] ?? null;
 
             if ($value === null) {
-                $properties['allow_forking'] = null;
-                goto after_allow_forking;
+                $properties['allowForking'] = null;
+                goto after_allowForking;
             }
 
-            $properties['allow_forking'] = $value;
+            $properties['allowForking'] = $value;
 
-            after_allow_forking:
+            after_allowForking:
 
             $value = $payload['allow_merge_commit'] ?? null;
 
             if ($value === null) {
-                $properties['allow_merge_commit'] = null;
-                goto after_allow_merge_commit;
+                $properties['allowMergeCommit'] = null;
+                goto after_allowMergeCommit;
             }
 
-            $properties['allow_merge_commit'] = $value;
+            $properties['allowMergeCommit'] = $value;
 
-            after_allow_merge_commit:
+            after_allowMergeCommit:
 
             $value = $payload['allow_rebase_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_rebase_merge'] = null;
-                goto after_allow_rebase_merge;
+                $properties['allowRebaseMerge'] = null;
+                goto after_allowRebaseMerge;
             }
 
-            $properties['allow_rebase_merge'] = $value;
+            $properties['allowRebaseMerge'] = $value;
 
-            after_allow_rebase_merge:
+            after_allowRebaseMerge:
 
             $value = $payload['allow_squash_merge'] ?? null;
 
             if ($value === null) {
-                $properties['allow_squash_merge'] = null;
-                goto after_allow_squash_merge;
+                $properties['allowSquashMerge'] = null;
+                goto after_allowSquashMerge;
             }
 
-            $properties['allow_squash_merge'] = $value;
+            $properties['allowSquashMerge'] = $value;
 
-            after_allow_squash_merge:
+            after_allowSquashMerge:
 
             $value = $payload['allow_update_branch'] ?? null;
 
             if ($value === null) {
-                $properties['allow_update_branch'] = null;
-                goto after_allow_update_branch;
+                $properties['allowUpdateBranch'] = null;
+                goto after_allowUpdateBranch;
             }
 
-            $properties['allow_update_branch'] = $value;
+            $properties['allowUpdateBranch'] = $value;
 
-            after_allow_update_branch:
+            after_allowUpdateBranch:
 
             $value = $payload['archive_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'archive_url';
-                goto after_archive_url;
+                goto after_archiveUrl;
             }
 
-            $properties['archive_url'] = $value;
+            $properties['archiveUrl'] = $value;
 
-            after_archive_url:
+            after_archiveUrl:
 
             $value = $payload['archived'] ?? null;
 
@@ -1185,155 +1185,155 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'assignees_url';
-                goto after_assignees_url;
+                goto after_assigneesUrl;
             }
 
-            $properties['assignees_url'] = $value;
+            $properties['assigneesUrl'] = $value;
 
-            after_assignees_url:
+            after_assigneesUrl:
 
             $value = $payload['blobs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blobs_url';
-                goto after_blobs_url;
+                goto after_blobsUrl;
             }
 
-            $properties['blobs_url'] = $value;
+            $properties['blobsUrl'] = $value;
 
-            after_blobs_url:
+            after_blobsUrl:
 
             $value = $payload['branches_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'branches_url';
-                goto after_branches_url;
+                goto after_branchesUrl;
             }
 
-            $properties['branches_url'] = $value;
+            $properties['branchesUrl'] = $value;
 
-            after_branches_url:
+            after_branchesUrl:
 
             $value = $payload['clone_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'clone_url';
-                goto after_clone_url;
+                goto after_cloneUrl;
             }
 
-            $properties['clone_url'] = $value;
+            $properties['cloneUrl'] = $value;
 
-            after_clone_url:
+            after_cloneUrl:
 
             $value = $payload['collaborators_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'collaborators_url';
-                goto after_collaborators_url;
+                goto after_collaboratorsUrl;
             }
 
-            $properties['collaborators_url'] = $value;
+            $properties['collaboratorsUrl'] = $value;
 
-            after_collaborators_url:
+            after_collaboratorsUrl:
 
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commits_url';
-                goto after_commits_url;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['compare_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'compare_url';
-                goto after_compare_url;
+                goto after_compareUrl;
             }
 
-            $properties['compare_url'] = $value;
+            $properties['compareUrl'] = $value;
 
-            after_compare_url:
+            after_compareUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['contributors_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contributors_url';
-                goto after_contributors_url;
+                goto after_contributorsUrl;
             }
 
-            $properties['contributors_url'] = $value;
+            $properties['contributorsUrl'] = $value;
 
-            after_contributors_url:
+            after_contributorsUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['default_branch'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'default_branch';
-                goto after_default_branch;
+                goto after_defaultBranch;
             }
 
-            $properties['default_branch'] = $value;
+            $properties['defaultBranch'] = $value;
 
-            after_default_branch:
+            after_defaultBranch:
 
             $value = $payload['delete_branch_on_merge'] ?? null;
 
             if ($value === null) {
-                $properties['delete_branch_on_merge'] = null;
-                goto after_delete_branch_on_merge;
+                $properties['deleteBranchOnMerge'] = null;
+                goto after_deleteBranchOnMerge;
             }
 
-            $properties['delete_branch_on_merge'] = $value;
+            $properties['deleteBranchOnMerge'] = $value;
 
-            after_delete_branch_on_merge:
+            after_deleteBranchOnMerge:
 
             $value = $payload['deployments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'deployments_url';
-                goto after_deployments_url;
+                goto after_deploymentsUrl;
             }
 
-            $properties['deployments_url'] = $value;
+            $properties['deploymentsUrl'] = $value;
 
-            after_deployments_url:
+            after_deploymentsUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -1361,23 +1361,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'downloads_url';
-                goto after_downloads_url;
+                goto after_downloadsUrl;
             }
 
-            $properties['downloads_url'] = $value;
+            $properties['downloadsUrl'] = $value;
 
-            after_downloads_url:
+            after_downloadsUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['fork'] ?? null;
 
@@ -1405,144 +1405,144 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'forks_count';
-                goto after_forks_count;
+                goto after_forksCount;
             }
 
-            $properties['forks_count'] = $value;
+            $properties['forksCount'] = $value;
 
-            after_forks_count:
+            after_forksCount:
 
             $value = $payload['forks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'forks_url';
-                goto after_forks_url;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['full_name'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'full_name';
-                goto after_full_name;
+                goto after_fullName;
             }
 
-            $properties['full_name'] = $value;
+            $properties['fullName'] = $value;
 
-            after_full_name:
+            after_fullName:
 
             $value = $payload['git_commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_commits_url';
-                goto after_git_commits_url;
+                goto after_gitCommitsUrl;
             }
 
-            $properties['git_commits_url'] = $value;
+            $properties['gitCommitsUrl'] = $value;
 
-            after_git_commits_url:
+            after_gitCommitsUrl:
 
             $value = $payload['git_refs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_refs_url';
-                goto after_git_refs_url;
+                goto after_gitRefsUrl;
             }
 
-            $properties['git_refs_url'] = $value;
+            $properties['gitRefsUrl'] = $value;
 
-            after_git_refs_url:
+            after_gitRefsUrl:
 
             $value = $payload['git_tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_tags_url';
-                goto after_git_tags_url;
+                goto after_gitTagsUrl;
             }
 
-            $properties['git_tags_url'] = $value;
+            $properties['gitTagsUrl'] = $value;
 
-            after_git_tags_url:
+            after_gitTagsUrl:
 
             $value = $payload['git_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_url';
-                goto after_git_url;
+                goto after_gitUrl;
             }
 
-            $properties['git_url'] = $value;
+            $properties['gitUrl'] = $value;
 
-            after_git_url:
+            after_gitUrl:
 
             $value = $payload['has_downloads'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_downloads';
-                goto after_has_downloads;
+                goto after_hasDownloads;
             }
 
-            $properties['has_downloads'] = $value;
+            $properties['hasDownloads'] = $value;
 
-            after_has_downloads:
+            after_hasDownloads:
 
             $value = $payload['has_issues'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_issues';
-                goto after_has_issues;
+                goto after_hasIssues;
             }
 
-            $properties['has_issues'] = $value;
+            $properties['hasIssues'] = $value;
 
-            after_has_issues:
+            after_hasIssues:
 
             $value = $payload['has_pages'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_pages';
-                goto after_has_pages;
+                goto after_hasPages;
             }
 
-            $properties['has_pages'] = $value;
+            $properties['hasPages'] = $value;
 
-            after_has_pages:
+            after_hasPages:
 
             $value = $payload['has_projects'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_projects';
-                goto after_has_projects;
+                goto after_hasProjects;
             }
 
-            $properties['has_projects'] = $value;
+            $properties['hasProjects'] = $value;
 
-            after_has_projects:
+            after_hasProjects:
 
             $value = $payload['has_wiki'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_wiki';
-                goto after_has_wiki;
+                goto after_hasWiki;
             }
 
-            $properties['has_wiki'] = $value;
+            $properties['hasWiki'] = $value;
 
-            after_has_wiki:
+            after_hasWiki:
 
             $value = $payload['has_discussions'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_discussions';
-                goto after_has_discussions;
+                goto after_hasDiscussions;
             }
 
-            $properties['has_discussions'] = $value;
+            $properties['hasDiscussions'] = $value;
 
-            after_has_discussions:
+            after_hasDiscussions:
 
             $value = $payload['homepage'] ?? null;
 
@@ -1559,23 +1559,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -1591,68 +1591,68 @@ class Push implements ObjectMapper
             $value = $payload['is_template'] ?? null;
 
             if ($value === null) {
-                $properties['is_template'] = null;
-                goto after_is_template;
+                $properties['isTemplate'] = null;
+                goto after_isTemplate;
             }
 
-            $properties['is_template'] = $value;
+            $properties['isTemplate'] = $value;
 
-            after_is_template:
+            after_isTemplate:
 
             $value = $payload['issue_comment_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_comment_url';
-                goto after_issue_comment_url;
+                goto after_issueCommentUrl;
             }
 
-            $properties['issue_comment_url'] = $value;
+            $properties['issueCommentUrl'] = $value;
 
-            after_issue_comment_url:
+            after_issueCommentUrl:
 
             $value = $payload['issue_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_events_url';
-                goto after_issue_events_url;
+                goto after_issueEventsUrl;
             }
 
-            $properties['issue_events_url'] = $value;
+            $properties['issueEventsUrl'] = $value;
 
-            after_issue_events_url:
+            after_issueEventsUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['keys_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'keys_url';
-                goto after_keys_url;
+                goto after_keysUrl;
             }
 
-            $properties['keys_url'] = $value;
+            $properties['keysUrl'] = $value;
 
-            after_keys_url:
+            after_keysUrl:
 
             $value = $payload['labels_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'labels_url';
-                goto after_labels_url;
+                goto after_labelsUrl;
             }
 
-            $properties['labels_url'] = $value;
+            $properties['labelsUrl'] = $value;
 
-            after_labels_url:
+            after_labelsUrl:
 
             $value = $payload['language'] ?? null;
 
@@ -1669,12 +1669,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'languages_url';
-                goto after_languages_url;
+                goto after_languagesUrl;
             }
 
-            $properties['languages_url'] = $value;
+            $properties['languagesUrl'] = $value;
 
-            after_languages_url:
+            after_languagesUrl:
 
             $value = $payload['license'] ?? null;
 
@@ -1699,46 +1699,46 @@ class Push implements ObjectMapper
             $value = $payload['master_branch'] ?? null;
 
             if ($value === null) {
-                $properties['master_branch'] = null;
-                goto after_master_branch;
+                $properties['masterBranch'] = null;
+                goto after_masterBranch;
             }
 
-            $properties['master_branch'] = $value;
+            $properties['masterBranch'] = $value;
 
-            after_master_branch:
+            after_masterBranch:
 
             $value = $payload['merges_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'merges_url';
-                goto after_merges_url;
+                goto after_mergesUrl;
             }
 
-            $properties['merges_url'] = $value;
+            $properties['mergesUrl'] = $value;
 
-            after_merges_url:
+            after_mergesUrl:
 
             $value = $payload['milestones_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'milestones_url';
-                goto after_milestones_url;
+                goto after_milestonesUrl;
             }
 
-            $properties['milestones_url'] = $value;
+            $properties['milestonesUrl'] = $value;
 
-            after_milestones_url:
+            after_milestonesUrl:
 
             $value = $payload['mirror_url'] ?? null;
 
             if ($value === null) {
-                $properties['mirror_url'] = null;
-                goto after_mirror_url;
+                $properties['mirrorUrl'] = null;
+                goto after_mirrorUrl;
             }
 
-            $properties['mirror_url'] = $value;
+            $properties['mirrorUrl'] = $value;
 
-            after_mirror_url:
+            after_mirrorUrl:
 
             $value = $payload['name'] ?? null;
 
@@ -1755,45 +1755,45 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['notifications_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'notifications_url';
-                goto after_notifications_url;
+                goto after_notificationsUrl;
             }
 
-            $properties['notifications_url'] = $value;
+            $properties['notificationsUrl'] = $value;
 
-            after_notifications_url:
+            after_notificationsUrl:
 
             $value = $payload['open_issues'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'open_issues';
-                goto after_open_issues;
+                goto after_openIssues;
             }
 
-            $properties['open_issues'] = $value;
+            $properties['openIssues'] = $value;
 
-            after_open_issues:
+            after_openIssues:
 
             $value = $payload['open_issues_count'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'open_issues_count';
-                goto after_open_issues_count;
+                goto after_openIssuesCount;
             }
 
-            $properties['open_issues_count'] = $value;
+            $properties['openIssuesCount'] = $value;
 
-            after_open_issues_count:
+            after_openIssuesCount:
 
             $value = $payload['organization'] ?? null;
 
@@ -1872,45 +1872,45 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'pulls_url';
-                goto after_pulls_url;
+                goto after_pullsUrl;
             }
 
-            $properties['pulls_url'] = $value;
+            $properties['pullsUrl'] = $value;
 
-            after_pulls_url:
+            after_pullsUrl:
 
             $value = $payload['pushed_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pushed_at';
-                goto after_pushed_at;
+                goto after_pushedAt;
             }
 
-            $properties['pushed_at'] = $value;
+            $properties['pushedAt'] = $value;
 
-            after_pushed_at:
+            after_pushedAt:
 
             $value = $payload['releases_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'releases_url';
-                goto after_releases_url;
+                goto after_releasesUrl;
             }
 
-            $properties['releases_url'] = $value;
+            $properties['releasesUrl'] = $value;
 
-            after_releases_url:
+            after_releasesUrl:
 
             $value = $payload['role_name'] ?? null;
 
             if ($value === null) {
-                $properties['role_name'] = null;
-                goto after_role_name;
+                $properties['roleName'] = null;
+                goto after_roleName;
             }
 
-            $properties['role_name'] = $value;
+            $properties['roleName'] = $value;
 
-            after_role_name:
+            after_roleName:
 
             $value = $payload['size'] ?? null;
 
@@ -1927,12 +1927,12 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'ssh_url';
-                goto after_ssh_url;
+                goto after_sshUrl;
             }
 
-            $properties['ssh_url'] = $value;
+            $properties['sshUrl'] = $value;
 
-            after_ssh_url:
+            after_sshUrl:
 
             $value = $payload['stargazers'] ?? null;
 
@@ -1949,89 +1949,89 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'stargazers_count';
-                goto after_stargazers_count;
+                goto after_stargazersCount;
             }
 
-            $properties['stargazers_count'] = $value;
+            $properties['stargazersCount'] = $value;
 
-            after_stargazers_count:
+            after_stargazersCount:
 
             $value = $payload['stargazers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'stargazers_url';
-                goto after_stargazers_url;
+                goto after_stargazersUrl;
             }
 
-            $properties['stargazers_url'] = $value;
+            $properties['stargazersUrl'] = $value;
 
-            after_stargazers_url:
+            after_stargazersUrl:
 
             $value = $payload['statuses_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'statuses_url';
-                goto after_statuses_url;
+                goto after_statusesUrl;
             }
 
-            $properties['statuses_url'] = $value;
+            $properties['statusesUrl'] = $value;
 
-            after_statuses_url:
+            after_statusesUrl:
 
             $value = $payload['subscribers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscribers_url';
-                goto after_subscribers_url;
+                goto after_subscribersUrl;
             }
 
-            $properties['subscribers_url'] = $value;
+            $properties['subscribersUrl'] = $value;
 
-            after_subscribers_url:
+            after_subscribersUrl:
 
             $value = $payload['subscription_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscription_url';
-                goto after_subscription_url;
+                goto after_subscriptionUrl;
             }
 
-            $properties['subscription_url'] = $value;
+            $properties['subscriptionUrl'] = $value;
 
-            after_subscription_url:
+            after_subscriptionUrl:
 
             $value = $payload['svn_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'svn_url';
-                goto after_svn_url;
+                goto after_svnUrl;
             }
 
-            $properties['svn_url'] = $value;
+            $properties['svnUrl'] = $value;
 
-            after_svn_url:
+            after_svnUrl:
 
             $value = $payload['tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'tags_url';
-                goto after_tags_url;
+                goto after_tagsUrl;
             }
 
-            $properties['tags_url'] = $value;
+            $properties['tagsUrl'] = $value;
 
-            after_tags_url:
+            after_tagsUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'teams_url';
-                goto after_teams_url;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
             $value = $payload['topics'] ?? null;
 
@@ -2048,23 +2048,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'trees_url';
-                goto after_trees_url;
+                goto after_treesUrl;
             }
 
-            $properties['trees_url'] = $value;
+            $properties['treesUrl'] = $value;
 
-            after_trees_url:
+            after_treesUrl:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['url'] ?? null;
 
@@ -2103,23 +2103,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'watchers_count';
-                goto after_watchers_count;
+                goto after_watchersCount;
             }
 
-            $properties['watchers_count'] = $value;
+            $properties['watchersCount'] = $value;
 
-            after_watchers_count:
+            after_watchersCount:
 
             $value = $payload['web_commit_signoff_required'] ?? null;
 
             if ($value === null) {
-                $properties['web_commit_signoff_required'] = null;
-                goto after_web_commit_signoff_required;
+                $properties['webCommitSignoffRequired'] = null;
+                goto after_webCommitSignoffRequired;
             }
 
-            $properties['web_commit_signoff_required'] = $value;
+            $properties['webCommitSignoffRequired'] = $value;
 
-            after_web_commit_signoff_required:
+            after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository', $exception, stack: $this->hydrationStack);
@@ -2168,23 +2168,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['spdx_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'spdx_id';
-                goto after_spdx_id;
+                goto after_spdxId;
             }
 
-            $properties['spdx_id'] = $value;
+            $properties['spdxId'] = $value;
 
-            after_spdx_id:
+            after_spdxId:
 
             $value = $payload['url'] ?? null;
 
@@ -2221,13 +2221,13 @@ class Push implements ObjectMapper
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['deleted'] ?? null;
 
@@ -2254,68 +2254,68 @@ class Push implements ObjectMapper
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
-                $properties['events_url'] = null;
-                goto after_events_url;
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
-                $properties['followers_url'] = null;
-                goto after_followers_url;
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
-                $properties['following_url'] = null;
-                goto after_following_url;
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
-                $properties['gists_url'] = null;
-                goto after_gists_url;
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -2353,79 +2353,79 @@ class Push implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
-                $properties['organizations_url'] = null;
-                goto after_organizations_url;
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
-                $properties['received_events_url'] = null;
-                goto after_received_events_url;
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
-                $properties['repos_url'] = null;
-                goto after_repos_url;
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['site_admin'] ?? null;
 
             if ($value === null) {
-                $properties['site_admin'] = null;
-                goto after_site_admin;
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
-                $properties['starred_url'] = null;
-                goto after_starred_url;
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
-                $properties['subscriptions_url'] = null;
-                goto after_subscriptions_url;
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -2594,34 +2594,34 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -2638,111 +2638,111 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -2759,23 +2759,23 @@ class Push implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -2918,12 +2918,12 @@ class Push implements ObjectMapper
         after_after:        $result['after'] = $after;
 
         
-        $base_ref = $object->base_ref;
+        $baseRef = $object->baseRef;
 
-        if ($base_ref === null) {
-            goto after_base_ref;
+        if ($baseRef === null) {
+            goto after_baseRef;
         }
-        after_base_ref:        $result['base_ref'] = $base_ref;
+        after_baseRef:        $result['base_ref'] = $baseRef;
 
         
         $before = $object->before;
@@ -2968,13 +2968,13 @@ class Push implements ObjectMapper
         after_forced:        $result['forced'] = $forced;
 
         
-        $head_commit = $object->head_commit;
+        $headCommit = $object->headCommit;
 
-        if ($head_commit === null) {
-            goto after_head_commit;
+        if ($headCommit === null) {
+            goto after_headCommit;
         }
-        $head_commit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️HeadCommit($head_commit);
-        after_head_commit:        $result['head_commit'] = $head_commit;
+        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️HeadCommit($headCommit);
+        after_headCommit:        $result['head_commit'] = $headCommit;
 
         
         $installation = $object->installation;
@@ -3101,8 +3101,8 @@ class Push implements ObjectMapper
         after_timestamp:        $result['timestamp'] = $timestamp;
 
         
-        $tree_id = $object->tree_id;
-        after_tree_id:        $result['tree_id'] = $tree_id;
+        $treeId = $object->treeId;
+        after_treeId:        $result['tree_id'] = $treeId;
 
         
         $url = $object->url;
@@ -3163,24 +3163,24 @@ class Push implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $website_url = $object->website_url;
+        $websiteUrl = $object->websiteUrl;
 
-        if ($website_url === null) {
-            goto after_website_url;
+        if ($websiteUrl === null) {
+            goto after_websiteUrl;
         }
-        after_website_url:        $result['website_url'] = $website_url;
+        after_websiteUrl:        $result['website_url'] = $websiteUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -3191,24 +3191,24 @@ class Push implements ObjectMapper
         after_slug:        $result['slug'] = $slug;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
 
         return $result;
@@ -3294,8 +3294,8 @@ class Push implements ObjectMapper
         after_timestamp:        $result['timestamp'] = $timestamp;
 
         
-        $tree_id = $object->tree_id;
-        after_tree_id:        $result['tree_id'] = $tree_id;
+        $treeId = $object->treeId;
+        after_treeId:        $result['tree_id'] = $treeId;
 
         
         $url = $object->url;
@@ -3315,8 +3315,8 @@ class Push implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
 
         return $result;
@@ -3336,40 +3336,40 @@ class Push implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $members_url = $object->members_url;
-        after_members_url:        $result['members_url'] = $members_url;
+        $membersUrl = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
-        $public_members_url = $object->public_members_url;
-        after_public_members_url:        $result['public_members_url'] = $public_members_url;
+        $publicMembersUrl = $object->publicMembersUrl;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $description = $object->description;
@@ -3426,120 +3426,120 @@ class Push implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository);
         $result = [];
 
-        $allow_auto_merge = $object->allow_auto_merge;
+        $allowAutoMerge = $object->allowAutoMerge;
 
-        if ($allow_auto_merge === null) {
-            goto after_allow_auto_merge;
+        if ($allowAutoMerge === null) {
+            goto after_allowAutoMerge;
         }
-        after_allow_auto_merge:        $result['allow_auto_merge'] = $allow_auto_merge;
+        after_allowAutoMerge:        $result['allow_auto_merge'] = $allowAutoMerge;
 
         
-        $allow_forking = $object->allow_forking;
+        $allowForking = $object->allowForking;
 
-        if ($allow_forking === null) {
-            goto after_allow_forking;
+        if ($allowForking === null) {
+            goto after_allowForking;
         }
-        after_allow_forking:        $result['allow_forking'] = $allow_forking;
+        after_allowForking:        $result['allow_forking'] = $allowForking;
 
         
-        $allow_merge_commit = $object->allow_merge_commit;
+        $allowMergeCommit = $object->allowMergeCommit;
 
-        if ($allow_merge_commit === null) {
-            goto after_allow_merge_commit;
+        if ($allowMergeCommit === null) {
+            goto after_allowMergeCommit;
         }
-        after_allow_merge_commit:        $result['allow_merge_commit'] = $allow_merge_commit;
+        after_allowMergeCommit:        $result['allow_merge_commit'] = $allowMergeCommit;
 
         
-        $allow_rebase_merge = $object->allow_rebase_merge;
+        $allowRebaseMerge = $object->allowRebaseMerge;
 
-        if ($allow_rebase_merge === null) {
-            goto after_allow_rebase_merge;
+        if ($allowRebaseMerge === null) {
+            goto after_allowRebaseMerge;
         }
-        after_allow_rebase_merge:        $result['allow_rebase_merge'] = $allow_rebase_merge;
+        after_allowRebaseMerge:        $result['allow_rebase_merge'] = $allowRebaseMerge;
 
         
-        $allow_squash_merge = $object->allow_squash_merge;
+        $allowSquashMerge = $object->allowSquashMerge;
 
-        if ($allow_squash_merge === null) {
-            goto after_allow_squash_merge;
+        if ($allowSquashMerge === null) {
+            goto after_allowSquashMerge;
         }
-        after_allow_squash_merge:        $result['allow_squash_merge'] = $allow_squash_merge;
+        after_allowSquashMerge:        $result['allow_squash_merge'] = $allowSquashMerge;
 
         
-        $allow_update_branch = $object->allow_update_branch;
+        $allowUpdateBranch = $object->allowUpdateBranch;
 
-        if ($allow_update_branch === null) {
-            goto after_allow_update_branch;
+        if ($allowUpdateBranch === null) {
+            goto after_allowUpdateBranch;
         }
-        after_allow_update_branch:        $result['allow_update_branch'] = $allow_update_branch;
+        after_allowUpdateBranch:        $result['allow_update_branch'] = $allowUpdateBranch;
 
         
-        $archive_url = $object->archive_url;
-        after_archive_url:        $result['archive_url'] = $archive_url;
+        $archiveUrl = $object->archiveUrl;
+        after_archiveUrl:        $result['archive_url'] = $archiveUrl;
 
         
         $archived = $object->archived;
         after_archived:        $result['archived'] = $archived;
 
         
-        $assignees_url = $object->assignees_url;
-        after_assignees_url:        $result['assignees_url'] = $assignees_url;
+        $assigneesUrl = $object->assigneesUrl;
+        after_assigneesUrl:        $result['assignees_url'] = $assigneesUrl;
 
         
-        $blobs_url = $object->blobs_url;
-        after_blobs_url:        $result['blobs_url'] = $blobs_url;
+        $blobsUrl = $object->blobsUrl;
+        after_blobsUrl:        $result['blobs_url'] = $blobsUrl;
 
         
-        $branches_url = $object->branches_url;
-        after_branches_url:        $result['branches_url'] = $branches_url;
+        $branchesUrl = $object->branchesUrl;
+        after_branchesUrl:        $result['branches_url'] = $branchesUrl;
 
         
-        $clone_url = $object->clone_url;
-        after_clone_url:        $result['clone_url'] = $clone_url;
+        $cloneUrl = $object->cloneUrl;
+        after_cloneUrl:        $result['clone_url'] = $cloneUrl;
 
         
-        $collaborators_url = $object->collaborators_url;
-        after_collaborators_url:        $result['collaborators_url'] = $collaborators_url;
+        $collaboratorsUrl = $object->collaboratorsUrl;
+        after_collaboratorsUrl:        $result['collaborators_url'] = $collaboratorsUrl;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
-        $commits_url = $object->commits_url;
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        $commitsUrl = $object->commitsUrl;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
-        $compare_url = $object->compare_url;
-        after_compare_url:        $result['compare_url'] = $compare_url;
+        $compareUrl = $object->compareUrl;
+        after_compareUrl:        $result['compare_url'] = $compareUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
-        $contributors_url = $object->contributors_url;
-        after_contributors_url:        $result['contributors_url'] = $contributors_url;
+        $contributorsUrl = $object->contributorsUrl;
+        after_contributorsUrl:        $result['contributors_url'] = $contributorsUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $default_branch = $object->default_branch;
-        after_default_branch:        $result['default_branch'] = $default_branch;
+        $defaultBranch = $object->defaultBranch;
+        after_defaultBranch:        $result['default_branch'] = $defaultBranch;
 
         
-        $delete_branch_on_merge = $object->delete_branch_on_merge;
+        $deleteBranchOnMerge = $object->deleteBranchOnMerge;
 
-        if ($delete_branch_on_merge === null) {
-            goto after_delete_branch_on_merge;
+        if ($deleteBranchOnMerge === null) {
+            goto after_deleteBranchOnMerge;
         }
-        after_delete_branch_on_merge:        $result['delete_branch_on_merge'] = $delete_branch_on_merge;
+        after_deleteBranchOnMerge:        $result['delete_branch_on_merge'] = $deleteBranchOnMerge;
 
         
-        $deployments_url = $object->deployments_url;
-        after_deployments_url:        $result['deployments_url'] = $deployments_url;
+        $deploymentsUrl = $object->deploymentsUrl;
+        after_deploymentsUrl:        $result['deployments_url'] = $deploymentsUrl;
 
         
         $description = $object->description;
@@ -3558,12 +3558,12 @@ class Push implements ObjectMapper
         after_disabled:        $result['disabled'] = $disabled;
 
         
-        $downloads_url = $object->downloads_url;
-        after_downloads_url:        $result['downloads_url'] = $downloads_url;
+        $downloadsUrl = $object->downloadsUrl;
+        after_downloadsUrl:        $result['downloads_url'] = $downloadsUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
         $fork = $object->fork;
@@ -3574,56 +3574,56 @@ class Push implements ObjectMapper
         after_forks:        $result['forks'] = $forks;
 
         
-        $forks_count = $object->forks_count;
-        after_forks_count:        $result['forks_count'] = $forks_count;
+        $forksCount = $object->forksCount;
+        after_forksCount:        $result['forks_count'] = $forksCount;
 
         
-        $forks_url = $object->forks_url;
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        $forksUrl = $object->forksUrl;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $full_name = $object->full_name;
-        after_full_name:        $result['full_name'] = $full_name;
+        $fullName = $object->fullName;
+        after_fullName:        $result['full_name'] = $fullName;
 
         
-        $git_commits_url = $object->git_commits_url;
-        after_git_commits_url:        $result['git_commits_url'] = $git_commits_url;
+        $gitCommitsUrl = $object->gitCommitsUrl;
+        after_gitCommitsUrl:        $result['git_commits_url'] = $gitCommitsUrl;
 
         
-        $git_refs_url = $object->git_refs_url;
-        after_git_refs_url:        $result['git_refs_url'] = $git_refs_url;
+        $gitRefsUrl = $object->gitRefsUrl;
+        after_gitRefsUrl:        $result['git_refs_url'] = $gitRefsUrl;
 
         
-        $git_tags_url = $object->git_tags_url;
-        after_git_tags_url:        $result['git_tags_url'] = $git_tags_url;
+        $gitTagsUrl = $object->gitTagsUrl;
+        after_gitTagsUrl:        $result['git_tags_url'] = $gitTagsUrl;
 
         
-        $git_url = $object->git_url;
-        after_git_url:        $result['git_url'] = $git_url;
+        $gitUrl = $object->gitUrl;
+        after_gitUrl:        $result['git_url'] = $gitUrl;
 
         
-        $has_downloads = $object->has_downloads;
-        after_has_downloads:        $result['has_downloads'] = $has_downloads;
+        $hasDownloads = $object->hasDownloads;
+        after_hasDownloads:        $result['has_downloads'] = $hasDownloads;
 
         
-        $has_issues = $object->has_issues;
-        after_has_issues:        $result['has_issues'] = $has_issues;
+        $hasIssues = $object->hasIssues;
+        after_hasIssues:        $result['has_issues'] = $hasIssues;
 
         
-        $has_pages = $object->has_pages;
-        after_has_pages:        $result['has_pages'] = $has_pages;
+        $hasPages = $object->hasPages;
+        after_hasPages:        $result['has_pages'] = $hasPages;
 
         
-        $has_projects = $object->has_projects;
-        after_has_projects:        $result['has_projects'] = $has_projects;
+        $hasProjects = $object->hasProjects;
+        after_hasProjects:        $result['has_projects'] = $hasProjects;
 
         
-        $has_wiki = $object->has_wiki;
-        after_has_wiki:        $result['has_wiki'] = $has_wiki;
+        $hasWiki = $object->hasWiki;
+        after_hasWiki:        $result['has_wiki'] = $hasWiki;
 
         
-        $has_discussions = $object->has_discussions;
-        after_has_discussions:        $result['has_discussions'] = $has_discussions;
+        $hasDiscussions = $object->hasDiscussions;
+        after_hasDiscussions:        $result['has_discussions'] = $hasDiscussions;
 
         
         $homepage = $object->homepage;
@@ -3634,44 +3634,44 @@ class Push implements ObjectMapper
         after_homepage:        $result['homepage'] = $homepage;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $is_template = $object->is_template;
+        $isTemplate = $object->isTemplate;
 
-        if ($is_template === null) {
-            goto after_is_template;
+        if ($isTemplate === null) {
+            goto after_isTemplate;
         }
-        after_is_template:        $result['is_template'] = $is_template;
+        after_isTemplate:        $result['is_template'] = $isTemplate;
 
         
-        $issue_comment_url = $object->issue_comment_url;
-        after_issue_comment_url:        $result['issue_comment_url'] = $issue_comment_url;
+        $issueCommentUrl = $object->issueCommentUrl;
+        after_issueCommentUrl:        $result['issue_comment_url'] = $issueCommentUrl;
 
         
-        $issue_events_url = $object->issue_events_url;
-        after_issue_events_url:        $result['issue_events_url'] = $issue_events_url;
+        $issueEventsUrl = $object->issueEventsUrl;
+        after_issueEventsUrl:        $result['issue_events_url'] = $issueEventsUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $keys_url = $object->keys_url;
-        after_keys_url:        $result['keys_url'] = $keys_url;
+        $keysUrl = $object->keysUrl;
+        after_keysUrl:        $result['keys_url'] = $keysUrl;
 
         
-        $labels_url = $object->labels_url;
-        after_labels_url:        $result['labels_url'] = $labels_url;
+        $labelsUrl = $object->labelsUrl;
+        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
         
         $language = $object->language;
@@ -3682,8 +3682,8 @@ class Push implements ObjectMapper
         after_language:        $result['language'] = $language;
 
         
-        $languages_url = $object->languages_url;
-        after_languages_url:        $result['languages_url'] = $languages_url;
+        $languagesUrl = $object->languagesUrl;
+        after_languagesUrl:        $result['languages_url'] = $languagesUrl;
 
         
         $license = $object->license;
@@ -3695,48 +3695,48 @@ class Push implements ObjectMapper
         after_license:        $result['license'] = $license;
 
         
-        $master_branch = $object->master_branch;
+        $masterBranch = $object->masterBranch;
 
-        if ($master_branch === null) {
-            goto after_master_branch;
+        if ($masterBranch === null) {
+            goto after_masterBranch;
         }
-        after_master_branch:        $result['master_branch'] = $master_branch;
+        after_masterBranch:        $result['master_branch'] = $masterBranch;
 
         
-        $merges_url = $object->merges_url;
-        after_merges_url:        $result['merges_url'] = $merges_url;
+        $mergesUrl = $object->mergesUrl;
+        after_mergesUrl:        $result['merges_url'] = $mergesUrl;
 
         
-        $milestones_url = $object->milestones_url;
-        after_milestones_url:        $result['milestones_url'] = $milestones_url;
+        $milestonesUrl = $object->milestonesUrl;
+        after_milestonesUrl:        $result['milestones_url'] = $milestonesUrl;
 
         
-        $mirror_url = $object->mirror_url;
+        $mirrorUrl = $object->mirrorUrl;
 
-        if ($mirror_url === null) {
-            goto after_mirror_url;
+        if ($mirrorUrl === null) {
+            goto after_mirrorUrl;
         }
-        after_mirror_url:        $result['mirror_url'] = $mirror_url;
+        after_mirrorUrl:        $result['mirror_url'] = $mirrorUrl;
 
         
         $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $notifications_url = $object->notifications_url;
-        after_notifications_url:        $result['notifications_url'] = $notifications_url;
+        $notificationsUrl = $object->notificationsUrl;
+        after_notificationsUrl:        $result['notifications_url'] = $notificationsUrl;
 
         
-        $open_issues = $object->open_issues;
-        after_open_issues:        $result['open_issues'] = $open_issues;
+        $openIssues = $object->openIssues;
+        after_openIssues:        $result['open_issues'] = $openIssues;
 
         
-        $open_issues_count = $object->open_issues_count;
-        after_open_issues_count:        $result['open_issues_count'] = $open_issues_count;
+        $openIssuesCount = $object->openIssuesCount;
+        after_openIssuesCount:        $result['open_issues_count'] = $openIssuesCount;
 
         
         $organization = $object->organization;
@@ -3777,32 +3777,32 @@ class Push implements ObjectMapper
         after_public:        $result['public'] = $public;
 
         
-        $pulls_url = $object->pulls_url;
-        after_pulls_url:        $result['pulls_url'] = $pulls_url;
+        $pullsUrl = $object->pullsUrl;
+        after_pullsUrl:        $result['pulls_url'] = $pullsUrl;
 
         
-        $pushed_at = $object->pushed_at;
-        after_pushed_at:        $result['pushed_at'] = $pushed_at;
+        $pushedAt = $object->pushedAt;
+        after_pushedAt:        $result['pushed_at'] = $pushedAt;
 
         
-        $releases_url = $object->releases_url;
-        after_releases_url:        $result['releases_url'] = $releases_url;
+        $releasesUrl = $object->releasesUrl;
+        after_releasesUrl:        $result['releases_url'] = $releasesUrl;
 
         
-        $role_name = $object->role_name;
+        $roleName = $object->roleName;
 
-        if ($role_name === null) {
-            goto after_role_name;
+        if ($roleName === null) {
+            goto after_roleName;
         }
-        after_role_name:        $result['role_name'] = $role_name;
+        after_roleName:        $result['role_name'] = $roleName;
 
         
         $size = $object->size;
         after_size:        $result['size'] = $size;
 
         
-        $ssh_url = $object->ssh_url;
-        after_ssh_url:        $result['ssh_url'] = $ssh_url;
+        $sshUrl = $object->sshUrl;
+        after_sshUrl:        $result['ssh_url'] = $sshUrl;
 
         
         $stargazers = $object->stargazers;
@@ -3813,36 +3813,36 @@ class Push implements ObjectMapper
         after_stargazers:        $result['stargazers'] = $stargazers;
 
         
-        $stargazers_count = $object->stargazers_count;
-        after_stargazers_count:        $result['stargazers_count'] = $stargazers_count;
+        $stargazersCount = $object->stargazersCount;
+        after_stargazersCount:        $result['stargazers_count'] = $stargazersCount;
 
         
-        $stargazers_url = $object->stargazers_url;
-        after_stargazers_url:        $result['stargazers_url'] = $stargazers_url;
+        $stargazersUrl = $object->stargazersUrl;
+        after_stargazersUrl:        $result['stargazers_url'] = $stargazersUrl;
 
         
-        $statuses_url = $object->statuses_url;
-        after_statuses_url:        $result['statuses_url'] = $statuses_url;
+        $statusesUrl = $object->statusesUrl;
+        after_statusesUrl:        $result['statuses_url'] = $statusesUrl;
 
         
-        $subscribers_url = $object->subscribers_url;
-        after_subscribers_url:        $result['subscribers_url'] = $subscribers_url;
+        $subscribersUrl = $object->subscribersUrl;
+        after_subscribersUrl:        $result['subscribers_url'] = $subscribersUrl;
 
         
-        $subscription_url = $object->subscription_url;
-        after_subscription_url:        $result['subscription_url'] = $subscription_url;
+        $subscriptionUrl = $object->subscriptionUrl;
+        after_subscriptionUrl:        $result['subscription_url'] = $subscriptionUrl;
 
         
-        $svn_url = $object->svn_url;
-        after_svn_url:        $result['svn_url'] = $svn_url;
+        $svnUrl = $object->svnUrl;
+        after_svnUrl:        $result['svn_url'] = $svnUrl;
 
         
-        $tags_url = $object->tags_url;
-        after_tags_url:        $result['tags_url'] = $tags_url;
+        $tagsUrl = $object->tagsUrl;
+        after_tagsUrl:        $result['tags_url'] = $tagsUrl;
 
         
-        $teams_url = $object->teams_url;
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        $teamsUrl = $object->teamsUrl;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
         
         $topics = $object->topics;
@@ -3857,12 +3857,12 @@ class Push implements ObjectMapper
         after_topics:        $result['topics'] = $topics;
 
         
-        $trees_url = $object->trees_url;
-        after_trees_url:        $result['trees_url'] = $trees_url;
+        $treesUrl = $object->treesUrl;
+        after_treesUrl:        $result['trees_url'] = $treesUrl;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $url = $object->url;
@@ -3877,16 +3877,16 @@ class Push implements ObjectMapper
         after_watchers:        $result['watchers'] = $watchers;
 
         
-        $watchers_count = $object->watchers_count;
-        after_watchers_count:        $result['watchers_count'] = $watchers_count;
+        $watchersCount = $object->watchersCount;
+        after_watchersCount:        $result['watchers_count'] = $watchersCount;
 
         
-        $web_commit_signoff_required = $object->web_commit_signoff_required;
+        $webCommitSignoffRequired = $object->webCommitSignoffRequired;
 
-        if ($web_commit_signoff_required === null) {
-            goto after_web_commit_signoff_required;
+        if ($webCommitSignoffRequired === null) {
+            goto after_webCommitSignoffRequired;
         }
-        after_web_commit_signoff_required:        $result['web_commit_signoff_required'] = $web_commit_signoff_required;
+        after_webCommitSignoffRequired:        $result['web_commit_signoff_required'] = $webCommitSignoffRequired;
 
 
         return $result;
@@ -3906,12 +3906,12 @@ class Push implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $spdx_id = $object->spdx_id;
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        $spdxId = $object->spdxId;
+        after_spdxId:        $result['spdx_id'] = $spdxId;
 
         
         $url = $object->url;
@@ -3931,12 +3931,12 @@ class Push implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy);
         $result = [];
 
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $deleted = $object->deleted;
@@ -3955,52 +3955,52 @@ class Push implements ObjectMapper
         after_email:        $result['email'] = $email;
 
         
-        $events_url = $object->events_url;
+        $eventsUrl = $object->eventsUrl;
 
-        if ($events_url === null) {
-            goto after_events_url;
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
         }
-        after_events_url:        $result['events_url'] = $events_url;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $followers_url = $object->followers_url;
+        $followersUrl = $object->followersUrl;
 
-        if ($followers_url === null) {
-            goto after_followers_url;
+        if ($followersUrl === null) {
+            goto after_followersUrl;
         }
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
+        $followingUrl = $object->followingUrl;
 
-        if ($following_url === null) {
-            goto after_following_url;
+        if ($followingUrl === null) {
+            goto after_followingUrl;
         }
-        after_following_url:        $result['following_url'] = $following_url;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
+        $gistsUrl = $object->gistsUrl;
 
-        if ($gists_url === null) {
-            goto after_gists_url;
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
         }
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $id = $object->id;
@@ -4019,60 +4019,60 @@ class Push implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $organizations_url = $object->organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
 
-        if ($organizations_url === null) {
-            goto after_organizations_url;
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
         }
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $received_events_url = $object->received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
 
-        if ($received_events_url === null) {
-            goto after_received_events_url;
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
         }
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
-        $repos_url = $object->repos_url;
+        $reposUrl = $object->reposUrl;
 
-        if ($repos_url === null) {
-            goto after_repos_url;
+        if ($reposUrl === null) {
+            goto after_reposUrl;
         }
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $site_admin = $object->site_admin;
+        $siteAdmin = $object->siteAdmin;
 
-        if ($site_admin === null) {
-            goto after_site_admin;
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
         }
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_url = $object->starred_url;
+        $starredUrl = $object->starredUrl;
 
-        if ($starred_url === null) {
-            goto after_starred_url;
+        if ($starredUrl === null) {
+            goto after_starredUrl;
         }
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
 
-        if ($subscriptions_url === null) {
-            goto after_subscriptions_url;
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
         }
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
         $type = $object->type;
@@ -4161,80 +4161,80 @@ class Push implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;

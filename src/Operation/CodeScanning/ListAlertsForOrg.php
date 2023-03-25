@@ -17,9 +17,9 @@ final class ListAlertsForOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.**/
-    private string $tool_name;
+    private string $toolName;
     /**The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.**/
-    private string|null $tool_guid;
+    private string|null $toolGuid;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.**/
     private string $before;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.**/
@@ -31,24 +31,24 @@ final class ListAlertsForOrg
     /**Page number of the results to fetch.**/
     private int $page;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**The direction to sort the results by.**/
     private string $direction;
     /**The property by which to sort the results.**/
     private string $sort;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator, string $org, string $tool_name, string|null $tool_guid, string $before, string $after, string $state, string $severity, int $page = 1, int $per_page = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator, string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
         $this->org = $org;
-        $this->tool_name = $tool_name;
-        $this->tool_guid = $tool_guid;
+        $this->toolName = $toolName;
+        $this->toolGuid = $toolGuid;
         $this->before = $before;
         $this->after = $after;
         $this->state = $state;
         $this->severity = $severity;
         $this->page = $page;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->direction = $direction;
         $this->sort = $sort;
         $this->responseSchemaValidator = $responseSchemaValidator;
@@ -56,7 +56,7 @@ final class ListAlertsForOrg
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{tool_name}', '{tool_guid}', '{before}', '{after}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->org, $this->tool_name, $this->tool_guid, $this->before, $this->after, $this->state, $this->severity, $this->page, $this->per_page, $this->direction, $this->sort), self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&before={before}&after={after}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{tool_name}', '{tool_guid}', '{before}', '{after}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->org, $this->toolName, $this->toolGuid, $this->before, $this->after, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort), self::PATH . '?toolName={tool_name}&toolGuid={tool_guid}&before={before}&after={after}&state={state}&severity={severity}&page={page}&perPage={per_page}&direction={direction}&sort={sort}'));
     }
     /**
      * @return \Rx\Observable<Schema\CodeScanningOrganizationAlertItems>

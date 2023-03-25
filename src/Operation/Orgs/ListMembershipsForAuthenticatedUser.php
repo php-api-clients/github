@@ -17,22 +17,22 @@ final class ListMembershipsForAuthenticatedUser
     /**Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.**/
     private string $state;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Memberships\Orgs $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Memberships\Orgs $hydrator, string $state, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Memberships\Orgs $hydrator, string $state, int $perPage = 30, int $page = 1)
     {
         $this->state = $state;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{state}', '{per_page}', '{page}'), array($this->state, $this->per_page, $this->page), self::PATH . '?state={state}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{state}', '{per_page}', '{page}'), array($this->state, $this->perPage, $this->page), self::PATH . '?state={state}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\OrgMembership>

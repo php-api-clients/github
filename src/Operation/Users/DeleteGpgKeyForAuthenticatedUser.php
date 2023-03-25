@@ -15,18 +15,18 @@ final class DeleteGpgKeyForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/gpg_keys/{gpg_key_id}';
     /**The unique identifier of the GPG key.**/
-    private int $gpg_key_id;
+    private int $gpgKeyId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\GpgKeys\CbGpgKeyIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\GpgKeys\CbGpgKeyIdRcb $hydrator, int $gpg_key_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\GpgKeys\CbGpgKeyIdRcb $hydrator, int $gpgKeyId)
     {
-        $this->gpg_key_id = $gpg_key_id;
+        $this->gpgKeyId = $gpgKeyId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gpg_key_id}'), array($this->gpg_key_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gpg_key_id}'), array($this->gpgKeyId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

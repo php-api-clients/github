@@ -58,85 +58,85 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['permalink_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'permalink_url';
-                goto after_permalink_url;
+                goto after_permalinkUrl;
             }
 
-            $properties['permalink_url'] = $value;
+            $properties['permalinkUrl'] = $value;
 
-            after_permalink_url:
+            after_permalinkUrl:
 
             $value = $payload['diff_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'diff_url';
-                goto after_diff_url;
+                goto after_diffUrl;
             }
 
-            $properties['diff_url'] = $value;
+            $properties['diffUrl'] = $value;
 
-            after_diff_url:
+            after_diffUrl:
 
             $value = $payload['patch_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'patch_url';
-                goto after_patch_url;
+                goto after_patchUrl;
             }
 
-            $properties['patch_url'] = $value;
+            $properties['patchUrl'] = $value;
 
-            after_patch_url:
+            after_patchUrl:
 
             $value = $payload['base_commit'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'base_commit';
-                goto after_base_commit;
+                goto after_baseCommit;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'base_commit';
+                    $this->hydrationStack[] = 'baseCommit';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['base_commit'] = $value;
+            $properties['baseCommit'] = $value;
 
-            after_base_commit:
+            after_baseCommit:
 
             $value = $payload['merge_base_commit'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'merge_base_commit';
-                goto after_merge_base_commit;
+                goto after_mergeBaseCommit;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'merge_base_commit';
+                    $this->hydrationStack[] = 'mergeBaseCommit';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['merge_base_commit'] = $value;
+            $properties['mergeBaseCommit'] = $value;
 
-            after_merge_base_commit:
+            after_mergeBaseCommit:
 
             $value = $payload['status'] ?? null;
 
@@ -153,34 +153,34 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'ahead_by';
-                goto after_ahead_by;
+                goto after_aheadBy;
             }
 
-            $properties['ahead_by'] = $value;
+            $properties['aheadBy'] = $value;
 
-            after_ahead_by:
+            after_aheadBy:
 
             $value = $payload['behind_by'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'behind_by';
-                goto after_behind_by;
+                goto after_behindBy;
             }
 
-            $properties['behind_by'] = $value;
+            $properties['behindBy'] = $value;
 
-            after_behind_by:
+            after_behindBy:
 
             $value = $payload['total_commits'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'total_commits';
-                goto after_total_commits;
+                goto after_totalCommits;
             }
 
-            $properties['total_commits'] = $value;
+            $properties['totalCommits'] = $value;
 
-            after_total_commits:
+            after_totalCommits:
 
             $value = $payload['commits'] ?? null;
 
@@ -271,34 +271,34 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['commit'] ?? null;
 
@@ -473,12 +473,12 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'comment_count';
-                goto after_comment_count;
+                goto after_commentCount;
             }
 
-            $properties['comment_count'] = $value;
+            $properties['commentCount'] = $value;
 
-            after_comment_count:
+            after_commentCount:
 
             $value = $payload['tree'] ?? null;
 
@@ -674,13 +674,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Commit\Parents', $exception, stack: $this->hydrationStack);
@@ -827,34 +827,34 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'blob_url';
-                goto after_blob_url;
+                goto after_blobUrl;
             }
 
-            $properties['blob_url'] = $value;
+            $properties['blobUrl'] = $value;
 
-            after_blob_url:
+            after_blobUrl:
 
             $value = $payload['raw_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'raw_url';
-                goto after_raw_url;
+                goto after_rawUrl;
             }
 
-            $properties['raw_url'] = $value;
+            $properties['rawUrl'] = $value;
 
-            after_raw_url:
+            after_rawUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['patch'] ?? null;
 
@@ -870,13 +870,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['previous_filename'] ?? null;
 
             if ($value === null) {
-                $properties['previous_filename'] = null;
-                goto after_previous_filename;
+                $properties['previousFilename'] = null;
+                goto after_previousFilename;
             }
 
-            $properties['previous_filename'] = $value;
+            $properties['previousFilename'] = $value;
 
-            after_previous_filename:
+            after_previousFilename:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
@@ -913,13 +913,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -989,13 +989,13 @@ class CbBaseheadRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -1135,46 +1135,46 @@ class CbBaseheadRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $permalink_url = $object->permalink_url;
-        after_permalink_url:        $result['permalink_url'] = $permalink_url;
+        $permalinkUrl = $object->permalinkUrl;
+        after_permalinkUrl:        $result['permalink_url'] = $permalinkUrl;
 
         
-        $diff_url = $object->diff_url;
-        after_diff_url:        $result['diff_url'] = $diff_url;
+        $diffUrl = $object->diffUrl;
+        after_diffUrl:        $result['diff_url'] = $diffUrl;
 
         
-        $patch_url = $object->patch_url;
-        after_patch_url:        $result['patch_url'] = $patch_url;
+        $patchUrl = $object->patchUrl;
+        after_patchUrl:        $result['patch_url'] = $patchUrl;
 
         
-        $base_commit = $object->base_commit;
-        $base_commit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($base_commit);
-        after_base_commit:        $result['base_commit'] = $base_commit;
+        $baseCommit = $object->baseCommit;
+        $baseCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($baseCommit);
+        after_baseCommit:        $result['base_commit'] = $baseCommit;
 
         
-        $merge_base_commit = $object->merge_base_commit;
-        $merge_base_commit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($merge_base_commit);
-        after_merge_base_commit:        $result['merge_base_commit'] = $merge_base_commit;
+        $mergeBaseCommit = $object->mergeBaseCommit;
+        $mergeBaseCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Commit($mergeBaseCommit);
+        after_mergeBaseCommit:        $result['merge_base_commit'] = $mergeBaseCommit;
 
         
         $status = $object->status;
         after_status:        $result['status'] = $status;
 
         
-        $ahead_by = $object->ahead_by;
-        after_ahead_by:        $result['ahead_by'] = $ahead_by;
+        $aheadBy = $object->aheadBy;
+        after_aheadBy:        $result['ahead_by'] = $aheadBy;
 
         
-        $behind_by = $object->behind_by;
-        after_behind_by:        $result['behind_by'] = $behind_by;
+        $behindBy = $object->behindBy;
+        after_behindBy:        $result['behind_by'] = $behindBy;
 
         
-        $total_commits = $object->total_commits;
-        after_total_commits:        $result['total_commits'] = $total_commits;
+        $totalCommits = $object->totalCommits;
+        after_totalCommits:        $result['total_commits'] = $totalCommits;
 
         
         $commits = $object->commits;
@@ -1224,16 +1224,16 @@ class CbBaseheadRcb implements ObjectMapper
         after_sha:        $result['sha'] = $sha;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
         $commit = $object->commit;
@@ -1329,8 +1329,8 @@ class CbBaseheadRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $comment_count = $object->comment_count;
-        after_comment_count:        $result['comment_count'] = $comment_count;
+        $commentCount = $object->commentCount;
+        after_commentCount:        $result['comment_count'] = $commentCount;
 
         
         $tree = $object->tree;
@@ -1414,12 +1414,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -1488,16 +1488,16 @@ class CbBaseheadRcb implements ObjectMapper
         after_changes:        $result['changes'] = $changes;
 
         
-        $blob_url = $object->blob_url;
-        after_blob_url:        $result['blob_url'] = $blob_url;
+        $blobUrl = $object->blobUrl;
+        after_blobUrl:        $result['blob_url'] = $blobUrl;
 
         
-        $raw_url = $object->raw_url;
-        after_raw_url:        $result['raw_url'] = $raw_url;
+        $rawUrl = $object->rawUrl;
+        after_rawUrl:        $result['raw_url'] = $rawUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
         $patch = $object->patch;
@@ -1508,12 +1508,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_patch:        $result['patch'] = $patch;
 
         
-        $previous_filename = $object->previous_filename;
+        $previousFilename = $object->previousFilename;
 
-        if ($previous_filename === null) {
-            goto after_previous_filename;
+        if ($previousFilename === null) {
+            goto after_previousFilename;
         }
-        after_previous_filename:        $result['previous_filename'] = $previous_filename;
+        after_previousFilename:        $result['previous_filename'] = $previousFilename;
 
 
         return $result;
@@ -1533,12 +1533,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -1582,12 +1582,12 @@ class CbBaseheadRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;

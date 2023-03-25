@@ -19,23 +19,23 @@ final class DeleteAnalysis
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The ID of the analysis, as returned from the `GET /repos/{owner}/{repo}/code-scanning/analyses` operation.**/
-    private int $analysis_id;
+    private int $analysisId;
     /**Allow deletion if the specified analysis is the last in a set. If you attempt to delete the final analysis in a set without setting this parameter to `true`, you'll get a 400 response with the message: `Analysis is last of its type and deletion may result in the loss of historical alert data. Please specify confirm_delete.`**/
-    private string|null $confirm_delete;
+    private string|null $confirmDelete;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Analyses\CbAnalysisIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Analyses\CbAnalysisIdRcb $hydrator, string $owner, string $repo, int $analysis_id, string|null $confirm_delete)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Analyses\CbAnalysisIdRcb $hydrator, string $owner, string $repo, int $analysisId, string|null $confirmDelete)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->analysis_id = $analysis_id;
-        $this->confirm_delete = $confirm_delete;
+        $this->analysisId = $analysisId;
+        $this->confirmDelete = $confirmDelete;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{analysis_id}', '{confirm_delete}'), array($this->owner, $this->repo, $this->analysis_id, $this->confirm_delete), self::PATH . '?confirm_delete={confirm_delete}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{analysis_id}', '{confirm_delete}'), array($this->owner, $this->repo, $this->analysisId, $this->confirmDelete), self::PATH . '?confirmDelete={confirm_delete}'));
     }
     /**
      * @return Schema\CodeScanningAnalysisDeletion

@@ -76,57 +76,57 @@ class Pages implements ObjectMapper
             $value = $payload['protected_domain_state'] ?? null;
 
             if ($value === null) {
-                $properties['protected_domain_state'] = null;
-                goto after_protected_domain_state;
+                $properties['protectedDomainState'] = null;
+                goto after_protectedDomainState;
             }
 
-            $properties['protected_domain_state'] = $value;
+            $properties['protectedDomainState'] = $value;
 
-            after_protected_domain_state:
+            after_protectedDomainState:
 
             $value = $payload['pending_domain_unverified_at'] ?? null;
 
             if ($value === null) {
-                $properties['pending_domain_unverified_at'] = null;
-                goto after_pending_domain_unverified_at;
+                $properties['pendingDomainUnverifiedAt'] = null;
+                goto after_pendingDomainUnverifiedAt;
             }
 
-            $properties['pending_domain_unverified_at'] = $value;
+            $properties['pendingDomainUnverifiedAt'] = $value;
 
-            after_pending_domain_unverified_at:
+            after_pendingDomainUnverifiedAt:
 
             $value = $payload['custom_404'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'custom_404';
-                goto after_custom_404;
+                goto after_custom404;
             }
 
-            $properties['custom_404'] = $value;
+            $properties['custom404'] = $value;
 
-            after_custom_404:
+            after_custom404:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['build_type'] ?? null;
 
             if ($value === null) {
-                $properties['build_type'] = null;
-                goto after_build_type;
+                $properties['buildType'] = null;
+                goto after_buildType;
             }
 
-            $properties['build_type'] = $value;
+            $properties['buildType'] = $value;
 
-            after_build_type:
+            after_buildType:
 
             $value = $payload['source'] ?? null;
 
@@ -162,33 +162,33 @@ class Pages implements ObjectMapper
             $value = $payload['https_certificate'] ?? null;
 
             if ($value === null) {
-                $properties['https_certificate'] = null;
-                goto after_https_certificate;
+                $properties['httpsCertificate'] = null;
+                goto after_httpsCertificate;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'https_certificate';
+                    $this->hydrationStack[] = 'httpsCertificate';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHttpsCertificate($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['https_certificate'] = $value;
+            $properties['httpsCertificate'] = $value;
 
-            after_https_certificate:
+            after_httpsCertificate:
 
             $value = $payload['https_enforced'] ?? null;
 
             if ($value === null) {
-                $properties['https_enforced'] = null;
-                goto after_https_enforced;
+                $properties['httpsEnforced'] = null;
+                goto after_httpsEnforced;
             }
 
-            $properties['https_enforced'] = $value;
+            $properties['httpsEnforced'] = $value;
 
-            after_https_enforced:
+            after_httpsEnforced:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Page', $exception, stack: $this->hydrationStack);
@@ -290,13 +290,13 @@ class Pages implements ObjectMapper
             $value = $payload['expires_at'] ?? null;
 
             if ($value === null) {
-                $properties['expires_at'] = null;
-                goto after_expires_at;
+                $properties['expiresAt'] = null;
+                goto after_expiresAt;
             }
 
-            $properties['expires_at'] = $value;
+            $properties['expiresAt'] = $value;
 
-            after_expires_at:
+            after_expiresAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHttpsCertificate', $exception, stack: $this->hydrationStack);
@@ -333,13 +333,13 @@ class Pages implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -399,12 +399,12 @@ class Pages implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -549,13 +549,13 @@ class Pages implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -752,40 +752,40 @@ class Pages implements ObjectMapper
         after_cname:        $result['cname'] = $cname;
 
         
-        $protected_domain_state = $object->protected_domain_state;
+        $protectedDomainState = $object->protectedDomainState;
 
-        if ($protected_domain_state === null) {
-            goto after_protected_domain_state;
+        if ($protectedDomainState === null) {
+            goto after_protectedDomainState;
         }
-        after_protected_domain_state:        $result['protected_domain_state'] = $protected_domain_state;
+        after_protectedDomainState:        $result['protected_domain_state'] = $protectedDomainState;
 
         
-        $pending_domain_unverified_at = $object->pending_domain_unverified_at;
+        $pendingDomainUnverifiedAt = $object->pendingDomainUnverifiedAt;
 
-        if ($pending_domain_unverified_at === null) {
-            goto after_pending_domain_unverified_at;
+        if ($pendingDomainUnverifiedAt === null) {
+            goto after_pendingDomainUnverifiedAt;
         }
-        after_pending_domain_unverified_at:        $result['pending_domain_unverified_at'] = $pending_domain_unverified_at;
+        after_pendingDomainUnverifiedAt:        $result['pending_domain_unverified_at'] = $pendingDomainUnverifiedAt;
 
         
-        $custom_404 = $object->custom_404;
-        after_custom_404:        $result['custom_404'] = $custom_404;
+        $custom404 = $object->custom404;
+        after_custom404:        $result['custom_404'] = $custom404;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $build_type = $object->build_type;
+        $buildType = $object->buildType;
 
-        if ($build_type === null) {
-            goto after_build_type;
+        if ($buildType === null) {
+            goto after_buildType;
         }
-        after_build_type:        $result['build_type'] = $build_type;
+        after_buildType:        $result['build_type'] = $buildType;
 
         
         $source = $object->source;
@@ -801,21 +801,21 @@ class Pages implements ObjectMapper
         after_public:        $result['public'] = $public;
 
         
-        $https_certificate = $object->https_certificate;
+        $httpsCertificate = $object->httpsCertificate;
 
-        if ($https_certificate === null) {
-            goto after_https_certificate;
+        if ($httpsCertificate === null) {
+            goto after_httpsCertificate;
         }
-        $https_certificate = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHttpsCertificate($https_certificate);
-        after_https_certificate:        $result['https_certificate'] = $https_certificate;
+        $httpsCertificate = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHttpsCertificate($httpsCertificate);
+        after_httpsCertificate:        $result['https_certificate'] = $httpsCertificate;
 
         
-        $https_enforced = $object->https_enforced;
+        $httpsEnforced = $object->httpsEnforced;
 
-        if ($https_enforced === null) {
-            goto after_https_enforced;
+        if ($httpsEnforced === null) {
+            goto after_httpsEnforced;
         }
-        after_https_enforced:        $result['https_enforced'] = $https_enforced;
+        after_httpsEnforced:        $result['https_enforced'] = $httpsEnforced;
 
 
         return $result;
@@ -864,12 +864,12 @@ class Pages implements ObjectMapper
         after_domains:        $result['domains'] = $domains;
 
         
-        $expires_at = $object->expires_at;
+        $expiresAt = $object->expiresAt;
 
-        if ($expires_at === null) {
-            goto after_expires_at;
+        if ($expiresAt === null) {
+            goto after_expiresAt;
         }
-        after_expires_at:        $result['expires_at'] = $expires_at;
+        after_expiresAt:        $result['expires_at'] = $expiresAt;
 
 
         return $result;
@@ -889,12 +889,12 @@ class Pages implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -926,8 +926,8 @@ class Pages implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;
@@ -1017,12 +1017,12 @@ class Pages implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;

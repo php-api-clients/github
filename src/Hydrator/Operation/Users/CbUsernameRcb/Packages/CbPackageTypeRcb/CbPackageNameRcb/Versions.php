@@ -75,23 +75,23 @@ class Versions implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'package_html_url';
-                goto after_package_html_url;
+                goto after_packageHtmlUrl;
             }
 
-            $properties['package_html_url'] = $value;
+            $properties['packageHtmlUrl'] = $value;
 
-            after_package_html_url:
+            after_packageHtmlUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['license'] ?? null;
 
@@ -119,34 +119,34 @@ class Versions implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['deleted_at'] ?? null;
 
             if ($value === null) {
-                $properties['deleted_at'] = null;
-                goto after_deleted_at;
+                $properties['deletedAt'] = null;
+                goto after_deletedAt;
             }
 
-            $properties['deleted_at'] = $value;
+            $properties['deletedAt'] = $value;
 
-            after_deleted_at:
+            after_deletedAt:
 
             $value = $payload['metadata'] ?? null;
 
@@ -193,12 +193,12 @@ class Versions implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'package_type';
-                goto after_package_type;
+                goto after_packageType;
             }
 
-            $properties['package_type'] = $value;
+            $properties['packageType'] = $value;
 
-            after_package_type:
+            after_packageType:
 
             $value = $payload['container'] ?? null;
 
@@ -339,13 +339,13 @@ class Versions implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -510,16 +510,16 @@ class Versions implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $package_html_url = $object->package_html_url;
-        after_package_html_url:        $result['package_html_url'] = $package_html_url;
+        $packageHtmlUrl = $object->packageHtmlUrl;
+        after_packageHtmlUrl:        $result['package_html_url'] = $packageHtmlUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $license = $object->license;
@@ -538,20 +538,20 @@ class Versions implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $deleted_at = $object->deleted_at;
+        $deletedAt = $object->deletedAt;
 
-        if ($deleted_at === null) {
-            goto after_deleted_at;
+        if ($deletedAt === null) {
+            goto after_deletedAt;
         }
-        after_deleted_at:        $result['deleted_at'] = $deleted_at;
+        after_deletedAt:        $result['deleted_at'] = $deletedAt;
 
         
         $metadata = $object->metadata;
@@ -572,8 +572,8 @@ class Versions implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PackageVersion\Metadata);
         $result = [];
 
-        $package_type = $object->package_type;
-        after_package_type:        $result['package_type'] = $package_type;
+        $packageType = $object->packageType;
+        after_packageType:        $result['package_type'] = $packageType;
 
         
         $container = $object->container;
@@ -657,12 +657,12 @@ class Versions implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

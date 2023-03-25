@@ -19,16 +19,16 @@ final class DisableWorkflow
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The ID of the workflow. You can also pass the workflow file name as a string.**/
-    private $workflow_id;
-    public function __construct(string $owner, string $repo, $workflow_id)
+    private $workflowId;
+    public function __construct(string $owner, string $repo, $workflowId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->workflow_id = $workflow_id;
+        $this->workflowId = $workflowId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{workflow_id}'), array($this->owner, $this->repo, $this->workflow_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{workflow_id}'), array($this->owner, $this->repo, $this->workflowId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

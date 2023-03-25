@@ -19,23 +19,23 @@ final class GetWorkflowRun
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the workflow run.**/
-    private int $run_id;
+    private int $runId;
     /**If `true` pull requests are omitted from the response (empty array).**/
-    private bool $exclude_pull_requests;
+    private bool $excludePullRequests;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb $hydrator, string $owner, string $repo, int $run_id, bool $exclude_pull_requests = false)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb $hydrator, string $owner, string $repo, int $runId, bool $excludePullRequests = false)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->run_id = $run_id;
-        $this->exclude_pull_requests = $exclude_pull_requests;
+        $this->runId = $runId;
+        $this->excludePullRequests = $excludePullRequests;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{run_id}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->run_id, $this->exclude_pull_requests), self::PATH . '?exclude_pull_requests={exclude_pull_requests}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{run_id}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->runId, $this->excludePullRequests), self::PATH . '?excludePullRequests={exclude_pull_requests}'));
     }
     /**
      * @return Schema\WorkflowRun

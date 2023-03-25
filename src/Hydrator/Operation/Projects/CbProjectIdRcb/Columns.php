@@ -51,23 +51,23 @@ class Columns implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'project_url';
-                goto after_project_url;
+                goto after_projectUrl;
             }
 
-            $properties['project_url'] = $value;
+            $properties['projectUrl'] = $value;
 
-            after_project_url:
+            after_projectUrl:
 
             $value = $payload['cards_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'cards_url';
-                goto after_cards_url;
+                goto after_cardsUrl;
             }
 
-            $properties['cards_url'] = $value;
+            $properties['cardsUrl'] = $value;
 
-            after_cards_url:
+            after_cardsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -84,12 +84,12 @@ class Columns implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -106,23 +106,23 @@ class Columns implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProjectColumn', $exception, stack: $this->hydrationStack);
@@ -159,13 +159,13 @@ class Columns implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -225,12 +225,12 @@ class Columns implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -374,32 +374,32 @@ class Columns implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $project_url = $object->project_url;
-        after_project_url:        $result['project_url'] = $project_url;
+        $projectUrl = $object->projectUrl;
+        after_projectUrl:        $result['project_url'] = $projectUrl;
 
         
-        $cards_url = $object->cards_url;
-        after_cards_url:        $result['cards_url'] = $cards_url;
+        $cardsUrl = $object->cardsUrl;
+        after_cardsUrl:        $result['cards_url'] = $cardsUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
 
         return $result;
@@ -419,12 +419,12 @@ class Columns implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -456,8 +456,8 @@ class Columns implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

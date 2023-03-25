@@ -18,16 +18,16 @@ final class RemoveSelectedRepoFromOrgVariable
     private string $org;
     /**The name of the variable.**/
     private string $name;
-    private int $repository_id;
-    public function __construct(string $org, string $name, int $repository_id)
+    private int $repositoryId;
+    public function __construct(string $org, string $name, int $repositoryId)
     {
         $this->org = $org;
         $this->name = $name;
-        $this->repository_id = $repository_id;
+        $this->repositoryId = $repositoryId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{name}', '{repository_id}'), array($this->org, $this->name, $this->repository_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{name}', '{repository_id}'), array($this->org, $this->name, $this->repositoryId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

@@ -108,34 +108,34 @@ class Files implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'blob_url';
-                goto after_blob_url;
+                goto after_blobUrl;
             }
 
-            $properties['blob_url'] = $value;
+            $properties['blobUrl'] = $value;
 
-            after_blob_url:
+            after_blobUrl:
 
             $value = $payload['raw_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'raw_url';
-                goto after_raw_url;
+                goto after_rawUrl;
             }
 
-            $properties['raw_url'] = $value;
+            $properties['rawUrl'] = $value;
 
-            after_raw_url:
+            after_rawUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['patch'] ?? null;
 
@@ -151,13 +151,13 @@ class Files implements ObjectMapper
             $value = $payload['previous_filename'] ?? null;
 
             if ($value === null) {
-                $properties['previous_filename'] = null;
-                goto after_previous_filename;
+                $properties['previousFilename'] = null;
+                goto after_previousFilename;
             }
 
-            $properties['previous_filename'] = $value;
+            $properties['previousFilename'] = $value;
 
-            after_previous_filename:
+            after_previousFilename:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
@@ -195,12 +195,12 @@ class Files implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -345,13 +345,13 @@ class Files implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -421,13 +421,13 @@ class Files implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -582,16 +582,16 @@ class Files implements ObjectMapper
         after_changes:        $result['changes'] = $changes;
 
         
-        $blob_url = $object->blob_url;
-        after_blob_url:        $result['blob_url'] = $blob_url;
+        $blobUrl = $object->blobUrl;
+        after_blobUrl:        $result['blob_url'] = $blobUrl;
 
         
-        $raw_url = $object->raw_url;
-        after_raw_url:        $result['raw_url'] = $raw_url;
+        $rawUrl = $object->rawUrl;
+        after_rawUrl:        $result['raw_url'] = $rawUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
         $patch = $object->patch;
@@ -602,12 +602,12 @@ class Files implements ObjectMapper
         after_patch:        $result['patch'] = $patch;
 
         
-        $previous_filename = $object->previous_filename;
+        $previousFilename = $object->previousFilename;
 
-        if ($previous_filename === null) {
-            goto after_previous_filename;
+        if ($previousFilename === null) {
+            goto after_previousFilename;
         }
-        after_previous_filename:        $result['previous_filename'] = $previous_filename;
+        after_previousFilename:        $result['previous_filename'] = $previousFilename;
 
 
         return $result;
@@ -623,8 +623,8 @@ class Files implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;
@@ -714,12 +714,12 @@ class Files implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -763,12 +763,12 @@ class Files implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;

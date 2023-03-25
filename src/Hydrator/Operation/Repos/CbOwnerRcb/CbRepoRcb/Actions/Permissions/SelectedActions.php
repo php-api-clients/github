@@ -37,35 +37,35 @@ class SelectedActions implements ObjectMapper
             $value = $payload['github_owned_allowed'] ?? null;
 
             if ($value === null) {
-                $properties['github_owned_allowed'] = null;
-                goto after_github_owned_allowed;
+                $properties['githubOwnedAllowed'] = null;
+                goto after_githubOwnedAllowed;
             }
 
-            $properties['github_owned_allowed'] = $value;
+            $properties['githubOwnedAllowed'] = $value;
 
-            after_github_owned_allowed:
+            after_githubOwnedAllowed:
 
             $value = $payload['verified_allowed'] ?? null;
 
             if ($value === null) {
-                $properties['verified_allowed'] = null;
-                goto after_verified_allowed;
+                $properties['verifiedAllowed'] = null;
+                goto after_verifiedAllowed;
             }
 
-            $properties['verified_allowed'] = $value;
+            $properties['verifiedAllowed'] = $value;
 
-            after_verified_allowed:
+            after_verifiedAllowed:
 
             $value = $payload['patterns_allowed'] ?? null;
 
             if ($value === null) {
-                $properties['patterns_allowed'] = null;
-                goto after_patterns_allowed;
+                $properties['patternsAllowed'] = null;
+                goto after_patternsAllowed;
             }
 
-            $properties['patterns_allowed'] = $value;
+            $properties['patternsAllowed'] = $value;
 
-            after_patterns_allowed:
+            after_patternsAllowed:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
@@ -192,36 +192,36 @@ class SelectedActions implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SelectedActions);
         $result = [];
 
-        $github_owned_allowed = $object->github_owned_allowed;
+        $githubOwnedAllowed = $object->githubOwnedAllowed;
 
-        if ($github_owned_allowed === null) {
-            goto after_github_owned_allowed;
+        if ($githubOwnedAllowed === null) {
+            goto after_githubOwnedAllowed;
         }
-        after_github_owned_allowed:        $result['github_owned_allowed'] = $github_owned_allowed;
+        after_githubOwnedAllowed:        $result['github_owned_allowed'] = $githubOwnedAllowed;
 
         
-        $verified_allowed = $object->verified_allowed;
+        $verifiedAllowed = $object->verifiedAllowed;
 
-        if ($verified_allowed === null) {
-            goto after_verified_allowed;
+        if ($verifiedAllowed === null) {
+            goto after_verifiedAllowed;
         }
-        after_verified_allowed:        $result['verified_allowed'] = $verified_allowed;
+        after_verifiedAllowed:        $result['verified_allowed'] = $verifiedAllowed;
 
         
-        $patterns_allowed = $object->patterns_allowed;
+        $patternsAllowed = $object->patternsAllowed;
 
-        if ($patterns_allowed === null) {
-            goto after_patterns_allowed;
+        if ($patternsAllowed === null) {
+            goto after_patternsAllowed;
         }
-        static $patterns_allowedSerializer0;
+        static $patternsAllowedSerializer0;
 
-        if ($patterns_allowedSerializer0 === null) {
-            $patterns_allowedSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+        if ($patternsAllowedSerializer0 === null) {
+            $patternsAllowedSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         
-        $patterns_allowed = $patterns_allowedSerializer0->serialize($patterns_allowed, $this);
-        after_patterns_allowed:        $result['patterns_allowed'] = $patterns_allowed;
+        $patternsAllowed = $patternsAllowedSerializer0->serialize($patternsAllowed, $this);
+        after_patternsAllowed:        $result['patterns_allowed'] = $patternsAllowed;
 
 
         return $result;

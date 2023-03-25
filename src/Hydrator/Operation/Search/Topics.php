@@ -43,23 +43,23 @@ class Topics implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['incomplete_results'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'incomplete_results';
-                goto after_incomplete_results;
+                goto after_incompleteResults;
             }
 
-            $properties['incomplete_results'] = $value;
+            $properties['incompleteResults'] = $value;
 
-            after_incomplete_results:
+            after_incompleteResults:
 
             $value = $payload['items'] ?? null;
 
@@ -117,24 +117,24 @@ class Topics implements ObjectMapper
             $value = $payload['display_name'] ?? null;
 
             if ($value === null) {
-                $properties['display_name'] = null;
-                goto after_display_name;
+                $properties['displayName'] = null;
+                goto after_displayName;
             }
 
-            $properties['display_name'] = $value;
+            $properties['displayName'] = $value;
 
-            after_display_name:
+            after_displayName:
 
             $value = $payload['short_description'] ?? null;
 
             if ($value === null) {
-                $properties['short_description'] = null;
-                goto after_short_description;
+                $properties['shortDescription'] = null;
+                goto after_shortDescription;
             }
 
-            $properties['short_description'] = $value;
+            $properties['shortDescription'] = $value;
 
-            after_short_description:
+            after_shortDescription:
 
             $value = $payload['description'] ?? null;
 
@@ -150,13 +150,13 @@ class Topics implements ObjectMapper
             $value = $payload['created_by'] ?? null;
 
             if ($value === null) {
-                $properties['created_by'] = null;
-                goto after_created_by;
+                $properties['createdBy'] = null;
+                goto after_createdBy;
             }
 
-            $properties['created_by'] = $value;
+            $properties['createdBy'] = $value;
 
-            after_created_by:
+            after_createdBy:
 
             $value = $payload['released'] ?? null;
 
@@ -173,23 +173,23 @@ class Topics implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['featured'] ?? null;
 
@@ -227,45 +227,45 @@ class Topics implements ObjectMapper
             $value = $payload['repository_count'] ?? null;
 
             if ($value === null) {
-                $properties['repository_count'] = null;
-                goto after_repository_count;
+                $properties['repositoryCount'] = null;
+                goto after_repositoryCount;
             }
 
-            $properties['repository_count'] = $value;
+            $properties['repositoryCount'] = $value;
 
-            after_repository_count:
+            after_repositoryCount:
 
             $value = $payload['logo_url'] ?? null;
 
             if ($value === null) {
-                $properties['logo_url'] = null;
-                goto after_logo_url;
+                $properties['logoUrl'] = null;
+                goto after_logoUrl;
             }
 
-            $properties['logo_url'] = $value;
+            $properties['logoUrl'] = $value;
 
-            after_logo_url:
+            after_logoUrl:
 
             $value = $payload['text_matches'] ?? null;
 
             if ($value === null) {
-                $properties['text_matches'] = null;
-                goto after_text_matches;
+                $properties['textMatches'] = null;
+                goto after_textMatches;
             }
 
-            static $text_matchesCaster1;
+            static $textMatchesCaster1;
 
-            if ($text_matchesCaster1 === null) {
-                $text_matchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($textMatchesCaster1 === null) {
+                $textMatchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
             }
 
-            $value = $text_matchesCaster1->cast($value, $this);
+            $value = $textMatchesCaster1->cast($value, $this);
 
-            $properties['text_matches'] = $value;
+            $properties['textMatches'] = $value;
 
-            after_text_matches:
+            after_textMatches:
 
             $value = $payload['related'] ?? null;
 
@@ -333,24 +333,24 @@ class Topics implements ObjectMapper
             $value = $payload['object_url'] ?? null;
 
             if ($value === null) {
-                $properties['object_url'] = null;
-                goto after_object_url;
+                $properties['objectUrl'] = null;
+                goto after_objectUrl;
             }
 
-            $properties['object_url'] = $value;
+            $properties['objectUrl'] = $value;
 
-            after_object_url:
+            after_objectUrl:
 
             $value = $payload['object_type'] ?? null;
 
             if ($value === null) {
-                $properties['object_type'] = null;
-                goto after_object_type;
+                $properties['objectType'] = null;
+                goto after_objectType;
             }
 
-            $properties['object_type'] = $value;
+            $properties['objectType'] = $value;
 
-            after_object_type:
+            after_objectType:
 
             $value = $payload['property'] ?? null;
 
@@ -462,22 +462,22 @@ class Topics implements ObjectMapper
             $value = $payload['topic_relation'] ?? null;
 
             if ($value === null) {
-                $properties['topic_relation'] = null;
-                goto after_topic_relation;
+                $properties['topicRelation'] = null;
+                goto after_topicRelation;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'topic_relation';
+                    $this->hydrationStack[] = 'topicRelation';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TopicSearchResultItem⚡️Related⚡️TopicRelation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['topic_relation'] = $value;
+            $properties['topicRelation'] = $value;
 
-            after_topic_relation:
+            after_topicRelation:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TopicSearchResultItem\Related', $exception, stack: $this->hydrationStack);
@@ -525,24 +525,24 @@ class Topics implements ObjectMapper
             $value = $payload['topic_id'] ?? null;
 
             if ($value === null) {
-                $properties['topic_id'] = null;
-                goto after_topic_id;
+                $properties['topicId'] = null;
+                goto after_topicId;
             }
 
-            $properties['topic_id'] = $value;
+            $properties['topicId'] = $value;
 
-            after_topic_id:
+            after_topicId:
 
             $value = $payload['relation_type'] ?? null;
 
             if ($value === null) {
-                $properties['relation_type'] = null;
-                goto after_relation_type;
+                $properties['relationType'] = null;
+                goto after_relationType;
             }
 
-            $properties['relation_type'] = $value;
+            $properties['relationType'] = $value;
 
-            after_relation_type:
+            after_relationType:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TopicSearchResultItem\Related\TopicRelation', $exception, stack: $this->hydrationStack);
@@ -674,12 +674,12 @@ class Topics implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Search\Topics\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $incomplete_results = $object->incomplete_results;
-        after_incomplete_results:        $result['incomplete_results'] = $incomplete_results;
+        $incompleteResults = $object->incompleteResults;
+        after_incompleteResults:        $result['incomplete_results'] = $incompleteResults;
 
         
         $items = $object->items;
@@ -708,20 +708,20 @@ class Topics implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $display_name = $object->display_name;
+        $displayName = $object->displayName;
 
-        if ($display_name === null) {
-            goto after_display_name;
+        if ($displayName === null) {
+            goto after_displayName;
         }
-        after_display_name:        $result['display_name'] = $display_name;
+        after_displayName:        $result['display_name'] = $displayName;
 
         
-        $short_description = $object->short_description;
+        $shortDescription = $object->shortDescription;
 
-        if ($short_description === null) {
-            goto after_short_description;
+        if ($shortDescription === null) {
+            goto after_shortDescription;
         }
-        after_short_description:        $result['short_description'] = $short_description;
+        after_shortDescription:        $result['short_description'] = $shortDescription;
 
         
         $description = $object->description;
@@ -732,12 +732,12 @@ class Topics implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $created_by = $object->created_by;
+        $createdBy = $object->createdBy;
 
-        if ($created_by === null) {
-            goto after_created_by;
+        if ($createdBy === null) {
+            goto after_createdBy;
         }
-        after_created_by:        $result['created_by'] = $created_by;
+        after_createdBy:        $result['created_by'] = $createdBy;
 
         
         $released = $object->released;
@@ -748,12 +748,12 @@ class Topics implements ObjectMapper
         after_released:        $result['released'] = $released;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $featured = $object->featured;
@@ -768,37 +768,37 @@ class Topics implements ObjectMapper
         after_score:        $result['score'] = $score;
 
         
-        $repository_count = $object->repository_count;
+        $repositoryCount = $object->repositoryCount;
 
-        if ($repository_count === null) {
-            goto after_repository_count;
+        if ($repositoryCount === null) {
+            goto after_repositoryCount;
         }
-        after_repository_count:        $result['repository_count'] = $repository_count;
+        after_repositoryCount:        $result['repository_count'] = $repositoryCount;
 
         
-        $logo_url = $object->logo_url;
+        $logoUrl = $object->logoUrl;
 
-        if ($logo_url === null) {
-            goto after_logo_url;
+        if ($logoUrl === null) {
+            goto after_logoUrl;
         }
-        after_logo_url:        $result['logo_url'] = $logo_url;
+        after_logoUrl:        $result['logo_url'] = $logoUrl;
 
         
-        $text_matches = $object->text_matches;
+        $textMatches = $object->textMatches;
 
-        if ($text_matches === null) {
-            goto after_text_matches;
+        if ($textMatches === null) {
+            goto after_textMatches;
         }
-        static $text_matchesSerializer0;
+        static $textMatchesSerializer0;
 
-        if ($text_matchesSerializer0 === null) {
-            $text_matchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($textMatchesSerializer0 === null) {
+            $textMatchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
         }
         
-        $text_matches = $text_matchesSerializer0->serialize($text_matches, $this);
-        after_text_matches:        $result['text_matches'] = $text_matches;
+        $textMatches = $textMatchesSerializer0->serialize($textMatches, $this);
+        after_textMatches:        $result['text_matches'] = $textMatches;
 
         
         $related = $object->related;
@@ -844,20 +844,20 @@ class Topics implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SearchResultTextMatches);
         $result = [];
 
-        $object_url = $object->object_url;
+        $objectUrl = $object->objectUrl;
 
-        if ($object_url === null) {
-            goto after_object_url;
+        if ($objectUrl === null) {
+            goto after_objectUrl;
         }
-        after_object_url:        $result['object_url'] = $object_url;
+        after_objectUrl:        $result['object_url'] = $objectUrl;
 
         
-        $object_type = $object->object_type;
+        $objectType = $object->objectType;
 
-        if ($object_type === null) {
-            goto after_object_type;
+        if ($objectType === null) {
+            goto after_objectType;
         }
-        after_object_type:        $result['object_type'] = $object_type;
+        after_objectType:        $result['object_type'] = $objectType;
 
         
         $property = $object->property;
@@ -935,13 +935,13 @@ class Topics implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\TopicSearchResultItem\Related);
         $result = [];
 
-        $topic_relation = $object->topic_relation;
+        $topicRelation = $object->topicRelation;
 
-        if ($topic_relation === null) {
-            goto after_topic_relation;
+        if ($topicRelation === null) {
+            goto after_topicRelation;
         }
-        $topic_relation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TopicSearchResultItem⚡️Related⚡️TopicRelation($topic_relation);
-        after_topic_relation:        $result['topic_relation'] = $topic_relation;
+        $topicRelation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TopicSearchResultItem⚡️Related⚡️TopicRelation($topicRelation);
+        after_topicRelation:        $result['topic_relation'] = $topicRelation;
 
 
         return $result;
@@ -969,20 +969,20 @@ class Topics implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $topic_id = $object->topic_id;
+        $topicId = $object->topicId;
 
-        if ($topic_id === null) {
-            goto after_topic_id;
+        if ($topicId === null) {
+            goto after_topicId;
         }
-        after_topic_id:        $result['topic_id'] = $topic_id;
+        after_topicId:        $result['topic_id'] = $topicId;
 
         
-        $relation_type = $object->relation_type;
+        $relationType = $object->relationType;
 
-        if ($relation_type === null) {
-            goto after_relation_type;
+        if ($relationType === null) {
+            goto after_relationType;
         }
-        after_relation_type:        $result['relation_type'] = $relation_type;
+        after_relationType:        $result['relation_type'] = $relationType;
 
 
         return $result;

@@ -17,22 +17,22 @@ final class GetStatusForOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     /**Exclude attributes from the API response to improve performance**/
     private array $exclude;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb $hydrator, string $org, int $migration_id, array $exclude)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb $hydrator, string $org, int $migrationId, array $exclude)
     {
         $this->org = $org;
-        $this->migration_id = $migration_id;
+        $this->migrationId = $migrationId;
         $this->exclude = $exclude;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}', '{exclude}'), array($this->org, $this->migration_id, $this->exclude), self::PATH . '?exclude={exclude}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{migration_id}', '{exclude}'), array($this->org, $this->migrationId, $this->exclude), self::PATH . '?exclude={exclude}'));
     }
     /**
      * @return Schema\Migration

@@ -47,33 +47,33 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['required_workflows'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'required_workflows';
-                goto after_required_workflows;
+                goto after_requiredWorkflows;
             }
 
-            static $required_workflowsCaster1;
+            static $requiredWorkflowsCaster1;
 
-            if ($required_workflowsCaster1 === null) {
-                $required_workflowsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($requiredWorkflowsCaster1 === null) {
+                $requiredWorkflowsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\RepoRequiredWorkflow',
 ));
             }
 
-            $value = $required_workflowsCaster1->cast($value, $this);
+            $value = $requiredWorkflowsCaster1->cast($value, $this);
 
-            $properties['required_workflows'] = $value;
+            $properties['requiredWorkflows'] = $value;
 
-            after_required_workflows:
+            after_requiredWorkflows:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoRequiredWorkflows\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
@@ -111,12 +111,12 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -155,43 +155,43 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'source_repository';
-                goto after_source_repository;
+                goto after_sourceRepository;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'source_repository';
+                    $this->hydrationStack[] = 'sourceRepository';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MinimalRepository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['source_repository'] = $value;
+            $properties['sourceRepository'] = $value;
 
-            after_source_repository:
+            after_sourceRepository:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['url'] ?? null;
 
@@ -208,23 +208,23 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['badge_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'badge_url';
-                goto after_badge_url;
+                goto after_badgeUrl;
             }
 
-            $properties['badge_url'] = $value;
+            $properties['badgeUrl'] = $value;
 
-            after_badge_url:
+            after_badgeUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepoRequiredWorkflow', $exception, stack: $this->hydrationStack);
@@ -262,12 +262,12 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -284,12 +284,12 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'full_name';
-                goto after_full_name;
+                goto after_fullName;
             }
 
-            $properties['full_name'] = $value;
+            $properties['fullName'] = $value;
 
-            after_full_name:
+            after_fullName:
 
             $value = $payload['owner'] ?? null;
 
@@ -326,12 +326,12 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -370,452 +370,452 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'archive_url';
-                goto after_archive_url;
+                goto after_archiveUrl;
             }
 
-            $properties['archive_url'] = $value;
+            $properties['archiveUrl'] = $value;
 
-            after_archive_url:
+            after_archiveUrl:
 
             $value = $payload['assignees_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'assignees_url';
-                goto after_assignees_url;
+                goto after_assigneesUrl;
             }
 
-            $properties['assignees_url'] = $value;
+            $properties['assigneesUrl'] = $value;
 
-            after_assignees_url:
+            after_assigneesUrl:
 
             $value = $payload['blobs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blobs_url';
-                goto after_blobs_url;
+                goto after_blobsUrl;
             }
 
-            $properties['blobs_url'] = $value;
+            $properties['blobsUrl'] = $value;
 
-            after_blobs_url:
+            after_blobsUrl:
 
             $value = $payload['branches_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'branches_url';
-                goto after_branches_url;
+                goto after_branchesUrl;
             }
 
-            $properties['branches_url'] = $value;
+            $properties['branchesUrl'] = $value;
 
-            after_branches_url:
+            after_branchesUrl:
 
             $value = $payload['collaborators_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'collaborators_url';
-                goto after_collaborators_url;
+                goto after_collaboratorsUrl;
             }
 
-            $properties['collaborators_url'] = $value;
+            $properties['collaboratorsUrl'] = $value;
 
-            after_collaborators_url:
+            after_collaboratorsUrl:
 
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commits_url';
-                goto after_commits_url;
+                goto after_commitsUrl;
             }
 
-            $properties['commits_url'] = $value;
+            $properties['commitsUrl'] = $value;
 
-            after_commits_url:
+            after_commitsUrl:
 
             $value = $payload['compare_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'compare_url';
-                goto after_compare_url;
+                goto after_compareUrl;
             }
 
-            $properties['compare_url'] = $value;
+            $properties['compareUrl'] = $value;
 
-            after_compare_url:
+            after_compareUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['contributors_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contributors_url';
-                goto after_contributors_url;
+                goto after_contributorsUrl;
             }
 
-            $properties['contributors_url'] = $value;
+            $properties['contributorsUrl'] = $value;
 
-            after_contributors_url:
+            after_contributorsUrl:
 
             $value = $payload['deployments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'deployments_url';
-                goto after_deployments_url;
+                goto after_deploymentsUrl;
             }
 
-            $properties['deployments_url'] = $value;
+            $properties['deploymentsUrl'] = $value;
 
-            after_deployments_url:
+            after_deploymentsUrl:
 
             $value = $payload['downloads_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'downloads_url';
-                goto after_downloads_url;
+                goto after_downloadsUrl;
             }
 
-            $properties['downloads_url'] = $value;
+            $properties['downloadsUrl'] = $value;
 
-            after_downloads_url:
+            after_downloadsUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['forks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'forks_url';
-                goto after_forks_url;
+                goto after_forksUrl;
             }
 
-            $properties['forks_url'] = $value;
+            $properties['forksUrl'] = $value;
 
-            after_forks_url:
+            after_forksUrl:
 
             $value = $payload['git_commits_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_commits_url';
-                goto after_git_commits_url;
+                goto after_gitCommitsUrl;
             }
 
-            $properties['git_commits_url'] = $value;
+            $properties['gitCommitsUrl'] = $value;
 
-            after_git_commits_url:
+            after_gitCommitsUrl:
 
             $value = $payload['git_refs_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_refs_url';
-                goto after_git_refs_url;
+                goto after_gitRefsUrl;
             }
 
-            $properties['git_refs_url'] = $value;
+            $properties['gitRefsUrl'] = $value;
 
-            after_git_refs_url:
+            after_gitRefsUrl:
 
             $value = $payload['git_tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'git_tags_url';
-                goto after_git_tags_url;
+                goto after_gitTagsUrl;
             }
 
-            $properties['git_tags_url'] = $value;
+            $properties['gitTagsUrl'] = $value;
 
-            after_git_tags_url:
+            after_gitTagsUrl:
 
             $value = $payload['git_url'] ?? null;
 
             if ($value === null) {
-                $properties['git_url'] = null;
-                goto after_git_url;
+                $properties['gitUrl'] = null;
+                goto after_gitUrl;
             }
 
-            $properties['git_url'] = $value;
+            $properties['gitUrl'] = $value;
 
-            after_git_url:
+            after_gitUrl:
 
             $value = $payload['issue_comment_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_comment_url';
-                goto after_issue_comment_url;
+                goto after_issueCommentUrl;
             }
 
-            $properties['issue_comment_url'] = $value;
+            $properties['issueCommentUrl'] = $value;
 
-            after_issue_comment_url:
+            after_issueCommentUrl:
 
             $value = $payload['issue_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_events_url';
-                goto after_issue_events_url;
+                goto after_issueEventsUrl;
             }
 
-            $properties['issue_events_url'] = $value;
+            $properties['issueEventsUrl'] = $value;
 
-            after_issue_events_url:
+            after_issueEventsUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['keys_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'keys_url';
-                goto after_keys_url;
+                goto after_keysUrl;
             }
 
-            $properties['keys_url'] = $value;
+            $properties['keysUrl'] = $value;
 
-            after_keys_url:
+            after_keysUrl:
 
             $value = $payload['labels_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'labels_url';
-                goto after_labels_url;
+                goto after_labelsUrl;
             }
 
-            $properties['labels_url'] = $value;
+            $properties['labelsUrl'] = $value;
 
-            after_labels_url:
+            after_labelsUrl:
 
             $value = $payload['languages_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'languages_url';
-                goto after_languages_url;
+                goto after_languagesUrl;
             }
 
-            $properties['languages_url'] = $value;
+            $properties['languagesUrl'] = $value;
 
-            after_languages_url:
+            after_languagesUrl:
 
             $value = $payload['merges_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'merges_url';
-                goto after_merges_url;
+                goto after_mergesUrl;
             }
 
-            $properties['merges_url'] = $value;
+            $properties['mergesUrl'] = $value;
 
-            after_merges_url:
+            after_mergesUrl:
 
             $value = $payload['milestones_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'milestones_url';
-                goto after_milestones_url;
+                goto after_milestonesUrl;
             }
 
-            $properties['milestones_url'] = $value;
+            $properties['milestonesUrl'] = $value;
 
-            after_milestones_url:
+            after_milestonesUrl:
 
             $value = $payload['notifications_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'notifications_url';
-                goto after_notifications_url;
+                goto after_notificationsUrl;
             }
 
-            $properties['notifications_url'] = $value;
+            $properties['notificationsUrl'] = $value;
 
-            after_notifications_url:
+            after_notificationsUrl:
 
             $value = $payload['pulls_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pulls_url';
-                goto after_pulls_url;
+                goto after_pullsUrl;
             }
 
-            $properties['pulls_url'] = $value;
+            $properties['pullsUrl'] = $value;
 
-            after_pulls_url:
+            after_pullsUrl:
 
             $value = $payload['releases_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'releases_url';
-                goto after_releases_url;
+                goto after_releasesUrl;
             }
 
-            $properties['releases_url'] = $value;
+            $properties['releasesUrl'] = $value;
 
-            after_releases_url:
+            after_releasesUrl:
 
             $value = $payload['ssh_url'] ?? null;
 
             if ($value === null) {
-                $properties['ssh_url'] = null;
-                goto after_ssh_url;
+                $properties['sshUrl'] = null;
+                goto after_sshUrl;
             }
 
-            $properties['ssh_url'] = $value;
+            $properties['sshUrl'] = $value;
 
-            after_ssh_url:
+            after_sshUrl:
 
             $value = $payload['stargazers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'stargazers_url';
-                goto after_stargazers_url;
+                goto after_stargazersUrl;
             }
 
-            $properties['stargazers_url'] = $value;
+            $properties['stargazersUrl'] = $value;
 
-            after_stargazers_url:
+            after_stargazersUrl:
 
             $value = $payload['statuses_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'statuses_url';
-                goto after_statuses_url;
+                goto after_statusesUrl;
             }
 
-            $properties['statuses_url'] = $value;
+            $properties['statusesUrl'] = $value;
 
-            after_statuses_url:
+            after_statusesUrl:
 
             $value = $payload['subscribers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscribers_url';
-                goto after_subscribers_url;
+                goto after_subscribersUrl;
             }
 
-            $properties['subscribers_url'] = $value;
+            $properties['subscribersUrl'] = $value;
 
-            after_subscribers_url:
+            after_subscribersUrl:
 
             $value = $payload['subscription_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscription_url';
-                goto after_subscription_url;
+                goto after_subscriptionUrl;
             }
 
-            $properties['subscription_url'] = $value;
+            $properties['subscriptionUrl'] = $value;
 
-            after_subscription_url:
+            after_subscriptionUrl:
 
             $value = $payload['tags_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'tags_url';
-                goto after_tags_url;
+                goto after_tagsUrl;
             }
 
-            $properties['tags_url'] = $value;
+            $properties['tagsUrl'] = $value;
 
-            after_tags_url:
+            after_tagsUrl:
 
             $value = $payload['teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'teams_url';
-                goto after_teams_url;
+                goto after_teamsUrl;
             }
 
-            $properties['teams_url'] = $value;
+            $properties['teamsUrl'] = $value;
 
-            after_teams_url:
+            after_teamsUrl:
 
             $value = $payload['trees_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'trees_url';
-                goto after_trees_url;
+                goto after_treesUrl;
             }
 
-            $properties['trees_url'] = $value;
+            $properties['treesUrl'] = $value;
 
-            after_trees_url:
+            after_treesUrl:
 
             $value = $payload['clone_url'] ?? null;
 
             if ($value === null) {
-                $properties['clone_url'] = null;
-                goto after_clone_url;
+                $properties['cloneUrl'] = null;
+                goto after_cloneUrl;
             }
 
-            $properties['clone_url'] = $value;
+            $properties['cloneUrl'] = $value;
 
-            after_clone_url:
+            after_cloneUrl:
 
             $value = $payload['mirror_url'] ?? null;
 
             if ($value === null) {
-                $properties['mirror_url'] = null;
-                goto after_mirror_url;
+                $properties['mirrorUrl'] = null;
+                goto after_mirrorUrl;
             }
 
-            $properties['mirror_url'] = $value;
+            $properties['mirrorUrl'] = $value;
 
-            after_mirror_url:
+            after_mirrorUrl:
 
             $value = $payload['hooks_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hooks_url';
-                goto after_hooks_url;
+                goto after_hooksUrl;
             }
 
-            $properties['hooks_url'] = $value;
+            $properties['hooksUrl'] = $value;
 
-            after_hooks_url:
+            after_hooksUrl:
 
             $value = $payload['svn_url'] ?? null;
 
             if ($value === null) {
-                $properties['svn_url'] = null;
-                goto after_svn_url;
+                $properties['svnUrl'] = null;
+                goto after_svnUrl;
             }
 
-            $properties['svn_url'] = $value;
+            $properties['svnUrl'] = $value;
 
-            after_svn_url:
+            after_svnUrl:
 
             $value = $payload['homepage'] ?? null;
 
@@ -842,35 +842,35 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['forks_count'] ?? null;
 
             if ($value === null) {
-                $properties['forks_count'] = null;
-                goto after_forks_count;
+                $properties['forksCount'] = null;
+                goto after_forksCount;
             }
 
-            $properties['forks_count'] = $value;
+            $properties['forksCount'] = $value;
 
-            after_forks_count:
+            after_forksCount:
 
             $value = $payload['stargazers_count'] ?? null;
 
             if ($value === null) {
-                $properties['stargazers_count'] = null;
-                goto after_stargazers_count;
+                $properties['stargazersCount'] = null;
+                goto after_stargazersCount;
             }
 
-            $properties['stargazers_count'] = $value;
+            $properties['stargazersCount'] = $value;
 
-            after_stargazers_count:
+            after_stargazersCount:
 
             $value = $payload['watchers_count'] ?? null;
 
             if ($value === null) {
-                $properties['watchers_count'] = null;
-                goto after_watchers_count;
+                $properties['watchersCount'] = null;
+                goto after_watchersCount;
             }
 
-            $properties['watchers_count'] = $value;
+            $properties['watchersCount'] = $value;
 
-            after_watchers_count:
+            after_watchersCount:
 
             $value = $payload['size'] ?? null;
 
@@ -886,35 +886,35 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['default_branch'] ?? null;
 
             if ($value === null) {
-                $properties['default_branch'] = null;
-                goto after_default_branch;
+                $properties['defaultBranch'] = null;
+                goto after_defaultBranch;
             }
 
-            $properties['default_branch'] = $value;
+            $properties['defaultBranch'] = $value;
 
-            after_default_branch:
+            after_defaultBranch:
 
             $value = $payload['open_issues_count'] ?? null;
 
             if ($value === null) {
-                $properties['open_issues_count'] = null;
-                goto after_open_issues_count;
+                $properties['openIssuesCount'] = null;
+                goto after_openIssuesCount;
             }
 
-            $properties['open_issues_count'] = $value;
+            $properties['openIssuesCount'] = $value;
 
-            after_open_issues_count:
+            after_openIssuesCount:
 
             $value = $payload['is_template'] ?? null;
 
             if ($value === null) {
-                $properties['is_template'] = null;
-                goto after_is_template;
+                $properties['isTemplate'] = null;
+                goto after_isTemplate;
             }
 
-            $properties['is_template'] = $value;
+            $properties['isTemplate'] = $value;
 
-            after_is_template:
+            after_isTemplate:
 
             $value = $payload['topics'] ?? null;
 
@@ -930,68 +930,68 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['has_issues'] ?? null;
 
             if ($value === null) {
-                $properties['has_issues'] = null;
-                goto after_has_issues;
+                $properties['hasIssues'] = null;
+                goto after_hasIssues;
             }
 
-            $properties['has_issues'] = $value;
+            $properties['hasIssues'] = $value;
 
-            after_has_issues:
+            after_hasIssues:
 
             $value = $payload['has_projects'] ?? null;
 
             if ($value === null) {
-                $properties['has_projects'] = null;
-                goto after_has_projects;
+                $properties['hasProjects'] = null;
+                goto after_hasProjects;
             }
 
-            $properties['has_projects'] = $value;
+            $properties['hasProjects'] = $value;
 
-            after_has_projects:
+            after_hasProjects:
 
             $value = $payload['has_wiki'] ?? null;
 
             if ($value === null) {
-                $properties['has_wiki'] = null;
-                goto after_has_wiki;
+                $properties['hasWiki'] = null;
+                goto after_hasWiki;
             }
 
-            $properties['has_wiki'] = $value;
+            $properties['hasWiki'] = $value;
 
-            after_has_wiki:
+            after_hasWiki:
 
             $value = $payload['has_pages'] ?? null;
 
             if ($value === null) {
-                $properties['has_pages'] = null;
-                goto after_has_pages;
+                $properties['hasPages'] = null;
+                goto after_hasPages;
             }
 
-            $properties['has_pages'] = $value;
+            $properties['hasPages'] = $value;
 
-            after_has_pages:
+            after_hasPages:
 
             $value = $payload['has_downloads'] ?? null;
 
             if ($value === null) {
-                $properties['has_downloads'] = null;
-                goto after_has_downloads;
+                $properties['hasDownloads'] = null;
+                goto after_hasDownloads;
             }
 
-            $properties['has_downloads'] = $value;
+            $properties['hasDownloads'] = $value;
 
-            after_has_downloads:
+            after_hasDownloads:
 
             $value = $payload['has_discussions'] ?? null;
 
             if ($value === null) {
-                $properties['has_discussions'] = null;
-                goto after_has_discussions;
+                $properties['hasDiscussions'] = null;
+                goto after_hasDiscussions;
             }
 
-            $properties['has_discussions'] = $value;
+            $properties['hasDiscussions'] = $value;
 
-            after_has_discussions:
+            after_hasDiscussions:
 
             $value = $payload['archived'] ?? null;
 
@@ -1029,35 +1029,35 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['pushed_at'] ?? null;
 
             if ($value === null) {
-                $properties['pushed_at'] = null;
-                goto after_pushed_at;
+                $properties['pushedAt'] = null;
+                goto after_pushedAt;
             }
 
-            $properties['pushed_at'] = $value;
+            $properties['pushedAt'] = $value;
 
-            after_pushed_at:
+            after_pushedAt:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['permissions'] ?? null;
 
@@ -1082,77 +1082,77 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['role_name'] ?? null;
 
             if ($value === null) {
-                $properties['role_name'] = null;
-                goto after_role_name;
+                $properties['roleName'] = null;
+                goto after_roleName;
             }
 
-            $properties['role_name'] = $value;
+            $properties['roleName'] = $value;
 
-            after_role_name:
+            after_roleName:
 
             $value = $payload['temp_clone_token'] ?? null;
 
             if ($value === null) {
-                $properties['temp_clone_token'] = null;
-                goto after_temp_clone_token;
+                $properties['tempCloneToken'] = null;
+                goto after_tempCloneToken;
             }
 
-            $properties['temp_clone_token'] = $value;
+            $properties['tempCloneToken'] = $value;
 
-            after_temp_clone_token:
+            after_tempCloneToken:
 
             $value = $payload['delete_branch_on_merge'] ?? null;
 
             if ($value === null) {
-                $properties['delete_branch_on_merge'] = null;
-                goto after_delete_branch_on_merge;
+                $properties['deleteBranchOnMerge'] = null;
+                goto after_deleteBranchOnMerge;
             }
 
-            $properties['delete_branch_on_merge'] = $value;
+            $properties['deleteBranchOnMerge'] = $value;
 
-            after_delete_branch_on_merge:
+            after_deleteBranchOnMerge:
 
             $value = $payload['subscribers_count'] ?? null;
 
             if ($value === null) {
-                $properties['subscribers_count'] = null;
-                goto after_subscribers_count;
+                $properties['subscribersCount'] = null;
+                goto after_subscribersCount;
             }
 
-            $properties['subscribers_count'] = $value;
+            $properties['subscribersCount'] = $value;
 
-            after_subscribers_count:
+            after_subscribersCount:
 
             $value = $payload['network_count'] ?? null;
 
             if ($value === null) {
-                $properties['network_count'] = null;
-                goto after_network_count;
+                $properties['networkCount'] = null;
+                goto after_networkCount;
             }
 
-            $properties['network_count'] = $value;
+            $properties['networkCount'] = $value;
 
-            after_network_count:
+            after_networkCount:
 
             $value = $payload['code_of_conduct'] ?? null;
 
             if ($value === null) {
-                $properties['code_of_conduct'] = null;
-                goto after_code_of_conduct;
+                $properties['codeOfConduct'] = null;
+                goto after_codeOfConduct;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'code_of_conduct';
+                    $this->hydrationStack[] = 'codeOfConduct';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['code_of_conduct'] = $value;
+            $properties['codeOfConduct'] = $value;
 
-            after_code_of_conduct:
+            after_codeOfConduct:
 
             $value = $payload['license'] ?? null;
 
@@ -1188,13 +1188,13 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['open_issues'] ?? null;
 
             if ($value === null) {
-                $properties['open_issues'] = null;
-                goto after_open_issues;
+                $properties['openIssues'] = null;
+                goto after_openIssues;
             }
 
-            $properties['open_issues'] = $value;
+            $properties['openIssues'] = $value;
 
-            after_open_issues:
+            after_openIssues:
 
             $value = $payload['watchers'] ?? null;
 
@@ -1210,44 +1210,44 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['allow_forking'] ?? null;
 
             if ($value === null) {
-                $properties['allow_forking'] = null;
-                goto after_allow_forking;
+                $properties['allowForking'] = null;
+                goto after_allowForking;
             }
 
-            $properties['allow_forking'] = $value;
+            $properties['allowForking'] = $value;
 
-            after_allow_forking:
+            after_allowForking:
 
             $value = $payload['web_commit_signoff_required'] ?? null;
 
             if ($value === null) {
-                $properties['web_commit_signoff_required'] = null;
-                goto after_web_commit_signoff_required;
+                $properties['webCommitSignoffRequired'] = null;
+                goto after_webCommitSignoffRequired;
             }
 
-            $properties['web_commit_signoff_required'] = $value;
+            $properties['webCommitSignoffRequired'] = $value;
 
-            after_web_commit_signoff_required:
+            after_webCommitSignoffRequired:
 
             $value = $payload['security_and_analysis'] ?? null;
 
             if ($value === null) {
-                $properties['security_and_analysis'] = null;
-                goto after_security_and_analysis;
+                $properties['securityAndAnalysis'] = null;
+                goto after_securityAndAnalysis;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'security_and_analysis';
+                    $this->hydrationStack[] = 'securityAndAnalysis';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['security_and_analysis'] = $value;
+            $properties['securityAndAnalysis'] = $value;
 
-            after_security_and_analysis:
+            after_securityAndAnalysis:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MinimalRepository', $exception, stack: $this->hydrationStack);
@@ -1318,34 +1318,34 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -1362,111 +1362,111 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -1483,23 +1483,23 @@ class RequiredWorkflows implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -1645,13 +1645,13 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeOfConduct', $exception, stack: $this->hydrationStack);
@@ -1699,13 +1699,13 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['spdx_id'] ?? null;
 
             if ($value === null) {
-                $properties['spdx_id'] = null;
-                goto after_spdx_id;
+                $properties['spdxId'] = null;
+                goto after_spdxId;
             }
 
-            $properties['spdx_id'] = $value;
+            $properties['spdxId'] = $value;
 
-            after_spdx_id:
+            after_spdxId:
 
             $value = $payload['url'] ?? null;
 
@@ -1721,13 +1721,13 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MinimalRepository\License', $exception, stack: $this->hydrationStack);
@@ -1753,62 +1753,62 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['advanced_security'] ?? null;
 
             if ($value === null) {
-                $properties['advanced_security'] = null;
-                goto after_advanced_security;
+                $properties['advancedSecurity'] = null;
+                goto after_advancedSecurity;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'advanced_security';
+                    $this->hydrationStack[] = 'advancedSecurity';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['advanced_security'] = $value;
+            $properties['advancedSecurity'] = $value;
 
-            after_advanced_security:
+            after_advancedSecurity:
 
             $value = $payload['secret_scanning'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning'] = null;
-                goto after_secret_scanning;
+                $properties['secretScanning'] = null;
+                goto after_secretScanning;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'secret_scanning';
+                    $this->hydrationStack[] = 'secretScanning';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['secret_scanning'] = $value;
+            $properties['secretScanning'] = $value;
 
-            after_secret_scanning:
+            after_secretScanning:
 
             $value = $payload['secret_scanning_push_protection'] ?? null;
 
             if ($value === null) {
-                $properties['secret_scanning_push_protection'] = null;
-                goto after_secret_scanning_push_protection;
+                $properties['secretScanningPushProtection'] = null;
+                goto after_secretScanningPushProtection;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'secret_scanning_push_protection';
+                    $this->hydrationStack[] = 'secretScanningPushProtection';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['secret_scanning_push_protection'] = $value;
+            $properties['secretScanningPushProtection'] = $value;
 
-            after_secret_scanning_push_protection:
+            after_secretScanningPushProtection:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis', $exception, stack: $this->hydrationStack);
@@ -1877,13 +1877,13 @@ class RequiredWorkflows implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -2041,21 +2041,21 @@ class RequiredWorkflows implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoRequiredWorkflows\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $required_workflows = $object->required_workflows;
-        static $required_workflowsSerializer0;
+        $requiredWorkflows = $object->requiredWorkflows;
+        static $requiredWorkflowsSerializer0;
 
-        if ($required_workflowsSerializer0 === null) {
-            $required_workflowsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($requiredWorkflowsSerializer0 === null) {
+            $requiredWorkflowsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\RepoRequiredWorkflow',
 ));
         }
         
-        $required_workflows = $required_workflowsSerializer0->serialize($required_workflows, $this);
-        after_required_workflows:        $result['required_workflows'] = $required_workflows;
+        $requiredWorkflows = $requiredWorkflowsSerializer0->serialize($requiredWorkflows, $this);
+        after_requiredWorkflows:        $result['required_workflows'] = $requiredWorkflows;
 
 
         return $result;
@@ -2071,8 +2071,8 @@ class RequiredWorkflows implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -2087,29 +2087,29 @@ class RequiredWorkflows implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $source_repository = $object->source_repository;
-        $source_repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MinimalRepository($source_repository);
-        after_source_repository:        $result['source_repository'] = $source_repository;
+        $sourceRepository = $object->sourceRepository;
+        $sourceRepository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MinimalRepository($sourceRepository);
+        after_sourceRepository:        $result['source_repository'] = $sourceRepository;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $badge_url = $object->badge_url;
-        after_badge_url:        $result['badge_url'] = $badge_url;
+        $badgeUrl = $object->badgeUrl;
+        after_badgeUrl:        $result['badge_url'] = $badgeUrl;
 
 
         return $result;
@@ -2125,16 +2125,16 @@ class RequiredWorkflows implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
-        $full_name = $object->full_name;
-        after_full_name:        $result['full_name'] = $full_name;
+        $fullName = $object->fullName;
+        after_fullName:        $result['full_name'] = $fullName;
 
         
         $owner = $object->owner;
@@ -2146,8 +2146,8 @@ class RequiredWorkflows implements ObjectMapper
         after_private:        $result['private'] = $private;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $description = $object->description;
@@ -2166,188 +2166,188 @@ class RequiredWorkflows implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $archive_url = $object->archive_url;
-        after_archive_url:        $result['archive_url'] = $archive_url;
+        $archiveUrl = $object->archiveUrl;
+        after_archiveUrl:        $result['archive_url'] = $archiveUrl;
 
         
-        $assignees_url = $object->assignees_url;
-        after_assignees_url:        $result['assignees_url'] = $assignees_url;
+        $assigneesUrl = $object->assigneesUrl;
+        after_assigneesUrl:        $result['assignees_url'] = $assigneesUrl;
 
         
-        $blobs_url = $object->blobs_url;
-        after_blobs_url:        $result['blobs_url'] = $blobs_url;
+        $blobsUrl = $object->blobsUrl;
+        after_blobsUrl:        $result['blobs_url'] = $blobsUrl;
 
         
-        $branches_url = $object->branches_url;
-        after_branches_url:        $result['branches_url'] = $branches_url;
+        $branchesUrl = $object->branchesUrl;
+        after_branchesUrl:        $result['branches_url'] = $branchesUrl;
 
         
-        $collaborators_url = $object->collaborators_url;
-        after_collaborators_url:        $result['collaborators_url'] = $collaborators_url;
+        $collaboratorsUrl = $object->collaboratorsUrl;
+        after_collaboratorsUrl:        $result['collaborators_url'] = $collaboratorsUrl;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
-        $commits_url = $object->commits_url;
-        after_commits_url:        $result['commits_url'] = $commits_url;
+        $commitsUrl = $object->commitsUrl;
+        after_commitsUrl:        $result['commits_url'] = $commitsUrl;
 
         
-        $compare_url = $object->compare_url;
-        after_compare_url:        $result['compare_url'] = $compare_url;
+        $compareUrl = $object->compareUrl;
+        after_compareUrl:        $result['compare_url'] = $compareUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
-        $contributors_url = $object->contributors_url;
-        after_contributors_url:        $result['contributors_url'] = $contributors_url;
+        $contributorsUrl = $object->contributorsUrl;
+        after_contributorsUrl:        $result['contributors_url'] = $contributorsUrl;
 
         
-        $deployments_url = $object->deployments_url;
-        after_deployments_url:        $result['deployments_url'] = $deployments_url;
+        $deploymentsUrl = $object->deploymentsUrl;
+        after_deploymentsUrl:        $result['deployments_url'] = $deploymentsUrl;
 
         
-        $downloads_url = $object->downloads_url;
-        after_downloads_url:        $result['downloads_url'] = $downloads_url;
+        $downloadsUrl = $object->downloadsUrl;
+        after_downloadsUrl:        $result['downloads_url'] = $downloadsUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $forks_url = $object->forks_url;
-        after_forks_url:        $result['forks_url'] = $forks_url;
+        $forksUrl = $object->forksUrl;
+        after_forksUrl:        $result['forks_url'] = $forksUrl;
 
         
-        $git_commits_url = $object->git_commits_url;
-        after_git_commits_url:        $result['git_commits_url'] = $git_commits_url;
+        $gitCommitsUrl = $object->gitCommitsUrl;
+        after_gitCommitsUrl:        $result['git_commits_url'] = $gitCommitsUrl;
 
         
-        $git_refs_url = $object->git_refs_url;
-        after_git_refs_url:        $result['git_refs_url'] = $git_refs_url;
+        $gitRefsUrl = $object->gitRefsUrl;
+        after_gitRefsUrl:        $result['git_refs_url'] = $gitRefsUrl;
 
         
-        $git_tags_url = $object->git_tags_url;
-        after_git_tags_url:        $result['git_tags_url'] = $git_tags_url;
+        $gitTagsUrl = $object->gitTagsUrl;
+        after_gitTagsUrl:        $result['git_tags_url'] = $gitTagsUrl;
 
         
-        $git_url = $object->git_url;
+        $gitUrl = $object->gitUrl;
 
-        if ($git_url === null) {
-            goto after_git_url;
+        if ($gitUrl === null) {
+            goto after_gitUrl;
         }
-        after_git_url:        $result['git_url'] = $git_url;
+        after_gitUrl:        $result['git_url'] = $gitUrl;
 
         
-        $issue_comment_url = $object->issue_comment_url;
-        after_issue_comment_url:        $result['issue_comment_url'] = $issue_comment_url;
+        $issueCommentUrl = $object->issueCommentUrl;
+        after_issueCommentUrl:        $result['issue_comment_url'] = $issueCommentUrl;
 
         
-        $issue_events_url = $object->issue_events_url;
-        after_issue_events_url:        $result['issue_events_url'] = $issue_events_url;
+        $issueEventsUrl = $object->issueEventsUrl;
+        after_issueEventsUrl:        $result['issue_events_url'] = $issueEventsUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $keys_url = $object->keys_url;
-        after_keys_url:        $result['keys_url'] = $keys_url;
+        $keysUrl = $object->keysUrl;
+        after_keysUrl:        $result['keys_url'] = $keysUrl;
 
         
-        $labels_url = $object->labels_url;
-        after_labels_url:        $result['labels_url'] = $labels_url;
+        $labelsUrl = $object->labelsUrl;
+        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
         
-        $languages_url = $object->languages_url;
-        after_languages_url:        $result['languages_url'] = $languages_url;
+        $languagesUrl = $object->languagesUrl;
+        after_languagesUrl:        $result['languages_url'] = $languagesUrl;
 
         
-        $merges_url = $object->merges_url;
-        after_merges_url:        $result['merges_url'] = $merges_url;
+        $mergesUrl = $object->mergesUrl;
+        after_mergesUrl:        $result['merges_url'] = $mergesUrl;
 
         
-        $milestones_url = $object->milestones_url;
-        after_milestones_url:        $result['milestones_url'] = $milestones_url;
+        $milestonesUrl = $object->milestonesUrl;
+        after_milestonesUrl:        $result['milestones_url'] = $milestonesUrl;
 
         
-        $notifications_url = $object->notifications_url;
-        after_notifications_url:        $result['notifications_url'] = $notifications_url;
+        $notificationsUrl = $object->notificationsUrl;
+        after_notificationsUrl:        $result['notifications_url'] = $notificationsUrl;
 
         
-        $pulls_url = $object->pulls_url;
-        after_pulls_url:        $result['pulls_url'] = $pulls_url;
+        $pullsUrl = $object->pullsUrl;
+        after_pullsUrl:        $result['pulls_url'] = $pullsUrl;
 
         
-        $releases_url = $object->releases_url;
-        after_releases_url:        $result['releases_url'] = $releases_url;
+        $releasesUrl = $object->releasesUrl;
+        after_releasesUrl:        $result['releases_url'] = $releasesUrl;
 
         
-        $ssh_url = $object->ssh_url;
+        $sshUrl = $object->sshUrl;
 
-        if ($ssh_url === null) {
-            goto after_ssh_url;
+        if ($sshUrl === null) {
+            goto after_sshUrl;
         }
-        after_ssh_url:        $result['ssh_url'] = $ssh_url;
+        after_sshUrl:        $result['ssh_url'] = $sshUrl;
 
         
-        $stargazers_url = $object->stargazers_url;
-        after_stargazers_url:        $result['stargazers_url'] = $stargazers_url;
+        $stargazersUrl = $object->stargazersUrl;
+        after_stargazersUrl:        $result['stargazers_url'] = $stargazersUrl;
 
         
-        $statuses_url = $object->statuses_url;
-        after_statuses_url:        $result['statuses_url'] = $statuses_url;
+        $statusesUrl = $object->statusesUrl;
+        after_statusesUrl:        $result['statuses_url'] = $statusesUrl;
 
         
-        $subscribers_url = $object->subscribers_url;
-        after_subscribers_url:        $result['subscribers_url'] = $subscribers_url;
+        $subscribersUrl = $object->subscribersUrl;
+        after_subscribersUrl:        $result['subscribers_url'] = $subscribersUrl;
 
         
-        $subscription_url = $object->subscription_url;
-        after_subscription_url:        $result['subscription_url'] = $subscription_url;
+        $subscriptionUrl = $object->subscriptionUrl;
+        after_subscriptionUrl:        $result['subscription_url'] = $subscriptionUrl;
 
         
-        $tags_url = $object->tags_url;
-        after_tags_url:        $result['tags_url'] = $tags_url;
+        $tagsUrl = $object->tagsUrl;
+        after_tagsUrl:        $result['tags_url'] = $tagsUrl;
 
         
-        $teams_url = $object->teams_url;
-        after_teams_url:        $result['teams_url'] = $teams_url;
+        $teamsUrl = $object->teamsUrl;
+        after_teamsUrl:        $result['teams_url'] = $teamsUrl;
 
         
-        $trees_url = $object->trees_url;
-        after_trees_url:        $result['trees_url'] = $trees_url;
+        $treesUrl = $object->treesUrl;
+        after_treesUrl:        $result['trees_url'] = $treesUrl;
 
         
-        $clone_url = $object->clone_url;
+        $cloneUrl = $object->cloneUrl;
 
-        if ($clone_url === null) {
-            goto after_clone_url;
+        if ($cloneUrl === null) {
+            goto after_cloneUrl;
         }
-        after_clone_url:        $result['clone_url'] = $clone_url;
+        after_cloneUrl:        $result['clone_url'] = $cloneUrl;
 
         
-        $mirror_url = $object->mirror_url;
+        $mirrorUrl = $object->mirrorUrl;
 
-        if ($mirror_url === null) {
-            goto after_mirror_url;
+        if ($mirrorUrl === null) {
+            goto after_mirrorUrl;
         }
-        after_mirror_url:        $result['mirror_url'] = $mirror_url;
+        after_mirrorUrl:        $result['mirror_url'] = $mirrorUrl;
 
         
-        $hooks_url = $object->hooks_url;
-        after_hooks_url:        $result['hooks_url'] = $hooks_url;
+        $hooksUrl = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
 
         
-        $svn_url = $object->svn_url;
+        $svnUrl = $object->svnUrl;
 
-        if ($svn_url === null) {
-            goto after_svn_url;
+        if ($svnUrl === null) {
+            goto after_svnUrl;
         }
-        after_svn_url:        $result['svn_url'] = $svn_url;
+        after_svnUrl:        $result['svn_url'] = $svnUrl;
 
         
         $homepage = $object->homepage;
@@ -2366,28 +2366,28 @@ class RequiredWorkflows implements ObjectMapper
         after_language:        $result['language'] = $language;
 
         
-        $forks_count = $object->forks_count;
+        $forksCount = $object->forksCount;
 
-        if ($forks_count === null) {
-            goto after_forks_count;
+        if ($forksCount === null) {
+            goto after_forksCount;
         }
-        after_forks_count:        $result['forks_count'] = $forks_count;
+        after_forksCount:        $result['forks_count'] = $forksCount;
 
         
-        $stargazers_count = $object->stargazers_count;
+        $stargazersCount = $object->stargazersCount;
 
-        if ($stargazers_count === null) {
-            goto after_stargazers_count;
+        if ($stargazersCount === null) {
+            goto after_stargazersCount;
         }
-        after_stargazers_count:        $result['stargazers_count'] = $stargazers_count;
+        after_stargazersCount:        $result['stargazers_count'] = $stargazersCount;
 
         
-        $watchers_count = $object->watchers_count;
+        $watchersCount = $object->watchersCount;
 
-        if ($watchers_count === null) {
-            goto after_watchers_count;
+        if ($watchersCount === null) {
+            goto after_watchersCount;
         }
-        after_watchers_count:        $result['watchers_count'] = $watchers_count;
+        after_watchersCount:        $result['watchers_count'] = $watchersCount;
 
         
         $size = $object->size;
@@ -2398,28 +2398,28 @@ class RequiredWorkflows implements ObjectMapper
         after_size:        $result['size'] = $size;
 
         
-        $default_branch = $object->default_branch;
+        $defaultBranch = $object->defaultBranch;
 
-        if ($default_branch === null) {
-            goto after_default_branch;
+        if ($defaultBranch === null) {
+            goto after_defaultBranch;
         }
-        after_default_branch:        $result['default_branch'] = $default_branch;
+        after_defaultBranch:        $result['default_branch'] = $defaultBranch;
 
         
-        $open_issues_count = $object->open_issues_count;
+        $openIssuesCount = $object->openIssuesCount;
 
-        if ($open_issues_count === null) {
-            goto after_open_issues_count;
+        if ($openIssuesCount === null) {
+            goto after_openIssuesCount;
         }
-        after_open_issues_count:        $result['open_issues_count'] = $open_issues_count;
+        after_openIssuesCount:        $result['open_issues_count'] = $openIssuesCount;
 
         
-        $is_template = $object->is_template;
+        $isTemplate = $object->isTemplate;
 
-        if ($is_template === null) {
-            goto after_is_template;
+        if ($isTemplate === null) {
+            goto after_isTemplate;
         }
-        after_is_template:        $result['is_template'] = $is_template;
+        after_isTemplate:        $result['is_template'] = $isTemplate;
 
         
         $topics = $object->topics;
@@ -2438,52 +2438,52 @@ class RequiredWorkflows implements ObjectMapper
         after_topics:        $result['topics'] = $topics;
 
         
-        $has_issues = $object->has_issues;
+        $hasIssues = $object->hasIssues;
 
-        if ($has_issues === null) {
-            goto after_has_issues;
+        if ($hasIssues === null) {
+            goto after_hasIssues;
         }
-        after_has_issues:        $result['has_issues'] = $has_issues;
+        after_hasIssues:        $result['has_issues'] = $hasIssues;
 
         
-        $has_projects = $object->has_projects;
+        $hasProjects = $object->hasProjects;
 
-        if ($has_projects === null) {
-            goto after_has_projects;
+        if ($hasProjects === null) {
+            goto after_hasProjects;
         }
-        after_has_projects:        $result['has_projects'] = $has_projects;
+        after_hasProjects:        $result['has_projects'] = $hasProjects;
 
         
-        $has_wiki = $object->has_wiki;
+        $hasWiki = $object->hasWiki;
 
-        if ($has_wiki === null) {
-            goto after_has_wiki;
+        if ($hasWiki === null) {
+            goto after_hasWiki;
         }
-        after_has_wiki:        $result['has_wiki'] = $has_wiki;
+        after_hasWiki:        $result['has_wiki'] = $hasWiki;
 
         
-        $has_pages = $object->has_pages;
+        $hasPages = $object->hasPages;
 
-        if ($has_pages === null) {
-            goto after_has_pages;
+        if ($hasPages === null) {
+            goto after_hasPages;
         }
-        after_has_pages:        $result['has_pages'] = $has_pages;
+        after_hasPages:        $result['has_pages'] = $hasPages;
 
         
-        $has_downloads = $object->has_downloads;
+        $hasDownloads = $object->hasDownloads;
 
-        if ($has_downloads === null) {
-            goto after_has_downloads;
+        if ($hasDownloads === null) {
+            goto after_hasDownloads;
         }
-        after_has_downloads:        $result['has_downloads'] = $has_downloads;
+        after_hasDownloads:        $result['has_downloads'] = $hasDownloads;
 
         
-        $has_discussions = $object->has_discussions;
+        $hasDiscussions = $object->hasDiscussions;
 
-        if ($has_discussions === null) {
-            goto after_has_discussions;
+        if ($hasDiscussions === null) {
+            goto after_hasDiscussions;
         }
-        after_has_discussions:        $result['has_discussions'] = $has_discussions;
+        after_hasDiscussions:        $result['has_discussions'] = $hasDiscussions;
 
         
         $archived = $object->archived;
@@ -2510,28 +2510,28 @@ class RequiredWorkflows implements ObjectMapper
         after_visibility:        $result['visibility'] = $visibility;
 
         
-        $pushed_at = $object->pushed_at;
+        $pushedAt = $object->pushedAt;
 
-        if ($pushed_at === null) {
-            goto after_pushed_at;
+        if ($pushedAt === null) {
+            goto after_pushedAt;
         }
-        after_pushed_at:        $result['pushed_at'] = $pushed_at;
+        after_pushedAt:        $result['pushed_at'] = $pushedAt;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $permissions = $object->permissions;
@@ -2543,53 +2543,53 @@ class RequiredWorkflows implements ObjectMapper
         after_permissions:        $result['permissions'] = $permissions;
 
         
-        $role_name = $object->role_name;
+        $roleName = $object->roleName;
 
-        if ($role_name === null) {
-            goto after_role_name;
+        if ($roleName === null) {
+            goto after_roleName;
         }
-        after_role_name:        $result['role_name'] = $role_name;
+        after_roleName:        $result['role_name'] = $roleName;
 
         
-        $temp_clone_token = $object->temp_clone_token;
+        $tempCloneToken = $object->tempCloneToken;
 
-        if ($temp_clone_token === null) {
-            goto after_temp_clone_token;
+        if ($tempCloneToken === null) {
+            goto after_tempCloneToken;
         }
-        after_temp_clone_token:        $result['temp_clone_token'] = $temp_clone_token;
+        after_tempCloneToken:        $result['temp_clone_token'] = $tempCloneToken;
 
         
-        $delete_branch_on_merge = $object->delete_branch_on_merge;
+        $deleteBranchOnMerge = $object->deleteBranchOnMerge;
 
-        if ($delete_branch_on_merge === null) {
-            goto after_delete_branch_on_merge;
+        if ($deleteBranchOnMerge === null) {
+            goto after_deleteBranchOnMerge;
         }
-        after_delete_branch_on_merge:        $result['delete_branch_on_merge'] = $delete_branch_on_merge;
+        after_deleteBranchOnMerge:        $result['delete_branch_on_merge'] = $deleteBranchOnMerge;
 
         
-        $subscribers_count = $object->subscribers_count;
+        $subscribersCount = $object->subscribersCount;
 
-        if ($subscribers_count === null) {
-            goto after_subscribers_count;
+        if ($subscribersCount === null) {
+            goto after_subscribersCount;
         }
-        after_subscribers_count:        $result['subscribers_count'] = $subscribers_count;
+        after_subscribersCount:        $result['subscribers_count'] = $subscribersCount;
 
         
-        $network_count = $object->network_count;
+        $networkCount = $object->networkCount;
 
-        if ($network_count === null) {
-            goto after_network_count;
+        if ($networkCount === null) {
+            goto after_networkCount;
         }
-        after_network_count:        $result['network_count'] = $network_count;
+        after_networkCount:        $result['network_count'] = $networkCount;
 
         
-        $code_of_conduct = $object->code_of_conduct;
+        $codeOfConduct = $object->codeOfConduct;
 
-        if ($code_of_conduct === null) {
-            goto after_code_of_conduct;
+        if ($codeOfConduct === null) {
+            goto after_codeOfConduct;
         }
-        $code_of_conduct = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($code_of_conduct);
-        after_code_of_conduct:        $result['code_of_conduct'] = $code_of_conduct;
+        $codeOfConduct = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($codeOfConduct);
+        after_codeOfConduct:        $result['code_of_conduct'] = $codeOfConduct;
 
         
         $license = $object->license;
@@ -2609,12 +2609,12 @@ class RequiredWorkflows implements ObjectMapper
         after_forks:        $result['forks'] = $forks;
 
         
-        $open_issues = $object->open_issues;
+        $openIssues = $object->openIssues;
 
-        if ($open_issues === null) {
-            goto after_open_issues;
+        if ($openIssues === null) {
+            goto after_openIssues;
         }
-        after_open_issues:        $result['open_issues'] = $open_issues;
+        after_openIssues:        $result['open_issues'] = $openIssues;
 
         
         $watchers = $object->watchers;
@@ -2625,29 +2625,29 @@ class RequiredWorkflows implements ObjectMapper
         after_watchers:        $result['watchers'] = $watchers;
 
         
-        $allow_forking = $object->allow_forking;
+        $allowForking = $object->allowForking;
 
-        if ($allow_forking === null) {
-            goto after_allow_forking;
+        if ($allowForking === null) {
+            goto after_allowForking;
         }
-        after_allow_forking:        $result['allow_forking'] = $allow_forking;
+        after_allowForking:        $result['allow_forking'] = $allowForking;
 
         
-        $web_commit_signoff_required = $object->web_commit_signoff_required;
+        $webCommitSignoffRequired = $object->webCommitSignoffRequired;
 
-        if ($web_commit_signoff_required === null) {
-            goto after_web_commit_signoff_required;
+        if ($webCommitSignoffRequired === null) {
+            goto after_webCommitSignoffRequired;
         }
-        after_web_commit_signoff_required:        $result['web_commit_signoff_required'] = $web_commit_signoff_required;
+        after_webCommitSignoffRequired:        $result['web_commit_signoff_required'] = $webCommitSignoffRequired;
 
         
-        $security_and_analysis = $object->security_and_analysis;
+        $securityAndAnalysis = $object->securityAndAnalysis;
 
-        if ($security_and_analysis === null) {
-            goto after_security_and_analysis;
+        if ($securityAndAnalysis === null) {
+            goto after_securityAndAnalysis;
         }
-        $security_and_analysis = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis($security_and_analysis);
-        after_security_and_analysis:        $result['security_and_analysis'] = $security_and_analysis;
+        $securityAndAnalysis = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis($securityAndAnalysis);
+        after_securityAndAnalysis:        $result['security_and_analysis'] = $securityAndAnalysis;
 
 
         return $result;
@@ -2683,80 +2683,80 @@ class RequiredWorkflows implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -2837,12 +2837,12 @@ class RequiredWorkflows implements ObjectMapper
         after_body:        $result['body'] = $body;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -2870,12 +2870,12 @@ class RequiredWorkflows implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $spdx_id = $object->spdx_id;
+        $spdxId = $object->spdxId;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($spdxId === null) {
+            goto after_spdxId;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_spdxId:        $result['spdx_id'] = $spdxId;
 
         
         $url = $object->url;
@@ -2886,12 +2886,12 @@ class RequiredWorkflows implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
 
         return $result;
@@ -2903,31 +2903,31 @@ class RequiredWorkflows implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis);
         $result = [];
 
-        $advanced_security = $object->advanced_security;
+        $advancedSecurity = $object->advancedSecurity;
 
-        if ($advanced_security === null) {
-            goto after_advanced_security;
+        if ($advancedSecurity === null) {
+            goto after_advancedSecurity;
         }
-        $advanced_security = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($advanced_security);
-        after_advanced_security:        $result['advanced_security'] = $advanced_security;
+        $advancedSecurity = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($advancedSecurity);
+        after_advancedSecurity:        $result['advanced_security'] = $advancedSecurity;
 
         
-        $secret_scanning = $object->secret_scanning;
+        $secretScanning = $object->secretScanning;
 
-        if ($secret_scanning === null) {
-            goto after_secret_scanning;
+        if ($secretScanning === null) {
+            goto after_secretScanning;
         }
-        $secret_scanning = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secret_scanning);
-        after_secret_scanning:        $result['secret_scanning'] = $secret_scanning;
+        $secretScanning = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secretScanning);
+        after_secretScanning:        $result['secret_scanning'] = $secretScanning;
 
         
-        $secret_scanning_push_protection = $object->secret_scanning_push_protection;
+        $secretScanningPushProtection = $object->secretScanningPushProtection;
 
-        if ($secret_scanning_push_protection === null) {
-            goto after_secret_scanning_push_protection;
+        if ($secretScanningPushProtection === null) {
+            goto after_secretScanningPushProtection;
         }
-        $secret_scanning_push_protection = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secret_scanning_push_protection);
-        after_secret_scanning_push_protection:        $result['secret_scanning_push_protection'] = $secret_scanning_push_protection;
+        $secretScanningPushProtection = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secretScanningPushProtection);
+        after_secretScanningPushProtection:        $result['secret_scanning_push_protection'] = $secretScanningPushProtection;
 
 
         return $result;
@@ -2964,12 +2964,12 @@ class RequiredWorkflows implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

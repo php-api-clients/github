@@ -15,17 +15,17 @@ final class DeleteDiscussionLegacy
     private const METHOD = 'DELETE';
     private const PATH = '/teams/{team_id}/discussions/{discussion_number}';
     /**The unique identifier of the team.**/
-    private int $team_id;
+    private int $teamId;
     /**The number that identifies the discussion.**/
-    private int $discussion_number;
-    public function __construct(int $team_id, int $discussion_number)
+    private int $discussionNumber;
+    public function __construct(int $teamId, int $discussionNumber)
     {
-        $this->team_id = $team_id;
-        $this->discussion_number = $discussion_number;
+        $this->teamId = $teamId;
+        $this->discussionNumber = $discussionNumber;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}'), array($this->team_id, $this->discussion_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}'), array($this->teamId, $this->discussionNumber), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

@@ -15,18 +15,18 @@ final class GetPublicSshKeyForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/keys/{key_id}';
     /**The unique identifier of the key.**/
-    private int $key_id;
+    private int $keyId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Keys\CbKeyIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Keys\CbKeyIdRcb $hydrator, int $key_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Keys\CbKeyIdRcb $hydrator, int $keyId)
     {
-        $this->key_id = $key_id;
+        $this->keyId = $keyId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{key_id}'), array($this->key_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{key_id}'), array($this->keyId), self::PATH));
     }
     /**
      * @return Schema\Key

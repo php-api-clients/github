@@ -19,19 +19,19 @@ final class DeleteForRelease
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the release.**/
-    private int $release_id;
+    private int $releaseId;
     /**The unique identifier of the reaction.**/
-    private int $reaction_id;
-    public function __construct(string $owner, string $repo, int $release_id, int $reaction_id)
+    private int $reactionId;
+    public function __construct(string $owner, string $repo, int $releaseId, int $reactionId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->release_id = $release_id;
-        $this->reaction_id = $reaction_id;
+        $this->releaseId = $releaseId;
+        $this->reactionId = $reactionId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{release_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->release_id, $this->reaction_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{release_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->releaseId, $this->reactionId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

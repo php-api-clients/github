@@ -23,25 +23,25 @@ final class ListForOrg
     /**The property to sort the results by.**/
     private string $sort;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Repos $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Repos $hydrator, string $org, string $type, string $direction, string $sort = 'created', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Repos $hydrator, string $org, string $type, string $direction, string $sort = 'created', int $perPage = 30, int $page = 1)
     {
         $this->org = $org;
         $this->type = $type;
         $this->direction = $direction;
         $this->sort = $sort;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{type}', '{direction}', '{sort}', '{per_page}', '{page}'), array($this->org, $this->type, $this->direction, $this->sort, $this->per_page, $this->page), self::PATH . '?type={type}&direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{type}', '{direction}', '{sort}', '{per_page}', '{page}'), array($this->org, $this->type, $this->direction, $this->sort, $this->perPage, $this->page), self::PATH . '?type={type}&direction={direction}&sort={sort}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\MinimalRepository>

@@ -13,11 +13,11 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"required":["head_sha"],"type":"object","properties":{"head_sha":{"type":"string","description":"The sha of the head commit."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"head_sha":"generated_head_sha_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"headSha":"generated_head_sha_null"}';
     /**
-     * head_sha: The sha of the head commit.
+     * headSha: The sha of the head commit.
      */
-    public function __construct(public string $head_sha)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('head_sha')] public string $headSha)
     {
     }
 }

@@ -15,20 +15,20 @@ final class RemoveRepositoryForSecretForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
     /**The name of the secret.**/
-    private string $secret_name;
-    private int $repository_id;
+    private string $secretName;
+    private int $repositoryId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories\CbRepositoryIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories\CbRepositoryIdRcb $hydrator, string $secret_name, int $repository_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\CbSecretNameRcb\Repositories\CbRepositoryIdRcb $hydrator, string $secretName, int $repositoryId)
     {
-        $this->secret_name = $secret_name;
-        $this->repository_id = $repository_id;
+        $this->secretName = $secretName;
+        $this->repositoryId = $repositoryId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}', '{repository_id}'), array($this->secret_name, $this->repository_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}', '{repository_id}'), array($this->secretName, $this->repositoryId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

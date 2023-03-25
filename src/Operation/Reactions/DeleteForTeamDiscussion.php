@@ -17,21 +17,21 @@ final class DeleteForTeamDiscussion
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The slug of the team name.**/
-    private string $team_slug;
+    private string $teamSlug;
     /**The number that identifies the discussion.**/
-    private int $discussion_number;
+    private int $discussionNumber;
     /**The unique identifier of the reaction.**/
-    private int $reaction_id;
-    public function __construct(string $org, string $team_slug, int $discussion_number, int $reaction_id)
+    private int $reactionId;
+    public function __construct(string $org, string $teamSlug, int $discussionNumber, int $reactionId)
     {
         $this->org = $org;
-        $this->team_slug = $team_slug;
-        $this->discussion_number = $discussion_number;
-        $this->reaction_id = $reaction_id;
+        $this->teamSlug = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
+        $this->reactionId = $reactionId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{reaction_id}'), array($this->org, $this->team_slug, $this->discussion_number, $this->reaction_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{team_slug}', '{discussion_number}', '{reaction_id}'), array($this->org, $this->teamSlug, $this->discussionNumber, $this->reactionId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

@@ -66,34 +66,34 @@ class Commits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['comments_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'comments_url';
-                goto after_comments_url;
+                goto after_commentsUrl;
             }
 
-            $properties['comments_url'] = $value;
+            $properties['commentsUrl'] = $value;
 
-            after_comments_url:
+            after_commentsUrl:
 
             $value = $payload['commit'] ?? null;
 
@@ -268,12 +268,12 @@ class Commits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'comment_count';
-                goto after_comment_count;
+                goto after_commentCount;
             }
 
-            $properties['comment_count'] = $value;
+            $properties['commentCount'] = $value;
 
-            after_comment_count:
+            after_commentCount:
 
             $value = $payload['tree'] ?? null;
 
@@ -469,13 +469,13 @@ class Commits implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Commit\Parents', $exception, stack: $this->hydrationStack);
@@ -622,34 +622,34 @@ class Commits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'blob_url';
-                goto after_blob_url;
+                goto after_blobUrl;
             }
 
-            $properties['blob_url'] = $value;
+            $properties['blobUrl'] = $value;
 
-            after_blob_url:
+            after_blobUrl:
 
             $value = $payload['raw_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'raw_url';
-                goto after_raw_url;
+                goto after_rawUrl;
             }
 
-            $properties['raw_url'] = $value;
+            $properties['rawUrl'] = $value;
 
-            after_raw_url:
+            after_rawUrl:
 
             $value = $payload['contents_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'contents_url';
-                goto after_contents_url;
+                goto after_contentsUrl;
             }
 
-            $properties['contents_url'] = $value;
+            $properties['contentsUrl'] = $value;
 
-            after_contents_url:
+            after_contentsUrl:
 
             $value = $payload['patch'] ?? null;
 
@@ -665,13 +665,13 @@ class Commits implements ObjectMapper
             $value = $payload['previous_filename'] ?? null;
 
             if ($value === null) {
-                $properties['previous_filename'] = null;
-                goto after_previous_filename;
+                $properties['previousFilename'] = null;
+                goto after_previousFilename;
             }
 
-            $properties['previous_filename'] = $value;
+            $properties['previousFilename'] = $value;
 
-            after_previous_filename:
+            after_previousFilename:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DiffEntry', $exception, stack: $this->hydrationStack);
@@ -812,16 +812,16 @@ class Commits implements ObjectMapper
         after_sha:        $result['sha'] = $sha;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $comments_url = $object->comments_url;
-        after_comments_url:        $result['comments_url'] = $comments_url;
+        $commentsUrl = $object->commentsUrl;
+        after_commentsUrl:        $result['comments_url'] = $commentsUrl;
 
         
         $commit = $object->commit;
@@ -917,8 +917,8 @@ class Commits implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $comment_count = $object->comment_count;
-        after_comment_count:        $result['comment_count'] = $comment_count;
+        $commentCount = $object->commentCount;
+        after_commentCount:        $result['comment_count'] = $commentCount;
 
         
         $tree = $object->tree;
@@ -1002,12 +1002,12 @@ class Commits implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -1076,16 +1076,16 @@ class Commits implements ObjectMapper
         after_changes:        $result['changes'] = $changes;
 
         
-        $blob_url = $object->blob_url;
-        after_blob_url:        $result['blob_url'] = $blob_url;
+        $blobUrl = $object->blobUrl;
+        after_blobUrl:        $result['blob_url'] = $blobUrl;
 
         
-        $raw_url = $object->raw_url;
-        after_raw_url:        $result['raw_url'] = $raw_url;
+        $rawUrl = $object->rawUrl;
+        after_rawUrl:        $result['raw_url'] = $rawUrl;
 
         
-        $contents_url = $object->contents_url;
-        after_contents_url:        $result['contents_url'] = $contents_url;
+        $contentsUrl = $object->contentsUrl;
+        after_contentsUrl:        $result['contents_url'] = $contentsUrl;
 
         
         $patch = $object->patch;
@@ -1096,12 +1096,12 @@ class Commits implements ObjectMapper
         after_patch:        $result['patch'] = $patch;
 
         
-        $previous_filename = $object->previous_filename;
+        $previousFilename = $object->previousFilename;
 
-        if ($previous_filename === null) {
-            goto after_previous_filename;
+        if ($previousFilename === null) {
+            goto after_previousFilename;
         }
-        after_previous_filename:        $result['previous_filename'] = $previous_filename;
+        after_previousFilename:        $result['previous_filename'] = $previousFilename;
 
 
         return $result;

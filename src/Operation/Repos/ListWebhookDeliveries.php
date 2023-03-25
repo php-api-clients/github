@@ -19,28 +19,28 @@ final class ListWebhookDeliveries
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the hook.**/
-    private int $hook_id;
+    private int $hookId;
     /**Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.**/
     private string $cursor;
     private bool $redelivery;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb\Deliveries $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb\Deliveries $hydrator, string $owner, string $repo, int $hook_id, string $cursor, bool $redelivery, int $per_page = 30)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb\Deliveries $hydrator, string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage = 30)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->hook_id = $hook_id;
+        $this->hookId = $hookId;
         $this->cursor = $cursor;
         $this->redelivery = $redelivery;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'), array($this->owner, $this->repo, $this->hook_id, $this->cursor, $this->redelivery, $this->per_page), self::PATH . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'), array($this->owner, $this->repo, $this->hookId, $this->cursor, $this->redelivery, $this->perPage), self::PATH . '?cursor={cursor}&redelivery={redelivery}&perPage={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\HookDeliveryItem>

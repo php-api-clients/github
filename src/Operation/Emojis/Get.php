@@ -26,9 +26,9 @@ final class Get
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array(), array(), self::PATH));
     }
     /**
-     * @return Schema\Operation\Emojis\Get\Response\Applicationjson\H200
+     * @return Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Emojis\Get\Response\Applicationjson\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -37,8 +37,8 @@ final class Get
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Emojis\Get\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Emojis\Get\Response\Applicationjson\H200::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization::class, $body);
                 }
                 break;
         }

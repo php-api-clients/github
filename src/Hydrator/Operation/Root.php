@@ -38,364 +38,364 @@ class Root implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'current_user_url';
-                goto after_current_user_url;
+                goto after_currentUserUrl;
             }
 
-            $properties['current_user_url'] = $value;
+            $properties['currentUserUrl'] = $value;
 
-            after_current_user_url:
+            after_currentUserUrl:
 
             $value = $payload['current_user_authorizations_html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'current_user_authorizations_html_url';
-                goto after_current_user_authorizations_html_url;
+                goto after_currentUserAuthorizationsHtmlUrl;
             }
 
-            $properties['current_user_authorizations_html_url'] = $value;
+            $properties['currentUserAuthorizationsHtmlUrl'] = $value;
 
-            after_current_user_authorizations_html_url:
+            after_currentUserAuthorizationsHtmlUrl:
 
             $value = $payload['authorizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'authorizations_url';
-                goto after_authorizations_url;
+                goto after_authorizationsUrl;
             }
 
-            $properties['authorizations_url'] = $value;
+            $properties['authorizationsUrl'] = $value;
 
-            after_authorizations_url:
+            after_authorizationsUrl:
 
             $value = $payload['code_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'code_search_url';
-                goto after_code_search_url;
+                goto after_codeSearchUrl;
             }
 
-            $properties['code_search_url'] = $value;
+            $properties['codeSearchUrl'] = $value;
 
-            after_code_search_url:
+            after_codeSearchUrl:
 
             $value = $payload['commit_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'commit_search_url';
-                goto after_commit_search_url;
+                goto after_commitSearchUrl;
             }
 
-            $properties['commit_search_url'] = $value;
+            $properties['commitSearchUrl'] = $value;
 
-            after_commit_search_url:
+            after_commitSearchUrl:
 
             $value = $payload['emails_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'emails_url';
-                goto after_emails_url;
+                goto after_emailsUrl;
             }
 
-            $properties['emails_url'] = $value;
+            $properties['emailsUrl'] = $value;
 
-            after_emails_url:
+            after_emailsUrl:
 
             $value = $payload['emojis_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'emojis_url';
-                goto after_emojis_url;
+                goto after_emojisUrl;
             }
 
-            $properties['emojis_url'] = $value;
+            $properties['emojisUrl'] = $value;
 
-            after_emojis_url:
+            after_emojisUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['feeds_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'feeds_url';
-                goto after_feeds_url;
+                goto after_feedsUrl;
             }
 
-            $properties['feeds_url'] = $value;
+            $properties['feedsUrl'] = $value;
 
-            after_feeds_url:
+            after_feedsUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['hub_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'hub_url';
-                goto after_hub_url;
+                goto after_hubUrl;
             }
 
-            $properties['hub_url'] = $value;
+            $properties['hubUrl'] = $value;
 
-            after_hub_url:
+            after_hubUrl:
 
             $value = $payload['issue_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issue_search_url';
-                goto after_issue_search_url;
+                goto after_issueSearchUrl;
             }
 
-            $properties['issue_search_url'] = $value;
+            $properties['issueSearchUrl'] = $value;
 
-            after_issue_search_url:
+            after_issueSearchUrl:
 
             $value = $payload['issues_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'issues_url';
-                goto after_issues_url;
+                goto after_issuesUrl;
             }
 
-            $properties['issues_url'] = $value;
+            $properties['issuesUrl'] = $value;
 
-            after_issues_url:
+            after_issuesUrl:
 
             $value = $payload['keys_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'keys_url';
-                goto after_keys_url;
+                goto after_keysUrl;
             }
 
-            $properties['keys_url'] = $value;
+            $properties['keysUrl'] = $value;
 
-            after_keys_url:
+            after_keysUrl:
 
             $value = $payload['label_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'label_search_url';
-                goto after_label_search_url;
+                goto after_labelSearchUrl;
             }
 
-            $properties['label_search_url'] = $value;
+            $properties['labelSearchUrl'] = $value;
 
-            after_label_search_url:
+            after_labelSearchUrl:
 
             $value = $payload['notifications_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'notifications_url';
-                goto after_notifications_url;
+                goto after_notificationsUrl;
             }
 
-            $properties['notifications_url'] = $value;
+            $properties['notificationsUrl'] = $value;
 
-            after_notifications_url:
+            after_notificationsUrl:
 
             $value = $payload['organization_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organization_url';
-                goto after_organization_url;
+                goto after_organizationUrl;
             }
 
-            $properties['organization_url'] = $value;
+            $properties['organizationUrl'] = $value;
 
-            after_organization_url:
+            after_organizationUrl:
 
             $value = $payload['organization_repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organization_repositories_url';
-                goto after_organization_repositories_url;
+                goto after_organizationRepositoriesUrl;
             }
 
-            $properties['organization_repositories_url'] = $value;
+            $properties['organizationRepositoriesUrl'] = $value;
 
-            after_organization_repositories_url:
+            after_organizationRepositoriesUrl:
 
             $value = $payload['organization_teams_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organization_teams_url';
-                goto after_organization_teams_url;
+                goto after_organizationTeamsUrl;
             }
 
-            $properties['organization_teams_url'] = $value;
+            $properties['organizationTeamsUrl'] = $value;
 
-            after_organization_teams_url:
+            after_organizationTeamsUrl:
 
             $value = $payload['public_gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_gists_url';
-                goto after_public_gists_url;
+                goto after_publicGistsUrl;
             }
 
-            $properties['public_gists_url'] = $value;
+            $properties['publicGistsUrl'] = $value;
 
-            after_public_gists_url:
+            after_publicGistsUrl:
 
             $value = $payload['rate_limit_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'rate_limit_url';
-                goto after_rate_limit_url;
+                goto after_rateLimitUrl;
             }
 
-            $properties['rate_limit_url'] = $value;
+            $properties['rateLimitUrl'] = $value;
 
-            after_rate_limit_url:
+            after_rateLimitUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_url';
-                goto after_repository_url;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
             $value = $payload['repository_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_search_url';
-                goto after_repository_search_url;
+                goto after_repositorySearchUrl;
             }
 
-            $properties['repository_search_url'] = $value;
+            $properties['repositorySearchUrl'] = $value;
 
-            after_repository_search_url:
+            after_repositorySearchUrl:
 
             $value = $payload['current_user_repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'current_user_repositories_url';
-                goto after_current_user_repositories_url;
+                goto after_currentUserRepositoriesUrl;
             }
 
-            $properties['current_user_repositories_url'] = $value;
+            $properties['currentUserRepositoriesUrl'] = $value;
 
-            after_current_user_repositories_url:
+            after_currentUserRepositoriesUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['starred_gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_gists_url';
-                goto after_starred_gists_url;
+                goto after_starredGistsUrl;
             }
 
-            $properties['starred_gists_url'] = $value;
+            $properties['starredGistsUrl'] = $value;
 
-            after_starred_gists_url:
+            after_starredGistsUrl:
 
             $value = $payload['topic_search_url'] ?? null;
 
             if ($value === null) {
-                $properties['topic_search_url'] = null;
-                goto after_topic_search_url;
+                $properties['topicSearchUrl'] = null;
+                goto after_topicSearchUrl;
             }
 
-            $properties['topic_search_url'] = $value;
+            $properties['topicSearchUrl'] = $value;
 
-            after_topic_search_url:
+            after_topicSearchUrl:
 
             $value = $payload['user_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'user_url';
-                goto after_user_url;
+                goto after_userUrl;
             }
 
-            $properties['user_url'] = $value;
+            $properties['userUrl'] = $value;
 
-            after_user_url:
+            after_userUrl:
 
             $value = $payload['user_organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'user_organizations_url';
-                goto after_user_organizations_url;
+                goto after_userOrganizationsUrl;
             }
 
-            $properties['user_organizations_url'] = $value;
+            $properties['userOrganizationsUrl'] = $value;
 
-            after_user_organizations_url:
+            after_userOrganizationsUrl:
 
             $value = $payload['user_repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'user_repositories_url';
-                goto after_user_repositories_url;
+                goto after_userRepositoriesUrl;
             }
 
-            $properties['user_repositories_url'] = $value;
+            $properties['userRepositoriesUrl'] = $value;
 
-            after_user_repositories_url:
+            after_userRepositoriesUrl:
 
             $value = $payload['user_search_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'user_search_url';
-                goto after_user_search_url;
+                goto after_userSearchUrl;
             }
 
-            $properties['user_search_url'] = $value;
+            $properties['userSearchUrl'] = $value;
 
-            after_user_search_url:
+            after_userSearchUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Root', $exception, stack: $this->hydrationStack);
@@ -522,140 +522,140 @@ class Root implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Root);
         $result = [];
 
-        $current_user_url = $object->current_user_url;
-        after_current_user_url:        $result['current_user_url'] = $current_user_url;
+        $currentUserUrl = $object->currentUserUrl;
+        after_currentUserUrl:        $result['current_user_url'] = $currentUserUrl;
 
         
-        $current_user_authorizations_html_url = $object->current_user_authorizations_html_url;
-        after_current_user_authorizations_html_url:        $result['current_user_authorizations_html_url'] = $current_user_authorizations_html_url;
+        $currentUserAuthorizationsHtmlUrl = $object->currentUserAuthorizationsHtmlUrl;
+        after_currentUserAuthorizationsHtmlUrl:        $result['current_user_authorizations_html_url'] = $currentUserAuthorizationsHtmlUrl;
 
         
-        $authorizations_url = $object->authorizations_url;
-        after_authorizations_url:        $result['authorizations_url'] = $authorizations_url;
+        $authorizationsUrl = $object->authorizationsUrl;
+        after_authorizationsUrl:        $result['authorizations_url'] = $authorizationsUrl;
 
         
-        $code_search_url = $object->code_search_url;
-        after_code_search_url:        $result['code_search_url'] = $code_search_url;
+        $codeSearchUrl = $object->codeSearchUrl;
+        after_codeSearchUrl:        $result['code_search_url'] = $codeSearchUrl;
 
         
-        $commit_search_url = $object->commit_search_url;
-        after_commit_search_url:        $result['commit_search_url'] = $commit_search_url;
+        $commitSearchUrl = $object->commitSearchUrl;
+        after_commitSearchUrl:        $result['commit_search_url'] = $commitSearchUrl;
 
         
-        $emails_url = $object->emails_url;
-        after_emails_url:        $result['emails_url'] = $emails_url;
+        $emailsUrl = $object->emailsUrl;
+        after_emailsUrl:        $result['emails_url'] = $emailsUrl;
 
         
-        $emojis_url = $object->emojis_url;
-        after_emojis_url:        $result['emojis_url'] = $emojis_url;
+        $emojisUrl = $object->emojisUrl;
+        after_emojisUrl:        $result['emojis_url'] = $emojisUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $feeds_url = $object->feeds_url;
-        after_feeds_url:        $result['feeds_url'] = $feeds_url;
+        $feedsUrl = $object->feedsUrl;
+        after_feedsUrl:        $result['feeds_url'] = $feedsUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $hub_url = $object->hub_url;
-        after_hub_url:        $result['hub_url'] = $hub_url;
+        $hubUrl = $object->hubUrl;
+        after_hubUrl:        $result['hub_url'] = $hubUrl;
 
         
-        $issue_search_url = $object->issue_search_url;
-        after_issue_search_url:        $result['issue_search_url'] = $issue_search_url;
+        $issueSearchUrl = $object->issueSearchUrl;
+        after_issueSearchUrl:        $result['issue_search_url'] = $issueSearchUrl;
 
         
-        $issues_url = $object->issues_url;
-        after_issues_url:        $result['issues_url'] = $issues_url;
+        $issuesUrl = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
 
         
-        $keys_url = $object->keys_url;
-        after_keys_url:        $result['keys_url'] = $keys_url;
+        $keysUrl = $object->keysUrl;
+        after_keysUrl:        $result['keys_url'] = $keysUrl;
 
         
-        $label_search_url = $object->label_search_url;
-        after_label_search_url:        $result['label_search_url'] = $label_search_url;
+        $labelSearchUrl = $object->labelSearchUrl;
+        after_labelSearchUrl:        $result['label_search_url'] = $labelSearchUrl;
 
         
-        $notifications_url = $object->notifications_url;
-        after_notifications_url:        $result['notifications_url'] = $notifications_url;
+        $notificationsUrl = $object->notificationsUrl;
+        after_notificationsUrl:        $result['notifications_url'] = $notificationsUrl;
 
         
-        $organization_url = $object->organization_url;
-        after_organization_url:        $result['organization_url'] = $organization_url;
+        $organizationUrl = $object->organizationUrl;
+        after_organizationUrl:        $result['organization_url'] = $organizationUrl;
 
         
-        $organization_repositories_url = $object->organization_repositories_url;
-        after_organization_repositories_url:        $result['organization_repositories_url'] = $organization_repositories_url;
+        $organizationRepositoriesUrl = $object->organizationRepositoriesUrl;
+        after_organizationRepositoriesUrl:        $result['organization_repositories_url'] = $organizationRepositoriesUrl;
 
         
-        $organization_teams_url = $object->organization_teams_url;
-        after_organization_teams_url:        $result['organization_teams_url'] = $organization_teams_url;
+        $organizationTeamsUrl = $object->organizationTeamsUrl;
+        after_organizationTeamsUrl:        $result['organization_teams_url'] = $organizationTeamsUrl;
 
         
-        $public_gists_url = $object->public_gists_url;
-        after_public_gists_url:        $result['public_gists_url'] = $public_gists_url;
+        $publicGistsUrl = $object->publicGistsUrl;
+        after_publicGistsUrl:        $result['public_gists_url'] = $publicGistsUrl;
 
         
-        $rate_limit_url = $object->rate_limit_url;
-        after_rate_limit_url:        $result['rate_limit_url'] = $rate_limit_url;
+        $rateLimitUrl = $object->rateLimitUrl;
+        after_rateLimitUrl:        $result['rate_limit_url'] = $rateLimitUrl;
 
         
-        $repository_url = $object->repository_url;
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        $repositoryUrl = $object->repositoryUrl;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
         
-        $repository_search_url = $object->repository_search_url;
-        after_repository_search_url:        $result['repository_search_url'] = $repository_search_url;
+        $repositorySearchUrl = $object->repositorySearchUrl;
+        after_repositorySearchUrl:        $result['repository_search_url'] = $repositorySearchUrl;
 
         
-        $current_user_repositories_url = $object->current_user_repositories_url;
-        after_current_user_repositories_url:        $result['current_user_repositories_url'] = $current_user_repositories_url;
+        $currentUserRepositoriesUrl = $object->currentUserRepositoriesUrl;
+        after_currentUserRepositoriesUrl:        $result['current_user_repositories_url'] = $currentUserRepositoriesUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $starred_gists_url = $object->starred_gists_url;
-        after_starred_gists_url:        $result['starred_gists_url'] = $starred_gists_url;
+        $starredGistsUrl = $object->starredGistsUrl;
+        after_starredGistsUrl:        $result['starred_gists_url'] = $starredGistsUrl;
 
         
-        $topic_search_url = $object->topic_search_url;
+        $topicSearchUrl = $object->topicSearchUrl;
 
-        if ($topic_search_url === null) {
-            goto after_topic_search_url;
+        if ($topicSearchUrl === null) {
+            goto after_topicSearchUrl;
         }
-        after_topic_search_url:        $result['topic_search_url'] = $topic_search_url;
+        after_topicSearchUrl:        $result['topic_search_url'] = $topicSearchUrl;
 
         
-        $user_url = $object->user_url;
-        after_user_url:        $result['user_url'] = $user_url;
+        $userUrl = $object->userUrl;
+        after_userUrl:        $result['user_url'] = $userUrl;
 
         
-        $user_organizations_url = $object->user_organizations_url;
-        after_user_organizations_url:        $result['user_organizations_url'] = $user_organizations_url;
+        $userOrganizationsUrl = $object->userOrganizationsUrl;
+        after_userOrganizationsUrl:        $result['user_organizations_url'] = $userOrganizationsUrl;
 
         
-        $user_repositories_url = $object->user_repositories_url;
-        after_user_repositories_url:        $result['user_repositories_url'] = $user_repositories_url;
+        $userRepositoriesUrl = $object->userRepositoriesUrl;
+        after_userRepositoriesUrl:        $result['user_repositories_url'] = $userRepositoriesUrl;
 
         
-        $user_search_url = $object->user_search_url;
-        after_user_search_url:        $result['user_search_url'] = $user_search_url;
+        $userSearchUrl = $object->userSearchUrl;
+        after_userSearchUrl:        $result['user_search_url'] = $userSearchUrl;
 
 
         return $result;

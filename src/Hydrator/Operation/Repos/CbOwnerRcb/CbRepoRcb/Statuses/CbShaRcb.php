@@ -48,13 +48,13 @@ class CbShaRcb implements ObjectMapper
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
-                $properties['avatar_url'] = null;
-                goto after_avatar_url;
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -71,12 +71,12 @@ class CbShaRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['state'] ?? null;
 
@@ -103,13 +103,13 @@ class CbShaRcb implements ObjectMapper
             $value = $payload['target_url'] ?? null;
 
             if ($value === null) {
-                $properties['target_url'] = null;
-                goto after_target_url;
+                $properties['targetUrl'] = null;
+                goto after_targetUrl;
             }
 
-            $properties['target_url'] = $value;
+            $properties['targetUrl'] = $value;
 
-            after_target_url:
+            after_targetUrl:
 
             $value = $payload['context'] ?? null;
 
@@ -126,23 +126,23 @@ class CbShaRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['creator'] ?? null;
 
@@ -284,20 +284,20 @@ class CbShaRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $avatar_url = $object->avatar_url;
+        $avatarUrl = $object->avatarUrl;
 
-        if ($avatar_url === null) {
-            goto after_avatar_url;
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
         }
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
         $id = $object->id;
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $state = $object->state;
@@ -312,24 +312,24 @@ class CbShaRcb implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $target_url = $object->target_url;
+        $targetUrl = $object->targetUrl;
 
-        if ($target_url === null) {
-            goto after_target_url;
+        if ($targetUrl === null) {
+            goto after_targetUrl;
         }
-        after_target_url:        $result['target_url'] = $target_url;
+        after_targetUrl:        $result['target_url'] = $targetUrl;
 
         
         $context = $object->context;
         after_context:        $result['context'] = $context;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $creator = $object->creator;

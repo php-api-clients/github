@@ -14,18 +14,18 @@ final class GetBySlug
     public const OPERATION_MATCH = 'GET /apps/{app_slug}';
     private const METHOD = 'GET';
     private const PATH = '/apps/{app_slug}';
-    private string $app_slug;
+    private string $appSlug;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Apps\CbAppSlugRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Apps\CbAppSlugRcb $hydrator, string $app_slug)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Apps\CbAppSlugRcb $hydrator, string $appSlug)
     {
-        $this->app_slug = $app_slug;
+        $this->appSlug = $appSlug;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{app_slug}'), array($this->app_slug), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{app_slug}'), array($this->appSlug), self::PATH));
     }
     /**
      * @return Schema\Integration

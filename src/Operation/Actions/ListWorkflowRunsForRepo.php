@@ -29,18 +29,18 @@ final class ListWorkflowRunsForRepo
     /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."**/
     private string $created;
     /**Returns workflow runs with the `check_suite_id` that you specify.**/
-    private int $check_suite_id;
+    private int $checkSuiteId;
     /**Only returns workflow runs that are associated with the specified `head_sha`.**/
-    private string $head_sha;
+    private string $headSha;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     /**If `true` pull requests are omitted from the response (empty array).**/
-    private bool $exclude_pull_requests;
+    private bool $excludePullRequests;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs $hydrator, string $owner, string $repo, string $actor, string $branch, string $event, string $status, string $created, int $check_suite_id, string $head_sha, int $per_page = 30, int $page = 1, bool $exclude_pull_requests = false)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs $hydrator, string $owner, string $repo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -49,17 +49,17 @@ final class ListWorkflowRunsForRepo
         $this->event = $event;
         $this->status = $status;
         $this->created = $created;
-        $this->check_suite_id = $check_suite_id;
-        $this->head_sha = $head_sha;
-        $this->per_page = $per_page;
+        $this->checkSuiteId = $checkSuiteId;
+        $this->headSha = $headSha;
+        $this->perPage = $perPage;
         $this->page = $page;
-        $this->exclude_pull_requests = $exclude_pull_requests;
+        $this->excludePullRequests = $excludePullRequests;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->check_suite_id, $this->head_sha, $this->per_page, $this->page, $this->exclude_pull_requests), self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->checkSuiteId, $this->headSha, $this->perPage, $this->page, $this->excludePullRequests), self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&checkSuiteId={check_suite_id}&headSha={head_sha}&perPage={per_page}&page={page}&excludePullRequests={exclude_pull_requests}'));
     }
     /**
      * @return Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200

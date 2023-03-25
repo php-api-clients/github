@@ -38,12 +38,12 @@ class PublicKey implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'key_id';
-                goto after_key_id;
+                goto after_keyId;
             }
 
-            $properties['key_id'] = $value;
+            $properties['keyId'] = $value;
 
-            after_key_id:
+            after_keyId:
 
             $value = $payload['key'] ?? null;
 
@@ -181,8 +181,8 @@ class PublicKey implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotPublicKey);
         $result = [];
 
-        $key_id = $object->key_id;
-        after_key_id:        $result['key_id'] = $key_id;
+        $keyId = $object->keyId;
+        after_keyId:        $result['key_id'] = $keyId;
 
         
         $key = $object->key;

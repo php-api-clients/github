@@ -15,14 +15,14 @@ final class DeleteSecretForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/codespaces/secrets/{secret_name}';
     /**The name of the secret.**/
-    private string $secret_name;
-    public function __construct(string $secret_name)
+    private string $secretName;
+    public function __construct(string $secretName)
     {
-        $this->secret_name = $secret_name;
+        $this->secretName = $secretName;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}'), array($this->secret_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{secret_name}'), array($this->secretName), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

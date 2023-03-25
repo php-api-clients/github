@@ -19,22 +19,22 @@ final class GetDeploymentStatus
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**deployment_id parameter**/
-    private int $deployment_id;
-    private int $status_id;
+    private int $deploymentId;
+    private int $statusId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Deployments\CbDeploymentIdRcb\Statuses\CbStatusIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Deployments\CbDeploymentIdRcb\Statuses\CbStatusIdRcb $hydrator, string $owner, string $repo, int $deployment_id, int $status_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Deployments\CbDeploymentIdRcb\Statuses\CbStatusIdRcb $hydrator, string $owner, string $repo, int $deploymentId, int $statusId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->deployment_id = $deployment_id;
-        $this->status_id = $status_id;
+        $this->deploymentId = $deploymentId;
+        $this->statusId = $statusId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{deployment_id}', '{status_id}'), array($this->owner, $this->repo, $this->deployment_id, $this->status_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{deployment_id}', '{status_id}'), array($this->owner, $this->repo, $this->deploymentId, $this->statusId), self::PATH));
     }
     /**
      * @return Schema\DeploymentStatus

@@ -15,27 +15,27 @@ final class ListCollaborators
     private const METHOD = 'GET';
     private const PATH = '/projects/{project_id}/collaborators';
     /**The unique identifier of the project.**/
-    private int $project_id;
+    private int $projectId;
     /**Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.**/
     private string $affiliation;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators $hydrator, int $project_id, string $affiliation = 'all', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\CbProjectIdRcb\Collaborators $hydrator, int $projectId, string $affiliation = 'all', int $perPage = 30, int $page = 1)
     {
-        $this->project_id = $project_id;
+        $this->projectId = $projectId;
         $this->affiliation = $affiliation;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{project_id}', '{affiliation}', '{per_page}', '{page}'), array($this->project_id, $this->affiliation, $this->per_page, $this->page), self::PATH . '?affiliation={affiliation}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{project_id}', '{affiliation}', '{per_page}', '{page}'), array($this->projectId, $this->affiliation, $this->perPage, $this->page), self::PATH . '?affiliation={affiliation}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\SimpleUser>

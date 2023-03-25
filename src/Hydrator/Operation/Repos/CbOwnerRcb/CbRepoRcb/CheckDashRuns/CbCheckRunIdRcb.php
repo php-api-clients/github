@@ -55,34 +55,34 @@ class CbCheckRunIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'head_sha';
-                goto after_head_sha;
+                goto after_headSha;
             }
 
-            $properties['head_sha'] = $value;
+            $properties['headSha'] = $value;
 
-            after_head_sha:
+            after_headSha:
 
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['external_id'] ?? null;
 
             if ($value === null) {
-                $properties['external_id'] = null;
-                goto after_external_id;
+                $properties['externalId'] = null;
+                goto after_externalId;
             }
 
-            $properties['external_id'] = $value;
+            $properties['externalId'] = $value;
 
-            after_external_id:
+            after_externalId:
 
             $value = $payload['url'] ?? null;
 
@@ -98,24 +98,24 @@ class CbCheckRunIdRcb implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['details_url'] ?? null;
 
             if ($value === null) {
-                $properties['details_url'] = null;
-                goto after_details_url;
+                $properties['detailsUrl'] = null;
+                goto after_detailsUrl;
             }
 
-            $properties['details_url'] = $value;
+            $properties['detailsUrl'] = $value;
 
-            after_details_url:
+            after_detailsUrl:
 
             $value = $payload['status'] ?? null;
 
@@ -142,24 +142,24 @@ class CbCheckRunIdRcb implements ObjectMapper
             $value = $payload['started_at'] ?? null;
 
             if ($value === null) {
-                $properties['started_at'] = null;
-                goto after_started_at;
+                $properties['startedAt'] = null;
+                goto after_startedAt;
             }
 
-            $properties['started_at'] = $value;
+            $properties['startedAt'] = $value;
 
-            after_started_at:
+            after_startedAt:
 
             $value = $payload['completed_at'] ?? null;
 
             if ($value === null) {
-                $properties['completed_at'] = null;
-                goto after_completed_at;
+                $properties['completedAt'] = null;
+                goto after_completedAt;
             }
 
-            $properties['completed_at'] = $value;
+            $properties['completedAt'] = $value;
 
-            after_completed_at:
+            after_completedAt:
 
             $value = $payload['output'] ?? null;
 
@@ -195,22 +195,22 @@ class CbCheckRunIdRcb implements ObjectMapper
             $value = $payload['check_suite'] ?? null;
 
             if ($value === null) {
-                $properties['check_suite'] = null;
-                goto after_check_suite;
+                $properties['checkSuite'] = null;
+                goto after_checkSuite;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'check_suite';
+                    $this->hydrationStack[] = 'checkSuite';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CheckRun⚡️CheckSuite($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['check_suite'] = $value;
+            $properties['checkSuite'] = $value;
 
-            after_check_suite:
+            after_checkSuite:
 
             $value = $payload['app'] ?? null;
 
@@ -227,22 +227,22 @@ class CbCheckRunIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'pull_requests';
-                goto after_pull_requests;
+                goto after_pullRequests;
             }
 
-            static $pull_requestsCaster1;
+            static $pullRequestsCaster1;
 
-            if ($pull_requestsCaster1 === null) {
-                $pull_requestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($pullRequestsCaster1 === null) {
+                $pullRequestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\PullRequestMinimal',
 ));
             }
 
-            $value = $pull_requestsCaster1->cast($value, $this);
+            $value = $pullRequestsCaster1->cast($value, $this);
 
-            $properties['pull_requests'] = $value;
+            $properties['pullRequests'] = $value;
 
-            after_pull_requests:
+            after_pullRequests:
 
             $value = $payload['deployment'] ?? null;
 
@@ -322,23 +322,23 @@ class CbCheckRunIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'annotations_count';
-                goto after_annotations_count;
+                goto after_annotationsCount;
             }
 
-            $properties['annotations_count'] = $value;
+            $properties['annotationsCount'] = $value;
 
-            after_annotations_count:
+            after_annotationsCount:
 
             $value = $payload['annotations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'annotations_url';
-                goto after_annotations_url;
+                goto after_annotationsUrl;
             }
 
-            $properties['annotations_url'] = $value;
+            $properties['annotationsUrl'] = $value;
 
-            after_annotations_url:
+            after_annotationsUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CheckRun\Output', $exception, stack: $this->hydrationStack);
@@ -630,12 +630,12 @@ class CbCheckRunIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['task'] ?? null;
 
@@ -651,13 +651,13 @@ class CbCheckRunIdRcb implements ObjectMapper
             $value = $payload['original_environment'] ?? null;
 
             if ($value === null) {
-                $properties['original_environment'] = null;
-                goto after_original_environment;
+                $properties['originalEnvironment'] = null;
+                goto after_originalEnvironment;
             }
 
-            $properties['original_environment'] = $value;
+            $properties['originalEnvironment'] = $value;
 
-            after_original_environment:
+            after_originalEnvironment:
 
             $value = $payload['environment'] ?? null;
 
@@ -685,78 +685,78 @@ class CbCheckRunIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['statuses_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'statuses_url';
-                goto after_statuses_url;
+                goto after_statusesUrl;
             }
 
-            $properties['statuses_url'] = $value;
+            $properties['statusesUrl'] = $value;
 
-            after_statuses_url:
+            after_statusesUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_url';
-                goto after_repository_url;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
             $value = $payload['transient_environment'] ?? null;
 
             if ($value === null) {
-                $properties['transient_environment'] = null;
-                goto after_transient_environment;
+                $properties['transientEnvironment'] = null;
+                goto after_transientEnvironment;
             }
 
-            $properties['transient_environment'] = $value;
+            $properties['transientEnvironment'] = $value;
 
-            after_transient_environment:
+            after_transientEnvironment:
 
             $value = $payload['production_environment'] ?? null;
 
             if ($value === null) {
-                $properties['production_environment'] = null;
-                goto after_production_environment;
+                $properties['productionEnvironment'] = null;
+                goto after_productionEnvironment;
             }
 
-            $properties['production_environment'] = $value;
+            $properties['productionEnvironment'] = $value;
 
-            after_production_environment:
+            after_productionEnvironment:
 
             $value = $payload['performed_via_github_app'] ?? null;
 
             if ($value === null) {
-                $properties['performed_via_github_app'] = null;
-                goto after_performed_via_github_app;
+                $properties['performedViaGithubApp'] = null;
+                goto after_performedViaGithubApp;
             }
 
-            $properties['performed_via_github_app'] = $value;
+            $properties['performedViaGithubApp'] = $value;
 
-            after_performed_via_github_app:
+            after_performedViaGithubApp:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentSimple', $exception, stack: $this->hydrationStack);
@@ -893,40 +893,40 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $head_sha = $object->head_sha;
-        after_head_sha:        $result['head_sha'] = $head_sha;
+        $headSha = $object->headSha;
+        after_headSha:        $result['head_sha'] = $headSha;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $external_id = $object->external_id;
+        $externalId = $object->externalId;
 
-        if ($external_id === null) {
-            goto after_external_id;
+        if ($externalId === null) {
+            goto after_externalId;
         }
-        after_external_id:        $result['external_id'] = $external_id;
+        after_externalId:        $result['external_id'] = $externalId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $details_url = $object->details_url;
+        $detailsUrl = $object->detailsUrl;
 
-        if ($details_url === null) {
-            goto after_details_url;
+        if ($detailsUrl === null) {
+            goto after_detailsUrl;
         }
-        after_details_url:        $result['details_url'] = $details_url;
+        after_detailsUrl:        $result['details_url'] = $detailsUrl;
 
         
         $status = $object->status;
@@ -941,20 +941,20 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_conclusion:        $result['conclusion'] = $conclusion;
 
         
-        $started_at = $object->started_at;
+        $startedAt = $object->startedAt;
 
-        if ($started_at === null) {
-            goto after_started_at;
+        if ($startedAt === null) {
+            goto after_startedAt;
         }
-        after_started_at:        $result['started_at'] = $started_at;
+        after_startedAt:        $result['started_at'] = $startedAt;
 
         
-        $completed_at = $object->completed_at;
+        $completedAt = $object->completedAt;
 
-        if ($completed_at === null) {
-            goto after_completed_at;
+        if ($completedAt === null) {
+            goto after_completedAt;
         }
-        after_completed_at:        $result['completed_at'] = $completed_at;
+        after_completedAt:        $result['completed_at'] = $completedAt;
 
         
         $output = $object->output;
@@ -966,13 +966,13 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $check_suite = $object->check_suite;
+        $checkSuite = $object->checkSuite;
 
-        if ($check_suite === null) {
-            goto after_check_suite;
+        if ($checkSuite === null) {
+            goto after_checkSuite;
         }
-        $check_suite = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CheckRun⚡️CheckSuite($check_suite);
-        after_check_suite:        $result['check_suite'] = $check_suite;
+        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CheckRun⚡️CheckSuite($checkSuite);
+        after_checkSuite:        $result['check_suite'] = $checkSuite;
 
         
         $app = $object->app;
@@ -983,17 +983,17 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_app:        $result['app'] = $app;
 
         
-        $pull_requests = $object->pull_requests;
-        static $pull_requestsSerializer0;
+        $pullRequests = $object->pullRequests;
+        static $pullRequestsSerializer0;
 
-        if ($pull_requestsSerializer0 === null) {
-            $pull_requestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($pullRequestsSerializer0 === null) {
+            $pullRequestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\PullRequestMinimal',
 ));
         }
         
-        $pull_requests = $pull_requestsSerializer0->serialize($pull_requests, $this);
-        after_pull_requests:        $result['pull_requests'] = $pull_requests;
+        $pullRequests = $pullRequestsSerializer0->serialize($pullRequests, $this);
+        after_pullRequests:        $result['pull_requests'] = $pullRequests;
 
         
         $deployment = $object->deployment;
@@ -1038,12 +1038,12 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_text:        $result['text'] = $text;
 
         
-        $annotations_count = $object->annotations_count;
-        after_annotations_count:        $result['annotations_count'] = $annotations_count;
+        $annotationsCount = $object->annotationsCount;
+        after_annotationsCount:        $result['annotations_count'] = $annotationsCount;
 
         
-        $annotations_url = $object->annotations_url;
-        after_annotations_url:        $result['annotations_url'] = $annotations_url;
+        $annotationsUrl = $object->annotationsUrl;
+        after_annotationsUrl:        $result['annotations_url'] = $annotationsUrl;
 
 
         return $result;
@@ -1150,20 +1150,20 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $task = $object->task;
         after_task:        $result['task'] = $task;
 
         
-        $original_environment = $object->original_environment;
+        $originalEnvironment = $object->originalEnvironment;
 
-        if ($original_environment === null) {
-            goto after_original_environment;
+        if ($originalEnvironment === null) {
+            goto after_originalEnvironment;
         }
-        after_original_environment:        $result['original_environment'] = $original_environment;
+        after_originalEnvironment:        $result['original_environment'] = $originalEnvironment;
 
         
         $environment = $object->environment;
@@ -1178,44 +1178,44 @@ class CbCheckRunIdRcb implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $statuses_url = $object->statuses_url;
-        after_statuses_url:        $result['statuses_url'] = $statuses_url;
+        $statusesUrl = $object->statusesUrl;
+        after_statusesUrl:        $result['statuses_url'] = $statusesUrl;
 
         
-        $repository_url = $object->repository_url;
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        $repositoryUrl = $object->repositoryUrl;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
         
-        $transient_environment = $object->transient_environment;
+        $transientEnvironment = $object->transientEnvironment;
 
-        if ($transient_environment === null) {
-            goto after_transient_environment;
+        if ($transientEnvironment === null) {
+            goto after_transientEnvironment;
         }
-        after_transient_environment:        $result['transient_environment'] = $transient_environment;
+        after_transientEnvironment:        $result['transient_environment'] = $transientEnvironment;
 
         
-        $production_environment = $object->production_environment;
+        $productionEnvironment = $object->productionEnvironment;
 
-        if ($production_environment === null) {
-            goto after_production_environment;
+        if ($productionEnvironment === null) {
+            goto after_productionEnvironment;
         }
-        after_production_environment:        $result['production_environment'] = $production_environment;
+        after_productionEnvironment:        $result['production_environment'] = $productionEnvironment;
 
         
-        $performed_via_github_app = $object->performed_via_github_app;
+        $performedViaGithubApp = $object->performedViaGithubApp;
 
-        if ($performed_via_github_app === null) {
-            goto after_performed_via_github_app;
+        if ($performedViaGithubApp === null) {
+            goto after_performedViaGithubApp;
         }
-        after_performed_via_github_app:        $result['performed_via_github_app'] = $performed_via_github_app;
+        after_performedViaGithubApp:        $result['performed_via_github_app'] = $performedViaGithubApp;
 
 
         return $result;

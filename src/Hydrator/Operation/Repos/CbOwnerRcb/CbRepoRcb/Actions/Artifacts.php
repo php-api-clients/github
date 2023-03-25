@@ -40,12 +40,12 @@ class Artifacts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['artifacts'] ?? null;
 
@@ -104,12 +104,12 @@ class Artifacts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -126,12 +126,12 @@ class Artifacts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'size_in_bytes';
-                goto after_size_in_bytes;
+                goto after_sizeInBytes;
             }
 
-            $properties['size_in_bytes'] = $value;
+            $properties['sizeInBytes'] = $value;
 
-            after_size_in_bytes:
+            after_sizeInBytes:
 
             $value = $payload['url'] ?? null;
 
@@ -148,12 +148,12 @@ class Artifacts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'archive_download_url';
-                goto after_archive_download_url;
+                goto after_archiveDownloadUrl;
             }
 
-            $properties['archive_download_url'] = $value;
+            $properties['archiveDownloadUrl'] = $value;
 
-            after_archive_download_url:
+            after_archiveDownloadUrl:
 
             $value = $payload['expired'] ?? null;
 
@@ -169,55 +169,55 @@ class Artifacts implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['expires_at'] ?? null;
 
             if ($value === null) {
-                $properties['expires_at'] = null;
-                goto after_expires_at;
+                $properties['expiresAt'] = null;
+                goto after_expiresAt;
             }
 
-            $properties['expires_at'] = $value;
+            $properties['expiresAt'] = $value;
 
-            after_expires_at:
+            after_expiresAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['workflow_run'] ?? null;
 
             if ($value === null) {
-                $properties['workflow_run'] = null;
-                goto after_workflow_run;
+                $properties['workflowRun'] = null;
+                goto after_workflowRun;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'workflow_run';
+                    $this->hydrationStack[] = 'workflowRun';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['workflow_run'] = $value;
+            $properties['workflowRun'] = $value;
 
-            after_workflow_run:
+            after_workflowRun:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
@@ -254,46 +254,46 @@ class Artifacts implements ObjectMapper
             $value = $payload['repository_id'] ?? null;
 
             if ($value === null) {
-                $properties['repository_id'] = null;
-                goto after_repository_id;
+                $properties['repositoryId'] = null;
+                goto after_repositoryId;
             }
 
-            $properties['repository_id'] = $value;
+            $properties['repositoryId'] = $value;
 
-            after_repository_id:
+            after_repositoryId:
 
             $value = $payload['head_repository_id'] ?? null;
 
             if ($value === null) {
-                $properties['head_repository_id'] = null;
-                goto after_head_repository_id;
+                $properties['headRepositoryId'] = null;
+                goto after_headRepositoryId;
             }
 
-            $properties['head_repository_id'] = $value;
+            $properties['headRepositoryId'] = $value;
 
-            after_head_repository_id:
+            after_headRepositoryId:
 
             $value = $payload['head_branch'] ?? null;
 
             if ($value === null) {
-                $properties['head_branch'] = null;
-                goto after_head_branch;
+                $properties['headBranch'] = null;
+                goto after_headBranch;
             }
 
-            $properties['head_branch'] = $value;
+            $properties['headBranch'] = $value;
 
-            after_head_branch:
+            after_headBranch:
 
             $value = $payload['head_sha'] ?? null;
 
             if ($value === null) {
-                $properties['head_sha'] = null;
-                goto after_head_sha;
+                $properties['headSha'] = null;
+                goto after_headSha;
             }
 
-            $properties['head_sha'] = $value;
+            $properties['headSha'] = $value;
 
-            after_head_sha:
+            after_headSha:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
@@ -422,8 +422,8 @@ class Artifacts implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $artifacts = $object->artifacts;
@@ -452,61 +452,61 @@ class Artifacts implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
         after_name:        $result['name'] = $name;
 
         
-        $size_in_bytes = $object->size_in_bytes;
-        after_size_in_bytes:        $result['size_in_bytes'] = $size_in_bytes;
+        $sizeInBytes = $object->sizeInBytes;
+        after_sizeInBytes:        $result['size_in_bytes'] = $sizeInBytes;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $archive_download_url = $object->archive_download_url;
-        after_archive_download_url:        $result['archive_download_url'] = $archive_download_url;
+        $archiveDownloadUrl = $object->archiveDownloadUrl;
+        after_archiveDownloadUrl:        $result['archive_download_url'] = $archiveDownloadUrl;
 
         
         $expired = $object->expired;
         after_expired:        $result['expired'] = $expired;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $expires_at = $object->expires_at;
+        $expiresAt = $object->expiresAt;
 
-        if ($expires_at === null) {
-            goto after_expires_at;
+        if ($expiresAt === null) {
+            goto after_expiresAt;
         }
-        after_expires_at:        $result['expires_at'] = $expires_at;
+        after_expiresAt:        $result['expires_at'] = $expiresAt;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $workflow_run = $object->workflow_run;
+        $workflowRun = $object->workflowRun;
 
-        if ($workflow_run === null) {
-            goto after_workflow_run;
+        if ($workflowRun === null) {
+            goto after_workflowRun;
         }
-        $workflow_run = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($workflow_run);
-        after_workflow_run:        $result['workflow_run'] = $workflow_run;
+        $workflowRun = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($workflowRun);
+        after_workflowRun:        $result['workflow_run'] = $workflowRun;
 
 
         return $result;
@@ -526,36 +526,36 @@ class Artifacts implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $repository_id = $object->repository_id;
+        $repositoryId = $object->repositoryId;
 
-        if ($repository_id === null) {
-            goto after_repository_id;
+        if ($repositoryId === null) {
+            goto after_repositoryId;
         }
-        after_repository_id:        $result['repository_id'] = $repository_id;
+        after_repositoryId:        $result['repository_id'] = $repositoryId;
 
         
-        $head_repository_id = $object->head_repository_id;
+        $headRepositoryId = $object->headRepositoryId;
 
-        if ($head_repository_id === null) {
-            goto after_head_repository_id;
+        if ($headRepositoryId === null) {
+            goto after_headRepositoryId;
         }
-        after_head_repository_id:        $result['head_repository_id'] = $head_repository_id;
+        after_headRepositoryId:        $result['head_repository_id'] = $headRepositoryId;
 
         
-        $head_branch = $object->head_branch;
+        $headBranch = $object->headBranch;
 
-        if ($head_branch === null) {
-            goto after_head_branch;
+        if ($headBranch === null) {
+            goto after_headBranch;
         }
-        after_head_branch:        $result['head_branch'] = $head_branch;
+        after_headBranch:        $result['head_branch'] = $headBranch;
 
         
-        $head_sha = $object->head_sha;
+        $headSha = $object->headSha;
 
-        if ($head_sha === null) {
-            goto after_head_sha;
+        if ($headSha === null) {
+            goto after_headSha;
         }
-        after_head_sha:        $result['head_sha'] = $head_sha;
+        after_headSha:        $result['head_sha'] = $headSha;
 
 
         return $result;

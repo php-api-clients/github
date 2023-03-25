@@ -38,23 +38,23 @@ class Usage implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_active_caches_count';
-                goto after_total_active_caches_count;
+                goto after_totalActiveCachesCount;
             }
 
-            $properties['total_active_caches_count'] = $value;
+            $properties['totalActiveCachesCount'] = $value;
 
-            after_total_active_caches_count:
+            after_totalActiveCachesCount:
 
             $value = $payload['total_active_caches_size_in_bytes'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'total_active_caches_size_in_bytes';
-                goto after_total_active_caches_size_in_bytes;
+                goto after_totalActiveCachesSizeInBytes;
             }
 
-            $properties['total_active_caches_size_in_bytes'] = $value;
+            $properties['totalActiveCachesSizeInBytes'] = $value;
 
-            after_total_active_caches_size_in_bytes:
+            after_totalActiveCachesSizeInBytes:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise', $exception, stack: $this->hydrationStack);
@@ -181,12 +181,12 @@ class Usage implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageOrgEnterprise);
         $result = [];
 
-        $total_active_caches_count = $object->total_active_caches_count;
-        after_total_active_caches_count:        $result['total_active_caches_count'] = $total_active_caches_count;
+        $totalActiveCachesCount = $object->totalActiveCachesCount;
+        after_totalActiveCachesCount:        $result['total_active_caches_count'] = $totalActiveCachesCount;
 
         
-        $total_active_caches_size_in_bytes = $object->total_active_caches_size_in_bytes;
-        after_total_active_caches_size_in_bytes:        $result['total_active_caches_size_in_bytes'] = $total_active_caches_size_in_bytes;
+        $totalActiveCachesSizeInBytes = $object->totalActiveCachesSizeInBytes;
+        after_totalActiveCachesSizeInBytes:        $result['total_active_caches_size_in_bytes'] = $totalActiveCachesSizeInBytes;
 
 
         return $result;

@@ -38,23 +38,23 @@ class Workflow implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'default_workflow_permissions';
-                goto after_default_workflow_permissions;
+                goto after_defaultWorkflowPermissions;
             }
 
-            $properties['default_workflow_permissions'] = $value;
+            $properties['defaultWorkflowPermissions'] = $value;
 
-            after_default_workflow_permissions:
+            after_defaultWorkflowPermissions:
 
             $value = $payload['can_approve_pull_request_reviews'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'can_approve_pull_request_reviews';
-                goto after_can_approve_pull_request_reviews;
+                goto after_canApprovePullRequestReviews;
             }
 
-            $properties['can_approve_pull_request_reviews'] = $value;
+            $properties['canApprovePullRequestReviews'] = $value;
 
-            after_can_approve_pull_request_reviews:
+            after_canApprovePullRequestReviews:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions', $exception, stack: $this->hydrationStack);
@@ -181,12 +181,12 @@ class Workflow implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions);
         $result = [];
 
-        $default_workflow_permissions = $object->default_workflow_permissions;
-        after_default_workflow_permissions:        $result['default_workflow_permissions'] = $default_workflow_permissions;
+        $defaultWorkflowPermissions = $object->defaultWorkflowPermissions;
+        after_defaultWorkflowPermissions:        $result['default_workflow_permissions'] = $defaultWorkflowPermissions;
 
         
-        $can_approve_pull_request_reviews = $object->can_approve_pull_request_reviews;
-        after_can_approve_pull_request_reviews:        $result['can_approve_pull_request_reviews'] = $can_approve_pull_request_reviews;
+        $canApprovePullRequestReviews = $object->canApprovePullRequestReviews;
+        after_canApprovePullRequestReviews:        $result['can_approve_pull_request_reviews'] = $canApprovePullRequestReviews;
 
 
         return $result;

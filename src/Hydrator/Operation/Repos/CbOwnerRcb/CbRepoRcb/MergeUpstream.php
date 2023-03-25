@@ -48,24 +48,24 @@ class MergeUpstream implements ObjectMapper
             $value = $payload['merge_type'] ?? null;
 
             if ($value === null) {
-                $properties['merge_type'] = null;
-                goto after_merge_type;
+                $properties['mergeType'] = null;
+                goto after_mergeType;
             }
 
-            $properties['merge_type'] = $value;
+            $properties['mergeType'] = $value;
 
-            after_merge_type:
+            after_mergeType:
 
             $value = $payload['base_branch'] ?? null;
 
             if ($value === null) {
-                $properties['base_branch'] = null;
-                goto after_base_branch;
+                $properties['baseBranch'] = null;
+                goto after_baseBranch;
             }
 
-            $properties['base_branch'] = $value;
+            $properties['baseBranch'] = $value;
 
-            after_base_branch:
+            after_baseBranch:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MergedUpstream', $exception, stack: $this->hydrationStack);
@@ -200,20 +200,20 @@ class MergeUpstream implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $merge_type = $object->merge_type;
+        $mergeType = $object->mergeType;
 
-        if ($merge_type === null) {
-            goto after_merge_type;
+        if ($mergeType === null) {
+            goto after_mergeType;
         }
-        after_merge_type:        $result['merge_type'] = $merge_type;
+        after_mergeType:        $result['merge_type'] = $mergeType;
 
         
-        $base_branch = $object->base_branch;
+        $baseBranch = $object->baseBranch;
 
-        if ($base_branch === null) {
-            goto after_base_branch;
+        if ($baseBranch === null) {
+            goto after_baseBranch;
         }
-        after_base_branch:        $result['base_branch'] = $base_branch;
+        after_baseBranch:        $result['base_branch'] = $baseBranch;
 
 
         return $result;

@@ -17,17 +17,17 @@ final class AddSelectedRepoToOrgSecret
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The name of the secret.**/
-    private string $secret_name;
-    private int $repository_id;
-    public function __construct(string $org, string $secret_name, int $repository_id)
+    private string $secretName;
+    private int $repositoryId;
+    public function __construct(string $org, string $secretName, int $repositoryId)
     {
         $this->org = $org;
-        $this->secret_name = $secret_name;
-        $this->repository_id = $repository_id;
+        $this->secretName = $secretName;
+        $this->repositoryId = $repositoryId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secret_name, $this->repository_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{secret_name}', '{repository_id}'), array($this->org, $this->secretName, $this->repositoryId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

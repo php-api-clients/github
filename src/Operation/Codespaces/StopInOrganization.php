@@ -19,20 +19,20 @@ final class StopInOrganization
     /**The handle for the GitHub user account.**/
     private string $username;
     /**The name of the codespace.**/
-    private string $codespace_name;
+    private string $codespaceName;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop $hydrator, string $org, string $username, string $codespace_name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop $hydrator, string $org, string $username, string $codespaceName)
     {
         $this->org = $org;
         $this->username = $username;
-        $this->codespace_name = $codespace_name;
+        $this->codespaceName = $codespaceName;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{username}', '{codespace_name}'), array($this->org, $this->username, $this->codespace_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{username}', '{codespace_name}'), array($this->org, $this->username, $this->codespaceName), self::PATH));
     }
     /**
      * @return Schema\Codespace

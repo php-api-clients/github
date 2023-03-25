@@ -15,7 +15,7 @@ final class Labels
     private const METHOD = 'GET';
     private const PATH = '/search/labels';
     /**The id of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The search keywords. This endpoint does not accept qualifiers in the query. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query).**/
     private string $q;
     /**Sorts the results of your query by when the label was `created` or `updated`. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)**/
@@ -23,25 +23,25 @@ final class Labels
     /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.**/
     private string $order;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Search\Labels $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Search\Labels $hydrator, int $repository_id, string $q, string $sort, string $order = 'desc', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Search\Labels $hydrator, int $repositoryId, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->repository_id = $repository_id;
+        $this->repositoryId = $repositoryId;
         $this->q = $q;
         $this->sort = $sort;
         $this->order = $order;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{q}', '{sort}', '{order}', '{per_page}', '{page}'), array($this->repository_id, $this->q, $this->sort, $this->order, $this->per_page, $this->page), self::PATH . '?repository_id={repository_id}&q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{q}', '{sort}', '{order}', '{per_page}', '{page}'), array($this->repositoryId, $this->q, $this->sort, $this->order, $this->perPage, $this->page), self::PATH . '?repositoryId={repository_id}&q={q}&sort={sort}&order={order}&perPage={per_page}&page={page}'));
     }
     /**
      * @return Schema\Operation\Search\Labels\Response\Applicationjson\H200

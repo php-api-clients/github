@@ -61,78 +61,78 @@ class CbCommentNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'body_html';
-                goto after_body_html;
+                goto after_bodyHtml;
             }
 
-            $properties['body_html'] = $value;
+            $properties['bodyHtml'] = $value;
 
-            after_body_html:
+            after_bodyHtml:
 
             $value = $payload['body_version'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'body_version';
-                goto after_body_version;
+                goto after_bodyVersion;
             }
 
-            $properties['body_version'] = $value;
+            $properties['bodyVersion'] = $value;
 
-            after_body_version:
+            after_bodyVersion:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['last_edited_at'] ?? null;
 
             if ($value === null) {
-                $properties['last_edited_at'] = null;
-                goto after_last_edited_at;
+                $properties['lastEditedAt'] = null;
+                goto after_lastEditedAt;
             }
 
-            $properties['last_edited_at'] = $value;
+            $properties['lastEditedAt'] = $value;
 
-            after_last_edited_at:
+            after_lastEditedAt:
 
             $value = $payload['discussion_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'discussion_url';
-                goto after_discussion_url;
+                goto after_discussionUrl;
             }
 
-            $properties['discussion_url'] = $value;
+            $properties['discussionUrl'] = $value;
 
-            after_discussion_url:
+            after_discussionUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['number'] ?? null;
 
@@ -149,12 +149,12 @@ class CbCommentNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['url'] ?? null;
 
@@ -223,34 +223,34 @@ class CbCommentNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
-            $value = $payload['__p_l_u_s_e_s_1'] ?? null;
+            $value = $payload['_PLUSES_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__p_l_u_s_e_s_1';
-                goto after__PLUSES_1;
+                $missingFields[] = '_PLUSES_1';
+                goto after_pluses1;
             }
 
-            $properties['_PLUSES_1'] = $value;
+            $properties['pluses1'] = $value;
 
-            after__PLUSES_1:
+            after_pluses1:
 
-            $value = $payload['__m_i_n_u_s_1'] ?? null;
+            $value = $payload['_MINUS_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__m_i_n_u_s_1';
-                goto after__MINUS_1;
+                $missingFields[] = '_MINUS_1';
+                goto after_minus1;
             }
 
-            $properties['_MINUS_1'] = $value;
+            $properties['minus1'] = $value;
 
-            after__MINUS_1:
+            after_minus1:
 
             $value = $payload['laugh'] ?? null;
 
@@ -456,44 +456,44 @@ class CbCommentNumberRcb implements ObjectMapper
         after_body:        $result['body'] = $body;
 
         
-        $body_html = $object->body_html;
-        after_body_html:        $result['body_html'] = $body_html;
+        $bodyHtml = $object->bodyHtml;
+        after_bodyHtml:        $result['body_html'] = $bodyHtml;
 
         
-        $body_version = $object->body_version;
-        after_body_version:        $result['body_version'] = $body_version;
+        $bodyVersion = $object->bodyVersion;
+        after_bodyVersion:        $result['body_version'] = $bodyVersion;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $last_edited_at = $object->last_edited_at;
+        $lastEditedAt = $object->lastEditedAt;
 
-        if ($last_edited_at === null) {
-            goto after_last_edited_at;
+        if ($lastEditedAt === null) {
+            goto after_lastEditedAt;
         }
-        after_last_edited_at:        $result['last_edited_at'] = $last_edited_at;
+        after_lastEditedAt:        $result['last_edited_at'] = $lastEditedAt;
 
         
-        $discussion_url = $object->discussion_url;
-        after_discussion_url:        $result['discussion_url'] = $discussion_url;
+        $discussionUrl = $object->discussionUrl;
+        after_discussionUrl:        $result['discussion_url'] = $discussionUrl;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $number = $object->number;
         after_number:        $result['number'] = $number;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $url = $object->url;
@@ -522,16 +522,16 @@ class CbCommentNumberRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $_PLUSES_1 = $object->_PLUSES_1;
-        after__PLUSES_1:        $result['__p_l_u_s_e_s_1'] = $_PLUSES_1;
+        $pluses1 = $object->pluses1;
+        after_pluses1:        $result['_PLUSES_1'] = $pluses1;
 
         
-        $_MINUS_1 = $object->_MINUS_1;
-        after__MINUS_1:        $result['__m_i_n_u_s_1'] = $_MINUS_1;
+        $minus1 = $object->minus1;
+        after_minus1:        $result['_MINUS_1'] = $minus1;
 
         
         $laugh = $object->laugh;

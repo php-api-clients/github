@@ -41,12 +41,12 @@ class Devcontainers implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['devcontainers'] ?? null;
 
@@ -115,13 +115,13 @@ class Devcontainers implements ObjectMapper
             $value = $payload['display_name'] ?? null;
 
             if ($value === null) {
-                $properties['display_name'] = null;
-                goto after_display_name;
+                $properties['displayName'] = null;
+                goto after_displayName;
             }
 
-            $properties['display_name'] = $value;
+            $properties['displayName'] = $value;
 
-            after_display_name:
+            after_displayName:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\Applicationjson\H200\Devcontainers', $exception, stack: $this->hydrationStack);
@@ -158,13 +158,13 @@ class Devcontainers implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -223,13 +223,13 @@ class Devcontainers implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -403,8 +403,8 @@ class Devcontainers implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
         $devcontainers = $object->devcontainers;
@@ -441,12 +441,12 @@ class Devcontainers implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $display_name = $object->display_name;
+        $displayName = $object->displayName;
 
-        if ($display_name === null) {
-            goto after_display_name;
+        if ($displayName === null) {
+            goto after_displayName;
         }
-        after_display_name:        $result['display_name'] = $display_name;
+        after_displayName:        $result['display_name'] = $displayName;
 
 
         return $result;
@@ -466,12 +466,12 @@ class Devcontainers implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -507,12 +507,12 @@ class Devcontainers implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;

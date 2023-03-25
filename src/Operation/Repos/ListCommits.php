@@ -31,12 +31,12 @@ final class ListCommits
     /**Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     private string $until;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits $hydrator, string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits $hydrator, string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
@@ -46,14 +46,14 @@ final class ListCommits
         $this->committer = $committer;
         $this->since = $since;
         $this->until = $until;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{sha}', '{path}', '{author}', '{committer}', '{since}', '{until}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->sha, $this->path, $this->author, $this->committer, $this->since, $this->until, $this->per_page, $this->page), self::PATH . '?sha={sha}&path={path}&author={author}&committer={committer}&since={since}&until={until}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{sha}', '{path}', '{author}', '{committer}', '{since}', '{until}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->sha, $this->path, $this->author, $this->committer, $this->since, $this->until, $this->perPage, $this->page), self::PATH . '?sha={sha}&path={path}&author={author}&committer={committer}&since={since}&until={until}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Commit>

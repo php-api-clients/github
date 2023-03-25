@@ -19,16 +19,16 @@ final class CheckIfMerged
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the pull request.**/
-    private int $pull_number;
-    public function __construct(string $owner, string $repo, int $pull_number)
+    private int $pullNumber;
+    public function __construct(string $owner, string $repo, int $pullNumber)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->pull_number = $pull_number;
+        $this->pullNumber = $pullNumber;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{pull_number}'), array($this->owner, $this->repo, $this->pull_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{pull_number}'), array($this->owner, $this->repo, $this->pullNumber), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

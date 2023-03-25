@@ -15,20 +15,20 @@ final class DeleteEnvironmentVariable
     private const METHOD = 'DELETE';
     private const PATH = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     /**The unique identifier of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The name of the variable.**/
     private string $name;
     /**The name of the environment.**/
-    private string $environment_name;
-    public function __construct(int $repository_id, string $name, string $environment_name)
+    private string $environmentName;
+    public function __construct(int $repositoryId, string $name, string $environmentName)
     {
-        $this->repository_id = $repository_id;
+        $this->repositoryId = $repositoryId;
         $this->name = $name;
-        $this->environment_name = $environment_name;
+        $this->environmentName = $environmentName;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{name}', '{environment_name}'), array($this->repository_id, $this->name, $this->environment_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{name}', '{environment_name}'), array($this->repositoryId, $this->name, $this->environmentName), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

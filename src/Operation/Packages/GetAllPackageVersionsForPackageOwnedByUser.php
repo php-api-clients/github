@@ -15,24 +15,24 @@ final class GetAllPackageVersionsForPackageOwnedByUser
     private const METHOD = 'GET';
     private const PATH = '/users/{username}/packages/{package_type}/{package_name}/versions';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.**/
-    private string $package_type;
+    private string $packageType;
     /**The name of the package.**/
-    private string $package_name;
+    private string $packageName;
     /**The handle for the GitHub user account.**/
     private string $username;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Users\CbUsernameRcb\Packages\CbPackageTypeRcb\CbPackageNameRcb\Versions $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Packages\CbPackageTypeRcb\CbPackageNameRcb\Versions $hydrator, string $package_type, string $package_name, string $username)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Packages\CbPackageTypeRcb\CbPackageNameRcb\Versions $hydrator, string $packageType, string $packageName, string $username)
     {
-        $this->package_type = $package_type;
-        $this->package_name = $package_name;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
         $this->username = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{package_type}', '{package_name}', '{username}'), array($this->package_type, $this->package_name, $this->username), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{package_type}', '{package_name}', '{username}'), array($this->packageType, $this->packageName, $this->username), self::PATH));
     }
     /**
      * @return \Rx\Observable<Schema\PackageVersion>

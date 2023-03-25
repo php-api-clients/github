@@ -15,20 +15,20 @@ final class GetRevision
     private const METHOD = 'GET';
     private const PATH = '/gists/{gist_id}/{sha}';
     /**The unique identifier of the gist.**/
-    private string $gist_id;
+    private string $gistId;
     private string $sha;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb $hydrator, string $gist_id, string $sha)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb $hydrator, string $gistId, string $sha)
     {
-        $this->gist_id = $gist_id;
+        $this->gistId = $gistId;
         $this->sha = $sha;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}', '{sha}'), array($this->gist_id, $this->sha), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{gist_id}', '{sha}'), array($this->gistId, $this->sha), self::PATH));
     }
     /**
      * @return Schema\GistSimple

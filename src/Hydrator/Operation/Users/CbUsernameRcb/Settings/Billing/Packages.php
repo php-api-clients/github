@@ -38,34 +38,34 @@ class Packages implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_gigabytes_bandwidth_used';
-                goto after_total_gigabytes_bandwidth_used;
+                goto after_totalGigabytesBandwidthUsed;
             }
 
-            $properties['total_gigabytes_bandwidth_used'] = $value;
+            $properties['totalGigabytesBandwidthUsed'] = $value;
 
-            after_total_gigabytes_bandwidth_used:
+            after_totalGigabytesBandwidthUsed:
 
             $value = $payload['total_paid_gigabytes_bandwidth_used'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'total_paid_gigabytes_bandwidth_used';
-                goto after_total_paid_gigabytes_bandwidth_used;
+                goto after_totalPaidGigabytesBandwidthUsed;
             }
 
-            $properties['total_paid_gigabytes_bandwidth_used'] = $value;
+            $properties['totalPaidGigabytesBandwidthUsed'] = $value;
 
-            after_total_paid_gigabytes_bandwidth_used:
+            after_totalPaidGigabytesBandwidthUsed:
 
             $value = $payload['included_gigabytes_bandwidth'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'included_gigabytes_bandwidth';
-                goto after_included_gigabytes_bandwidth;
+                goto after_includedGigabytesBandwidth;
             }
 
-            $properties['included_gigabytes_bandwidth'] = $value;
+            $properties['includedGigabytesBandwidth'] = $value;
 
-            after_included_gigabytes_bandwidth:
+            after_includedGigabytesBandwidth:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PackagesBillingUsage', $exception, stack: $this->hydrationStack);
@@ -192,16 +192,16 @@ class Packages implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\PackagesBillingUsage);
         $result = [];
 
-        $total_gigabytes_bandwidth_used = $object->total_gigabytes_bandwidth_used;
-        after_total_gigabytes_bandwidth_used:        $result['total_gigabytes_bandwidth_used'] = $total_gigabytes_bandwidth_used;
+        $totalGigabytesBandwidthUsed = $object->totalGigabytesBandwidthUsed;
+        after_totalGigabytesBandwidthUsed:        $result['total_gigabytes_bandwidth_used'] = $totalGigabytesBandwidthUsed;
 
         
-        $total_paid_gigabytes_bandwidth_used = $object->total_paid_gigabytes_bandwidth_used;
-        after_total_paid_gigabytes_bandwidth_used:        $result['total_paid_gigabytes_bandwidth_used'] = $total_paid_gigabytes_bandwidth_used;
+        $totalPaidGigabytesBandwidthUsed = $object->totalPaidGigabytesBandwidthUsed;
+        after_totalPaidGigabytesBandwidthUsed:        $result['total_paid_gigabytes_bandwidth_used'] = $totalPaidGigabytesBandwidthUsed;
 
         
-        $included_gigabytes_bandwidth = $object->included_gigabytes_bandwidth;
-        after_included_gigabytes_bandwidth:        $result['included_gigabytes_bandwidth'] = $included_gigabytes_bandwidth;
+        $includedGigabytesBandwidth = $object->includedGigabytesBandwidth;
+        after_includedGigabytesBandwidth:        $result['included_gigabytes_bandwidth'] = $includedGigabytesBandwidth;
 
 
         return $result;

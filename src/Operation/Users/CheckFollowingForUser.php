@@ -16,15 +16,15 @@ final class CheckFollowingForUser
     private const PATH = '/users/{username}/following/{target_user}';
     /**The handle for the GitHub user account.**/
     private string $username;
-    private string $target_user;
-    public function __construct(string $username, string $target_user)
+    private string $targetUser;
+    public function __construct(string $username, string $targetUser)
     {
         $this->username = $username;
-        $this->target_user = $target_user;
+        $this->targetUser = $targetUser;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}', '{target_user}'), array($this->username, $this->target_user), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}', '{target_user}'), array($this->username, $this->targetUser), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

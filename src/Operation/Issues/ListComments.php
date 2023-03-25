@@ -19,29 +19,29 @@ final class ListComments
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The number that identifies the issue.**/
-    private int $issue_number;
+    private int $issueNumber;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     private string $since;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Comments $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Comments $hydrator, string $owner, string $repo, int $issue_number, string $since, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\CbIssueNumberRcb\Comments $hydrator, string $owner, string $repo, int $issueNumber, string $since, int $perPage = 30, int $page = 1)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->issue_number = $issue_number;
+        $this->issueNumber = $issueNumber;
         $this->since = $since;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{since}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->issue_number, $this->since, $this->per_page, $this->page), self::PATH . '?since={since}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{issue_number}', '{since}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->issueNumber, $this->since, $this->perPage, $this->page), self::PATH . '?since={since}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\IssueComment>

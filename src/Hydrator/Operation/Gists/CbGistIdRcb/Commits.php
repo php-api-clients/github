@@ -73,32 +73,32 @@ class Commits implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'change_status';
-                goto after_change_status;
+                goto after_changeStatus;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'change_status';
+                    $this->hydrationStack[] = 'changeStatus';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['change_status'] = $value;
+            $properties['changeStatus'] = $value;
 
-            after_change_status:
+            after_changeStatus:
 
             $value = $payload['committed_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'committed_at';
-                goto after_committed_at;
+                goto after_committedAt;
             }
 
-            $properties['committed_at'] = $value;
+            $properties['committedAt'] = $value;
 
-            after_committed_at:
+            after_committedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistCommit', $exception, stack: $this->hydrationStack);
@@ -189,13 +189,13 @@ class Commits implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -362,13 +362,13 @@ class Commits implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $change_status = $object->change_status;
-        $change_status = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($change_status);
-        after_change_status:        $result['change_status'] = $change_status;
+        $changeStatus = $object->changeStatus;
+        $changeStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($changeStatus);
+        after_changeStatus:        $result['change_status'] = $changeStatus;
 
         
-        $committed_at = $object->committed_at;
-        after_committed_at:        $result['committed_at'] = $committed_at;
+        $committedAt = $object->committedAt;
+        after_committedAt:        $result['committed_at'] = $committedAt;
 
 
         return $result;
@@ -421,12 +421,12 @@ class Commits implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

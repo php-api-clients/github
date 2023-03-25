@@ -60,22 +60,22 @@ class Health implements ObjectMapper
             $value = $payload['alt_domain'] ?? null;
 
             if ($value === null) {
-                $properties['alt_domain'] = null;
-                goto after_alt_domain;
+                $properties['altDomain'] = null;
+                goto after_altDomain;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'alt_domain';
+                    $this->hydrationStack[] = 'altDomain';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['alt_domain'] = $value;
+            $properties['altDomain'] = $value;
 
-            after_alt_domain:
+            after_altDomain:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
@@ -134,211 +134,211 @@ class Health implements ObjectMapper
             $value = $payload['dns_resolves'] ?? null;
 
             if ($value === null) {
-                $properties['dns_resolves'] = null;
-                goto after_dns_resolves;
+                $properties['dnsResolves'] = null;
+                goto after_dnsResolves;
             }
 
-            $properties['dns_resolves'] = $value;
+            $properties['dnsResolves'] = $value;
 
-            after_dns_resolves:
+            after_dnsResolves:
 
             $value = $payload['is_proxied'] ?? null;
 
             if ($value === null) {
-                $properties['is_proxied'] = null;
-                goto after_is_proxied;
+                $properties['isProxied'] = null;
+                goto after_isProxied;
             }
 
-            $properties['is_proxied'] = $value;
+            $properties['isProxied'] = $value;
 
-            after_is_proxied:
+            after_isProxied:
 
             $value = $payload['is_cloudflare_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_cloudflare_ip'] = null;
-                goto after_is_cloudflare_ip;
+                $properties['isCloudflareIp'] = null;
+                goto after_isCloudflareIp;
             }
 
-            $properties['is_cloudflare_ip'] = $value;
+            $properties['isCloudflareIp'] = $value;
 
-            after_is_cloudflare_ip:
+            after_isCloudflareIp:
 
             $value = $payload['is_fastly_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_fastly_ip'] = null;
-                goto after_is_fastly_ip;
+                $properties['isFastlyIp'] = null;
+                goto after_isFastlyIp;
             }
 
-            $properties['is_fastly_ip'] = $value;
+            $properties['isFastlyIp'] = $value;
 
-            after_is_fastly_ip:
+            after_isFastlyIp:
 
             $value = $payload['is_old_ip_address'] ?? null;
 
             if ($value === null) {
-                $properties['is_old_ip_address'] = null;
-                goto after_is_old_ip_address;
+                $properties['isOldIpAddress'] = null;
+                goto after_isOldIpAddress;
             }
 
-            $properties['is_old_ip_address'] = $value;
+            $properties['isOldIpAddress'] = $value;
 
-            after_is_old_ip_address:
+            after_isOldIpAddress:
 
             $value = $payload['is_a_record'] ?? null;
 
             if ($value === null) {
-                $properties['is_a_record'] = null;
-                goto after_is_a_record;
+                $properties['isARecord'] = null;
+                goto after_isARecord;
             }
 
-            $properties['is_a_record'] = $value;
+            $properties['isARecord'] = $value;
 
-            after_is_a_record:
+            after_isARecord:
 
             $value = $payload['has_cname_record'] ?? null;
 
             if ($value === null) {
-                $properties['has_cname_record'] = null;
-                goto after_has_cname_record;
+                $properties['hasCnameRecord'] = null;
+                goto after_hasCnameRecord;
             }
 
-            $properties['has_cname_record'] = $value;
+            $properties['hasCnameRecord'] = $value;
 
-            after_has_cname_record:
+            after_hasCnameRecord:
 
             $value = $payload['has_mx_records_present'] ?? null;
 
             if ($value === null) {
-                $properties['has_mx_records_present'] = null;
-                goto after_has_mx_records_present;
+                $properties['hasMxRecordsPresent'] = null;
+                goto after_hasMxRecordsPresent;
             }
 
-            $properties['has_mx_records_present'] = $value;
+            $properties['hasMxRecordsPresent'] = $value;
 
-            after_has_mx_records_present:
+            after_hasMxRecordsPresent:
 
             $value = $payload['is_valid_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_valid_domain'] = null;
-                goto after_is_valid_domain;
+                $properties['isValidDomain'] = null;
+                goto after_isValidDomain;
             }
 
-            $properties['is_valid_domain'] = $value;
+            $properties['isValidDomain'] = $value;
 
-            after_is_valid_domain:
+            after_isValidDomain:
 
             $value = $payload['is_apex_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_apex_domain'] = null;
-                goto after_is_apex_domain;
+                $properties['isApexDomain'] = null;
+                goto after_isApexDomain;
             }
 
-            $properties['is_apex_domain'] = $value;
+            $properties['isApexDomain'] = $value;
 
-            after_is_apex_domain:
+            after_isApexDomain:
 
             $value = $payload['should_be_a_record'] ?? null;
 
             if ($value === null) {
-                $properties['should_be_a_record'] = null;
-                goto after_should_be_a_record;
+                $properties['shouldBeARecord'] = null;
+                goto after_shouldBeARecord;
             }
 
-            $properties['should_be_a_record'] = $value;
+            $properties['shouldBeARecord'] = $value;
 
-            after_should_be_a_record:
+            after_shouldBeARecord:
 
             $value = $payload['is_cname_to_github_user_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_github_user_domain'] = null;
-                goto after_is_cname_to_github_user_domain;
+                $properties['isCnameToGithubUserDomain'] = null;
+                goto after_isCnameToGithubUserDomain;
             }
 
-            $properties['is_cname_to_github_user_domain'] = $value;
+            $properties['isCnameToGithubUserDomain'] = $value;
 
-            after_is_cname_to_github_user_domain:
+            after_isCnameToGithubUserDomain:
 
             $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_pages_dot_github_dot_com'] = null;
-                goto after_is_cname_to_pages_dot_github_dot_com;
+                $properties['isCnameToPagesDotGithubDotCom'] = null;
+                goto after_isCnameToPagesDotGithubDotCom;
             }
 
-            $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
+            $properties['isCnameToPagesDotGithubDotCom'] = $value;
 
-            after_is_cname_to_pages_dot_github_dot_com:
+            after_isCnameToPagesDotGithubDotCom:
 
             $value = $payload['is_cname_to_fastly'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_fastly'] = null;
-                goto after_is_cname_to_fastly;
+                $properties['isCnameToFastly'] = null;
+                goto after_isCnameToFastly;
             }
 
-            $properties['is_cname_to_fastly'] = $value;
+            $properties['isCnameToFastly'] = $value;
 
-            after_is_cname_to_fastly:
+            after_isCnameToFastly:
 
             $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_pointed_to_github_pages_ip'] = null;
-                goto after_is_pointed_to_github_pages_ip;
+                $properties['isPointedToGithubPagesIp'] = null;
+                goto after_isPointedToGithubPagesIp;
             }
 
-            $properties['is_pointed_to_github_pages_ip'] = $value;
+            $properties['isPointedToGithubPagesIp'] = $value;
 
-            after_is_pointed_to_github_pages_ip:
+            after_isPointedToGithubPagesIp:
 
             $value = $payload['is_non_github_pages_ip_present'] ?? null;
 
             if ($value === null) {
-                $properties['is_non_github_pages_ip_present'] = null;
-                goto after_is_non_github_pages_ip_present;
+                $properties['isNonGithubPagesIpPresent'] = null;
+                goto after_isNonGithubPagesIpPresent;
             }
 
-            $properties['is_non_github_pages_ip_present'] = $value;
+            $properties['isNonGithubPagesIpPresent'] = $value;
 
-            after_is_non_github_pages_ip_present:
+            after_isNonGithubPagesIpPresent:
 
             $value = $payload['is_pages_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_pages_domain'] = null;
-                goto after_is_pages_domain;
+                $properties['isPagesDomain'] = null;
+                goto after_isPagesDomain;
             }
 
-            $properties['is_pages_domain'] = $value;
+            $properties['isPagesDomain'] = $value;
 
-            after_is_pages_domain:
+            after_isPagesDomain:
 
             $value = $payload['is_served_by_pages'] ?? null;
 
             if ($value === null) {
-                $properties['is_served_by_pages'] = null;
-                goto after_is_served_by_pages;
+                $properties['isServedByPages'] = null;
+                goto after_isServedByPages;
             }
 
-            $properties['is_served_by_pages'] = $value;
+            $properties['isServedByPages'] = $value;
 
-            after_is_served_by_pages:
+            after_isServedByPages:
 
             $value = $payload['is_valid'] ?? null;
 
             if ($value === null) {
-                $properties['is_valid'] = null;
-                goto after_is_valid;
+                $properties['isValid'] = null;
+                goto after_isValid;
             }
 
-            $properties['is_valid'] = $value;
+            $properties['isValid'] = $value;
 
-            after_is_valid:
+            after_isValid:
 
             $value = $payload['reason'] ?? null;
 
@@ -354,57 +354,57 @@ class Health implements ObjectMapper
             $value = $payload['responds_to_https'] ?? null;
 
             if ($value === null) {
-                $properties['responds_to_https'] = null;
-                goto after_responds_to_https;
+                $properties['respondsToHttps'] = null;
+                goto after_respondsToHttps;
             }
 
-            $properties['responds_to_https'] = $value;
+            $properties['respondsToHttps'] = $value;
 
-            after_responds_to_https:
+            after_respondsToHttps:
 
             $value = $payload['enforces_https'] ?? null;
 
             if ($value === null) {
-                $properties['enforces_https'] = null;
-                goto after_enforces_https;
+                $properties['enforcesHttps'] = null;
+                goto after_enforcesHttps;
             }
 
-            $properties['enforces_https'] = $value;
+            $properties['enforcesHttps'] = $value;
 
-            after_enforces_https:
+            after_enforcesHttps:
 
             $value = $payload['https_error'] ?? null;
 
             if ($value === null) {
-                $properties['https_error'] = null;
-                goto after_https_error;
+                $properties['httpsError'] = null;
+                goto after_httpsError;
             }
 
-            $properties['https_error'] = $value;
+            $properties['httpsError'] = $value;
 
-            after_https_error:
+            after_httpsError:
 
             $value = $payload['is_https_eligible'] ?? null;
 
             if ($value === null) {
-                $properties['is_https_eligible'] = null;
-                goto after_is_https_eligible;
+                $properties['isHttpsEligible'] = null;
+                goto after_isHttpsEligible;
             }
 
-            $properties['is_https_eligible'] = $value;
+            $properties['isHttpsEligible'] = $value;
 
-            after_is_https_eligible:
+            after_isHttpsEligible:
 
             $value = $payload['caa_error'] ?? null;
 
             if ($value === null) {
-                $properties['caa_error'] = null;
-                goto after_caa_error;
+                $properties['caaError'] = null;
+                goto after_caaError;
             }
 
-            $properties['caa_error'] = $value;
+            $properties['caaError'] = $value;
 
-            after_caa_error:
+            after_caaError:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
@@ -463,211 +463,211 @@ class Health implements ObjectMapper
             $value = $payload['dns_resolves'] ?? null;
 
             if ($value === null) {
-                $properties['dns_resolves'] = null;
-                goto after_dns_resolves;
+                $properties['dnsResolves'] = null;
+                goto after_dnsResolves;
             }
 
-            $properties['dns_resolves'] = $value;
+            $properties['dnsResolves'] = $value;
 
-            after_dns_resolves:
+            after_dnsResolves:
 
             $value = $payload['is_proxied'] ?? null;
 
             if ($value === null) {
-                $properties['is_proxied'] = null;
-                goto after_is_proxied;
+                $properties['isProxied'] = null;
+                goto after_isProxied;
             }
 
-            $properties['is_proxied'] = $value;
+            $properties['isProxied'] = $value;
 
-            after_is_proxied:
+            after_isProxied:
 
             $value = $payload['is_cloudflare_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_cloudflare_ip'] = null;
-                goto after_is_cloudflare_ip;
+                $properties['isCloudflareIp'] = null;
+                goto after_isCloudflareIp;
             }
 
-            $properties['is_cloudflare_ip'] = $value;
+            $properties['isCloudflareIp'] = $value;
 
-            after_is_cloudflare_ip:
+            after_isCloudflareIp:
 
             $value = $payload['is_fastly_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_fastly_ip'] = null;
-                goto after_is_fastly_ip;
+                $properties['isFastlyIp'] = null;
+                goto after_isFastlyIp;
             }
 
-            $properties['is_fastly_ip'] = $value;
+            $properties['isFastlyIp'] = $value;
 
-            after_is_fastly_ip:
+            after_isFastlyIp:
 
             $value = $payload['is_old_ip_address'] ?? null;
 
             if ($value === null) {
-                $properties['is_old_ip_address'] = null;
-                goto after_is_old_ip_address;
+                $properties['isOldIpAddress'] = null;
+                goto after_isOldIpAddress;
             }
 
-            $properties['is_old_ip_address'] = $value;
+            $properties['isOldIpAddress'] = $value;
 
-            after_is_old_ip_address:
+            after_isOldIpAddress:
 
             $value = $payload['is_a_record'] ?? null;
 
             if ($value === null) {
-                $properties['is_a_record'] = null;
-                goto after_is_a_record;
+                $properties['isARecord'] = null;
+                goto after_isARecord;
             }
 
-            $properties['is_a_record'] = $value;
+            $properties['isARecord'] = $value;
 
-            after_is_a_record:
+            after_isARecord:
 
             $value = $payload['has_cname_record'] ?? null;
 
             if ($value === null) {
-                $properties['has_cname_record'] = null;
-                goto after_has_cname_record;
+                $properties['hasCnameRecord'] = null;
+                goto after_hasCnameRecord;
             }
 
-            $properties['has_cname_record'] = $value;
+            $properties['hasCnameRecord'] = $value;
 
-            after_has_cname_record:
+            after_hasCnameRecord:
 
             $value = $payload['has_mx_records_present'] ?? null;
 
             if ($value === null) {
-                $properties['has_mx_records_present'] = null;
-                goto after_has_mx_records_present;
+                $properties['hasMxRecordsPresent'] = null;
+                goto after_hasMxRecordsPresent;
             }
 
-            $properties['has_mx_records_present'] = $value;
+            $properties['hasMxRecordsPresent'] = $value;
 
-            after_has_mx_records_present:
+            after_hasMxRecordsPresent:
 
             $value = $payload['is_valid_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_valid_domain'] = null;
-                goto after_is_valid_domain;
+                $properties['isValidDomain'] = null;
+                goto after_isValidDomain;
             }
 
-            $properties['is_valid_domain'] = $value;
+            $properties['isValidDomain'] = $value;
 
-            after_is_valid_domain:
+            after_isValidDomain:
 
             $value = $payload['is_apex_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_apex_domain'] = null;
-                goto after_is_apex_domain;
+                $properties['isApexDomain'] = null;
+                goto after_isApexDomain;
             }
 
-            $properties['is_apex_domain'] = $value;
+            $properties['isApexDomain'] = $value;
 
-            after_is_apex_domain:
+            after_isApexDomain:
 
             $value = $payload['should_be_a_record'] ?? null;
 
             if ($value === null) {
-                $properties['should_be_a_record'] = null;
-                goto after_should_be_a_record;
+                $properties['shouldBeARecord'] = null;
+                goto after_shouldBeARecord;
             }
 
-            $properties['should_be_a_record'] = $value;
+            $properties['shouldBeARecord'] = $value;
 
-            after_should_be_a_record:
+            after_shouldBeARecord:
 
             $value = $payload['is_cname_to_github_user_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_github_user_domain'] = null;
-                goto after_is_cname_to_github_user_domain;
+                $properties['isCnameToGithubUserDomain'] = null;
+                goto after_isCnameToGithubUserDomain;
             }
 
-            $properties['is_cname_to_github_user_domain'] = $value;
+            $properties['isCnameToGithubUserDomain'] = $value;
 
-            after_is_cname_to_github_user_domain:
+            after_isCnameToGithubUserDomain:
 
             $value = $payload['is_cname_to_pages_dot_github_dot_com'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_pages_dot_github_dot_com'] = null;
-                goto after_is_cname_to_pages_dot_github_dot_com;
+                $properties['isCnameToPagesDotGithubDotCom'] = null;
+                goto after_isCnameToPagesDotGithubDotCom;
             }
 
-            $properties['is_cname_to_pages_dot_github_dot_com'] = $value;
+            $properties['isCnameToPagesDotGithubDotCom'] = $value;
 
-            after_is_cname_to_pages_dot_github_dot_com:
+            after_isCnameToPagesDotGithubDotCom:
 
             $value = $payload['is_cname_to_fastly'] ?? null;
 
             if ($value === null) {
-                $properties['is_cname_to_fastly'] = null;
-                goto after_is_cname_to_fastly;
+                $properties['isCnameToFastly'] = null;
+                goto after_isCnameToFastly;
             }
 
-            $properties['is_cname_to_fastly'] = $value;
+            $properties['isCnameToFastly'] = $value;
 
-            after_is_cname_to_fastly:
+            after_isCnameToFastly:
 
             $value = $payload['is_pointed_to_github_pages_ip'] ?? null;
 
             if ($value === null) {
-                $properties['is_pointed_to_github_pages_ip'] = null;
-                goto after_is_pointed_to_github_pages_ip;
+                $properties['isPointedToGithubPagesIp'] = null;
+                goto after_isPointedToGithubPagesIp;
             }
 
-            $properties['is_pointed_to_github_pages_ip'] = $value;
+            $properties['isPointedToGithubPagesIp'] = $value;
 
-            after_is_pointed_to_github_pages_ip:
+            after_isPointedToGithubPagesIp:
 
             $value = $payload['is_non_github_pages_ip_present'] ?? null;
 
             if ($value === null) {
-                $properties['is_non_github_pages_ip_present'] = null;
-                goto after_is_non_github_pages_ip_present;
+                $properties['isNonGithubPagesIpPresent'] = null;
+                goto after_isNonGithubPagesIpPresent;
             }
 
-            $properties['is_non_github_pages_ip_present'] = $value;
+            $properties['isNonGithubPagesIpPresent'] = $value;
 
-            after_is_non_github_pages_ip_present:
+            after_isNonGithubPagesIpPresent:
 
             $value = $payload['is_pages_domain'] ?? null;
 
             if ($value === null) {
-                $properties['is_pages_domain'] = null;
-                goto after_is_pages_domain;
+                $properties['isPagesDomain'] = null;
+                goto after_isPagesDomain;
             }
 
-            $properties['is_pages_domain'] = $value;
+            $properties['isPagesDomain'] = $value;
 
-            after_is_pages_domain:
+            after_isPagesDomain:
 
             $value = $payload['is_served_by_pages'] ?? null;
 
             if ($value === null) {
-                $properties['is_served_by_pages'] = null;
-                goto after_is_served_by_pages;
+                $properties['isServedByPages'] = null;
+                goto after_isServedByPages;
             }
 
-            $properties['is_served_by_pages'] = $value;
+            $properties['isServedByPages'] = $value;
 
-            after_is_served_by_pages:
+            after_isServedByPages:
 
             $value = $payload['is_valid'] ?? null;
 
             if ($value === null) {
-                $properties['is_valid'] = null;
-                goto after_is_valid;
+                $properties['isValid'] = null;
+                goto after_isValid;
             }
 
-            $properties['is_valid'] = $value;
+            $properties['isValid'] = $value;
 
-            after_is_valid:
+            after_isValid:
 
             $value = $payload['reason'] ?? null;
 
@@ -683,57 +683,57 @@ class Health implements ObjectMapper
             $value = $payload['responds_to_https'] ?? null;
 
             if ($value === null) {
-                $properties['responds_to_https'] = null;
-                goto after_responds_to_https;
+                $properties['respondsToHttps'] = null;
+                goto after_respondsToHttps;
             }
 
-            $properties['responds_to_https'] = $value;
+            $properties['respondsToHttps'] = $value;
 
-            after_responds_to_https:
+            after_respondsToHttps:
 
             $value = $payload['enforces_https'] ?? null;
 
             if ($value === null) {
-                $properties['enforces_https'] = null;
-                goto after_enforces_https;
+                $properties['enforcesHttps'] = null;
+                goto after_enforcesHttps;
             }
 
-            $properties['enforces_https'] = $value;
+            $properties['enforcesHttps'] = $value;
 
-            after_enforces_https:
+            after_enforcesHttps:
 
             $value = $payload['https_error'] ?? null;
 
             if ($value === null) {
-                $properties['https_error'] = null;
-                goto after_https_error;
+                $properties['httpsError'] = null;
+                goto after_httpsError;
             }
 
-            $properties['https_error'] = $value;
+            $properties['httpsError'] = $value;
 
-            after_https_error:
+            after_httpsError:
 
             $value = $payload['is_https_eligible'] ?? null;
 
             if ($value === null) {
-                $properties['is_https_eligible'] = null;
-                goto after_is_https_eligible;
+                $properties['isHttpsEligible'] = null;
+                goto after_isHttpsEligible;
             }
 
-            $properties['is_https_eligible'] = $value;
+            $properties['isHttpsEligible'] = $value;
 
-            after_is_https_eligible:
+            after_isHttpsEligible:
 
             $value = $payload['caa_error'] ?? null;
 
             if ($value === null) {
-                $properties['caa_error'] = null;
-                goto after_caa_error;
+                $properties['caaError'] = null;
+                goto after_caaError;
             }
 
-            $properties['caa_error'] = $value;
+            $properties['caaError'] = $value;
 
-            after_caa_error:
+            after_caaError:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
@@ -770,13 +770,13 @@ class Health implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -937,13 +937,13 @@ class Health implements ObjectMapper
         after_domain:        $result['domain'] = $domain;
 
         
-        $alt_domain = $object->alt_domain;
+        $altDomain = $object->altDomain;
 
-        if ($alt_domain === null) {
-            goto after_alt_domain;
+        if ($altDomain === null) {
+            goto after_altDomain;
         }
-        $alt_domain = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($alt_domain);
-        after_alt_domain:        $result['alt_domain'] = $alt_domain;
+        $altDomain = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($altDomain);
+        after_altDomain:        $result['alt_domain'] = $altDomain;
 
 
         return $result;
@@ -979,156 +979,156 @@ class Health implements ObjectMapper
         after_nameservers:        $result['nameservers'] = $nameservers;
 
         
-        $dns_resolves = $object->dns_resolves;
+        $dnsResolves = $object->dnsResolves;
 
-        if ($dns_resolves === null) {
-            goto after_dns_resolves;
+        if ($dnsResolves === null) {
+            goto after_dnsResolves;
         }
-        after_dns_resolves:        $result['dns_resolves'] = $dns_resolves;
+        after_dnsResolves:        $result['dns_resolves'] = $dnsResolves;
 
         
-        $is_proxied = $object->is_proxied;
+        $isProxied = $object->isProxied;
 
-        if ($is_proxied === null) {
-            goto after_is_proxied;
+        if ($isProxied === null) {
+            goto after_isProxied;
         }
-        after_is_proxied:        $result['is_proxied'] = $is_proxied;
+        after_isProxied:        $result['is_proxied'] = $isProxied;
 
         
-        $is_cloudflare_ip = $object->is_cloudflare_ip;
+        $isCloudflareIp = $object->isCloudflareIp;
 
-        if ($is_cloudflare_ip === null) {
-            goto after_is_cloudflare_ip;
+        if ($isCloudflareIp === null) {
+            goto after_isCloudflareIp;
         }
-        after_is_cloudflare_ip:        $result['is_cloudflare_ip'] = $is_cloudflare_ip;
+        after_isCloudflareIp:        $result['is_cloudflare_ip'] = $isCloudflareIp;
 
         
-        $is_fastly_ip = $object->is_fastly_ip;
+        $isFastlyIp = $object->isFastlyIp;
 
-        if ($is_fastly_ip === null) {
-            goto after_is_fastly_ip;
+        if ($isFastlyIp === null) {
+            goto after_isFastlyIp;
         }
-        after_is_fastly_ip:        $result['is_fastly_ip'] = $is_fastly_ip;
+        after_isFastlyIp:        $result['is_fastly_ip'] = $isFastlyIp;
 
         
-        $is_old_ip_address = $object->is_old_ip_address;
+        $isOldIpAddress = $object->isOldIpAddress;
 
-        if ($is_old_ip_address === null) {
-            goto after_is_old_ip_address;
+        if ($isOldIpAddress === null) {
+            goto after_isOldIpAddress;
         }
-        after_is_old_ip_address:        $result['is_old_ip_address'] = $is_old_ip_address;
+        after_isOldIpAddress:        $result['is_old_ip_address'] = $isOldIpAddress;
 
         
-        $is_a_record = $object->is_a_record;
+        $isARecord = $object->isARecord;
 
-        if ($is_a_record === null) {
-            goto after_is_a_record;
+        if ($isARecord === null) {
+            goto after_isARecord;
         }
-        after_is_a_record:        $result['is_a_record'] = $is_a_record;
+        after_isARecord:        $result['is_a_record'] = $isARecord;
 
         
-        $has_cname_record = $object->has_cname_record;
+        $hasCnameRecord = $object->hasCnameRecord;
 
-        if ($has_cname_record === null) {
-            goto after_has_cname_record;
+        if ($hasCnameRecord === null) {
+            goto after_hasCnameRecord;
         }
-        after_has_cname_record:        $result['has_cname_record'] = $has_cname_record;
+        after_hasCnameRecord:        $result['has_cname_record'] = $hasCnameRecord;
 
         
-        $has_mx_records_present = $object->has_mx_records_present;
+        $hasMxRecordsPresent = $object->hasMxRecordsPresent;
 
-        if ($has_mx_records_present === null) {
-            goto after_has_mx_records_present;
+        if ($hasMxRecordsPresent === null) {
+            goto after_hasMxRecordsPresent;
         }
-        after_has_mx_records_present:        $result['has_mx_records_present'] = $has_mx_records_present;
+        after_hasMxRecordsPresent:        $result['has_mx_records_present'] = $hasMxRecordsPresent;
 
         
-        $is_valid_domain = $object->is_valid_domain;
+        $isValidDomain = $object->isValidDomain;
 
-        if ($is_valid_domain === null) {
-            goto after_is_valid_domain;
+        if ($isValidDomain === null) {
+            goto after_isValidDomain;
         }
-        after_is_valid_domain:        $result['is_valid_domain'] = $is_valid_domain;
+        after_isValidDomain:        $result['is_valid_domain'] = $isValidDomain;
 
         
-        $is_apex_domain = $object->is_apex_domain;
+        $isApexDomain = $object->isApexDomain;
 
-        if ($is_apex_domain === null) {
-            goto after_is_apex_domain;
+        if ($isApexDomain === null) {
+            goto after_isApexDomain;
         }
-        after_is_apex_domain:        $result['is_apex_domain'] = $is_apex_domain;
+        after_isApexDomain:        $result['is_apex_domain'] = $isApexDomain;
 
         
-        $should_be_a_record = $object->should_be_a_record;
+        $shouldBeARecord = $object->shouldBeARecord;
 
-        if ($should_be_a_record === null) {
-            goto after_should_be_a_record;
+        if ($shouldBeARecord === null) {
+            goto after_shouldBeARecord;
         }
-        after_should_be_a_record:        $result['should_be_a_record'] = $should_be_a_record;
+        after_shouldBeARecord:        $result['should_be_a_record'] = $shouldBeARecord;
 
         
-        $is_cname_to_github_user_domain = $object->is_cname_to_github_user_domain;
+        $isCnameToGithubUserDomain = $object->isCnameToGithubUserDomain;
 
-        if ($is_cname_to_github_user_domain === null) {
-            goto after_is_cname_to_github_user_domain;
+        if ($isCnameToGithubUserDomain === null) {
+            goto after_isCnameToGithubUserDomain;
         }
-        after_is_cname_to_github_user_domain:        $result['is_cname_to_github_user_domain'] = $is_cname_to_github_user_domain;
+        after_isCnameToGithubUserDomain:        $result['is_cname_to_github_user_domain'] = $isCnameToGithubUserDomain;
 
         
-        $is_cname_to_pages_dot_github_dot_com = $object->is_cname_to_pages_dot_github_dot_com;
+        $isCnameToPagesDotGithubDotCom = $object->isCnameToPagesDotGithubDotCom;
 
-        if ($is_cname_to_pages_dot_github_dot_com === null) {
-            goto after_is_cname_to_pages_dot_github_dot_com;
+        if ($isCnameToPagesDotGithubDotCom === null) {
+            goto after_isCnameToPagesDotGithubDotCom;
         }
-        after_is_cname_to_pages_dot_github_dot_com:        $result['is_cname_to_pages_dot_github_dot_com'] = $is_cname_to_pages_dot_github_dot_com;
+        after_isCnameToPagesDotGithubDotCom:        $result['is_cname_to_pages_dot_github_dot_com'] = $isCnameToPagesDotGithubDotCom;
 
         
-        $is_cname_to_fastly = $object->is_cname_to_fastly;
+        $isCnameToFastly = $object->isCnameToFastly;
 
-        if ($is_cname_to_fastly === null) {
-            goto after_is_cname_to_fastly;
+        if ($isCnameToFastly === null) {
+            goto after_isCnameToFastly;
         }
-        after_is_cname_to_fastly:        $result['is_cname_to_fastly'] = $is_cname_to_fastly;
+        after_isCnameToFastly:        $result['is_cname_to_fastly'] = $isCnameToFastly;
 
         
-        $is_pointed_to_github_pages_ip = $object->is_pointed_to_github_pages_ip;
+        $isPointedToGithubPagesIp = $object->isPointedToGithubPagesIp;
 
-        if ($is_pointed_to_github_pages_ip === null) {
-            goto after_is_pointed_to_github_pages_ip;
+        if ($isPointedToGithubPagesIp === null) {
+            goto after_isPointedToGithubPagesIp;
         }
-        after_is_pointed_to_github_pages_ip:        $result['is_pointed_to_github_pages_ip'] = $is_pointed_to_github_pages_ip;
+        after_isPointedToGithubPagesIp:        $result['is_pointed_to_github_pages_ip'] = $isPointedToGithubPagesIp;
 
         
-        $is_non_github_pages_ip_present = $object->is_non_github_pages_ip_present;
+        $isNonGithubPagesIpPresent = $object->isNonGithubPagesIpPresent;
 
-        if ($is_non_github_pages_ip_present === null) {
-            goto after_is_non_github_pages_ip_present;
+        if ($isNonGithubPagesIpPresent === null) {
+            goto after_isNonGithubPagesIpPresent;
         }
-        after_is_non_github_pages_ip_present:        $result['is_non_github_pages_ip_present'] = $is_non_github_pages_ip_present;
+        after_isNonGithubPagesIpPresent:        $result['is_non_github_pages_ip_present'] = $isNonGithubPagesIpPresent;
 
         
-        $is_pages_domain = $object->is_pages_domain;
+        $isPagesDomain = $object->isPagesDomain;
 
-        if ($is_pages_domain === null) {
-            goto after_is_pages_domain;
+        if ($isPagesDomain === null) {
+            goto after_isPagesDomain;
         }
-        after_is_pages_domain:        $result['is_pages_domain'] = $is_pages_domain;
+        after_isPagesDomain:        $result['is_pages_domain'] = $isPagesDomain;
 
         
-        $is_served_by_pages = $object->is_served_by_pages;
+        $isServedByPages = $object->isServedByPages;
 
-        if ($is_served_by_pages === null) {
-            goto after_is_served_by_pages;
+        if ($isServedByPages === null) {
+            goto after_isServedByPages;
         }
-        after_is_served_by_pages:        $result['is_served_by_pages'] = $is_served_by_pages;
+        after_isServedByPages:        $result['is_served_by_pages'] = $isServedByPages;
 
         
-        $is_valid = $object->is_valid;
+        $isValid = $object->isValid;
 
-        if ($is_valid === null) {
-            goto after_is_valid;
+        if ($isValid === null) {
+            goto after_isValid;
         }
-        after_is_valid:        $result['is_valid'] = $is_valid;
+        after_isValid:        $result['is_valid'] = $isValid;
 
         
         $reason = $object->reason;
@@ -1139,44 +1139,44 @@ class Health implements ObjectMapper
         after_reason:        $result['reason'] = $reason;
 
         
-        $responds_to_https = $object->responds_to_https;
+        $respondsToHttps = $object->respondsToHttps;
 
-        if ($responds_to_https === null) {
-            goto after_responds_to_https;
+        if ($respondsToHttps === null) {
+            goto after_respondsToHttps;
         }
-        after_responds_to_https:        $result['responds_to_https'] = $responds_to_https;
+        after_respondsToHttps:        $result['responds_to_https'] = $respondsToHttps;
 
         
-        $enforces_https = $object->enforces_https;
+        $enforcesHttps = $object->enforcesHttps;
 
-        if ($enforces_https === null) {
-            goto after_enforces_https;
+        if ($enforcesHttps === null) {
+            goto after_enforcesHttps;
         }
-        after_enforces_https:        $result['enforces_https'] = $enforces_https;
+        after_enforcesHttps:        $result['enforces_https'] = $enforcesHttps;
 
         
-        $https_error = $object->https_error;
+        $httpsError = $object->httpsError;
 
-        if ($https_error === null) {
-            goto after_https_error;
+        if ($httpsError === null) {
+            goto after_httpsError;
         }
-        after_https_error:        $result['https_error'] = $https_error;
+        after_httpsError:        $result['https_error'] = $httpsError;
 
         
-        $is_https_eligible = $object->is_https_eligible;
+        $isHttpsEligible = $object->isHttpsEligible;
 
-        if ($is_https_eligible === null) {
-            goto after_is_https_eligible;
+        if ($isHttpsEligible === null) {
+            goto after_isHttpsEligible;
         }
-        after_is_https_eligible:        $result['is_https_eligible'] = $is_https_eligible;
+        after_isHttpsEligible:        $result['is_https_eligible'] = $isHttpsEligible;
 
         
-        $caa_error = $object->caa_error;
+        $caaError = $object->caaError;
 
-        if ($caa_error === null) {
-            goto after_caa_error;
+        if ($caaError === null) {
+            goto after_caaError;
         }
-        after_caa_error:        $result['caa_error'] = $caa_error;
+        after_caaError:        $result['caa_error'] = $caaError;
 
 
         return $result;
@@ -1212,156 +1212,156 @@ class Health implements ObjectMapper
         after_nameservers:        $result['nameservers'] = $nameservers;
 
         
-        $dns_resolves = $object->dns_resolves;
+        $dnsResolves = $object->dnsResolves;
 
-        if ($dns_resolves === null) {
-            goto after_dns_resolves;
+        if ($dnsResolves === null) {
+            goto after_dnsResolves;
         }
-        after_dns_resolves:        $result['dns_resolves'] = $dns_resolves;
+        after_dnsResolves:        $result['dns_resolves'] = $dnsResolves;
 
         
-        $is_proxied = $object->is_proxied;
+        $isProxied = $object->isProxied;
 
-        if ($is_proxied === null) {
-            goto after_is_proxied;
+        if ($isProxied === null) {
+            goto after_isProxied;
         }
-        after_is_proxied:        $result['is_proxied'] = $is_proxied;
+        after_isProxied:        $result['is_proxied'] = $isProxied;
 
         
-        $is_cloudflare_ip = $object->is_cloudflare_ip;
+        $isCloudflareIp = $object->isCloudflareIp;
 
-        if ($is_cloudflare_ip === null) {
-            goto after_is_cloudflare_ip;
+        if ($isCloudflareIp === null) {
+            goto after_isCloudflareIp;
         }
-        after_is_cloudflare_ip:        $result['is_cloudflare_ip'] = $is_cloudflare_ip;
+        after_isCloudflareIp:        $result['is_cloudflare_ip'] = $isCloudflareIp;
 
         
-        $is_fastly_ip = $object->is_fastly_ip;
+        $isFastlyIp = $object->isFastlyIp;
 
-        if ($is_fastly_ip === null) {
-            goto after_is_fastly_ip;
+        if ($isFastlyIp === null) {
+            goto after_isFastlyIp;
         }
-        after_is_fastly_ip:        $result['is_fastly_ip'] = $is_fastly_ip;
+        after_isFastlyIp:        $result['is_fastly_ip'] = $isFastlyIp;
 
         
-        $is_old_ip_address = $object->is_old_ip_address;
+        $isOldIpAddress = $object->isOldIpAddress;
 
-        if ($is_old_ip_address === null) {
-            goto after_is_old_ip_address;
+        if ($isOldIpAddress === null) {
+            goto after_isOldIpAddress;
         }
-        after_is_old_ip_address:        $result['is_old_ip_address'] = $is_old_ip_address;
+        after_isOldIpAddress:        $result['is_old_ip_address'] = $isOldIpAddress;
 
         
-        $is_a_record = $object->is_a_record;
+        $isARecord = $object->isARecord;
 
-        if ($is_a_record === null) {
-            goto after_is_a_record;
+        if ($isARecord === null) {
+            goto after_isARecord;
         }
-        after_is_a_record:        $result['is_a_record'] = $is_a_record;
+        after_isARecord:        $result['is_a_record'] = $isARecord;
 
         
-        $has_cname_record = $object->has_cname_record;
+        $hasCnameRecord = $object->hasCnameRecord;
 
-        if ($has_cname_record === null) {
-            goto after_has_cname_record;
+        if ($hasCnameRecord === null) {
+            goto after_hasCnameRecord;
         }
-        after_has_cname_record:        $result['has_cname_record'] = $has_cname_record;
+        after_hasCnameRecord:        $result['has_cname_record'] = $hasCnameRecord;
 
         
-        $has_mx_records_present = $object->has_mx_records_present;
+        $hasMxRecordsPresent = $object->hasMxRecordsPresent;
 
-        if ($has_mx_records_present === null) {
-            goto after_has_mx_records_present;
+        if ($hasMxRecordsPresent === null) {
+            goto after_hasMxRecordsPresent;
         }
-        after_has_mx_records_present:        $result['has_mx_records_present'] = $has_mx_records_present;
+        after_hasMxRecordsPresent:        $result['has_mx_records_present'] = $hasMxRecordsPresent;
 
         
-        $is_valid_domain = $object->is_valid_domain;
+        $isValidDomain = $object->isValidDomain;
 
-        if ($is_valid_domain === null) {
-            goto after_is_valid_domain;
+        if ($isValidDomain === null) {
+            goto after_isValidDomain;
         }
-        after_is_valid_domain:        $result['is_valid_domain'] = $is_valid_domain;
+        after_isValidDomain:        $result['is_valid_domain'] = $isValidDomain;
 
         
-        $is_apex_domain = $object->is_apex_domain;
+        $isApexDomain = $object->isApexDomain;
 
-        if ($is_apex_domain === null) {
-            goto after_is_apex_domain;
+        if ($isApexDomain === null) {
+            goto after_isApexDomain;
         }
-        after_is_apex_domain:        $result['is_apex_domain'] = $is_apex_domain;
+        after_isApexDomain:        $result['is_apex_domain'] = $isApexDomain;
 
         
-        $should_be_a_record = $object->should_be_a_record;
+        $shouldBeARecord = $object->shouldBeARecord;
 
-        if ($should_be_a_record === null) {
-            goto after_should_be_a_record;
+        if ($shouldBeARecord === null) {
+            goto after_shouldBeARecord;
         }
-        after_should_be_a_record:        $result['should_be_a_record'] = $should_be_a_record;
+        after_shouldBeARecord:        $result['should_be_a_record'] = $shouldBeARecord;
 
         
-        $is_cname_to_github_user_domain = $object->is_cname_to_github_user_domain;
+        $isCnameToGithubUserDomain = $object->isCnameToGithubUserDomain;
 
-        if ($is_cname_to_github_user_domain === null) {
-            goto after_is_cname_to_github_user_domain;
+        if ($isCnameToGithubUserDomain === null) {
+            goto after_isCnameToGithubUserDomain;
         }
-        after_is_cname_to_github_user_domain:        $result['is_cname_to_github_user_domain'] = $is_cname_to_github_user_domain;
+        after_isCnameToGithubUserDomain:        $result['is_cname_to_github_user_domain'] = $isCnameToGithubUserDomain;
 
         
-        $is_cname_to_pages_dot_github_dot_com = $object->is_cname_to_pages_dot_github_dot_com;
+        $isCnameToPagesDotGithubDotCom = $object->isCnameToPagesDotGithubDotCom;
 
-        if ($is_cname_to_pages_dot_github_dot_com === null) {
-            goto after_is_cname_to_pages_dot_github_dot_com;
+        if ($isCnameToPagesDotGithubDotCom === null) {
+            goto after_isCnameToPagesDotGithubDotCom;
         }
-        after_is_cname_to_pages_dot_github_dot_com:        $result['is_cname_to_pages_dot_github_dot_com'] = $is_cname_to_pages_dot_github_dot_com;
+        after_isCnameToPagesDotGithubDotCom:        $result['is_cname_to_pages_dot_github_dot_com'] = $isCnameToPagesDotGithubDotCom;
 
         
-        $is_cname_to_fastly = $object->is_cname_to_fastly;
+        $isCnameToFastly = $object->isCnameToFastly;
 
-        if ($is_cname_to_fastly === null) {
-            goto after_is_cname_to_fastly;
+        if ($isCnameToFastly === null) {
+            goto after_isCnameToFastly;
         }
-        after_is_cname_to_fastly:        $result['is_cname_to_fastly'] = $is_cname_to_fastly;
+        after_isCnameToFastly:        $result['is_cname_to_fastly'] = $isCnameToFastly;
 
         
-        $is_pointed_to_github_pages_ip = $object->is_pointed_to_github_pages_ip;
+        $isPointedToGithubPagesIp = $object->isPointedToGithubPagesIp;
 
-        if ($is_pointed_to_github_pages_ip === null) {
-            goto after_is_pointed_to_github_pages_ip;
+        if ($isPointedToGithubPagesIp === null) {
+            goto after_isPointedToGithubPagesIp;
         }
-        after_is_pointed_to_github_pages_ip:        $result['is_pointed_to_github_pages_ip'] = $is_pointed_to_github_pages_ip;
+        after_isPointedToGithubPagesIp:        $result['is_pointed_to_github_pages_ip'] = $isPointedToGithubPagesIp;
 
         
-        $is_non_github_pages_ip_present = $object->is_non_github_pages_ip_present;
+        $isNonGithubPagesIpPresent = $object->isNonGithubPagesIpPresent;
 
-        if ($is_non_github_pages_ip_present === null) {
-            goto after_is_non_github_pages_ip_present;
+        if ($isNonGithubPagesIpPresent === null) {
+            goto after_isNonGithubPagesIpPresent;
         }
-        after_is_non_github_pages_ip_present:        $result['is_non_github_pages_ip_present'] = $is_non_github_pages_ip_present;
+        after_isNonGithubPagesIpPresent:        $result['is_non_github_pages_ip_present'] = $isNonGithubPagesIpPresent;
 
         
-        $is_pages_domain = $object->is_pages_domain;
+        $isPagesDomain = $object->isPagesDomain;
 
-        if ($is_pages_domain === null) {
-            goto after_is_pages_domain;
+        if ($isPagesDomain === null) {
+            goto after_isPagesDomain;
         }
-        after_is_pages_domain:        $result['is_pages_domain'] = $is_pages_domain;
+        after_isPagesDomain:        $result['is_pages_domain'] = $isPagesDomain;
 
         
-        $is_served_by_pages = $object->is_served_by_pages;
+        $isServedByPages = $object->isServedByPages;
 
-        if ($is_served_by_pages === null) {
-            goto after_is_served_by_pages;
+        if ($isServedByPages === null) {
+            goto after_isServedByPages;
         }
-        after_is_served_by_pages:        $result['is_served_by_pages'] = $is_served_by_pages;
+        after_isServedByPages:        $result['is_served_by_pages'] = $isServedByPages;
 
         
-        $is_valid = $object->is_valid;
+        $isValid = $object->isValid;
 
-        if ($is_valid === null) {
-            goto after_is_valid;
+        if ($isValid === null) {
+            goto after_isValid;
         }
-        after_is_valid:        $result['is_valid'] = $is_valid;
+        after_isValid:        $result['is_valid'] = $isValid;
 
         
         $reason = $object->reason;
@@ -1372,44 +1372,44 @@ class Health implements ObjectMapper
         after_reason:        $result['reason'] = $reason;
 
         
-        $responds_to_https = $object->responds_to_https;
+        $respondsToHttps = $object->respondsToHttps;
 
-        if ($responds_to_https === null) {
-            goto after_responds_to_https;
+        if ($respondsToHttps === null) {
+            goto after_respondsToHttps;
         }
-        after_responds_to_https:        $result['responds_to_https'] = $responds_to_https;
+        after_respondsToHttps:        $result['responds_to_https'] = $respondsToHttps;
 
         
-        $enforces_https = $object->enforces_https;
+        $enforcesHttps = $object->enforcesHttps;
 
-        if ($enforces_https === null) {
-            goto after_enforces_https;
+        if ($enforcesHttps === null) {
+            goto after_enforcesHttps;
         }
-        after_enforces_https:        $result['enforces_https'] = $enforces_https;
+        after_enforcesHttps:        $result['enforces_https'] = $enforcesHttps;
 
         
-        $https_error = $object->https_error;
+        $httpsError = $object->httpsError;
 
-        if ($https_error === null) {
-            goto after_https_error;
+        if ($httpsError === null) {
+            goto after_httpsError;
         }
-        after_https_error:        $result['https_error'] = $https_error;
+        after_httpsError:        $result['https_error'] = $httpsError;
 
         
-        $is_https_eligible = $object->is_https_eligible;
+        $isHttpsEligible = $object->isHttpsEligible;
 
-        if ($is_https_eligible === null) {
-            goto after_is_https_eligible;
+        if ($isHttpsEligible === null) {
+            goto after_isHttpsEligible;
         }
-        after_is_https_eligible:        $result['is_https_eligible'] = $is_https_eligible;
+        after_isHttpsEligible:        $result['is_https_eligible'] = $isHttpsEligible;
 
         
-        $caa_error = $object->caa_error;
+        $caaError = $object->caaError;
 
-        if ($caa_error === null) {
-            goto after_caa_error;
+        if ($caaError === null) {
+            goto after_caaError;
         }
-        after_caa_error:        $result['caa_error'] = $caa_error;
+        after_caaError:        $result['caa_error'] = $caaError;
 
 
         return $result;
@@ -1429,12 +1429,12 @@ class Health implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

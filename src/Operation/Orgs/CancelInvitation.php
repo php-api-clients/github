@@ -17,19 +17,19 @@ final class CancelInvitation
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The unique identifier of the invitation.**/
-    private int $invitation_id;
+    private int $invitationId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb $hydrator, string $org, int $invitation_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb $hydrator, string $org, int $invitationId)
     {
         $this->org = $org;
-        $this->invitation_id = $invitation_id;
+        $this->invitationId = $invitationId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{invitation_id}'), array($this->org, $this->invitation_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{invitation_id}'), array($this->org, $this->invitationId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

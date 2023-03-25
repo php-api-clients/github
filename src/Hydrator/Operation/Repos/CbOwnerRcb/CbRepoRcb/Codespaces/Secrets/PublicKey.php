@@ -38,12 +38,12 @@ class PublicKey implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'key_id';
-                goto after_key_id;
+                goto after_keyId;
             }
 
-            $properties['key_id'] = $value;
+            $properties['keyId'] = $value;
 
-            after_key_id:
+            after_keyId:
 
             $value = $payload['key'] ?? null;
 
@@ -92,13 +92,13 @@ class PublicKey implements ObjectMapper
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
-                $properties['created_at'] = null;
-                goto after_created_at;
+                $properties['createdAt'] = null;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesPublicKey', $exception, stack: $this->hydrationStack);
@@ -225,8 +225,8 @@ class PublicKey implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespacesPublicKey);
         $result = [];
 
-        $key_id = $object->key_id;
-        after_key_id:        $result['key_id'] = $key_id;
+        $keyId = $object->keyId;
+        after_keyId:        $result['key_id'] = $keyId;
 
         
         $key = $object->key;
@@ -257,12 +257,12 @@ class PublicKey implements ObjectMapper
         after_title:        $result['title'] = $title;
 
         
-        $created_at = $object->created_at;
+        $createdAt = $object->createdAt;
 
-        if ($created_at === null) {
-            goto after_created_at;
+        if ($createdAt === null) {
+            goto after_createdAt;
         }
-        after_created_at:        $result['created_at'] = $created_at;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
 
         return $result;

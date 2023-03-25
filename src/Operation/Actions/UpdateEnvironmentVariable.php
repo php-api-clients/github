@@ -16,22 +16,22 @@ final class UpdateEnvironmentVariable
     private const PATH = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The name of the variable.**/
     private string $name;
     /**The name of the environment.**/
-    private string $environment_name;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, int $repository_id, string $name, string $environment_name)
+    private string $environmentName;
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, int $repositoryId, string $name, string $environmentName)
     {
         $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->repository_id = $repository_id;
+        $this->repositoryId = $repositoryId;
         $this->name = $name;
-        $this->environment_name = $environment_name;
+        $this->environmentName = $environmentName;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Actions\UpdateRepoVariable\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{name}', '{environment_name}'), array($this->repository_id, $this->name, $this->environment_name), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{name}', '{environment_name}'), array($this->repositoryId, $this->name, $this->environmentName), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

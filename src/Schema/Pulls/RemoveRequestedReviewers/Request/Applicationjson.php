@@ -13,14 +13,14 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"required":["reviewers"],"type":"object","properties":{"reviewers":{"type":"array","items":{"type":"string"},"description":"An array of user `login`s that will be removed."},"team_reviewers":{"type":"array","items":{"type":"string"},"description":"An array of team `slug`s that will be removed."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"reviewers":["generated_reviewers_null"],"team_reviewers":["generated_team_reviewers_null"]}';
+    public const SCHEMA_EXAMPLE_DATA = '{"reviewers":["generated_reviewers_null"],"teamReviewers":["generated_team_reviewers_null"]}';
     /**
      * reviewers: An array of user `login`s that will be removed.
      * @param array<string> $reviewers
-     * team_reviewers: An array of team `slug`s that will be removed.
-     * @param ?array<string> $team_reviewers
+     * teamReviewers: An array of team `slug`s that will be removed.
+     * @param ?array<string> $teamReviewers
      */
-    public function __construct(public array $reviewers, public ?array $team_reviewers)
+    public function __construct(public array $reviewers, #[\EventSauce\ObjectHydrator\MapFrom('team_reviewers')] public ?array $teamReviewers)
     {
     }
 }

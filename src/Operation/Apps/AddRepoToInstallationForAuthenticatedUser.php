@@ -15,21 +15,21 @@ final class AddRepoToInstallationForAuthenticatedUser
     private const METHOD = 'PUT';
     private const PATH = '/user/installations/{installation_id}/repositories/{repository_id}';
     /**The unique identifier of the installation.**/
-    private int $installation_id;
+    private int $installationId;
     /**The unique identifier of the repository.**/
-    private int $repository_id;
+    private int $repositoryId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb $hydrator, int $installation_id, int $repository_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb $hydrator, int $installationId, int $repositoryId)
     {
-        $this->installation_id = $installation_id;
-        $this->repository_id = $repository_id;
+        $this->installationId = $installationId;
+        $this->repositoryId = $repositoryId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{installation_id}', '{repository_id}'), array($this->installation_id, $this->repository_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{installation_id}', '{repository_id}'), array($this->installationId, $this->repositoryId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

@@ -42,12 +42,12 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -75,12 +75,12 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['body'] ?? null;
 
@@ -130,12 +130,12 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'commit_id';
-                goto after_commit_id;
+                goto after_commitId;
             }
 
-            $properties['commit_id'] = $value;
+            $properties['commitId'] = $value;
 
-            after_commit_id:
+            after_commitId:
 
             $value = $payload['user'] ?? null;
 
@@ -152,34 +152,34 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['author_association'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'author_association';
-                goto after_author_association;
+                goto after_authorAssociation;
             }
 
-            $properties['author_association'] = $value;
+            $properties['authorAssociation'] = $value;
 
-            after_author_association:
+            after_authorAssociation:
 
             $value = $payload['reactions'] ?? null;
 
@@ -237,34 +237,34 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
-            $value = $payload['__p_l_u_s_e_s_1'] ?? null;
+            $value = $payload['_PLUSES_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__p_l_u_s_e_s_1';
-                goto after__PLUSES_1;
+                $missingFields[] = '_PLUSES_1';
+                goto after_pluses1;
             }
 
-            $properties['_PLUSES_1'] = $value;
+            $properties['pluses1'] = $value;
 
-            after__PLUSES_1:
+            after_pluses1:
 
-            $value = $payload['__m_i_n_u_s_1'] ?? null;
+            $value = $payload['_MINUS_1'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = '__m_i_n_u_s_1';
-                goto after__MINUS_1;
+                $missingFields[] = '_MINUS_1';
+                goto after_minus1;
             }
 
-            $properties['_MINUS_1'] = $value;
+            $properties['minus1'] = $value;
 
-            after__MINUS_1:
+            after_minus1:
 
             $value = $payload['laugh'] ?? null;
 
@@ -367,13 +367,13 @@ class Comments implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -433,12 +433,12 @@ class Comments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -677,8 +677,8 @@ class Comments implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommitComment);
         $result = [];
 
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $url = $object->url;
@@ -689,8 +689,8 @@ class Comments implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $body = $object->body;
@@ -721,8 +721,8 @@ class Comments implements ObjectMapper
         after_line:        $result['line'] = $line;
 
         
-        $commit_id = $object->commit_id;
-        after_commit_id:        $result['commit_id'] = $commit_id;
+        $commitId = $object->commitId;
+        after_commitId:        $result['commit_id'] = $commitId;
 
         
         $user = $object->user;
@@ -733,16 +733,16 @@ class Comments implements ObjectMapper
         after_user:        $result['user'] = $user;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $author_association = $object->author_association;
-        after_author_association:        $result['author_association'] = $author_association;
+        $authorAssociation = $object->authorAssociation;
+        after_authorAssociation:        $result['author_association'] = $authorAssociation;
 
         
         $reactions = $object->reactions;
@@ -767,16 +767,16 @@ class Comments implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $_PLUSES_1 = $object->_PLUSES_1;
-        after__PLUSES_1:        $result['__p_l_u_s_e_s_1'] = $_PLUSES_1;
+        $pluses1 = $object->pluses1;
+        after_pluses1:        $result['_PLUSES_1'] = $pluses1;
 
         
-        $_MINUS_1 = $object->_MINUS_1;
-        after__MINUS_1:        $result['__m_i_n_u_s_1'] = $_MINUS_1;
+        $minus1 = $object->minus1;
+        after_minus1:        $result['_MINUS_1'] = $minus1;
 
         
         $laugh = $object->laugh;
@@ -820,12 +820,12 @@ class Comments implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -857,8 +857,8 @@ class Comments implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

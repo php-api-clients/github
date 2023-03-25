@@ -85,13 +85,13 @@ class Accounts implements ObjectMapper
             $value = $payload['organization_billing_email'] ?? null;
 
             if ($value === null) {
-                $properties['organization_billing_email'] = null;
-                goto after_organization_billing_email;
+                $properties['organizationBillingEmail'] = null;
+                goto after_organizationBillingEmail;
             }
 
-            $properties['organization_billing_email'] = $value;
+            $properties['organizationBillingEmail'] = $value;
 
-            after_organization_billing_email:
+            after_organizationBillingEmail:
 
             $value = $payload['email'] ?? null;
 
@@ -107,42 +107,42 @@ class Accounts implements ObjectMapper
             $value = $payload['marketplace_pending_change'] ?? null;
 
             if ($value === null) {
-                $properties['marketplace_pending_change'] = null;
-                goto after_marketplace_pending_change;
+                $properties['marketplacePendingChange'] = null;
+                goto after_marketplacePendingChange;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'marketplace_pending_change';
+                    $this->hydrationStack[] = 'marketplacePendingChange';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePendingChange($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['marketplace_pending_change'] = $value;
+            $properties['marketplacePendingChange'] = $value;
 
-            after_marketplace_pending_change:
+            after_marketplacePendingChange:
 
             $value = $payload['marketplace_purchase'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'marketplace_purchase';
-                goto after_marketplace_purchase;
+                goto after_marketplacePurchase;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'marketplace_purchase';
+                    $this->hydrationStack[] = 'marketplacePurchase';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePurchase($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['marketplace_purchase'] = $value;
+            $properties['marketplacePurchase'] = $value;
 
-            after_marketplace_purchase:
+            after_marketplacePurchase:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MarketplacePurchase', $exception, stack: $this->hydrationStack);
@@ -168,35 +168,35 @@ class Accounts implements ObjectMapper
             $value = $payload['is_installed'] ?? null;
 
             if ($value === null) {
-                $properties['is_installed'] = null;
-                goto after_is_installed;
+                $properties['isInstalled'] = null;
+                goto after_isInstalled;
             }
 
-            $properties['is_installed'] = $value;
+            $properties['isInstalled'] = $value;
 
-            after_is_installed:
+            after_isInstalled:
 
             $value = $payload['effective_date'] ?? null;
 
             if ($value === null) {
-                $properties['effective_date'] = null;
-                goto after_effective_date;
+                $properties['effectiveDate'] = null;
+                goto after_effectiveDate;
             }
 
-            $properties['effective_date'] = $value;
+            $properties['effectiveDate'] = $value;
 
-            after_effective_date:
+            after_effectiveDate:
 
             $value = $payload['unit_count'] ?? null;
 
             if ($value === null) {
-                $properties['unit_count'] = null;
-                goto after_unit_count;
+                $properties['unitCount'] = null;
+                goto after_unitCount;
             }
 
-            $properties['unit_count'] = $value;
+            $properties['unitCount'] = $value;
 
-            after_unit_count:
+            after_unitCount:
 
             $value = $payload['id'] ?? null;
 
@@ -265,12 +265,12 @@ class Accounts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'accounts_url';
-                goto after_accounts_url;
+                goto after_accountsUrl;
             }
 
-            $properties['accounts_url'] = $value;
+            $properties['accountsUrl'] = $value;
 
-            after_accounts_url:
+            after_accountsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -320,56 +320,56 @@ class Accounts implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'monthly_price_in_cents';
-                goto after_monthly_price_in_cents;
+                goto after_monthlyPriceInCents;
             }
 
-            $properties['monthly_price_in_cents'] = $value;
+            $properties['monthlyPriceInCents'] = $value;
 
-            after_monthly_price_in_cents:
+            after_monthlyPriceInCents:
 
             $value = $payload['yearly_price_in_cents'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'yearly_price_in_cents';
-                goto after_yearly_price_in_cents;
+                goto after_yearlyPriceInCents;
             }
 
-            $properties['yearly_price_in_cents'] = $value;
+            $properties['yearlyPriceInCents'] = $value;
 
-            after_yearly_price_in_cents:
+            after_yearlyPriceInCents:
 
             $value = $payload['price_model'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'price_model';
-                goto after_price_model;
+                goto after_priceModel;
             }
 
-            $properties['price_model'] = $value;
+            $properties['priceModel'] = $value;
 
-            after_price_model:
+            after_priceModel:
 
             $value = $payload['has_free_trial'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_free_trial';
-                goto after_has_free_trial;
+                goto after_hasFreeTrial;
             }
 
-            $properties['has_free_trial'] = $value;
+            $properties['hasFreeTrial'] = $value;
 
-            after_has_free_trial:
+            after_hasFreeTrial:
 
             $value = $payload['unit_name'] ?? null;
 
             if ($value === null) {
-                $properties['unit_name'] = null;
-                goto after_unit_name;
+                $properties['unitName'] = null;
+                goto after_unitName;
             }
 
-            $properties['unit_name'] = $value;
+            $properties['unitName'] = $value;
 
-            after_unit_name:
+            after_unitName:
 
             $value = $payload['state'] ?? null;
 
@@ -417,79 +417,79 @@ class Accounts implements ObjectMapper
             $value = $payload['billing_cycle'] ?? null;
 
             if ($value === null) {
-                $properties['billing_cycle'] = null;
-                goto after_billing_cycle;
+                $properties['billingCycle'] = null;
+                goto after_billingCycle;
             }
 
-            $properties['billing_cycle'] = $value;
+            $properties['billingCycle'] = $value;
 
-            after_billing_cycle:
+            after_billingCycle:
 
             $value = $payload['next_billing_date'] ?? null;
 
             if ($value === null) {
-                $properties['next_billing_date'] = null;
-                goto after_next_billing_date;
+                $properties['nextBillingDate'] = null;
+                goto after_nextBillingDate;
             }
 
-            $properties['next_billing_date'] = $value;
+            $properties['nextBillingDate'] = $value;
 
-            after_next_billing_date:
+            after_nextBillingDate:
 
             $value = $payload['is_installed'] ?? null;
 
             if ($value === null) {
-                $properties['is_installed'] = null;
-                goto after_is_installed;
+                $properties['isInstalled'] = null;
+                goto after_isInstalled;
             }
 
-            $properties['is_installed'] = $value;
+            $properties['isInstalled'] = $value;
 
-            after_is_installed:
+            after_isInstalled:
 
             $value = $payload['unit_count'] ?? null;
 
             if ($value === null) {
-                $properties['unit_count'] = null;
-                goto after_unit_count;
+                $properties['unitCount'] = null;
+                goto after_unitCount;
             }
 
-            $properties['unit_count'] = $value;
+            $properties['unitCount'] = $value;
 
-            after_unit_count:
+            after_unitCount:
 
             $value = $payload['on_free_trial'] ?? null;
 
             if ($value === null) {
-                $properties['on_free_trial'] = null;
-                goto after_on_free_trial;
+                $properties['onFreeTrial'] = null;
+                goto after_onFreeTrial;
             }
 
-            $properties['on_free_trial'] = $value;
+            $properties['onFreeTrial'] = $value;
 
-            after_on_free_trial:
+            after_onFreeTrial:
 
             $value = $payload['free_trial_ends_on'] ?? null;
 
             if ($value === null) {
-                $properties['free_trial_ends_on'] = null;
-                goto after_free_trial_ends_on;
+                $properties['freeTrialEndsOn'] = null;
+                goto after_freeTrialEndsOn;
             }
 
-            $properties['free_trial_ends_on'] = $value;
+            $properties['freeTrialEndsOn'] = $value;
 
-            after_free_trial_ends_on:
+            after_freeTrialEndsOn:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['plan'] ?? null;
 
@@ -546,13 +546,13 @@ class Accounts implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -721,12 +721,12 @@ class Accounts implements ObjectMapper
         after_login:        $result['login'] = $login;
 
         
-        $organization_billing_email = $object->organization_billing_email;
+        $organizationBillingEmail = $object->organizationBillingEmail;
 
-        if ($organization_billing_email === null) {
-            goto after_organization_billing_email;
+        if ($organizationBillingEmail === null) {
+            goto after_organizationBillingEmail;
         }
-        after_organization_billing_email:        $result['organization_billing_email'] = $organization_billing_email;
+        after_organizationBillingEmail:        $result['organization_billing_email'] = $organizationBillingEmail;
 
         
         $email = $object->email;
@@ -737,18 +737,18 @@ class Accounts implements ObjectMapper
         after_email:        $result['email'] = $email;
 
         
-        $marketplace_pending_change = $object->marketplace_pending_change;
+        $marketplacePendingChange = $object->marketplacePendingChange;
 
-        if ($marketplace_pending_change === null) {
-            goto after_marketplace_pending_change;
+        if ($marketplacePendingChange === null) {
+            goto after_marketplacePendingChange;
         }
-        $marketplace_pending_change = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePendingChange($marketplace_pending_change);
-        after_marketplace_pending_change:        $result['marketplace_pending_change'] = $marketplace_pending_change;
+        $marketplacePendingChange = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePendingChange($marketplacePendingChange);
+        after_marketplacePendingChange:        $result['marketplace_pending_change'] = $marketplacePendingChange;
 
         
-        $marketplace_purchase = $object->marketplace_purchase;
-        $marketplace_purchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePurchase($marketplace_purchase);
-        after_marketplace_purchase:        $result['marketplace_purchase'] = $marketplace_purchase;
+        $marketplacePurchase = $object->marketplacePurchase;
+        $marketplacePurchase = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MarketplacePurchase⚡️MarketplacePurchase($marketplacePurchase);
+        after_marketplacePurchase:        $result['marketplace_purchase'] = $marketplacePurchase;
 
 
         return $result;
@@ -760,28 +760,28 @@ class Accounts implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\MarketplacePurchase\MarketplacePendingChange);
         $result = [];
 
-        $is_installed = $object->is_installed;
+        $isInstalled = $object->isInstalled;
 
-        if ($is_installed === null) {
-            goto after_is_installed;
+        if ($isInstalled === null) {
+            goto after_isInstalled;
         }
-        after_is_installed:        $result['is_installed'] = $is_installed;
+        after_isInstalled:        $result['is_installed'] = $isInstalled;
 
         
-        $effective_date = $object->effective_date;
+        $effectiveDate = $object->effectiveDate;
 
-        if ($effective_date === null) {
-            goto after_effective_date;
+        if ($effectiveDate === null) {
+            goto after_effectiveDate;
         }
-        after_effective_date:        $result['effective_date'] = $effective_date;
+        after_effectiveDate:        $result['effective_date'] = $effectiveDate;
 
         
-        $unit_count = $object->unit_count;
+        $unitCount = $object->unitCount;
 
-        if ($unit_count === null) {
-            goto after_unit_count;
+        if ($unitCount === null) {
+            goto after_unitCount;
         }
-        after_unit_count:        $result['unit_count'] = $unit_count;
+        after_unitCount:        $result['unit_count'] = $unitCount;
 
         
         $id = $object->id;
@@ -814,8 +814,8 @@ class Accounts implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $accounts_url = $object->accounts_url;
-        after_accounts_url:        $result['accounts_url'] = $accounts_url;
+        $accountsUrl = $object->accountsUrl;
+        after_accountsUrl:        $result['accounts_url'] = $accountsUrl;
 
         
         $id = $object->id;
@@ -834,28 +834,28 @@ class Accounts implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $monthly_price_in_cents = $object->monthly_price_in_cents;
-        after_monthly_price_in_cents:        $result['monthly_price_in_cents'] = $monthly_price_in_cents;
+        $monthlyPriceInCents = $object->monthlyPriceInCents;
+        after_monthlyPriceInCents:        $result['monthly_price_in_cents'] = $monthlyPriceInCents;
 
         
-        $yearly_price_in_cents = $object->yearly_price_in_cents;
-        after_yearly_price_in_cents:        $result['yearly_price_in_cents'] = $yearly_price_in_cents;
+        $yearlyPriceInCents = $object->yearlyPriceInCents;
+        after_yearlyPriceInCents:        $result['yearly_price_in_cents'] = $yearlyPriceInCents;
 
         
-        $price_model = $object->price_model;
-        after_price_model:        $result['price_model'] = $price_model;
+        $priceModel = $object->priceModel;
+        after_priceModel:        $result['price_model'] = $priceModel;
 
         
-        $has_free_trial = $object->has_free_trial;
-        after_has_free_trial:        $result['has_free_trial'] = $has_free_trial;
+        $hasFreeTrial = $object->hasFreeTrial;
+        after_hasFreeTrial:        $result['has_free_trial'] = $hasFreeTrial;
 
         
-        $unit_name = $object->unit_name;
+        $unitName = $object->unitName;
 
-        if ($unit_name === null) {
-            goto after_unit_name;
+        if ($unitName === null) {
+            goto after_unitName;
         }
-        after_unit_name:        $result['unit_name'] = $unit_name;
+        after_unitName:        $result['unit_name'] = $unitName;
 
         
         $state = $object->state;
@@ -883,60 +883,60 @@ class Accounts implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\MarketplacePurchase\MarketplacePurchase);
         $result = [];
 
-        $billing_cycle = $object->billing_cycle;
+        $billingCycle = $object->billingCycle;
 
-        if ($billing_cycle === null) {
-            goto after_billing_cycle;
+        if ($billingCycle === null) {
+            goto after_billingCycle;
         }
-        after_billing_cycle:        $result['billing_cycle'] = $billing_cycle;
+        after_billingCycle:        $result['billing_cycle'] = $billingCycle;
 
         
-        $next_billing_date = $object->next_billing_date;
+        $nextBillingDate = $object->nextBillingDate;
 
-        if ($next_billing_date === null) {
-            goto after_next_billing_date;
+        if ($nextBillingDate === null) {
+            goto after_nextBillingDate;
         }
-        after_next_billing_date:        $result['next_billing_date'] = $next_billing_date;
+        after_nextBillingDate:        $result['next_billing_date'] = $nextBillingDate;
 
         
-        $is_installed = $object->is_installed;
+        $isInstalled = $object->isInstalled;
 
-        if ($is_installed === null) {
-            goto after_is_installed;
+        if ($isInstalled === null) {
+            goto after_isInstalled;
         }
-        after_is_installed:        $result['is_installed'] = $is_installed;
+        after_isInstalled:        $result['is_installed'] = $isInstalled;
 
         
-        $unit_count = $object->unit_count;
+        $unitCount = $object->unitCount;
 
-        if ($unit_count === null) {
-            goto after_unit_count;
+        if ($unitCount === null) {
+            goto after_unitCount;
         }
-        after_unit_count:        $result['unit_count'] = $unit_count;
+        after_unitCount:        $result['unit_count'] = $unitCount;
 
         
-        $on_free_trial = $object->on_free_trial;
+        $onFreeTrial = $object->onFreeTrial;
 
-        if ($on_free_trial === null) {
-            goto after_on_free_trial;
+        if ($onFreeTrial === null) {
+            goto after_onFreeTrial;
         }
-        after_on_free_trial:        $result['on_free_trial'] = $on_free_trial;
+        after_onFreeTrial:        $result['on_free_trial'] = $onFreeTrial;
 
         
-        $free_trial_ends_on = $object->free_trial_ends_on;
+        $freeTrialEndsOn = $object->freeTrialEndsOn;
 
-        if ($free_trial_ends_on === null) {
-            goto after_free_trial_ends_on;
+        if ($freeTrialEndsOn === null) {
+            goto after_freeTrialEndsOn;
         }
-        after_free_trial_ends_on:        $result['free_trial_ends_on'] = $free_trial_ends_on;
+        after_freeTrialEndsOn:        $result['free_trial_ends_on'] = $freeTrialEndsOn;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $plan = $object->plan;
@@ -965,12 +965,12 @@ class Accounts implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

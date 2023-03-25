@@ -15,24 +15,24 @@ final class GetDiscussionCommentLegacy
     private const METHOD = 'GET';
     private const PATH = '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
     /**The unique identifier of the team.**/
-    private int $team_id;
+    private int $teamId;
     /**The number that identifies the discussion.**/
-    private int $discussion_number;
+    private int $discussionNumber;
     /**The number that identifies the comment.**/
-    private int $comment_number;
+    private int $commentNumber;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator, int $team_id, int $discussion_number, int $comment_number)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments\CbCommentNumberRcb $hydrator, int $teamId, int $discussionNumber, int $commentNumber)
     {
-        $this->team_id = $team_id;
-        $this->discussion_number = $discussion_number;
-        $this->comment_number = $comment_number;
+        $this->teamId = $teamId;
+        $this->discussionNumber = $discussionNumber;
+        $this->commentNumber = $commentNumber;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{comment_number}'), array($this->team_id, $this->discussion_number, $this->comment_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{comment_number}'), array($this->teamId, $this->discussionNumber, $this->commentNumber), self::PATH));
     }
     /**
      * @return Schema\TeamDiscussionComment

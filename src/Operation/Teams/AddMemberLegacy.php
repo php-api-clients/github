@@ -15,21 +15,21 @@ final class AddMemberLegacy
     private const METHOD = 'PUT';
     private const PATH = '/teams/{team_id}/members/{username}';
     /**The unique identifier of the team.**/
-    private int $team_id;
+    private int $teamId;
     /**The handle for the GitHub user account.**/
     private string $username;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Members\CbUsernameRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Members\CbUsernameRcb $hydrator, int $team_id, string $username)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Members\CbUsernameRcb $hydrator, int $teamId, string $username)
     {
-        $this->team_id = $team_id;
+        $this->teamId = $teamId;
         $this->username = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{username}'), array($this->team_id, $this->username), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{username}'), array($this->teamId, $this->username), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

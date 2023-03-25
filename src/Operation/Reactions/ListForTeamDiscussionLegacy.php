@@ -15,30 +15,30 @@ final class ListForTeamDiscussionLegacy
     private const METHOD = 'GET';
     private const PATH = '/teams/{team_id}/discussions/{discussion_number}/reactions';
     /**The unique identifier of the team.**/
-    private int $team_id;
+    private int $teamId;
     /**The number that identifies the discussion.**/
-    private int $discussion_number;
+    private int $discussionNumber;
     /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion.**/
     private string $content;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Reactions $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Reactions $hydrator, int $team_id, int $discussion_number, string $content, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Reactions $hydrator, int $teamId, int $discussionNumber, string $content, int $perPage = 30, int $page = 1)
     {
-        $this->team_id = $team_id;
-        $this->discussion_number = $discussion_number;
+        $this->teamId = $teamId;
+        $this->discussionNumber = $discussionNumber;
         $this->content = $content;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->team_id, $this->discussion_number, $this->content, $this->per_page, $this->page), self::PATH . '?content={content}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->teamId, $this->discussionNumber, $this->content, $this->perPage, $this->page), self::PATH . '?content={content}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Reaction>

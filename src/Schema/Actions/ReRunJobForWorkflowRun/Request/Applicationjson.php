@@ -13,11 +13,11 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"type":["object","null"],"properties":{"enable_debug_logging":{"type":"boolean","description":"Whether to enable debug logging for the re-run.","default":false}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"enable_debug_logging":false}';
+    public const SCHEMA_EXAMPLE_DATA = '{"enableDebugLogging":false}';
     /**
-     * enable_debug_logging: Whether to enable debug logging for the re-run.
+     * enableDebugLogging: Whether to enable debug logging for the re-run.
      */
-    public function __construct(public ?bool $enable_debug_logging)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('enable_debug_logging')] public ?bool $enableDebugLogging)
     {
     }
 }

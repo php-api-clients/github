@@ -14,18 +14,18 @@ final class GetWebhookDelivery
     public const OPERATION_MATCH = 'GET /app/hook/deliveries/{delivery_id}';
     private const METHOD = 'GET';
     private const PATH = '/app/hook/deliveries/{delivery_id}';
-    private int $delivery_id;
+    private int $deliveryId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\App\Hook\Deliveries\CbDeliveryIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Hook\Deliveries\CbDeliveryIdRcb $hydrator, int $delivery_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Hook\Deliveries\CbDeliveryIdRcb $hydrator, int $deliveryId)
     {
-        $this->delivery_id = $delivery_id;
+        $this->deliveryId = $deliveryId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{delivery_id}'), array($this->delivery_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{delivery_id}'), array($this->deliveryId), self::PATH));
     }
     /**
      * @return Schema\HookDelivery

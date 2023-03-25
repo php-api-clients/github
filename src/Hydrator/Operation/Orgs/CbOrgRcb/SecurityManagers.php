@@ -49,12 +49,12 @@ class SecurityManagers implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -71,12 +71,12 @@ class SecurityManagers implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'members_url';
-                goto after_members_url;
+                goto after_membersUrl;
             }
 
-            $properties['members_url'] = $value;
+            $properties['membersUrl'] = $value;
 
-            after_members_url:
+            after_membersUrl:
 
             $value = $payload['name'] ?? null;
 
@@ -126,23 +126,23 @@ class SecurityManagers implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repositories_url';
-                goto after_repositories_url;
+                goto after_repositoriesUrl;
             }
 
-            $properties['repositories_url'] = $value;
+            $properties['repositoriesUrl'] = $value;
 
-            after_repositories_url:
+            after_repositoriesUrl:
 
             $value = $payload['slug'] ?? null;
 
@@ -158,13 +158,13 @@ class SecurityManagers implements ObjectMapper
             $value = $payload['ldap_dn'] ?? null;
 
             if ($value === null) {
-                $properties['ldap_dn'] = null;
-                goto after_ldap_dn;
+                $properties['ldapDn'] = null;
+                goto after_ldapDn;
             }
 
-            $properties['ldap_dn'] = $value;
+            $properties['ldapDn'] = $value;
 
-            after_ldap_dn:
+            after_ldapDn:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TeamSimple', $exception, stack: $this->hydrationStack);
@@ -295,16 +295,16 @@ class SecurityManagers implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $members_url = $object->members_url;
-        after_members_url:        $result['members_url'] = $members_url;
+        $membersUrl = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
 
         
         $name = $object->name;
@@ -331,24 +331,24 @@ class SecurityManagers implements ObjectMapper
         after_privacy:        $result['privacy'] = $privacy;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $repositories_url = $object->repositories_url;
-        after_repositories_url:        $result['repositories_url'] = $repositories_url;
+        $repositoriesUrl = $object->repositoriesUrl;
+        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
 
         
         $slug = $object->slug;
         after_slug:        $result['slug'] = $slug;
 
         
-        $ldap_dn = $object->ldap_dn;
+        $ldapDn = $object->ldapDn;
 
-        if ($ldap_dn === null) {
-            goto after_ldap_dn;
+        if ($ldapDn === null) {
+            goto after_ldapDn;
         }
-        after_ldap_dn:        $result['ldap_dn'] = $ldap_dn;
+        after_ldapDn:        $result['ldap_dn'] = $ldapDn;
 
 
         return $result;

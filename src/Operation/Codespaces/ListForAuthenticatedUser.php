@@ -15,24 +15,24 @@ final class ListForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/codespaces';
     /**ID of the Repository to filter on**/
-    private int $repository_id;
+    private int $repositoryId;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces $hydrator, int $repository_id, int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces $hydrator, int $repositoryId, int $perPage = 30, int $page = 1)
     {
-        $this->repository_id = $repository_id;
-        $this->per_page = $per_page;
+        $this->repositoryId = $repositoryId;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{per_page}', '{page}'), array($this->repository_id, $this->per_page, $this->page), self::PATH . '?repository_id={repository_id}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{repository_id}', '{per_page}', '{page}'), array($this->repositoryId, $this->perPage, $this->page), self::PATH . '?repositoryId={repository_id}&perPage={per_page}&page={page}'));
     }
     /**
      * @return Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200

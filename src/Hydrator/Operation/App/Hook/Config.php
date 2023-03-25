@@ -48,13 +48,13 @@ class Config implements ObjectMapper
             $value = $payload['content_type'] ?? null;
 
             if ($value === null) {
-                $properties['content_type'] = null;
-                goto after_content_type;
+                $properties['contentType'] = null;
+                goto after_contentType;
             }
 
-            $properties['content_type'] = $value;
+            $properties['contentType'] = $value;
 
-            after_content_type:
+            after_contentType:
 
             $value = $payload['secret'] ?? null;
 
@@ -70,13 +70,13 @@ class Config implements ObjectMapper
             $value = $payload['insecure_ssl'] ?? null;
 
             if ($value === null) {
-                $properties['insecure_ssl'] = null;
-                goto after_insecure_ssl;
+                $properties['insecureSsl'] = null;
+                goto after_insecureSsl;
             }
 
-            $properties['insecure_ssl'] = $value;
+            $properties['insecureSsl'] = $value;
 
-            after_insecure_ssl:
+            after_insecureSsl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
@@ -211,12 +211,12 @@ class Config implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $content_type = $object->content_type;
+        $contentType = $object->contentType;
 
-        if ($content_type === null) {
-            goto after_content_type;
+        if ($contentType === null) {
+            goto after_contentType;
         }
-        after_content_type:        $result['content_type'] = $content_type;
+        after_contentType:        $result['content_type'] = $contentType;
 
         
         $secret = $object->secret;
@@ -227,12 +227,12 @@ class Config implements ObjectMapper
         after_secret:        $result['secret'] = $secret;
 
         
-        $insecure_ssl = $object->insecure_ssl;
+        $insecureSsl = $object->insecureSsl;
 
-        if ($insecure_ssl === null) {
-            goto after_insecure_ssl;
+        if ($insecureSsl === null) {
+            goto after_insecureSsl;
         }
-        after_insecure_ssl:        $result['insecure_ssl'] = $insecure_ssl;
+        after_insecureSsl:        $result['insecure_ssl'] = $insecureSsl;
 
 
         return $result;

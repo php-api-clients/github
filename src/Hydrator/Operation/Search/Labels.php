@@ -44,23 +44,23 @@ class Labels implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'total_count';
-                goto after_total_count;
+                goto after_totalCount;
             }
 
-            $properties['total_count'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_total_count:
+            after_totalCount:
 
             $value = $payload['incomplete_results'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'incomplete_results';
-                goto after_incomplete_results;
+                goto after_incompleteResults;
             }
 
-            $properties['incomplete_results'] = $value;
+            $properties['incompleteResults'] = $value;
 
-            after_incomplete_results:
+            after_incompleteResults:
 
             $value = $payload['items'] ?? null;
 
@@ -119,12 +119,12 @@ class Labels implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['url'] ?? null;
 
@@ -195,23 +195,23 @@ class Labels implements ObjectMapper
             $value = $payload['text_matches'] ?? null;
 
             if ($value === null) {
-                $properties['text_matches'] = null;
-                goto after_text_matches;
+                $properties['textMatches'] = null;
+                goto after_textMatches;
             }
 
-            static $text_matchesCaster1;
+            static $textMatchesCaster1;
 
-            if ($text_matchesCaster1 === null) {
-                $text_matchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+            if ($textMatchesCaster1 === null) {
+                $textMatchesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
             }
 
-            $value = $text_matchesCaster1->cast($value, $this);
+            $value = $textMatchesCaster1->cast($value, $this);
 
-            $properties['text_matches'] = $value;
+            $properties['textMatches'] = $value;
 
-            after_text_matches:
+            after_textMatches:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LabelSearchResultItem', $exception, stack: $this->hydrationStack);
@@ -237,24 +237,24 @@ class Labels implements ObjectMapper
             $value = $payload['object_url'] ?? null;
 
             if ($value === null) {
-                $properties['object_url'] = null;
-                goto after_object_url;
+                $properties['objectUrl'] = null;
+                goto after_objectUrl;
             }
 
-            $properties['object_url'] = $value;
+            $properties['objectUrl'] = $value;
 
-            after_object_url:
+            after_objectUrl:
 
             $value = $payload['object_type'] ?? null;
 
             if ($value === null) {
-                $properties['object_type'] = null;
-                goto after_object_type;
+                $properties['objectType'] = null;
+                goto after_objectType;
             }
 
-            $properties['object_type'] = $value;
+            $properties['objectType'] = $value;
 
-            after_object_type:
+            after_objectType:
 
             $value = $payload['property'] ?? null;
 
@@ -377,13 +377,13 @@ class Labels implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -443,12 +443,12 @@ class Labels implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -689,12 +689,12 @@ class Labels implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Search\Labels\Response\Applicationjson\H200);
         $result = [];
 
-        $total_count = $object->total_count;
-        after_total_count:        $result['total_count'] = $total_count;
+        $totalCount = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
         
-        $incomplete_results = $object->incomplete_results;
-        after_incomplete_results:        $result['incomplete_results'] = $incomplete_results;
+        $incompleteResults = $object->incompleteResults;
+        after_incompleteResults:        $result['incomplete_results'] = $incompleteResults;
 
         
         $items = $object->items;
@@ -723,8 +723,8 @@ class Labels implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $url = $object->url;
@@ -755,21 +755,21 @@ class Labels implements ObjectMapper
         after_score:        $result['score'] = $score;
 
         
-        $text_matches = $object->text_matches;
+        $textMatches = $object->textMatches;
 
-        if ($text_matches === null) {
-            goto after_text_matches;
+        if ($textMatches === null) {
+            goto after_textMatches;
         }
-        static $text_matchesSerializer0;
+        static $textMatchesSerializer0;
 
-        if ($text_matchesSerializer0 === null) {
-            $text_matchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
+        if ($textMatchesSerializer0 === null) {
+            $textMatchesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
   0 => 'ApiClients\\Client\\GitHub\\Schema\\SearchResultTextMatches',
 ));
         }
         
-        $text_matches = $text_matchesSerializer0->serialize($text_matches, $this);
-        after_text_matches:        $result['text_matches'] = $text_matches;
+        $textMatches = $textMatchesSerializer0->serialize($textMatches, $this);
+        after_textMatches:        $result['text_matches'] = $textMatches;
 
 
         return $result;
@@ -781,20 +781,20 @@ class Labels implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\SearchResultTextMatches);
         $result = [];
 
-        $object_url = $object->object_url;
+        $objectUrl = $object->objectUrl;
 
-        if ($object_url === null) {
-            goto after_object_url;
+        if ($objectUrl === null) {
+            goto after_objectUrl;
         }
-        after_object_url:        $result['object_url'] = $object_url;
+        after_objectUrl:        $result['object_url'] = $objectUrl;
 
         
-        $object_type = $object->object_type;
+        $objectType = $object->objectType;
 
-        if ($object_type === null) {
-            goto after_object_type;
+        if ($objectType === null) {
+            goto after_objectType;
         }
-        after_object_type:        $result['object_type'] = $object_type;
+        after_objectType:        $result['object_type'] = $objectType;
 
         
         $property = $object->property;
@@ -880,12 +880,12 @@ class Labels implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -917,8 +917,8 @@ class Labels implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

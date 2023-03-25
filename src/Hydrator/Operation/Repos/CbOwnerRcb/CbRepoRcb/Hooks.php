@@ -118,23 +118,23 @@ class Hooks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['url'] ?? null;
 
@@ -151,54 +151,54 @@ class Hooks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'test_url';
-                goto after_test_url;
+                goto after_testUrl;
             }
 
-            $properties['test_url'] = $value;
+            $properties['testUrl'] = $value;
 
-            after_test_url:
+            after_testUrl:
 
             $value = $payload['ping_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'ping_url';
-                goto after_ping_url;
+                goto after_pingUrl;
             }
 
-            $properties['ping_url'] = $value;
+            $properties['pingUrl'] = $value;
 
-            after_ping_url:
+            after_pingUrl:
 
             $value = $payload['deliveries_url'] ?? null;
 
             if ($value === null) {
-                $properties['deliveries_url'] = null;
-                goto after_deliveries_url;
+                $properties['deliveriesUrl'] = null;
+                goto after_deliveriesUrl;
             }
 
-            $properties['deliveries_url'] = $value;
+            $properties['deliveriesUrl'] = $value;
 
-            after_deliveries_url:
+            after_deliveriesUrl:
 
             $value = $payload['last_response'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'last_response';
-                goto after_last_response;
+                goto after_lastResponse;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'last_response';
+                    $this->hydrationStack[] = 'lastResponse';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookResponse($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['last_response'] = $value;
+            $properties['lastResponse'] = $value;
 
-            after_last_response:
+            after_lastResponse:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Hook', $exception, stack: $this->hydrationStack);
@@ -279,24 +279,24 @@ class Hooks implements ObjectMapper
             $value = $payload['insecure_ssl'] ?? null;
 
             if ($value === null) {
-                $properties['insecure_ssl'] = null;
-                goto after_insecure_ssl;
+                $properties['insecureSsl'] = null;
+                goto after_insecureSsl;
             }
 
-            $properties['insecure_ssl'] = $value;
+            $properties['insecureSsl'] = $value;
 
-            after_insecure_ssl:
+            after_insecureSsl:
 
             $value = $payload['content_type'] ?? null;
 
             if ($value === null) {
-                $properties['content_type'] = null;
-                goto after_content_type;
+                $properties['contentType'] = null;
+                goto after_contentType;
             }
 
-            $properties['content_type'] = $value;
+            $properties['contentType'] = $value;
 
-            after_content_type:
+            after_contentType:
 
             $value = $payload['digest'] ?? null;
 
@@ -420,13 +420,13 @@ class Hooks implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -486,12 +486,12 @@ class Hooks implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -764,37 +764,37 @@ class Hooks implements ObjectMapper
         after_config:        $result['config'] = $config;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $test_url = $object->test_url;
-        after_test_url:        $result['test_url'] = $test_url;
+        $testUrl = $object->testUrl;
+        after_testUrl:        $result['test_url'] = $testUrl;
 
         
-        $ping_url = $object->ping_url;
-        after_ping_url:        $result['ping_url'] = $ping_url;
+        $pingUrl = $object->pingUrl;
+        after_pingUrl:        $result['ping_url'] = $pingUrl;
 
         
-        $deliveries_url = $object->deliveries_url;
+        $deliveriesUrl = $object->deliveriesUrl;
 
-        if ($deliveries_url === null) {
-            goto after_deliveries_url;
+        if ($deliveriesUrl === null) {
+            goto after_deliveriesUrl;
         }
-        after_deliveries_url:        $result['deliveries_url'] = $deliveries_url;
+        after_deliveriesUrl:        $result['deliveries_url'] = $deliveriesUrl;
 
         
-        $last_response = $object->last_response;
-        $last_response = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookResponse($last_response);
-        after_last_response:        $result['last_response'] = $last_response;
+        $lastResponse = $object->lastResponse;
+        $lastResponse = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookResponse($lastResponse);
+        after_lastResponse:        $result['last_response'] = $lastResponse;
 
 
         return $result;
@@ -846,20 +846,20 @@ class Hooks implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $insecure_ssl = $object->insecure_ssl;
+        $insecureSsl = $object->insecureSsl;
 
-        if ($insecure_ssl === null) {
-            goto after_insecure_ssl;
+        if ($insecureSsl === null) {
+            goto after_insecureSsl;
         }
-        after_insecure_ssl:        $result['insecure_ssl'] = $insecure_ssl;
+        after_insecureSsl:        $result['insecure_ssl'] = $insecureSsl;
 
         
-        $content_type = $object->content_type;
+        $contentType = $object->contentType;
 
-        if ($content_type === null) {
-            goto after_content_type;
+        if ($contentType === null) {
+            goto after_contentType;
         }
-        after_content_type:        $result['content_type'] = $content_type;
+        after_contentType:        $result['content_type'] = $contentType;
 
         
         $digest = $object->digest;
@@ -936,12 +936,12 @@ class Hooks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -973,8 +973,8 @@ class Hooks implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

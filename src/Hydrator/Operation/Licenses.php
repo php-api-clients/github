@@ -70,35 +70,35 @@ class Licenses implements ObjectMapper
             $value = $payload['spdx_id'] ?? null;
 
             if ($value === null) {
-                $properties['spdx_id'] = null;
-                goto after_spdx_id;
+                $properties['spdxId'] = null;
+                goto after_spdxId;
             }
 
-            $properties['spdx_id'] = $value;
+            $properties['spdxId'] = $value;
 
-            after_spdx_id:
+            after_spdxId:
 
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
@@ -241,24 +241,24 @@ class Licenses implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $spdx_id = $object->spdx_id;
+        $spdxId = $object->spdxId;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($spdxId === null) {
+            goto after_spdxId;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_spdxId:        $result['spdx_id'] = $spdxId;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;

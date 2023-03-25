@@ -78,65 +78,65 @@ class Timing implements ObjectMapper
         $properties = []; 
         $missingFields = [];
         try {
-            $value = $payload['u_b_u_n_t_u'] ?? null;
+            $value = $payload['UBUNTU'] ?? null;
 
             if ($value === null) {
-                $properties['UBUNTU'] = null;
-                goto after_UBUNTU;
+                $properties['ubuntu'] = null;
+                goto after_ubuntu;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'UBUNTU';
+                    $this->hydrationStack[] = 'ubuntu';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['UBUNTU'] = $value;
+            $properties['ubuntu'] = $value;
 
-            after_UBUNTU:
+            after_ubuntu:
 
-            $value = $payload['m_a_c_o_s'] ?? null;
+            $value = $payload['MACOS'] ?? null;
 
             if ($value === null) {
-                $properties['MACOS'] = null;
-                goto after_MACOS;
+                $properties['macos'] = null;
+                goto after_macos;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'MACOS';
+                    $this->hydrationStack[] = 'macos';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['MACOS'] = $value;
+            $properties['macos'] = $value;
 
-            after_MACOS:
+            after_macos:
 
-            $value = $payload['w_i_n_d_o_w_s'] ?? null;
+            $value = $payload['WINDOWS'] ?? null;
 
             if ($value === null) {
-                $properties['WINDOWS'] = null;
-                goto after_WINDOWS;
+                $properties['windows'] = null;
+                goto after_windows;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'WINDOWS';
+                    $this->hydrationStack[] = 'windows';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['WINDOWS'] = $value;
+            $properties['windows'] = $value;
 
-            after_WINDOWS:
+            after_windows:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable', $exception, stack: $this->hydrationStack);
@@ -162,13 +162,13 @@ class Timing implements ObjectMapper
             $value = $payload['total_ms'] ?? null;
 
             if ($value === null) {
-                $properties['total_ms'] = null;
-                goto after_total_ms;
+                $properties['totalMs'] = null;
+                goto after_totalMs;
             }
 
-            $properties['total_ms'] = $value;
+            $properties['totalMs'] = $value;
 
-            after_total_ms:
+            after_totalMs:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
@@ -205,13 +205,13 @@ class Timing implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -377,31 +377,31 @@ class Timing implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable);
         $result = [];
 
-        $UBUNTU = $object->UBUNTU;
+        $ubuntu = $object->ubuntu;
 
-        if ($UBUNTU === null) {
-            goto after_UBUNTU;
+        if ($ubuntu === null) {
+            goto after_ubuntu;
         }
-        $UBUNTU = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($UBUNTU);
-        after_UBUNTU:        $result['u_b_u_n_t_u'] = $UBUNTU;
+        $ubuntu = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($ubuntu);
+        after_ubuntu:        $result['UBUNTU'] = $ubuntu;
 
         
-        $MACOS = $object->MACOS;
+        $macos = $object->macos;
 
-        if ($MACOS === null) {
-            goto after_MACOS;
+        if ($macos === null) {
+            goto after_macos;
         }
-        $MACOS = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($MACOS);
-        after_MACOS:        $result['m_a_c_o_s'] = $MACOS;
+        $macos = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($macos);
+        after_macos:        $result['MACOS'] = $macos;
 
         
-        $WINDOWS = $object->WINDOWS;
+        $windows = $object->windows;
 
-        if ($WINDOWS === null) {
-            goto after_WINDOWS;
+        if ($windows === null) {
+            goto after_windows;
         }
-        $WINDOWS = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($WINDOWS);
-        after_WINDOWS:        $result['w_i_n_d_o_w_s'] = $WINDOWS;
+        $windows = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($windows);
+        after_windows:        $result['WINDOWS'] = $windows;
 
 
         return $result;
@@ -413,12 +413,12 @@ class Timing implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu);
         $result = [];
 
-        $total_ms = $object->total_ms;
+        $totalMs = $object->totalMs;
 
-        if ($total_ms === null) {
-            goto after_total_ms;
+        if ($totalMs === null) {
+            goto after_totalMs;
         }
-        after_total_ms:        $result['total_ms'] = $total_ms;
+        after_totalMs:        $result['total_ms'] = $totalMs;
 
 
         return $result;
@@ -438,12 +438,12 @@ class Timing implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

@@ -62,34 +62,34 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'wait_timer';
-                goto after_wait_timer;
+                goto after_waitTimer;
             }
 
-            $properties['wait_timer'] = $value;
+            $properties['waitTimer'] = $value;
 
-            after_wait_timer:
+            after_waitTimer:
 
             $value = $payload['wait_timer_started_at'] ?? null;
 
             if ($value === null) {
-                $properties['wait_timer_started_at'] = null;
-                goto after_wait_timer_started_at;
+                $properties['waitTimerStartedAt'] = null;
+                goto after_waitTimerStartedAt;
             }
 
-            $properties['wait_timer_started_at'] = $value;
+            $properties['waitTimerStartedAt'] = $value;
 
-            after_wait_timer_started_at:
+            after_waitTimerStartedAt:
 
             $value = $payload['current_user_can_approve'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'current_user_can_approve';
-                goto after_current_user_can_approve;
+                goto after_currentUserCanApprove;
             }
 
-            $properties['current_user_can_approve'] = $value;
+            $properties['currentUserCanApprove'] = $value;
 
-            after_current_user_can_approve:
+            after_currentUserCanApprove:
 
             $value = $payload['reviewers'] ?? null;
 
@@ -147,13 +147,13 @@ class PendingDeployments implements ObjectMapper
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
-                $properties['node_id'] = null;
-                goto after_node_id;
+                $properties['nodeId'] = null;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['name'] ?? null;
 
@@ -180,13 +180,13 @@ class PendingDeployments implements ObjectMapper
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment\Environment', $exception, stack: $this->hydrationStack);
@@ -309,34 +309,34 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -353,111 +353,111 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -474,23 +474,23 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['starred_at'] ?? null;
 
             if ($value === null) {
-                $properties['starred_at'] = null;
-                goto after_starred_at;
+                $properties['starredAt'] = null;
+                goto after_starredAt;
             }
 
-            $properties['starred_at'] = $value;
+            $properties['starredAt'] = $value;
 
-            after_starred_at:
+            after_starredAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
@@ -539,12 +539,12 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['sha'] ?? null;
 
@@ -593,13 +593,13 @@ class PendingDeployments implements ObjectMapper
             $value = $payload['original_environment'] ?? null;
 
             if ($value === null) {
-                $properties['original_environment'] = null;
-                goto after_original_environment;
+                $properties['originalEnvironment'] = null;
+                goto after_originalEnvironment;
             }
 
-            $properties['original_environment'] = $value;
+            $properties['originalEnvironment'] = $value;
 
-            after_original_environment:
+            after_originalEnvironment:
 
             $value = $payload['environment'] ?? null;
 
@@ -638,78 +638,78 @@ class PendingDeployments implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['statuses_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'statuses_url';
-                goto after_statuses_url;
+                goto after_statusesUrl;
             }
 
-            $properties['statuses_url'] = $value;
+            $properties['statusesUrl'] = $value;
 
-            after_statuses_url:
+            after_statusesUrl:
 
             $value = $payload['repository_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repository_url';
-                goto after_repository_url;
+                goto after_repositoryUrl;
             }
 
-            $properties['repository_url'] = $value;
+            $properties['repositoryUrl'] = $value;
 
-            after_repository_url:
+            after_repositoryUrl:
 
             $value = $payload['transient_environment'] ?? null;
 
             if ($value === null) {
-                $properties['transient_environment'] = null;
-                goto after_transient_environment;
+                $properties['transientEnvironment'] = null;
+                goto after_transientEnvironment;
             }
 
-            $properties['transient_environment'] = $value;
+            $properties['transientEnvironment'] = $value;
 
-            after_transient_environment:
+            after_transientEnvironment:
 
             $value = $payload['production_environment'] ?? null;
 
             if ($value === null) {
-                $properties['production_environment'] = null;
-                goto after_production_environment;
+                $properties['productionEnvironment'] = null;
+                goto after_productionEnvironment;
             }
 
-            $properties['production_environment'] = $value;
+            $properties['productionEnvironment'] = $value;
 
-            after_production_environment:
+            after_productionEnvironment:
 
             $value = $payload['performed_via_github_app'] ?? null;
 
             if ($value === null) {
-                $properties['performed_via_github_app'] = null;
-                goto after_performed_via_github_app;
+                $properties['performedViaGithubApp'] = null;
+                goto after_performedViaGithubApp;
             }
 
-            $properties['performed_via_github_app'] = $value;
+            $properties['performedViaGithubApp'] = $value;
 
-            after_performed_via_github_app:
+            after_performedViaGithubApp:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Deployment', $exception, stack: $this->hydrationStack);
@@ -845,20 +845,20 @@ class PendingDeployments implements ObjectMapper
         after_environment:        $result['environment'] = $environment;
 
         
-        $wait_timer = $object->wait_timer;
-        after_wait_timer:        $result['wait_timer'] = $wait_timer;
+        $waitTimer = $object->waitTimer;
+        after_waitTimer:        $result['wait_timer'] = $waitTimer;
 
         
-        $wait_timer_started_at = $object->wait_timer_started_at;
+        $waitTimerStartedAt = $object->waitTimerStartedAt;
 
-        if ($wait_timer_started_at === null) {
-            goto after_wait_timer_started_at;
+        if ($waitTimerStartedAt === null) {
+            goto after_waitTimerStartedAt;
         }
-        after_wait_timer_started_at:        $result['wait_timer_started_at'] = $wait_timer_started_at;
+        after_waitTimerStartedAt:        $result['wait_timer_started_at'] = $waitTimerStartedAt;
 
         
-        $current_user_can_approve = $object->current_user_can_approve;
-        after_current_user_can_approve:        $result['current_user_can_approve'] = $current_user_can_approve;
+        $currentUserCanApprove = $object->currentUserCanApprove;
+        after_currentUserCanApprove:        $result['current_user_can_approve'] = $currentUserCanApprove;
 
         
         $reviewers = $object->reviewers;
@@ -891,12 +891,12 @@ class PendingDeployments implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
+        $nodeId = $object->nodeId;
 
-        if ($node_id === null) {
-            goto after_node_id;
+        if ($nodeId === null) {
+            goto after_nodeId;
         }
-        after_node_id:        $result['node_id'] = $node_id;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $name = $object->name;
@@ -915,12 +915,12 @@ class PendingDeployments implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -982,80 +982,80 @@ class PendingDeployments implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
-        $starred_at = $object->starred_at;
+        $starredAt = $object->starredAt;
 
-        if ($starred_at === null) {
-            goto after_starred_at;
+        if ($starredAt === null) {
+            goto after_starredAt;
         }
-        after_starred_at:        $result['starred_at'] = $starred_at;
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -1075,8 +1075,8 @@ class PendingDeployments implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $sha = $object->sha;
@@ -1099,12 +1099,12 @@ class PendingDeployments implements ObjectMapper
         after_payload:        $result['payload'] = $payload;
 
         
-        $original_environment = $object->original_environment;
+        $originalEnvironment = $object->originalEnvironment;
 
-        if ($original_environment === null) {
-            goto after_original_environment;
+        if ($originalEnvironment === null) {
+            goto after_originalEnvironment;
         }
-        after_original_environment:        $result['original_environment'] = $original_environment;
+        after_originalEnvironment:        $result['original_environment'] = $originalEnvironment;
 
         
         $environment = $object->environment;
@@ -1127,44 +1127,44 @@ class PendingDeployments implements ObjectMapper
         after_creator:        $result['creator'] = $creator;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $statuses_url = $object->statuses_url;
-        after_statuses_url:        $result['statuses_url'] = $statuses_url;
+        $statusesUrl = $object->statusesUrl;
+        after_statusesUrl:        $result['statuses_url'] = $statusesUrl;
 
         
-        $repository_url = $object->repository_url;
-        after_repository_url:        $result['repository_url'] = $repository_url;
+        $repositoryUrl = $object->repositoryUrl;
+        after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
         
-        $transient_environment = $object->transient_environment;
+        $transientEnvironment = $object->transientEnvironment;
 
-        if ($transient_environment === null) {
-            goto after_transient_environment;
+        if ($transientEnvironment === null) {
+            goto after_transientEnvironment;
         }
-        after_transient_environment:        $result['transient_environment'] = $transient_environment;
+        after_transientEnvironment:        $result['transient_environment'] = $transientEnvironment;
 
         
-        $production_environment = $object->production_environment;
+        $productionEnvironment = $object->productionEnvironment;
 
-        if ($production_environment === null) {
-            goto after_production_environment;
+        if ($productionEnvironment === null) {
+            goto after_productionEnvironment;
         }
-        after_production_environment:        $result['production_environment'] = $production_environment;
+        after_productionEnvironment:        $result['production_environment'] = $productionEnvironment;
 
         
-        $performed_via_github_app = $object->performed_via_github_app;
+        $performedViaGithubApp = $object->performedViaGithubApp;
 
-        if ($performed_via_github_app === null) {
-            goto after_performed_via_github_app;
+        if ($performedViaGithubApp === null) {
+            goto after_performedViaGithubApp;
         }
-        after_performed_via_github_app:        $result['performed_via_github_app'] = $performed_via_github_app;
+        after_performedViaGithubApp:        $result['performed_via_github_app'] = $performedViaGithubApp;
 
 
         return $result;

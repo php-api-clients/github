@@ -53,12 +53,12 @@ class Events implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['user'] ?? null;
 
@@ -97,98 +97,98 @@ class Events implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['pull_request_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'pull_request_url';
-                goto after_pull_request_url;
+                goto after_pullRequestUrl;
             }
 
-            $properties['pull_request_url'] = $value;
+            $properties['pullRequestUrl'] = $value;
 
-            after_pull_request_url:
+            after_pullRequestUrl:
 
             $value = $payload['_links'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = '_links';
-                goto after__links;
+                goto after_links;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = '_links';
+                    $this->hydrationStack[] = 'links';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['_links'] = $value;
+            $properties['links'] = $value;
 
-            after__links:
+            after_links:
 
             $value = $payload['submitted_at'] ?? null;
 
             if ($value === null) {
-                $properties['submitted_at'] = null;
-                goto after_submitted_at;
+                $properties['submittedAt'] = null;
+                goto after_submittedAt;
             }
 
-            $properties['submitted_at'] = $value;
+            $properties['submittedAt'] = $value;
 
-            after_submitted_at:
+            after_submittedAt:
 
             $value = $payload['commit_id'] ?? null;
 
             if ($value === null) {
-                $properties['commit_id'] = null;
-                goto after_commit_id;
+                $properties['commitId'] = null;
+                goto after_commitId;
             }
 
-            $properties['commit_id'] = $value;
+            $properties['commitId'] = $value;
 
-            after_commit_id:
+            after_commitId:
 
             $value = $payload['body_html'] ?? null;
 
             if ($value === null) {
-                $properties['body_html'] = null;
-                goto after_body_html;
+                $properties['bodyHtml'] = null;
+                goto after_bodyHtml;
             }
 
-            $properties['body_html'] = $value;
+            $properties['bodyHtml'] = $value;
 
-            after_body_html:
+            after_bodyHtml:
 
             $value = $payload['body_text'] ?? null;
 
             if ($value === null) {
-                $properties['body_text'] = null;
-                goto after_body_text;
+                $properties['bodyText'] = null;
+                goto after_bodyText;
             }
 
-            $properties['body_text'] = $value;
+            $properties['bodyText'] = $value;
 
-            after_body_text:
+            after_bodyText:
 
             $value = $payload['author_association'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'author_association';
-                goto after_author_association;
+                goto after_authorAssociation;
             }
 
-            $properties['author_association'] = $value;
+            $properties['authorAssociation'] = $value;
 
-            after_author_association:
+            after_authorAssociation:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PullRequestReview', $exception, stack: $this->hydrationStack);
@@ -235,21 +235,21 @@ class Events implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'pull_request';
-                goto after_pull_request;
+                goto after_pullRequest;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'pull_request';
+                    $this->hydrationStack[] = 'pullRequest';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['pull_request'] = $value;
+            $properties['pullRequest'] = $value;
 
-            after_pull_request:
+            after_pullRequest:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links', $exception, stack: $this->hydrationStack);
@@ -318,13 +318,13 @@ class Events implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -384,12 +384,12 @@ class Events implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -535,8 +535,8 @@ class Events implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $user = $object->user;
@@ -555,53 +555,53 @@ class Events implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $pull_request_url = $object->pull_request_url;
-        after_pull_request_url:        $result['pull_request_url'] = $pull_request_url;
+        $pullRequestUrl = $object->pullRequestUrl;
+        after_pullRequestUrl:        $result['pull_request_url'] = $pullRequestUrl;
 
         
-        $_links = $object->_links;
-        $_links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links($_links);
-        after__links:        $result['_links'] = $_links;
+        $links = $object->links;
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links($links);
+        after_links:        $result['_links'] = $links;
 
         
-        $submitted_at = $object->submitted_at;
+        $submittedAt = $object->submittedAt;
 
-        if ($submitted_at === null) {
-            goto after_submitted_at;
+        if ($submittedAt === null) {
+            goto after_submittedAt;
         }
-        after_submitted_at:        $result['submitted_at'] = $submitted_at;
+        after_submittedAt:        $result['submitted_at'] = $submittedAt;
 
         
-        $commit_id = $object->commit_id;
+        $commitId = $object->commitId;
 
-        if ($commit_id === null) {
-            goto after_commit_id;
+        if ($commitId === null) {
+            goto after_commitId;
         }
-        after_commit_id:        $result['commit_id'] = $commit_id;
+        after_commitId:        $result['commit_id'] = $commitId;
 
         
-        $body_html = $object->body_html;
+        $bodyHtml = $object->bodyHtml;
 
-        if ($body_html === null) {
-            goto after_body_html;
+        if ($bodyHtml === null) {
+            goto after_bodyHtml;
         }
-        after_body_html:        $result['body_html'] = $body_html;
+        after_bodyHtml:        $result['body_html'] = $bodyHtml;
 
         
-        $body_text = $object->body_text;
+        $bodyText = $object->bodyText;
 
-        if ($body_text === null) {
-            goto after_body_text;
+        if ($bodyText === null) {
+            goto after_bodyText;
         }
-        after_body_text:        $result['body_text'] = $body_text;
+        after_bodyText:        $result['body_text'] = $bodyText;
 
         
-        $author_association = $object->author_association;
-        after_author_association:        $result['author_association'] = $author_association;
+        $authorAssociation = $object->authorAssociation;
+        after_authorAssociation:        $result['author_association'] = $authorAssociation;
 
 
         return $result;
@@ -618,9 +618,9 @@ class Events implements ObjectMapper
         after_html:        $result['html'] = $html;
 
         
-        $pull_request = $object->pull_request;
-        $pull_request = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($pull_request);
-        after_pull_request:        $result['pull_request'] = $pull_request;
+        $pullRequest = $object->pullRequest;
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($pullRequest);
+        after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 
         return $result;
@@ -653,12 +653,12 @@ class Events implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -690,8 +690,8 @@ class Events implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

@@ -50,12 +50,12 @@ class Plans implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'accounts_url';
-                goto after_accounts_url;
+                goto after_accountsUrl;
             }
 
-            $properties['accounts_url'] = $value;
+            $properties['accountsUrl'] = $value;
 
-            after_accounts_url:
+            after_accountsUrl:
 
             $value = $payload['id'] ?? null;
 
@@ -105,56 +105,56 @@ class Plans implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'monthly_price_in_cents';
-                goto after_monthly_price_in_cents;
+                goto after_monthlyPriceInCents;
             }
 
-            $properties['monthly_price_in_cents'] = $value;
+            $properties['monthlyPriceInCents'] = $value;
 
-            after_monthly_price_in_cents:
+            after_monthlyPriceInCents:
 
             $value = $payload['yearly_price_in_cents'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'yearly_price_in_cents';
-                goto after_yearly_price_in_cents;
+                goto after_yearlyPriceInCents;
             }
 
-            $properties['yearly_price_in_cents'] = $value;
+            $properties['yearlyPriceInCents'] = $value;
 
-            after_yearly_price_in_cents:
+            after_yearlyPriceInCents:
 
             $value = $payload['price_model'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'price_model';
-                goto after_price_model;
+                goto after_priceModel;
             }
 
-            $properties['price_model'] = $value;
+            $properties['priceModel'] = $value;
 
-            after_price_model:
+            after_priceModel:
 
             $value = $payload['has_free_trial'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'has_free_trial';
-                goto after_has_free_trial;
+                goto after_hasFreeTrial;
             }
 
-            $properties['has_free_trial'] = $value;
+            $properties['hasFreeTrial'] = $value;
 
-            after_has_free_trial:
+            after_hasFreeTrial:
 
             $value = $payload['unit_name'] ?? null;
 
             if ($value === null) {
-                $properties['unit_name'] = null;
-                goto after_unit_name;
+                $properties['unitName'] = null;
+                goto after_unitName;
             }
 
-            $properties['unit_name'] = $value;
+            $properties['unitName'] = $value;
 
-            after_unit_name:
+            after_unitName:
 
             $value = $payload['state'] ?? null;
 
@@ -213,13 +213,13 @@ class Plans implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -373,8 +373,8 @@ class Plans implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $accounts_url = $object->accounts_url;
-        after_accounts_url:        $result['accounts_url'] = $accounts_url;
+        $accountsUrl = $object->accountsUrl;
+        after_accountsUrl:        $result['accounts_url'] = $accountsUrl;
 
         
         $id = $object->id;
@@ -393,28 +393,28 @@ class Plans implements ObjectMapper
         after_description:        $result['description'] = $description;
 
         
-        $monthly_price_in_cents = $object->monthly_price_in_cents;
-        after_monthly_price_in_cents:        $result['monthly_price_in_cents'] = $monthly_price_in_cents;
+        $monthlyPriceInCents = $object->monthlyPriceInCents;
+        after_monthlyPriceInCents:        $result['monthly_price_in_cents'] = $monthlyPriceInCents;
 
         
-        $yearly_price_in_cents = $object->yearly_price_in_cents;
-        after_yearly_price_in_cents:        $result['yearly_price_in_cents'] = $yearly_price_in_cents;
+        $yearlyPriceInCents = $object->yearlyPriceInCents;
+        after_yearlyPriceInCents:        $result['yearly_price_in_cents'] = $yearlyPriceInCents;
 
         
-        $price_model = $object->price_model;
-        after_price_model:        $result['price_model'] = $price_model;
+        $priceModel = $object->priceModel;
+        after_priceModel:        $result['price_model'] = $priceModel;
 
         
-        $has_free_trial = $object->has_free_trial;
-        after_has_free_trial:        $result['has_free_trial'] = $has_free_trial;
+        $hasFreeTrial = $object->hasFreeTrial;
+        after_hasFreeTrial:        $result['has_free_trial'] = $hasFreeTrial;
 
         
-        $unit_name = $object->unit_name;
+        $unitName = $object->unitName;
 
-        if ($unit_name === null) {
-            goto after_unit_name;
+        if ($unitName === null) {
+            goto after_unitName;
         }
-        after_unit_name:        $result['unit_name'] = $unit_name;
+        after_unitName:        $result['unit_name'] = $unitName;
 
         
         $state = $object->state;
@@ -450,12 +450,12 @@ class Plans implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

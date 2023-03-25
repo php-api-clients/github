@@ -60,13 +60,13 @@ class CbLicenseRcb implements ObjectMapper
             $value = $payload['spdx_id'] ?? null;
 
             if ($value === null) {
-                $properties['spdx_id'] = null;
-                goto after_spdx_id;
+                $properties['spdxId'] = null;
+                goto after_spdxId;
             }
 
-            $properties['spdx_id'] = $value;
+            $properties['spdxId'] = $value;
 
-            after_spdx_id:
+            after_spdxId:
 
             $value = $payload['url'] ?? null;
 
@@ -83,23 +83,23 @@ class CbLicenseRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -213,13 +213,13 @@ class CbLicenseRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -377,12 +377,12 @@ class CbLicenseRcb implements ObjectMapper
         after_name:        $result['name'] = $name;
 
         
-        $spdx_id = $object->spdx_id;
+        $spdxId = $object->spdxId;
 
-        if ($spdx_id === null) {
-            goto after_spdx_id;
+        if ($spdxId === null) {
+            goto after_spdxId;
         }
-        after_spdx_id:        $result['spdx_id'] = $spdx_id;
+        after_spdxId:        $result['spdx_id'] = $spdxId;
 
         
         $url = $object->url;
@@ -393,12 +393,12 @@ class CbLicenseRcb implements ObjectMapper
         after_url:        $result['url'] = $url;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
         $description = $object->description;
@@ -470,12 +470,12 @@ class CbLicenseRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;

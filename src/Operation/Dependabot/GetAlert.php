@@ -22,20 +22,20 @@ final class GetAlert
     You can find this at the end of the URL for a Dependabot alert within GitHub,
     or in `number` fields in the response from the
     `GET /repos/{owner}/{repo}/dependabot/alerts` operation.**/
-    private int $alert_number;
+    private int $alertNumber;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Dependabot\Alerts\CbAlertNumberRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Dependabot\Alerts\CbAlertNumberRcb $hydrator, string $owner, string $repo, int $alert_number)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Dependabot\Alerts\CbAlertNumberRcb $hydrator, string $owner, string $repo, int $alertNumber)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->alert_number = $alert_number;
+        $this->alertNumber = $alertNumber;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alert_number), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}'), array($this->owner, $this->repo, $this->alertNumber), self::PATH));
     }
     /**
      * @return Schema\DependabotAlert

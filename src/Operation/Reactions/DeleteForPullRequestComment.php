@@ -19,19 +19,19 @@ final class DeleteForPullRequestComment
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the comment.**/
-    private int $comment_id;
+    private int $commentId;
     /**The unique identifier of the reaction.**/
-    private int $reaction_id;
-    public function __construct(string $owner, string $repo, int $comment_id, int $reaction_id)
+    private int $reactionId;
+    public function __construct(string $owner, string $repo, int $commentId, int $reactionId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->comment_id = $comment_id;
-        $this->reaction_id = $reaction_id;
+        $this->commentId = $commentId;
+        $this->reactionId = $reactionId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{comment_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->comment_id, $this->reaction_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{comment_id}', '{reaction_id}'), array($this->owner, $this->repo, $this->commentId, $this->reactionId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

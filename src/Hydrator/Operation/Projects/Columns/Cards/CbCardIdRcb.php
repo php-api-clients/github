@@ -63,12 +63,12 @@ class CbCardIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['note'] ?? null;
 
@@ -96,23 +96,23 @@ class CbCardIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['archived'] ?? null;
 
@@ -128,57 +128,57 @@ class CbCardIdRcb implements ObjectMapper
             $value = $payload['column_name'] ?? null;
 
             if ($value === null) {
-                $properties['column_name'] = null;
-                goto after_column_name;
+                $properties['columnName'] = null;
+                goto after_columnName;
             }
 
-            $properties['column_name'] = $value;
+            $properties['columnName'] = $value;
 
-            after_column_name:
+            after_columnName:
 
             $value = $payload['project_id'] ?? null;
 
             if ($value === null) {
-                $properties['project_id'] = null;
-                goto after_project_id;
+                $properties['projectId'] = null;
+                goto after_projectId;
             }
 
-            $properties['project_id'] = $value;
+            $properties['projectId'] = $value;
 
-            after_project_id:
+            after_projectId:
 
             $value = $payload['column_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'column_url';
-                goto after_column_url;
+                goto after_columnUrl;
             }
 
-            $properties['column_url'] = $value;
+            $properties['columnUrl'] = $value;
 
-            after_column_url:
+            after_columnUrl:
 
             $value = $payload['content_url'] ?? null;
 
             if ($value === null) {
-                $properties['content_url'] = null;
-                goto after_content_url;
+                $properties['contentUrl'] = null;
+                goto after_contentUrl;
             }
 
-            $properties['content_url'] = $value;
+            $properties['contentUrl'] = $value;
 
-            after_content_url:
+            after_contentUrl:
 
             $value = $payload['project_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'project_url';
-                goto after_project_url;
+                goto after_projectUrl;
             }
 
-            $properties['project_url'] = $value;
+            $properties['projectUrl'] = $value;
 
-            after_project_url:
+            after_projectUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ProjectCard', $exception, stack: $this->hydrationStack);
@@ -215,13 +215,13 @@ class CbCardIdRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -280,13 +280,13 @@ class CbCardIdRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -335,12 +335,12 @@ class CbCardIdRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -489,8 +489,8 @@ class CbCardIdRcb implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
         $note = $object->note;
@@ -509,12 +509,12 @@ class CbCardIdRcb implements ObjectMapper
         after_creator:        $result['creator'] = $creator;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
         $archived = $object->archived;
@@ -525,36 +525,36 @@ class CbCardIdRcb implements ObjectMapper
         after_archived:        $result['archived'] = $archived;
 
         
-        $column_name = $object->column_name;
+        $columnName = $object->columnName;
 
-        if ($column_name === null) {
-            goto after_column_name;
+        if ($columnName === null) {
+            goto after_columnName;
         }
-        after_column_name:        $result['column_name'] = $column_name;
+        after_columnName:        $result['column_name'] = $columnName;
 
         
-        $project_id = $object->project_id;
+        $projectId = $object->projectId;
 
-        if ($project_id === null) {
-            goto after_project_id;
+        if ($projectId === null) {
+            goto after_projectId;
         }
-        after_project_id:        $result['project_id'] = $project_id;
+        after_projectId:        $result['project_id'] = $projectId;
 
         
-        $column_url = $object->column_url;
-        after_column_url:        $result['column_url'] = $column_url;
+        $columnUrl = $object->columnUrl;
+        after_columnUrl:        $result['column_url'] = $columnUrl;
 
         
-        $content_url = $object->content_url;
+        $contentUrl = $object->contentUrl;
 
-        if ($content_url === null) {
-            goto after_content_url;
+        if ($contentUrl === null) {
+            goto after_contentUrl;
         }
-        after_content_url:        $result['content_url'] = $content_url;
+        after_contentUrl:        $result['content_url'] = $contentUrl;
 
         
-        $project_url = $object->project_url;
-        after_project_url:        $result['project_url'] = $project_url;
+        $projectUrl = $object->projectUrl;
+        after_projectUrl:        $result['project_url'] = $projectUrl;
 
 
         return $result;
@@ -574,12 +574,12 @@ class CbCardIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -615,12 +615,12 @@ class CbCardIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;
@@ -652,8 +652,8 @@ class CbCardIdRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

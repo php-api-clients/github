@@ -62,24 +62,24 @@ class DefaultSetup implements ObjectMapper
             $value = $payload['query_suite'] ?? null;
 
             if ($value === null) {
-                $properties['query_suite'] = null;
-                goto after_query_suite;
+                $properties['querySuite'] = null;
+                goto after_querySuite;
             }
 
-            $properties['query_suite'] = $value;
+            $properties['querySuite'] = $value;
 
-            after_query_suite:
+            after_querySuite:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
-                $properties['updated_at'] = null;
-                goto after_updated_at;
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetup', $exception, stack: $this->hydrationStack);
@@ -116,13 +116,13 @@ class DefaultSetup implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -192,13 +192,13 @@ class DefaultSetup implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503', $exception, stack: $this->hydrationStack);
@@ -224,24 +224,24 @@ class DefaultSetup implements ObjectMapper
             $value = $payload['run_id'] ?? null;
 
             if ($value === null) {
-                $properties['run_id'] = null;
-                goto after_run_id;
+                $properties['runId'] = null;
+                goto after_runId;
             }
 
-            $properties['run_id'] = $value;
+            $properties['runId'] = $value;
 
-            after_run_id:
+            after_runId:
 
             $value = $payload['run_url'] ?? null;
 
             if ($value === null) {
-                $properties['run_url'] = null;
-                goto after_run_url;
+                $properties['runUrl'] = null;
+                goto after_runUrl;
             }
 
-            $properties['run_url'] = $value;
+            $properties['runUrl'] = $value;
 
-            after_run_url:
+            after_runUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetupUpdateResponse', $exception, stack: $this->hydrationStack);
@@ -395,20 +395,20 @@ class DefaultSetup implements ObjectMapper
         after_languages:        $result['languages'] = $languages;
 
         
-        $query_suite = $object->query_suite;
+        $querySuite = $object->querySuite;
 
-        if ($query_suite === null) {
-            goto after_query_suite;
+        if ($querySuite === null) {
+            goto after_querySuite;
         }
-        after_query_suite:        $result['query_suite'] = $query_suite;
+        after_querySuite:        $result['query_suite'] = $querySuite;
 
         
-        $updated_at = $object->updated_at;
+        $updatedAt = $object->updatedAt;
 
-        if ($updated_at === null) {
-            goto after_updated_at;
+        if ($updatedAt === null) {
+            goto after_updatedAt;
         }
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
 
         return $result;
@@ -428,12 +428,12 @@ class DefaultSetup implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -477,12 +477,12 @@ class DefaultSetup implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
 
         return $result;
@@ -494,20 +494,20 @@ class DefaultSetup implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetupUpdateResponse);
         $result = [];
 
-        $run_id = $object->run_id;
+        $runId = $object->runId;
 
-        if ($run_id === null) {
-            goto after_run_id;
+        if ($runId === null) {
+            goto after_runId;
         }
-        after_run_id:        $result['run_id'] = $run_id;
+        after_runId:        $result['run_id'] = $runId;
 
         
-        $run_url = $object->run_url;
+        $runUrl = $object->runUrl;
 
-        if ($run_url === null) {
-            goto after_run_url;
+        if ($runUrl === null) {
+            goto after_runUrl;
         }
-        after_run_url:        $result['run_url'] = $run_url;
+        after_runUrl:        $result['run_url'] = $runUrl;
 
 
         return $result;

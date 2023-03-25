@@ -52,13 +52,13 @@ class User implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -129,34 +129,34 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'node_id';
-                goto after_node_id;
+                goto after_nodeId;
             }
 
-            $properties['node_id'] = $value;
+            $properties['nodeId'] = $value;
 
-            after_node_id:
+            after_nodeId:
 
             $value = $payload['avatar_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'avatar_url';
-                goto after_avatar_url;
+                goto after_avatarUrl;
             }
 
-            $properties['avatar_url'] = $value;
+            $properties['avatarUrl'] = $value;
 
-            after_avatar_url:
+            after_avatarUrl:
 
             $value = $payload['gravatar_id'] ?? null;
 
             if ($value === null) {
-                $properties['gravatar_id'] = null;
-                goto after_gravatar_id;
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
             }
 
-            $properties['gravatar_id'] = $value;
+            $properties['gravatarId'] = $value;
 
-            after_gravatar_id:
+            after_gravatarId:
 
             $value = $payload['url'] ?? null;
 
@@ -173,111 +173,111 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['followers_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'followers_url';
-                goto after_followers_url;
+                goto after_followersUrl;
             }
 
-            $properties['followers_url'] = $value;
+            $properties['followersUrl'] = $value;
 
-            after_followers_url:
+            after_followersUrl:
 
             $value = $payload['following_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'following_url';
-                goto after_following_url;
+                goto after_followingUrl;
             }
 
-            $properties['following_url'] = $value;
+            $properties['followingUrl'] = $value;
 
-            after_following_url:
+            after_followingUrl:
 
             $value = $payload['gists_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'gists_url';
-                goto after_gists_url;
+                goto after_gistsUrl;
             }
 
-            $properties['gists_url'] = $value;
+            $properties['gistsUrl'] = $value;
 
-            after_gists_url:
+            after_gistsUrl:
 
             $value = $payload['starred_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'starred_url';
-                goto after_starred_url;
+                goto after_starredUrl;
             }
 
-            $properties['starred_url'] = $value;
+            $properties['starredUrl'] = $value;
 
-            after_starred_url:
+            after_starredUrl:
 
             $value = $payload['subscriptions_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'subscriptions_url';
-                goto after_subscriptions_url;
+                goto after_subscriptionsUrl;
             }
 
-            $properties['subscriptions_url'] = $value;
+            $properties['subscriptionsUrl'] = $value;
 
-            after_subscriptions_url:
+            after_subscriptionsUrl:
 
             $value = $payload['organizations_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'organizations_url';
-                goto after_organizations_url;
+                goto after_organizationsUrl;
             }
 
-            $properties['organizations_url'] = $value;
+            $properties['organizationsUrl'] = $value;
 
-            after_organizations_url:
+            after_organizationsUrl:
 
             $value = $payload['repos_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'repos_url';
-                goto after_repos_url;
+                goto after_reposUrl;
             }
 
-            $properties['repos_url'] = $value;
+            $properties['reposUrl'] = $value;
 
-            after_repos_url:
+            after_reposUrl:
 
             $value = $payload['events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'events_url';
-                goto after_events_url;
+                goto after_eventsUrl;
             }
 
-            $properties['events_url'] = $value;
+            $properties['eventsUrl'] = $value;
 
-            after_events_url:
+            after_eventsUrl:
 
             $value = $payload['received_events_url'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'received_events_url';
-                goto after_received_events_url;
+                goto after_receivedEventsUrl;
             }
 
-            $properties['received_events_url'] = $value;
+            $properties['receivedEventsUrl'] = $value;
 
-            after_received_events_url:
+            after_receivedEventsUrl:
 
             $value = $payload['type'] ?? null;
 
@@ -294,12 +294,12 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'site_admin';
-                goto after_site_admin;
+                goto after_siteAdmin;
             }
 
-            $properties['site_admin'] = $value;
+            $properties['siteAdmin'] = $value;
 
-            after_site_admin:
+            after_siteAdmin:
 
             $value = $payload['name'] ?? null;
 
@@ -381,35 +381,35 @@ class User implements ObjectMapper
             $value = $payload['twitter_username'] ?? null;
 
             if ($value === null) {
-                $properties['twitter_username'] = null;
-                goto after_twitter_username;
+                $properties['twitterUsername'] = null;
+                goto after_twitterUsername;
             }
 
-            $properties['twitter_username'] = $value;
+            $properties['twitterUsername'] = $value;
 
-            after_twitter_username:
+            after_twitterUsername:
 
             $value = $payload['public_repos'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_repos';
-                goto after_public_repos;
+                goto after_publicRepos;
             }
 
-            $properties['public_repos'] = $value;
+            $properties['publicRepos'] = $value;
 
-            after_public_repos:
+            after_publicRepos:
 
             $value = $payload['public_gists'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'public_gists';
-                goto after_public_gists;
+                goto after_publicGists;
             }
 
-            $properties['public_gists'] = $value;
+            $properties['publicGists'] = $value;
 
-            after_public_gists:
+            after_publicGists:
 
             $value = $payload['followers'] ?? null;
 
@@ -437,67 +437,67 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['private_gists'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'private_gists';
-                goto after_private_gists;
+                goto after_privateGists;
             }
 
-            $properties['private_gists'] = $value;
+            $properties['privateGists'] = $value;
 
-            after_private_gists:
+            after_privateGists:
 
             $value = $payload['total_private_repos'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'total_private_repos';
-                goto after_total_private_repos;
+                goto after_totalPrivateRepos;
             }
 
-            $properties['total_private_repos'] = $value;
+            $properties['totalPrivateRepos'] = $value;
 
-            after_total_private_repos:
+            after_totalPrivateRepos:
 
             $value = $payload['owned_private_repos'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'owned_private_repos';
-                goto after_owned_private_repos;
+                goto after_ownedPrivateRepos;
             }
 
-            $properties['owned_private_repos'] = $value;
+            $properties['ownedPrivateRepos'] = $value;
 
-            after_owned_private_repos:
+            after_ownedPrivateRepos:
 
             $value = $payload['disk_usage'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'disk_usage';
-                goto after_disk_usage;
+                goto after_diskUsage;
             }
 
-            $properties['disk_usage'] = $value;
+            $properties['diskUsage'] = $value;
 
-            after_disk_usage:
+            after_diskUsage:
 
             $value = $payload['collaborators'] ?? null;
 
@@ -514,12 +514,12 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'two_factor_authentication';
-                goto after_two_factor_authentication;
+                goto after_twoFactorAuthentication;
             }
 
-            $properties['two_factor_authentication'] = $value;
+            $properties['twoFactorAuthentication'] = $value;
 
-            after_two_factor_authentication:
+            after_twoFactorAuthentication:
 
             $value = $payload['plan'] ?? null;
 
@@ -544,35 +544,35 @@ class User implements ObjectMapper
             $value = $payload['suspended_at'] ?? null;
 
             if ($value === null) {
-                $properties['suspended_at'] = null;
-                goto after_suspended_at;
+                $properties['suspendedAt'] = null;
+                goto after_suspendedAt;
             }
 
-            $properties['suspended_at'] = $value;
+            $properties['suspendedAt'] = $value;
 
-            after_suspended_at:
+            after_suspendedAt:
 
             $value = $payload['business_plus'] ?? null;
 
             if ($value === null) {
-                $properties['business_plus'] = null;
-                goto after_business_plus;
+                $properties['businessPlus'] = null;
+                goto after_businessPlus;
             }
 
-            $properties['business_plus'] = $value;
+            $properties['businessPlus'] = $value;
 
-            after_business_plus:
+            after_businessPlus:
 
             $value = $payload['ldap_dn'] ?? null;
 
             if ($value === null) {
-                $properties['ldap_dn'] = null;
-                goto after_ldap_dn;
+                $properties['ldapDn'] = null;
+                goto after_ldapDn;
             }
 
-            $properties['ldap_dn'] = $value;
+            $properties['ldapDn'] = $value;
 
-            after_ldap_dn:
+            after_ldapDn:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PrivateUser', $exception, stack: $this->hydrationStack);
@@ -632,12 +632,12 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'private_repos';
-                goto after_private_repos;
+                goto after_privateRepos;
             }
 
-            $properties['private_repos'] = $value;
+            $properties['privateRepos'] = $value;
 
-            after_private_repos:
+            after_privateRepos:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PublicUser\Plan', $exception, stack: $this->hydrationStack);
@@ -675,12 +675,12 @@ class User implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -927,12 +927,12 @@ class User implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -968,72 +968,72 @@ class User implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $node_id = $object->node_id;
-        after_node_id:        $result['node_id'] = $node_id;
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
 
         
-        $avatar_url = $object->avatar_url;
-        after_avatar_url:        $result['avatar_url'] = $avatar_url;
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
 
         
-        $gravatar_id = $object->gravatar_id;
+        $gravatarId = $object->gravatarId;
 
-        if ($gravatar_id === null) {
-            goto after_gravatar_id;
+        if ($gravatarId === null) {
+            goto after_gravatarId;
         }
-        after_gravatar_id:        $result['gravatar_id'] = $gravatar_id;
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $followers_url = $object->followers_url;
-        after_followers_url:        $result['followers_url'] = $followers_url;
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
 
         
-        $following_url = $object->following_url;
-        after_following_url:        $result['following_url'] = $following_url;
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
 
         
-        $gists_url = $object->gists_url;
-        after_gists_url:        $result['gists_url'] = $gists_url;
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
         
-        $starred_url = $object->starred_url;
-        after_starred_url:        $result['starred_url'] = $starred_url;
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
 
         
-        $subscriptions_url = $object->subscriptions_url;
-        after_subscriptions_url:        $result['subscriptions_url'] = $subscriptions_url;
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
 
         
-        $organizations_url = $object->organizations_url;
-        after_organizations_url:        $result['organizations_url'] = $organizations_url;
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
 
         
-        $repos_url = $object->repos_url;
-        after_repos_url:        $result['repos_url'] = $repos_url;
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
 
         
-        $events_url = $object->events_url;
-        after_events_url:        $result['events_url'] = $events_url;
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
 
         
-        $received_events_url = $object->received_events_url;
-        after_received_events_url:        $result['received_events_url'] = $received_events_url;
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
 
         
         $type = $object->type;
         after_type:        $result['type'] = $type;
 
         
-        $site_admin = $object->site_admin;
-        after_site_admin:        $result['site_admin'] = $site_admin;
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
 
         
         $name = $object->name;
@@ -1092,20 +1092,20 @@ class User implements ObjectMapper
         after_bio:        $result['bio'] = $bio;
 
         
-        $twitter_username = $object->twitter_username;
+        $twitterUsername = $object->twitterUsername;
 
-        if ($twitter_username === null) {
-            goto after_twitter_username;
+        if ($twitterUsername === null) {
+            goto after_twitterUsername;
         }
-        after_twitter_username:        $result['twitter_username'] = $twitter_username;
+        after_twitterUsername:        $result['twitter_username'] = $twitterUsername;
 
         
-        $public_repos = $object->public_repos;
-        after_public_repos:        $result['public_repos'] = $public_repos;
+        $publicRepos = $object->publicRepos;
+        after_publicRepos:        $result['public_repos'] = $publicRepos;
 
         
-        $public_gists = $object->public_gists;
-        after_public_gists:        $result['public_gists'] = $public_gists;
+        $publicGists = $object->publicGists;
+        after_publicGists:        $result['public_gists'] = $publicGists;
 
         
         $followers = $object->followers;
@@ -1116,36 +1116,36 @@ class User implements ObjectMapper
         after_following:        $result['following'] = $following;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $private_gists = $object->private_gists;
-        after_private_gists:        $result['private_gists'] = $private_gists;
+        $privateGists = $object->privateGists;
+        after_privateGists:        $result['private_gists'] = $privateGists;
 
         
-        $total_private_repos = $object->total_private_repos;
-        after_total_private_repos:        $result['total_private_repos'] = $total_private_repos;
+        $totalPrivateRepos = $object->totalPrivateRepos;
+        after_totalPrivateRepos:        $result['total_private_repos'] = $totalPrivateRepos;
 
         
-        $owned_private_repos = $object->owned_private_repos;
-        after_owned_private_repos:        $result['owned_private_repos'] = $owned_private_repos;
+        $ownedPrivateRepos = $object->ownedPrivateRepos;
+        after_ownedPrivateRepos:        $result['owned_private_repos'] = $ownedPrivateRepos;
 
         
-        $disk_usage = $object->disk_usage;
-        after_disk_usage:        $result['disk_usage'] = $disk_usage;
+        $diskUsage = $object->diskUsage;
+        after_diskUsage:        $result['disk_usage'] = $diskUsage;
 
         
         $collaborators = $object->collaborators;
         after_collaborators:        $result['collaborators'] = $collaborators;
 
         
-        $two_factor_authentication = $object->two_factor_authentication;
-        after_two_factor_authentication:        $result['two_factor_authentication'] = $two_factor_authentication;
+        $twoFactorAuthentication = $object->twoFactorAuthentication;
+        after_twoFactorAuthentication:        $result['two_factor_authentication'] = $twoFactorAuthentication;
 
         
         $plan = $object->plan;
@@ -1157,28 +1157,28 @@ class User implements ObjectMapper
         after_plan:        $result['plan'] = $plan;
 
         
-        $suspended_at = $object->suspended_at;
+        $suspendedAt = $object->suspendedAt;
 
-        if ($suspended_at === null) {
-            goto after_suspended_at;
+        if ($suspendedAt === null) {
+            goto after_suspendedAt;
         }
-        after_suspended_at:        $result['suspended_at'] = $suspended_at;
+        after_suspendedAt:        $result['suspended_at'] = $suspendedAt;
 
         
-        $business_plus = $object->business_plus;
+        $businessPlus = $object->businessPlus;
 
-        if ($business_plus === null) {
-            goto after_business_plus;
+        if ($businessPlus === null) {
+            goto after_businessPlus;
         }
-        after_business_plus:        $result['business_plus'] = $business_plus;
+        after_businessPlus:        $result['business_plus'] = $businessPlus;
 
         
-        $ldap_dn = $object->ldap_dn;
+        $ldapDn = $object->ldapDn;
 
-        if ($ldap_dn === null) {
-            goto after_ldap_dn;
+        if ($ldapDn === null) {
+            goto after_ldapDn;
         }
-        after_ldap_dn:        $result['ldap_dn'] = $ldap_dn;
+        after_ldapDn:        $result['ldap_dn'] = $ldapDn;
 
 
         return $result;
@@ -1202,8 +1202,8 @@ class User implements ObjectMapper
         after_space:        $result['space'] = $space;
 
         
-        $private_repos = $object->private_repos;
-        after_private_repos:        $result['private_repos'] = $private_repos;
+        $privateRepos = $object->privateRepos;
+        after_privateRepos:        $result['private_repos'] = $privateRepos;
 
 
         return $result;
@@ -1219,8 +1219,8 @@ class User implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

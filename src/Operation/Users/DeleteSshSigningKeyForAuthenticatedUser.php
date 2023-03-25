@@ -15,18 +15,18 @@ final class DeleteSshSigningKeyForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/ssh_signing_keys/{ssh_signing_key_id}';
     /**The unique identifier of the SSH signing key.**/
-    private int $ssh_signing_key_id;
+    private int $sshSigningKeyId;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\SshSigningKeys\CbSshSigningKeyIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys\CbSshSigningKeyIdRcb $hydrator, int $ssh_signing_key_id)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys\CbSshSigningKeyIdRcb $hydrator, int $sshSigningKeyId)
     {
-        $this->ssh_signing_key_id = $ssh_signing_key_id;
+        $this->sshSigningKeyId = $sshSigningKeyId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{ssh_signing_key_id}'), array($this->ssh_signing_key_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{ssh_signing_key_id}'), array($this->sshSigningKeyId), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {

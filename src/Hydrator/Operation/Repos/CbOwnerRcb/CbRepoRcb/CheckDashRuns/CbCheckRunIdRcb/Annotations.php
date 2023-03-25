@@ -49,56 +49,56 @@ class Annotations implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'start_line';
-                goto after_start_line;
+                goto after_startLine;
             }
 
-            $properties['start_line'] = $value;
+            $properties['startLine'] = $value;
 
-            after_start_line:
+            after_startLine:
 
             $value = $payload['end_line'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'end_line';
-                goto after_end_line;
+                goto after_endLine;
             }
 
-            $properties['end_line'] = $value;
+            $properties['endLine'] = $value;
 
-            after_end_line:
+            after_endLine:
 
             $value = $payload['start_column'] ?? null;
 
             if ($value === null) {
-                $properties['start_column'] = null;
-                goto after_start_column;
+                $properties['startColumn'] = null;
+                goto after_startColumn;
             }
 
-            $properties['start_column'] = $value;
+            $properties['startColumn'] = $value;
 
-            after_start_column:
+            after_startColumn:
 
             $value = $payload['end_column'] ?? null;
 
             if ($value === null) {
-                $properties['end_column'] = null;
-                goto after_end_column;
+                $properties['endColumn'] = null;
+                goto after_endColumn;
             }
 
-            $properties['end_column'] = $value;
+            $properties['endColumn'] = $value;
 
-            after_end_column:
+            after_endColumn:
 
             $value = $payload['annotation_level'] ?? null;
 
             if ($value === null) {
-                $properties['annotation_level'] = null;
-                goto after_annotation_level;
+                $properties['annotationLevel'] = null;
+                goto after_annotationLevel;
             }
 
-            $properties['annotation_level'] = $value;
+            $properties['annotationLevel'] = $value;
 
-            after_annotation_level:
+            after_annotationLevel:
 
             $value = $payload['title'] ?? null;
 
@@ -125,24 +125,24 @@ class Annotations implements ObjectMapper
             $value = $payload['raw_details'] ?? null;
 
             if ($value === null) {
-                $properties['raw_details'] = null;
-                goto after_raw_details;
+                $properties['rawDetails'] = null;
+                goto after_rawDetails;
             }
 
-            $properties['raw_details'] = $value;
+            $properties['rawDetails'] = $value;
 
-            after_raw_details:
+            after_rawDetails:
 
             $value = $payload['blob_href'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'blob_href';
-                goto after_blob_href;
+                goto after_blobHref;
             }
 
-            $properties['blob_href'] = $value;
+            $properties['blobHref'] = $value;
 
-            after_blob_href:
+            after_blobHref:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CheckAnnotation', $exception, stack: $this->hydrationStack);
@@ -273,36 +273,36 @@ class Annotations implements ObjectMapper
         after_path:        $result['path'] = $path;
 
         
-        $start_line = $object->start_line;
-        after_start_line:        $result['start_line'] = $start_line;
+        $startLine = $object->startLine;
+        after_startLine:        $result['start_line'] = $startLine;
 
         
-        $end_line = $object->end_line;
-        after_end_line:        $result['end_line'] = $end_line;
+        $endLine = $object->endLine;
+        after_endLine:        $result['end_line'] = $endLine;
 
         
-        $start_column = $object->start_column;
+        $startColumn = $object->startColumn;
 
-        if ($start_column === null) {
-            goto after_start_column;
+        if ($startColumn === null) {
+            goto after_startColumn;
         }
-        after_start_column:        $result['start_column'] = $start_column;
+        after_startColumn:        $result['start_column'] = $startColumn;
 
         
-        $end_column = $object->end_column;
+        $endColumn = $object->endColumn;
 
-        if ($end_column === null) {
-            goto after_end_column;
+        if ($endColumn === null) {
+            goto after_endColumn;
         }
-        after_end_column:        $result['end_column'] = $end_column;
+        after_endColumn:        $result['end_column'] = $endColumn;
 
         
-        $annotation_level = $object->annotation_level;
+        $annotationLevel = $object->annotationLevel;
 
-        if ($annotation_level === null) {
-            goto after_annotation_level;
+        if ($annotationLevel === null) {
+            goto after_annotationLevel;
         }
-        after_annotation_level:        $result['annotation_level'] = $annotation_level;
+        after_annotationLevel:        $result['annotation_level'] = $annotationLevel;
 
         
         $title = $object->title;
@@ -321,16 +321,16 @@ class Annotations implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $raw_details = $object->raw_details;
+        $rawDetails = $object->rawDetails;
 
-        if ($raw_details === null) {
-            goto after_raw_details;
+        if ($rawDetails === null) {
+            goto after_rawDetails;
         }
-        after_raw_details:        $result['raw_details'] = $raw_details;
+        after_rawDetails:        $result['raw_details'] = $rawDetails;
 
         
-        $blob_href = $object->blob_href;
-        after_blob_href:        $result['blob_href'] = $blob_href;
+        $blobHref = $object->blobHref;
+        after_blobHref:        $result['blob_href'] = $blobHref;
 
 
         return $result;

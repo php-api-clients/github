@@ -15,20 +15,20 @@ final class GetStatusForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/migrations/{migration_id}';
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     private array $exclude;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Migrations\CbMigrationIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb $hydrator, int $migration_id, array $exclude)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb $hydrator, int $migrationId, array $exclude)
     {
-        $this->migration_id = $migration_id;
+        $this->migrationId = $migrationId;
         $this->exclude = $exclude;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{exclude}'), array($this->migration_id, $this->exclude), self::PATH . '?exclude={exclude}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{exclude}'), array($this->migrationId, $this->exclude), self::PATH . '?exclude={exclude}'));
     }
     /**
      * @return Schema\Migration

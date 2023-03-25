@@ -51,13 +51,13 @@ class Exports implements ObjectMapper
             $value = $payload['completed_at'] ?? null;
 
             if ($value === null) {
-                $properties['completed_at'] = null;
-                goto after_completed_at;
+                $properties['completedAt'] = null;
+                goto after_completedAt;
             }
 
-            $properties['completed_at'] = $value;
+            $properties['completedAt'] = $value;
 
-            after_completed_at:
+            after_completedAt:
 
             $value = $payload['branch'] ?? null;
 
@@ -95,24 +95,24 @@ class Exports implements ObjectMapper
             $value = $payload['export_url'] ?? null;
 
             if ($value === null) {
-                $properties['export_url'] = null;
-                goto after_export_url;
+                $properties['exportUrl'] = null;
+                goto after_exportUrl;
             }
 
-            $properties['export_url'] = $value;
+            $properties['exportUrl'] = $value;
 
-            after_export_url:
+            after_exportUrl:
 
             $value = $payload['html_url'] ?? null;
 
             if ($value === null) {
-                $properties['html_url'] = null;
-                goto after_html_url;
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceExportDetails', $exception, stack: $this->hydrationStack);
@@ -149,13 +149,13 @@ class Exports implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -215,12 +215,12 @@ class Exports implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -466,12 +466,12 @@ class Exports implements ObjectMapper
         after_state:        $result['state'] = $state;
 
         
-        $completed_at = $object->completed_at;
+        $completedAt = $object->completedAt;
 
-        if ($completed_at === null) {
-            goto after_completed_at;
+        if ($completedAt === null) {
+            goto after_completedAt;
         }
-        after_completed_at:        $result['completed_at'] = $completed_at;
+        after_completedAt:        $result['completed_at'] = $completedAt;
 
         
         $branch = $object->branch;
@@ -498,20 +498,20 @@ class Exports implements ObjectMapper
         after_id:        $result['id'] = $id;
 
         
-        $export_url = $object->export_url;
+        $exportUrl = $object->exportUrl;
 
-        if ($export_url === null) {
-            goto after_export_url;
+        if ($exportUrl === null) {
+            goto after_exportUrl;
         }
-        after_export_url:        $result['export_url'] = $export_url;
+        after_exportUrl:        $result['export_url'] = $exportUrl;
 
         
-        $html_url = $object->html_url;
+        $htmlUrl = $object->htmlUrl;
 
-        if ($html_url === null) {
-            goto after_html_url;
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
         }
-        after_html_url:        $result['html_url'] = $html_url;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -531,12 +531,12 @@ class Exports implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -568,8 +568,8 @@ class Exports implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

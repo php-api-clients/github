@@ -15,18 +15,18 @@ final class CodespaceMachinesForAuthenticatedUser
     private const METHOD = 'GET';
     private const PATH = '/user/codespaces/{codespace_name}/machines';
     /**The name of the codespace.**/
-    private string $codespace_name;
+    private string $codespaceName;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Machines $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Machines $hydrator, string $codespace_name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Machines $hydrator, string $codespaceName)
     {
-        $this->codespace_name = $codespace_name;
+        $this->codespaceName = $codespaceName;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}'), array($this->codespace_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}'), array($this->codespaceName), self::PATH));
     }
     /**
      * @return Schema\Operation\Codespaces\RepoMachinesForAuthenticatedUser\Response\Applicationjson\H200

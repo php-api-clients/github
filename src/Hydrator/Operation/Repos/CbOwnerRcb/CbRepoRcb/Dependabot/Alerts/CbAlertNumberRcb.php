@@ -92,41 +92,41 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'security_advisory';
-                goto after_security_advisory;
+                goto after_securityAdvisory;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'security_advisory';
+                    $this->hydrationStack[] = 'securityAdvisory';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['security_advisory'] = $value;
+            $properties['securityAdvisory'] = $value;
 
-            after_security_advisory:
+            after_securityAdvisory:
 
             $value = $payload['security_vulnerability'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'security_vulnerability';
-                goto after_security_vulnerability;
+                goto after_securityVulnerability;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'security_vulnerability';
+                    $this->hydrationStack[] = 'securityVulnerability';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['security_vulnerability'] = $value;
+            $properties['securityVulnerability'] = $value;
 
-            after_security_vulnerability:
+            after_securityVulnerability:
 
             $value = $payload['url'] ?? null;
 
@@ -143,89 +143,89 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'html_url';
-                goto after_html_url;
+                goto after_htmlUrl;
             }
 
-            $properties['html_url'] = $value;
+            $properties['htmlUrl'] = $value;
 
-            after_html_url:
+            after_htmlUrl:
 
             $value = $payload['created_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'created_at';
-                goto after_created_at;
+                goto after_createdAt;
             }
 
-            $properties['created_at'] = $value;
+            $properties['createdAt'] = $value;
 
-            after_created_at:
+            after_createdAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['dismissed_at'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_at'] = null;
-                goto after_dismissed_at;
+                $properties['dismissedAt'] = null;
+                goto after_dismissedAt;
             }
 
-            $properties['dismissed_at'] = $value;
+            $properties['dismissedAt'] = $value;
 
-            after_dismissed_at:
+            after_dismissedAt:
 
             $value = $payload['dismissed_by'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_by'] = null;
-                goto after_dismissed_by;
+                $properties['dismissedBy'] = null;
+                goto after_dismissedBy;
             }
 
-            $properties['dismissed_by'] = $value;
+            $properties['dismissedBy'] = $value;
 
-            after_dismissed_by:
+            after_dismissedBy:
 
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_reason'] = null;
-                goto after_dismissed_reason;
+                $properties['dismissedReason'] = null;
+                goto after_dismissedReason;
             }
 
-            $properties['dismissed_reason'] = $value;
+            $properties['dismissedReason'] = $value;
 
-            after_dismissed_reason:
+            after_dismissedReason:
 
             $value = $payload['dismissed_comment'] ?? null;
 
             if ($value === null) {
-                $properties['dismissed_comment'] = null;
-                goto after_dismissed_comment;
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
             }
 
-            $properties['dismissed_comment'] = $value;
+            $properties['dismissedComment'] = $value;
 
-            after_dismissed_comment:
+            after_dismissedComment:
 
             $value = $payload['fixed_at'] ?? null;
 
             if ($value === null) {
-                $properties['fixed_at'] = null;
-                goto after_fixed_at;
+                $properties['fixedAt'] = null;
+                goto after_fixedAt;
             }
 
-            $properties['fixed_at'] = $value;
+            $properties['fixedAt'] = $value;
 
-            after_fixed_at:
+            after_fixedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
@@ -271,13 +271,13 @@ class CbAlertNumberRcb implements ObjectMapper
             $value = $payload['manifest_path'] ?? null;
 
             if ($value === null) {
-                $properties['manifest_path'] = null;
-                goto after_manifest_path;
+                $properties['manifestPath'] = null;
+                goto after_manifestPath;
             }
 
-            $properties['manifest_path'] = $value;
+            $properties['manifestPath'] = $value;
 
-            after_manifest_path:
+            after_manifestPath:
 
             $value = $payload['scope'] ?? null;
 
@@ -358,23 +358,23 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'ghsa_id';
-                goto after_ghsa_id;
+                goto after_ghsaId;
             }
 
-            $properties['ghsa_id'] = $value;
+            $properties['ghsaId'] = $value;
 
-            after_ghsa_id:
+            after_ghsaId:
 
             $value = $payload['cve_id'] ?? null;
 
             if ($value === null) {
-                $properties['cve_id'] = null;
-                goto after_cve_id;
+                $properties['cveId'] = null;
+                goto after_cveId;
             }
 
-            $properties['cve_id'] = $value;
+            $properties['cveId'] = $value;
 
-            after_cve_id:
+            after_cveId:
 
             $value = $payload['summary'] ?? null;
 
@@ -517,34 +517,34 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'published_at';
-                goto after_published_at;
+                goto after_publishedAt;
             }
 
-            $properties['published_at'] = $value;
+            $properties['publishedAt'] = $value;
 
-            after_published_at:
+            after_publishedAt:
 
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'updated_at';
-                goto after_updated_at;
+                goto after_updatedAt;
             }
 
-            $properties['updated_at'] = $value;
+            $properties['updatedAt'] = $value;
 
-            after_updated_at:
+            after_updatedAt:
 
             $value = $payload['withdrawn_at'] ?? null;
 
             if ($value === null) {
-                $properties['withdrawn_at'] = null;
-                goto after_withdrawn_at;
+                $properties['withdrawnAt'] = null;
+                goto after_withdrawnAt;
             }
 
-            $properties['withdrawn_at'] = $value;
+            $properties['withdrawnAt'] = $value;
 
-            after_withdrawn_at:
+            after_withdrawnAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory', $exception, stack: $this->hydrationStack);
@@ -602,32 +602,32 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'vulnerable_version_range';
-                goto after_vulnerable_version_range;
+                goto after_vulnerableVersionRange;
             }
 
-            $properties['vulnerable_version_range'] = $value;
+            $properties['vulnerableVersionRange'] = $value;
 
-            after_vulnerable_version_range:
+            after_vulnerableVersionRange:
 
             $value = $payload['first_patched_version'] ?? null;
 
             if ($value === null) {
-                $properties['first_patched_version'] = null;
-                goto after_first_patched_version;
+                $properties['firstPatchedVersion'] = null;
+                goto after_firstPatchedVersion;
             }
 
             if (is_array($value)) {
                 try {
-                    $this->hydrationStack[] = 'first_patched_version';
+                    $this->hydrationStack[] = 'firstPatchedVersion';
                     $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
             }
 
-            $properties['first_patched_version'] = $value;
+            $properties['firstPatchedVersion'] = $value;
 
-            after_first_patched_version:
+            after_firstPatchedVersion:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability', $exception, stack: $this->hydrationStack);
@@ -696,13 +696,13 @@ class CbAlertNumberRcb implements ObjectMapper
             $value = $payload['vector_string'] ?? null;
 
             if ($value === null) {
-                $properties['vector_string'] = null;
-                goto after_vector_string;
+                $properties['vectorString'] = null;
+                goto after_vectorString;
             }
 
-            $properties['vector_string'] = $value;
+            $properties['vectorString'] = $value;
 
-            after_vector_string:
+            after_vectorString:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
@@ -729,12 +729,12 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'cwe_id';
-                goto after_cwe_id;
+                goto after_cweId;
             }
 
-            $properties['cwe_id'] = $value;
+            $properties['cweId'] = $value;
 
-            after_cwe_id:
+            after_cweId:
 
             $value = $payload['name'] ?? null;
 
@@ -857,13 +857,13 @@ class CbAlertNumberRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -922,13 +922,13 @@ class CbAlertNumberRcb implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -1010,12 +1010,12 @@ class CbAlertNumberRcb implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -1178,70 +1178,70 @@ class CbAlertNumberRcb implements ObjectMapper
         after_dependency:        $result['dependency'] = $dependency;
 
         
-        $security_advisory = $object->security_advisory;
-        $security_advisory = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($security_advisory);
-        after_security_advisory:        $result['security_advisory'] = $security_advisory;
+        $securityAdvisory = $object->securityAdvisory;
+        $securityAdvisory = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityAdvisory($securityAdvisory);
+        after_securityAdvisory:        $result['security_advisory'] = $securityAdvisory;
 
         
-        $security_vulnerability = $object->security_vulnerability;
-        $security_vulnerability = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($security_vulnerability);
-        after_security_vulnerability:        $result['security_vulnerability'] = $security_vulnerability;
+        $securityVulnerability = $object->securityVulnerability;
+        $securityVulnerability = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($securityVulnerability);
+        after_securityVulnerability:        $result['security_vulnerability'] = $securityVulnerability;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
 
         
-        $html_url = $object->html_url;
-        after_html_url:        $result['html_url'] = $html_url;
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
         
-        $created_at = $object->created_at;
-        after_created_at:        $result['created_at'] = $created_at;
+        $createdAt = $object->createdAt;
+        after_createdAt:        $result['created_at'] = $createdAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $dismissed_at = $object->dismissed_at;
+        $dismissedAt = $object->dismissedAt;
 
-        if ($dismissed_at === null) {
-            goto after_dismissed_at;
+        if ($dismissedAt === null) {
+            goto after_dismissedAt;
         }
-        after_dismissed_at:        $result['dismissed_at'] = $dismissed_at;
+        after_dismissedAt:        $result['dismissed_at'] = $dismissedAt;
 
         
-        $dismissed_by = $object->dismissed_by;
+        $dismissedBy = $object->dismissedBy;
 
-        if ($dismissed_by === null) {
-            goto after_dismissed_by;
+        if ($dismissedBy === null) {
+            goto after_dismissedBy;
         }
-        after_dismissed_by:        $result['dismissed_by'] = $dismissed_by;
+        after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
         
-        $dismissed_reason = $object->dismissed_reason;
+        $dismissedReason = $object->dismissedReason;
 
-        if ($dismissed_reason === null) {
-            goto after_dismissed_reason;
+        if ($dismissedReason === null) {
+            goto after_dismissedReason;
         }
-        after_dismissed_reason:        $result['dismissed_reason'] = $dismissed_reason;
+        after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
 
         
-        $dismissed_comment = $object->dismissed_comment;
+        $dismissedComment = $object->dismissedComment;
 
-        if ($dismissed_comment === null) {
-            goto after_dismissed_comment;
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
         }
-        after_dismissed_comment:        $result['dismissed_comment'] = $dismissed_comment;
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
 
         
-        $fixed_at = $object->fixed_at;
+        $fixedAt = $object->fixedAt;
 
-        if ($fixed_at === null) {
-            goto after_fixed_at;
+        if ($fixedAt === null) {
+            goto after_fixedAt;
         }
-        after_fixed_at:        $result['fixed_at'] = $fixed_at;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
 
         return $result;
@@ -1262,12 +1262,12 @@ class CbAlertNumberRcb implements ObjectMapper
         after_package:        $result['package'] = $package;
 
         
-        $manifest_path = $object->manifest_path;
+        $manifestPath = $object->manifestPath;
 
-        if ($manifest_path === null) {
-            goto after_manifest_path;
+        if ($manifestPath === null) {
+            goto after_manifestPath;
         }
-        after_manifest_path:        $result['manifest_path'] = $manifest_path;
+        after_manifestPath:        $result['manifest_path'] = $manifestPath;
 
         
         $scope = $object->scope;
@@ -1304,16 +1304,16 @@ class CbAlertNumberRcb implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory);
         $result = [];
 
-        $ghsa_id = $object->ghsa_id;
-        after_ghsa_id:        $result['ghsa_id'] = $ghsa_id;
+        $ghsaId = $object->ghsaId;
+        after_ghsaId:        $result['ghsa_id'] = $ghsaId;
 
         
-        $cve_id = $object->cve_id;
+        $cveId = $object->cveId;
 
-        if ($cve_id === null) {
-            goto after_cve_id;
+        if ($cveId === null) {
+            goto after_cveId;
         }
-        after_cve_id:        $result['cve_id'] = $cve_id;
+        after_cveId:        $result['cve_id'] = $cveId;
 
         
         $summary = $object->summary;
@@ -1385,20 +1385,20 @@ class CbAlertNumberRcb implements ObjectMapper
         after_references:        $result['references'] = $references;
 
         
-        $published_at = $object->published_at;
-        after_published_at:        $result['published_at'] = $published_at;
+        $publishedAt = $object->publishedAt;
+        after_publishedAt:        $result['published_at'] = $publishedAt;
 
         
-        $updated_at = $object->updated_at;
-        after_updated_at:        $result['updated_at'] = $updated_at;
+        $updatedAt = $object->updatedAt;
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         
-        $withdrawn_at = $object->withdrawn_at;
+        $withdrawnAt = $object->withdrawnAt;
 
-        if ($withdrawn_at === null) {
-            goto after_withdrawn_at;
+        if ($withdrawnAt === null) {
+            goto after_withdrawnAt;
         }
-        after_withdrawn_at:        $result['withdrawn_at'] = $withdrawn_at;
+        after_withdrawnAt:        $result['withdrawn_at'] = $withdrawnAt;
 
 
         return $result;
@@ -1419,17 +1419,17 @@ class CbAlertNumberRcb implements ObjectMapper
         after_severity:        $result['severity'] = $severity;
 
         
-        $vulnerable_version_range = $object->vulnerable_version_range;
-        after_vulnerable_version_range:        $result['vulnerable_version_range'] = $vulnerable_version_range;
+        $vulnerableVersionRange = $object->vulnerableVersionRange;
+        after_vulnerableVersionRange:        $result['vulnerable_version_range'] = $vulnerableVersionRange;
 
         
-        $first_patched_version = $object->first_patched_version;
+        $firstPatchedVersion = $object->firstPatchedVersion;
 
-        if ($first_patched_version === null) {
-            goto after_first_patched_version;
+        if ($firstPatchedVersion === null) {
+            goto after_firstPatchedVersion;
         }
-        $first_patched_version = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($first_patched_version);
-        after_first_patched_version:        $result['first_patched_version'] = $first_patched_version;
+        $firstPatchedVersion = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($firstPatchedVersion);
+        after_firstPatchedVersion:        $result['first_patched_version'] = $firstPatchedVersion;
 
 
         return $result;
@@ -1458,12 +1458,12 @@ class CbAlertNumberRcb implements ObjectMapper
         after_score:        $result['score'] = $score;
 
         
-        $vector_string = $object->vector_string;
+        $vectorString = $object->vectorString;
 
-        if ($vector_string === null) {
-            goto after_vector_string;
+        if ($vectorString === null) {
+            goto after_vectorString;
         }
-        after_vector_string:        $result['vector_string'] = $vector_string;
+        after_vectorString:        $result['vector_string'] = $vectorString;
 
 
         return $result;
@@ -1475,8 +1475,8 @@ class CbAlertNumberRcb implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependabotAlertSecurityAdvisory\Cwes);
         $result = [];
 
-        $cwe_id = $object->cwe_id;
-        after_cwe_id:        $result['cwe_id'] = $cwe_id;
+        $cweId = $object->cweId;
+        after_cweId:        $result['cwe_id'] = $cweId;
 
         
         $name = $object->name;
@@ -1530,12 +1530,12 @@ class CbAlertNumberRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -1571,12 +1571,12 @@ class CbAlertNumberRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;
@@ -1632,8 +1632,8 @@ class CbAlertNumberRcb implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

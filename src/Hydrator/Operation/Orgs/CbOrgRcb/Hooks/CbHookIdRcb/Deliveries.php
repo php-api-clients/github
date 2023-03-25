@@ -64,12 +64,12 @@ class Deliveries implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'delivered_at';
-                goto after_delivered_at;
+                goto after_deliveredAt;
             }
 
-            $properties['delivered_at'] = $value;
+            $properties['deliveredAt'] = $value;
 
-            after_delivered_at:
+            after_deliveredAt:
 
             $value = $payload['redelivery'] ?? null;
 
@@ -108,12 +108,12 @@ class Deliveries implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'status_code';
-                goto after_status_code;
+                goto after_statusCode;
             }
 
-            $properties['status_code'] = $value;
+            $properties['statusCode'] = $value;
 
-            after_status_code:
+            after_statusCode:
 
             $value = $payload['event'] ?? null;
 
@@ -140,24 +140,24 @@ class Deliveries implements ObjectMapper
             $value = $payload['installation_id'] ?? null;
 
             if ($value === null) {
-                $properties['installation_id'] = null;
-                goto after_installation_id;
+                $properties['installationId'] = null;
+                goto after_installationId;
             }
 
-            $properties['installation_id'] = $value;
+            $properties['installationId'] = $value;
 
-            after_installation_id:
+            after_installationId:
 
             $value = $payload['repository_id'] ?? null;
 
             if ($value === null) {
-                $properties['repository_id'] = null;
-                goto after_repository_id;
+                $properties['repositoryId'] = null;
+                goto after_repositoryId;
             }
 
-            $properties['repository_id'] = $value;
+            $properties['repositoryId'] = $value;
 
-            after_repository_id:
+            after_repositoryId:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\HookDeliveryItem', $exception, stack: $this->hydrationStack);
@@ -194,13 +194,13 @@ class Deliveries implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['url'] ?? null;
 
@@ -259,13 +259,13 @@ class Deliveries implements ObjectMapper
             $value = $payload['documentation_url'] ?? null;
 
             if ($value === null) {
-                $properties['documentation_url'] = null;
-                goto after_documentation_url;
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['detail'] ?? null;
 
@@ -347,12 +347,12 @@ class Deliveries implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'documentation_url';
-                goto after_documentation_url;
+                goto after_documentationUrl;
             }
 
-            $properties['documentation_url'] = $value;
+            $properties['documentationUrl'] = $value;
 
-            after_documentation_url:
+            after_documentationUrl:
 
             $value = $payload['errors'] ?? null;
 
@@ -599,8 +599,8 @@ class Deliveries implements ObjectMapper
         after_guid:        $result['guid'] = $guid;
 
         
-        $delivered_at = $object->delivered_at;
-        after_delivered_at:        $result['delivered_at'] = $delivered_at;
+        $deliveredAt = $object->deliveredAt;
+        after_deliveredAt:        $result['delivered_at'] = $deliveredAt;
 
         
         $redelivery = $object->redelivery;
@@ -615,8 +615,8 @@ class Deliveries implements ObjectMapper
         after_status:        $result['status'] = $status;
 
         
-        $status_code = $object->status_code;
-        after_status_code:        $result['status_code'] = $status_code;
+        $statusCode = $object->statusCode;
+        after_statusCode:        $result['status_code'] = $statusCode;
 
         
         $event = $object->event;
@@ -631,20 +631,20 @@ class Deliveries implements ObjectMapper
         after_action:        $result['action'] = $action;
 
         
-        $installation_id = $object->installation_id;
+        $installationId = $object->installationId;
 
-        if ($installation_id === null) {
-            goto after_installation_id;
+        if ($installationId === null) {
+            goto after_installationId;
         }
-        after_installation_id:        $result['installation_id'] = $installation_id;
+        after_installationId:        $result['installation_id'] = $installationId;
 
         
-        $repository_id = $object->repository_id;
+        $repositoryId = $object->repositoryId;
 
-        if ($repository_id === null) {
-            goto after_repository_id;
+        if ($repositoryId === null) {
+            goto after_repositoryId;
         }
-        after_repository_id:        $result['repository_id'] = $repository_id;
+        after_repositoryId:        $result['repository_id'] = $repositoryId;
 
 
         return $result;
@@ -664,12 +664,12 @@ class Deliveries implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $url = $object->url;
@@ -705,12 +705,12 @@ class Deliveries implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
+        $documentationUrl = $object->documentationUrl;
 
-        if ($documentation_url === null) {
-            goto after_documentation_url;
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
         }
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $detail = $object->detail;
@@ -766,8 +766,8 @@ class Deliveries implements ObjectMapper
         after_message:        $result['message'] = $message;
 
         
-        $documentation_url = $object->documentation_url;
-        after_documentation_url:        $result['documentation_url'] = $documentation_url;
+        $documentationUrl = $object->documentationUrl;
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
 
         
         $errors = $object->errors;

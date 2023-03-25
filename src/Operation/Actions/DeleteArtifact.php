@@ -19,16 +19,16 @@ final class DeleteArtifact
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the artifact.**/
-    private int $artifact_id;
-    public function __construct(string $owner, string $repo, int $artifact_id)
+    private int $artifactId;
+    public function __construct(string $owner, string $repo, int $artifactId)
     {
         $this->owner = $owner;
         $this->repo = $repo;
-        $this->artifact_id = $artifact_id;
+        $this->artifactId = $artifactId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{artifact_id}'), array($this->owner, $this->repo, $this->artifact_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{artifact_id}'), array($this->owner, $this->repo, $this->artifactId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

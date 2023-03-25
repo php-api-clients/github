@@ -38,34 +38,34 @@ class SharedStorage implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'days_left_in_billing_cycle';
-                goto after_days_left_in_billing_cycle;
+                goto after_daysLeftInBillingCycle;
             }
 
-            $properties['days_left_in_billing_cycle'] = $value;
+            $properties['daysLeftInBillingCycle'] = $value;
 
-            after_days_left_in_billing_cycle:
+            after_daysLeftInBillingCycle:
 
             $value = $payload['estimated_paid_storage_for_month'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'estimated_paid_storage_for_month';
-                goto after_estimated_paid_storage_for_month;
+                goto after_estimatedPaidStorageForMonth;
             }
 
-            $properties['estimated_paid_storage_for_month'] = $value;
+            $properties['estimatedPaidStorageForMonth'] = $value;
 
-            after_estimated_paid_storage_for_month:
+            after_estimatedPaidStorageForMonth:
 
             $value = $payload['estimated_storage_for_month'] ?? null;
 
             if ($value === null) {
                 $missingFields[] = 'estimated_storage_for_month';
-                goto after_estimated_storage_for_month;
+                goto after_estimatedStorageForMonth;
             }
 
-            $properties['estimated_storage_for_month'] = $value;
+            $properties['estimatedStorageForMonth'] = $value;
 
-            after_estimated_storage_for_month:
+            after_estimatedStorageForMonth:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CombinedBillingUsage', $exception, stack: $this->hydrationStack);
@@ -192,16 +192,16 @@ class SharedStorage implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\CombinedBillingUsage);
         $result = [];
 
-        $days_left_in_billing_cycle = $object->days_left_in_billing_cycle;
-        after_days_left_in_billing_cycle:        $result['days_left_in_billing_cycle'] = $days_left_in_billing_cycle;
+        $daysLeftInBillingCycle = $object->daysLeftInBillingCycle;
+        after_daysLeftInBillingCycle:        $result['days_left_in_billing_cycle'] = $daysLeftInBillingCycle;
 
         
-        $estimated_paid_storage_for_month = $object->estimated_paid_storage_for_month;
-        after_estimated_paid_storage_for_month:        $result['estimated_paid_storage_for_month'] = $estimated_paid_storage_for_month;
+        $estimatedPaidStorageForMonth = $object->estimatedPaidStorageForMonth;
+        after_estimatedPaidStorageForMonth:        $result['estimated_paid_storage_for_month'] = $estimatedPaidStorageForMonth;
 
         
-        $estimated_storage_for_month = $object->estimated_storage_for_month;
-        after_estimated_storage_for_month:        $result['estimated_storage_for_month'] = $estimated_storage_for_month;
+        $estimatedStorageForMonth = $object->estimatedStorageForMonth;
+        after_estimatedStorageForMonth:        $result['estimated_storage_for_month'] = $estimatedStorageForMonth;
 
 
         return $result;

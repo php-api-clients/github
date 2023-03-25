@@ -17,15 +17,15 @@ final class DeleteSelfHostedRunnerFromOrg
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**Unique identifier of the self-hosted runner.**/
-    private int $runner_id;
-    public function __construct(string $org, int $runner_id)
+    private int $runnerId;
+    public function __construct(string $org, int $runnerId)
     {
         $this->org = $org;
-        $this->runner_id = $runner_id;
+        $this->runnerId = $runnerId;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{runner_id}'), array($this->org, $this->runner_id), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{runner_id}'), array($this->org, $this->runnerId), self::PATH));
     }
     /**
      * @return \Psr\Http\Message\ResponseInterface

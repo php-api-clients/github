@@ -15,27 +15,27 @@ final class ListMembersLegacy
     private const METHOD = 'GET';
     private const PATH = '/teams/{team_id}/members';
     /**The unique identifier of the team.**/
-    private int $team_id;
+    private int $teamId;
     /**Filters members returned by their role in the team.**/
     private string $role;
     /**The number of results per page (max 100).**/
-    private int $per_page;
+    private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Members $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Members $hydrator, int $team_id, string $role = 'all', int $per_page = 30, int $page = 1)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Members $hydrator, int $teamId, string $role = 'all', int $perPage = 30, int $page = 1)
     {
-        $this->team_id = $team_id;
+        $this->teamId = $teamId;
         $this->role = $role;
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
         $this->page = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{role}', '{per_page}', '{page}'), array($this->team_id, $this->role, $this->per_page, $this->page), self::PATH . '?role={role}&per_page={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{role}', '{per_page}', '{page}'), array($this->teamId, $this->role, $this->perPage, $this->page), self::PATH . '?role={role}&perPage={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\SimpleUser>

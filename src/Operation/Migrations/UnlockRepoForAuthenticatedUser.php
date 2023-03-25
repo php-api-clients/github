@@ -15,21 +15,21 @@ final class UnlockRepoForAuthenticatedUser
     private const METHOD = 'DELETE';
     private const PATH = '/user/migrations/{migration_id}/repos/{repo_name}/lock';
     /**The unique identifier of the migration.**/
-    private int $migration_id;
+    private int $migrationId;
     /**repo_name parameter**/
-    private string $repo_name;
+    private string $repoName;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator, int $migration_id, string $repo_name)
+    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator, int $migrationId, string $repoName)
     {
-        $this->migration_id = $migration_id;
-        $this->repo_name = $repo_name;
+        $this->migrationId = $migrationId;
+        $this->repoName = $repoName;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{repo_name}'), array($this->migration_id, $this->repo_name), self::PATH));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{migration_id}', '{repo_name}'), array($this->migrationId, $this->repoName), self::PATH));
     }
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : void
     {
