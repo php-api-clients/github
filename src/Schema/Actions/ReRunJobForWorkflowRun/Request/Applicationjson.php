@@ -13,7 +13,7 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"type":["object","null"],"properties":{"enable_debug_logging":{"type":"boolean","description":"Whether to enable debug logging for the re-run.","default":false}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"enableDebugLogging":false}';
+    public const SCHEMA_EXAMPLE_DATA = '{"enable_debug_logging":false}';
     /**
      * enableDebugLogging: Whether to enable debug logging for the re-run.
      */

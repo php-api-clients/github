@@ -13,7 +13,7 @@ final readonly class Applicationjson
     public const SCHEMA_JSON = '{"required":["enabled_repositories"],"type":"object","properties":{"enabled_repositories":{"enum":["all","none","selected"],"type":"string","description":"The policy that controls the repositories in the organization that are allowed to run GitHub Actions."},"allowed_actions":{"enum":["all","local_only","selected"],"type":"string","description":"The permissions policy that controls the actions and reusable workflows that are allowed to run."}}}';
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"enabledRepositories":"all","allowedActions":"all"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"enabled_repositories":"all","allowed_actions":"all"}';
     /**
      * enabledRepositories: The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
      * allowedActions: The permissions policy that controls the actions and reusable workflows that are allowed to run.

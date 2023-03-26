@@ -14,7 +14,7 @@ final readonly class CodeScanningDefaultSetupUpdateResponse
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = 'You can use `run_url` to track the status of the run. This includes a property status and conclusion.
 You should not rely on this always being an actions workflow run object.';
-    public const SCHEMA_EXAMPLE_DATA = '{"runId":13,"runUrl":"generated_run_url_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"run_id":13,"run_url":"generated_run_url_null"}';
     /**
      * runId: ID of the corresponding run.
      * runUrl: URL of the corresponding run.
