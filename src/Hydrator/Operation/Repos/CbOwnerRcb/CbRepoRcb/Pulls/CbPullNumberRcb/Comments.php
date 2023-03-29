@@ -336,6 +336,17 @@ class Comments implements ObjectMapper
 
             after_side:
 
+            $value = $payload['subject_type'] ?? null;
+
+            if ($value === null) {
+                $properties['subjectType'] = null;
+                goto after_subjectType;
+            }
+
+            $properties['subjectType'] = $value;
+
+            after_subjectType:
+
             $value = $payload['reactions'] ?? null;
 
             if ($value === null) {
@@ -1420,6 +1431,14 @@ class Comments implements ObjectMapper
             goto after_side;
         }
         after_side:        $result['side'] = $side;
+
+        
+        $subjectType = $object->subjectType;
+
+        if ($subjectType === null) {
+            goto after_subjectType;
+        }
+        after_subjectType:        $result['subject_type'] = $subjectType;
 
         
         $reactions = $object->reactions;
