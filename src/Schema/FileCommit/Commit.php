@@ -17,7 +17,7 @@ final readonly class Commit
     /**
      * @param ?array<\ApiClients\Client\GitHub\Schema\FileCommit\Commit\Parents> $parents
      */
-    public function __construct(public ?string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public ?string $nodeId, public ?string $url, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, public ?Schema\FileCommit\Commit\Author $author, public ?Schema\FileCommit\Commit\Author $committer, public ?string $message, public ?Schema\FileCommit\Commit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\FileCommit\Commit\Parents::class)] public ?array $parents, public ?Schema\FileCommit\Commit\Verification $verification)
+    public function __construct(public ?string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public ?string $nodeId, public ?string $url, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, public ?Schema\FileCommit\Commit\Author $author, public ?Schema\FileCommit\Commit\Committer $committer, public ?string $message, public ?Schema\FileCommit\Commit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\FileCommit\Commit\Parents::class)] public ?array $parents, public ?Schema\FileCommit\Commit\Verification $verification)
     {
     }
 }

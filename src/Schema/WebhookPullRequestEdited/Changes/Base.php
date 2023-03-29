@@ -14,7 +14,7 @@ final readonly class Base
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"ref":{"from":"generated_from_null"},"sha":{"from":"generated_from_null"}}';
-    public function __construct(public Schema\WebhookDiscussionCommentEdited\Changes\Body $ref, public Schema\WebhookDiscussionCommentEdited\Changes\Body $sha)
+    public function __construct(public Schema\WebhookPullRequestEdited\Changes\Base\Ref $ref, public Schema\WebhookPullRequestEdited\Changes\Base\Sha $sha)
     {
     }
 }

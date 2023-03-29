@@ -17,7 +17,7 @@ final readonly class DemilestonedIssueEvent
     /**
      * actor: A GitHub user.
      */
-    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public ?string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public ?string $commitUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public mixed $performedViaGithubApp, public Schema\MilestonedIssueEvent\Milestone $milestone)
+    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public ?string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public ?string $commitUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public mixed $performedViaGithubApp, public Schema\DemilestonedIssueEvent\Milestone $milestone)
     {
     }
 }

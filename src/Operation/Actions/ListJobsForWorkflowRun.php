@@ -44,9 +44,9 @@ final class ListJobsForWorkflowRun
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{run_id}', '{filter}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->runId, $this->filter, $this->perPage, $this->page), self::PATH . '?filter={filter}&perPage={per_page}&page={page}'));
     }
     /**
-     * @return Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200
+     * @return Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -55,8 +55,8 @@ final class ListJobsForWorkflowRun
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200::class, $body);
                 }
                 break;
         }

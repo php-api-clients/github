@@ -26,8 +26,9 @@ class MergeGroup implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
@@ -274,7 +275,7 @@ class MergeGroup implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'headCommit';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -300,7 +301,7 @@ class MergeGroup implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit
     {
         $properties = []; 
         $missingFields = [];
@@ -315,7 +316,7 @@ class MergeGroup implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -335,7 +336,7 @@ class MergeGroup implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'committer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -390,22 +391,22 @@ class MergeGroup implements ObjectMapper
             after_treeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author
     {
         $properties = []; 
         $missingFields = [];
@@ -455,17 +456,82 @@ class MergeGroup implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['date'] ?? null;
+
+            if ($value === null) {
+                $properties['date'] = null;
+                goto after_date;
+            }
+
+            $properties['date'] = $value;
+
+            after_date:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
+            }
+
+            $properties['email'] = $value;
+
+            after_email:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['username'] ?? null;
+
+            if ($value === null) {
+                $properties['username'] = null;
+                goto after_username;
+            }
+
+            $properties['username'] = $value;
+
+            after_username:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3412,8 +3478,9 @@ class MergeGroup implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested($object),
             'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
             'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
+            'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit($object),
+            'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author($object),
+            'ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer($object),
             'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
             'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
             'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
@@ -3587,7 +3654,7 @@ class MergeGroup implements ObjectMapper
 
         
         $headCommit = $object->headCommit;
-        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($headCommit);
+        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit($headCommit);
         after_headCommit:        $result['head_commit'] = $headCommit;
 
 
@@ -3595,18 +3662,18 @@ class MergeGroup implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit);
         $result = [];
 
         $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
         $committer = $object->committer;
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($committer);
+        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer($committer);
         after_committer:        $result['committer'] = $committer;
 
         
@@ -3630,9 +3697,46 @@ class MergeGroup implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Author(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Author);
+        $result = [];
+
+        $date = $object->date;
+
+        if ($date === null) {
+            goto after_date;
+        }
+        after_date:        $result['date'] = $date;
+
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+        after_email:        $result['email'] = $email;
+
+        
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $username = $object->username;
+
+        if ($username === null) {
+            goto after_username;
+        }
+        after_username:        $result['username'] = $username;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMergeGroupChecksRequested⚡️MergeGroup⚡️HeadCommit⚡️Committer(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit\Committer);
         $result = [];
 
         $date = $object->date;

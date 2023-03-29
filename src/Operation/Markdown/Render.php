@@ -29,9 +29,9 @@ final class Render
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array(), array(), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return Schema\WebHookHeader\UserAgent
+     * @return Schema\Operation\Markdown\Render\Response\Texthtml\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\WebHookHeader\UserAgent
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Markdown\Render\Response\Texthtml\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -40,8 +40,8 @@ final class Render
             case 200:
                 switch ($contentType) {
                     case 'text/html':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\WebHookHeader\UserAgent::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Markdown\Render\Response\Texthtml\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Markdown\Render\Response\Texthtml\H200::class, $body);
                 }
                 break;
         }

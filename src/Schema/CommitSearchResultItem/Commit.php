@@ -14,7 +14,7 @@ final readonly class Commit
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"name":"generated_name_null","email":"generated_email_null","date":"1970-01-01T00:00:00+00:00"},"committer":null,"comment_count":13,"message":"generated_message_null","tree":{"sha":"generated_sha_null","url":"https:\\/\\/example.com\\/"},"url":"https:\\/\\/example.com\\/","verification":{"verified":false,"reason":"generated_reason_null","payload":"generated_payload_null","signature":"generated_signature_null"}}';
-    public function __construct(public Schema\CommitSearchResultItem\Commit\Author $author, public mixed $committer, #[\EventSauce\ObjectHydrator\MapFrom('comment_count')] public int $commentCount, public string $message, public Schema\ShortBranch\Commit $tree, public string $url, public ?Schema\Verification $verification)
+    public function __construct(public Schema\CommitSearchResultItem\Commit\Author $author, public mixed $committer, #[\EventSauce\ObjectHydrator\MapFrom('comment_count')] public int $commentCount, public string $message, public Schema\CommitSearchResultItem\Commit\Tree $tree, public string $url, public ?Schema\Verification $verification)
     {
     }
 }

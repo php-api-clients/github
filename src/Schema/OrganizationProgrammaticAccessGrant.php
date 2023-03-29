@@ -25,7 +25,7 @@ final readonly class OrganizationProgrammaticAccessGrant
      * tokenExpiresAt: Date and time when the associated fine-grained personal access token expires.
      * tokenLastUsedAt: Date and time when the associated fine-grained personal access token was last used for authentication.
      */
-    public function __construct(public int $id, public Schema\SimpleUser $owner, #[\EventSauce\ObjectHydrator\MapFrom('repository_selection')] public string $repositorySelection, #[\EventSauce\ObjectHydrator\MapFrom('repositories_url')] public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrantRequest\Permissions $permissions, #[\EventSauce\ObjectHydrator\MapFrom('access_granted_at')] public string $accessGrantedAt, #[\EventSauce\ObjectHydrator\MapFrom('token_expired')] public bool $tokenExpired, #[\EventSauce\ObjectHydrator\MapFrom('token_expires_at')] public ?string $tokenExpiresAt, #[\EventSauce\ObjectHydrator\MapFrom('token_last_used_at')] public ?string $tokenLastUsedAt)
+    public function __construct(public int $id, public Schema\SimpleUser $owner, #[\EventSauce\ObjectHydrator\MapFrom('repository_selection')] public string $repositorySelection, #[\EventSauce\ObjectHydrator\MapFrom('repositories_url')] public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrant\Permissions $permissions, #[\EventSauce\ObjectHydrator\MapFrom('access_granted_at')] public string $accessGrantedAt, #[\EventSauce\ObjectHydrator\MapFrom('token_expired')] public bool $tokenExpired, #[\EventSauce\ObjectHydrator\MapFrom('token_expires_at')] public ?string $tokenExpiresAt, #[\EventSauce\ObjectHydrator\MapFrom('token_last_used_at')] public ?string $tokenLastUsedAt)
     {
     }
 }

@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"note":{"from":"generated_from_null"}}';
-    public function __construct(public Schema\WebhookDiscussionCommentEdited\Changes\Body $note)
+    public function __construct(public Schema\WebhookProjectCardConverted\Changes\Note $note)
     {
     }
 }

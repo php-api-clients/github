@@ -21,7 +21,7 @@ final readonly class GitCommit
      * message: Message describing the purpose of the commit
      * @param array<\ApiClients\Client\GitHub\Schema\GitCommit\Parents> $parents
      */
-    public function __construct(public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\GitCommit\Author $author, public Schema\GitCommit\Author $committer, public string $message, public Schema\GitCommit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitCommit\Parents::class)] public array $parents, public Schema\GitCommit\Verification $verification, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl)
+    public function __construct(public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\GitCommit\Author $author, public Schema\GitCommit\Committer $committer, public string $message, public Schema\GitCommit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitCommit\Parents::class)] public array $parents, public Schema\GitCommit\Verification $verification, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl)
     {
     }
 }

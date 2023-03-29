@@ -20,7 +20,7 @@ final readonly class Review
      * commitId: A commit SHA for the review.
      * id: Unique identifier of the review
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('_links')] public Schema\WebhookPullRequestReviewDismissed\Review\Links $links, #[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('pull_request_url')] public string $pullRequestUrl, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('submitted_at')] public string $submittedAt, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $user)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('_links')] public Schema\WebhookPullRequestReviewDismissed\Review\Links $links, #[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('pull_request_url')] public string $pullRequestUrl, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('submitted_at')] public string $submittedAt, public ?Schema\WebhookPullRequestReviewDismissed\Review\User $user)
     {
     }
 }

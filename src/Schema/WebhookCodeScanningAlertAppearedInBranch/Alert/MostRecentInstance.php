@@ -21,7 +21,7 @@ final readonly class MostRecentInstance
      * ref: The full Git reference, formatted as `refs/heads/<branch name>`.
      * state: State of a code scanning alert.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('analysis_key')] public string $analysisKey, public ?array $classifications, #[\EventSauce\ObjectHydrator\MapFrom('commit_sha')] public ?string $commitSha, public string $environment, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location $location, public ?Schema\CodeScanningAlertInstance\Message $message, public string $ref, public string $state)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('analysis_key')] public string $analysisKey, public ?array $classifications, #[\EventSauce\ObjectHydrator\MapFrom('commit_sha')] public ?string $commitSha, public string $environment, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location $location, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message $message, public string $ref, public string $state)
     {
     }
 }

@@ -19,11 +19,11 @@ final readonly class WebhookInstallationDeleted
      * installation: Installation
      * organization: A GitHub organization.
      * repositories: An array of repository objects that the installation can access.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories> $repositories
+     * @param ?array<\ApiClients\Client\GitHub\Schema\WebhookInstallationDeleted\Repositories> $repositories
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PersonalAccessTokenRequest\Repositories::class)] public ?array $repositories, public ?Schema\Repository $repository, public mixed $requester, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationDeleted\Repositories::class)] public ?array $repositories, public ?Schema\Repository $repository, public mixed $requester, public Schema\SimpleUser $sender)
     {
     }
 }

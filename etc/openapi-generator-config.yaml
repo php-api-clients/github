@@ -1,6 +1,8 @@
 spec: https://raw.githubusercontent.com/github/rest-api-description/main/descriptions-next/api.github.com/api.github.com.yaml
 namespace: ApiClients\Client\GitHub
 destination: ../src
+schemas:
+  allowDuplication: true
 voter:
   listOperation:
     - ApiClients\Tools\OpenApiClientGenerator\Voter\ListOperation\PageAndPerPageInQuery

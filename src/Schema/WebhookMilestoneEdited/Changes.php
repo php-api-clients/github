@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = 'The changes to the milestone if the action was `edited`.';
     public const SCHEMA_EXAMPLE_DATA = '{"description":{"from":"generated_from_null"},"due_on":{"from":"generated_from_null"},"title":{"from":"generated_from_null"}}';
-    public function __construct(public ?Schema\WebhookLabelEdited\Changes\Description $description, #[\EventSauce\ObjectHydrator\MapFrom('due_on')] public ?Schema\WebhookMilestoneEdited\Changes\DueOn $dueOn, public ?Schema\WebhookMilestoneEdited\Changes\Title $title)
+    public function __construct(public ?Schema\WebhookMilestoneEdited\Changes\Description $description, #[\EventSauce\ObjectHydrator\MapFrom('due_on')] public ?Schema\WebhookMilestoneEdited\Changes\DueOn $dueOn, public ?Schema\WebhookMilestoneEdited\Changes\Title $title)
     {
     }
 }

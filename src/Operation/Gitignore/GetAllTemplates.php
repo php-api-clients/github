@@ -26,7 +26,7 @@ final class GetAllTemplates
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array(), array(), self::PATH));
     }
     /**
-     * @return \Rx\Observable<Schema\WebHookHeader\UserAgent>
+     * @return \Rx\Observable<Schema\Operation\Gitignore\GetAllTemplates\Response\Applicationjson\H200>
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
@@ -38,10 +38,10 @@ final class GetAllTemplates
                 switch ($contentType) {
                     case 'application/json':
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\Operation\Gitignore\GetAllTemplates\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\WebHookHeader\UserAgent {
-                            return $this->hydrator->hydrateObject(Schema\WebHookHeader\UserAgent::class, $body);
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\Operation\Gitignore\GetAllTemplates\Response\Applicationjson\H200 {
+                            return $this->hydrator->hydrateObject(Schema\Operation\Gitignore\GetAllTemplates\Response\Applicationjson\H200::class, $body);
                         });
                 }
                 break;

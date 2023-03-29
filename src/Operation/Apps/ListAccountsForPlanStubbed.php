@@ -18,7 +18,7 @@ final class ListAccountsForPlanStubbed
     private int $planId;
     /**To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.**/
     private string $direction;
-    /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
+    /**The property to sort the results by.**/
     private string $sort;
     /**The number of results per page (max 100).**/
     private int $perPage;

@@ -23,7 +23,7 @@ final readonly class WebhookDeploymentStatusCreated
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, #[\EventSauce\ObjectHydrator\MapFrom('check_run')] public ?Schema\WebhookDeploymentStatusCreated\CheckRun $checkRun, public Schema\WebhookDeploymentStatusCreated\Deployment $deployment, #[\EventSauce\ObjectHydrator\MapFrom('deployment_status')] public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?Schema\WebhookDeploymentCreated\Workflow $workflow, #[\EventSauce\ObjectHydrator\MapFrom('workflow_run')] public ?Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflowRun)
+    public function __construct(public string $action, #[\EventSauce\ObjectHydrator\MapFrom('check_run')] public ?Schema\WebhookDeploymentStatusCreated\CheckRun $checkRun, public Schema\WebhookDeploymentStatusCreated\Deployment $deployment, #[\EventSauce\ObjectHydrator\MapFrom('deployment_status')] public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?Schema\WebhookDeploymentStatusCreated\Workflow $workflow, #[\EventSauce\ObjectHydrator\MapFrom('workflow_run')] public ?Schema\WebhookDeploymentStatusCreated\WorkflowRun $workflowRun)
     {
     }
 }

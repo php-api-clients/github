@@ -36,9 +36,9 @@ final class ListAlertsForRepo
     private string $manifest;
     /**The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.**/
     private string $scope;
-    /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.**/
+    /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.**/
     private string $before;
-    /**A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.**/
+    /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor.**/
     private string $after;
     /****Deprecated**. The number of results per page (max 100), starting from the last matching result.
     This parameter must not be used in combination with `first`.

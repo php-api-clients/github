@@ -35,8 +35,10 @@ class Publish implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\CodeOfConductSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($payload),
-                'ApiClients\Client\GitHub\Schema\Codespace\GitStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($payload),
-                'ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($payload),
+                'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($payload),
+                'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($payload),
+                'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($payload),
+                'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
@@ -252,7 +254,7 @@ class Publish implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'gitStatus';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -371,7 +373,7 @@ class Publish implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'runtimeConstraints';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4581,7 +4583,7 @@ class Publish implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'secretScanning';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4601,7 +4603,7 @@ class Publish implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'secretScanningPushProtection';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4659,7 +4661,71 @@ class Publish implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus(array $payload): \ApiClients\Client\GitHub\Schema\Codespace\GitStatus
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning(array $payload): \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection(array $payload): \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus(array $payload): \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus
     {
         $properties = []; 
         $missingFields = [];
@@ -4720,22 +4786,22 @@ class Publish implements ObjectMapper
             after_ref:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Codespace\GitStatus', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Codespace\GitStatus::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Codespace\GitStatus(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Codespace\GitStatus', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints(array $payload): \ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints(array $payload): \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints
     {
         $properties = []; 
         $missingFields = [];
@@ -4752,17 +4818,17 @@ class Publish implements ObjectMapper
             after_allowedPortPrivacySettings:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5025,8 +5091,10 @@ class Publish implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\CodeOfConductSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConductSimple($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($object),
-            'ApiClients\Client\GitHub\Schema\Codespace\GitStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($object),
-            'ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($object),
+            'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($object),
+            'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($object),
+            'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($object),
+            'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
             'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
             'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
@@ -5192,7 +5260,7 @@ class Publish implements ObjectMapper
 
         
         $gitStatus = $object->gitStatus;
-        $gitStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($gitStatus);
+        $gitStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($gitStatus);
         after_gitStatus:        $result['git_status'] = $gitStatus;
 
         
@@ -5257,7 +5325,7 @@ class Publish implements ObjectMapper
         if ($runtimeConstraints === null) {
             goto after_runtimeConstraints;
         }
-        $runtimeConstraints = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($runtimeConstraints);
+        $runtimeConstraints = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($runtimeConstraints);
         after_runtimeConstraints:        $result['runtime_constraints'] = $runtimeConstraints;
 
         
@@ -7560,7 +7628,7 @@ class Publish implements ObjectMapper
         if ($secretScanning === null) {
             goto after_secretScanning;
         }
-        $secretScanning = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secretScanning);
+        $secretScanning = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($secretScanning);
         after_secretScanning:        $result['secret_scanning'] = $secretScanning;
 
         
@@ -7569,7 +7637,7 @@ class Publish implements ObjectMapper
         if ($secretScanningPushProtection === null) {
             goto after_secretScanningPushProtection;
         }
-        $secretScanningPushProtection = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($secretScanningPushProtection);
+        $secretScanningPushProtection = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($secretScanningPushProtection);
         after_secretScanningPushProtection:        $result['secret_scanning_push_protection'] = $secretScanningPushProtection;
 
 
@@ -7594,9 +7662,43 @@ class Publish implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Codespace\GitStatus);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning);
+        $result = [];
+
+        $status = $object->status;
+
+        if ($status === null) {
+            goto after_status;
+        }
+        after_status:        $result['status'] = $status;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection);
+        $result = [];
+
+        $status = $object->status;
+
+        if ($status === null) {
+            goto after_status;
+        }
+        after_status:        $result['status'] = $status;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus);
         $result = [];
 
         $ahead = $object->ahead;
@@ -7643,9 +7745,9 @@ class Publish implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints);
         $result = [];
 
         $allowedPortPrivacySettings = $object->allowedPortPrivacySettings;

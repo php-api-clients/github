@@ -24,7 +24,7 @@ final readonly class Comment
      * path: The relative path of the file to which the comment applies.
      * position: The line index in the diff to which the comment applies.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public string $body, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, public ?int $line, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?string $path, public ?int $position, public ?Schema\Discussion\Reactions $reactions, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public string $body, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, public ?int $line, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?string $path, public ?int $position, public ?Schema\WebhookCommitCommentCreated\Comment\Reactions $reactions, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookCommitCommentCreated\Comment\User $user)
     {
     }
 }

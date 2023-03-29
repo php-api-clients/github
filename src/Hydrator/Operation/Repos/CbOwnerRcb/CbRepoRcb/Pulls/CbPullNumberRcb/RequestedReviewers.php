@@ -35,6 +35,7 @@ class RequestedReviewers implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\PullRequestSimple\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base($payload),
                 'ApiClients\Client\GitHub\Schema\PullRequestSimple\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Links($payload),
                 'ApiClients\Client\GitHub\Schema\Link' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Link($payload),
                 'ApiClients\Client\GitHub\Schema\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AutoMerge($payload),
@@ -1015,7 +1016,7 @@ class RequestedReviewers implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3790,6 +3791,91 @@ class RequestedReviewers implements ObjectMapper
     }
 
         
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\PullRequestSimple\Base
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['label'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'label';
+                goto after_label;
+            }
+
+            $properties['label'] = $value;
+
+            after_label:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['repo'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repo';
+                goto after_repo;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'repo';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['repo'] = $value;
+
+            after_repo:
+
+            $value = $payload['sha'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sha';
+                goto after_sha;
+            }
+
+            $properties['sha'] = $value;
+
+            after_sha:
+
+            $value = $payload['user'] ?? null;
+
+            if ($value === null) {
+                $properties['user'] = null;
+                goto after_user;
+            }
+
+            $properties['user'] = $value;
+
+            after_user:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PullRequestSimple\Base', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PullRequestSimple\Base::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\PullRequestSimple\Base(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PullRequestSimple\Base', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\PullRequestSimple\Links
     {
         $properties = []; 
@@ -4335,6 +4421,7 @@ class RequestedReviewers implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
+            'ApiClients\Client\GitHub\Schema\PullRequestSimple\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base($object),
             'ApiClients\Client\GitHub\Schema\PullRequestSimple\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Links($object),
             'ApiClients\Client\GitHub\Schema\Link' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Link($object),
             'ApiClients\Client\GitHub\Schema\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AutoMerge($object),
@@ -4876,7 +4963,7 @@ class RequestedReviewers implements ObjectMapper
 
         
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Head($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
@@ -6481,6 +6568,40 @@ class RequestedReviewers implements ObjectMapper
             goto after_pull;
         }
         after_pull:        $result['pull'] = $pull;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestSimple⚡️Base(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PullRequestSimple\Base);
+        $result = [];
+
+        $label = $object->label;
+        after_label:        $result['label'] = $label;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $repo = $object->repo;
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repo);
+        after_repo:        $result['repo'] = $repo;
+
+        
+        $sha = $object->sha;
+        after_sha:        $result['sha'] = $sha;
+
+        
+        $user = $object->user;
+
+        if ($user === null) {
+            goto after_user;
+        }
+        after_user:        $result['user'] = $user;
 
 
         return $result;

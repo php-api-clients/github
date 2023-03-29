@@ -26,12 +26,14 @@ class CbPathRcb implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\ContentTree' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree($payload),
                 'ApiClients\Client\GitHub\Schema\ContentTree\Entries' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries($payload),
                 'ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($payload),
+                'ApiClients\Client\GitHub\Schema\ContentTree\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Content' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Content($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Content\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Content⚡️Links($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Commit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Author($payload),
+                'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Tree' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Tree($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Parents' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Parents($payload),
                 'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Verification' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Verification($payload),
@@ -178,7 +180,7 @@ class CbPathRcb implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -405,6 +407,60 @@ class CbPathRcb implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\ContentTree\Links
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['git'] ?? null;
+
+            if ($value === null) {
+                $properties['git'] = null;
+                goto after_git;
+            }
+
+            $properties['git'] = $value;
+
+            after_git:
+
+            $value = $payload['html'] ?? null;
+
+            if ($value === null) {
+                $properties['html'] = null;
+                goto after_html;
+            }
+
+            $properties['html'] = $value;
+
+            after_html:
+
+            $value = $payload['self'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'self';
+                goto after_self;
+            }
+
+            $properties['self'] = $value;
+
+            after_self:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Links', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContentTree\Links::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\ContentTree\Links(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContentTree\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -808,7 +864,7 @@ class CbPathRcb implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'committer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -956,6 +1012,60 @@ class CbPathRcb implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\FileCommit\Commit\Author(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\FileCommit\Commit\Author', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer(array $payload): \ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['date'] ?? null;
+
+            if ($value === null) {
+                $properties['date'] = null;
+                goto after_date;
+            }
+
+            $properties['date'] = $value;
+
+            after_date:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
+            }
+
+            $properties['email'] = $value;
+
+            after_email:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -1360,12 +1470,14 @@ class CbPathRcb implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\ContentTree' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree($object),
             'ApiClients\Client\GitHub\Schema\ContentTree\Entries' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries($object),
             'ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($object),
+            'ApiClients\Client\GitHub\Schema\ContentTree\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
             'ApiClients\Client\GitHub\Schema\FileCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Content' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Content($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Content\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Content⚡️Links($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Commit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Author($object),
+            'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Tree' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Tree($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Parents' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Parents($object),
             'ApiClients\Client\GitHub\Schema\FileCommit\Commit\Verification' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Verification($object),
@@ -1516,7 +1628,7 @@ class CbPathRcb implements ObjectMapper
 
         
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
 
@@ -1597,6 +1709,35 @@ class CbPathRcb implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Entries⚡️Links(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContentTree\Entries\Links);
+        $result = [];
+
+        $git = $object->git;
+
+        if ($git === null) {
+            goto after_git;
+        }
+        after_git:        $result['git'] = $git;
+
+        
+        $html = $object->html;
+
+        if ($html === null) {
+            goto after_html;
+        }
+        after_html:        $result['html'] = $html;
+
+        
+        $self = $object->self;
+        after_self:        $result['self'] = $self;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContentTree⚡️Links(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContentTree\Links);
         $result = [];
 
         $git = $object->git;
@@ -1861,7 +2002,7 @@ class CbPathRcb implements ObjectMapper
         if ($committer === null) {
             goto after_committer;
         }
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Author($committer);
+        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer($committer);
         after_committer:        $result['committer'] = $committer;
 
         
@@ -1915,6 +2056,39 @@ class CbPathRcb implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Author(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\FileCommit\Commit\Author);
+        $result = [];
+
+        $date = $object->date;
+
+        if ($date === null) {
+            goto after_date;
+        }
+        after_date:        $result['date'] = $date;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+        after_email:        $result['email'] = $email;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FileCommit⚡️Commit⚡️Committer(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\FileCommit\Commit\Committer);
         $result = [];
 
         $date = $object->date;

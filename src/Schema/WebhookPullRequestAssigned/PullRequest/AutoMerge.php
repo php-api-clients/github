@@ -19,7 +19,7 @@ final readonly class AutoMerge
      * commitTitle: Title for the merge commit message.
      * mergeMethod: The merge method to use.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('commit_message')] public ?string $commitMessage, #[\EventSauce\ObjectHydrator\MapFrom('commit_title')] public ?string $commitTitle, #[\EventSauce\ObjectHydrator\MapFrom('enabled_by')] public ?Schema\Discussion\AnswerChosenBy $enabledBy, #[\EventSauce\ObjectHydrator\MapFrom('merge_method')] public string $mergeMethod)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('commit_message')] public ?string $commitMessage, #[\EventSauce\ObjectHydrator\MapFrom('commit_title')] public ?string $commitTitle, #[\EventSauce\ObjectHydrator\MapFrom('enabled_by')] public ?Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy $enabledBy, #[\EventSauce\ObjectHydrator\MapFrom('merge_method')] public string $mergeMethod)
     {
     }
 }

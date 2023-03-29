@@ -34,11 +34,11 @@ final class AddStatusCheckContexts
     }
     function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Repos\SetStatusCheckContexts\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Repos\AddStatusCheckContexts\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{branch}'), array($this->owner, $this->repo, $this->branch), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
     }
     /**
-     * @return \Rx\Observable<Schema\WebHookHeader\UserAgent>
+     * @return \Rx\Observable<Schema\Operation\Repos\AddStatusCheckContexts\Response\Applicationjson\H200>
      */
     function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
@@ -50,10 +50,10 @@ final class AddStatusCheckContexts
                 switch ($contentType) {
                     case 'application/json':
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\AddStatusCheckContexts\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\WebHookHeader\UserAgent {
-                            return $this->hydrator->hydrateObject(Schema\WebHookHeader\UserAgent::class, $body);
+                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\Operation\Repos\AddStatusCheckContexts\Response\Applicationjson\H200 {
+                            return $this->hydrator->hydrateObject(Schema\Operation\Repos\AddStatusCheckContexts\Response\Applicationjson\H200::class, $body);
                         });
                 }
                 break;

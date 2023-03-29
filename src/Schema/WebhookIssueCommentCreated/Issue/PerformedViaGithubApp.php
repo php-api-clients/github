@@ -22,7 +22,7 @@ final readonly class PerformedViaGithubApp
      * permissions: The set of permissions for the GitHub app
      * slug: The slug name of the GitHub app
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('created_at')] public ?string $createdAt, public ?string $description, public ?array $events, #[\EventSauce\ObjectHydrator\MapFrom('external_url')] public ?string $externalUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public ?int $id, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?Schema\Discussion\AnswerChosenBy $owner, public ?Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions $permissions, public ?string $slug, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public ?string $updatedAt)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('created_at')] public ?string $createdAt, public ?string $description, public ?array $events, #[\EventSauce\ObjectHydrator\MapFrom('external_url')] public ?string $externalUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public ?int $id, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Owner $owner, public ?Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Permissions $permissions, public ?string $slug, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public ?string $updatedAt)
     {
     }
 }

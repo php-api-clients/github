@@ -31,7 +31,7 @@ final readonly class WebhookPush
      * repository: A git repository
      * sender: A GitHub user.
      */
-    public function __construct(public string $after, #[\EventSauce\ObjectHydrator\MapFrom('base_ref')] public ?string $baseRef, public string $before, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookPush\Commits::class)] public array $commits, public string $compare, public bool $created, public bool $deleted, public ?Schema\Enterprise $enterprise, public bool $forced, #[\EventSauce\ObjectHydrator\MapFrom('head_commit')] public ?Schema\WebhookPush\HeadCommit $headCommit, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookIssuesTransferred\Changes\NewRepository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $after, #[\EventSauce\ObjectHydrator\MapFrom('base_ref')] public ?string $baseRef, public string $before, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookPush\Commits::class)] public array $commits, public string $compare, public bool $created, public bool $deleted, public ?Schema\Enterprise $enterprise, public bool $forced, #[\EventSauce\ObjectHydrator\MapFrom('head_commit')] public ?Schema\WebhookPush\HeadCommit $headCommit, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

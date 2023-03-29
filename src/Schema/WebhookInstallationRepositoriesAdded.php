@@ -19,14 +19,14 @@ final readonly class WebhookInstallationRepositoriesAdded
      * installation: Installation
      * organization: A GitHub organization.
      * repositoriesAdded: An array of repository objects, which were added to the installation.
-     * @param array<\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories> $repositoriesAdded
+     * @param array<\ApiClients\Client\GitHub\Schema\WebhookInstallationRepositoriesAdded\RepositoriesAdded> $repositoriesAdded
      * repositoriesRemoved: An array of repository objects, which were removed from the installation.
      * @param array<\ApiClients\Client\GitHub\Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved> $repositoriesRemoved
      * repository: A repository on GitHub.
      * repositorySelection: Describe whether all repositories have been selected or there's a selection involved
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('repositories_added')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\PersonalAccessTokenRequest\Repositories::class)] public array $repositoriesAdded, #[\EventSauce\ObjectHydrator\MapFrom('repositories_removed')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved::class)] public array $repositoriesRemoved, public ?Schema\Repository $repository, #[\EventSauce\ObjectHydrator\MapFrom('repository_selection')] public string $repositorySelection, public ?Schema\Discussion\AnswerChosenBy $requester, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('repositories_added')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationRepositoriesAdded\RepositoriesAdded::class)] public array $repositoriesAdded, #[\EventSauce\ObjectHydrator\MapFrom('repositories_removed')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookInstallationRepositoriesAdded\RepositoriesRemoved::class)] public array $repositoriesRemoved, public ?Schema\Repository $repository, #[\EventSauce\ObjectHydrator\MapFrom('repository_selection')] public string $repositorySelection, public ?Schema\WebhookInstallationRepositoriesAdded\Requester $requester, public Schema\SimpleUser $sender)
     {
     }
 }

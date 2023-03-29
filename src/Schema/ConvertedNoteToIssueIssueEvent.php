@@ -18,7 +18,7 @@ final readonly class ConvertedNoteToIssueIssueEvent
      * actor: A GitHub user.
      * performedViaGithubApp: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public ?string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public ?string $commitUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public Schema\Integration $performedViaGithubApp, #[\EventSauce\ObjectHydrator\MapFrom('project_card')] public ?Schema\AddedToProjectIssueEvent\ProjectCard $projectCard)
+    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[\EventSauce\ObjectHydrator\MapFrom('commit_id')] public ?string $commitId, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public ?string $commitUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public Schema\Integration $performedViaGithubApp, #[\EventSauce\ObjectHydrator\MapFrom('project_card')] public ?Schema\ConvertedNoteToIssueIssueEvent\ProjectCard $projectCard)
     {
     }
 }

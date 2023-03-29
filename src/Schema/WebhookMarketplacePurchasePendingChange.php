@@ -21,7 +21,7 @@ final readonly class WebhookMarketplacePurchasePendingChange
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, #[\EventSauce\ObjectHydrator\MapFrom('effective_date')] public string $effectiveDate, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, #[\EventSauce\ObjectHydrator\MapFrom('marketplace_purchase')] public Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase $marketplacePurchase, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('previous_marketplace_purchase')] public ?Schema\WebhookMarketplacePurchaseCancelled\MarketplacePurchase $previousMarketplacePurchase, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, #[\EventSauce\ObjectHydrator\MapFrom('effective_date')] public string $effectiveDate, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, #[\EventSauce\ObjectHydrator\MapFrom('marketplace_purchase')] public Schema\WebhookMarketplacePurchasePendingChange\MarketplacePurchase $marketplacePurchase, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('previous_marketplace_purchase')] public ?Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase $previousMarketplacePurchase, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

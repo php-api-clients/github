@@ -17,7 +17,7 @@ final readonly class ContentTree
     /**
      * @param ?array<\ApiClients\Client\GitHub\Schema\ContentTree\Entries> $entries
      */
-    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string $url, #[\EventSauce\ObjectHydrator\MapFrom('git_url')] public ?string $gitUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('download_url')] public ?string $downloadUrl, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContentTree\Entries::class)] public ?array $entries, #[\EventSauce\ObjectHydrator\MapFrom('_links')] public Schema\ContentTree\Entries\Links $links)
+    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string $url, #[\EventSauce\ObjectHydrator\MapFrom('git_url')] public ?string $gitUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('download_url')] public ?string $downloadUrl, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\ContentTree\Entries::class)] public ?array $entries, #[\EventSauce\ObjectHydrator\MapFrom('_links')] public Schema\ContentTree\Links $links)
     {
     }
 }

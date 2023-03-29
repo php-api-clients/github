@@ -25,8 +25,8 @@ class PageBuild implements ObjectMapper
         return match($className) {
             'ApiClients\Client\GitHub\Schema\WebhookPageBuild' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build($payload),
-                'ApiClients\Client\GitHub\Schema\PageBuild\Error' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($payload),
-                'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher($payload),
                 'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
@@ -241,7 +241,7 @@ class PageBuild implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'error';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -261,7 +261,7 @@ class PageBuild implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pusher';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -320,7 +320,7 @@ class PageBuild implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error(array $payload): \ApiClients\Client\GitHub\Schema\PageBuild\Error
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error
     {
         $properties = []; 
         $missingFields = [];
@@ -337,22 +337,22 @@ class PageBuild implements ObjectMapper
             after_message:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PageBuild\Error::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PageBuild\Error(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PageBuild\Error', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher
     {
         $properties = []; 
         $missingFields = [];
@@ -589,17 +589,17 @@ class PageBuild implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3719,8 +3719,8 @@ class PageBuild implements ObjectMapper
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
             'ApiClients\Client\GitHub\Schema\WebhookPageBuild' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild($object),
             'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build($object),
-            'ApiClients\Client\GitHub\Schema\PageBuild\Error' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($object),
-            'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($object),
+            'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error($object),
+            'ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher($object),
             'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
             'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
             'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
@@ -3880,7 +3880,7 @@ class PageBuild implements ObjectMapper
 
         
         $error = $object->error;
-        $error = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error($error);
+        $error = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error($error);
         after_error:        $result['error'] = $error;
 
         
@@ -3889,7 +3889,7 @@ class PageBuild implements ObjectMapper
         if ($pusher === null) {
             goto after_pusher;
         }
-        $pusher = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($pusher);
+        $pusher = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher($pusher);
         after_pusher:        $result['pusher'] = $pusher;
 
         
@@ -3909,9 +3909,9 @@ class PageBuild implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PageBuild⚡️Error(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Error(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PageBuild\Error);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Error);
         $result = [];
 
         $message = $object->message;
@@ -3926,9 +3926,9 @@ class PageBuild implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPageBuild⚡️Build⚡️Pusher(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPageBuild\Build\Pusher);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;

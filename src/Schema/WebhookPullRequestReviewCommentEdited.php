@@ -23,7 +23,7 @@ final readonly class WebhookPullRequestReviewCommentEdited
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookIssueCommentEdited\Changes $changes, public Schema\WebhookPullRequestReviewCommentDeleted\Comment $comment, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('pull_request')] public Schema\WebhookPullRequestReviewCommentEdited\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookPullRequestReviewCommentEdited\Changes $changes, public Schema\WebhookPullRequestReviewCommentEdited\Comment $comment, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('pull_request')] public Schema\WebhookPullRequestReviewCommentEdited\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

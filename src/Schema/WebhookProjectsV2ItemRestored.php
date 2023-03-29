@@ -20,7 +20,7 @@ final readonly class WebhookProjectsV2ItemRestored
      * projectsV2Item: An item belonging to a project
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemArchived\Changes $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('projects_v2_item')] public Schema\ProjectsV2Item $projectsV2Item, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemRestored\Changes $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('projects_v2_item')] public Schema\ProjectsV2Item $projectsV2Item, public Schema\SimpleUser $sender)
     {
     }
 }

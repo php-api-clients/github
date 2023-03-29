@@ -35,9 +35,9 @@ final class GetAnalysis
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{analysis_id}'), array($this->owner, $this->repo, $this->analysisId), self::PATH));
     }
     /**
-     * @return Schema\CodeScanningAnalysis|Schema\Deployment\Payload
+     * @return Schema\CodeScanningAnalysis|Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningAnalysis|Schema\Deployment\Payload
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningAnalysis|Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,8 @@ final class GetAnalysis
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\CodeScanningAnalysis::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\CodeScanningAnalysis::class, $body);
                     case 'application/json+sarif':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Deployment\Payload::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Deployment\Payload::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200::class, $body);
                 }
                 break;
             /**Response if GitHub Advanced Security is not enabled for this repository**/

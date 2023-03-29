@@ -25,10 +25,10 @@ class CodeScanningAlert implements ObjectMapper
         return match($className) {
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert($payload),
-                'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
-                'ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
@@ -42,17 +42,41 @@ class CodeScanningAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -269,7 +293,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'dismissedBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -410,7 +434,7 @@ class CodeScanningAlert implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(array $payload): \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy
     {
         $properties = []; 
         $missingFields = [];
@@ -647,17 +671,17 @@ class CodeScanningAlert implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -741,7 +765,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -865,7 +889,7 @@ class CodeScanningAlert implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message
     {
         $properties = []; 
         $missingFields = [];
@@ -882,17 +906,17 @@ class CodeScanningAlert implements ObjectMapper
             after_text:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4288,7 +4312,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'dismissedBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4330,7 +4354,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'mostRecentInstance';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4425,6 +4449,493 @@ class CodeScanningAlert implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
+            }
+
+            $properties['avatarUrl'] = $value;
+
+            after_avatarUrl:
+
+            $value = $payload['deleted'] ?? null;
+
+            if ($value === null) {
+                $properties['deleted'] = null;
+                goto after_deleted;
+            }
+
+            $properties['deleted'] = $value;
+
+            after_deleted:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
+            }
+
+            $properties['email'] = $value;
+
+            after_email:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
+            }
+
+            $properties['eventsUrl'] = $value;
+
+            after_eventsUrl:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
+            }
+
+            $properties['followersUrl'] = $value;
+
+            after_followersUrl:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
+            }
+
+            $properties['followingUrl'] = $value;
+
+            after_followingUrl:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
+            }
+
+            $properties['gistsUrl'] = $value;
+
+            after_gistsUrl:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
+            }
+
+            $properties['gravatarId'] = $value;
+
+            after_gravatarId:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['login'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'login';
+                goto after_login;
+            }
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['nodeId'] = null;
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
+            }
+
+            $properties['organizationsUrl'] = $value;
+
+            after_organizationsUrl:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
+            }
+
+            $properties['receivedEventsUrl'] = $value;
+
+            after_receivedEventsUrl:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
+            }
+
+            $properties['reposUrl'] = $value;
+
+            after_reposUrl:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
+            }
+
+            $properties['siteAdmin'] = $value;
+
+            after_siteAdmin:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
+            }
+
+            $properties['starredUrl'] = $value;
+
+            after_starredUrl:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
+            }
+
+            $properties['subscriptionsUrl'] = $value;
+
+            after_subscriptionsUrl:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysisKey;
+            }
+
+            $properties['analysisKey'] = $value;
+
+            after_analysisKey:
+
+            $value = $payload['classifications'] ?? null;
+
+            if ($value === null) {
+                $properties['classifications'] = null;
+                goto after_classifications;
+            }
+
+            $properties['classifications'] = $value;
+
+            after_classifications:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['commitSha'] = null;
+                goto after_commitSha;
+            }
+
+            $properties['commitSha'] = $value;
+
+            after_commitSha:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['location'] ?? null;
+
+            if ($value === null) {
+                $properties['location'] = null;
+                goto after_location;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'location';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['location'] = $value;
+
+            after_location:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'message';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $properties['endColumn'] = null;
+                goto after_endColumn;
+            }
+
+            $properties['endColumn'] = $value;
+
+            after_endColumn:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $properties['endLine'] = null;
+                goto after_endLine;
+            }
+
+            $properties['endLine'] = $value;
+
+            after_endLine:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $properties['path'] = null;
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $properties['startColumn'] = null;
+                goto after_startColumn;
+            }
+
+            $properties['startColumn'] = $value;
+
+            after_startColumn:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $properties['startLine'] = null;
+                goto after_startLine;
+            }
+
+            $properties['startLine'] = $value;
+
+            after_startLine:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['text'] ?? null;
+
+            if ($value === null) {
+                $properties['text'] = null;
+                goto after_text;
+            }
+
+            $properties['text'] = $value;
+
+            after_text:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4869,7 +5380,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'mostRecentInstance';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4900,7 +5411,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4975,6 +5486,350 @@ class CodeScanningAlert implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysisKey;
+            }
+
+            $properties['analysisKey'] = $value;
+
+            after_analysisKey:
+
+            $value = $payload['classifications'] ?? null;
+
+            if ($value === null) {
+                $properties['classifications'] = null;
+                goto after_classifications;
+            }
+
+            $properties['classifications'] = $value;
+
+            after_classifications:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['commitSha'] = null;
+                goto after_commitSha;
+            }
+
+            $properties['commitSha'] = $value;
+
+            after_commitSha:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['location'] ?? null;
+
+            if ($value === null) {
+                $properties['location'] = null;
+                goto after_location;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'location';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['location'] = $value;
+
+            after_location:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'message';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $properties['endColumn'] = null;
+                goto after_endColumn;
+            }
+
+            $properties['endColumn'] = $value;
+
+            after_endColumn:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $properties['endLine'] = null;
+                goto after_endLine;
+            }
+
+            $properties['endLine'] = $value;
+
+            after_endLine:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $properties['path'] = null;
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $properties['startColumn'] = null;
+                goto after_startColumn;
+            }
+
+            $properties['startColumn'] = $value;
+
+            after_startColumn:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $properties['startLine'] = null;
+                goto after_startLine;
+            }
+
+            $properties['startLine'] = $value;
+
+            after_startLine:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['text'] ?? null;
+
+            if ($value === null) {
+                $properties['text'] = null;
+                goto after_text;
+            }
+
+            $properties['text'] = $value;
+
+            after_text:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['full_description'] ?? null;
+
+            if ($value === null) {
+                $properties['fullDescription'] = null;
+                goto after_fullDescription;
+            }
+
+            $properties['fullDescription'] = $value;
+
+            after_fullDescription:
+
+            $value = $payload['help'] ?? null;
+
+            if ($value === null) {
+                $properties['help'] = null;
+                goto after_help;
+            }
+
+            $properties['help'] = $value;
+
+            after_help:
+
+            $value = $payload['help_uri'] ?? null;
+
+            if ($value === null) {
+                $properties['helpUri'] = null;
+                goto after_helpUri;
+            }
+
+            $properties['helpUri'] = $value;
+
+            after_helpUri:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $properties['severity'] = null;
+                goto after_severity;
+            }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+            $value = $payload['tags'] ?? null;
+
+            if ($value === null) {
+                $properties['tags'] = null;
+                goto after_tags;
+            }
+
+            $properties['tags'] = $value;
+
+            after_tags:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5244,7 +6099,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'dismissedBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5297,7 +6152,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'mostRecentInstance';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5328,7 +6183,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5359,7 +6214,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tool';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5392,6 +6247,656 @@ class CodeScanningAlert implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
+            }
+
+            $properties['avatarUrl'] = $value;
+
+            after_avatarUrl:
+
+            $value = $payload['deleted'] ?? null;
+
+            if ($value === null) {
+                $properties['deleted'] = null;
+                goto after_deleted;
+            }
+
+            $properties['deleted'] = $value;
+
+            after_deleted:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
+            }
+
+            $properties['email'] = $value;
+
+            after_email:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
+            }
+
+            $properties['eventsUrl'] = $value;
+
+            after_eventsUrl:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
+            }
+
+            $properties['followersUrl'] = $value;
+
+            after_followersUrl:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
+            }
+
+            $properties['followingUrl'] = $value;
+
+            after_followingUrl:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
+            }
+
+            $properties['gistsUrl'] = $value;
+
+            after_gistsUrl:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
+            }
+
+            $properties['gravatarId'] = $value;
+
+            after_gravatarId:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['login'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'login';
+                goto after_login;
+            }
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['nodeId'] = null;
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
+            }
+
+            $properties['organizationsUrl'] = $value;
+
+            after_organizationsUrl:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
+            }
+
+            $properties['receivedEventsUrl'] = $value;
+
+            after_receivedEventsUrl:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
+            }
+
+            $properties['reposUrl'] = $value;
+
+            after_reposUrl:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
+            }
+
+            $properties['siteAdmin'] = $value;
+
+            after_siteAdmin:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
+            }
+
+            $properties['starredUrl'] = $value;
+
+            after_starredUrl:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
+            }
+
+            $properties['subscriptionsUrl'] = $value;
+
+            after_subscriptionsUrl:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysisKey;
+            }
+
+            $properties['analysisKey'] = $value;
+
+            after_analysisKey:
+
+            $value = $payload['classifications'] ?? null;
+
+            if ($value === null) {
+                $properties['classifications'] = null;
+                goto after_classifications;
+            }
+
+            $properties['classifications'] = $value;
+
+            after_classifications:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['commitSha'] = null;
+                goto after_commitSha;
+            }
+
+            $properties['commitSha'] = $value;
+
+            after_commitSha:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['location'] ?? null;
+
+            if ($value === null) {
+                $properties['location'] = null;
+                goto after_location;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'location';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['location'] = $value;
+
+            after_location:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'message';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $properties['endColumn'] = null;
+                goto after_endColumn;
+            }
+
+            $properties['endColumn'] = $value;
+
+            after_endColumn:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $properties['endLine'] = null;
+                goto after_endLine;
+            }
+
+            $properties['endLine'] = $value;
+
+            after_endLine:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $properties['path'] = null;
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $properties['startColumn'] = null;
+                goto after_startColumn;
+            }
+
+            $properties['startColumn'] = $value;
+
+            after_startColumn:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $properties['startLine'] = null;
+                goto after_startLine;
+            }
+
+            $properties['startLine'] = $value;
+
+            after_startLine:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['text'] ?? null;
+
+            if ($value === null) {
+                $properties['text'] = null;
+                goto after_text;
+            }
+
+            $properties['text'] = $value;
+
+            after_text:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['full_description'] ?? null;
+
+            if ($value === null) {
+                $properties['fullDescription'] = null;
+                goto after_fullDescription;
+            }
+
+            $properties['fullDescription'] = $value;
+
+            after_fullDescription:
+
+            $value = $payload['help'] ?? null;
+
+            if ($value === null) {
+                $properties['help'] = null;
+                goto after_help;
+            }
+
+            $properties['help'] = $value;
+
+            after_help:
+
+            $value = $payload['help_uri'] ?? null;
+
+            if ($value === null) {
+                $properties['helpUri'] = null;
+                goto after_helpUri;
+            }
+
+            $properties['helpUri'] = $value;
+
+            after_helpUri:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $properties['severity'] = null;
+                goto after_severity;
+            }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+            $value = $payload['tags'] ?? null;
+
+            if ($value === null) {
+                $properties['tags'] = null;
+                goto after_tags;
+            }
+
+            $properties['tags'] = $value;
+
+            after_tags:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['guid'] ?? null;
+
+            if ($value === null) {
+                $properties['guid'] = null;
+                goto after_guid;
+            }
+
+            $properties['guid'] = $value;
+
+            after_guid:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['version'] ?? null;
+
+            if ($value === null) {
+                $properties['version'] = null;
+                goto after_version;
+            }
+
+            $properties['version'] = $value;
+
+            after_version:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5640,7 +7145,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'mostRecentInstance';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5671,7 +7176,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5702,7 +7207,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tool';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5735,6 +7240,404 @@ class CodeScanningAlert implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysisKey;
+            }
+
+            $properties['analysisKey'] = $value;
+
+            after_analysisKey:
+
+            $value = $payload['classifications'] ?? null;
+
+            if ($value === null) {
+                $properties['classifications'] = null;
+                goto after_classifications;
+            }
+
+            $properties['classifications'] = $value;
+
+            after_classifications:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['commitSha'] = null;
+                goto after_commitSha;
+            }
+
+            $properties['commitSha'] = $value;
+
+            after_commitSha:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['location'] ?? null;
+
+            if ($value === null) {
+                $properties['location'] = null;
+                goto after_location;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'location';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['location'] = $value;
+
+            after_location:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'message';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $properties['endColumn'] = null;
+                goto after_endColumn;
+            }
+
+            $properties['endColumn'] = $value;
+
+            after_endColumn:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $properties['endLine'] = null;
+                goto after_endLine;
+            }
+
+            $properties['endLine'] = $value;
+
+            after_endLine:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $properties['path'] = null;
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $properties['startColumn'] = null;
+                goto after_startColumn;
+            }
+
+            $properties['startColumn'] = $value;
+
+            after_startColumn:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $properties['startLine'] = null;
+                goto after_startLine;
+            }
+
+            $properties['startLine'] = $value;
+
+            after_startLine:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['text'] ?? null;
+
+            if ($value === null) {
+                $properties['text'] = null;
+                goto after_text;
+            }
+
+            $properties['text'] = $value;
+
+            after_text:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['full_description'] ?? null;
+
+            if ($value === null) {
+                $properties['fullDescription'] = null;
+                goto after_fullDescription;
+            }
+
+            $properties['fullDescription'] = $value;
+
+            after_fullDescription:
+
+            $value = $payload['help'] ?? null;
+
+            if ($value === null) {
+                $properties['help'] = null;
+                goto after_help;
+            }
+
+            $properties['help'] = $value;
+
+            after_help:
+
+            $value = $payload['help_uri'] ?? null;
+
+            if ($value === null) {
+                $properties['helpUri'] = null;
+                goto after_helpUri;
+            }
+
+            $properties['helpUri'] = $value;
+
+            after_helpUri:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $properties['severity'] = null;
+                goto after_severity;
+            }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+            $value = $payload['tags'] ?? null;
+
+            if ($value === null) {
+                $properties['tags'] = null;
+                goto after_tags;
+            }
+
+            $properties['tags'] = $value;
+
+            after_tags:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['guid'] ?? null;
+
+            if ($value === null) {
+                $properties['guid'] = null;
+                goto after_guid;
+            }
+
+            $properties['guid'] = $value;
+
+            after_guid:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['version'] ?? null;
+
+            if ($value === null) {
+                $properties['version'] = null;
+                goto after_version;
+            }
+
+            $properties['version'] = $value;
+
+            after_version:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5983,7 +7886,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'mostRecentInstance';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6014,7 +7917,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6045,7 +7948,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tool';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6078,6 +7981,338 @@ class CodeScanningAlert implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['analysis_key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'analysis_key';
+                goto after_analysisKey;
+            }
+
+            $properties['analysisKey'] = $value;
+
+            after_analysisKey:
+
+            $value = $payload['classifications'] ?? null;
+
+            if ($value === null) {
+                $properties['classifications'] = null;
+                goto after_classifications;
+            }
+
+            $properties['classifications'] = $value;
+
+            after_classifications:
+
+            $value = $payload['commit_sha'] ?? null;
+
+            if ($value === null) {
+                $properties['commitSha'] = null;
+                goto after_commitSha;
+            }
+
+            $properties['commitSha'] = $value;
+
+            after_commitSha:
+
+            $value = $payload['environment'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'environment';
+                goto after_environment;
+            }
+
+            $properties['environment'] = $value;
+
+            after_environment:
+
+            $value = $payload['location'] ?? null;
+
+            if ($value === null) {
+                $properties['location'] = null;
+                goto after_location;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'location';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['location'] = $value;
+
+            after_location:
+
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'message';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['ref'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'ref';
+                goto after_ref;
+            }
+
+            $properties['ref'] = $value;
+
+            after_ref:
+
+            $value = $payload['state'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'state';
+                goto after_state;
+            }
+
+            $properties['state'] = $value;
+
+            after_state:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['end_column'] ?? null;
+
+            if ($value === null) {
+                $properties['endColumn'] = null;
+                goto after_endColumn;
+            }
+
+            $properties['endColumn'] = $value;
+
+            after_endColumn:
+
+            $value = $payload['end_line'] ?? null;
+
+            if ($value === null) {
+                $properties['endLine'] = null;
+                goto after_endLine;
+            }
+
+            $properties['endLine'] = $value;
+
+            after_endLine:
+
+            $value = $payload['path'] ?? null;
+
+            if ($value === null) {
+                $properties['path'] = null;
+                goto after_path;
+            }
+
+            $properties['path'] = $value;
+
+            after_path:
+
+            $value = $payload['start_column'] ?? null;
+
+            if ($value === null) {
+                $properties['startColumn'] = null;
+                goto after_startColumn;
+            }
+
+            $properties['startColumn'] = $value;
+
+            after_startColumn:
+
+            $value = $payload['start_line'] ?? null;
+
+            if ($value === null) {
+                $properties['startLine'] = null;
+                goto after_startLine;
+            }
+
+            $properties['startLine'] = $value;
+
+            after_startLine:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['text'] ?? null;
+
+            if ($value === null) {
+                $properties['text'] = null;
+                goto after_text;
+            }
+
+            $properties['text'] = $value;
+
+            after_text:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'description';
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['severity'] ?? null;
+
+            if ($value === null) {
+                $properties['severity'] = null;
+                goto after_severity;
+            }
+
+            $properties['severity'] = $value;
+
+            after_severity:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['version'] ?? null;
+
+            if ($value === null) {
+                $properties['version'] = null;
+                goto after_version;
+            }
+
+            $properties['version'] = $value;
+
+            after_version:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -6114,10 +8349,10 @@ class CodeScanningAlert implements ObjectMapper
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert($object),
-            'ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($object),
-            'ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($object),
             'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
@@ -6131,17 +8366,41 @@ class CodeScanningAlert implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Tool($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser($object),
             'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule($object),
+            'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -6300,7 +8559,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($dismissedBy === null) {
             goto after_dismissedBy;
         }
-        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($dismissedBy);
+        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
         
@@ -6351,9 +8610,9 @@ class CodeScanningAlert implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Discussion\AnswerChosenBy);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\DismissedBy);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -6571,7 +8830,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         
@@ -6636,9 +8895,9 @@ class CodeScanningAlert implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance⚡️Message(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance\Message);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message);
         $result = [];
 
         $text = $object->text;
@@ -8538,7 +10797,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($dismissedBy === null) {
             goto after_dismissedBy;
         }
-        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($dismissedBy);
+        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
         
@@ -8559,7 +10818,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($mostRecentInstance === null) {
             goto after_mostRecentInstance;
         }
-        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
         
@@ -8583,6 +10842,308 @@ class CodeScanningAlert implements ObjectMapper
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy);
+        $result = [];
+
+        $avatarUrl = $object->avatarUrl;
+
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
+        }
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        
+        $deleted = $object->deleted;
+
+        if ($deleted === null) {
+            goto after_deleted;
+        }
+        after_deleted:        $result['deleted'] = $deleted;
+
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+        after_email:        $result['email'] = $email;
+
+        
+        $eventsUrl = $object->eventsUrl;
+
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
+        }
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        
+        $followersUrl = $object->followersUrl;
+
+        if ($followersUrl === null) {
+            goto after_followersUrl;
+        }
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
+
+        
+        $followingUrl = $object->followingUrl;
+
+        if ($followingUrl === null) {
+            goto after_followingUrl;
+        }
+        after_followingUrl:        $result['following_url'] = $followingUrl;
+
+        
+        $gistsUrl = $object->gistsUrl;
+
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
+        }
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
+
+        
+        $gravatarId = $object->gravatarId;
+
+        if ($gravatarId === null) {
+            goto after_gravatarId;
+        }
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
+
+        
+        $htmlUrl = $object->htmlUrl;
+
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
+        }
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $login = $object->login;
+        after_login:        $result['login'] = $login;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $nodeId = $object->nodeId;
+
+        if ($nodeId === null) {
+            goto after_nodeId;
+        }
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        
+        $organizationsUrl = $object->organizationsUrl;
+
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
+        }
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
+
+        
+        $receivedEventsUrl = $object->receivedEventsUrl;
+
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
+        }
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
+
+        
+        $reposUrl = $object->reposUrl;
+
+        if ($reposUrl === null) {
+            goto after_reposUrl;
+        }
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        
+        $siteAdmin = $object->siteAdmin;
+
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
+        }
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
+
+        
+        $starredUrl = $object->starredUrl;
+
+        if ($starredUrl === null) {
+            goto after_starredUrl;
+        }
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
+
+        
+        $subscriptionsUrl = $object->subscriptionsUrl;
+
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
+        }
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
+
+        
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+        after_type:        $result['type'] = $type;
+
+        
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+        after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance);
+        $result = [];
+
+        $analysisKey = $object->analysisKey;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
+
+        
+        $classifications = $object->classifications;
+
+        if ($classifications === null) {
+            goto after_classifications;
+        }
+        static $classificationsSerializer0;
+
+        if ($classificationsSerializer0 === null) {
+            $classificationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $classifications = $classificationsSerializer0->serialize($classifications, $this);
+        after_classifications:        $result['classifications'] = $classifications;
+
+        
+        $commitSha = $object->commitSha;
+
+        if ($commitSha === null) {
+            goto after_commitSha;
+        }
+        after_commitSha:        $result['commit_sha'] = $commitSha;
+
+        
+        $environment = $object->environment;
+        after_environment:        $result['environment'] = $environment;
+
+        
+        $location = $object->location;
+
+        if ($location === null) {
+            goto after_location;
+        }
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        after_location:        $result['location'] = $location;
+
+        
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        after_message:        $result['message'] = $message;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $state = $object->state;
+        after_state:        $result['state'] = $state;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Location);
+        $result = [];
+
+        $endColumn = $object->endColumn;
+
+        if ($endColumn === null) {
+            goto after_endColumn;
+        }
+        after_endColumn:        $result['end_column'] = $endColumn;
+
+        
+        $endLine = $object->endLine;
+
+        if ($endLine === null) {
+            goto after_endLine;
+        }
+        after_endLine:        $result['end_line'] = $endLine;
+
+        
+        $path = $object->path;
+
+        if ($path === null) {
+            goto after_path;
+        }
+        after_path:        $result['path'] = $path;
+
+        
+        $startColumn = $object->startColumn;
+
+        if ($startColumn === null) {
+            goto after_startColumn;
+        }
+        after_startColumn:        $result['start_column'] = $startColumn;
+
+        
+        $startLine = $object->startLine;
+
+        if ($startLine === null) {
+            goto after_startLine;
+        }
+        after_startLine:        $result['start_line'] = $startLine;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message);
+        $result = [];
+
+        $text = $object->text;
+
+        if ($text === null) {
+            goto after_text;
+        }
+        after_text:        $result['text'] = $text;
 
 
         return $result;
@@ -8824,7 +11385,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($mostRecentInstance === null) {
             goto after_mostRecentInstance;
         }
-        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
         
@@ -8833,7 +11394,7 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $rule = $object->rule;
-        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($rule);
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
         
@@ -8860,6 +11421,212 @@ class CodeScanningAlert implements ObjectMapper
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance);
+        $result = [];
+
+        $analysisKey = $object->analysisKey;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
+
+        
+        $classifications = $object->classifications;
+
+        if ($classifications === null) {
+            goto after_classifications;
+        }
+        static $classificationsSerializer0;
+
+        if ($classificationsSerializer0 === null) {
+            $classificationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $classifications = $classificationsSerializer0->serialize($classifications, $this);
+        after_classifications:        $result['classifications'] = $classifications;
+
+        
+        $commitSha = $object->commitSha;
+
+        if ($commitSha === null) {
+            goto after_commitSha;
+        }
+        after_commitSha:        $result['commit_sha'] = $commitSha;
+
+        
+        $environment = $object->environment;
+        after_environment:        $result['environment'] = $environment;
+
+        
+        $location = $object->location;
+
+        if ($location === null) {
+            goto after_location;
+        }
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        after_location:        $result['location'] = $location;
+
+        
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        after_message:        $result['message'] = $message;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $state = $object->state;
+        after_state:        $result['state'] = $state;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Location);
+        $result = [];
+
+        $endColumn = $object->endColumn;
+
+        if ($endColumn === null) {
+            goto after_endColumn;
+        }
+        after_endColumn:        $result['end_column'] = $endColumn;
+
+        
+        $endLine = $object->endLine;
+
+        if ($endLine === null) {
+            goto after_endLine;
+        }
+        after_endLine:        $result['end_line'] = $endLine;
+
+        
+        $path = $object->path;
+
+        if ($path === null) {
+            goto after_path;
+        }
+        after_path:        $result['path'] = $path;
+
+        
+        $startColumn = $object->startColumn;
+
+        if ($startColumn === null) {
+            goto after_startColumn;
+        }
+        after_startColumn:        $result['start_column'] = $startColumn;
+
+        
+        $startLine = $object->startLine;
+
+        if ($startLine === null) {
+            goto after_startLine;
+        }
+        after_startLine:        $result['start_line'] = $startLine;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance\Message);
+        $result = [];
+
+        $text = $object->text;
+
+        if ($text === null) {
+            goto after_text;
+        }
+        after_text:        $result['text'] = $text;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\Rule);
+        $result = [];
+
+        $description = $object->description;
+        after_description:        $result['description'] = $description;
+
+        
+        $fullDescription = $object->fullDescription;
+
+        if ($fullDescription === null) {
+            goto after_fullDescription;
+        }
+        after_fullDescription:        $result['full_description'] = $fullDescription;
+
+        
+        $help = $object->help;
+
+        if ($help === null) {
+            goto after_help;
+        }
+        after_help:        $result['help'] = $help;
+
+        
+        $helpUri = $object->helpUri;
+
+        if ($helpUri === null) {
+            goto after_helpUri;
+        }
+        after_helpUri:        $result['help_uri'] = $helpUri;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $severity = $object->severity;
+
+        if ($severity === null) {
+            goto after_severity;
+        }
+        after_severity:        $result['severity'] = $severity;
+
+        
+        $tags = $object->tags;
+
+        if ($tags === null) {
+            goto after_tags;
+        }
+        static $tagsSerializer0;
+
+        if ($tagsSerializer0 === null) {
+            $tagsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $tags = $tagsSerializer0->serialize($tags, $this);
+        after_tags:        $result['tags'] = $tags;
 
 
         return $result;
@@ -8980,7 +11747,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($dismissedBy === null) {
             goto after_dismissedBy;
         }
-        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️AnswerChosenBy($dismissedBy);
+        $dismissedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
         
@@ -9009,7 +11776,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($mostRecentInstance === null) {
             goto after_mostRecentInstance;
         }
-        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
         
@@ -9018,7 +11785,7 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $rule = $object->rule;
-        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($rule);
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
         
@@ -9027,12 +11794,416 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $tool = $object->tool;
-        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($tool);
+        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool($tool);
         after_tool:        $result['tool'] = $tool;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\DismissedBy);
+        $result = [];
+
+        $avatarUrl = $object->avatarUrl;
+
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
+        }
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        
+        $deleted = $object->deleted;
+
+        if ($deleted === null) {
+            goto after_deleted;
+        }
+        after_deleted:        $result['deleted'] = $deleted;
+
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+        after_email:        $result['email'] = $email;
+
+        
+        $eventsUrl = $object->eventsUrl;
+
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
+        }
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        
+        $followersUrl = $object->followersUrl;
+
+        if ($followersUrl === null) {
+            goto after_followersUrl;
+        }
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
+
+        
+        $followingUrl = $object->followingUrl;
+
+        if ($followingUrl === null) {
+            goto after_followingUrl;
+        }
+        after_followingUrl:        $result['following_url'] = $followingUrl;
+
+        
+        $gistsUrl = $object->gistsUrl;
+
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
+        }
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
+
+        
+        $gravatarId = $object->gravatarId;
+
+        if ($gravatarId === null) {
+            goto after_gravatarId;
+        }
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
+
+        
+        $htmlUrl = $object->htmlUrl;
+
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
+        }
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $login = $object->login;
+        after_login:        $result['login'] = $login;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $nodeId = $object->nodeId;
+
+        if ($nodeId === null) {
+            goto after_nodeId;
+        }
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        
+        $organizationsUrl = $object->organizationsUrl;
+
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
+        }
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
+
+        
+        $receivedEventsUrl = $object->receivedEventsUrl;
+
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
+        }
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
+
+        
+        $reposUrl = $object->reposUrl;
+
+        if ($reposUrl === null) {
+            goto after_reposUrl;
+        }
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        
+        $siteAdmin = $object->siteAdmin;
+
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
+        }
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
+
+        
+        $starredUrl = $object->starredUrl;
+
+        if ($starredUrl === null) {
+            goto after_starredUrl;
+        }
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
+
+        
+        $subscriptionsUrl = $object->subscriptionsUrl;
+
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
+        }
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
+
+        
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+        after_type:        $result['type'] = $type;
+
+        
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+        after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance);
+        $result = [];
+
+        $analysisKey = $object->analysisKey;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
+
+        
+        $classifications = $object->classifications;
+
+        if ($classifications === null) {
+            goto after_classifications;
+        }
+        static $classificationsSerializer0;
+
+        if ($classificationsSerializer0 === null) {
+            $classificationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $classifications = $classificationsSerializer0->serialize($classifications, $this);
+        after_classifications:        $result['classifications'] = $classifications;
+
+        
+        $commitSha = $object->commitSha;
+
+        if ($commitSha === null) {
+            goto after_commitSha;
+        }
+        after_commitSha:        $result['commit_sha'] = $commitSha;
+
+        
+        $environment = $object->environment;
+        after_environment:        $result['environment'] = $environment;
+
+        
+        $location = $object->location;
+
+        if ($location === null) {
+            goto after_location;
+        }
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        after_location:        $result['location'] = $location;
+
+        
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        after_message:        $result['message'] = $message;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $state = $object->state;
+        after_state:        $result['state'] = $state;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Location);
+        $result = [];
+
+        $endColumn = $object->endColumn;
+
+        if ($endColumn === null) {
+            goto after_endColumn;
+        }
+        after_endColumn:        $result['end_column'] = $endColumn;
+
+        
+        $endLine = $object->endLine;
+
+        if ($endLine === null) {
+            goto after_endLine;
+        }
+        after_endLine:        $result['end_line'] = $endLine;
+
+        
+        $path = $object->path;
+
+        if ($path === null) {
+            goto after_path;
+        }
+        after_path:        $result['path'] = $path;
+
+        
+        $startColumn = $object->startColumn;
+
+        if ($startColumn === null) {
+            goto after_startColumn;
+        }
+        after_startColumn:        $result['start_column'] = $startColumn;
+
+        
+        $startLine = $object->startLine;
+
+        if ($startLine === null) {
+            goto after_startLine;
+        }
+        after_startLine:        $result['start_line'] = $startLine;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\MostRecentInstance\Message);
+        $result = [];
+
+        $text = $object->text;
+
+        if ($text === null) {
+            goto after_text;
+        }
+        after_text:        $result['text'] = $text;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Rule);
+        $result = [];
+
+        $description = $object->description;
+        after_description:        $result['description'] = $description;
+
+        
+        $fullDescription = $object->fullDescription;
+
+        if ($fullDescription === null) {
+            goto after_fullDescription;
+        }
+        after_fullDescription:        $result['full_description'] = $fullDescription;
+
+        
+        $help = $object->help;
+
+        if ($help === null) {
+            goto after_help;
+        }
+        after_help:        $result['help'] = $help;
+
+        
+        $helpUri = $object->helpUri;
+
+        if ($helpUri === null) {
+            goto after_helpUri;
+        }
+        after_helpUri:        $result['help_uri'] = $helpUri;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $severity = $object->severity;
+
+        if ($severity === null) {
+            goto after_severity;
+        }
+        after_severity:        $result['severity'] = $severity;
+
+        
+        $tags = $object->tags;
+
+        if ($tags === null) {
+            goto after_tags;
+        }
+        static $tagsSerializer0;
+
+        if ($tagsSerializer0 === null) {
+            $tagsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $tags = $tagsSerializer0->serialize($tags, $this);
+        after_tags:        $result['tags'] = $tags;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Tool(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed\Alert\Tool);
+        $result = [];
+
+        $guid = $object->guid;
+
+        if ($guid === null) {
+            goto after_guid;
+        }
+        after_guid:        $result['guid'] = $guid;
+
+        
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $version = $object->version;
+
+        if ($version === null) {
+            goto after_version;
+        }
+        after_version:        $result['version'] = $version;
 
 
         return $result;
@@ -9156,7 +12327,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($mostRecentInstance === null) {
             goto after_mostRecentInstance;
         }
-        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
         
@@ -9165,7 +12336,7 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $rule = $object->rule;
-        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($rule);
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
         
@@ -9174,12 +12345,247 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $tool = $object->tool;
-        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($tool);
+        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool($tool);
         after_tool:        $result['tool'] = $tool;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance);
+        $result = [];
+
+        $analysisKey = $object->analysisKey;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
+
+        
+        $classifications = $object->classifications;
+
+        if ($classifications === null) {
+            goto after_classifications;
+        }
+        static $classificationsSerializer0;
+
+        if ($classificationsSerializer0 === null) {
+            $classificationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $classifications = $classificationsSerializer0->serialize($classifications, $this);
+        after_classifications:        $result['classifications'] = $classifications;
+
+        
+        $commitSha = $object->commitSha;
+
+        if ($commitSha === null) {
+            goto after_commitSha;
+        }
+        after_commitSha:        $result['commit_sha'] = $commitSha;
+
+        
+        $environment = $object->environment;
+        after_environment:        $result['environment'] = $environment;
+
+        
+        $location = $object->location;
+
+        if ($location === null) {
+            goto after_location;
+        }
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        after_location:        $result['location'] = $location;
+
+        
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        after_message:        $result['message'] = $message;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $state = $object->state;
+        after_state:        $result['state'] = $state;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Location);
+        $result = [];
+
+        $endColumn = $object->endColumn;
+
+        if ($endColumn === null) {
+            goto after_endColumn;
+        }
+        after_endColumn:        $result['end_column'] = $endColumn;
+
+        
+        $endLine = $object->endLine;
+
+        if ($endLine === null) {
+            goto after_endLine;
+        }
+        after_endLine:        $result['end_line'] = $endLine;
+
+        
+        $path = $object->path;
+
+        if ($path === null) {
+            goto after_path;
+        }
+        after_path:        $result['path'] = $path;
+
+        
+        $startColumn = $object->startColumn;
+
+        if ($startColumn === null) {
+            goto after_startColumn;
+        }
+        after_startColumn:        $result['start_column'] = $startColumn;
+
+        
+        $startLine = $object->startLine;
+
+        if ($startLine === null) {
+            goto after_startLine;
+        }
+        after_startLine:        $result['start_line'] = $startLine;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\MostRecentInstance\Message);
+        $result = [];
+
+        $text = $object->text;
+
+        if ($text === null) {
+            goto after_text;
+        }
+        after_text:        $result['text'] = $text;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Rule);
+        $result = [];
+
+        $description = $object->description;
+        after_description:        $result['description'] = $description;
+
+        
+        $fullDescription = $object->fullDescription;
+
+        if ($fullDescription === null) {
+            goto after_fullDescription;
+        }
+        after_fullDescription:        $result['full_description'] = $fullDescription;
+
+        
+        $help = $object->help;
+
+        if ($help === null) {
+            goto after_help;
+        }
+        after_help:        $result['help'] = $help;
+
+        
+        $helpUri = $object->helpUri;
+
+        if ($helpUri === null) {
+            goto after_helpUri;
+        }
+        after_helpUri:        $result['help_uri'] = $helpUri;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $severity = $object->severity;
+
+        if ($severity === null) {
+            goto after_severity;
+        }
+        after_severity:        $result['severity'] = $severity;
+
+        
+        $tags = $object->tags;
+
+        if ($tags === null) {
+            goto after_tags;
+        }
+        static $tagsSerializer0;
+
+        if ($tagsSerializer0 === null) {
+            $tagsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $tags = $tagsSerializer0->serialize($tags, $this);
+        after_tags:        $result['tags'] = $tags;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Tool(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened\Alert\Tool);
+        $result = [];
+
+        $guid = $object->guid;
+
+        if ($guid === null) {
+            goto after_guid;
+        }
+        after_guid:        $result['guid'] = $guid;
+
+        
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $version = $object->version;
+
+        if ($version === null) {
+            goto after_version;
+        }
+        after_version:        $result['version'] = $version;
 
 
         return $result;
@@ -9291,7 +12697,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($mostRecentInstance === null) {
             goto after_mostRecentInstance;
         }
-        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
+        $mostRecentInstance = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
 
         
@@ -9300,7 +12706,7 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $rule = $object->rule;
-        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($rule);
+        $rule = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
         
@@ -9309,12 +12715,191 @@ class CodeScanningAlert implements ObjectMapper
 
         
         $tool = $object->tool;
-        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Tool($tool);
+        $tool = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool($tool);
         after_tool:        $result['tool'] = $tool;
 
         
         $url = $object->url;
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance);
+        $result = [];
+
+        $analysisKey = $object->analysisKey;
+        after_analysisKey:        $result['analysis_key'] = $analysisKey;
+
+        
+        $classifications = $object->classifications;
+
+        if ($classifications === null) {
+            goto after_classifications;
+        }
+        static $classificationsSerializer0;
+
+        if ($classificationsSerializer0 === null) {
+            $classificationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $classifications = $classificationsSerializer0->serialize($classifications, $this);
+        after_classifications:        $result['classifications'] = $classifications;
+
+        
+        $commitSha = $object->commitSha;
+
+        if ($commitSha === null) {
+            goto after_commitSha;
+        }
+        after_commitSha:        $result['commit_sha'] = $commitSha;
+
+        
+        $environment = $object->environment;
+        after_environment:        $result['environment'] = $environment;
+
+        
+        $location = $object->location;
+
+        if ($location === null) {
+            goto after_location;
+        }
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        after_location:        $result['location'] = $location;
+
+        
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        after_message:        $result['message'] = $message;
+
+        
+        $ref = $object->ref;
+        after_ref:        $result['ref'] = $ref;
+
+        
+        $state = $object->state;
+        after_state:        $result['state'] = $state;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Location);
+        $result = [];
+
+        $endColumn = $object->endColumn;
+
+        if ($endColumn === null) {
+            goto after_endColumn;
+        }
+        after_endColumn:        $result['end_column'] = $endColumn;
+
+        
+        $endLine = $object->endLine;
+
+        if ($endLine === null) {
+            goto after_endLine;
+        }
+        after_endLine:        $result['end_line'] = $endLine;
+
+        
+        $path = $object->path;
+
+        if ($path === null) {
+            goto after_path;
+        }
+        after_path:        $result['path'] = $path;
+
+        
+        $startColumn = $object->startColumn;
+
+        if ($startColumn === null) {
+            goto after_startColumn;
+        }
+        after_startColumn:        $result['start_column'] = $startColumn;
+
+        
+        $startLine = $object->startLine;
+
+        if ($startLine === null) {
+            goto after_startLine;
+        }
+        after_startLine:        $result['start_line'] = $startLine;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\MostRecentInstance\Message);
+        $result = [];
+
+        $text = $object->text;
+
+        if ($text === null) {
+            goto after_text;
+        }
+        after_text:        $result['text'] = $text;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Rule);
+        $result = [];
+
+        $description = $object->description;
+        after_description:        $result['description'] = $description;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $severity = $object->severity;
+
+        if ($severity === null) {
+            goto after_severity;
+        }
+        after_severity:        $result['severity'] = $severity;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Tool(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopenedByUser\Alert\Tool);
+        $result = [];
+
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $version = $object->version;
+
+        if ($version === null) {
+            goto after_version;
+        }
+        after_version:        $result['version'] = $version;
 
 
         return $result;

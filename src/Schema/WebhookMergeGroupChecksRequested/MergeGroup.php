@@ -20,7 +20,7 @@ final readonly class MergeGroup
      * baseSha: The SHA of the merge group's parent commit.
      * baseRef: The full ref of the branch the merge group will be merged into.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('head_sha')] public string $headSha, #[\EventSauce\ObjectHydrator\MapFrom('head_ref')] public string $headRef, #[\EventSauce\ObjectHydrator\MapFrom('base_sha')] public string $baseSha, #[\EventSauce\ObjectHydrator\MapFrom('base_ref')] public string $baseRef, #[\EventSauce\ObjectHydrator\MapFrom('head_commit')] public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit $headCommit)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('head_sha')] public string $headSha, #[\EventSauce\ObjectHydrator\MapFrom('head_ref')] public string $headRef, #[\EventSauce\ObjectHydrator\MapFrom('base_sha')] public string $baseSha, #[\EventSauce\ObjectHydrator\MapFrom('base_ref')] public string $baseRef, #[\EventSauce\ObjectHydrator\MapFrom('head_commit')] public Schema\WebhookMergeGroupChecksRequested\MergeGroup\HeadCommit $headCommit)
     {
     }
 }

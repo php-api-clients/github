@@ -17,7 +17,7 @@ final readonly class Tier
     /**
      * from: The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      */
-    public function __construct(public Schema\WebhookSponsorshipCancelled\Sponsorship\Tier $from)
+    public function __construct(public Schema\WebhookSponsorshipPendingTierChange\Changes\Tier\From $from)
     {
     }
 }

@@ -20,7 +20,7 @@ final readonly class WebhookProjectColumnDeleted
      * organization: A GitHub organization.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('project_column')] public Schema\WebhookProjectColumnCreated\ProjectColumn $projectColumn, public mixed $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('project_column')] public Schema\WebhookProjectColumnDeleted\ProjectColumn $projectColumn, public mixed $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

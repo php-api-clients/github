@@ -26,7 +26,7 @@ class CbProjectIdRcb implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\TeamProject' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamProject($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\TeamProject\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamProject⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️Applicationjson⚡️H422($payload),
+                'ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Teams⚡️AddOrUpdateProjectPermissionsInOrg⚡️Response⚡️Applicationjson⚡️H403($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -553,7 +553,7 @@ class CbProjectIdRcb implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️Applicationjson⚡️H422(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Teams⚡️AddOrUpdateProjectPermissionsInOrg⚡️Response⚡️Applicationjson⚡️H403(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403
     {
         $properties = []; 
         $missingFields = [];
@@ -581,17 +581,17 @@ class CbProjectIdRcb implements ObjectMapper
             after_documentationUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -629,7 +629,7 @@ class CbProjectIdRcb implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\TeamProject' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamProject($object),
             'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
             'ApiClients\Client\GitHub\Schema\TeamProject\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamProject⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️Applicationjson⚡️H422($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Teams⚡️AddOrUpdateProjectPermissionsInOrg⚡️Response⚡️Applicationjson⚡️H403($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -920,9 +920,9 @@ class CbProjectIdRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️Applicationjson⚡️H422(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Teams⚡️AddOrUpdateProjectPermissionsInOrg⚡️Response⚡️Applicationjson⚡️H403(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403);
         $result = [];
 
         $message = $object->message;

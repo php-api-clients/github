@@ -26,9 +26,9 @@ final class GetRestrictionsForAuthenticatedUser
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array(), array(), self::PATH));
     }
     /**
-     * @return Schema\Operation\Interactions\GetRestrictionsForOrg\Response\Applicationjson\H200
+     * @return Schema\Operation\Interactions\GetRestrictionsForAuthenticatedUser\Response\Applicationjson\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Interactions\GetRestrictionsForOrg\Response\Applicationjson\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Interactions\GetRestrictionsForAuthenticatedUser\Response\Applicationjson\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -37,8 +37,8 @@ final class GetRestrictionsForAuthenticatedUser
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Interactions\GetRestrictionsForOrg\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Interactions\GetRestrictionsForOrg\Response\Applicationjson\H200::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Interactions\GetRestrictionsForAuthenticatedUser\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Interactions\GetRestrictionsForAuthenticatedUser\Response\Applicationjson\H200::class, $body);
                 }
                 break;
         }

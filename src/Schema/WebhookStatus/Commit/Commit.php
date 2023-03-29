@@ -14,7 +14,7 @@ final readonly class Commit
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"date":"1970-01-01T00:00:00+00:00","email":"generated_email_email","name":"generated_name_null","username":"generated_username_null"},"comment_count":13,"committer":{"date":"1970-01-01T00:00:00+00:00","email":"generated_email_email","name":"generated_name_null","username":"generated_username_null"},"message":"generated_message_null","tree":{"sha":"generated_sha_null","url":"https:\\/\\/example.com\\/"},"url":"https:\\/\\/example.com\\/","verification":{"payload":"generated_payload_null","reason":"expired_key","signature":"generated_signature_null","verified":false}}';
-    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, #[\EventSauce\ObjectHydrator\MapFrom('comment_count')] public int $commentCount, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $committer, public string $message, public Schema\ShortBranch\Commit $tree, public string $url, public Schema\WebhookStatus\Commit\Commit\Verification $verification)
+    public function __construct(public Schema\WebhookStatus\Commit\Commit\Author $author, #[\EventSauce\ObjectHydrator\MapFrom('comment_count')] public int $commentCount, public Schema\WebhookStatus\Commit\Commit\Committer $committer, public string $message, public Schema\WebhookStatus\Commit\Commit\Tree $tree, public string $url, public Schema\WebhookStatus\Commit\Commit\Verification $verification)
     {
     }
 }

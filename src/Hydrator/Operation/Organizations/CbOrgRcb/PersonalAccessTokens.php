@@ -28,7 +28,7 @@ class PersonalAccessTokens implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -318,7 +318,7 @@ class PersonalAccessTokens implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -640,7 +640,7 @@ class PersonalAccessTokens implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -679,17 +679,17 @@ class PersonalAccessTokens implements ObjectMapper
             after_other:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -729,7 +729,7 @@ class PersonalAccessTokens implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
             'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant($object),
             'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions($object),
+            'ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -954,7 +954,7 @@ class PersonalAccessTokens implements ObjectMapper
 
         
         $permissions = $object->permissions;
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -1095,9 +1095,9 @@ class PersonalAccessTokens implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrantRequest⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationProgrammaticAccessGrant⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrant\Permissions);
         $result = [];
 
         $organization = $object->organization;

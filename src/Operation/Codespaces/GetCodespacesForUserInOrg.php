@@ -38,9 +38,9 @@ final class GetCodespacesForUserInOrg
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{username}', '{per_page}', '{page}'), array($this->org, $this->username, $this->perPage, $this->page), self::PATH . '?perPage={per_page}&page={page}'));
     }
     /**
-     * @return Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200
+     * @return Schema\Operation\Codespaces\GetCodespacesForUserInOrg\Response\Applicationjson\H200
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Codespaces\GetCodespacesForUserInOrg\Response\Applicationjson\H200
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -49,8 +49,8 @@ final class GetCodespacesForUserInOrg
             case 200:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Codespaces\ListInOrganization\Response\Applicationjson\H200::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Codespaces\GetCodespacesForUserInOrg\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Codespaces\GetCodespacesForUserInOrg\Response\Applicationjson\H200::class, $body);
                 }
                 break;
             /**Internal Error**/

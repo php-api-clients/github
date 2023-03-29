@@ -17,7 +17,7 @@ final readonly class Commit
     /**
      * @param array<\ApiClients\Client\GitHub\Schema\WebhookStatus\Commit\Parents> $parents
      */
-    public function __construct(public ?Schema\WebhookStatus\Commit\Author $author, #[\EventSauce\ObjectHydrator\MapFrom('comments_url')] public string $commentsUrl, public Schema\WebhookStatus\Commit\Commit $commit, public ?Schema\WebhookStatus\Commit\Author $committer, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookStatus\Commit\Parents::class)] public array $parents, public string $sha, public string $url)
+    public function __construct(public ?Schema\WebhookStatus\Commit\Author $author, #[\EventSauce\ObjectHydrator\MapFrom('comments_url')] public string $commentsUrl, public Schema\WebhookStatus\Commit\Commit $commit, public ?Schema\WebhookStatus\Commit\Committer $committer, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\WebhookStatus\Commit\Parents::class)] public array $parents, public string $sha, public string $url)
     {
     }
 }

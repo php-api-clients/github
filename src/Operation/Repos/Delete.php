@@ -43,8 +43,8 @@ final class Delete
             case 403:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(403, $this->hydrator->hydrateObject(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body));
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\Delete\Response\Applicationjson\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\Operation\Repos\Delete\Response\Applicationjson\H403(403, $this->hydrator->hydrateObject(Schema\Operation\Repos\Delete\Response\Applicationjson\H403::class, $body));
                 }
                 break;
             /**Temporary Redirect**/

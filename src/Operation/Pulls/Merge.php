@@ -57,16 +57,16 @@ final class Merge
             case 405:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(405, $this->hydrator->hydrateObject(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body));
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Pulls\Merge\Response\Applicationjson\H405::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\Operation\Pulls\Merge\Response\Applicationjson\H405(405, $this->hydrator->hydrateObject(Schema\Operation\Pulls\Merge\Response\Applicationjson\H405::class, $body));
                 }
                 break;
             /**Conflict if sha was provided and pull request head did not match**/
             case 409:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(409, $this->hydrator->hydrateObject(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body));
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Pulls\Merge\Response\Applicationjson\H409::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\Operation\Pulls\Merge\Response\Applicationjson\H409(409, $this->hydrator->hydrateObject(Schema\Operation\Pulls\Merge\Response\Applicationjson\H409::class, $body));
                 }
                 break;
             /**Validation failed, or the endpoint has been spammed.**/

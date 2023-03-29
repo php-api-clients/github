@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"description":{"from":"generated_from_null","to":"generated_to_null"},"public":{"from":false,"to":false},"short_description":{"from":"generated_from_null","to":"generated_to_null"},"title":{"from":"generated_from_null","to":"generated_to_null"}}';
-    public function __construct(public ?Schema\WebhookMemberEdited\Changes\Permission $description, public ?Schema\WebhookProjectsV2ProjectEdited\Changes\Public_ $public, #[\EventSauce\ObjectHydrator\MapFrom('short_description')] public ?Schema\WebhookMemberEdited\Changes\Permission $shortDescription, public ?Schema\WebhookProjectsV2ProjectEdited\Changes\Title $title)
+    public function __construct(public ?Schema\WebhookProjectsV2ProjectEdited\Changes\Description $description, public ?Schema\WebhookProjectsV2ProjectEdited\Changes\Public_ $public, #[\EventSauce\ObjectHydrator\MapFrom('short_description')] public ?Schema\WebhookProjectsV2ProjectEdited\Changes\ShortDescription $shortDescription, public ?Schema\WebhookProjectsV2ProjectEdited\Changes\Title $title)
     {
     }
 }

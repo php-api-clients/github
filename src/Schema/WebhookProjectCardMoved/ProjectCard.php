@@ -18,7 +18,7 @@ final readonly class ProjectCard
      * archived: Whether or not the card is archived
      * id: The project card's ID
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('after_id')] public ?int $afterId, public bool $archived, #[\EventSauce\ObjectHydrator\MapFrom('column_id')] public int $columnId, #[\EventSauce\ObjectHydrator\MapFrom('column_url')] public string $columnUrl, #[\EventSauce\ObjectHydrator\MapFrom('content_url')] public ?string $contentUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $creator, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?string $note, #[\EventSauce\ObjectHydrator\MapFrom('project_url')] public string $projectUrl, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('after_id')] public ?int $afterId, public bool $archived, #[\EventSauce\ObjectHydrator\MapFrom('column_id')] public int $columnId, #[\EventSauce\ObjectHydrator\MapFrom('column_url')] public string $columnUrl, #[\EventSauce\ObjectHydrator\MapFrom('content_url')] public ?string $contentUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookProjectCardMoved\ProjectCard\Creator $creator, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public ?string $note, #[\EventSauce\ObjectHydrator\MapFrom('project_url')] public string $projectUrl, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url)
     {
     }
 }

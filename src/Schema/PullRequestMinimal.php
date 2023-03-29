@@ -14,7 +14,7 @@ final readonly class PullRequestMinimal
     public const SCHEMA_TITLE = 'Pull Request Minimal';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":13,"number":13,"url":"generated_url_null","head":{"ref":"generated_ref_null","sha":"generated_sha_null","repo":{"id":13,"url":"generated_url_null","name":"generated_name_null"}},"base":{"ref":"generated_ref_null","sha":"generated_sha_null","repo":{"id":13,"url":"generated_url_null","name":"generated_name_null"}}}';
-    public function __construct(public int $id, public int $number, public string $url, public Schema\PullRequestMinimal\Head $head, public Schema\PullRequestMinimal\Head $base)
+    public function __construct(public int $id, public int $number, public string $url, public Schema\PullRequestMinimal\Head $head, public Schema\PullRequestMinimal\Base $base)
     {
     }
 }

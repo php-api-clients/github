@@ -21,7 +21,7 @@ final readonly class WebhookWorkflowRunRequested
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?Schema\WebhookDeploymentCreated\Workflow $workflow, #[\EventSauce\ObjectHydrator\MapFrom('workflow_run')] public Schema\WebhookWorkflowRunRequested\WorkflowRun $workflowRun)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?Schema\WebhookWorkflowRunRequested\Workflow $workflow, #[\EventSauce\ObjectHydrator\MapFrom('workflow_run')] public Schema\WebhookWorkflowRunRequested\WorkflowRun $workflowRun)
     {
     }
 }

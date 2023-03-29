@@ -25,7 +25,7 @@ class User implements ObjectMapper
         return match($className) {
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\PrivateUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser($payload),
-                'ApiClients\Client\GitHub\Schema\PublicUser\Plan' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($payload),
+                'ApiClients\Client\GitHub\Schema\PrivateUser\Plan' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -531,7 +531,7 @@ class User implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -590,7 +590,7 @@ class User implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan(array $payload): \ApiClients\Client\GitHub\Schema\PublicUser\Plan
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan(array $payload): \ApiClients\Client\GitHub\Schema\PrivateUser\Plan
     {
         $properties = []; 
         $missingFields = [];
@@ -640,17 +640,17 @@ class User implements ObjectMapper
             after_privateRepos:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PublicUser\Plan', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PrivateUser\Plan', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PublicUser\Plan::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PrivateUser\Plan::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PublicUser\Plan(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\PrivateUser\Plan(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PublicUser\Plan', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PrivateUser\Plan', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -838,7 +838,7 @@ class User implements ObjectMapper
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
             'ApiClients\Client\GitHub\Schema\PrivateUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser($object),
-            'ApiClients\Client\GitHub\Schema\PublicUser\Plan' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($object),
+            'ApiClients\Client\GitHub\Schema\PrivateUser\Plan' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan($object),
             'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
             'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
@@ -1153,7 +1153,7 @@ class User implements ObjectMapper
         if ($plan === null) {
             goto after_plan;
         }
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -1185,9 +1185,9 @@ class User implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PublicUser\Plan);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PrivateUser\Plan);
         $result = [];
 
         $collaborators = $object->collaborators;

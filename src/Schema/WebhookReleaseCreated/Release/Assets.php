@@ -18,7 +18,7 @@ final readonly class Assets
      * name: The file name of the asset.
      * state: State of the release asset.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('browser_download_url')] public string $browserDownloadUrl, #[\EventSauce\ObjectHydrator\MapFrom('content_type')] public string $contentType, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('download_count')] public int $downloadCount, public int $id, public ?string $label, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public int $size, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public ?Schema\Discussion\AnswerChosenBy $uploader, public string $url)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('browser_download_url')] public string $browserDownloadUrl, #[\EventSauce\ObjectHydrator\MapFrom('content_type')] public string $contentType, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('download_count')] public int $downloadCount, public int $id, public ?string $label, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public int $size, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public ?Schema\WebhookReleaseCreated\Release\Assets\Uploader $uploader, public string $url)
     {
     }
 }

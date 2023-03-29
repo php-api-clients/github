@@ -23,7 +23,7 @@ final readonly class WebhookIssuesAssigned
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Discussion\AnswerChosenBy $assignee, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssueCommentEdited\Issue $issue, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\WebhookIssuesAssigned\Assignee $assignee, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssuesAssigned\Issue $issue, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

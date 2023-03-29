@@ -19,9 +19,9 @@ final readonly class TimelineCommittedEvent
      * author: Identifying information for the git-user
      * committer: Identifying information for the git-user
      * message: Message describing the purpose of the commit
-     * @param array<\ApiClients\Client\GitHub\Schema\GitCommit\Parents> $parents
+     * @param array<\ApiClients\Client\GitHub\Schema\TimelineCommittedEvent\Parents> $parents
      */
-    public function __construct(public ?string $event, public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\GitCommit\Author $author, public Schema\GitCommit\Author $committer, public string $message, public Schema\GitCommit\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\GitCommit\Parents::class)] public array $parents, public Schema\GitCommit\Verification $verification, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl)
+    public function __construct(public ?string $event, public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public Schema\TimelineCommittedEvent\Author $author, public Schema\TimelineCommittedEvent\Committer $committer, public string $message, public Schema\TimelineCommittedEvent\Tree $tree, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\TimelineCommittedEvent\Parents::class)] public array $parents, public Schema\TimelineCommittedEvent\Verification $verification, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl)
     {
     }
 }

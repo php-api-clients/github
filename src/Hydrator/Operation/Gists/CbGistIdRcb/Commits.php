@@ -24,7 +24,7 @@ class Commits implements ObjectMapper
     {
         return match($className) {
             'ApiClients\Client\GitHub\Schema\GistCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit($payload),
-                'ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($payload),
+                'ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -79,7 +79,7 @@ class Commits implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'changeStatus';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -116,7 +116,7 @@ class Commits implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus(array $payload): \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus(array $payload): \ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus
     {
         $properties = []; 
         $missingFields = [];
@@ -155,17 +155,17 @@ class Commits implements ObjectMapper
             after_deletions:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -266,7 +266,7 @@ class Commits implements ObjectMapper
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
             'ApiClients\Client\GitHub\Schema\GistCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit($object),
-            'ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($object),
+            'ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -363,7 +363,7 @@ class Commits implements ObjectMapper
 
         
         $changeStatus = $object->changeStatus;
-        $changeStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($changeStatus);
+        $changeStatus = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus($changeStatus);
         after_changeStatus:        $result['change_status'] = $changeStatus;
 
         
@@ -375,9 +375,9 @@ class Commits implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistCommit⚡️ChangeStatus(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GistCommit\ChangeStatus);
         $result = [];
 
         $total = $object->total;

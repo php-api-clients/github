@@ -23,7 +23,7 @@ final readonly class WebhookIssuesEdited
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookIssuesEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssuesEdited\Issue $issue, public ?Schema\WebhookDiscussionLabeled\Label $label, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookIssuesEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssuesEdited\Issue $issue, public ?Schema\WebhookIssuesEdited\Label $label, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

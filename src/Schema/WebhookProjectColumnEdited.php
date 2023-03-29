@@ -21,7 +21,7 @@ final readonly class WebhookProjectColumnEdited
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookProjectColumnEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('project_column')] public Schema\WebhookProjectColumnCreated\ProjectColumn $projectColumn, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookProjectColumnEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[\EventSauce\ObjectHydrator\MapFrom('project_column')] public Schema\WebhookProjectColumnEdited\ProjectColumn $projectColumn, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

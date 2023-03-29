@@ -20,7 +20,7 @@ final readonly class Comment
      * id: Unique identifier of the issue comment
      * url: URL for the issue comment
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public string $body, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('issue_url')] public string $issueUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public mixed $performedViaGithubApp, public Schema\Discussion\Reactions $reactions, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('author_association')] public string $authorAssociation, public string $body, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('issue_url')] public string $issueUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('performed_via_github_app')] public mixed $performedViaGithubApp, public Schema\WebhookIssueCommentCreated\Comment\Reactions $reactions, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookIssueCommentCreated\Comment\User $user)
     {
     }
 }

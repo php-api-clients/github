@@ -18,7 +18,7 @@ final readonly class Changes
      * newIssue: The [issue](https://docs.github.com/rest/reference/issues) itself.
      * newRepository: A git repository
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('new_issue')] public Schema\WebhookIssuesPinned\Issue $newIssue, #[\EventSauce\ObjectHydrator\MapFrom('new_repository')] public Schema\WebhookIssuesTransferred\Changes\NewRepository $newRepository)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('new_issue')] public Schema\WebhookIssuesTransferred\Changes\NewIssue $newIssue, #[\EventSauce\ObjectHydrator\MapFrom('new_repository')] public Schema\WebhookIssuesTransferred\Changes\NewRepository $newRepository)
     {
     }
 }

@@ -19,7 +19,7 @@ final readonly class Project
      * name: Name of the project
      * state: State of the project; either 'open' or 'closed'
      */
-    public function __construct(public ?string $body, #[\EventSauce\ObjectHydrator\MapFrom('columns_url')] public string $columnsUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, public ?Schema\Discussion\AnswerChosenBy $creator, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public int $number, #[\EventSauce\ObjectHydrator\MapFrom('owner_url')] public string $ownerUrl, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(public ?string $body, #[\EventSauce\ObjectHydrator\MapFrom('columns_url')] public string $columnsUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookProjectClosed\Project\Creator $creator, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public int $id, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public int $number, #[\EventSauce\ObjectHydrator\MapFrom('owner_url')] public string $ownerUrl, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public string $url)
     {
     }
 }

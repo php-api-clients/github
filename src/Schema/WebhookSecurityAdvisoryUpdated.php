@@ -22,7 +22,7 @@ final readonly class WebhookSecurityAdvisoryUpdated
      * securityAdvisory: The details of the security advisory, including summary, description, and severity.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, #[\EventSauce\ObjectHydrator\MapFrom('security_advisory')] public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory $securityAdvisory, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, #[\EventSauce\ObjectHydrator\MapFrom('security_advisory')] public Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory $securityAdvisory, public ?Schema\SimpleUser $sender)
     {
     }
 }

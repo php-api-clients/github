@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":{"from":"generated_from_null"}}';
-    public function __construct(public ?Schema\WebhookDiscussionCommentEdited\Changes\Body $name)
+    public function __construct(public ?Schema\WebhookProjectColumnEdited\Changes\Name $name)
     {
     }
 }

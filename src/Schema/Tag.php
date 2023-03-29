@@ -14,7 +14,7 @@ final readonly class Tag
     public const SCHEMA_TITLE = 'Tag';
     public const SCHEMA_DESCRIPTION = 'Tag';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"v0.1","commit":{"sha":"generated_sha_null","url":"https:\\/\\/example.com\\/"},"zipball_url":"https:\\/\\/github.com\\/octocat\\/Hello-World\\/zipball\\/v0.1","tarball_url":"https:\\/\\/github.com\\/octocat\\/Hello-World\\/tarball\\/v0.1","node_id":"generated_node_id_null"}';
-    public function __construct(public string $name, public Schema\ShortBranch\Commit $commit, #[\EventSauce\ObjectHydrator\MapFrom('zipball_url')] public string $zipballUrl, #[\EventSauce\ObjectHydrator\MapFrom('tarball_url')] public string $tarballUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId)
+    public function __construct(public string $name, public Schema\Tag\Commit $commit, #[\EventSauce\ObjectHydrator\MapFrom('zipball_url')] public string $zipballUrl, #[\EventSauce\ObjectHydrator\MapFrom('tarball_url')] public string $tarballUrl, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId)
     {
     }
 }

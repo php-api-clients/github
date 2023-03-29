@@ -14,7 +14,7 @@ final readonly class Links
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"html":{"href":"generated_href_null"},"pull_request":{"href":"generated_href_null"}}';
-    public function __construct(public Schema\TimelineReviewedEvent\Links\Html $html, #[\EventSauce\ObjectHydrator\MapFrom('pull_request')] public Schema\TimelineReviewedEvent\Links\Html $pullRequest)
+    public function __construct(public Schema\TimelineReviewedEvent\Links\Html $html, #[\EventSauce\ObjectHydrator\MapFrom('pull_request')] public Schema\TimelineReviewedEvent\Links\PullRequest $pullRequest)
     {
     }
 }

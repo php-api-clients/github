@@ -26,7 +26,8 @@ class InstallationTarget implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Account' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Account($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug($payload),
                 'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
@@ -645,7 +646,7 @@ class InstallationTarget implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'login';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -665,7 +666,7 @@ class InstallationTarget implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'slug';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -691,7 +692,7 @@ class InstallationTarget implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login(array $payload): \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login
     {
         $properties = []; 
         $missingFields = [];
@@ -708,17 +709,49 @@ class InstallationTarget implements ObjectMapper
             after_from:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug(array $payload): \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'from';
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3839,7 +3872,8 @@ class InstallationTarget implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed($object),
             'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Account' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Account($object),
             'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes($object),
-            'ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($object),
+            'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login($object),
+            'ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug($object),
             'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
             'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
             'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
@@ -4273,7 +4307,7 @@ class InstallationTarget implements ObjectMapper
         if ($login === null) {
             goto after_login;
         }
-        $login = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($login);
+        $login = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login($login);
         after_login:        $result['login'] = $login;
 
         
@@ -4282,7 +4316,7 @@ class InstallationTarget implements ObjectMapper
         if ($slug === null) {
             goto after_slug;
         }
-        $slug = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($slug);
+        $slug = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug($slug);
         after_slug:        $result['slug'] = $slug;
 
 
@@ -4290,9 +4324,22 @@ class InstallationTarget implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Login(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Login);
+        $result = [];
+
+        $from = $object->from;
+        after_from:        $result['from'] = $from;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationTargetRenamed⚡️Changes⚡️Slug(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookInstallationTargetRenamed\Changes\Slug);
         $result = [];
 
         $from = $object->from;

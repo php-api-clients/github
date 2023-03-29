@@ -22,7 +22,7 @@ final class ListCommentsForRepo
     private string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.**/
     private string $since;
-    /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
+    /**The property to sort the results by.**/
     private string $sort;
     /**The number of results per page (max 100).**/
     private int $perPage;
