@@ -4786,7 +4786,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'location';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4806,7 +4806,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5582,7 +5582,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'location';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5602,7 +5602,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6606,7 +6606,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'location';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6626,7 +6626,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7358,7 +7358,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'location';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7378,7 +7378,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8110,7 +8110,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'location';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8130,7 +8130,7 @@ class CodeScanningAlert implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'message';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11141,7 +11141,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($location === null) {
             goto after_location;
         }
-        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($location);
         after_location:        $result['location'] = $location;
 
         
@@ -11150,7 +11150,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         
@@ -11559,7 +11559,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($location === null) {
             goto after_location;
         }
-        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($location);
         after_location:        $result['location'] = $location;
 
         
@@ -11568,7 +11568,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         
@@ -12115,7 +12115,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($location === null) {
             goto after_location;
         }
-        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($location);
         after_location:        $result['location'] = $location;
 
         
@@ -12124,7 +12124,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         
@@ -12505,7 +12505,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($location === null) {
             goto after_location;
         }
-        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($location);
         after_location:        $result['location'] = $location;
 
         
@@ -12514,7 +12514,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         
@@ -12883,7 +12883,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($location === null) {
             goto after_location;
         }
-        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Location($location);
+        $location = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Location($location);
         after_location:        $result['location'] = $location;
 
         
@@ -12892,7 +12892,7 @@ class CodeScanningAlert implements ObjectMapper
         if ($message === null) {
             goto after_message;
         }
-        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($message);
+        $message = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️MostRecentInstance⚡️Message($message);
         after_message:        $result['message'] = $message;
 
         

@@ -8359,7 +8359,7 @@ class Discussion implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionUnanswered⚡️OldAnswer⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionAnswered⚡️Answer⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8401,7 +8401,7 @@ class Discussion implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionUnanswered⚡️OldAnswer⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionAnswered⚡️Answer⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -13653,7 +13653,7 @@ class Discussion implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionUnanswered⚡️OldAnswer⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionAnswered⚡️Answer⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -13670,7 +13670,7 @@ class Discussion implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionUnanswered⚡️OldAnswer⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionAnswered⚡️Answer⚡️User($user);
         after_user:        $result['user'] = $user;
 
 

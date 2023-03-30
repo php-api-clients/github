@@ -3838,7 +3838,7 @@ class Organization implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationMemberAdded⚡️Membership⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5165,7 +5165,7 @@ class Organization implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationMemberRemoved⚡️Membership⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5747,7 +5747,7 @@ class Organization implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationRenamed⚡️Membership⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8256,7 +8256,7 @@ class Organization implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationMemberAdded⚡️Membership⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -8998,7 +8998,7 @@ class Organization implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationMemberRemoved⚡️Membership⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -9304,7 +9304,7 @@ class Organization implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationRenamed⚡️Membership⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationDeleted⚡️Membership⚡️User($user);
         after_user:        $result['user'] = $user;
 
 

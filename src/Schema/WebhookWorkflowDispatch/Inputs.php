@@ -8,13 +8,6 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
-final readonly class Inputs
+final readonly class Inputs extends Schema\AliasAbstract\Abstract76b5d9ad3f1d0b829290f3025ab2627c
 {
-    public const SCHEMA_JSON = '{"type":["object","null"],"additionalProperties":true}';
-    public const SCHEMA_TITLE = '';
-    public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '[]';
-    public function __construct()
-    {
-    }
 }

@@ -314,7 +314,7 @@ class Timing implements ObjectMapper
 
             if ($jobRunsCaster1 === null) {
                 $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Macos\\JobRuns',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
@@ -421,7 +421,7 @@ class Timing implements ObjectMapper
 
             if ($jobRunsCaster1 === null) {
                 $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Windows\\JobRuns',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
@@ -732,7 +732,7 @@ class Timing implements ObjectMapper
 
         if ($jobRunsSerializer0 === null) {
             $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Macos\\JobRuns',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         
@@ -783,7 +783,7 @@ class Timing implements ObjectMapper
 
         if ($jobRunsSerializer0 === null) {
             $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Windows\\JobRuns',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         

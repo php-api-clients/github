@@ -27,7 +27,7 @@ class Labels implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($payload),
-                'ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForOrg⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForRepo⚡️Response⚡️Applicationjson⚡️H200($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -259,7 +259,7 @@ class Labels implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForRepo⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -297,17 +297,17 @@ class Labels implements ObjectMapper
             after_labels:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -346,7 +346,7 @@ class Labels implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
             'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForRepo⚡️Response⚡️Applicationjson⚡️H200($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -549,9 +549,9 @@ class Labels implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForOrg⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️RemoveAllCustomLabelsFromSelfHostedRunnerForRepo⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;

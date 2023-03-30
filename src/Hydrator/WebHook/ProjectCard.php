@@ -4044,7 +4044,7 @@ class ProjectCard implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardCreated⚡️ProjectCard⚡️Creator($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5282,7 +5282,7 @@ class ProjectCard implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardEdited⚡️ProjectCard⚡️Creator($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8626,7 +8626,7 @@ class ProjectCard implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardCreated⚡️ProjectCard⚡️Creator($creator);
+        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         
@@ -9277,7 +9277,7 @@ class ProjectCard implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardEdited⚡️ProjectCard⚡️Creator($creator);
+        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectCardConverted⚡️ProjectCard⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         

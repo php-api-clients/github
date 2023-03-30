@@ -4563,7 +4563,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseDeleted\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -4594,7 +4594,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4724,7 +4724,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4952,7 +4952,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5989,7 +5989,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseEdited\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -6020,7 +6020,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6150,7 +6150,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6378,7 +6378,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7218,7 +7218,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleasePrereleased\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -7249,7 +7249,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7379,7 +7379,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7607,7 +7607,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8447,7 +8447,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleasePublished\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -8478,7 +8478,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8608,7 +8608,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8836,7 +8836,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9676,7 +9676,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseReleased\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -9707,7 +9707,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9837,7 +9837,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10065,7 +10065,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10905,7 +10905,7 @@ class Release implements ObjectMapper
 
             if ($assetsCaster1 === null) {
                 $assetsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseUnpublished\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
             }
 
@@ -10936,7 +10936,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11066,7 +11066,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Reactions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11294,7 +11294,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'uploader';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Assets⚡️Uploader($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -14595,7 +14595,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseDeleted\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -14612,7 +14612,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -14681,7 +14681,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -14779,7 +14779,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseDeleted⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         
@@ -15327,7 +15327,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseEdited\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -15344,7 +15344,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -15413,7 +15413,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -15511,7 +15511,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseEdited⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         
@@ -15979,7 +15979,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleasePrereleased\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -15996,7 +15996,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -16065,7 +16065,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -16163,7 +16163,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         
@@ -16631,7 +16631,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleasePublished\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -16648,7 +16648,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -16717,7 +16717,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -16815,7 +16815,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         
@@ -17283,7 +17283,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseReleased\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -17300,7 +17300,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -17369,7 +17369,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -17467,7 +17467,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseReleased⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         
@@ -17935,7 +17935,7 @@ class Release implements ObjectMapper
 
         if ($assetsSerializer0 === null) {
             $assetsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseUnpublished\\Release\\Assets',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookReleaseCreated\\Release\\Assets',
 ));
         }
         
@@ -17952,7 +17952,7 @@ class Release implements ObjectMapper
         if ($author === null) {
             goto after_author;
         }
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
@@ -18021,7 +18021,7 @@ class Release implements ObjectMapper
         if ($reactions === null) {
             goto after_reactions;
         }
-        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Reactions($reactions);
+        $reactions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         
@@ -18119,7 +18119,7 @@ class Release implements ObjectMapper
         if ($uploader === null) {
             goto after_uploader;
         }
-        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseUnpublished⚡️Release⚡️Assets⚡️Uploader($uploader);
+        $uploader = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Assets⚡️Uploader($uploader);
         after_uploader:        $result['uploader'] = $uploader;
 
         

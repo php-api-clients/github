@@ -1861,7 +1861,7 @@ class ProjectsV2Item implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'archivedAt';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemRestored⚡️Changes⚡️ArchivedAt($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemArchived⚡️Changes⚡️ArchivedAt($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2769,7 +2769,7 @@ class ProjectsV2Item implements ObjectMapper
         if ($archivedAt === null) {
             goto after_archivedAt;
         }
-        $archivedAt = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemRestored⚡️Changes⚡️ArchivedAt($archivedAt);
+        $archivedAt = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ItemArchived⚡️Changes⚡️ArchivedAt($archivedAt);
         after_archivedAt:        $result['archived_at'] = $archivedAt;
 
 

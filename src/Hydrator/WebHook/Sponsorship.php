@@ -4471,7 +4471,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'maintainer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Maintainer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4513,7 +4513,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Sponsor($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4533,7 +4533,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsorable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Sponsorable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4553,7 +4553,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5693,7 +5693,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'maintainer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Maintainer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5735,7 +5735,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Sponsor($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5755,7 +5755,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsorable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Sponsorable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5775,7 +5775,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6833,7 +6833,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'maintainer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Maintainer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6875,7 +6875,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Sponsor($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6895,7 +6895,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsorable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Sponsorable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6915,7 +6915,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8195,7 +8195,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'maintainer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Maintainer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8237,7 +8237,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Sponsor($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8257,7 +8257,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsorable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Sponsorable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8277,7 +8277,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9333,7 +9333,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Changes⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Changes⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9374,7 +9374,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'from';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Changes⚡️Tier⚡️From($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Changes⚡️Tier⚡️From($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9546,7 +9546,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'maintainer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Maintainer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9588,7 +9588,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Sponsor($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9608,7 +9608,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sponsorable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Sponsorable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9628,7 +9628,7 @@ class Sponsorship implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tier';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Tier($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -13140,7 +13140,7 @@ class Sponsorship implements ObjectMapper
         if ($maintainer === null) {
             goto after_maintainer;
         }
-        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Maintainer($maintainer);
+        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($maintainer);
         after_maintainer:        $result['maintainer'] = $maintainer;
 
         
@@ -13157,7 +13157,7 @@ class Sponsorship implements ObjectMapper
         if ($sponsor === null) {
             goto after_sponsor;
         }
-        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Sponsor($sponsor);
+        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($sponsor);
         after_sponsor:        $result['sponsor'] = $sponsor;
 
         
@@ -13166,12 +13166,12 @@ class Sponsorship implements ObjectMapper
         if ($sponsorable === null) {
             goto after_sponsorable;
         }
-        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Sponsorable($sponsorable);
+        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($sponsorable);
         after_sponsorable:        $result['sponsorable'] = $sponsorable;
 
         
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCreated⚡️Sponsorship⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 
@@ -13832,7 +13832,7 @@ class Sponsorship implements ObjectMapper
         if ($maintainer === null) {
             goto after_maintainer;
         }
-        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Maintainer($maintainer);
+        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($maintainer);
         after_maintainer:        $result['maintainer'] = $maintainer;
 
         
@@ -13849,7 +13849,7 @@ class Sponsorship implements ObjectMapper
         if ($sponsor === null) {
             goto after_sponsor;
         }
-        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Sponsor($sponsor);
+        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($sponsor);
         after_sponsor:        $result['sponsor'] = $sponsor;
 
         
@@ -13858,12 +13858,12 @@ class Sponsorship implements ObjectMapper
         if ($sponsorable === null) {
             goto after_sponsorable;
         }
-        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Sponsorable($sponsorable);
+        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($sponsorable);
         after_sponsorable:        $result['sponsorable'] = $sponsorable;
 
         
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipEdited⚡️Sponsorship⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 
@@ -14496,7 +14496,7 @@ class Sponsorship implements ObjectMapper
         if ($maintainer === null) {
             goto after_maintainer;
         }
-        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Maintainer($maintainer);
+        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($maintainer);
         after_maintainer:        $result['maintainer'] = $maintainer;
 
         
@@ -14513,7 +14513,7 @@ class Sponsorship implements ObjectMapper
         if ($sponsor === null) {
             goto after_sponsor;
         }
-        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Sponsor($sponsor);
+        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($sponsor);
         after_sponsor:        $result['sponsor'] = $sponsor;
 
         
@@ -14522,12 +14522,12 @@ class Sponsorship implements ObjectMapper
         if ($sponsorable === null) {
             goto after_sponsorable;
         }
-        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Sponsorable($sponsorable);
+        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($sponsorable);
         after_sponsorable:        $result['sponsorable'] = $sponsorable;
 
         
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingCancellation⚡️Sponsorship⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 
@@ -15246,7 +15246,7 @@ class Sponsorship implements ObjectMapper
         if ($maintainer === null) {
             goto after_maintainer;
         }
-        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Maintainer($maintainer);
+        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($maintainer);
         after_maintainer:        $result['maintainer'] = $maintainer;
 
         
@@ -15263,7 +15263,7 @@ class Sponsorship implements ObjectMapper
         if ($sponsor === null) {
             goto after_sponsor;
         }
-        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Sponsor($sponsor);
+        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($sponsor);
         after_sponsor:        $result['sponsor'] = $sponsor;
 
         
@@ -15272,12 +15272,12 @@ class Sponsorship implements ObjectMapper
         if ($sponsorable === null) {
             goto after_sponsorable;
         }
-        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Sponsorable($sponsorable);
+        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($sponsorable);
         after_sponsorable:        $result['sponsorable'] = $sponsorable;
 
         
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Sponsorship⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 
@@ -15899,7 +15899,7 @@ class Sponsorship implements ObjectMapper
         $result = [];
 
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Changes⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Changes⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 
@@ -15913,7 +15913,7 @@ class Sponsorship implements ObjectMapper
         $result = [];
 
         $from = $object->from;
-        $from = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Changes⚡️Tier⚡️From($from);
+        $from = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipPendingTierChange⚡️Changes⚡️Tier⚡️From($from);
         after_from:        $result['from'] = $from;
 
 
@@ -15988,7 +15988,7 @@ class Sponsorship implements ObjectMapper
         if ($maintainer === null) {
             goto after_maintainer;
         }
-        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Maintainer($maintainer);
+        $maintainer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Maintainer($maintainer);
         after_maintainer:        $result['maintainer'] = $maintainer;
 
         
@@ -16005,7 +16005,7 @@ class Sponsorship implements ObjectMapper
         if ($sponsor === null) {
             goto after_sponsor;
         }
-        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Sponsor($sponsor);
+        $sponsor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsor($sponsor);
         after_sponsor:        $result['sponsor'] = $sponsor;
 
         
@@ -16014,12 +16014,12 @@ class Sponsorship implements ObjectMapper
         if ($sponsorable === null) {
             goto after_sponsorable;
         }
-        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Sponsorable($sponsorable);
+        $sponsorable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Sponsorable($sponsorable);
         after_sponsorable:        $result['sponsorable'] = $sponsorable;
 
         
         $tier = $object->tier;
-        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged⚡️Sponsorship⚡️Tier($tier);
+        $tier = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipCancelled⚡️Sponsorship⚡️Tier($tier);
         after_tier:        $result['tier'] = $tier;
 
 

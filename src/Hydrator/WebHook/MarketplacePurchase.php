@@ -4160,7 +4160,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️MarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4224,7 +4224,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️MarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4967,7 +4967,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️MarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5031,7 +5031,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️MarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5279,7 +5279,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5343,7 +5343,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5774,7 +5774,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5838,7 +5838,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6086,7 +6086,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6150,7 +6150,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6581,7 +6581,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️MarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6645,7 +6645,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️MarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6893,7 +6893,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'account';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️PreviousMarketplacePurchase⚡️Account($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6957,7 +6957,7 @@ class MarketplacePurchase implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'plan';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️PreviousMarketplacePurchase⚡️Plan($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9519,7 +9519,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️MarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -9548,7 +9548,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseChanged⚡️MarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -9869,7 +9869,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️MarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -9898,7 +9898,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️MarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -10006,7 +10006,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -10035,7 +10035,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChange⚡️PreviousMarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -10215,7 +10215,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -10244,7 +10244,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️MarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -10352,7 +10352,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -10381,7 +10381,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePendingChangeCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -10561,7 +10561,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️MarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -10590,7 +10590,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️MarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️MarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         
@@ -10698,7 +10698,7 @@ class MarketplacePurchase implements ObjectMapper
         $result = [];
 
         $account = $object->account;
-        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️PreviousMarketplacePurchase⚡️Account($account);
+        $account = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Account($account);
         after_account:        $result['account'] = $account;
 
         
@@ -10727,7 +10727,7 @@ class MarketplacePurchase implements ObjectMapper
 
         
         $plan = $object->plan;
-        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchasePurchased⚡️PreviousMarketplacePurchase⚡️Plan($plan);
+        $plan = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMarketplacePurchaseCancelled⚡️PreviousMarketplacePurchase⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
 
         

@@ -310,7 +310,7 @@ class Cards implements ObjectMapper
 
             if ($errorsCaster1 === null) {
                 $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Operation\\Projects\\CreateCard\\Response\\Applicationjson\\H503\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Operation\\Projects\\MoveCard\\Response\\Applicationjson\\H503\\Errors',
 ));
             }
 
@@ -650,7 +650,7 @@ class Cards implements ObjectMapper
 
         if ($errorsSerializer0 === null) {
             $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Operation\\Projects\\CreateCard\\Response\\Applicationjson\\H503\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Operation\\Projects\\MoveCard\\Response\\Applicationjson\\H503\\Errors',
 ));
         }
         

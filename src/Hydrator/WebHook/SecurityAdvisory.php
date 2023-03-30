@@ -3987,7 +3987,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'cvss';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4008,7 +4008,7 @@ class SecurityAdvisory implements ObjectMapper
 
             if ($cwesCaster1 === null) {
                 $cwesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Cwes',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Cwes',
 ));
             }
 
@@ -4051,7 +4051,7 @@ class SecurityAdvisory implements ObjectMapper
 
             if ($identifiersCaster1 === null) {
                 $identifiersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Identifiers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Identifiers',
 ));
             }
 
@@ -4083,7 +4083,7 @@ class SecurityAdvisory implements ObjectMapper
 
             if ($referencesCaster1 === null) {
                 $referencesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\References',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\References',
 ));
             }
 
@@ -4137,7 +4137,7 @@ class SecurityAdvisory implements ObjectMapper
 
             if ($vulnerabilitiesCaster1 === null) {
                 $vulnerabilitiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Vulnerabilities',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Vulnerabilities',
 ));
             }
 
@@ -4350,7 +4350,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'firstPatchedVersion';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4370,7 +4370,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'package';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5023,7 +5023,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'firstPatchedVersion';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5043,7 +5043,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'package';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7422,7 +7422,7 @@ class SecurityAdvisory implements ObjectMapper
         $result = [];
 
         $cvss = $object->cvss;
-        $cvss = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss($cvss);
+        $cvss = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($cvss);
         after_cvss:        $result['cvss'] = $cvss;
 
         
@@ -7431,7 +7431,7 @@ class SecurityAdvisory implements ObjectMapper
 
         if ($cwesSerializer0 === null) {
             $cwesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Cwes',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Cwes',
 ));
         }
         
@@ -7452,7 +7452,7 @@ class SecurityAdvisory implements ObjectMapper
 
         if ($identifiersSerializer0 === null) {
             $identifiersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Identifiers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Identifiers',
 ));
         }
         
@@ -7469,7 +7469,7 @@ class SecurityAdvisory implements ObjectMapper
 
         if ($referencesSerializer0 === null) {
             $referencesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\References',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\References',
 ));
         }
         
@@ -7494,7 +7494,7 @@ class SecurityAdvisory implements ObjectMapper
 
         if ($vulnerabilitiesSerializer0 === null) {
             $vulnerabilitiesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryUpdated\\SecurityAdvisory\\Vulnerabilities',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookSecurityAdvisoryPublished\\SecurityAdvisory\\Vulnerabilities',
 ));
         }
         
@@ -7592,12 +7592,12 @@ class SecurityAdvisory implements ObjectMapper
         if ($firstPatchedVersion === null) {
             goto after_firstPatchedVersion;
         }
-        $firstPatchedVersion = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($firstPatchedVersion);
+        $firstPatchedVersion = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($firstPatchedVersion);
         after_firstPatchedVersion:        $result['first_patched_version'] = $firstPatchedVersion;
 
         
         $package = $object->package;
-        $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($package);
+        $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($package);
         after_package:        $result['package'] = $package;
 
         
@@ -7878,12 +7878,12 @@ class SecurityAdvisory implements ObjectMapper
         if ($firstPatchedVersion === null) {
             goto after_firstPatchedVersion;
         }
-        $firstPatchedVersion = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($firstPatchedVersion);
+        $firstPatchedVersion = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️FirstPatchedVersion($firstPatchedVersion);
         after_firstPatchedVersion:        $result['first_patched_version'] = $firstPatchedVersion;
 
         
         $package = $object->package;
-        $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($package);
+        $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Vulnerabilities⚡️Package($package);
         after_package:        $result['package'] = $package;
 
         

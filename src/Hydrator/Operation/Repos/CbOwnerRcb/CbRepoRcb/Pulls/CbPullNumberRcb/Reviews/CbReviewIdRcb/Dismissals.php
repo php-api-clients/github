@@ -29,6 +29,8 @@ class Dismissals implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PullRequestReview\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestReview⚡️Links⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($payload),
+                'ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($payload),
+                'ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️PullRequest($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -222,7 +224,7 @@ class Dismissals implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestReview⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -242,7 +244,7 @@ class Dismissals implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestReview⚡️Links⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -449,6 +451,70 @@ class Dismissals implements ObjectMapper
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationErrorSimple', $exception, stack: $this->hydrationStack);
         }
     }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['href'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'href';
+                goto after_href;
+            }
+
+            $properties['href'] = $value;
+
+            after_href:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\Html', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['href'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'href';
+                goto after_href;
+            }
+
+            $properties['href'] = $value;
+
+            after_href:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links\PullRequest', $exception, stack: $this->hydrationStack);
+        }
+    }
     
     private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
     {
@@ -648,12 +714,12 @@ class Dismissals implements ObjectMapper
         $result = [];
 
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestReview⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestReview⚡️Links⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TimelineReviewedEvent⚡️Links⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 

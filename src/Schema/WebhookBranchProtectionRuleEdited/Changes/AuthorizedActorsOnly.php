@@ -8,13 +8,6 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
-final readonly class AuthorizedActorsOnly
+final readonly class AuthorizedActorsOnly extends Schema\AliasAbstract\Abstractf72f794e2732dfb673ccb569295f5040
 {
-    public const SCHEMA_JSON = '{"required":["from"],"type":"object","properties":{"from":{"type":["boolean","null"]}}}';
-    public const SCHEMA_TITLE = '';
-    public const SCHEMA_DESCRIPTION = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":false}';
-    public function __construct(public ?bool $from)
-    {
-    }
 }

@@ -37,9 +37,9 @@ final class RedeliverWebhookDelivery
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{hook_id}', '{delivery_id}'), array($this->owner, $this->repo, $this->hookId, $this->deliveryId), self::PATH));
     }
     /**
-     * @return Schema\Operation\Apps\RedeliverWebhookDelivery\Response\Applicationjson\H202
+     * @return Schema\Operation\Repos\RedeliverWebhookDelivery\Response\Applicationjson\H202
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Apps\RedeliverWebhookDelivery\Response\Applicationjson\H202
+    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Repos\RedeliverWebhookDelivery\Response\Applicationjson\H202
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);
@@ -48,8 +48,8 @@ final class RedeliverWebhookDelivery
             case 202:
                 switch ($contentType) {
                     case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Apps\RedeliverWebhookDelivery\Response\Applicationjson\H202::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\Apps\RedeliverWebhookDelivery\Response\Applicationjson\H202::class, $body);
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\RedeliverWebhookDelivery\Response\Applicationjson\H202::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\Operation\Repos\RedeliverWebhookDelivery\Response\Applicationjson\H202::class, $body);
                 }
                 break;
             /**Bad Request**/

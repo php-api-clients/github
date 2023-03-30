@@ -3,6 +3,7 @@ namespace: ApiClients\Client\GitHub
 destination: ../src
 schemas:
   allowDuplication: true
+  useAliasesForDuplication: true
 voter:
   listOperation:
     - ApiClients\Tools\OpenApiClientGenerator\Voter\ListOperation\PageAndPerPageInQuery
