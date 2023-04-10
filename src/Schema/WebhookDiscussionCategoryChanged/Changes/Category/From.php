@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\Github\Schema\WebhookDiscussionCategoryChanged\Changes\Category;
+namespace ApiClients\Client\GitHub\Schema\WebhookDiscussionCategoryChanged\Changes\Category;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final readonly class From extends Schema\AliasAbstract\Abstract789e2f6a7fd1da54dad16bc425b29edd
 {
 }

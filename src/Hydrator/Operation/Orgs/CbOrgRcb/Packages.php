@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Packages implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\Package' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Package($payload),
-                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\GitHub\Schema\Package' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Package($payload),
+                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Package(array $payload): \ApiClients\Client\Github\Schema\Package
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Package(array $payload): \ApiClients\Client\GitHub\Schema\Package
     {
         $properties = []; 
         $missingFields = [];
@@ -157,22 +157,22 @@ class Packages implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Package', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Package', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Package::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Package::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Package(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Package(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Package', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Package', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -222,17 +222,17 @@ class Packages implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -267,8 +267,8 @@ class Packages implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\Package' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Package($object),
-            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\Package' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Package($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -342,9 +342,9 @@ class Packages implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Package(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Package(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Package);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Package);
         $result = [];
 
         $id = $object->id;
@@ -403,9 +403,9 @@ class Packages implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
 
         $message = $object->message;

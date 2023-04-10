@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments\CbEnvironmentNameRcb\DeploymentDashBranchDashPolicies;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments\CbEnvironmentNameRcb\DeploymentDashBranchDashPolicies;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CbBranchPolicyIdRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\DeploymentBranchPolicy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy($payload),
+            'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy(array $payload): \ApiClients\Client\Github\Schema\DeploymentBranchPolicy
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class CbBranchPolicyIdRcb implements ObjectMapper
             after_name:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DeploymentBranchPolicy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\DeploymentBranchPolicy(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class CbBranchPolicyIdRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\DeploymentBranchPolicy' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy($object),
+            'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class CbBranchPolicyIdRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\DeploymentBranchPolicy);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy);
         $result = [];
 
         $id = $object->id;

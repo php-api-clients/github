@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation;
+namespace ApiClients\Client\GitHub\Hydrator\Operation;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,15 +23,15 @@ class Feeds implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\Feed' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed($payload),
-                'ApiClients\Client\Github\Schema\Feed\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links($payload),
-                'ApiClients\Client\Github\Schema\LinkWithType' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($payload),
+            'ApiClients\Client\GitHub\Schema\Feed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed($payload),
+                'ApiClients\Client\GitHub\Schema\Feed\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links($payload),
+                'ApiClients\Client\GitHub\Schema\LinkWithType' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed(array $payload): \ApiClients\Client\Github\Schema\Feed
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed(array $payload): \ApiClients\Client\GitHub\Schema\Feed
     {
         $properties = []; 
         $missingFields = [];
@@ -156,7 +156,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -167,22 +167,22 @@ class Feeds implements ObjectMapper
             after_links:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Feed', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Feed', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Feed::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Feed::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Feed(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Feed(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Feed', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Feed', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links(array $payload): \ApiClients\Client\Github\Schema\Feed\Links
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\Feed\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -197,7 +197,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'timeline';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -217,7 +217,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -237,7 +237,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'securityAdvisories';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -257,7 +257,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'currentUser';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -277,7 +277,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'currentUserPublic';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -297,7 +297,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'currentUserActor';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -317,7 +317,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'currentUserOrganization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -338,7 +338,7 @@ class Feeds implements ObjectMapper
 
             if ($currentUserOrganizationsCaster1 === null) {
                 $currentUserOrganizationsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\LinkWithType',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\LinkWithType',
 ));
             }
 
@@ -358,7 +358,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repositoryDiscussions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -378,7 +378,7 @@ class Feeds implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repositoryDiscussionsCategory';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -389,22 +389,22 @@ class Feeds implements ObjectMapper
             after_repositoryDiscussionsCategory:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Feed\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Feed\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Feed\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Feed\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Feed\Links(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Feed\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Feed\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Feed\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType(array $payload): \ApiClients\Client\Github\Schema\LinkWithType
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType(array $payload): \ApiClients\Client\GitHub\Schema\LinkWithType
     {
         $properties = []; 
         $missingFields = [];
@@ -432,17 +432,17 @@ class Feeds implements ObjectMapper
             after_type:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LinkWithType', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LinkWithType', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\LinkWithType::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LinkWithType::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\LinkWithType(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\LinkWithType(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LinkWithType', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LinkWithType', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -477,9 +477,9 @@ class Feeds implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\Feed' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed($object),
-            'ApiClients\Client\Github\Schema\Feed\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links($object),
-            'ApiClients\Client\Github\Schema\LinkWithType' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($object),
+            'ApiClients\Client\GitHub\Schema\Feed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed($object),
+            'ApiClients\Client\GitHub\Schema\Feed\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links($object),
+            'ApiClients\Client\GitHub\Schema\LinkWithType' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -553,9 +553,9 @@ class Feeds implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Feed);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Feed);
         $result = [];
 
         $timelineUrl = $object->timelineUrl;
@@ -639,7 +639,7 @@ class Feeds implements ObjectMapper
 
         
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
 
@@ -647,18 +647,18 @@ class Feeds implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Feed⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Feed⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Feed\Links);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Feed\Links);
         $result = [];
 
         $timeline = $object->timeline;
-        $timeline = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($timeline);
+        $timeline = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($timeline);
         after_timeline:        $result['timeline'] = $timeline;
 
         
         $user = $object->user;
-        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($user);
         after_user:        $result['user'] = $user;
 
         
@@ -667,7 +667,7 @@ class Feeds implements ObjectMapper
         if ($securityAdvisories === null) {
             goto after_securityAdvisories;
         }
-        $securityAdvisories = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($securityAdvisories);
+        $securityAdvisories = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($securityAdvisories);
         after_securityAdvisories:        $result['security_advisories'] = $securityAdvisories;
 
         
@@ -676,7 +676,7 @@ class Feeds implements ObjectMapper
         if ($currentUser === null) {
             goto after_currentUser;
         }
-        $currentUser = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($currentUser);
+        $currentUser = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($currentUser);
         after_currentUser:        $result['current_user'] = $currentUser;
 
         
@@ -685,7 +685,7 @@ class Feeds implements ObjectMapper
         if ($currentUserPublic === null) {
             goto after_currentUserPublic;
         }
-        $currentUserPublic = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($currentUserPublic);
+        $currentUserPublic = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($currentUserPublic);
         after_currentUserPublic:        $result['current_user_public'] = $currentUserPublic;
 
         
@@ -694,7 +694,7 @@ class Feeds implements ObjectMapper
         if ($currentUserActor === null) {
             goto after_currentUserActor;
         }
-        $currentUserActor = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($currentUserActor);
+        $currentUserActor = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($currentUserActor);
         after_currentUserActor:        $result['current_user_actor'] = $currentUserActor;
 
         
@@ -703,7 +703,7 @@ class Feeds implements ObjectMapper
         if ($currentUserOrganization === null) {
             goto after_currentUserOrganization;
         }
-        $currentUserOrganization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($currentUserOrganization);
+        $currentUserOrganization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($currentUserOrganization);
         after_currentUserOrganization:        $result['current_user_organization'] = $currentUserOrganization;
 
         
@@ -716,7 +716,7 @@ class Feeds implements ObjectMapper
 
         if ($currentUserOrganizationsSerializer0 === null) {
             $currentUserOrganizationsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\LinkWithType',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\LinkWithType',
 ));
         }
         
@@ -729,7 +729,7 @@ class Feeds implements ObjectMapper
         if ($repositoryDiscussions === null) {
             goto after_repositoryDiscussions;
         }
-        $repositoryDiscussions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($repositoryDiscussions);
+        $repositoryDiscussions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($repositoryDiscussions);
         after_repositoryDiscussions:        $result['repository_discussions'] = $repositoryDiscussions;
 
         
@@ -738,7 +738,7 @@ class Feeds implements ObjectMapper
         if ($repositoryDiscussionsCategory === null) {
             goto after_repositoryDiscussionsCategory;
         }
-        $repositoryDiscussionsCategory = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType($repositoryDiscussionsCategory);
+        $repositoryDiscussionsCategory = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType($repositoryDiscussionsCategory);
         after_repositoryDiscussionsCategory:        $result['repository_discussions_category'] = $repositoryDiscussionsCategory;
 
 
@@ -746,9 +746,9 @@ class Feeds implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LinkWithType(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LinkWithType(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\LinkWithType);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LinkWithType);
         $result = [];
 
         $href = $object->href;

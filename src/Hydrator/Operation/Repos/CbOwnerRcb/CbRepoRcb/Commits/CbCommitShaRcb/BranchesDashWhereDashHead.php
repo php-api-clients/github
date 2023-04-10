@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbCommitShaRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Commits\CbCommitShaRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,16 +23,16 @@ class BranchesDashWhereDashHead implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\BranchShort' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort($payload),
-                'ApiClients\Client\Github\Schema\BranchShort\Commit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit($payload),
-                'ApiClients\Client\Github\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($payload),
-                'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($payload),
+            'ApiClients\Client\GitHub\Schema\BranchShort' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort($payload),
+                'ApiClients\Client\GitHub\Schema\BranchShort\Commit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit($payload),
+                'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
+                'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort(array $payload): \ApiClients\Client\Github\Schema\BranchShort
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort(array $payload): \ApiClients\Client\GitHub\Schema\BranchShort
     {
         $properties = []; 
         $missingFields = [];
@@ -58,7 +58,7 @@ class BranchesDashWhereDashHead implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'commit';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -80,22 +80,22 @@ class BranchesDashWhereDashHead implements ObjectMapper
             after_protected:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BranchShort', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchShort', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BranchShort::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchShort::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\BranchShort(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\BranchShort(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BranchShort', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchShort', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit(array $payload): \ApiClients\Client\Github\Schema\BranchShort\Commit
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit(array $payload): \ApiClients\Client\GitHub\Schema\BranchShort\Commit
     {
         $properties = []; 
         $missingFields = [];
@@ -123,22 +123,22 @@ class BranchesDashWhereDashHead implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BranchShort\Commit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchShort\Commit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BranchShort\Commit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BranchShort\Commit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\BranchShort\Commit(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\BranchShort\Commit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BranchShort\Commit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BranchShort\Commit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\Github\Schema\ValidationError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
     {
         $properties = []; 
         $missingFields = [];
@@ -176,7 +176,7 @@ class BranchesDashWhereDashHead implements ObjectMapper
 
             if ($errorsCaster1 === null) {
                 $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
 ));
             }
 
@@ -187,22 +187,22 @@ class BranchesDashWhereDashHead implements ObjectMapper
             after_errors:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ValidationError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\Github\Schema\ValidationError\Errors
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
     {
         $properties = []; 
         $missingFields = [];
@@ -274,17 +274,17 @@ class BranchesDashWhereDashHead implements ObjectMapper
             after_value:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ValidationError\Errors(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -319,10 +319,10 @@ class BranchesDashWhereDashHead implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\BranchShort' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort($object),
-            'ApiClients\Client\Github\Schema\BranchShort\Commit' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit($object),
-            'ApiClients\Client\Github\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($object),
-            'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($object),
+            'ApiClients\Client\GitHub\Schema\BranchShort' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort($object),
+            'ApiClients\Client\GitHub\Schema\BranchShort\Commit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -396,9 +396,9 @@ class BranchesDashWhereDashHead implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\BranchShort);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchShort);
         $result = [];
 
         $name = $object->name;
@@ -406,7 +406,7 @@ class BranchesDashWhereDashHead implements ObjectMapper
 
         
         $commit = $object->commit;
-        $commit = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit($commit);
+        $commit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit($commit);
         after_commit:        $result['commit'] = $commit;
 
         
@@ -418,9 +418,9 @@ class BranchesDashWhereDashHead implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BranchShort⚡️Commit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BranchShort⚡️Commit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\BranchShort\Commit);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BranchShort\Commit);
         $result = [];
 
         $sha = $object->sha;
@@ -435,9 +435,9 @@ class BranchesDashWhereDashHead implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError);
         $result = [];
 
         $message = $object->message;
@@ -457,7 +457,7 @@ class BranchesDashWhereDashHead implements ObjectMapper
 
         if ($errorsSerializer0 === null) {
             $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
 ));
         }
         
@@ -469,9 +469,9 @@ class BranchesDashWhereDashHead implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError\Errors);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError\Errors);
         $result = [];
 
         $resource = $object->resource;

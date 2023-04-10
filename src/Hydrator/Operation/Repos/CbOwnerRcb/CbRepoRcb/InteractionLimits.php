@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class InteractionLimits implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\InteractionLimitResponse' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️InteractionLimitResponse($payload),
+            'ApiClients\Client\GitHub\Schema\InteractionLimitResponse' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️InteractionLimitResponse(array $payload): \ApiClients\Client\Github\Schema\InteractionLimitResponse
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse(array $payload): \ApiClients\Client\GitHub\Schema\InteractionLimitResponse
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class InteractionLimits implements ObjectMapper
             after_expiresAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\InteractionLimitResponse::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\InteractionLimitResponse::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\InteractionLimitResponse(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\InteractionLimitResponse(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\InteractionLimitResponse', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class InteractionLimits implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\InteractionLimitResponse' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️InteractionLimitResponse($object),
+            'ApiClients\Client\GitHub\Schema\InteractionLimitResponse' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class InteractionLimits implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️InteractionLimitResponse(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️InteractionLimitResponse(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\InteractionLimitResponse);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\InteractionLimitResponse);
         $result = [];
 
         $limit = $object->limit;

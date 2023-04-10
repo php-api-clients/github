@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review;
+namespace ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final readonly class Links extends Schema\AliasAbstract\Abstract3725e2559d7806782692985ee129b0e5
 {
 }

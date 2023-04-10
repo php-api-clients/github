@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git\MatchingRefs;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git\MatchingRefs;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class CbRefRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\GitRef' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef($payload),
-                'ApiClients\Client\Github\Schema\GitRef\Object_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_($payload),
+            'ApiClients\Client\GitHub\Schema\GitRef' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef($payload),
+                'ApiClients\Client\GitHub\Schema\GitRef\Object_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef(array $payload): \ApiClients\Client\Github\Schema\GitRef
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef(array $payload): \ApiClients\Client\GitHub\Schema\GitRef
     {
         $properties = []; 
         $missingFields = [];
@@ -78,7 +78,7 @@ class CbRefRcb implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'object';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -89,22 +89,22 @@ class CbRefRcb implements ObjectMapper
             after_object:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitRef', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitRef::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\GitRef(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\GitRef(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitRef', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_(array $payload): \ApiClients\Client\Github\Schema\GitRef\Object_
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_(array $payload): \ApiClients\Client\GitHub\Schema\GitRef\Object_
     {
         $properties = []; 
         $missingFields = [];
@@ -143,17 +143,17 @@ class CbRefRcb implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitRef\Object_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitRef\Object_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\GitRef\Object_(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\GitRef\Object_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitRef\Object_', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -188,8 +188,8 @@ class CbRefRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\GitRef' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef($object),
-            'ApiClients\Client\Github\Schema\GitRef\Object_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_($object),
+            'ApiClients\Client\GitHub\Schema\GitRef' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef($object),
+            'ApiClients\Client\GitHub\Schema\GitRef\Object_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -263,9 +263,9 @@ class CbRefRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\GitRef);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitRef);
         $result = [];
 
         $ref = $object->ref;
@@ -281,7 +281,7 @@ class CbRefRcb implements ObjectMapper
 
         
         $object = $object->object;
-        $object = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_($object);
+        $object = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_($object);
         after_object:        $result['object'] = $object;
 
 
@@ -289,9 +289,9 @@ class CbRefRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitRef⚡️Object_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitRef⚡️Object_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\GitRef\Object_);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitRef\Object_);
         $result = [];
 
         $type = $object->type;

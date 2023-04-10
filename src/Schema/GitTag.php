@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\Github\Schema;
+namespace ApiClients\Client\GitHub\Schema;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final readonly class GitTag
 {
     public const SCHEMA_JSON = '{"title":"Git Tag","required":["sha","url","node_id","tagger","object","tag","message"],"type":"object","properties":{"node_id":{"type":"string","examples":["MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw=="]},"tag":{"type":"string","description":"Name of the tag","examples":["v0.0.1"]},"sha":{"type":"string","examples":["940bd336248efae0f9ee5bc7b2d5c985887b16ac"]},"url":{"type":"string","description":"URL for the tag","format":"uri","examples":["https:\\/\\/api.github.com\\/repositories\\/42\\/git\\/tags\\/940bd336248efae0f9ee5bc7b2d5c985887b16ac"]},"message":{"type":"string","description":"Message describing the purpose of the tag","examples":["Initial public release"]},"tagger":{"required":["date","email","name"],"type":"object","properties":{"date":{"type":"string"},"email":{"type":"string"},"name":{"type":"string"}}},"object":{"required":["sha","type","url"],"type":"object","properties":{"sha":{"type":"string"},"type":{"type":"string"},"url":{"type":"string","format":"uri"}}},"verification":{"title":"Verification","required":["verified","reason","payload","signature"],"type":"object","properties":{"verified":{"type":"boolean"},"reason":{"type":"string"},"payload":{"type":["string","null"]},"signature":{"type":["string","null"]}}}},"description":"Metadata for a Git tag"}';

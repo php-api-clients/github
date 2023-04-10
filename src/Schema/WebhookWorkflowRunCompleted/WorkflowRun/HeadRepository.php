@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\Github\Schema\WebhookWorkflowRunCompleted\WorkflowRun;
+namespace ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final readonly class HeadRepository extends Schema\AliasAbstract\Abstracta3c338532b274b8c9caba449d2612dc6
 {
 }

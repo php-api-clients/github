@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Apps;
+namespace ApiClients\Tests\Client\GitHub\Operation\Apps;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListInstallationsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,7 +22,7 @@ final class ListInstallationsTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/app/installations?since=1970-01-01T00:00:00+00:00&outdated=generated_null&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Apps\ListInstallations::OPERATION_MATCH, array('since' => '1970-01-01T00:00:00+00:00', 'outdated' => 'generated_null', 'per_page' => 13, 'page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListInstallations::OPERATION_MATCH, array('since' => '1970-01-01T00:00:00+00:00', 'outdated' => 'generated_null', 'per_page' => 13, 'page' => 13));
     }
 }

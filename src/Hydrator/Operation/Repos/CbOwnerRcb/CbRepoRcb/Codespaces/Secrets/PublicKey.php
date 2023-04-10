@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces\Secrets;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces\Secrets;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class PublicKey implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\CodespacesPublicKey' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesPublicKey($payload),
+            'ApiClients\Client\GitHub\Schema\CodespacesPublicKey' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesPublicKey($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesPublicKey(array $payload): \ApiClients\Client\Github\Schema\CodespacesPublicKey
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesPublicKey(array $payload): \ApiClients\Client\GitHub\Schema\CodespacesPublicKey
     {
         $properties = []; 
         $missingFields = [];
@@ -101,17 +101,17 @@ class PublicKey implements ObjectMapper
             after_createdAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodespacesPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesPublicKey', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CodespacesPublicKey::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespacesPublicKey::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CodespacesPublicKey(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CodespacesPublicKey(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodespacesPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesPublicKey', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -146,7 +146,7 @@ class PublicKey implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\CodespacesPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesPublicKey($object),
+            'ApiClients\Client\GitHub\Schema\CodespacesPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesPublicKey($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -220,9 +220,9 @@ class PublicKey implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesPublicKey(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesPublicKey(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CodespacesPublicKey);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespacesPublicKey);
         $result = [];
 
         $keyId = $object->keyId;

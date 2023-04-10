@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Packages;
+namespace ApiClients\Tests\Client\GitHub\Operation\Packages;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class GetPackageVersionForAuthenticatedUserTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,7 +22,7 @@ final class GetPackageVersionForAuthenticatedUserTest extends \WyriHaximus\Async
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/user/packages/generated_null/generated_null/versions/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Packages\GetPackageVersionForAuthenticatedUser::OPERATION_MATCH, array('package_type' => 'generated_null', 'package_name' => 'generated_null', 'package_version_id' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Packages\GetPackageVersionForAuthenticatedUser::OPERATION_MATCH, array('package_type' => 'generated_null', 'package_name' => 'generated_null', 'package_version_id' => 13));
     }
 }

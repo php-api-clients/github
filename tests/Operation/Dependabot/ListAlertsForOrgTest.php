@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Dependabot;
+namespace ApiClients\Tests\Client\GitHub\Operation\Dependabot;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,8 +22,8 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -38,8 +38,8 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -54,8 +54,8 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -70,8 +70,8 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -86,8 +86,8 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -102,7 +102,7 @@ final class ListAlertsForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/dependabot/alerts?state=generated_null&severity=generated_null&ecosystem=generated_null&package=generated_null&scope=generated_null&before=generated_null&after=generated_null&last=13&sort=generated_null&direction=generated_null&first=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'state' => 'generated_null', 'severity' => 'generated_null', 'ecosystem' => 'generated_null', 'package' => 'generated_null', 'scope' => 'generated_null', 'before' => 'generated_null', 'after' => 'generated_null', 'last' => 13, 'sort' => 'generated_null', 'direction' => 'generated_null', 'first' => 13, 'per_page' => 13));
     }
 }

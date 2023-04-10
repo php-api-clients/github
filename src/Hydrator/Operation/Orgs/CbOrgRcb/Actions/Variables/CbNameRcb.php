@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Variables;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Variables;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CbNameRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\OrganizationActionsVariable' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationActionsVariable($payload),
+            'ApiClients\Client\GitHub\Schema\OrganizationActionsVariable' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationActionsVariable($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationActionsVariable(array $payload): \ApiClients\Client\Github\Schema\OrganizationActionsVariable
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationActionsVariable(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationActionsVariable
     {
         $properties = []; 
         $missingFields = [];
@@ -101,17 +101,17 @@ class CbNameRcb implements ObjectMapper
             after_selectedRepositoriesUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationActionsVariable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationActionsVariable', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\OrganizationActionsVariable::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationActionsVariable::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\OrganizationActionsVariable(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\OrganizationActionsVariable(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationActionsVariable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationActionsVariable', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -146,7 +146,7 @@ class CbNameRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\OrganizationActionsVariable' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationActionsVariable($object),
+            'ApiClients\Client\GitHub\Schema\OrganizationActionsVariable' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationActionsVariable($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -220,9 +220,9 @@ class CbNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationActionsVariable(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationActionsVariable(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\OrganizationActionsVariable);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationActionsVariable);
         $result = [];
 
         $name = $object->name;

@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Packages;
+namespace ApiClients\Tests\Client\GitHub\Operation\Packages;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListPackagesForOrganizationTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,8 +22,8 @@ final class ListPackagesForOrganizationTest extends \WyriHaximus\AsyncTestUtilit
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/packages?package_type=generated_null&visibility=generated_null&page=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -38,8 +38,8 @@ final class ListPackagesForOrganizationTest extends \WyriHaximus\AsyncTestUtilit
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/packages?package_type=generated_null&visibility=generated_null&page=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
     }
     /**
      * @test
@@ -54,7 +54,7 @@ final class ListPackagesForOrganizationTest extends \WyriHaximus\AsyncTestUtilit
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/packages?package_type=generated_null&visibility=generated_null&page=13&per_page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Packages\ListPackagesForOrganization::OPERATION_MATCH, array('package_type' => 'generated_null', 'org' => 'generated_null', 'visibility' => 'generated_null', 'page' => 13, 'per_page' => 13));
     }
 }

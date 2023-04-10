@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class MergeUpstream implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\MergedUpstream' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️MergedUpstream($payload),
+            'ApiClients\Client\GitHub\Schema\MergedUpstream' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MergedUpstream($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️MergedUpstream(array $payload): \ApiClients\Client\Github\Schema\MergedUpstream
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MergedUpstream(array $payload): \ApiClients\Client\GitHub\Schema\MergedUpstream
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class MergeUpstream implements ObjectMapper
             after_baseBranch:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\MergedUpstream', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MergedUpstream', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\MergedUpstream::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\MergedUpstream::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\MergedUpstream(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\MergedUpstream(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\MergedUpstream', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\MergedUpstream', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class MergeUpstream implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\MergedUpstream' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️MergedUpstream($object),
+            'ApiClients\Client\GitHub\Schema\MergedUpstream' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MergedUpstream($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class MergeUpstream implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️MergedUpstream(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️MergedUpstream(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\MergedUpstream);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\MergedUpstream);
         $result = [];
 
         $message = $object->message;

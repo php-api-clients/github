@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Users\CbUsernameRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Users\CbUsernameRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;

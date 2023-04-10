@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\User\Codespaces\Secrets;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\User\Codespaces\Secrets;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class PublicKey implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\CodespacesUserPublicKey' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesUserPublicKey($payload),
+            'ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesUserPublicKey($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesUserPublicKey(array $payload): \ApiClients\Client\Github\Schema\CodespacesUserPublicKey
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesUserPublicKey(array $payload): \ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey
     {
         $properties = []; 
         $missingFields = [];
@@ -57,17 +57,17 @@ class PublicKey implements ObjectMapper
             after_key:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodespacesUserPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CodespacesUserPublicKey::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CodespacesUserPublicKey(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodespacesUserPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -102,7 +102,7 @@ class PublicKey implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\CodespacesUserPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesUserPublicKey($object),
+            'ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesUserPublicKey($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -176,9 +176,9 @@ class PublicKey implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodespacesUserPublicKey(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesUserPublicKey(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CodespacesUserPublicKey);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey);
         $result = [];
 
         $keyId = $object->keyId;

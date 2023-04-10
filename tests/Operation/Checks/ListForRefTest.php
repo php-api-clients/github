@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Checks;
+namespace ApiClients\Tests\Client\GitHub\Operation\Checks;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListForRefTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,7 +22,7 @@ final class ListForRefTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated_null/generated_null/commits/generated_null/check-runs?check_name=generated_null&status=generated_null&app_id=13&filter=generated_null&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Checks\ListForRef::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'ref' => 'generated_null', 'check_name' => 'generated_null', 'status' => 'generated_null', 'app_id' => 13, 'filter' => 'generated_null', 'per_page' => 13, 'page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Checks\ListForRef::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'ref' => 'generated_null', 'check_name' => 'generated_null', 'status' => 'generated_null', 'app_id' => 13, 'filter' => 'generated_null', 'per_page' => 13, 'page' => 13));
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,17 +23,17 @@ class PendingDeployments implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\PendingDeployment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment($payload),
-                'ApiClients\Client\Github\Schema\PendingDeployment\Environment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment($payload),
-                'ApiClients\Client\Github\Schema\PendingDeployment\Reviewers' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Reviewers($payload),
-                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\Github\Schema\Deployment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($payload),
+            'ApiClients\Client\GitHub\Schema\PendingDeployment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment($payload),
+                'ApiClients\Client\GitHub\Schema\PendingDeployment\Environment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment($payload),
+                'ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Reviewers($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\GitHub\Schema\Deployment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment(array $payload): \ApiClients\Client\Github\Schema\PendingDeployment
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment(array $payload): \ApiClients\Client\GitHub\Schema\PendingDeployment
     {
         $properties = []; 
         $missingFields = [];
@@ -48,7 +48,7 @@ class PendingDeployments implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'environment';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -102,7 +102,7 @@ class PendingDeployments implements ObjectMapper
 
             if ($reviewersCaster1 === null) {
                 $reviewersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\PendingDeployment\\Reviewers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\PendingDeployment\\Reviewers',
 ));
             }
 
@@ -113,22 +113,22 @@ class PendingDeployments implements ObjectMapper
             after_reviewers:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PendingDeployment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PendingDeployment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\PendingDeployment(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\PendingDeployment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment(array $payload): \ApiClients\Client\Github\Schema\PendingDeployment\Environment
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment(array $payload): \ApiClients\Client\GitHub\Schema\PendingDeployment\Environment
     {
         $properties = []; 
         $missingFields = [];
@@ -189,22 +189,22 @@ class PendingDeployments implements ObjectMapper
             after_htmlUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment\Environment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment\Environment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PendingDeployment\Environment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PendingDeployment\Environment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\PendingDeployment\Environment(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\PendingDeployment\Environment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment\Environment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment\Environment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Reviewers(array $payload): \ApiClients\Client\Github\Schema\PendingDeployment\Reviewers
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Reviewers(array $payload): \ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers
     {
         $properties = []; 
         $missingFields = [];
@@ -230,7 +230,7 @@ class PendingDeployments implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -241,22 +241,22 @@ class PendingDeployments implements ObjectMapper
             after_reviewer:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment\Reviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PendingDeployment\Reviewers::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\PendingDeployment\Reviewers(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PendingDeployment\Reviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -493,22 +493,22 @@ class PendingDeployments implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment(array $payload): \ApiClients\Client\Github\Schema\Deployment
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment(array $payload): \ApiClients\Client\GitHub\Schema\Deployment
     {
         $properties = []; 
         $missingFields = [];
@@ -712,17 +712,17 @@ class PendingDeployments implements ObjectMapper
             after_performedViaGithubApp:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Deployment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Deployment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Deployment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Deployment(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Deployment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Deployment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Deployment', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -757,11 +757,11 @@ class PendingDeployments implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\PendingDeployment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment($object),
-            'ApiClients\Client\Github\Schema\PendingDeployment\Environment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment($object),
-            'ApiClients\Client\Github\Schema\PendingDeployment\Reviewers' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Reviewers($object),
-            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\Github\Schema\Deployment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment($object),
+            'ApiClients\Client\GitHub\Schema\PendingDeployment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment($object),
+            'ApiClients\Client\GitHub\Schema\PendingDeployment\Environment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment($object),
+            'ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Reviewers($object),
+            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\GitHub\Schema\Deployment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -835,13 +835,13 @@ class PendingDeployments implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\PendingDeployment);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PendingDeployment);
         $result = [];
 
         $environment = $object->environment;
-        $environment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment($environment);
+        $environment = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment($environment);
         after_environment:        $result['environment'] = $environment;
 
         
@@ -866,7 +866,7 @@ class PendingDeployments implements ObjectMapper
 
         if ($reviewersSerializer0 === null) {
             $reviewersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\PendingDeployment\\Reviewers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\PendingDeployment\\Reviewers',
 ));
         }
         
@@ -878,9 +878,9 @@ class PendingDeployments implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Environment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Environment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\PendingDeployment\Environment);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PendingDeployment\Environment);
         $result = [];
 
         $id = $object->id;
@@ -927,9 +927,9 @@ class PendingDeployments implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PendingDeployment⚡️Reviewers(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PendingDeployment⚡️Reviewers(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\PendingDeployment\Reviewers);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PendingDeployment\Reviewers);
         $result = [];
 
         $type = $object->type;
@@ -945,7 +945,7 @@ class PendingDeployments implements ObjectMapper
         if ($reviewer === null) {
             goto after_reviewer;
         }
-        $reviewer = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($reviewer);
+        $reviewer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($reviewer);
         after_reviewer:        $result['reviewer'] = $reviewer;
 
 
@@ -953,9 +953,9 @@ class PendingDeployments implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -1062,9 +1062,9 @@ class PendingDeployments implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Deployment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Deployment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Deployment);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Deployment);
         $result = [];
 
         $url = $object->url;

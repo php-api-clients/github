@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Stats;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Stats;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CommitActivity implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\CommitActivity' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommitActivity($payload),
+            'ApiClients\Client\GitHub\Schema\CommitActivity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommitActivity(array $payload): \ApiClients\Client\Github\Schema\CommitActivity
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity(array $payload): \ApiClients\Client\GitHub\Schema\CommitActivity
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class CommitActivity implements ObjectMapper
             after_week:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CommitActivity::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommitActivity::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CommitActivity(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CommitActivity(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommitActivity', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class CommitActivity implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\CommitActivity' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommitActivity($object),
+            'ApiClients\Client\GitHub\Schema\CommitActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class CommitActivity implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommitActivity(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommitActivity(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CommitActivity);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommitActivity);
         $result = [];
 
         $days = $object->days;

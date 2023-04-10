@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Orgs;
+namespace ApiClients\Tests\Client\GitHub\Operation\Orgs;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class GetWebhookDeliveryTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,8 +22,8 @@ final class GetWebhookDeliveryTest extends \WyriHaximus\AsyncTestUtilities\Async
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/hooks/13/deliveries/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
     }
     /**
      * @test
@@ -38,8 +38,8 @@ final class GetWebhookDeliveryTest extends \WyriHaximus\AsyncTestUtilities\Async
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/hooks/13/deliveries/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
     }
     /**
      * @test
@@ -54,8 +54,8 @@ final class GetWebhookDeliveryTest extends \WyriHaximus\AsyncTestUtilities\Async
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/hooks/13/deliveries/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
     }
     /**
      * @test
@@ -70,7 +70,7 @@ final class GetWebhookDeliveryTest extends \WyriHaximus\AsyncTestUtilities\Async
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/hooks/13/deliveries/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\GetWebhookDelivery::OPERATION_MATCH, array('org' => 'generated_null', 'hook_id' => 13, 'delivery_id' => 13));
     }
 }

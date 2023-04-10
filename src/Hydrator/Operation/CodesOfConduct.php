@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation;
+namespace ApiClients\Client\GitHub\Hydrator\Operation;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CodesOfConduct implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\CodeOfConduct' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodeOfConduct($payload),
+            'ApiClients\Client\GitHub\Schema\CodeOfConduct' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CodeOfConduct(array $payload): \ApiClients\Client\Github\Schema\CodeOfConduct
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct(array $payload): \ApiClients\Client\GitHub\Schema\CodeOfConduct
     {
         $properties = []; 
         $missingFields = [];
@@ -90,17 +90,17 @@ class CodesOfConduct implements ObjectMapper
             after_htmlUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodeOfConduct', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeOfConduct', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CodeOfConduct::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodeOfConduct::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CodeOfConduct(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CodeOfConduct(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CodeOfConduct', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeOfConduct', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -135,7 +135,7 @@ class CodesOfConduct implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\CodeOfConduct' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodeOfConduct($object),
+            'ApiClients\Client\GitHub\Schema\CodeOfConduct' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -209,9 +209,9 @@ class CodesOfConduct implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CodeOfConduct(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeOfConduct(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CodeOfConduct);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodeOfConduct);
         $result = [];
 
         $key = $object->key;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Milestones\CbMilestoneNumberRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Labels implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\Label' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Label($payload),
+            'ApiClients\Client\GitHub\Schema\Label' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Label($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Label(array $payload): \ApiClients\Client\Github\Schema\Label
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Label(array $payload): \ApiClients\Client\GitHub\Schema\Label
     {
         $properties = []; 
         $missingFields = [];
@@ -112,17 +112,17 @@ class Labels implements ObjectMapper
             after_default:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Label', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Label', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Label::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Label::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Label(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Label(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Label', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Label', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -157,7 +157,7 @@ class Labels implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\Label' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Label($object),
+            'ApiClients\Client\GitHub\Schema\Label' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Label($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -231,9 +231,9 @@ class Labels implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Label(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Label(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Label);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Label);
         $result = [];
 
         $id = $object->id;

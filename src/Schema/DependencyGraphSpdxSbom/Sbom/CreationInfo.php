@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom;
+namespace ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final readonly class CreationInfo
 {
     public const SCHEMA_JSON = '{"required":["created","creators"],"type":"object","properties":{"created":{"type":"string","description":"The date and time the SPDX document was created.","examples":["2021-11-03T00:00:00Z"]},"creators":{"type":"array","items":{"type":"string","examples":["GitHub"]},"description":"The tools that were used to generate the SPDX document."}}}';

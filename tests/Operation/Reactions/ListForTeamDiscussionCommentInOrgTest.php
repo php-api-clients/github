@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Reactions;
+namespace ApiClients\Tests\Client\GitHub\Operation\Reactions;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListForTeamDiscussionCommentInOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,7 +22,7 @@ final class ListForTeamDiscussionCommentInOrgTest extends \WyriHaximus\AsyncTest
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated_null/teams/generated_null/discussions/13/comments/13/reactions?content=generated_null&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Reactions\ListForTeamDiscussionCommentInOrg::OPERATION_MATCH, array('org' => 'generated_null', 'team_slug' => 'generated_null', 'discussion_number' => 13, 'comment_number' => 13, 'content' => 'generated_null', 'per_page' => 13, 'page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Reactions\ListForTeamDiscussionCommentInOrg::OPERATION_MATCH, array('org' => 'generated_null', 'team_slug' => 'generated_null', 'discussion_number' => 13, 'comment_number' => 13, 'content' => 'generated_null', 'per_page' => 13, 'page' => 13));
     }
 }

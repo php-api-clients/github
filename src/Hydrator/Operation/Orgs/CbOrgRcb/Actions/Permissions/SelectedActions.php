@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Permissions;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Permissions;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class SelectedActions implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\SelectedActions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SelectedActions($payload),
+            'ApiClients\Client\GitHub\Schema\SelectedActions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SelectedActions(array $payload): \ApiClients\Client\Github\Schema\SelectedActions
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions(array $payload): \ApiClients\Client\GitHub\Schema\SelectedActions
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class SelectedActions implements ObjectMapper
             after_patternsAllowed:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SelectedActions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SelectedActions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\SelectedActions(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\SelectedActions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SelectedActions', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class SelectedActions implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\SelectedActions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SelectedActions($object),
+            'ApiClients\Client\GitHub\Schema\SelectedActions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class SelectedActions implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SelectedActions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SelectedActions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\SelectedActions);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SelectedActions);
         $result = [];
 
         $githubOwnedAllowed = $object->githubOwnedAllowed;

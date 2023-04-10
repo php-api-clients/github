@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Dependabot;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Dependabot;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Secrets implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\Github\Schema\OrganizationDependabotSecret' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationDependabotSecret($payload),
+            'ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationDependabotSecret($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -57,7 +57,7 @@ class Secrets implements ObjectMapper
 
             if ($secretsCaster1 === null) {
                 $secretsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\OrganizationDependabotSecret',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\OrganizationDependabotSecret',
 ));
             }
 
@@ -68,22 +68,22 @@ class Secrets implements ObjectMapper
             after_secrets:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationDependabotSecret(array $payload): \ApiClients\Client\Github\Schema\OrganizationDependabotSecret
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationDependabotSecret(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret
     {
         $properties = []; 
         $missingFields = [];
@@ -144,17 +144,17 @@ class Secrets implements ObjectMapper
             after_selectedRepositoriesUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationDependabotSecret', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\OrganizationDependabotSecret::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\OrganizationDependabotSecret(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationDependabotSecret', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -189,8 +189,8 @@ class Secrets implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\Github\Schema\OrganizationDependabotSecret' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationDependabotSecret($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationDependabotSecret($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -264,9 +264,9 @@ class Secrets implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Dependabot⚡️ListOrgSecrets⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Dependabot\ListOrgSecrets\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -278,7 +278,7 @@ class Secrets implements ObjectMapper
 
         if ($secretsSerializer0 === null) {
             $secretsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\OrganizationDependabotSecret',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\OrganizationDependabotSecret',
 ));
         }
         
@@ -290,9 +290,9 @@ class Secrets implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationDependabotSecret(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationDependabotSecret(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\OrganizationDependabotSecret);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret);
         $result = [];
 
         $name = $object->name;

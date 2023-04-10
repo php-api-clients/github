@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Cache;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Cache;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Usage implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository($payload),
+            'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class Usage implements ObjectMapper
             after_activeCachesCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class Usage implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository($object),
+            'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class Usage implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository);
         $result = [];
 
         $fullName = $object->fullName;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Gitignore\Templates;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Gitignore\Templates;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CbNameRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\GitignoreTemplate' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitignoreTemplate($payload),
+            'ApiClients\Client\GitHub\Schema\GitignoreTemplate' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitignoreTemplate($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitignoreTemplate(array $payload): \ApiClients\Client\Github\Schema\GitignoreTemplate
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitignoreTemplate(array $payload): \ApiClients\Client\GitHub\Schema\GitignoreTemplate
     {
         $properties = []; 
         $missingFields = [];
@@ -57,17 +57,17 @@ class CbNameRcb implements ObjectMapper
             after_source:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitignoreTemplate', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitignoreTemplate', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitignoreTemplate::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitignoreTemplate::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\GitignoreTemplate(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\GitignoreTemplate(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitignoreTemplate', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitignoreTemplate', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -102,7 +102,7 @@ class CbNameRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\GitignoreTemplate' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitignoreTemplate($object),
+            'ApiClients\Client\GitHub\Schema\GitignoreTemplate' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitignoreTemplate($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -176,9 +176,9 @@ class CbNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitignoreTemplate(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitignoreTemplate(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\GitignoreTemplate);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitignoreTemplate);
         $result = [];
 
         $name = $object->name;

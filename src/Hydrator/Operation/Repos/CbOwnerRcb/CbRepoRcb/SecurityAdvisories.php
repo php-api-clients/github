@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,26 +23,26 @@ class SecurityAdvisories implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory($payload),
-                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cwes($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Credits($payload),
-                'ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryCredit($payload),
-                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
-                'ApiClients\Client\Github\Schema\ScimError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ScimError($payload),
-                'ApiClients\Client\Github\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($payload),
-                'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($payload),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cwes($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Credits($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryCredit($payload),
+                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+                'ApiClients\Client\GitHub\Schema\ScimError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($payload),
+                'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
+                'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory
     {
         $properties = []; 
         $missingFields = [];
@@ -134,7 +134,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -154,7 +154,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'publisher';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -175,7 +175,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($identifiersCaster1 === null) {
                 $identifiersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Identifiers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Identifiers',
 ));
             }
 
@@ -261,7 +261,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'submission';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -282,7 +282,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($vulnerabilitiesCaster1 === null) {
                 $vulnerabilitiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisoryVulnerability',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisoryVulnerability',
 ));
             }
 
@@ -302,7 +302,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'cvss';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -323,7 +323,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($cwesCaster1 === null) {
                 $cwesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Cwes',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Cwes',
 ));
             }
 
@@ -355,7 +355,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($creditsCaster1 === null) {
                 $creditsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Credits',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Credits',
 ));
             }
 
@@ -376,7 +376,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($creditsDetailedCaster1 === null) {
                 $creditsDetailedCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisoryCredit',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisoryCredit',
 ));
             }
 
@@ -387,22 +387,22 @@ class SecurityAdvisories implements ObjectMapper
             after_creditsDetailed:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -639,22 +639,22 @@ class SecurityAdvisories implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers
     {
         $properties = []; 
         $missingFields = [];
@@ -682,22 +682,22 @@ class SecurityAdvisories implements ObjectMapper
             after_value:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission
     {
         $properties = []; 
         $missingFields = [];
@@ -714,22 +714,22 @@ class SecurityAdvisories implements ObjectMapper
             after_accepted:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability
     {
         $properties = []; 
         $missingFields = [];
@@ -744,7 +744,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'package';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -788,22 +788,22 @@ class SecurityAdvisories implements ObjectMapper
             after_vulnerableFunctions:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package
     {
         $properties = []; 
         $missingFields = [];
@@ -831,22 +831,22 @@ class SecurityAdvisories implements ObjectMapper
             after_name:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss
     {
         $properties = []; 
         $missingFields = [];
@@ -874,22 +874,22 @@ class SecurityAdvisories implements ObjectMapper
             after_score:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cwes(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cwes(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes
     {
         $properties = []; 
         $missingFields = [];
@@ -917,22 +917,22 @@ class SecurityAdvisories implements ObjectMapper
             after_name:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Credits(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Credits(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits
     {
         $properties = []; 
         $missingFields = [];
@@ -960,22 +960,22 @@ class SecurityAdvisories implements ObjectMapper
             after_type:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryCredit(array $payload): \ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryCredit(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit
     {
         $properties = []; 
         $missingFields = [];
@@ -990,7 +990,7 @@ class SecurityAdvisories implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1023,22 +1023,22 @@ class SecurityAdvisories implements ObjectMapper
             after_state:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -1088,22 +1088,22 @@ class SecurityAdvisories implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ScimError(array $payload): \ApiClients\Client\Github\Schema\ScimError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(array $payload): \ApiClients\Client\GitHub\Schema\ScimError
     {
         $properties = []; 
         $missingFields = [];
@@ -1175,22 +1175,22 @@ class SecurityAdvisories implements ObjectMapper
             after_schemas:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ScimError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ScimError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ScimError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ScimError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ScimError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ScimError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ScimError', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\Github\Schema\ValidationError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
     {
         $properties = []; 
         $missingFields = [];
@@ -1228,7 +1228,7 @@ class SecurityAdvisories implements ObjectMapper
 
             if ($errorsCaster1 === null) {
                 $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
 ));
             }
 
@@ -1239,22 +1239,22 @@ class SecurityAdvisories implements ObjectMapper
             after_errors:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ValidationError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\Github\Schema\ValidationError\Errors
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
     {
         $properties = []; 
         $missingFields = [];
@@ -1326,17 +1326,17 @@ class SecurityAdvisories implements ObjectMapper
             after_value:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\ValidationError\Errors(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -1371,20 +1371,20 @@ class SecurityAdvisories implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory($object),
-            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cwes($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Credits($object),
-            'ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryCredit($object),
-            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
-            'ApiClients\Client\Github\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ScimError($object),
-            'ApiClients\Client\Github\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($object),
-            'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory($object),
+            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cwes($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Credits($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryCredit($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
+            'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -1458,9 +1458,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory);
         $result = [];
 
         $ghsaId = $object->ghsaId;
@@ -1504,12 +1504,12 @@ class SecurityAdvisories implements ObjectMapper
 
         
         $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($author);
         after_author:        $result['author'] = $author;
 
         
         $publisher = $object->publisher;
-        $publisher = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($publisher);
+        $publisher = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($publisher);
         after_publisher:        $result['publisher'] = $publisher;
 
         
@@ -1518,7 +1518,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($identifiersSerializer0 === null) {
             $identifiersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Identifiers',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Identifiers',
 ));
         }
         
@@ -1575,7 +1575,7 @@ class SecurityAdvisories implements ObjectMapper
         if ($submission === null) {
             goto after_submission;
         }
-        $submission = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission($submission);
+        $submission = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($submission);
         after_submission:        $result['submission'] = $submission;
 
         
@@ -1588,7 +1588,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($vulnerabilitiesSerializer0 === null) {
             $vulnerabilitiesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisoryVulnerability',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisoryVulnerability',
 ));
         }
         
@@ -1601,7 +1601,7 @@ class SecurityAdvisories implements ObjectMapper
         if ($cvss === null) {
             goto after_cvss;
         }
-        $cvss = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($cvss);
+        $cvss = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($cvss);
         after_cvss:        $result['cvss'] = $cvss;
 
         
@@ -1614,7 +1614,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($cwesSerializer0 === null) {
             $cwesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Cwes',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Cwes',
 ));
         }
         
@@ -1647,7 +1647,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($creditsSerializer0 === null) {
             $creditsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisory\\Credits',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisory\\Credits',
 ));
         }
         
@@ -1664,7 +1664,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($creditsDetailedSerializer0 === null) {
             $creditsDetailedSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\RepositoryAdvisoryCredit',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\RepositoryAdvisoryCredit',
 ));
         }
         
@@ -1676,9 +1676,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -1785,9 +1785,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Identifiers(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory\Identifiers);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Identifiers);
         $result = [];
 
         $type = $object->type;
@@ -1802,9 +1802,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Submission(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory\Submission);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission);
         $result = [];
 
         $accepted = $object->accepted;
@@ -1815,9 +1815,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability);
         $result = [];
 
         $package = $object->package;
@@ -1825,7 +1825,7 @@ class SecurityAdvisories implements ObjectMapper
         if ($package === null) {
             goto after_package;
         }
-        $package = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($package);
+        $package = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package($package);
         after_package:        $result['package'] = $package;
 
         
@@ -1865,9 +1865,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryVulnerability⚡️Package(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisoryVulnerability\Package);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryVulnerability\Package);
         $result = [];
 
         $ecosystem = $object->ecosystem;
@@ -1886,9 +1886,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cvss(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cvss);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss);
         $result = [];
 
         $vectorString = $object->vectorString;
@@ -1911,9 +1911,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Cwes(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cwes(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory\Cwes);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cwes);
         $result = [];
 
         $cweId = $object->cweId;
@@ -1928,9 +1928,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisory⚡️Credits(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Credits(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisory\Credits);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Credits);
         $result = [];
 
         $login = $object->login;
@@ -1953,13 +1953,13 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RepositoryAdvisoryCredit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisoryCredit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\RepositoryAdvisoryCredit);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryAdvisoryCredit);
         $result = [];
 
         $user = $object->user;
-        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($user);
         after_user:        $result['user'] = $user;
 
         
@@ -1975,9 +1975,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
 
         $message = $object->message;
@@ -2016,9 +2016,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ScimError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ScimError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ScimError);
         $result = [];
 
         $message = $object->message;
@@ -2081,9 +2081,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError);
         $result = [];
 
         $message = $object->message;
@@ -2103,7 +2103,7 @@ class SecurityAdvisories implements ObjectMapper
 
         if ($errorsSerializer0 === null) {
             $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
 ));
         }
         
@@ -2115,9 +2115,9 @@ class SecurityAdvisories implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError\Errors);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError\Errors);
         $result = [];
 
         $resource = $object->resource;

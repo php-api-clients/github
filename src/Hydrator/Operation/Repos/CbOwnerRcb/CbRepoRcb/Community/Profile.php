@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Community;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Community;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Profile implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\CommunityProfile' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile($payload),
-                'ApiClients\Client\Github\Schema\CommunityProfile\Files' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files($payload),
+            'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($payload),
+                'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile(array $payload): \ApiClients\Client\Github\Schema\CommunityProfile
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile
     {
         $properties = []; 
         $missingFields = [];
@@ -78,7 +78,7 @@ class Profile implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'files';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -111,22 +111,22 @@ class Profile implements ObjectMapper
             after_contentReportsEnabled:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CommunityProfile::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CommunityProfile(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CommunityProfile(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files(array $payload): \ApiClients\Client\Github\Schema\CommunityProfile\Files
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files(array $payload): \ApiClients\Client\GitHub\Schema\CommunityProfile\Files
     {
         $properties = []; 
         $missingFields = [];
@@ -209,17 +209,17 @@ class Profile implements ObjectMapper
             after_pullRequestTemplate:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CommunityProfile\Files::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CommunityProfile\Files::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\CommunityProfile\Files(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\CommunityProfile\Files(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CommunityProfile\Files', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -254,8 +254,8 @@ class Profile implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\CommunityProfile' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile($object),
-            'ApiClients\Client\Github\Schema\CommunityProfile\Files' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files($object),
+            'ApiClients\Client\GitHub\Schema\CommunityProfile' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile($object),
+            'ApiClients\Client\GitHub\Schema\CommunityProfile\Files' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -329,9 +329,9 @@ class Profile implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CommunityProfile);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile);
         $result = [];
 
         $healthPercentage = $object->healthPercentage;
@@ -355,7 +355,7 @@ class Profile implements ObjectMapper
 
         
         $files = $object->files;
-        $files = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files($files);
+        $files = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files($files);
         after_files:        $result['files'] = $files;
 
         
@@ -379,9 +379,9 @@ class Profile implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CommunityProfile⚡️Files(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CommunityProfile⚡️Files(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\CommunityProfile\Files);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CommunityProfile\Files);
         $result = [];
 
         $codeOfConduct = $object->codeOfConduct;

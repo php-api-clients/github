@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Compare;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Compare;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,15 +23,15 @@ class CbBaseheadRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\DependencyGraphDiff' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff($payload),
-                'ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities($payload),
-                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\GitHub\Schema\DependencyGraphDiff' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff($payload),
+                'ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities($payload),
+                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphDiff
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphDiff
     {
         $properties = []; 
         $missingFields = [];
@@ -135,7 +135,7 @@ class CbBaseheadRcb implements ObjectMapper
 
             if ($vulnerabilitiesCaster1 === null) {
                 $vulnerabilitiesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphDiff\\Vulnerabilities',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphDiff\\Vulnerabilities',
 ));
             }
 
@@ -157,22 +157,22 @@ class CbBaseheadRcb implements ObjectMapper
             after_scope:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphDiff', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphDiff', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphDiff::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphDiff::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\DependencyGraphDiff(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\DependencyGraphDiff(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphDiff', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphDiff', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities
     {
         $properties = []; 
         $missingFields = [];
@@ -222,22 +222,22 @@ class CbBaseheadRcb implements ObjectMapper
             after_advisoryUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -287,17 +287,17 @@ class CbBaseheadRcb implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -332,9 +332,9 @@ class CbBaseheadRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\DependencyGraphDiff' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff($object),
-            'ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities($object),
-            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\GitHub\Schema\DependencyGraphDiff' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff($object),
+            'ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities($object),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -408,9 +408,9 @@ class CbBaseheadRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphDiff);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphDiff);
         $result = [];
 
         $changeType = $object->changeType;
@@ -462,7 +462,7 @@ class CbBaseheadRcb implements ObjectMapper
 
         if ($vulnerabilitiesSerializer0 === null) {
             $vulnerabilitiesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphDiff\\Vulnerabilities',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphDiff\\Vulnerabilities',
 ));
         }
         
@@ -478,9 +478,9 @@ class CbBaseheadRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphDiff⚡️Vulnerabilities(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphDiff\Vulnerabilities);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphDiff\Vulnerabilities);
         $result = [];
 
         $severity = $object->severity;
@@ -503,9 +503,9 @@ class CbBaseheadRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
         $result = [];
 
         $message = $object->message;

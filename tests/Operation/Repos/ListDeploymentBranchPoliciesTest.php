@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Repos;
+namespace ApiClients\Tests\Client\GitHub\Operation\Repos;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class ListDeploymentBranchPoliciesTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,7 +22,7 @@ final class ListDeploymentBranchPoliciesTest extends \WyriHaximus\AsyncTestUtili
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated_null/generated_null/environments/generated_null/deployment-branch-policies?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Repos\ListDeploymentBranchPolicies::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'environment_name' => 'generated_null', 'per_page' => 13, 'page' => 13));
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListDeploymentBranchPolicies::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'environment_name' => 'generated_null', 'per_page' => 13, 'page' => 13));
     }
 }

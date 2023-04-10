@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Orgs;
+namespace ApiClients\Tests\Client\GitHub\Operation\Orgs;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class CreateInvitationTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,8 +22,8 @@ final class CreateInvitationTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('POST', '/orgs/generated_null/invitations', \Prophecy\Argument::type('array'), Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
             $data['org'] = 'generated_null';
             return $data;
         })(json_decode(Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
@@ -41,8 +41,8 @@ final class CreateInvitationTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('POST', '/orgs/generated_null/invitations', \Prophecy\Argument::type('array'), Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
             $data['org'] = 'generated_null';
             return $data;
         })(json_decode(Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
@@ -60,8 +60,8 @@ final class CreateInvitationTest extends \WyriHaximus\AsyncTestUtilities\AsyncTe
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('POST', '/orgs/generated_null/invitations', \Prophecy\Argument::type('array'), Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\CreateInvitation::OPERATION_MATCH, (static function (array $data) : array {
             $data['org'] = 'generated_null';
             return $data;
         })(json_decode(Schema\Orgs\CreateInvitation\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));

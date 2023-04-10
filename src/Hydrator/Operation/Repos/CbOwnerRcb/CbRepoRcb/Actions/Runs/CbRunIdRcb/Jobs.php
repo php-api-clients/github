@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,15 +23,15 @@ class Jobs implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\Github\Schema\Job' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Job($payload),
-                'ApiClients\Client\Github\Schema\Job\Steps' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Job⚡️Steps($payload),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\GitHub\Schema\Job' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job($payload),
+                'ApiClients\Client\GitHub\Schema\Job\Steps' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job⚡️Steps($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -58,7 +58,7 @@ class Jobs implements ObjectMapper
 
             if ($jobsCaster1 === null) {
                 $jobsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\Job',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Job',
 ));
             }
 
@@ -69,22 +69,22 @@ class Jobs implements ObjectMapper
             after_jobs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Job(array $payload): \ApiClients\Client\Github\Schema\Job
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job(array $payload): \ApiClients\Client\GitHub\Schema\Job
     {
         $properties = []; 
         $missingFields = [];
@@ -254,7 +254,7 @@ class Jobs implements ObjectMapper
 
             if ($stepsCaster1 === null) {
                 $stepsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\Job\\Steps',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Job\\Steps',
 ));
             }
 
@@ -353,22 +353,22 @@ class Jobs implements ObjectMapper
             after_headBranch:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Job', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Job::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Job::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Job(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Job(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Job', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Job⚡️Steps(array $payload): \ApiClients\Client\Github\Schema\Job\Steps
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job⚡️Steps(array $payload): \ApiClients\Client\GitHub\Schema\Job\Steps
     {
         $properties = []; 
         $missingFields = [];
@@ -440,17 +440,17 @@ class Jobs implements ObjectMapper
             after_completedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Job\Steps', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job\Steps', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Job\Steps::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Job\Steps::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\Job\Steps(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Job\Steps(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Job\Steps', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Job\Steps', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -485,9 +485,9 @@ class Jobs implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\Github\Schema\Job' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Job($object),
-            'ApiClients\Client\Github\Schema\Job\Steps' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Job⚡️Steps($object),
+            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\GitHub\Schema\Job' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job($object),
+            'ApiClients\Client\GitHub\Schema\Job\Steps' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job⚡️Steps($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -561,9 +561,9 @@ class Jobs implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListJobsForWorkflowRun⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListJobsForWorkflowRun\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -575,7 +575,7 @@ class Jobs implements ObjectMapper
 
         if ($jobsSerializer0 === null) {
             $jobsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\Job',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Job',
 ));
         }
         
@@ -587,9 +587,9 @@ class Jobs implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Job(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Job);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Job);
         $result = [];
 
         $id = $object->id;
@@ -673,7 +673,7 @@ class Jobs implements ObjectMapper
 
         if ($stepsSerializer0 === null) {
             $stepsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\Github\\Schema\\Job\\Steps',
+  0 => 'ApiClients\\Client\\GitHub\\Schema\\Job\\Steps',
 ));
         }
         
@@ -749,9 +749,9 @@ class Jobs implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Job⚡️Steps(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Job⚡️Steps(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\Job\Steps);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Job\Steps);
         $result = [];
 
         $status = $object->status;

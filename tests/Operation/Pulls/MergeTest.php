@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Tests\Client\Github\Operation\Pulls;
+namespace ApiClients\Tests\Client\GitHub\Operation\Pulls;
 
-use ApiClients\Client\Github\Error as ErrorSchemas;
-use ApiClients\Client\Github\Hydrator;
-use ApiClients\Client\Github\Operation;
-use ApiClients\Client\Github\Schema;
-use ApiClients\Client\Github\WebHook;
+use ApiClients\Client\GitHub\Error as ErrorSchemas;
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\WebHook;
 final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
 {
     /**
@@ -22,8 +22,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;
@@ -43,8 +43,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;
@@ -64,8 +64,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;
@@ -85,8 +85,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;
@@ -106,8 +106,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;
@@ -127,8 +127,8 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/repos/generated_null/generated_null/pulls/13/merge', \Prophecy\Argument::type('array'), Schema\Pulls\Merge\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\Github\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\Github\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
+        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
+        $client->call(\ApiClients\Client\GitHub\Operation\Pulls\Merge::OPERATION_MATCH, (static function (array $data) : array {
             $data['owner'] = 'generated_null';
             $data['repo'] = 'generated_null';
             $data['pull_number'] = 13;

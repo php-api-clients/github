@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class License implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\Github\Schema\LicenseContent' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent($payload),
-                'ApiClients\Client\Github\Schema\LicenseContent\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links($payload),
+            'ApiClients\Client\GitHub\Schema\LicenseContent' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent($payload),
+                'ApiClients\Client\GitHub\Schema\LicenseContent\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent(array $payload): \ApiClients\Client\Github\Schema\LicenseContent
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent(array $payload): \ApiClients\Client\GitHub\Schema\LicenseContent
     {
         $properties = []; 
         $missingFields = [];
@@ -166,7 +166,7 @@ class License implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -188,22 +188,22 @@ class License implements ObjectMapper
             after_license:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\LicenseContent::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseContent::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\LicenseContent(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\LicenseContent(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links(array $payload): \ApiClients\Client\Github\Schema\LicenseContent\Links
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\LicenseContent\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -242,17 +242,17 @@ class License implements ObjectMapper
             after_self:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LicenseContent\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\LicenseContent\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseContent\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\Github\Schema\LicenseContent\Links(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\LicenseContent\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\LicenseContent\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseContent\Links', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -287,8 +287,8 @@ class License implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\Github\Schema\LicenseContent' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent($object),
-            'ApiClients\Client\Github\Schema\LicenseContent\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links($object),
+            'ApiClients\Client\GitHub\Schema\LicenseContent' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent($object),
+            'ApiClients\Client\GitHub\Schema\LicenseContent\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -362,9 +362,9 @@ class License implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\LicenseContent);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseContent);
         $result = [];
 
         $name = $object->name;
@@ -424,7 +424,7 @@ class License implements ObjectMapper
 
         
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -440,9 +440,9 @@ class License implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️LicenseContent⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseContent⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\Github\Schema\LicenseContent\Links);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseContent\Links);
         $result = [];
 
         $git = $object->git;
