@@ -129,7 +129,7 @@ class PullRequestReviewThread implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentCreated⚡️Comment⚡️Links⚡️Html($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentCreated⚡️Comment⚡️Links⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentCreated⚡️Comment⚡️Links⚡️Self_($payload),
@@ -6925,7 +6925,7 @@ class PullRequestReviewThread implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -17571,7 +17571,7 @@ class PullRequestReviewThread implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -20168,7 +20168,7 @@ class PullRequestReviewThread implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -20295,17 +20295,17 @@ class PullRequestReviewThread implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -24568,7 +24568,7 @@ class PullRequestReviewThread implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -30271,7 +30271,7 @@ class PullRequestReviewThread implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         

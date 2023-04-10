@@ -35,7 +35,6 @@ class TeamAdd implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -3357,7 +3356,7 @@ class TeamAdd implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3388,6 +3387,17 @@ class TeamAdd implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -3531,6 +3541,17 @@ class TeamAdd implements ObjectMapper
 
             after_privacy:
 
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
+
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
@@ -3576,148 +3597,6 @@ class TeamAdd implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -5704,7 +5583,7 @@ class TeamAdd implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -5722,6 +5601,14 @@ class TeamAdd implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -5791,6 +5678,10 @@ class TeamAdd implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;

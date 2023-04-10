@@ -109,7 +109,7 @@ class Comments implements ObjectMapper
             $value = $payload['position'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'position';
+                $properties['position'] = null;
                 goto after_position;
             }
 
@@ -120,7 +120,7 @@ class Comments implements ObjectMapper
             $value = $payload['original_position'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'original_position';
+                $properties['originalPosition'] = null;
                 goto after_originalPosition;
             }
 
@@ -1106,10 +1106,18 @@ class Comments implements ObjectMapper
 
         
         $position = $object->position;
+
+        if ($position === null) {
+            goto after_position;
+        }
         after_position:        $result['position'] = $position;
 
         
         $originalPosition = $object->originalPosition;
+
+        if ($originalPosition === null) {
+            goto after_originalPosition;
+        }
         after_originalPosition:        $result['original_position'] = $originalPosition;
 
         

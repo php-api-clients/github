@@ -21,7 +21,7 @@ abstract readonly class Abstract1c1a84a641f746f2c07c2deb51d9106a
      * permission: Permission that the team will have for its repositories
      * url: URL for the team
      */
-    public function __construct(public ?bool $deleted, public ?string $description, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('members_url')] public ?string $membersUrl, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public ?string $nodeId, public ?Schema\WebhookMembershipAdded\Team\Parent_ $parent, public ?string $permission, public ?string $privacy, #[\EventSauce\ObjectHydrator\MapFrom('repositories_url')] public ?string $repositoriesUrl, public ?string $slug, public ?string $url)
+    public function __construct(public ?bool $deleted, public ?string $description, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public ?string $htmlUrl, public int $id, #[\EventSauce\ObjectHydrator\MapFrom('members_url')] public ?string $membersUrl, public string $name, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public ?string $nodeId, public ?Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_ $parent, public ?string $permission, public ?string $privacy, #[\EventSauce\ObjectHydrator\MapFrom('repositories_url')] public ?string $repositoriesUrl, public ?string $slug, public ?string $url)
     {
     }
 }

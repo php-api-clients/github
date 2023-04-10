@@ -53,6 +53,7 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Description' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Description($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Name' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Name($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Privacy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Privacy($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository\Permissions\From' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository⚡️Permissions⚡️From($payload),
@@ -72,7 +73,7 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -2332,7 +2333,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2363,6 +2364,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -2505,6 +2517,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -4230,7 +4253,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4261,6 +4284,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -4403,6 +4437,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -6128,7 +6173,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6159,6 +6204,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -6301,6 +6357,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -6588,6 +6655,26 @@ class Team implements ObjectMapper
 
             after_privacy:
 
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'notificationSetting';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
+
             $value = $payload['repository'] ?? null;
 
             if ($value === null) {
@@ -6716,6 +6803,38 @@ class Team implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Privacy(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Privacy', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'from';
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -8379,7 +8498,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8410,6 +8529,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -8552,6 +8682,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -10277,7 +10418,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10308,6 +10449,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -10450,6 +10602,17 @@ class Team implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['repositories_url'] ?? null;
 
@@ -10904,7 +11067,7 @@ class Team implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -10997,6 +11160,17 @@ class Team implements ObjectMapper
 
             after_privacy:
 
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'notification_setting';
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
+
             $value = $payload['repositories_url'] ?? null;
 
             if ($value === null) {
@@ -11031,17 +11205,17 @@ class Team implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMembershipAdded\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -11106,6 +11280,7 @@ class Team implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Description' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Description($object),
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Name' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Name($object),
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Privacy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Privacy($object),
+            'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting($object),
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository($object),
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository⚡️Permissions($object),
             'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Repository\Permissions\From' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Repository⚡️Permissions⚡️From($object),
@@ -12263,7 +12438,7 @@ class Team implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -12281,6 +12456,14 @@ class Team implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -12350,6 +12533,10 @@ class Team implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -13180,7 +13367,7 @@ class Team implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -13198,6 +13385,14 @@ class Team implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -13267,6 +13462,10 @@ class Team implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -14101,7 +14300,7 @@ class Team implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -14119,6 +14318,14 @@ class Team implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -14188,6 +14395,10 @@ class Team implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -14298,6 +14509,15 @@ class Team implements ObjectMapper
         after_privacy:        $result['privacy'] = $privacy;
 
         
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        $notificationSetting = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting($notificationSetting);
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
+
+        
         $repository = $object->repository;
 
         if ($repository === null) {
@@ -14340,6 +14560,19 @@ class Team implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Privacy(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Privacy);
+        $result = [];
+
+        $from = $object->from;
+        after_from:        $result['from'] = $from;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️NotificationSetting(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\NotificationSetting);
         $result = [];
 
         $from = $object->from;
@@ -15168,7 +15401,7 @@ class Team implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -15186,6 +15419,14 @@ class Team implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -15255,6 +15496,10 @@ class Team implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -16085,7 +16330,7 @@ class Team implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipAdded⚡️Team⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -16103,6 +16348,14 @@ class Team implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;
@@ -16172,6 +16425,10 @@ class Team implements ObjectMapper
         
         $privacy = $object->privacy;
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $repositoriesUrl = $object->repositoriesUrl;

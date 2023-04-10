@@ -107,6 +107,17 @@ class Teams implements ObjectMapper
 
             after_privacy:
 
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
+
             $value = $payload['permission'] ?? null;
 
             if ($value === null) {
@@ -442,6 +453,17 @@ class Teams implements ObjectMapper
             $properties['privacy'] = $value;
 
             after_privacy:
+
+            $value = $payload['notification_setting'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationSetting'] = null;
+                goto after_notificationSetting;
+            }
+
+            $properties['notificationSetting'] = $value;
+
+            after_notificationSetting:
 
             $value = $payload['permission'] ?? null;
 
@@ -1511,6 +1533,14 @@ class Teams implements ObjectMapper
         after_privacy:        $result['privacy'] = $privacy;
 
         
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
+
+        
         $permission = $object->permission;
         after_permission:        $result['permission'] = $permission;
 
@@ -1665,6 +1695,14 @@ class Teams implements ObjectMapper
             goto after_privacy;
         }
         after_privacy:        $result['privacy'] = $privacy;
+
+        
+        $notificationSetting = $object->notificationSetting;
+
+        if ($notificationSetting === null) {
+            goto after_notificationSetting;
+        }
+        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
 
         
         $permission = $object->permission;

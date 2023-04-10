@@ -20,7 +20,7 @@ final class GetReadmeInDirectory
     private string $repo;
     /**The alternate path to look for a README file**/
     private string $dir;
-    /**The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)**/
+    /**The name of the commit/branch/tag. Default: the repository’s default branch.**/
     private string $ref;
     private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Readme\CbDirRcb $hydrator;

@@ -990,17 +990,6 @@ class Installation implements ObjectMapper
 
             after_pullRequests:
 
-            $value = $payload['repository_announcement_banners'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoryAnnouncementBanners'] = null;
-                goto after_repositoryAnnouncementBanners;
-            }
-
-            $properties['repositoryAnnouncementBanners'] = $value;
-
-            after_repositoryAnnouncementBanners:
-
             $value = $payload['repository_hooks'] ?? null;
 
             if ($value === null) {
@@ -5811,14 +5800,6 @@ class Installation implements ObjectMapper
             goto after_pullRequests;
         }
         after_pullRequests:        $result['pull_requests'] = $pullRequests;
-
-        
-        $repositoryAnnouncementBanners = $object->repositoryAnnouncementBanners;
-
-        if ($repositoryAnnouncementBanners === null) {
-            goto after_repositoryAnnouncementBanners;
-        }
-        after_repositoryAnnouncementBanners:        $result['repository_announcement_banners'] = $repositoryAnnouncementBanners;
 
         
         $repositoryHooks = $object->repositoryHooks;
