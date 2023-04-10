@@ -17,7 +17,7 @@ final readonly class LabelSearchResultItem
     /**
      * @param ?array<\ApiClients\Client\GitHub\Schema\SearchResultTextMatches> $textMatches
      */
-    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public string $name, public string $color, public bool $default, public ?string $description, public float $score, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
+    public function __construct(public int $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public string $url, public string $name, public string $color, public bool $default, public ?string $description, public int|float $score, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
     {
     }
 }

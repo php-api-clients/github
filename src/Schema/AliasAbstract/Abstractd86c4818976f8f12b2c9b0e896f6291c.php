@@ -17,7 +17,7 @@ abstract readonly class Abstractd86c4818976f8f12b2c9b0e896f6291c
     /**
      * @param array<\ApiClients\Client\GitHub\Schema\Repository> $repositories
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('total_count')] public float $totalCount, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Repository::class)] public array $repositories)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('total_count')] public int|float $totalCount, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Repository::class)] public array $repositories)
     {
     }
 }

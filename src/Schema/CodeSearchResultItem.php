@@ -19,7 +19,7 @@ final readonly class CodeSearchResultItem
      * @param ?array<string> $lineNumbers
      * @param ?array<\ApiClients\Client\GitHub\Schema\SearchResultTextMatches> $textMatches
      */
-    public function __construct(public string $name, public string $path, public string $sha, public string $url, #[\EventSauce\ObjectHydrator\MapFrom('git_url')] public string $gitUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public Schema\MinimalRepository $repository, public float $score, #[\EventSauce\ObjectHydrator\MapFrom('file_size')] public ?int $fileSize, public ?string $language, #[\EventSauce\ObjectHydrator\MapFrom('last_modified_at')] public ?string $lastModifiedAt, #[\EventSauce\ObjectHydrator\MapFrom('line_numbers')] public ?array $lineNumbers, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
+    public function __construct(public string $name, public string $path, public string $sha, public string $url, #[\EventSauce\ObjectHydrator\MapFrom('git_url')] public string $gitUrl, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, public Schema\MinimalRepository $repository, public int|float $score, #[\EventSauce\ObjectHydrator\MapFrom('file_size')] public ?int $fileSize, public ?string $language, #[\EventSauce\ObjectHydrator\MapFrom('last_modified_at')] public ?string $lastModifiedAt, #[\EventSauce\ObjectHydrator\MapFrom('line_numbers')] public ?array $lineNumbers, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
     {
     }
 }

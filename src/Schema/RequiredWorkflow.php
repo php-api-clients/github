@@ -23,7 +23,7 @@ final readonly class RequiredWorkflow
      * state: State of the required workflow
      * repository: Minimal Repository
      */
-    public function __construct(public float $id, public string $name, public string $path, public string $scope, public string $ref, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('selected_repositories_url')] public ?string $selectedRepositoriesUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public Schema\MinimalRepository $repository)
+    public function __construct(public int|float $id, public string $name, public string $path, public string $scope, public string $ref, public string $state, #[\EventSauce\ObjectHydrator\MapFrom('selected_repositories_url')] public ?string $selectedRepositoriesUrl, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public Schema\MinimalRepository $repository)
     {
     }
 }

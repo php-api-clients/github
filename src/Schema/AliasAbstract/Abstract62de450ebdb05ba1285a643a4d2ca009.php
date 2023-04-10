@@ -14,7 +14,7 @@ abstract readonly class Abstract62de450ebdb05ba1285a643a4d2ca009
     public const SCHEMA_TITLE = '';
     public const SCHEMA_DESCRIPTION = '';
     public const SCHEMA_EXAMPLE_DATA = '{"base":{"ref":"generated_ref_null","repo":{"id":13,"name":"generated_name_null","url":"https:\\/\\/example.com\\/"},"sha":"generated_sha_null"},"head":{"ref":"generated_ref_null","repo":{"id":13,"name":"generated_name_null","url":"https:\\/\\/example.com\\/"},"sha":"generated_sha_null"},"id":13.13,"number":13.13,"url":"https:\\/\\/example.com\\/"}';
-    public function __construct(public Schema\WebhookWorkflowRunCompleted\WorkflowRun\PullRequests\Base $base, public Schema\WebhookWorkflowRunCompleted\WorkflowRun\PullRequests\Head $head, public float $id, public float $number, public string $url)
+    public function __construct(public Schema\WebhookWorkflowRunCompleted\WorkflowRun\PullRequests\Base $base, public Schema\WebhookWorkflowRunCompleted\WorkflowRun\PullRequests\Head $head, public int|float $id, public int|float $number, public string $url)
     {
     }
 }

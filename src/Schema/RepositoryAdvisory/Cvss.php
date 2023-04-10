@@ -18,7 +18,7 @@ final readonly class Cvss
      * vectorString: The CVSS vector.
      * score: The CVSS score.
      */
-    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('vector_string')] public ?string $vectorString, public ?float $score)
+    public function __construct(#[\EventSauce\ObjectHydrator\MapFrom('vector_string')] public ?string $vectorString, public null|int|float $score)
     {
     }
 }

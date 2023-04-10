@@ -18,7 +18,7 @@ final readonly class ProjectsV2
      * owner: A GitHub user.
      * creator: A GitHub user.
      */
-    public function __construct(public float $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public Schema\SimpleUser $owner, public Schema\SimpleUser $creator, public string $title, public ?string $description, public bool $public, #[\EventSauce\ObjectHydrator\MapFrom('closed_at')] public ?string $closedAt, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public int $number, #[\EventSauce\ObjectHydrator\MapFrom('short_description')] public ?string $shortDescription, #[\EventSauce\ObjectHydrator\MapFrom('deleted_at')] public ?string $deletedAt, #[\EventSauce\ObjectHydrator\MapFrom('deleted_by')] public mixed $deletedBy)
+    public function __construct(public int|float $id, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, public Schema\SimpleUser $owner, public Schema\SimpleUser $creator, public string $title, public ?string $description, public bool $public, #[\EventSauce\ObjectHydrator\MapFrom('closed_at')] public ?string $closedAt, #[\EventSauce\ObjectHydrator\MapFrom('created_at')] public string $createdAt, #[\EventSauce\ObjectHydrator\MapFrom('updated_at')] public string $updatedAt, public int $number, #[\EventSauce\ObjectHydrator\MapFrom('short_description')] public ?string $shortDescription, #[\EventSauce\ObjectHydrator\MapFrom('deleted_at')] public ?string $deletedAt, #[\EventSauce\ObjectHydrator\MapFrom('deleted_by')] public mixed $deletedBy)
     {
     }
 }

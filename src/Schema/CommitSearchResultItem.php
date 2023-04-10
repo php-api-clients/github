@@ -19,7 +19,7 @@ final readonly class CommitSearchResultItem
      * repository: Minimal Repository
      * @param ?array<\ApiClients\Client\GitHub\Schema\SearchResultTextMatches> $textMatches
      */
-    public function __construct(public string $url, public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('comments_url')] public string $commentsUrl, public Schema\CommitSearchResultItem\Commit $commit, public mixed $author, public mixed $committer, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CommitSearchResultItem\Parents::class)] public array $parents, public Schema\MinimalRepository $repository, public float $score, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
+    public function __construct(public string $url, public string $sha, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('comments_url')] public string $commentsUrl, public Schema\CommitSearchResultItem\Commit $commit, public mixed $author, public mixed $committer, #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\CommitSearchResultItem\Parents::class)] public array $parents, public Schema\MinimalRepository $repository, public int|float $score, #[\EventSauce\ObjectHydrator\MapFrom('node_id')] public string $nodeId, #[\EventSauce\ObjectHydrator\MapFrom('text_matches')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\SearchResultTextMatches::class)] public ?array $textMatches)
     {
     }
 }

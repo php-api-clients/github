@@ -18,7 +18,7 @@ final readonly class Cvss
      * score: The overall CVSS score of the advisory.
      * vectorString: The full CVSS vector string for the advisory.
      */
-    public function __construct(public float $score, #[\EventSauce\ObjectHydrator\MapFrom('vector_string')] public ?string $vectorString)
+    public function __construct(public int|float $score, #[\EventSauce\ObjectHydrator\MapFrom('vector_string')] public ?string $vectorString)
     {
     }
 }

@@ -25,7 +25,7 @@ final readonly class SecretScanningLocationCommit
      * commitSha: SHA-1 hash ID of the associated commit
      * commitUrl: The API URL to get the associated commit resource
      */
-    public function __construct(public string $path, #[\EventSauce\ObjectHydrator\MapFrom('start_line')] public float $startLine, #[\EventSauce\ObjectHydrator\MapFrom('end_line')] public float $endLine, #[\EventSauce\ObjectHydrator\MapFrom('start_column')] public float $startColumn, #[\EventSauce\ObjectHydrator\MapFrom('end_column')] public float $endColumn, #[\EventSauce\ObjectHydrator\MapFrom('blob_sha')] public string $blobSha, #[\EventSauce\ObjectHydrator\MapFrom('blob_url')] public string $blobUrl, #[\EventSauce\ObjectHydrator\MapFrom('commit_sha')] public string $commitSha, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public string $commitUrl)
+    public function __construct(public string $path, #[\EventSauce\ObjectHydrator\MapFrom('start_line')] public int|float $startLine, #[\EventSauce\ObjectHydrator\MapFrom('end_line')] public int|float $endLine, #[\EventSauce\ObjectHydrator\MapFrom('start_column')] public int|float $startColumn, #[\EventSauce\ObjectHydrator\MapFrom('end_column')] public int|float $endColumn, #[\EventSauce\ObjectHydrator\MapFrom('blob_sha')] public string $blobSha, #[\EventSauce\ObjectHydrator\MapFrom('blob_url')] public string $blobUrl, #[\EventSauce\ObjectHydrator\MapFrom('commit_sha')] public string $commitSha, #[\EventSauce\ObjectHydrator\MapFrom('commit_url')] public string $commitUrl)
     {
     }
 }
