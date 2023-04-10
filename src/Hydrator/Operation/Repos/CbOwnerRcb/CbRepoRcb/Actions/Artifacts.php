@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,15 +23,15 @@ class Artifacts implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\GitHub\Schema\Artifact' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact($payload),
-                'ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($payload),
+            'ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\Github\Schema\Artifact' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact($payload),
+                'ApiClients\Client\Github\Schema\Artifact\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -58,7 +58,7 @@ class Artifacts implements ObjectMapper
 
             if ($artifactsCaster1 === null) {
                 $artifactsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Artifact',
+  0 => 'ApiClients\\Client\\Github\\Schema\\Artifact',
 ));
             }
 
@@ -69,22 +69,22 @@ class Artifacts implements ObjectMapper
             after_artifacts:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact(array $payload): \ApiClients\Client\GitHub\Schema\Artifact
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact(array $payload): \ApiClients\Client\Github\Schema\Artifact
     {
         $properties = []; 
         $missingFields = [];
@@ -209,7 +209,7 @@ class Artifacts implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflowRun';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -220,22 +220,22 @@ class Artifacts implements ObjectMapper
             after_workflowRun:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Artifact', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Artifact::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Artifact(...$properties);
+            return new \ApiClients\Client\Github\Schema\Artifact(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Artifact', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun(array $payload): \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun(array $payload): \ApiClients\Client\Github\Schema\Artifact\WorkflowRun
     {
         $properties = []; 
         $missingFields = [];
@@ -296,17 +296,17 @@ class Artifacts implements ObjectMapper
             after_headSha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Artifact\WorkflowRun::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun(...$properties);
+            return new \ApiClients\Client\Github\Schema\Artifact\WorkflowRun(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Artifact\WorkflowRun', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -341,9 +341,9 @@ class Artifacts implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\GitHub\Schema\Artifact' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact($object),
-            'ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($object),
+            'ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\Github\Schema\Artifact' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact($object),
+            'ApiClients\Client\Github\Schema\Artifact\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -417,9 +417,9 @@ class Artifacts implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListArtifactsForRepo⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Actions\ListArtifactsForRepo\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -431,7 +431,7 @@ class Artifacts implements ObjectMapper
 
         if ($artifactsSerializer0 === null) {
             $artifactsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Artifact',
+  0 => 'ApiClients\\Client\\Github\\Schema\\Artifact',
 ));
         }
         
@@ -443,9 +443,9 @@ class Artifacts implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Artifact);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Artifact);
         $result = [];
 
         $id = $object->id;
@@ -505,7 +505,7 @@ class Artifacts implements ObjectMapper
         if ($workflowRun === null) {
             goto after_workflowRun;
         }
-        $workflowRun = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun($workflowRun);
+        $workflowRun = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun($workflowRun);
         after_workflowRun:        $result['workflow_run'] = $workflowRun;
 
 
@@ -513,9 +513,9 @@ class Artifacts implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Artifact⚡️WorkflowRun(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Artifact⚡️WorkflowRun(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Artifact\WorkflowRun);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Artifact\WorkflowRun);
         $result = [];
 
         $id = $object->id;

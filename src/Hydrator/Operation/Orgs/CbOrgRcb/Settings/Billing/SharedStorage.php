@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing;
+namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class SharedStorage implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\CombinedBillingUsage' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CombinedBillingUsage($payload),
+            'ApiClients\Client\Github\Schema\CombinedBillingUsage' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CombinedBillingUsage($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CombinedBillingUsage(array $payload): \ApiClients\Client\GitHub\Schema\CombinedBillingUsage
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️CombinedBillingUsage(array $payload): \ApiClients\Client\Github\Schema\CombinedBillingUsage
     {
         $properties = []; 
         $missingFields = [];
@@ -68,17 +68,17 @@ class SharedStorage implements ObjectMapper
             after_estimatedStorageForMonth:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CombinedBillingUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CombinedBillingUsage', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CombinedBillingUsage::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\CombinedBillingUsage::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\CombinedBillingUsage(...$properties);
+            return new \ApiClients\Client\Github\Schema\CombinedBillingUsage(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CombinedBillingUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\CombinedBillingUsage', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -113,7 +113,7 @@ class SharedStorage implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\CombinedBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CombinedBillingUsage($object),
+            'ApiClients\Client\Github\Schema\CombinedBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CombinedBillingUsage($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -187,9 +187,9 @@ class SharedStorage implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CombinedBillingUsage(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️CombinedBillingUsage(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CombinedBillingUsage);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\CombinedBillingUsage);
         $result = [];
 
         $daysLeftInBillingCycle = $object->daysLeftInBillingCycle;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing;
+namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Actions implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ActionsBillingUsage' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage($payload),
-                'ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($payload),
+            'ApiClients\Client\Github\Schema\ActionsBillingUsage' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage($payload),
+                'ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage(array $payload): \ApiClients\Client\GitHub\Schema\ActionsBillingUsage
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage(array $payload): \ApiClients\Client\Github\Schema\ActionsBillingUsage
     {
         $properties = []; 
         $missingFields = [];
@@ -78,7 +78,7 @@ class Actions implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'minutesUsedBreakdown';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -89,22 +89,22 @@ class Actions implements ObjectMapper
             after_minutesUsedBreakdown:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsBillingUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsBillingUsage', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsBillingUsage::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsBillingUsage::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsBillingUsage(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsBillingUsage(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsBillingUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsBillingUsage', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown(array $payload): \ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown(array $payload): \ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown
     {
         $properties = []; 
         $missingFields = [];
@@ -275,17 +275,17 @@ class Actions implements ObjectMapper
             after_total:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -320,8 +320,8 @@ class Actions implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ActionsBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage($object),
-            'ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($object),
+            'ApiClients\Client\Github\Schema\ActionsBillingUsage' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage($object),
+            'ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -395,9 +395,9 @@ class Actions implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsBillingUsage);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsBillingUsage);
         $result = [];
 
         $totalMinutesUsed = $object->totalMinutesUsed;
@@ -413,7 +413,7 @@ class Actions implements ObjectMapper
 
         
         $minutesUsedBreakdown = $object->minutesUsedBreakdown;
-        $minutesUsedBreakdown = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($minutesUsedBreakdown);
+        $minutesUsedBreakdown = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown($minutesUsedBreakdown);
         after_minutesUsedBreakdown:        $result['minutes_used_breakdown'] = $minutesUsedBreakdown;
 
 
@@ -421,9 +421,9 @@ class Actions implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsBillingUsage⚡️MinutesUsedBreakdown(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsBillingUsage\MinutesUsedBreakdown);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsBillingUsage\MinutesUsedBreakdown);
         $result = [];
 
         $ubuntu = $object->ubuntu;

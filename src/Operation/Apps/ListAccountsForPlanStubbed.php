@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\Apps;
+namespace ApiClients\Client\Github\Operation\Apps;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class ListAccountsForPlanStubbed
 {
     public const OPERATION_ID = 'apps/list-accounts-for-plan-stubbed';
@@ -36,14 +36,14 @@ final class ListAccountsForPlanStubbed
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'), array($this->planId, $this->direction, $this->sort, $this->perPage, $this->page), self::PATH . '?direction={direction}&sort={sort}&perPage={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'), array($this->planId, $this->direction, $this->sort, $this->perPage, $this->page), self::PATH . '?direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\MarketplacePurchase>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

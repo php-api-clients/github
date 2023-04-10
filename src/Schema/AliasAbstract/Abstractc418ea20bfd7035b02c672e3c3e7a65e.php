@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract;
+namespace ApiClients\Client\Github\Schema\AliasAbstract;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 abstract readonly class Abstractc418ea20bfd7035b02c672e3c3e7a65e
 {
     public const SCHEMA_JSON = '{"title":"branch protection rule","required":["id","repository_id","name","created_at","updated_at","pull_request_reviews_enforcement_level","required_approving_review_count","dismiss_stale_reviews_on_push","require_code_owner_review","authorized_dismissal_actors_only","ignore_approvals_from_contributors","required_status_checks","required_status_checks_enforcement_level","strict_required_status_checks_policy","signature_requirement_enforcement_level","linear_history_requirement_enforcement_level","admin_enforced","allow_force_pushes_enforcement_level","allow_deletions_enforcement_level","merge_queue_enforcement_level","required_deployments_enforcement_level","required_conversation_resolution_level","authorized_actors_only","authorized_actor_names"],"type":"object","properties":{"admin_enforced":{"type":"boolean"},"allow_deletions_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"allow_force_pushes_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"authorized_actor_names":{"type":"array","items":{"type":"string"}},"authorized_actors_only":{"type":"boolean"},"authorized_dismissal_actors_only":{"type":"boolean"},"create_protected":{"type":"boolean"},"created_at":{"type":"string","format":"date-time"},"dismiss_stale_reviews_on_push":{"type":"boolean"},"id":{"type":"integer"},"ignore_approvals_from_contributors":{"type":"boolean"},"linear_history_requirement_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"merge_queue_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"name":{"type":"string"},"pull_request_reviews_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"repository_id":{"type":"integer"},"require_code_owner_review":{"type":"boolean"},"required_approving_review_count":{"type":"integer"},"required_conversation_resolution_level":{"enum":["off","non_admins","everyone"],"type":"string"},"required_deployments_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"required_status_checks":{"type":"array","items":{"type":"string"}},"required_status_checks_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"signature_requirement_enforcement_level":{"enum":["off","non_admins","everyone"],"type":"string"},"strict_required_status_checks_policy":{"type":"boolean"},"updated_at":{"type":"string","format":"date-time"}},"description":"The branch protection rule. Includes a `name` and all the [branch protection settings](https:\\/\\/docs.github.com\\/github\\/administering-a-repository\\/defining-the-mergeability-of-pull-requests\\/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings."}';

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Git;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,18 +23,18 @@ class Tags implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\GitTag' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag($payload),
-                'ApiClients\Client\GitHub\Schema\GitTag\Tagger' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger($payload),
-                'ApiClients\Client\GitHub\Schema\GitTag\Object_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_($payload),
-                'ApiClients\Client\GitHub\Schema\Verification' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification($payload),
-                'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
-                'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
+            'ApiClients\Client\Github\Schema\GitTag' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag($payload),
+                'ApiClients\Client\Github\Schema\GitTag\Tagger' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger($payload),
+                'ApiClients\Client\Github\Schema\GitTag\Object_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_($payload),
+                'ApiClients\Client\Github\Schema\Verification' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification($payload),
+                'ApiClients\Client\Github\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($payload),
+                'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag(array $payload): \ApiClients\Client\GitHub\Schema\GitTag
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag(array $payload): \ApiClients\Client\Github\Schema\GitTag
     {
         $properties = []; 
         $missingFields = [];
@@ -104,7 +104,7 @@ class Tags implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'tagger';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -124,7 +124,7 @@ class Tags implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'object';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -144,7 +144,7 @@ class Tags implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'verification';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -155,22 +155,22 @@ class Tags implements ObjectMapper
             after_verification:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitTag::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitTag::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\GitTag(...$properties);
+            return new \ApiClients\Client\Github\Schema\GitTag(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger(array $payload): \ApiClients\Client\GitHub\Schema\GitTag\Tagger
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger(array $payload): \ApiClients\Client\Github\Schema\GitTag\Tagger
     {
         $properties = []; 
         $missingFields = [];
@@ -209,22 +209,22 @@ class Tags implements ObjectMapper
             after_name:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag\Tagger', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag\Tagger', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitTag\Tagger::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitTag\Tagger::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\GitTag\Tagger(...$properties);
+            return new \ApiClients\Client\Github\Schema\GitTag\Tagger(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag\Tagger', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag\Tagger', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_(array $payload): \ApiClients\Client\GitHub\Schema\GitTag\Object_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_(array $payload): \ApiClients\Client\Github\Schema\GitTag\Object_
     {
         $properties = []; 
         $missingFields = [];
@@ -263,22 +263,22 @@ class Tags implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag\Object_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag\Object_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GitTag\Object_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\GitTag\Object_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\GitTag\Object_(...$properties);
+            return new \ApiClients\Client\Github\Schema\GitTag\Object_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitTag\Object_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\GitTag\Object_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification(array $payload): \ApiClients\Client\GitHub\Schema\Verification
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification(array $payload): \ApiClients\Client\Github\Schema\Verification
     {
         $properties = []; 
         $missingFields = [];
@@ -328,22 +328,22 @@ class Tags implements ObjectMapper
             after_signature:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Verification', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Verification', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Verification::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Verification::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Verification(...$properties);
+            return new \ApiClients\Client\Github\Schema\Verification(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Verification', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Verification', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\Github\Schema\ValidationError
     {
         $properties = []; 
         $missingFields = [];
@@ -381,7 +381,7 @@ class Tags implements ObjectMapper
 
             if ($errorsCaster1 === null) {
                 $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
 ));
             }
 
@@ -392,22 +392,22 @@ class Tags implements ObjectMapper
             after_errors:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
+            return new \ApiClients\Client\Github\Schema\ValidationError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\Github\Schema\ValidationError\Errors
     {
         $properties = []; 
         $missingFields = [];
@@ -479,17 +479,17 @@ class Tags implements ObjectMapper
             after_value:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
+            return new \ApiClients\Client\Github\Schema\ValidationError\Errors(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -524,12 +524,12 @@ class Tags implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\GitTag' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag($object),
-            'ApiClients\Client\GitHub\Schema\GitTag\Tagger' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger($object),
-            'ApiClients\Client\GitHub\Schema\GitTag\Object_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_($object),
-            'ApiClients\Client\GitHub\Schema\Verification' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification($object),
-            'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
-            'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
+            'ApiClients\Client\Github\Schema\GitTag' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag($object),
+            'ApiClients\Client\Github\Schema\GitTag\Tagger' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger($object),
+            'ApiClients\Client\Github\Schema\GitTag\Object_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_($object),
+            'ApiClients\Client\Github\Schema\Verification' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification($object),
+            'ApiClients\Client\Github\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError($object),
+            'ApiClients\Client\Github\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -603,9 +603,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitTag);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\GitTag);
         $result = [];
 
         $nodeId = $object->nodeId;
@@ -629,12 +629,12 @@ class Tags implements ObjectMapper
 
         
         $tagger = $object->tagger;
-        $tagger = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger($tagger);
+        $tagger = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger($tagger);
         after_tagger:        $result['tagger'] = $tagger;
 
         
         $object = $object->object;
-        $object = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_($object);
+        $object = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_($object);
         after_object:        $result['object'] = $object;
 
         
@@ -643,7 +643,7 @@ class Tags implements ObjectMapper
         if ($verification === null) {
             goto after_verification;
         }
-        $verification = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification($verification);
+        $verification = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification($verification);
         after_verification:        $result['verification'] = $verification;
 
 
@@ -651,9 +651,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Tagger(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Tagger(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitTag\Tagger);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\GitTag\Tagger);
         $result = [];
 
         $date = $object->date;
@@ -672,9 +672,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GitTag⚡️Object_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️GitTag⚡️Object_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\GitTag\Object_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\GitTag\Object_);
         $result = [];
 
         $sha = $object->sha;
@@ -693,9 +693,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Verification(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Verification(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Verification);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Verification);
         $result = [];
 
         $verified = $object->verified;
@@ -726,9 +726,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError);
         $result = [];
 
         $message = $object->message;
@@ -748,7 +748,7 @@ class Tags implements ObjectMapper
 
         if ($errorsSerializer0 === null) {
             $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ValidationError\\Errors',
 ));
         }
         
@@ -760,9 +760,9 @@ class Tags implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError\Errors);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ValidationError\Errors);
         $result = [];
 
         $resource = $object->resource;

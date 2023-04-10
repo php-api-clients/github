@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Cache;
+namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Cache;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class UsageByRepository implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($payload),
+            'ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -57,7 +57,7 @@ class UsageByRepository implements ObjectMapper
 
             if ($repositoryCacheUsagesCaster1 === null) {
                 $repositoryCacheUsagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageByRepository',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsCacheUsageByRepository',
 ));
             }
 
@@ -68,22 +68,22 @@ class UsageByRepository implements ObjectMapper
             after_repositoryCacheUsages:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository(array $payload): \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository
     {
         $properties = []; 
         $missingFields = [];
@@ -122,17 +122,17 @@ class UsageByRepository implements ObjectMapper
             after_activeCachesCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -167,8 +167,8 @@ class UsageByRepository implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository($object),
+            'ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -242,9 +242,9 @@ class UsageByRepository implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️GetActionsCacheUsageByRepoForOrg⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Actions\GetActionsCacheUsageByRepoForOrg\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -256,7 +256,7 @@ class UsageByRepository implements ObjectMapper
 
         if ($repositoryCacheUsagesSerializer0 === null) {
             $repositoryCacheUsagesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageByRepository',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsCacheUsageByRepository',
 ));
         }
         
@@ -268,9 +268,9 @@ class UsageByRepository implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheUsageByRepository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheUsageByRepository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheUsageByRepository);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsCacheUsageByRepository);
         $result = [];
 
         $fullName = $object->fullName;

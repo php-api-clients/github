@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Schema\Migrations\StartForOrg\Request;
+namespace ApiClients\Client\Github\Schema\Migrations\StartForOrg\Request;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final readonly class Applicationjson
 {
     public const SCHEMA_JSON = '{"required":["repositories"],"type":"object","properties":{"repositories":{"type":"array","items":{"type":"string"},"description":"A list of arrays indicating which repositories should be migrated."},"lock_repositories":{"type":"boolean","description":"Indicates whether repositories should be locked (to prevent manipulation) while migrating data.","default":false,"examples":[true]},"exclude_metadata":{"type":"boolean","description":"Indicates whether metadata should be excluded and only git source should be included for the migration.","default":false},"exclude_git_data":{"type":"boolean","description":"Indicates whether the repository git data should be excluded from the migration.","default":false},"exclude_attachments":{"type":"boolean","description":"Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).","default":false,"examples":[true]},"exclude_releases":{"type":"boolean","description":"Indicates whether releases should be excluded from the migration (to reduce migration archive file size).","default":false,"examples":[true]},"exclude_owner_projects":{"type":"boolean","description":"Indicates whether projects owned by the organization or users should be excluded. from the migration.","default":false,"examples":[true]},"org_metadata_only":{"type":"boolean","description":"Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).","default":false,"examples":[true]},"exclude":{"type":"array","items":{"enum":["repositories"],"type":"string"},"description":"Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `\\"repositories\\"`."}}}';

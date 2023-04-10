@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class CbWorkflowIdRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Workflow' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Workflow($payload),
+            'ApiClients\Client\Github\Schema\Workflow' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Workflow($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Workflow(array $payload): \ApiClients\Client\GitHub\Schema\Workflow
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Workflow(array $payload): \ApiClients\Client\Github\Schema\Workflow
     {
         $properties = []; 
         $missingFields = [];
@@ -156,17 +156,17 @@ class CbWorkflowIdRcb implements ObjectMapper
             after_deletedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Workflow', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Workflow', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Workflow::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Workflow::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Workflow(...$properties);
+            return new \ApiClients\Client\Github\Schema\Workflow(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Workflow', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Workflow', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -201,7 +201,7 @@ class CbWorkflowIdRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Workflow' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Workflow($object),
+            'ApiClients\Client\Github\Schema\Workflow' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Workflow($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -275,9 +275,9 @@ class CbWorkflowIdRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Workflow(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Workflow(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Workflow);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Workflow);
         $result = [];
 
         $id = $object->id;

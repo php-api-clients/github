@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,15 +23,15 @@ class Approvals implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\EnvironmentApprovals' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals($payload),
-                'ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals⚡️Environments($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
+            'ApiClients\Client\Github\Schema\EnvironmentApprovals' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals($payload),
+                'ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals⚡️Environments($payload),
+                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals(array $payload): \ApiClients\Client\GitHub\Schema\EnvironmentApprovals
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals(array $payload): \ApiClients\Client\Github\Schema\EnvironmentApprovals
     {
         $properties = []; 
         $missingFields = [];
@@ -47,7 +47,7 @@ class Approvals implements ObjectMapper
 
             if ($environmentsCaster1 === null) {
                 $environmentsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\EnvironmentApprovals\\Environments',
+  0 => 'ApiClients\\Client\\Github\\Schema\\EnvironmentApprovals\\Environments',
 ));
             }
 
@@ -78,7 +78,7 @@ class Approvals implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -100,22 +100,22 @@ class Approvals implements ObjectMapper
             after_comment:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnvironmentApprovals', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\EnvironmentApprovals', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\EnvironmentApprovals::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\EnvironmentApprovals::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\EnvironmentApprovals(...$properties);
+            return new \ApiClients\Client\Github\Schema\EnvironmentApprovals(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnvironmentApprovals', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\EnvironmentApprovals', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals⚡️Environments(array $payload): \ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals⚡️Environments(array $payload): \ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments
     {
         $properties = []; 
         $missingFields = [];
@@ -198,22 +198,22 @@ class Approvals implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments(...$properties);
+            return new \ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -450,17 +450,17 @@ class Approvals implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -495,9 +495,9 @@ class Approvals implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\EnvironmentApprovals' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals($object),
-            'ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals⚡️Environments($object),
-            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\Github\Schema\EnvironmentApprovals' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals($object),
+            'ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals⚡️Environments($object),
+            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -571,9 +571,9 @@ class Approvals implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\EnvironmentApprovals);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\EnvironmentApprovals);
         $result = [];
 
         $environments = $object->environments;
@@ -581,7 +581,7 @@ class Approvals implements ObjectMapper
 
         if ($environmentsSerializer0 === null) {
             $environmentsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\EnvironmentApprovals\\Environments',
+  0 => 'ApiClients\\Client\\Github\\Schema\\EnvironmentApprovals\\Environments',
 ));
         }
         
@@ -594,7 +594,7 @@ class Approvals implements ObjectMapper
 
         
         $user = $object->user;
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($user);
         after_user:        $result['user'] = $user;
 
         
@@ -606,9 +606,9 @@ class Approvals implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnvironmentApprovals⚡️Environments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️EnvironmentApprovals⚡️Environments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\EnvironmentApprovals\Environments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\EnvironmentApprovals\Environments);
         $result = [];
 
         $id = $object->id;
@@ -671,9 +671,9 @@ class Approvals implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;

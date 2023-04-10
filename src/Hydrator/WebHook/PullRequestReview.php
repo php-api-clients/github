@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\WebHook;
+namespace ApiClients\Client\Github\Hydrator\WebHook;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,167 +23,167 @@ class PullRequestReview implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed($payload),
-                'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
-                'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($payload),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed($payload),
+                'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
+                'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
+                'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($payload),
+                'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
+                'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed
     {
         $properties = []; 
         $missingFields = [];
@@ -209,7 +209,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -229,7 +229,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -249,7 +249,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -269,7 +269,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -289,7 +289,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -309,7 +309,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'review';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -329,7 +329,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -340,22 +340,22 @@ class PullRequestReview implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise(array $payload): \ApiClients\Client\GitHub\Schema\Enterprise
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise(array $payload): \ApiClients\Client\Github\Schema\Enterprise
     {
         $properties = []; 
         $missingFields = [];
@@ -471,22 +471,22 @@ class PullRequestReview implements ObjectMapper
             after_avatarUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Enterprise', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Enterprise', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Enterprise::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Enterprise::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Enterprise(...$properties);
+            return new \ApiClients\Client\Github\Schema\Enterprise(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Enterprise', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Enterprise', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\GitHub\Schema\SimpleInstallation
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\Github\Schema\SimpleInstallation
     {
         $properties = []; 
         $missingFields = [];
@@ -514,22 +514,22 @@ class PullRequestReview implements ObjectMapper
             after_nodeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleInstallation(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleInstallation(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationSimple
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\Github\Schema\OrganizationSimple
     {
         $properties = []; 
         $missingFields = [];
@@ -667,22 +667,22 @@ class PullRequestReview implements ObjectMapper
             after_description:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\OrganizationSimple(...$properties);
+            return new \ApiClients\Client\Github\Schema\OrganizationSimple(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -697,7 +697,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -728,7 +728,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'assignee';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -749,7 +749,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($assigneesCaster1 === null) {
                 $assigneesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Assignees',
 ));
             }
 
@@ -780,7 +780,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'autoMerge';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -800,7 +800,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -897,7 +897,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -951,7 +951,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($labelsCaster1 === null) {
                 $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Labels',
 ));
             }
 
@@ -1004,7 +1004,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1058,7 +1058,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedReviewersCaster1 === null) {
                 $requestedReviewersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedReviewers',
 ));
             }
 
@@ -1079,7 +1079,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedTeamsCaster1 === null) {
                 $requestedTeamsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedTeams',
 ));
             }
 
@@ -1176,7 +1176,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1187,22 +1187,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -1217,7 +1217,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'comments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1237,7 +1237,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'commits';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1257,7 +1257,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1277,7 +1277,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'issue';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1297,7 +1297,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComment';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1317,7 +1317,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1337,7 +1337,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'self';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1357,7 +1357,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'statuses';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1368,22 +1368,22 @@ class PullRequestReview implements ObjectMapper
             after_statuses:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments
     {
         $properties = []; 
         $missingFields = [];
@@ -1400,22 +1400,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits
     {
         $properties = []; 
         $missingFields = [];
@@ -1432,22 +1432,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -1464,22 +1464,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue
     {
         $properties = []; 
         $missingFields = [];
@@ -1496,22 +1496,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment
     {
         $properties = []; 
         $missingFields = [];
@@ -1528,22 +1528,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments
     {
         $properties = []; 
         $missingFields = [];
@@ -1560,22 +1560,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_
     {
         $properties = []; 
         $missingFields = [];
@@ -1592,22 +1592,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses
     {
         $properties = []; 
         $missingFields = [];
@@ -1624,22 +1624,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee
     {
         $properties = []; 
         $missingFields = [];
@@ -1876,22 +1876,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees
     {
         $properties = []; 
         $missingFields = [];
@@ -2128,22 +2128,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge
     {
         $properties = []; 
         $missingFields = [];
@@ -2180,7 +2180,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enabledBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2202,22 +2202,22 @@ class PullRequestReview implements ObjectMapper
             after_mergeMethod:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy
     {
         $properties = []; 
         $missingFields = [];
@@ -2454,22 +2454,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -2506,7 +2506,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2537,7 +2537,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2548,22 +2548,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -3161,7 +3161,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3313,7 +3313,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3333,7 +3333,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3652,22 +3652,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -3728,22 +3728,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -3980,22 +3980,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -4056,22 +4056,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User
     {
         $properties = []; 
         $missingFields = [];
@@ -4308,22 +4308,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -4360,7 +4360,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4391,7 +4391,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4402,22 +4402,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -5015,7 +5015,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5167,7 +5167,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5187,7 +5187,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5506,22 +5506,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -5582,22 +5582,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -5834,22 +5834,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -5910,22 +5910,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User
     {
         $properties = []; 
         $missingFields = [];
@@ -6162,22 +6162,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels
     {
         $properties = []; 
         $missingFields = [];
@@ -6260,22 +6260,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone
     {
         $properties = []; 
         $missingFields = [];
@@ -6323,7 +6323,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6466,22 +6466,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator
     {
         $properties = []; 
         $missingFields = [];
@@ -6718,22 +6718,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers
     {
         $properties = []; 
         $missingFields = [];
@@ -6970,22 +6970,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams
     {
         $properties = []; 
         $missingFields = [];
@@ -7077,7 +7077,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7143,22 +7143,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -7285,22 +7285,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User
     {
         $properties = []; 
         $missingFields = [];
@@ -7537,22 +7537,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository(array $payload): \ApiClients\Client\GitHub\Schema\Repository
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository(array $payload): \ApiClients\Client\Github\Schema\Repository
     {
         $properties = []; 
         $missingFields = [];
@@ -7644,7 +7644,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7664,7 +7664,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8443,7 +8443,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'templateRepository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8674,22 +8674,22 @@ class PullRequestReview implements ObjectMapper
             after_anonymousAccessEnabled:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\Repository\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -8750,22 +8750,22 @@ class PullRequestReview implements ObjectMapper
             after_maintain:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -9002,22 +9002,22 @@ class PullRequestReview implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository
     {
         $properties = []; 
         $missingFields = [];
@@ -9076,7 +9076,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9833,7 +9833,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9998,22 +9998,22 @@ class PullRequestReview implements ObjectMapper
             after_networkCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -10217,22 +10217,22 @@ class PullRequestReview implements ObjectMapper
             after_siteAdmin:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -10293,22 +10293,22 @@ class PullRequestReview implements ObjectMapper
             after_pull:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review
     {
         $properties = []; 
         $missingFields = [];
@@ -10323,7 +10323,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10442,7 +10442,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10453,22 +10453,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -10483,7 +10483,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10503,7 +10503,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10514,22 +10514,22 @@ class PullRequestReview implements ObjectMapper
             after_pullRequest:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -10546,22 +10546,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -10578,22 +10578,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User
     {
         $properties = []; 
         $missingFields = [];
@@ -10830,22 +10830,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited
     {
         $properties = []; 
         $missingFields = [];
@@ -10871,7 +10871,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'changes';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10891,7 +10891,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10911,7 +10911,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10931,7 +10931,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10951,7 +10951,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10971,7 +10971,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10991,7 +10991,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'review';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11011,7 +11011,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11022,22 +11022,22 @@ class PullRequestReview implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes
     {
         $properties = []; 
         $missingFields = [];
@@ -11052,7 +11052,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'body';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11063,22 +11063,22 @@ class PullRequestReview implements ObjectMapper
             after_body:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body
     {
         $properties = []; 
         $missingFields = [];
@@ -11095,22 +11095,22 @@ class PullRequestReview implements ObjectMapper
             after_from:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -11125,7 +11125,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11156,7 +11156,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'assignee';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11177,7 +11177,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($assigneesCaster1 === null) {
                 $assigneesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Assignees',
 ));
             }
 
@@ -11208,7 +11208,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'autoMerge';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11228,7 +11228,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11325,7 +11325,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11379,7 +11379,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($labelsCaster1 === null) {
                 $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Labels',
 ));
             }
 
@@ -11432,7 +11432,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11486,7 +11486,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedReviewersCaster1 === null) {
                 $requestedReviewersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedReviewers',
 ));
             }
 
@@ -11507,7 +11507,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedTeamsCaster1 === null) {
                 $requestedTeamsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedTeams',
 ));
             }
 
@@ -11604,7 +11604,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11615,22 +11615,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -11645,7 +11645,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'comments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11665,7 +11665,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'commits';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11685,7 +11685,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11705,7 +11705,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'issue';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11725,7 +11725,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComment';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11745,7 +11745,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11765,7 +11765,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'self';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11785,7 +11785,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'statuses';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -11796,22 +11796,22 @@ class PullRequestReview implements ObjectMapper
             after_statuses:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments
     {
         $properties = []; 
         $missingFields = [];
@@ -11828,22 +11828,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits
     {
         $properties = []; 
         $missingFields = [];
@@ -11860,22 +11860,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -11892,22 +11892,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue
     {
         $properties = []; 
         $missingFields = [];
@@ -11924,22 +11924,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment
     {
         $properties = []; 
         $missingFields = [];
@@ -11956,22 +11956,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments
     {
         $properties = []; 
         $missingFields = [];
@@ -11988,22 +11988,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_
     {
         $properties = []; 
         $missingFields = [];
@@ -12020,22 +12020,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses
     {
         $properties = []; 
         $missingFields = [];
@@ -12052,22 +12052,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee
     {
         $properties = []; 
         $missingFields = [];
@@ -12304,22 +12304,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees
     {
         $properties = []; 
         $missingFields = [];
@@ -12556,22 +12556,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge
     {
         $properties = []; 
         $missingFields = [];
@@ -12608,7 +12608,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enabledBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -12630,22 +12630,22 @@ class PullRequestReview implements ObjectMapper
             after_mergeMethod:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy
     {
         $properties = []; 
         $missingFields = [];
@@ -12882,22 +12882,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -12934,7 +12934,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -12965,7 +12965,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -12976,22 +12976,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -13578,7 +13578,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -13708,7 +13708,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -13728,7 +13728,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -14003,22 +14003,22 @@ class PullRequestReview implements ObjectMapper
             after_watchersCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -14079,22 +14079,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -14331,22 +14331,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -14407,22 +14407,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User
     {
         $properties = []; 
         $missingFields = [];
@@ -14659,22 +14659,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -14711,7 +14711,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -14742,7 +14742,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -14753,22 +14753,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -15355,7 +15355,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -15485,7 +15485,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -15505,7 +15505,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -15780,22 +15780,22 @@ class PullRequestReview implements ObjectMapper
             after_watchersCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -15856,22 +15856,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -16108,22 +16108,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -16184,22 +16184,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User
     {
         $properties = []; 
         $missingFields = [];
@@ -16436,22 +16436,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels
     {
         $properties = []; 
         $missingFields = [];
@@ -16534,22 +16534,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone
     {
         $properties = []; 
         $missingFields = [];
@@ -16597,7 +16597,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -16740,22 +16740,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator
     {
         $properties = []; 
         $missingFields = [];
@@ -16992,22 +16992,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers
     {
         $properties = []; 
         $missingFields = [];
@@ -17244,22 +17244,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams
     {
         $properties = []; 
         $missingFields = [];
@@ -17351,7 +17351,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -17417,22 +17417,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -17559,22 +17559,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User
     {
         $properties = []; 
         $missingFields = [];
@@ -17811,22 +17811,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review
     {
         $properties = []; 
         $missingFields = [];
@@ -17841,7 +17841,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -17960,7 +17960,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -17971,22 +17971,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -18001,7 +18001,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18021,7 +18021,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18032,22 +18032,22 @@ class PullRequestReview implements ObjectMapper
             after_pullRequest:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -18064,22 +18064,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -18096,22 +18096,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User
     {
         $properties = []; 
         $missingFields = [];
@@ -18348,22 +18348,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted
     {
         $properties = []; 
         $missingFields = [];
@@ -18389,7 +18389,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18409,7 +18409,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18429,7 +18429,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18449,7 +18449,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18469,7 +18469,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18489,7 +18489,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'review';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18509,7 +18509,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18520,22 +18520,22 @@ class PullRequestReview implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -18550,7 +18550,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18581,7 +18581,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'assignee';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18602,7 +18602,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($assigneesCaster1 === null) {
                 $assigneesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Assignees',
 ));
             }
 
@@ -18633,7 +18633,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'autoMerge';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18653,7 +18653,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18750,7 +18750,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18804,7 +18804,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($labelsCaster1 === null) {
                 $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Labels',
 ));
             }
 
@@ -18857,7 +18857,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -18911,7 +18911,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedReviewersCaster1 === null) {
                 $requestedReviewersCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedReviewers',
 ));
             }
 
@@ -18932,7 +18932,7 @@ class PullRequestReview implements ObjectMapper
 
             if ($requestedTeamsCaster1 === null) {
                 $requestedTeamsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedTeams',
 ));
             }
 
@@ -19029,7 +19029,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19040,22 +19040,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -19070,7 +19070,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'comments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19090,7 +19090,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'commits';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19110,7 +19110,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19130,7 +19130,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'issue';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19150,7 +19150,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComment';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19170,7 +19170,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reviewComments';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19190,7 +19190,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'self';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19210,7 +19210,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'statuses';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -19221,22 +19221,22 @@ class PullRequestReview implements ObjectMapper
             after_statuses:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments
     {
         $properties = []; 
         $missingFields = [];
@@ -19253,22 +19253,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits
     {
         $properties = []; 
         $missingFields = [];
@@ -19285,22 +19285,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -19317,22 +19317,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue
     {
         $properties = []; 
         $missingFields = [];
@@ -19349,22 +19349,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment
     {
         $properties = []; 
         $missingFields = [];
@@ -19381,22 +19381,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments
     {
         $properties = []; 
         $missingFields = [];
@@ -19413,22 +19413,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_
     {
         $properties = []; 
         $missingFields = [];
@@ -19445,22 +19445,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses
     {
         $properties = []; 
         $missingFields = [];
@@ -19477,22 +19477,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee
     {
         $properties = []; 
         $missingFields = [];
@@ -19729,22 +19729,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees
     {
         $properties = []; 
         $missingFields = [];
@@ -19981,22 +19981,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge
     {
         $properties = []; 
         $missingFields = [];
@@ -20033,7 +20033,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enabledBy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -20055,22 +20055,22 @@ class PullRequestReview implements ObjectMapper
             after_mergeMethod:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy
     {
         $properties = []; 
         $missingFields = [];
@@ -20307,22 +20307,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -20359,7 +20359,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -20390,7 +20390,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -20401,22 +20401,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -21014,7 +21014,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21166,7 +21166,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21186,7 +21186,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21505,22 +21505,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -21581,22 +21581,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -21833,22 +21833,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -21909,22 +21909,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User
     {
         $properties = []; 
         $missingFields = [];
@@ -22161,22 +22161,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -22213,7 +22213,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -22244,7 +22244,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -22255,22 +22255,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -22868,7 +22868,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -23020,7 +23020,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -23040,7 +23040,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -23359,22 +23359,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -23435,22 +23435,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -23687,22 +23687,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -23763,22 +23763,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User
     {
         $properties = []; 
         $missingFields = [];
@@ -24015,22 +24015,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels
     {
         $properties = []; 
         $missingFields = [];
@@ -24113,22 +24113,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone
     {
         $properties = []; 
         $missingFields = [];
@@ -24176,7 +24176,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -24319,22 +24319,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator
     {
         $properties = []; 
         $missingFields = [];
@@ -24571,22 +24571,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers
     {
         $properties = []; 
         $missingFields = [];
@@ -24823,22 +24823,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams
     {
         $properties = []; 
         $missingFields = [];
@@ -24930,7 +24930,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -24996,22 +24996,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -25138,22 +25138,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User
     {
         $properties = []; 
         $missingFields = [];
@@ -25390,22 +25390,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review
     {
         $properties = []; 
         $missingFields = [];
@@ -25420,7 +25420,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'links';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -25539,7 +25539,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -25550,22 +25550,22 @@ class PullRequestReview implements ObjectMapper
             after_user:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links
     {
         $properties = []; 
         $missingFields = [];
@@ -25580,7 +25580,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'html';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -25600,7 +25600,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -25611,22 +25611,22 @@ class PullRequestReview implements ObjectMapper
             after_pullRequest:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -25643,22 +25643,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -25675,22 +25675,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User
     {
         $properties = []; 
         $missingFields = [];
@@ -25927,22 +25927,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments
     {
         $properties = []; 
         $missingFields = [];
@@ -25959,22 +25959,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits
     {
         $properties = []; 
         $missingFields = [];
@@ -25991,22 +25991,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html
     {
         $properties = []; 
         $missingFields = [];
@@ -26023,22 +26023,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue
     {
         $properties = []; 
         $missingFields = [];
@@ -26055,22 +26055,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment
     {
         $properties = []; 
         $missingFields = [];
@@ -26087,22 +26087,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments
     {
         $properties = []; 
         $missingFields = [];
@@ -26119,22 +26119,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_
     {
         $properties = []; 
         $missingFields = [];
@@ -26151,22 +26151,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses
     {
         $properties = []; 
         $missingFields = [];
@@ -26183,22 +26183,22 @@ class PullRequestReview implements ObjectMapper
             after_href:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy
     {
         $properties = []; 
         $missingFields = [];
@@ -26435,22 +26435,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -27048,7 +27048,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -27200,7 +27200,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -27220,7 +27220,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -27539,22 +27539,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User
     {
         $properties = []; 
         $missingFields = [];
@@ -27791,22 +27791,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -27867,22 +27867,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -28119,22 +28119,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -28195,22 +28195,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -28808,7 +28808,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -28960,7 +28960,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -28980,7 +28980,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -29299,22 +29299,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User
     {
         $properties = []; 
         $missingFields = [];
@@ -29551,22 +29551,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License
     {
         $properties = []; 
         $missingFields = [];
@@ -29627,22 +29627,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -29879,22 +29879,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -29955,22 +29955,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator
     {
         $properties = []; 
         $missingFields = [];
@@ -30207,22 +30207,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesDeleted\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_
     {
         $properties = []; 
         $missingFields = [];
@@ -30349,22 +30349,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License(array $payload): \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License
     {
         $properties = []; 
         $missingFields = [];
@@ -30425,22 +30425,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\License', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -30677,22 +30677,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -30753,22 +30753,22 @@ class PullRequestReview implements ObjectMapper
             after_triage:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssuesOpened\Changes\OldRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator
     {
         $properties = []; 
         $missingFields = [];
@@ -31005,22 +31005,22 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -31618,7 +31618,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -31770,7 +31770,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -31790,7 +31790,7 @@ class PullRequestReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -32109,22 +32109,22 @@ class PullRequestReview implements ObjectMapper
             after_webCommitSignoffRequired:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User(array $payload): \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User
     {
         $properties = []; 
         $missingFields = [];
@@ -32361,17 +32361,17 @@ class PullRequestReview implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPullRequestAssigned\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -32406,134 +32406,134 @@ class PullRequestReview implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed($object),
-            'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
-            'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
-            'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-            'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed($object),
+            'ApiClients\Client\Github\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($object),
+            'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($object),
+            'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($object),
+            'ApiClients\Client\Github\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($object),
+            'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest($object),
+            'ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -32607,9 +32607,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed);
         $result = [];
 
         $action = $object->action;
@@ -32621,7 +32621,7 @@ class PullRequestReview implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -32630,7 +32630,7 @@ class PullRequestReview implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -32639,27 +32639,27 @@ class PullRequestReview implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $review = $object->review;
-        $review = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($review);
+        $review = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review($review);
         after_review:        $result['review'] = $review;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -32667,9 +32667,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Enterprise);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Enterprise);
         $result = [];
 
         $description = $object->description;
@@ -32732,9 +32732,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleInstallation);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleInstallation);
         $result = [];
 
         $id = $object->id;
@@ -32749,9 +32749,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationSimple);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\OrganizationSimple);
         $result = [];
 
         $login = $object->login;
@@ -32810,13 +32810,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -32833,7 +32833,7 @@ class PullRequestReview implements ObjectMapper
         if ($assignee === null) {
             goto after_assignee;
         }
-        $assignee = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($assignee);
+        $assignee = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee($assignee);
         after_assignee:        $result['assignee'] = $assignee;
 
         
@@ -32842,7 +32842,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($assigneesSerializer0 === null) {
             $assigneesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Assignees',
 ));
         }
         
@@ -32859,12 +32859,12 @@ class PullRequestReview implements ObjectMapper
         if ($autoMerge === null) {
             goto after_autoMerge;
         }
-        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($autoMerge);
+        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge($autoMerge);
         after_autoMerge:        $result['auto_merge'] = $autoMerge;
 
         
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
@@ -32905,7 +32905,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -32926,7 +32926,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($labelsSerializer0 === null) {
             $labelsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\Labels',
 ));
         }
         
@@ -32959,7 +32959,7 @@ class PullRequestReview implements ObjectMapper
         if ($milestone === null) {
             goto after_milestone;
         }
-        $milestone = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($milestone);
+        $milestone = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         
@@ -32980,7 +32980,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedReviewersSerializer0 === null) {
             $requestedReviewersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedReviewers',
 ));
         }
         
@@ -32993,7 +32993,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedTeamsSerializer0 === null) {
             $requestedTeamsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewDismissed\\PullRequest\\RequestedTeams',
 ));
         }
         
@@ -33034,7 +33034,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -33042,48 +33042,48 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links);
         $result = [];
 
         $comments = $object->comments;
-        $comments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
+        $comments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
         after_comments:        $result['comments'] = $comments;
 
         
         $commits = $object->commits;
-        $commits = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
+        $commits = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
         after_commits:        $result['commits'] = $commits;
 
         
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $issue = $object->issue;
-        $issue = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
+        $issue = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
         after_issue:        $result['issue'] = $issue;
 
         
         $reviewComment = $object->reviewComment;
-        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
+        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
         after_reviewComment:        $result['review_comment'] = $reviewComment;
 
         
         $reviewComments = $object->reviewComments;
-        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
+        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
         after_reviewComments:        $result['review_comments'] = $reviewComments;
 
         
         $self = $object->self;
-        $self = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
+        $self = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
         after_self:        $result['self'] = $self;
 
         
         $statuses = $object->statuses;
-        $statuses = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
+        $statuses = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
         after_statuses:        $result['statuses'] = $statuses;
 
 
@@ -33091,9 +33091,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Comments);
         $result = [];
 
         $href = $object->href;
@@ -33104,9 +33104,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Commits);
         $result = [];
 
         $href = $object->href;
@@ -33117,9 +33117,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -33130,9 +33130,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Issue);
         $result = [];
 
         $href = $object->href;
@@ -33143,9 +33143,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComment);
         $result = [];
 
         $href = $object->href;
@@ -33156,9 +33156,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\ReviewComments);
         $result = [];
 
         $href = $object->href;
@@ -33169,9 +33169,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Self_);
         $result = [];
 
         $href = $object->href;
@@ -33182,9 +33182,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Links\Statuses);
         $result = [];
 
         $href = $object->href;
@@ -33195,9 +33195,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignee(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -33364,9 +33364,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Assignees(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignees);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -33533,9 +33533,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge);
         $result = [];
 
         $commitMessage = $object->commitMessage;
@@ -33559,7 +33559,7 @@ class PullRequestReview implements ObjectMapper
         if ($enabledBy === null) {
             goto after_enabledBy;
         }
-        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
+        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
         after_enabledBy:        $result['enabled_by'] = $enabledBy;
 
         
@@ -33571,9 +33571,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -33740,9 +33740,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base);
         $result = [];
 
         $label = $object->label;
@@ -33754,7 +33754,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -33767,7 +33767,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -33775,9 +33775,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -34045,7 +34045,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -34122,7 +34122,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -34131,7 +34131,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -34287,9 +34287,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -34320,9 +34320,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -34489,9 +34489,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -34526,9 +34526,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -34695,9 +34695,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head);
         $result = [];
 
         $label = $object->label;
@@ -34713,7 +34713,7 @@ class PullRequestReview implements ObjectMapper
         if ($repo === null) {
             goto after_repo;
         }
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -34726,7 +34726,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewCommentDeleted⚡️PullRequest⚡️Head⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -34734,9 +34734,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -35004,7 +35004,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -35081,7 +35081,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -35090,7 +35090,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -35246,9 +35246,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -35279,9 +35279,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -35448,9 +35448,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -35485,9 +35485,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -35654,9 +35654,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Labels(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Labels);
         $result = [];
 
         $color = $object->color;
@@ -35695,9 +35695,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone);
         $result = [];
 
         $closedAt = $object->closedAt;
@@ -35721,7 +35721,7 @@ class PullRequestReview implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($creator);
+        $creator = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Milestone⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         
@@ -35785,9 +35785,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -35954,9 +35954,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedReviewers);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -36123,9 +36123,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams);
         $result = [];
 
         $deleted = $object->deleted;
@@ -36181,7 +36181,7 @@ class PullRequestReview implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -36229,9 +36229,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\RequestedTeams\Parent_);
         $result = [];
 
         $description = $object->description;
@@ -36286,9 +36286,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️PullRequest⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\PullRequest\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -36455,9 +36455,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository);
         $result = [];
 
         $id = $object->id;
@@ -36501,12 +36501,12 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
         $owner = $object->owner;
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -36847,7 +36847,7 @@ class PullRequestReview implements ObjectMapper
         if ($templateRepository === null) {
             goto after_templateRepository;
         }
-        $templateRepository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($templateRepository);
+        $templateRepository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($templateRepository);
         after_templateRepository:        $result['template_repository'] = $templateRepository;
 
         
@@ -37007,9 +37007,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -37044,9 +37044,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -37153,9 +37153,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository);
         $result = [];
 
         $id = $object->id;
@@ -37195,7 +37195,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -37748,7 +37748,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -37868,9 +37868,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner);
         $result = [];
 
         $login = $object->login;
@@ -38021,9 +38021,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -38070,13 +38070,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -38125,7 +38125,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -38133,18 +38133,18 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links);
         $result = [];
 
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 
@@ -38152,9 +38152,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -38165,9 +38165,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest);
         $result = [];
 
         $href = $object->href;
@@ -38178,9 +38178,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewDismissed\Review\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -38347,9 +38347,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited);
         $result = [];
 
         $action = $object->action;
@@ -38357,7 +38357,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $changes = $object->changes;
-        $changes = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($changes);
+        $changes = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes($changes);
         after_changes:        $result['changes'] = $changes;
 
         
@@ -38366,7 +38366,7 @@ class PullRequestReview implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -38375,7 +38375,7 @@ class PullRequestReview implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -38384,27 +38384,27 @@ class PullRequestReview implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $review = $object->review;
-        $review = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($review);
+        $review = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review($review);
         after_review:        $result['review'] = $review;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -38412,9 +38412,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes);
         $result = [];
 
         $body = $object->body;
@@ -38422,7 +38422,7 @@ class PullRequestReview implements ObjectMapper
         if ($body === null) {
             goto after_body;
         }
-        $body = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($body);
+        $body = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body($body);
         after_body:        $result['body'] = $body;
 
 
@@ -38430,9 +38430,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Changes⚡️Body(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Changes\Body);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Changes\Body);
         $result = [];
 
         $from = $object->from;
@@ -38443,13 +38443,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -38466,7 +38466,7 @@ class PullRequestReview implements ObjectMapper
         if ($assignee === null) {
             goto after_assignee;
         }
-        $assignee = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($assignee);
+        $assignee = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee($assignee);
         after_assignee:        $result['assignee'] = $assignee;
 
         
@@ -38475,7 +38475,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($assigneesSerializer0 === null) {
             $assigneesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Assignees',
 ));
         }
         
@@ -38492,12 +38492,12 @@ class PullRequestReview implements ObjectMapper
         if ($autoMerge === null) {
             goto after_autoMerge;
         }
-        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($autoMerge);
+        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge($autoMerge);
         after_autoMerge:        $result['auto_merge'] = $autoMerge;
 
         
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
@@ -38538,7 +38538,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -38559,7 +38559,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($labelsSerializer0 === null) {
             $labelsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\Labels',
 ));
         }
         
@@ -38592,7 +38592,7 @@ class PullRequestReview implements ObjectMapper
         if ($milestone === null) {
             goto after_milestone;
         }
-        $milestone = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($milestone);
+        $milestone = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         
@@ -38613,7 +38613,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedReviewersSerializer0 === null) {
             $requestedReviewersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedReviewers',
 ));
         }
         
@@ -38626,7 +38626,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedTeamsSerializer0 === null) {
             $requestedTeamsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewEdited\\PullRequest\\RequestedTeams',
 ));
         }
         
@@ -38667,7 +38667,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -38675,48 +38675,48 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links);
         $result = [];
 
         $comments = $object->comments;
-        $comments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
+        $comments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
         after_comments:        $result['comments'] = $comments;
 
         
         $commits = $object->commits;
-        $commits = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
+        $commits = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
         after_commits:        $result['commits'] = $commits;
 
         
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $issue = $object->issue;
-        $issue = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
+        $issue = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
         after_issue:        $result['issue'] = $issue;
 
         
         $reviewComment = $object->reviewComment;
-        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
+        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
         after_reviewComment:        $result['review_comment'] = $reviewComment;
 
         
         $reviewComments = $object->reviewComments;
-        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
+        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
         after_reviewComments:        $result['review_comments'] = $reviewComments;
 
         
         $self = $object->self;
-        $self = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
+        $self = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
         after_self:        $result['self'] = $self;
 
         
         $statuses = $object->statuses;
-        $statuses = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
+        $statuses = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
         after_statuses:        $result['statuses'] = $statuses;
 
 
@@ -38724,9 +38724,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Comments);
         $result = [];
 
         $href = $object->href;
@@ -38737,9 +38737,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Commits);
         $result = [];
 
         $href = $object->href;
@@ -38750,9 +38750,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -38763,9 +38763,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Issue);
         $result = [];
 
         $href = $object->href;
@@ -38776,9 +38776,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComment);
         $result = [];
 
         $href = $object->href;
@@ -38789,9 +38789,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\ReviewComments);
         $result = [];
 
         $href = $object->href;
@@ -38802,9 +38802,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Self_);
         $result = [];
 
         $href = $object->href;
@@ -38815,9 +38815,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Links\Statuses);
         $result = [];
 
         $href = $object->href;
@@ -38828,9 +38828,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignee(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -38997,9 +38997,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Assignees(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignees);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -39166,9 +39166,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge);
         $result = [];
 
         $commitMessage = $object->commitMessage;
@@ -39192,7 +39192,7 @@ class PullRequestReview implements ObjectMapper
         if ($enabledBy === null) {
             goto after_enabledBy;
         }
-        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
+        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
         after_enabledBy:        $result['enabled_by'] = $enabledBy;
 
         
@@ -39204,9 +39204,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -39373,9 +39373,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base);
         $result = [];
 
         $label = $object->label;
@@ -39387,7 +39387,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -39400,7 +39400,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -39408,9 +39408,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -39674,7 +39674,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -39735,7 +39735,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -39744,7 +39744,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -39868,9 +39868,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -39901,9 +39901,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -40070,9 +40070,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -40107,9 +40107,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -40276,9 +40276,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head);
         $result = [];
 
         $label = $object->label;
@@ -40294,7 +40294,7 @@ class PullRequestReview implements ObjectMapper
         if ($repo === null) {
             goto after_repo;
         }
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -40307,7 +40307,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -40315,9 +40315,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -40581,7 +40581,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -40642,7 +40642,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -40651,7 +40651,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -40775,9 +40775,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -40808,9 +40808,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -40977,9 +40977,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -41014,9 +41014,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -41183,9 +41183,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Labels(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Labels);
         $result = [];
 
         $color = $object->color;
@@ -41224,9 +41224,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone);
         $result = [];
 
         $closedAt = $object->closedAt;
@@ -41250,7 +41250,7 @@ class PullRequestReview implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($creator);
+        $creator = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         
@@ -41314,9 +41314,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -41483,9 +41483,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedReviewers);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -41652,9 +41652,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams);
         $result = [];
 
         $deleted = $object->deleted;
@@ -41710,7 +41710,7 @@ class PullRequestReview implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -41758,9 +41758,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\RequestedTeams\Parent_);
         $result = [];
 
         $description = $object->description;
@@ -41815,9 +41815,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️PullRequest⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\PullRequest\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -41984,13 +41984,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -42043,7 +42043,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -42051,18 +42051,18 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links);
         $result = [];
 
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 
@@ -42070,9 +42070,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -42083,9 +42083,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\Links\PullRequest);
         $result = [];
 
         $href = $object->href;
@@ -42096,9 +42096,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\Review\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewEdited\Review\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -42265,9 +42265,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted);
         $result = [];
 
         $action = $object->action;
@@ -42279,7 +42279,7 @@ class PullRequestReview implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -42288,7 +42288,7 @@ class PullRequestReview implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -42297,27 +42297,27 @@ class PullRequestReview implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $review = $object->review;
-        $review = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($review);
+        $review = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review($review);
         after_review:        $result['review'] = $review;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -42325,13 +42325,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -42348,7 +42348,7 @@ class PullRequestReview implements ObjectMapper
         if ($assignee === null) {
             goto after_assignee;
         }
-        $assignee = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($assignee);
+        $assignee = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee($assignee);
         after_assignee:        $result['assignee'] = $assignee;
 
         
@@ -42357,7 +42357,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($assigneesSerializer0 === null) {
             $assigneesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Assignees',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Assignees',
 ));
         }
         
@@ -42374,12 +42374,12 @@ class PullRequestReview implements ObjectMapper
         if ($autoMerge === null) {
             goto after_autoMerge;
         }
-        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($autoMerge);
+        $autoMerge = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge($autoMerge);
         after_autoMerge:        $result['auto_merge'] = $autoMerge;
 
         
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
@@ -42420,7 +42420,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -42441,7 +42441,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($labelsSerializer0 === null) {
             $labelsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Labels',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\Labels',
 ));
         }
         
@@ -42474,7 +42474,7 @@ class PullRequestReview implements ObjectMapper
         if ($milestone === null) {
             goto after_milestone;
         }
-        $milestone = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($milestone);
+        $milestone = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         
@@ -42495,7 +42495,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedReviewersSerializer0 === null) {
             $requestedReviewersSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedReviewers',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedReviewers',
 ));
         }
         
@@ -42508,7 +42508,7 @@ class PullRequestReview implements ObjectMapper
 
         if ($requestedTeamsSerializer0 === null) {
             $requestedTeamsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedTeams',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookPullRequestReviewSubmitted\\PullRequest\\RequestedTeams',
 ));
         }
         
@@ -42549,7 +42549,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -42557,48 +42557,48 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links);
         $result = [];
 
         $comments = $object->comments;
-        $comments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
+        $comments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Comments($comments);
         after_comments:        $result['comments'] = $comments;
 
         
         $commits = $object->commits;
-        $commits = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
+        $commits = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Commits($commits);
         after_commits:        $result['commits'] = $commits;
 
         
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $issue = $object->issue;
-        $issue = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
+        $issue = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Issue($issue);
         after_issue:        $result['issue'] = $issue;
 
         
         $reviewComment = $object->reviewComment;
-        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
+        $reviewComment = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComment($reviewComment);
         after_reviewComment:        $result['review_comment'] = $reviewComment;
 
         
         $reviewComments = $object->reviewComments;
-        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
+        $reviewComments = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️ReviewComments($reviewComments);
         after_reviewComments:        $result['review_comments'] = $reviewComments;
 
         
         $self = $object->self;
-        $self = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
+        $self = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Self_($self);
         after_self:        $result['self'] = $self;
 
         
         $statuses = $object->statuses;
-        $statuses = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
+        $statuses = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Links⚡️Statuses($statuses);
         after_statuses:        $result['statuses'] = $statuses;
 
 
@@ -42606,9 +42606,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Comments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Comments);
         $result = [];
 
         $href = $object->href;
@@ -42619,9 +42619,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Commits(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Commits);
         $result = [];
 
         $href = $object->href;
@@ -42632,9 +42632,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -42645,9 +42645,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Issue(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Issue);
         $result = [];
 
         $href = $object->href;
@@ -42658,9 +42658,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComment);
         $result = [];
 
         $href = $object->href;
@@ -42671,9 +42671,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️ReviewComments(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\ReviewComments);
         $result = [];
 
         $href = $object->href;
@@ -42684,9 +42684,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Self_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Self_);
         $result = [];
 
         $href = $object->href;
@@ -42697,9 +42697,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Links⚡️Statuses(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Links\Statuses);
         $result = [];
 
         $href = $object->href;
@@ -42710,9 +42710,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignee(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -42879,9 +42879,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Assignees(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignees);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -43048,9 +43048,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge);
         $result = [];
 
         $commitMessage = $object->commitMessage;
@@ -43074,7 +43074,7 @@ class PullRequestReview implements ObjectMapper
         if ($enabledBy === null) {
             goto after_enabledBy;
         }
-        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
+        $enabledBy = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️AutoMerge⚡️EnabledBy($enabledBy);
         after_enabledBy:        $result['enabled_by'] = $enabledBy;
 
         
@@ -43086,9 +43086,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️AutoMerge⚡️EnabledBy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -43255,9 +43255,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base);
         $result = [];
 
         $label = $object->label;
@@ -43269,7 +43269,7 @@ class PullRequestReview implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -43282,7 +43282,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -43290,9 +43290,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -43560,7 +43560,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -43637,7 +43637,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -43646,7 +43646,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -43802,9 +43802,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -43835,9 +43835,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -44004,9 +44004,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -44041,9 +44041,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Base⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -44210,9 +44210,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head);
         $result = [];
 
         $label = $object->label;
@@ -44232,7 +44232,7 @@ class PullRequestReview implements ObjectMapper
         if ($repo === null) {
             goto after_repo;
         }
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -44245,7 +44245,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -44253,9 +44253,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo);
         $result = [];
 
         $allowAutoMerge = $object->allowAutoMerge;
@@ -44523,7 +44523,7 @@ class PullRequestReview implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
-        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
+        $license = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         
@@ -44600,7 +44600,7 @@ class PullRequestReview implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -44609,7 +44609,7 @@ class PullRequestReview implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -44765,9 +44765,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️License(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\License);
         $result = [];
 
         $key = $object->key;
@@ -44798,9 +44798,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -44967,9 +44967,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -45004,9 +45004,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Head⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -45173,9 +45173,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Labels(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Labels);
         $result = [];
 
         $color = $object->color;
@@ -45214,9 +45214,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone);
         $result = [];
 
         $closedAt = $object->closedAt;
@@ -45240,7 +45240,7 @@ class PullRequestReview implements ObjectMapper
         if ($creator === null) {
             goto after_creator;
         }
-        $creator = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($creator);
+        $creator = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Milestone⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         
@@ -45304,9 +45304,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -45473,9 +45473,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedReviewers(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedReviewers);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -45642,9 +45642,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams);
         $result = [];
 
         $deleted = $object->deleted;
@@ -45700,7 +45700,7 @@ class PullRequestReview implements ObjectMapper
         if ($parent === null) {
             goto after_parent;
         }
-        $parent = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
+        $parent = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️RequestedTeams⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         
@@ -45748,9 +45748,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️RequestedTeams⚡️Parent_(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\RequestedTeams\Parent_);
         $result = [];
 
         $description = $object->description;
@@ -45805,9 +45805,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -45974,13 +45974,13 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review);
         $result = [];
 
         $links = $object->links;
-        $links = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($links);
+        $links = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️Links($links);
         after_links:        $result['_links'] = $links;
 
         
@@ -46033,7 +46033,7 @@ class PullRequestReview implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
-        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($user);
+        $user = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewEdited⚡️Review⚡️User($user);
         after_user:        $result['user'] = $user;
 
 
@@ -46041,18 +46041,18 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links);
         $result = [];
 
         $html = $object->html;
-        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
+        $html = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️Html($html);
         after_html:        $result['html'] = $html;
 
         
         $pullRequest = $object->pullRequest;
-        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
+        $pullRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewDismissed⚡️Review⚡️Links⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
 
@@ -46060,9 +46060,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️Html(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\Html);
         $result = [];
 
         $href = $object->href;
@@ -46073,9 +46073,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️Links⚡️PullRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\Links\PullRequest);
         $result = [];
 
         $href = $object->href;
@@ -46086,9 +46086,9 @@ class PullRequestReview implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️Review⚡️User(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Review\User);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPullRequestReviewSubmitted\Review\User);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;

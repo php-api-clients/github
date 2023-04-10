@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,16 +23,16 @@ class CbEnvironmentNameRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Environment' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment($payload),
-                'ApiClients\Client\GitHub\Schema\Environment\ProtectionRules' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules($payload),
-                'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\Github\Schema\Environment' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment($payload),
+                'ApiClients\Client\Github\Schema\Environment\ProtectionRules' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment⚡️ProtectionRules($payload),
+                'ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings($payload),
+                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment(array $payload): \ApiClients\Client\GitHub\Schema\Environment
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment(array $payload): \ApiClients\Client\Github\Schema\Environment
     {
         $properties = []; 
         $missingFields = [];
@@ -125,7 +125,7 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
             if ($protectionRulesCaster1 === null) {
                 $protectionRulesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment\\ProtectionRules',
+  0 => 'ApiClients\\Client\\Github\\Schema\\Environment\\ProtectionRules',
 ));
             }
 
@@ -145,7 +145,7 @@ class CbEnvironmentNameRcb implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'deploymentBranchPolicy';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -156,22 +156,22 @@ class CbEnvironmentNameRcb implements ObjectMapper
             after_deploymentBranchPolicy:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Environment', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Environment::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Environment(...$properties);
+            return new \ApiClients\Client\Github\Schema\Environment(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Environment', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules(array $payload): \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment⚡️ProtectionRules(array $payload): \ApiClients\Client\Github\Schema\Environment\ProtectionRules
     {
         $properties = []; 
         $missingFields = [];
@@ -221,22 +221,22 @@ class CbEnvironmentNameRcb implements ObjectMapper
             after_waitTimer:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Environment\ProtectionRules::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Environment\ProtectionRules::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules(...$properties);
+            return new \ApiClients\Client\Github\Schema\Environment\ProtectionRules(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Environment\ProtectionRules', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings(array $payload): \ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings
     {
         $properties = []; 
         $missingFields = [];
@@ -264,22 +264,22 @@ class CbEnvironmentNameRcb implements ObjectMapper
             after_customBranchPolicies:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings(...$properties);
+            return new \ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -329,17 +329,17 @@ class CbEnvironmentNameRcb implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -374,10 +374,10 @@ class CbEnvironmentNameRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Environment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment($object),
-            'ApiClients\Client\GitHub\Schema\Environment\ProtectionRules' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules($object),
-            'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($object),
-            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\Github\Schema\Environment' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment($object),
+            'ApiClients\Client\Github\Schema\Environment\ProtectionRules' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment⚡️ProtectionRules($object),
+            'ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings($object),
+            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -451,9 +451,9 @@ class CbEnvironmentNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Environment);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Environment);
         $result = [];
 
         $id = $object->id;
@@ -493,7 +493,7 @@ class CbEnvironmentNameRcb implements ObjectMapper
 
         if ($protectionRulesSerializer0 === null) {
             $protectionRulesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\Environment\\ProtectionRules',
+  0 => 'ApiClients\\Client\\Github\\Schema\\Environment\\ProtectionRules',
 ));
         }
         
@@ -506,7 +506,7 @@ class CbEnvironmentNameRcb implements ObjectMapper
         if ($deploymentBranchPolicy === null) {
             goto after_deploymentBranchPolicy;
         }
-        $deploymentBranchPolicy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings($deploymentBranchPolicy);
+        $deploymentBranchPolicy = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings($deploymentBranchPolicy);
         after_deploymentBranchPolicy:        $result['deployment_branch_policy'] = $deploymentBranchPolicy;
 
 
@@ -514,9 +514,9 @@ class CbEnvironmentNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Environment⚡️ProtectionRules(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Environment⚡️ProtectionRules(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Environment\ProtectionRules);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Environment\ProtectionRules);
         $result = [];
 
         $id = $object->id;
@@ -543,9 +543,9 @@ class CbEnvironmentNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicySettings(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicySettings(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicySettings);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DeploymentBranchPolicySettings);
         $result = [];
 
         $protectedBranches = $object->protectedBranches;
@@ -560,9 +560,9 @@ class CbEnvironmentNameRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
         $result = [];
 
         $message = $object->message;

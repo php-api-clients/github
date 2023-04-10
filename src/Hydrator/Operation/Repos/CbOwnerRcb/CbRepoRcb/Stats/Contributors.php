@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Stats;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Stats;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Contributors implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ContributorActivity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity($payload),
-                'ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks($payload),
+            'ApiClients\Client\Github\Schema\ContributorActivity' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity($payload),
+                'ApiClients\Client\Github\Schema\ContributorActivity\Weeks' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity⚡️Weeks($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity(array $payload): \ApiClients\Client\Github\Schema\ContributorActivity
     {
         $properties = []; 
         $missingFields = [];
@@ -68,7 +68,7 @@ class Contributors implements ObjectMapper
 
             if ($weeksCaster1 === null) {
                 $weeksCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ContributorActivity\\Weeks',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ContributorActivity\\Weeks',
 ));
             }
 
@@ -79,22 +79,22 @@ class Contributors implements ObjectMapper
             after_weeks:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ContributorActivity::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ContributorActivity(...$properties);
+            return new \ApiClients\Client\Github\Schema\ContributorActivity(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ContributorActivity', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks(array $payload): \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity⚡️Weeks(array $payload): \ApiClients\Client\Github\Schema\ContributorActivity\Weeks
     {
         $properties = []; 
         $missingFields = [];
@@ -144,17 +144,17 @@ class Contributors implements ObjectMapper
             after_c:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ContributorActivity\Weeks::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks(...$properties);
+            return new \ApiClients\Client\Github\Schema\ContributorActivity\Weeks(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ContributorActivity\Weeks', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -189,8 +189,8 @@ class Contributors implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ContributorActivity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity($object),
-            'ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks($object),
+            'ApiClients\Client\Github\Schema\ContributorActivity' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity($object),
+            'ApiClients\Client\Github\Schema\ContributorActivity\Weeks' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity⚡️Weeks($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -264,9 +264,9 @@ class Contributors implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContributorActivity);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ContributorActivity);
         $result = [];
 
         $author = $object->author;
@@ -286,7 +286,7 @@ class Contributors implements ObjectMapper
 
         if ($weeksSerializer0 === null) {
             $weeksSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ContributorActivity\\Weeks',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ContributorActivity\\Weeks',
 ));
         }
         
@@ -298,9 +298,9 @@ class Contributors implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ContributorActivity⚡️Weeks(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ContributorActivity⚡️Weeks(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ContributorActivity\Weeks);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ContributorActivity\Weeks);
         $result = [];
 
         $w = $object->w;

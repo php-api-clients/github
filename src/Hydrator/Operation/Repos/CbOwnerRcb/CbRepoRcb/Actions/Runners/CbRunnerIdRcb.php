@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runners;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runners;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class CbRunnerIdRcb implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Runner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner($payload),
-                'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($payload),
+            'ApiClients\Client\Github\Schema\Runner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Runner($payload),
+                'ApiClients\Client\Github\Schema\RunnerLabel' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RunnerLabel($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner(array $payload): \ApiClients\Client\GitHub\Schema\Runner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Runner(array $payload): \ApiClients\Client\Github\Schema\Runner
     {
         $properties = []; 
         $missingFields = [];
@@ -101,7 +101,7 @@ class CbRunnerIdRcb implements ObjectMapper
 
             if ($labelsCaster1 === null) {
                 $labelsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\RunnerLabel',
+  0 => 'ApiClients\\Client\\Github\\Schema\\RunnerLabel',
 ));
             }
 
@@ -112,22 +112,22 @@ class CbRunnerIdRcb implements ObjectMapper
             after_labels:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Runner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Runner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Runner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Runner(...$properties);
+            return new \ApiClients\Client\Github\Schema\Runner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Runner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel(array $payload): \ApiClients\Client\GitHub\Schema\RunnerLabel
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️RunnerLabel(array $payload): \ApiClients\Client\Github\Schema\RunnerLabel
     {
         $properties = []; 
         $missingFields = [];
@@ -166,17 +166,17 @@ class CbRunnerIdRcb implements ObjectMapper
             after_type:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RunnerLabel::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\RunnerLabel::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\RunnerLabel(...$properties);
+            return new \ApiClients\Client\Github\Schema\RunnerLabel(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\RunnerLabel', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -211,8 +211,8 @@ class CbRunnerIdRcb implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Runner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner($object),
-            'ApiClients\Client\GitHub\Schema\RunnerLabel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel($object),
+            'ApiClients\Client\Github\Schema\Runner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Runner($object),
+            'ApiClients\Client\Github\Schema\RunnerLabel' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RunnerLabel($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -286,9 +286,9 @@ class CbRunnerIdRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Runner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Runner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Runner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Runner);
         $result = [];
 
         $id = $object->id;
@@ -316,7 +316,7 @@ class CbRunnerIdRcb implements ObjectMapper
 
         if ($labelsSerializer0 === null) {
             $labelsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\RunnerLabel',
+  0 => 'ApiClients\\Client\\Github\\Schema\\RunnerLabel',
 ));
         }
         
@@ -328,9 +328,9 @@ class CbRunnerIdRcb implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RunnerLabel(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️RunnerLabel(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RunnerLabel);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\RunnerLabel);
         $result = [];
 
         $id = $object->id;

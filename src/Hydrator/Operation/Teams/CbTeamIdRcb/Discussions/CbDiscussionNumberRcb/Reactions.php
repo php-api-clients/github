@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Reactions implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Reaction' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Reaction($payload),
+            'ApiClients\Client\Github\Schema\Reaction' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Reaction($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Reaction(array $payload): \ApiClients\Client\GitHub\Schema\Reaction
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Reaction(array $payload): \ApiClients\Client\Github\Schema\Reaction
     {
         $properties = []; 
         $missingFields = [];
@@ -90,17 +90,17 @@ class Reactions implements ObjectMapper
             after_createdAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Reaction', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Reaction', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Reaction::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Reaction::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Reaction(...$properties);
+            return new \ApiClients\Client\Github\Schema\Reaction(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Reaction', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Reaction', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -135,7 +135,7 @@ class Reactions implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Reaction' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Reaction($object),
+            'ApiClients\Client\Github\Schema\Reaction' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Reaction($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -209,9 +209,9 @@ class Reactions implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Reaction(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Reaction(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Reaction);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Reaction);
         $result = [];
 
         $id = $object->id;

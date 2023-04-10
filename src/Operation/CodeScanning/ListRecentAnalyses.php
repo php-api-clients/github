@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\CodeScanning;
+namespace ApiClients\Client\Github\Operation\CodeScanning;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class ListRecentAnalyses
 {
     public const OPERATION_ID = 'code-scanning/list-recent-analyses';
@@ -51,14 +51,14 @@ final class ListRecentAnalyses
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{sarif_id}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->sarifId, $this->page, $this->perPage, $this->direction, $this->sort), self::PATH . '?toolName={tool_name}&toolGuid={tool_guid}&ref={ref}&sarifId={sarif_id}&page={page}&perPage={per_page}&direction={direction}&sort={sort}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{sarif_id}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->sarifId, $this->page, $this->perPage, $this->direction, $this->sort), self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&sarif_id={sarif_id}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
     /**
      * @return \Rx\Observable<Schema\CodeScanningAnalysis>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class OrganizationVariables implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\GitHub\Schema\ActionsVariable' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsVariable($payload),
+            'ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\Github\Schema\ActionsVariable' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsVariable($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -57,7 +57,7 @@ class OrganizationVariables implements ObjectMapper
 
             if ($variablesCaster1 === null) {
                 $variablesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsVariable',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsVariable',
 ));
             }
 
@@ -68,22 +68,22 @@ class OrganizationVariables implements ObjectMapper
             after_variables:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsVariable(array $payload): \ApiClients\Client\GitHub\Schema\ActionsVariable
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsVariable(array $payload): \ApiClients\Client\Github\Schema\ActionsVariable
     {
         $properties = []; 
         $missingFields = [];
@@ -133,17 +133,17 @@ class OrganizationVariables implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsVariable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsVariable', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsVariable::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsVariable::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsVariable(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsVariable(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsVariable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsVariable', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -178,8 +178,8 @@ class OrganizationVariables implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\GitHub\Schema\ActionsVariable' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsVariable($object),
+            'ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\Github\Schema\ActionsVariable' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsVariable($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -253,9 +253,9 @@ class OrganizationVariables implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Actions⚡️ListRepoOrganizationVariables⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Actions\ListRepoOrganizationVariables\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -267,7 +267,7 @@ class OrganizationVariables implements ObjectMapper
 
         if ($variablesSerializer0 === null) {
             $variablesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsVariable',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsVariable',
 ));
         }
         
@@ -279,9 +279,9 @@ class OrganizationVariables implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsVariable(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsVariable(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsVariable);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsVariable);
         $result = [];
 
         $name = $object->name;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Hooks\CbHookIdRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Config implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($payload),
+            'ApiClients\Client\Github\Schema\WebhookConfig' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookConfig($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(array $payload): \ApiClients\Client\GitHub\Schema\WebhookConfig
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookConfig(array $payload): \ApiClients\Client\Github\Schema\WebhookConfig
     {
         $properties = []; 
         $missingFields = [];
@@ -79,17 +79,17 @@ class Config implements ObjectMapper
             after_insecureSsl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookConfig::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookConfig::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookConfig(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookConfig(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -124,7 +124,7 @@ class Config implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($object),
+            'ApiClients\Client\Github\Schema\WebhookConfig' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookConfig($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -198,9 +198,9 @@ class Config implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookConfig(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookConfig);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookConfig);
         $result = [];
 
         $url = $object->url;

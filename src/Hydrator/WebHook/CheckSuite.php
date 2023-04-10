@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\WebHook;
+namespace ApiClients\Client\Github\Hydrator\WebHook;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,62 +23,62 @@ class CheckSuite implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
-                'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
-                'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\Enterprise' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($payload),
+                'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
+                'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
+                'ApiClients\Client\Github\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($payload),
+                'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head($payload),
+                'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted
     {
         $properties = []; 
         $missingFields = [];
@@ -115,7 +115,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'checkSuite';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -135,7 +135,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -155,7 +155,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -175,7 +175,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -195,7 +195,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -215,7 +215,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -226,22 +226,22 @@ class CheckSuite implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite
     {
         $properties = []; 
         $missingFields = [];
@@ -267,7 +267,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'app';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -342,7 +342,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'headCommit';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -407,7 +407,7 @@ class CheckSuite implements ObjectMapper
 
             if ($pullRequestsCaster1 === null) {
                 $pullRequestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteCompleted\\CheckSuite\\PullRequests',
 ));
             }
 
@@ -473,22 +473,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App
     {
         $properties = []; 
         $missingFields = [];
@@ -591,7 +591,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -611,7 +611,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -644,22 +644,22 @@ class CheckSuite implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -896,22 +896,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -1302,22 +1302,22 @@ class CheckSuite implements ObjectMapper
             after_workflows:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit
     {
         $properties = []; 
         $missingFields = [];
@@ -1332,7 +1332,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1352,7 +1352,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'committer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1407,22 +1407,22 @@ class CheckSuite implements ObjectMapper
             after_treeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author
     {
         $properties = []; 
         $missingFields = [];
@@ -1472,22 +1472,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer
     {
         $properties = []; 
         $missingFields = [];
@@ -1537,22 +1537,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests
     {
         $properties = []; 
         $missingFields = [];
@@ -1567,7 +1567,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1587,7 +1587,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1631,22 +1631,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -1672,7 +1672,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1694,22 +1694,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -1748,22 +1748,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -1789,7 +1789,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1811,22 +1811,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -1865,22 +1865,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise(array $payload): \ApiClients\Client\GitHub\Schema\Enterprise
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise(array $payload): \ApiClients\Client\Github\Schema\Enterprise
     {
         $properties = []; 
         $missingFields = [];
@@ -1996,22 +1996,22 @@ class CheckSuite implements ObjectMapper
             after_avatarUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Enterprise', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Enterprise', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Enterprise::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Enterprise::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Enterprise(...$properties);
+            return new \ApiClients\Client\Github\Schema\Enterprise(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Enterprise', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Enterprise', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\GitHub\Schema\SimpleInstallation
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\Github\Schema\SimpleInstallation
     {
         $properties = []; 
         $missingFields = [];
@@ -2039,22 +2039,22 @@ class CheckSuite implements ObjectMapper
             after_nodeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleInstallation(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleInstallation(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationSimple
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\Github\Schema\OrganizationSimple
     {
         $properties = []; 
         $missingFields = [];
@@ -2192,22 +2192,22 @@ class CheckSuite implements ObjectMapper
             after_description:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\OrganizationSimple(...$properties);
+            return new \ApiClients\Client\Github\Schema\OrganizationSimple(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository(array $payload): \ApiClients\Client\GitHub\Schema\Repository
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository(array $payload): \ApiClients\Client\Github\Schema\Repository
     {
         $properties = []; 
         $missingFields = [];
@@ -2299,7 +2299,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2319,7 +2319,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3098,7 +3098,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'templateRepository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3329,22 +3329,22 @@ class CheckSuite implements ObjectMapper
             after_anonymousAccessEnabled:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\Repository\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -3405,22 +3405,22 @@ class CheckSuite implements ObjectMapper
             after_maintain:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -3657,22 +3657,22 @@ class CheckSuite implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository
     {
         $properties = []; 
         $missingFields = [];
@@ -3731,7 +3731,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4488,7 +4488,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4653,22 +4653,22 @@ class CheckSuite implements ObjectMapper
             after_networkCount:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -4872,22 +4872,22 @@ class CheckSuite implements ObjectMapper
             after_siteAdmin:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -4948,22 +4948,22 @@ class CheckSuite implements ObjectMapper
             after_pull:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested
     {
         $properties = []; 
         $missingFields = [];
@@ -5000,7 +5000,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'checkSuite';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5020,7 +5020,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5040,7 +5040,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5060,7 +5060,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5080,7 +5080,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5100,7 +5100,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5111,22 +5111,22 @@ class CheckSuite implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite
     {
         $properties = []; 
         $missingFields = [];
@@ -5152,7 +5152,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'app';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5227,7 +5227,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'headCommit';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5292,7 +5292,7 @@ class CheckSuite implements ObjectMapper
 
             if ($pullRequestsCaster1 === null) {
                 $pullRequestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteRequested\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteRequested\\CheckSuite\\PullRequests',
 ));
             }
 
@@ -5358,22 +5358,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App
     {
         $properties = []; 
         $missingFields = [];
@@ -5476,7 +5476,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5496,7 +5496,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5529,22 +5529,22 @@ class CheckSuite implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -5781,22 +5781,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -6187,22 +6187,22 @@ class CheckSuite implements ObjectMapper
             after_workflows:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit
     {
         $properties = []; 
         $missingFields = [];
@@ -6217,7 +6217,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6237,7 +6237,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'committer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6292,22 +6292,22 @@ class CheckSuite implements ObjectMapper
             after_treeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author
     {
         $properties = []; 
         $missingFields = [];
@@ -6357,22 +6357,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer
     {
         $properties = []; 
         $missingFields = [];
@@ -6422,22 +6422,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests
     {
         $properties = []; 
         $missingFields = [];
@@ -6452,7 +6452,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6472,7 +6472,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6516,22 +6516,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -6557,7 +6557,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6579,22 +6579,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -6633,22 +6633,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -6674,7 +6674,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6696,22 +6696,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -6750,22 +6750,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested
     {
         $properties = []; 
         $missingFields = [];
@@ -6791,7 +6791,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'actionsMeta';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6811,7 +6811,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'checkSuite';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6831,7 +6831,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6851,7 +6851,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6871,7 +6871,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6891,7 +6891,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6911,7 +6911,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6922,22 +6922,22 @@ class CheckSuite implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta
     {
         $properties = []; 
         $missingFields = [];
@@ -6952,7 +6952,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rerunInfo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6963,22 +6963,22 @@ class CheckSuite implements ObjectMapper
             after_rerunInfo:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo
     {
         $properties = []; 
         $missingFields = [];
@@ -7006,22 +7006,22 @@ class CheckSuite implements ObjectMapper
             after_jobIds:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite
     {
         $properties = []; 
         $missingFields = [];
@@ -7047,7 +7047,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'app';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7122,7 +7122,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'headCommit';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7187,7 +7187,7 @@ class CheckSuite implements ObjectMapper
 
             if ($pullRequestsCaster1 === null) {
                 $pullRequestsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteRerequested\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteRerequested\\CheckSuite\\PullRequests',
 ));
             }
 
@@ -7253,22 +7253,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App
     {
         $properties = []; 
         $missingFields = [];
@@ -7371,7 +7371,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7391,7 +7391,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7424,22 +7424,22 @@ class CheckSuite implements ObjectMapper
             after_updatedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner
     {
         $properties = []; 
         $missingFields = [];
@@ -7676,22 +7676,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions
     {
         $properties = []; 
         $missingFields = [];
@@ -8082,22 +8082,22 @@ class CheckSuite implements ObjectMapper
             after_workflows:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit
     {
         $properties = []; 
         $missingFields = [];
@@ -8112,7 +8112,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8132,7 +8132,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'committer';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8187,22 +8187,22 @@ class CheckSuite implements ObjectMapper
             after_treeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author
     {
         $properties = []; 
         $missingFields = [];
@@ -8252,22 +8252,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer
     {
         $properties = []; 
         $missingFields = [];
@@ -8317,22 +8317,22 @@ class CheckSuite implements ObjectMapper
             after_username:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests
     {
         $properties = []; 
         $missingFields = [];
@@ -8347,7 +8347,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'base';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8367,7 +8367,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'head';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8411,22 +8411,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base
     {
         $properties = []; 
         $missingFields = [];
@@ -8452,7 +8452,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8474,22 +8474,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -8528,22 +8528,22 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head
     {
         $properties = []; 
         $missingFields = [];
@@ -8569,7 +8569,7 @@ class CheckSuite implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8591,22 +8591,22 @@ class CheckSuite implements ObjectMapper
             after_sha:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(array $payload): \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo
     {
         $properties = []; 
         $missingFields = [];
@@ -8645,17 +8645,17 @@ class CheckSuite implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -8690,56 +8690,56 @@ class CheckSuite implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($object),
-            'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
-            'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
-            'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
-            'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head($object),
-            'ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($object),
+            'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($object),
+            'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($object),
+            'ApiClients\Client\Github\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($object),
+            'ApiClients\Client\Github\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head($object),
+            'ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -8813,9 +8813,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted);
         $result = [];
 
         $action = $object->action;
@@ -8831,7 +8831,7 @@ class CheckSuite implements ObjectMapper
 
         
         $checkSuite = $object->checkSuite;
-        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($checkSuite);
+        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite($checkSuite);
         after_checkSuite:        $result['check_suite'] = $checkSuite;
 
         
@@ -8840,7 +8840,7 @@ class CheckSuite implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -8849,7 +8849,7 @@ class CheckSuite implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -8858,17 +8858,17 @@ class CheckSuite implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -8876,9 +8876,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite);
         $result = [];
 
         $after = $object->after;
@@ -8890,7 +8890,7 @@ class CheckSuite implements ObjectMapper
 
         
         $app = $object->app;
-        $app = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($app);
+        $app = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App($app);
         after_app:        $result['app'] = $app;
 
         
@@ -8927,7 +8927,7 @@ class CheckSuite implements ObjectMapper
 
         
         $headCommit = $object->headCommit;
-        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($headCommit);
+        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit($headCommit);
         after_headCommit:        $result['head_commit'] = $headCommit;
 
         
@@ -8952,7 +8952,7 @@ class CheckSuite implements ObjectMapper
 
         if ($pullRequestsSerializer0 === null) {
             $pullRequestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteCompleted\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteCompleted\\CheckSuite\\PullRequests',
 ));
         }
         
@@ -8996,9 +8996,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App);
         $result = [];
 
         $createdAt = $object->createdAt;
@@ -9066,7 +9066,7 @@ class CheckSuite implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -9075,7 +9075,7 @@ class CheckSuite implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -9099,9 +9099,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -9268,9 +9268,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\App\Permissions);
         $result = [];
 
         $actions = $object->actions;
@@ -9557,18 +9557,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit);
         $result = [];
 
         $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
         $committer = $object->committer;
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
+        $committer = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
         after_committer:        $result['committer'] = $committer;
 
         
@@ -9592,9 +9592,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author);
         $result = [];
 
         $date = $object->date;
@@ -9629,9 +9629,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer);
         $result = [];
 
         $date = $object->date;
@@ -9666,18 +9666,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests);
         $result = [];
 
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -9697,9 +9697,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base);
         $result = [];
 
         $ref = $object->ref;
@@ -9707,7 +9707,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -9719,9 +9719,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Base\Repo);
         $result = [];
 
         $id = $object->id;
@@ -9740,9 +9740,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head);
         $result = [];
 
         $ref = $object->ref;
@@ -9750,7 +9750,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -9762,9 +9762,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteCompleted\CheckSuite\PullRequests\Head\Repo);
         $result = [];
 
         $id = $object->id;
@@ -9783,9 +9783,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Enterprise);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Enterprise);
         $result = [];
 
         $description = $object->description;
@@ -9848,9 +9848,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleInstallation);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleInstallation);
         $result = [];
 
         $id = $object->id;
@@ -9865,9 +9865,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationSimple);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\OrganizationSimple);
         $result = [];
 
         $login = $object->login;
@@ -9926,9 +9926,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository);
         $result = [];
 
         $id = $object->id;
@@ -9972,12 +9972,12 @@ class CheckSuite implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
         $owner = $object->owner;
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -10318,7 +10318,7 @@ class CheckSuite implements ObjectMapper
         if ($templateRepository === null) {
             goto after_templateRepository;
         }
-        $templateRepository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($templateRepository);
+        $templateRepository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository($templateRepository);
         after_templateRepository:        $result['template_repository'] = $templateRepository;
 
         
@@ -10478,9 +10478,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -10515,9 +10515,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -10624,9 +10624,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository);
         $result = [];
 
         $id = $object->id;
@@ -10666,7 +10666,7 @@ class CheckSuite implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -11219,7 +11219,7 @@ class CheckSuite implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -11339,9 +11339,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Owner);
         $result = [];
 
         $login = $object->login;
@@ -11492,9 +11492,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Repository\TemplateRepository\Permissions);
         $result = [];
 
         $admin = $object->admin;
@@ -11541,9 +11541,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested);
         $result = [];
 
         $action = $object->action;
@@ -11559,7 +11559,7 @@ class CheckSuite implements ObjectMapper
 
         
         $checkSuite = $object->checkSuite;
-        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($checkSuite);
+        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite($checkSuite);
         after_checkSuite:        $result['check_suite'] = $checkSuite;
 
         
@@ -11568,7 +11568,7 @@ class CheckSuite implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -11577,7 +11577,7 @@ class CheckSuite implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -11586,17 +11586,17 @@ class CheckSuite implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -11604,9 +11604,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite);
         $result = [];
 
         $after = $object->after;
@@ -11618,7 +11618,7 @@ class CheckSuite implements ObjectMapper
 
         
         $app = $object->app;
-        $app = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($app);
+        $app = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App($app);
         after_app:        $result['app'] = $app;
 
         
@@ -11655,7 +11655,7 @@ class CheckSuite implements ObjectMapper
 
         
         $headCommit = $object->headCommit;
-        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($headCommit);
+        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit($headCommit);
         after_headCommit:        $result['head_commit'] = $headCommit;
 
         
@@ -11680,7 +11680,7 @@ class CheckSuite implements ObjectMapper
 
         if ($pullRequestsSerializer0 === null) {
             $pullRequestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteRequested\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteRequested\\CheckSuite\\PullRequests',
 ));
         }
         
@@ -11724,9 +11724,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App);
         $result = [];
 
         $createdAt = $object->createdAt;
@@ -11794,7 +11794,7 @@ class CheckSuite implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -11803,7 +11803,7 @@ class CheckSuite implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -11827,9 +11827,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -11996,9 +11996,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions);
         $result = [];
 
         $actions = $object->actions;
@@ -12285,18 +12285,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit);
         $result = [];
 
         $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
         $committer = $object->committer;
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
+        $committer = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
         after_committer:        $result['committer'] = $committer;
 
         
@@ -12320,9 +12320,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Author);
         $result = [];
 
         $date = $object->date;
@@ -12357,9 +12357,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\HeadCommit\Committer);
         $result = [];
 
         $date = $object->date;
@@ -12394,18 +12394,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests);
         $result = [];
 
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -12425,9 +12425,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base);
         $result = [];
 
         $ref = $object->ref;
@@ -12435,7 +12435,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -12447,9 +12447,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Base\Repo);
         $result = [];
 
         $id = $object->id;
@@ -12468,9 +12468,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head);
         $result = [];
 
         $ref = $object->ref;
@@ -12478,7 +12478,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -12490,9 +12490,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRequested\CheckSuite\PullRequests\Head\Repo);
         $result = [];
 
         $id = $object->id;
@@ -12511,9 +12511,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested);
         $result = [];
 
         $action = $object->action;
@@ -12525,12 +12525,12 @@ class CheckSuite implements ObjectMapper
         if ($actionsMeta === null) {
             goto after_actionsMeta;
         }
-        $actionsMeta = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($actionsMeta);
+        $actionsMeta = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta($actionsMeta);
         after_actionsMeta:        $result['actions_meta'] = $actionsMeta;
 
         
         $checkSuite = $object->checkSuite;
-        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($checkSuite);
+        $checkSuite = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite($checkSuite);
         after_checkSuite:        $result['check_suite'] = $checkSuite;
 
         
@@ -12539,7 +12539,7 @@ class CheckSuite implements ObjectMapper
         if ($enterprise === null) {
             goto after_enterprise;
         }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Enterprise($enterprise);
         after_enterprise:        $result['enterprise'] = $enterprise;
 
         
@@ -12548,7 +12548,7 @@ class CheckSuite implements ObjectMapper
         if ($installation === null) {
             goto after_installation;
         }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
         
@@ -12557,17 +12557,17 @@ class CheckSuite implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Repository($repository);
         after_repository:        $result['repository'] = $repository;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
 
@@ -12575,9 +12575,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta);
         $result = [];
 
         $rerunInfo = $object->rerunInfo;
@@ -12585,7 +12585,7 @@ class CheckSuite implements ObjectMapper
         if ($rerunInfo === null) {
             goto after_rerunInfo;
         }
-        $rerunInfo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($rerunInfo);
+        $rerunInfo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo($rerunInfo);
         after_rerunInfo:        $result['rerun_info'] = $rerunInfo;
 
 
@@ -12593,9 +12593,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️ActionsMeta⚡️RerunInfo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo);
         $result = [];
 
         $planId = $object->planId;
@@ -12626,9 +12626,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite);
         $result = [];
 
         $after = $object->after;
@@ -12640,7 +12640,7 @@ class CheckSuite implements ObjectMapper
 
         
         $app = $object->app;
-        $app = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($app);
+        $app = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App($app);
         after_app:        $result['app'] = $app;
 
         
@@ -12677,7 +12677,7 @@ class CheckSuite implements ObjectMapper
 
         
         $headCommit = $object->headCommit;
-        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($headCommit);
+        $headCommit = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit($headCommit);
         after_headCommit:        $result['head_commit'] = $headCommit;
 
         
@@ -12702,7 +12702,7 @@ class CheckSuite implements ObjectMapper
 
         if ($pullRequestsSerializer0 === null) {
             $pullRequestsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WebhookCheckSuiteRerequested\\CheckSuite\\PullRequests',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WebhookCheckSuiteRerequested\\CheckSuite\\PullRequests',
 ));
         }
         
@@ -12746,9 +12746,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App);
         $result = [];
 
         $createdAt = $object->createdAt;
@@ -12816,7 +12816,7 @@ class CheckSuite implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -12825,7 +12825,7 @@ class CheckSuite implements ObjectMapper
         if ($permissions === null) {
             goto after_permissions;
         }
-        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($permissions);
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         
@@ -12849,9 +12849,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Owner(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Owner);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -13018,9 +13018,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️App⚡️Permissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\App\Permissions);
         $result = [];
 
         $actions = $object->actions;
@@ -13307,18 +13307,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit);
         $result = [];
 
         $author = $object->author;
-        $author = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
+        $author = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         
         $committer = $object->committer;
-        $committer = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
+        $committer = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️HeadCommit⚡️Committer($committer);
         after_committer:        $result['committer'] = $committer;
 
         
@@ -13342,9 +13342,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Author(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Author);
         $result = [];
 
         $date = $object->date;
@@ -13379,9 +13379,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️HeadCommit⚡️Committer(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit\Committer);
         $result = [];
 
         $date = $object->date;
@@ -13416,18 +13416,18 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests);
         $result = [];
 
         $base = $object->base;
-        $base = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
+        $base = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base($base);
         after_base:        $result['base'] = $base;
 
         
         $head = $object->head;
-        $head = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
+        $head = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Head($head);
         after_head:        $result['head'] = $head;
 
         
@@ -13447,9 +13447,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base);
         $result = [];
 
         $ref = $object->ref;
@@ -13457,7 +13457,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -13469,9 +13469,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Base\Repo);
         $result = [];
 
         $id = $object->id;
@@ -13490,9 +13490,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head);
         $result = [];
 
         $ref = $object->ref;
@@ -13500,7 +13500,7 @@ class CheckSuite implements ObjectMapper
 
         
         $repo = $object->repo;
-        $repo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
+        $repo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteCompleted⚡️CheckSuite⚡️PullRequests⚡️Base⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         
@@ -13512,9 +13512,9 @@ class CheckSuite implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookCheckSuiteRerequested⚡️CheckSuite⚡️PullRequests⚡️Head⚡️Repo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookCheckSuiteRerequested\CheckSuite\PullRequests\Head\Repo);
         $result = [];
 
         $id = $object->id;

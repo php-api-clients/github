@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\Actions;
+namespace ApiClients\Client\Github\Operation\Actions;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class GetActionsCacheList
 {
     public const OPERATION_ID = 'actions/get-actions-cache-list';
@@ -45,14 +45,14 @@ final class GetActionsCacheList
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{ref}', '{key}', '{per_page}', '{page}', '{sort}', '{direction}'), array($this->owner, $this->repo, $this->ref, $this->key, $this->perPage, $this->page, $this->sort, $this->direction), self::PATH . '?ref={ref}&key={key}&perPage={per_page}&page={page}&sort={sort}&direction={direction}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{ref}', '{key}', '{per_page}', '{page}', '{sort}', '{direction}'), array($this->owner, $this->repo, $this->ref, $this->key, $this->perPage, $this->page, $this->sort, $this->direction), self::PATH . '?ref={ref}&key={key}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
     }
     /**
      * @return Schema\ActionsCacheList
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ActionsCacheList
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ActionsCacheList
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

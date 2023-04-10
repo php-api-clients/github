@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Users\CbUsernameRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Users\CbUsernameRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class SocialAccounts implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\SocialAccount' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SocialAccount($payload),
+            'ApiClients\Client\Github\Schema\SocialAccount' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SocialAccount($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SocialAccount(array $payload): \ApiClients\Client\GitHub\Schema\SocialAccount
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SocialAccount(array $payload): \ApiClients\Client\Github\Schema\SocialAccount
     {
         $properties = []; 
         $missingFields = [];
@@ -57,17 +57,17 @@ class SocialAccounts implements ObjectMapper
             after_url:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SocialAccount', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SocialAccount', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SocialAccount::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SocialAccount::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SocialAccount(...$properties);
+            return new \ApiClients\Client\Github\Schema\SocialAccount(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SocialAccount', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SocialAccount', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -102,7 +102,7 @@ class SocialAccounts implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\SocialAccount' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SocialAccount($object),
+            'ApiClients\Client\Github\Schema\SocialAccount' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SocialAccount($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -176,9 +176,9 @@ class SocialAccounts implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SocialAccount(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SocialAccount(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SocialAccount);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SocialAccount);
         $result = [];
 
         $provider = $object->provider;

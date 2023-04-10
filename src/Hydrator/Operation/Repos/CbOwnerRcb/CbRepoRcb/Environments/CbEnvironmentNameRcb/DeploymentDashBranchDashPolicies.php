@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments\CbEnvironmentNameRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Environments\CbEnvironmentNameRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy($payload),
+            'ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200($payload),
+                'ApiClients\Client\Github\Schema\DeploymentBranchPolicy' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200
     {
         $properties = []; 
         $missingFields = [];
@@ -57,7 +57,7 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
 
             if ($branchPoliciesCaster1 === null) {
                 $branchPoliciesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DeploymentBranchPolicy',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DeploymentBranchPolicy',
 ));
             }
 
@@ -68,22 +68,22 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
             after_branchPolicies:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy(array $payload): \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy(array $payload): \ApiClients\Client\Github\Schema\DeploymentBranchPolicy
     {
         $properties = []; 
         $missingFields = [];
@@ -122,17 +122,17 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
             after_name:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DeploymentBranchPolicy::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy(...$properties);
+            return new \ApiClients\Client\Github\Schema\DeploymentBranchPolicy(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -167,8 +167,8 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy($object),
+            'ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200($object),
+            'ApiClients\Client\Github\Schema\DeploymentBranchPolicy' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -242,9 +242,9 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️Repos⚡️ListDeploymentBranchPolicies⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\Repos\ListDeploymentBranchPolicies\Response\Applicationjson\H200);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -256,7 +256,7 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
 
         if ($branchPoliciesSerializer0 === null) {
             $branchPoliciesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DeploymentBranchPolicy',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DeploymentBranchPolicy',
 ));
         }
         
@@ -268,9 +268,9 @@ class DeploymentDashBranchDashPolicies implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentBranchPolicy(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DeploymentBranchPolicy(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DeploymentBranchPolicy);
         $result = [];
 
         $id = $object->id;

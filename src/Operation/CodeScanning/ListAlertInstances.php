@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\CodeScanning;
+namespace ApiClients\Client\Github\Operation\CodeScanning;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class ListAlertInstances
 {
     public const OPERATION_ID = 'code-scanning/list-alert-instances';
@@ -39,14 +39,14 @@ final class ListAlertInstances
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'), array($this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage), self::PATH . '?ref={ref}&page={page}&perPage={per_page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'), array($this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage), self::PATH . '?ref={ref}&page={page}&per_page={per_page}'));
     }
     /**
      * @return \Rx\Observable<Schema\CodeScanningAlertInstance>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

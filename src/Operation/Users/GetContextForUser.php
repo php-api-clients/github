@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\Users;
+namespace ApiClients\Client\Github\Operation\Users;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class GetContextForUser
 {
     public const OPERATION_ID = 'users/get-context-for-user';
@@ -30,14 +30,14 @@ final class GetContextForUser
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}', '{subject_type}', '{subject_id}'), array($this->username, $this->subjectType, $this->subjectId), self::PATH . '?subjectType={subject_type}&subjectId={subject_id}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}', '{subject_type}', '{subject_id}'), array($this->username, $this->subjectType, $this->subjectId), self::PATH . '?subject_type={subject_type}&subject_id={subject_id}'));
     }
     /**
      * @return Schema\Hovercard
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Hovercard
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Hovercard
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

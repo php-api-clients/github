@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\Orgs;
+namespace ApiClients\Client\Github\Operation\Orgs;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class CheckMembershipForUser
 {
     public const OPERATION_ID = 'orgs/check-membership-for-user';
@@ -23,14 +23,14 @@ final class CheckMembershipForUser
         $this->org = $org;
         $this->username = $username;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{username}'), array($this->org, $this->username), self::PATH));
     }
     /**
      * @return array{code: int,location: string}
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
     {
         switch ($response->getStatusCode()) {
             /**Response if requester is not an organization member**/

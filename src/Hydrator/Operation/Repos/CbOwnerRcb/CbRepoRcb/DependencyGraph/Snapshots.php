@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Snapshots implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($payload),
+            'ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(array $payload): \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(array $payload): \ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201
     {
         $properties = []; 
         $missingFields = [];
@@ -79,17 +79,17 @@ class Snapshots implements ObjectMapper
             after_message:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201(...$properties);
+            return new \ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -124,7 +124,7 @@ class Snapshots implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($object),
+            'ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -198,9 +198,9 @@ class Snapshots implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️Operation⚡️DependencyGraph⚡️CreateRepositorySnapshot⚡️Response⚡️Applicationjson⚡️H201(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201);
         $result = [];
 
         $id = $object->id;

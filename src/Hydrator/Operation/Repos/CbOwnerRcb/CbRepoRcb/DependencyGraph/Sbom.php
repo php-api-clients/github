@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,18 +23,18 @@ class Sbom implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom($payload),
-                'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($payload),
-                'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($payload),
-                'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages($payload),
-                'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom($payload),
+                'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($payload),
+                'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($payload),
+                'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages($payload),
+                'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs($payload),
+                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom
     {
         $properties = []; 
         $missingFields = [];
@@ -49,7 +49,7 @@ class Sbom implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sbom';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -60,22 +60,22 @@ class Sbom implements ObjectMapper
             after_sbom:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom(...$properties);
+            return new \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom
     {
         $properties = []; 
         $missingFields = [];
@@ -112,7 +112,7 @@ class Sbom implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creationInfo';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -177,7 +177,7 @@ class Sbom implements ObjectMapper
 
             if ($packagesCaster1 === null) {
                 $packagesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages',
 ));
             }
 
@@ -188,22 +188,22 @@ class Sbom implements ObjectMapper
             after_packages:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom(...$properties);
+            return new \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo
     {
         $properties = []; 
         $missingFields = [];
@@ -231,22 +231,22 @@ class Sbom implements ObjectMapper
             after_creators:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo(...$properties);
+            return new \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages
     {
         $properties = []; 
         $missingFields = [];
@@ -350,7 +350,7 @@ class Sbom implements ObjectMapper
 
             if ($externalRefsCaster1 === null) {
                 $externalRefsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages\\ExternalRefs',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages\\ExternalRefs',
 ));
             }
 
@@ -361,22 +361,22 @@ class Sbom implements ObjectMapper
             after_externalRefs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages(...$properties);
+            return new \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs(array $payload): \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs(array $payload): \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs
     {
         $properties = []; 
         $missingFields = [];
@@ -415,22 +415,22 @@ class Sbom implements ObjectMapper
             after_referenceType:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs(...$properties);
+            return new \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -480,17 +480,17 @@ class Sbom implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -525,12 +525,12 @@ class Sbom implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom($object),
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($object),
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($object),
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages($object),
-            'ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs($object),
-            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom($object),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($object),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($object),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages($object),
+            'ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs($object),
+            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -604,13 +604,13 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom);
         $result = [];
 
         $sbom = $object->sbom;
-        $sbom = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($sbom);
+        $sbom = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom($sbom);
         after_sbom:        $result['sbom'] = $sbom;
 
 
@@ -618,9 +618,9 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom);
         $result = [];
 
         $spdxid = $object->spdxid;
@@ -632,7 +632,7 @@ class Sbom implements ObjectMapper
 
         
         $creationInfo = $object->creationInfo;
-        $creationInfo = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($creationInfo);
+        $creationInfo = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($creationInfo);
         after_creationInfo:        $result['creation_info'] = $creationInfo;
 
         
@@ -665,7 +665,7 @@ class Sbom implements ObjectMapper
 
         if ($packagesSerializer0 === null) {
             $packagesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages',
 ));
         }
         
@@ -677,9 +677,9 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo);
         $result = [];
 
         $created = $object->created;
@@ -702,9 +702,9 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages);
         $result = [];
 
         $spdxid = $object->spdxid;
@@ -780,7 +780,7 @@ class Sbom implements ObjectMapper
 
         if ($externalRefsSerializer0 === null) {
             $externalRefsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages\\ExternalRefs',
+  0 => 'ApiClients\\Client\\Github\\Schema\\DependencyGraphSpdxSbom\\Sbom\\Packages\\ExternalRefs',
 ));
         }
         
@@ -792,9 +792,9 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️Packages⚡️ExternalRefs(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\DependencyGraphSpdxSbom\Sbom\Packages\ExternalRefs);
         $result = [];
 
         $referenceCategory = $object->referenceCategory;
@@ -813,9 +813,9 @@ class Sbom implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
         $result = [];
 
         $message = $object->message;

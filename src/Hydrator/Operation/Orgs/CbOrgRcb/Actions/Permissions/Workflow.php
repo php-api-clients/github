@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Permissions;
+namespace ApiClients\Client\Github\Hydrator\Operation\Orgs\CbOrgRcb\Actions\Permissions;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class Workflow implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions($payload),
+            'ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions(array $payload): \ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions(array $payload): \ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions
     {
         $properties = []; 
         $missingFields = [];
@@ -57,17 +57,17 @@ class Workflow implements ObjectMapper
             after_canApprovePullRequestReviews:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -102,7 +102,7 @@ class Workflow implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions($object),
+            'ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -176,9 +176,9 @@ class Workflow implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsGetDefaultWorkflowPermissions(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsGetDefaultWorkflowPermissions);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsGetDefaultWorkflowPermissions);
         $result = [];
 
         $defaultWorkflowPermissions = $object->defaultWorkflowPermissions;

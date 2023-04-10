@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pages;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pages;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,16 +23,16 @@ class Health implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\PagesHealthCheck' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck($payload),
-                'ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($payload),
-                'ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\Github\Schema\PagesHealthCheck' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck($payload),
+                'ApiClients\Client\Github\Schema\PagesHealthCheck\Domain' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain($payload),
+                'ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($payload),
+                'ApiClients\Client\Github\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck(array $payload): \ApiClients\Client\Github\Schema\PagesHealthCheck
     {
         $properties = []; 
         $missingFields = [];
@@ -47,7 +47,7 @@ class Health implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'domain';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -67,7 +67,7 @@ class Health implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'altDomain';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -78,22 +78,22 @@ class Health implements ObjectMapper
             after_altDomain:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PagesHealthCheck::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck(...$properties);
+            return new \ApiClients\Client\Github\Schema\PagesHealthCheck(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain(array $payload): \ApiClients\Client\Github\Schema\PagesHealthCheck\Domain
     {
         $properties = []; 
         $missingFields = [];
@@ -407,22 +407,22 @@ class Health implements ObjectMapper
             after_caaError:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PagesHealthCheck\Domain::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain(...$properties);
+            return new \ApiClients\Client\Github\Schema\PagesHealthCheck\Domain(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck\Domain', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(array $payload): \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(array $payload): \ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain
     {
         $properties = []; 
         $missingFields = [];
@@ -736,22 +736,22 @@ class Health implements ObjectMapper
             after_caaError:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain(...$properties);
+            return new \ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\Github\Schema\BasicError
     {
         $properties = []; 
         $missingFields = [];
@@ -801,17 +801,17 @@ class Health implements ObjectMapper
             after_status:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\BasicError::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\BasicError(...$properties);
+            return new \ApiClients\Client\Github\Schema\BasicError(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -846,10 +846,10 @@ class Health implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\PagesHealthCheck' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck($object),
-            'ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($object),
-            'ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($object),
-            'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
+            'ApiClients\Client\Github\Schema\PagesHealthCheck' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck($object),
+            'ApiClients\Client\Github\Schema\PagesHealthCheck\Domain' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain($object),
+            'ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($object),
+            'ApiClients\Client\Github\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -923,9 +923,9 @@ class Health implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PagesHealthCheck);
         $result = [];
 
         $domain = $object->domain;
@@ -933,7 +933,7 @@ class Health implements ObjectMapper
         if ($domain === null) {
             goto after_domain;
         }
-        $domain = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain($domain);
+        $domain = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain($domain);
         after_domain:        $result['domain'] = $domain;
 
         
@@ -942,7 +942,7 @@ class Health implements ObjectMapper
         if ($altDomain === null) {
             goto after_altDomain;
         }
-        $altDomain = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($altDomain);
+        $altDomain = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain($altDomain);
         after_altDomain:        $result['alt_domain'] = $altDomain;
 
 
@@ -950,9 +950,9 @@ class Health implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️Domain(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️Domain(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck\Domain);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PagesHealthCheck\Domain);
         $result = [];
 
         $host = $object->host;
@@ -1183,9 +1183,9 @@ class Health implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PagesHealthCheck⚡️AltDomain(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PagesHealthCheck\AltDomain);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PagesHealthCheck\AltDomain);
         $result = [];
 
         $host = $object->host;
@@ -1416,9 +1416,9 @@ class Health implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️BasicError(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\BasicError);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\BasicError);
         $result = [];
 
         $message = $object->message;

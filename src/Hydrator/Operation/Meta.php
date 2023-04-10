@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation;
+namespace ApiClients\Client\Github\Hydrator\Operation;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Meta implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($payload),
-                'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($payload),
+            'ApiClients\Client\Github\Schema\ApiOverview' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview($payload),
+                'ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview(array $payload): \ApiClients\Client\Github\Schema\ApiOverview
     {
         $properties = []; 
         $missingFields = [];
@@ -56,7 +56,7 @@ class Meta implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sshKeyFingerprints';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -177,22 +177,22 @@ class Meta implements ObjectMapper
             after_dependabot:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ApiOverview::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ApiOverview(...$properties);
+            return new \ApiClients\Client\Github\Schema\ApiOverview(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ApiOverview', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(array $payload): \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(array $payload): \ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints
     {
         $properties = []; 
         $missingFields = [];
@@ -242,17 +242,17 @@ class Meta implements ObjectMapper
             after_sha256Ed25519:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints(...$properties);
+            return new \ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -287,8 +287,8 @@ class Meta implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($object),
-            'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($object),
+            'ApiClients\Client\Github\Schema\ApiOverview' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview($object),
+            'ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -362,9 +362,9 @@ class Meta implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ApiOverview);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ApiOverview);
         $result = [];
 
         $verifiablePasswordAuthentication = $object->verifiablePasswordAuthentication;
@@ -376,7 +376,7 @@ class Meta implements ObjectMapper
         if ($sshKeyFingerprints === null) {
             goto after_sshKeyFingerprints;
         }
-        $sshKeyFingerprints = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($sshKeyFingerprints);
+        $sshKeyFingerprints = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($sshKeyFingerprints);
         after_sshKeyFingerprints:        $result['ssh_key_fingerprints'] = $sshKeyFingerprints;
 
         
@@ -544,9 +544,9 @@ class Meta implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ApiOverview\SshKeyFingerprints);
         $result = [];
 
         $sha256Rsa = $object->sha256Rsa;

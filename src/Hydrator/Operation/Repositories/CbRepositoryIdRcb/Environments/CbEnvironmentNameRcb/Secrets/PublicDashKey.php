@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,13 +23,13 @@ class PublicDashKey implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ActionsPublicKey' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey($payload),
+            'ApiClients\Client\Github\Schema\ActionsPublicKey' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsPublicKey($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey(array $payload): \ApiClients\Client\GitHub\Schema\ActionsPublicKey
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsPublicKey(array $payload): \ApiClients\Client\Github\Schema\ActionsPublicKey
     {
         $properties = []; 
         $missingFields = [];
@@ -101,17 +101,17 @@ class PublicDashKey implements ObjectMapper
             after_createdAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsPublicKey::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsPublicKey::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsPublicKey(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsPublicKey(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -146,7 +146,7 @@ class PublicDashKey implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ActionsPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey($object),
+            'ApiClients\Client\Github\Schema\ActionsPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsPublicKey($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -220,9 +220,9 @@ class PublicDashKey implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsPublicKey(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsPublicKey);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsPublicKey);
         $result = [];
 
         $keyId = $object->keyId;

@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace ApiClients\Client\GitHub\Operation\Reactions;
+namespace ApiClients\Client\Github\Operation\Reactions;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\Github\Error as ErrorSchemas;
+use ApiClients\Client\Github\Hydrator;
+use ApiClients\Client\Github\Operation;
+use ApiClients\Client\Github\Schema;
+use ApiClients\Client\Github\WebHook;
 final class ListForTeamDiscussionLegacy
 {
     public const OPERATION_ID = 'reactions/list-for-team-discussion-legacy';
@@ -36,14 +36,14 @@ final class ListForTeamDiscussionLegacy
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->teamId, $this->discussionNumber, $this->content, $this->perPage, $this->page), self::PATH . '?content={content}&perPage={per_page}&page={page}'));
+        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'), array($this->teamId, $this->discussionNumber, $this->content, $this->perPage, $this->page), self::PATH . '?content={content}&per_page={per_page}&page={page}'));
     }
     /**
      * @return \Rx\Observable<Schema\Reaction>
      */
-    function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         $body = json_decode($response->getBody()->getContents(), true);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,14 +23,14 @@ class Caches implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\ActionsCacheList' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList($payload),
-                'ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches($payload),
+            'ApiClients\Client\Github\Schema\ActionsCacheList' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList($payload),
+                'ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheList
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList(array $payload): \ApiClients\Client\Github\Schema\ActionsCacheList
     {
         $properties = []; 
         $missingFields = [];
@@ -57,7 +57,7 @@ class Caches implements ObjectMapper
 
             if ($actionsCachesCaster1 === null) {
                 $actionsCachesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheList\\ActionsCaches',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsCacheList\\ActionsCaches',
 ));
             }
 
@@ -68,22 +68,22 @@ class Caches implements ObjectMapper
             after_actionsCaches:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheList', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheList::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsCacheList::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsCacheList(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsCacheList(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheList', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches(array $payload): \ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches(array $payload): \ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches
     {
         $properties = []; 
         $missingFields = [];
@@ -166,17 +166,17 @@ class Caches implements ObjectMapper
             after_sizeInBytes:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches(...$properties);
+            return new \ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -211,8 +211,8 @@ class Caches implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\ActionsCacheList' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList($object),
-            'ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches($object),
+            'ApiClients\Client\Github\Schema\ActionsCacheList' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList($object),
+            'ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -286,9 +286,9 @@ class Caches implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheList);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsCacheList);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -300,7 +300,7 @@ class Caches implements ObjectMapper
 
         if ($actionsCachesSerializer0 === null) {
             $actionsCachesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ActionsCacheList\\ActionsCaches',
+  0 => 'ApiClients\\Client\\Github\\Schema\\ActionsCacheList\\ActionsCaches',
 ));
         }
         
@@ -312,9 +312,9 @@ class Caches implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️ActionsCacheList⚡️ActionsCaches(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ActionsCacheList\ActionsCaches);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\ActionsCacheList\ActionsCaches);
         $result = [];
 
         $id = $object->id;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\WebHook;
+namespace ApiClients\Client\Github\Hydrator\WebHook;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,24 +23,24 @@ class PersonalAccessTokenRequest implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved($payload),
-                'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
-                'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($payload),
-                'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($payload),
-                'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($payload),
-                'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories($payload),
-                'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied($payload),
+            'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved($payload),
+                'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($payload),
+                'ApiClients\Client\Github\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($payload),
+                'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($payload),
+                'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($payload),
+                'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($payload),
+                'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories($payload),
+                'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($payload),
+                'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($payload),
+                'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled($payload),
+                'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated($payload),
+                'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved(array $payload): \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved
     {
         $properties = []; 
         $missingFields = [];
@@ -66,7 +66,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'personalAccessTokenRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -86,7 +86,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -106,7 +106,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -126,7 +126,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -137,22 +137,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_installation:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest(array $payload): \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest(array $payload): \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest
     {
         $properties = []; 
         $missingFields = [];
@@ -178,7 +178,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -198,7 +198,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissionsAdded';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -218,7 +218,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissionsUpgraded';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -238,7 +238,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissionsResult';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -281,7 +281,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
             if ($repositoriesCaster1 === null) {
                 $repositoriesCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\PersonalAccessTokenRequest\\Repositories',
+  0 => 'ApiClients\\Client\\Github\\Schema\\PersonalAccessTokenRequest\\Repositories',
 ));
             }
 
@@ -336,22 +336,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_tokenLastUsedAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PersonalAccessTokenRequest::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest(...$properties);
+            return new \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\GitHub\Schema\SimpleUser
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(array $payload): \ApiClients\Client\Github\Schema\SimpleUser
     {
         $properties = []; 
         $missingFields = [];
@@ -588,22 +588,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_starredAt:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleUser(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleUser(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded(array $payload): \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded(array $payload): \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded
     {
         $properties = []; 
         $missingFields = [];
@@ -642,22 +642,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_other:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded(...$properties);
+            return new \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded(array $payload): \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded(array $payload): \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded
     {
         $properties = []; 
         $missingFields = [];
@@ -696,22 +696,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_other:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded(...$properties);
+            return new \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult(array $payload): \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult(array $payload): \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult
     {
         $properties = []; 
         $missingFields = [];
@@ -750,22 +750,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_other:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult(...$properties);
+            return new \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories(array $payload): \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories(array $payload): \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories
     {
         $properties = []; 
         $missingFields = [];
@@ -826,22 +826,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_private:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories(...$properties);
+            return new \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\GitHub\Schema\OrganizationSimple
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(array $payload): \ApiClients\Client\Github\Schema\OrganizationSimple
     {
         $properties = []; 
         $missingFields = [];
@@ -979,22 +979,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_description:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\OrganizationSimple(...$properties);
+            return new \ApiClients\Client\Github\Schema\OrganizationSimple(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\GitHub\Schema\SimpleInstallation
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(array $payload): \ApiClients\Client\Github\Schema\SimpleInstallation
     {
         $properties = []; 
         $missingFields = [];
@@ -1022,22 +1022,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_nodeId:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\SimpleInstallation::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\SimpleInstallation(...$properties);
+            return new \ApiClients\Client\Github\Schema\SimpleInstallation(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\SimpleInstallation', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled(array $payload): \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled
     {
         $properties = []; 
         $missingFields = [];
@@ -1063,7 +1063,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'personalAccessTokenRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1083,7 +1083,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1103,7 +1103,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1123,7 +1123,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1134,22 +1134,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_installation:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated(array $payload): \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated
     {
         $properties = []; 
         $missingFields = [];
@@ -1175,7 +1175,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'personalAccessTokenRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1195,7 +1195,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1215,7 +1215,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1235,7 +1235,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1246,22 +1246,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_installation:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied(array $payload): \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied(array $payload): \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied
     {
         $properties = []; 
         $missingFields = [];
@@ -1287,7 +1287,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'personalAccessTokenRequest';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1307,7 +1307,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1327,7 +1327,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1347,7 +1347,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1358,17 +1358,17 @@ class PersonalAccessTokenRequest implements ObjectMapper
             after_installation:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied(...$properties);
+            return new \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -1403,18 +1403,18 @@ class PersonalAccessTokenRequest implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved($object),
-            'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($object),
-            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
-            'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($object),
-            'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($object),
-            'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($object),
-            'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories($object),
-            'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
-            'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated($object),
-            'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied($object),
+            'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved($object),
+            'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($object),
+            'ApiClients\Client\Github\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($object),
+            'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($object),
+            'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($object),
+            'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($object),
+            'ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories($object),
+            'ApiClients\Client\Github\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($object),
+            'ApiClients\Client\Github\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($object),
+            'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled($object),
+            'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated($object),
+            'ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -1488,9 +1488,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestApproved(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestApproved);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestApproved);
         $result = [];
 
         $action = $object->action;
@@ -1498,22 +1498,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         
         $personalAccessTokenRequest = $object->personalAccessTokenRequest;
-        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
+        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         
         $installation = $object->installation;
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
 
@@ -1521,9 +1521,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest);
         $result = [];
 
         $id = $object->id;
@@ -1531,22 +1531,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         
         $owner = $object->owner;
-        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($owner);
         after_owner:        $result['owner'] = $owner;
 
         
         $permissionsAdded = $object->permissionsAdded;
-        $permissionsAdded = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($permissionsAdded);
+        $permissionsAdded = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($permissionsAdded);
         after_permissionsAdded:        $result['permissions_added'] = $permissionsAdded;
 
         
         $permissionsUpgraded = $object->permissionsUpgraded;
-        $permissionsUpgraded = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($permissionsUpgraded);
+        $permissionsUpgraded = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($permissionsUpgraded);
         after_permissionsUpgraded:        $result['permissions_upgraded'] = $permissionsUpgraded;
 
         
         $permissionsResult = $object->permissionsResult;
-        $permissionsResult = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($permissionsResult);
+        $permissionsResult = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($permissionsResult);
         after_permissionsResult:        $result['permissions_result'] = $permissionsResult;
 
         
@@ -1571,7 +1571,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         if ($repositoriesSerializer0 === null) {
             $repositoriesSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\PersonalAccessTokenRequest\\Repositories',
+  0 => 'ApiClients\\Client\\Github\\Schema\\PersonalAccessTokenRequest\\Repositories',
 ));
         }
         
@@ -1607,9 +1607,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -1716,9 +1716,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsAdded);
         $result = [];
 
         $organization = $object->organization;
@@ -1749,9 +1749,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsUpgraded);
         $result = [];
 
         $organization = $object->organization;
@@ -1782,9 +1782,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\PermissionsResult);
         $result = [];
 
         $organization = $object->organization;
@@ -1815,9 +1815,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest⚡️Repositories(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\Repositories);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\PersonalAccessTokenRequest\Repositories);
         $result = [];
 
         $fullName = $object->fullName;
@@ -1844,9 +1844,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\OrganizationSimple);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\OrganizationSimple);
         $result = [];
 
         $login = $object->login;
@@ -1905,9 +1905,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleInstallation);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\SimpleInstallation);
         $result = [];
 
         $id = $object->id;
@@ -1922,9 +1922,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCancelled);
         $result = [];
 
         $action = $object->action;
@@ -1932,22 +1932,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         
         $personalAccessTokenRequest = $object->personalAccessTokenRequest;
-        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
+        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         
         $installation = $object->installation;
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
 
@@ -1955,9 +1955,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestCreated);
         $result = [];
 
         $action = $object->action;
@@ -1965,22 +1965,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         
         $personalAccessTokenRequest = $object->personalAccessTokenRequest;
-        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
+        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         
         $installation = $object->installation;
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
 
@@ -1988,9 +1988,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WebhookPersonalAccessTokenRequestDenied);
         $result = [];
 
         $action = $object->action;
@@ -1998,22 +1998,22 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         
         $personalAccessTokenRequest = $object->personalAccessTokenRequest;
-        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
+        $personalAccessTokenRequest = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
         
         $organization = $object->organization;
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️OrganizationSimple($organization);
         after_organization:        $result['organization'] = $organization;
 
         
         $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         
         $installation = $object->installation;
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
 

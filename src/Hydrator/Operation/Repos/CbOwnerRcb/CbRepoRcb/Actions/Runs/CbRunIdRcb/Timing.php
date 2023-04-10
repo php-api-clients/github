@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
+namespace ApiClients\Client\Github\Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -23,20 +23,20 @@ class Timing implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($payload),
-                'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns($payload),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($payload),
+                'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns' => $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage
     {
         $properties = []; 
         $missingFields = [];
@@ -51,7 +51,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'billable';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -73,22 +73,22 @@ class Timing implements ObjectMapper
             after_runDurationMs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable
     {
         $properties = []; 
         $missingFields = [];
@@ -103,7 +103,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'ubuntu';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -123,7 +123,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'macos';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -143,7 +143,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'windows';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -154,22 +154,22 @@ class Timing implements ObjectMapper
             after_windows:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu
     {
         $properties = []; 
         $missingFields = [];
@@ -207,7 +207,7 @@ class Timing implements ObjectMapper
 
             if ($jobRunsCaster1 === null) {
                 $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
@@ -218,22 +218,22 @@ class Timing implements ObjectMapper
             after_jobRuns:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns
     {
         $properties = []; 
         $missingFields = [];
@@ -261,22 +261,22 @@ class Timing implements ObjectMapper
             after_durationMs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos
     {
         $properties = []; 
         $missingFields = [];
@@ -314,7 +314,7 @@ class Timing implements ObjectMapper
 
             if ($jobRunsCaster1 === null) {
                 $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
@@ -325,22 +325,22 @@ class Timing implements ObjectMapper
             after_jobRuns:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns
     {
         $properties = []; 
         $missingFields = [];
@@ -368,22 +368,22 @@ class Timing implements ObjectMapper
             after_durationMs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows
     {
         $properties = []; 
         $missingFields = [];
@@ -421,7 +421,7 @@ class Timing implements ObjectMapper
 
             if ($jobRunsCaster1 === null) {
                 $jobRunsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
             }
 
@@ -432,22 +432,22 @@ class Timing implements ObjectMapper
             after_jobRuns:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
         }
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns
+    private function hydrateApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns(array $payload): \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns
     {
         $properties = []; 
         $missingFields = [];
@@ -475,17 +475,17 @@ class Timing implements ObjectMapper
             after_durationMs:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns(...$properties);
+            return new \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -520,14 +520,14 @@ class Timing implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($object),
-            'ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($object),
+            'ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns' => $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -601,13 +601,13 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage);
         $result = [];
 
         $billable = $object->billable;
-        $billable = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable($billable);
+        $billable = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable($billable);
         after_billable:        $result['billable'] = $billable;
 
         
@@ -623,9 +623,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable);
         $result = [];
 
         $ubuntu = $object->ubuntu;
@@ -633,7 +633,7 @@ class Timing implements ObjectMapper
         if ($ubuntu === null) {
             goto after_ubuntu;
         }
-        $ubuntu = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($ubuntu);
+        $ubuntu = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu($ubuntu);
         after_ubuntu:        $result['UBUNTU'] = $ubuntu;
 
         
@@ -642,7 +642,7 @@ class Timing implements ObjectMapper
         if ($macos === null) {
             goto after_macos;
         }
-        $macos = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($macos);
+        $macos = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos($macos);
         after_macos:        $result['MACOS'] = $macos;
 
         
@@ -651,7 +651,7 @@ class Timing implements ObjectMapper
         if ($windows === null) {
             goto after_windows;
         }
-        $windows = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($windows);
+        $windows = $this->serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows($windows);
         after_windows:        $result['WINDOWS'] = $windows;
 
 
@@ -659,9 +659,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu);
         $result = [];
 
         $totalMs = $object->totalMs;
@@ -681,7 +681,7 @@ class Timing implements ObjectMapper
 
         if ($jobRunsSerializer0 === null) {
             $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         
@@ -693,9 +693,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Ubuntu⚡️JobRuns(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Ubuntu\JobRuns);
         $result = [];
 
         $jobId = $object->jobId;
@@ -710,9 +710,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos);
         $result = [];
 
         $totalMs = $object->totalMs;
@@ -732,7 +732,7 @@ class Timing implements ObjectMapper
 
         if ($jobRunsSerializer0 === null) {
             $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         
@@ -744,9 +744,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Macos⚡️JobRuns(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Macos\JobRuns);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Macos\JobRuns);
         $result = [];
 
         $jobId = $object->jobId;
@@ -761,9 +761,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows);
         $result = [];
 
         $totalMs = $object->totalMs;
@@ -783,7 +783,7 @@ class Timing implements ObjectMapper
 
         if ($jobRunsSerializer0 === null) {
             $jobRunsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
+  0 => 'ApiClients\\Client\\Github\\Schema\\WorkflowRunUsage\\Billable\\Ubuntu\\JobRuns',
 ));
         }
         
@@ -795,9 +795,9 @@ class Timing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️Github⚡️Schema⚡️WorkflowRunUsage⚡️Billable⚡️Windows⚡️JobRuns(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowRunUsage\Billable\Windows\JobRuns);
+        \assert($object instanceof \ApiClients\Client\Github\Schema\WorkflowRunUsage\Billable\Windows\JobRuns);
         $result = [];
 
         $jobId = $object->jobId;
