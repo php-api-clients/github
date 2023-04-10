@@ -199,6 +199,15 @@ class Public_ implements ObjectMapper
                 goto after_user;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'user';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['user'] = $value;
 
             after_user:
@@ -933,6 +942,7 @@ class Public_ implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($user);
         after_user:        $result['user'] = $user;
 
         

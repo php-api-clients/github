@@ -28,6 +28,7 @@ class Publish implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\FullRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository($payload),
                 'ApiClients\Client\GitHub\Schema\FullRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($payload),
+                'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
@@ -37,6 +38,7 @@ class Publish implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($payload),
+                'ApiClients\Client\GitHub\Schema\CodespaceMachine' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($payload),
                 'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($payload),
                 'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
@@ -161,6 +163,15 @@ class Publish implements ObjectMapper
             if ($value === null) {
                 $properties['machine'] = null;
                 goto after_machine;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'machine';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
 
             $properties['machine'] = $value;
@@ -1561,6 +1572,15 @@ class Publish implements ObjectMapper
                 goto after_templateRepository;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'templateRepository';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['templateRepository'] = $value;
 
             after_templateRepository:
@@ -1737,6 +1757,15 @@ class Publish implements ObjectMapper
                 goto after_license;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'license';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['license'] = $value;
 
             after_license:
@@ -1746,6 +1775,15 @@ class Publish implements ObjectMapper
             if ($value === null) {
                 $properties['organization'] = null;
                 goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
 
             $properties['organization'] = $value;
@@ -2035,6 +2073,15 @@ class Publish implements ObjectMapper
                 goto after_license;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'license';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['license'] = $value;
 
             after_license:
@@ -2044,6 +2091,15 @@ class Publish implements ObjectMapper
             if ($value === null) {
                 $properties['organization'] = null;
                 goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
 
             $properties['organization'] = $value;
@@ -3112,6 +3168,93 @@ class Publish implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\Repository(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Repository', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(array $payload): \ApiClients\Client\GitHub\Schema\LicenseSimple
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['key'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'key';
+                goto after_key;
+            }
+
+            $properties['key'] = $value;
+
+            after_key:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['spdx_id'] ?? null;
+
+            if ($value === null) {
+                $properties['spdxId'] = null;
+                goto after_spdxId;
+            }
+
+            $properties['spdxId'] = $value;
+
+            after_spdxId:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\LicenseSimple::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\LicenseSimple(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\LicenseSimple', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4725,6 +4868,104 @@ class Publish implements ObjectMapper
     }
 
         
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine(array $payload): \ApiClients\Client\GitHub\Schema\CodespaceMachine
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['display_name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'display_name';
+                goto after_displayName;
+            }
+
+            $properties['displayName'] = $value;
+
+            after_displayName:
+
+            $value = $payload['operating_system'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'operating_system';
+                goto after_operatingSystem;
+            }
+
+            $properties['operatingSystem'] = $value;
+
+            after_operatingSystem:
+
+            $value = $payload['storage_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'storage_in_bytes';
+                goto after_storageInBytes;
+            }
+
+            $properties['storageInBytes'] = $value;
+
+            after_storageInBytes:
+
+            $value = $payload['memory_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'memory_in_bytes';
+                goto after_memoryInBytes;
+            }
+
+            $properties['memoryInBytes'] = $value;
+
+            after_memoryInBytes:
+
+            $value = $payload['cpus'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'cpus';
+                goto after_cpus;
+            }
+
+            $properties['cpus'] = $value;
+
+            after_cpus:
+
+            $value = $payload['prebuild_availability'] ?? null;
+
+            if ($value === null) {
+                $properties['prebuildAvailability'] = null;
+                goto after_prebuildAvailability;
+            }
+
+            $properties['prebuildAvailability'] = $value;
+
+            after_prebuildAvailability:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceMachine', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespaceMachine::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodespaceMachine(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceMachine', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus(array $payload): \ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus
     {
         $properties = []; 
@@ -5084,6 +5325,7 @@ class Publish implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\FullRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository($object),
             'ApiClients\Client\GitHub\Schema\FullRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository⚡️Permissions($object),
             'ApiClients\Client\GitHub\Schema\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($object),
+            'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
             'ApiClients\Client\GitHub\Schema\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️Permissions($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
@@ -5093,6 +5335,7 @@ class Publish implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($object),
+            'ApiClients\Client\GitHub\Schema\CodespaceMachine' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($object),
             'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\GitStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️GitStatus($object),
             'ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository\RuntimeConstraints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceWithFullRepository⚡️RuntimeConstraints($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
@@ -5220,6 +5463,7 @@ class Publish implements ObjectMapper
         if ($machine === null) {
             goto after_machine;
         }
+        $machine = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($machine);
         after_machine:        $result['machine'] = $machine;
 
         
@@ -5838,6 +6082,7 @@ class Publish implements ObjectMapper
         if ($templateRepository === null) {
             goto after_templateRepository;
         }
+        $templateRepository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($templateRepository);
         after_templateRepository:        $result['template_repository'] = $templateRepository;
 
         
@@ -5958,6 +6203,7 @@ class Publish implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
+        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
@@ -5966,6 +6212,7 @@ class Publish implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
         after_organization:        $result['organization'] = $organization;
 
         
@@ -6100,6 +6347,7 @@ class Publish implements ObjectMapper
         if ($license === null) {
             goto after_license;
         }
+        $license = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($license);
         after_license:        $result['license'] = $license;
 
         
@@ -6108,6 +6356,7 @@ class Publish implements ObjectMapper
         if ($organization === null) {
             goto after_organization;
         }
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($organization);
         after_organization:        $result['organization'] = $organization;
 
         
@@ -6620,6 +6869,51 @@ class Publish implements ObjectMapper
             goto after_anonymousAccessEnabled;
         }
         after_anonymousAccessEnabled:        $result['anonymous_access_enabled'] = $anonymousAccessEnabled;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\LicenseSimple);
+        $result = [];
+
+        $key = $object->key;
+        after_key:        $result['key'] = $key;
+
+        
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+        after_url:        $result['url'] = $url;
+
+        
+        $spdxId = $object->spdxId;
+
+        if ($spdxId === null) {
+            goto after_spdxId;
+        }
+        after_spdxId:        $result['spdx_id'] = $spdxId;
+
+        
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        
+        $htmlUrl = $object->htmlUrl;
+
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
+        }
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
 
 
         return $result;
@@ -7690,6 +7984,47 @@ class Publish implements ObjectMapper
             goto after_status;
         }
         after_status:        $result['status'] = $status;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespaceMachine);
+        $result = [];
+
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $displayName = $object->displayName;
+        after_displayName:        $result['display_name'] = $displayName;
+
+        
+        $operatingSystem = $object->operatingSystem;
+        after_operatingSystem:        $result['operating_system'] = $operatingSystem;
+
+        
+        $storageInBytes = $object->storageInBytes;
+        after_storageInBytes:        $result['storage_in_bytes'] = $storageInBytes;
+
+        
+        $memoryInBytes = $object->memoryInBytes;
+        after_memoryInBytes:        $result['memory_in_bytes'] = $memoryInBytes;
+
+        
+        $cpus = $object->cpus;
+        after_cpus:        $result['cpus'] = $cpus;
+
+        
+        $prebuildAvailability = $object->prebuildAvailability;
+
+        if ($prebuildAvailability === null) {
+            goto after_prebuildAvailability;
+        }
+        after_prebuildAvailability:        $result['prebuild_availability'] = $prebuildAvailability;
 
 
         return $result;

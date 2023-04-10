@@ -248,6 +248,15 @@ class Installations implements ObjectMapper
                 goto after_suspendedBy;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'suspendedBy';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['suspendedBy'] = $value;
 
             after_suspendedBy:
@@ -1151,6 +1160,7 @@ class Installations implements ObjectMapper
         if ($suspendedBy === null) {
             goto after_suspendedBy;
         }
+        $suspendedBy = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($suspendedBy);
         after_suspendedBy:        $result['suspended_by'] = $suspendedBy;
 
         

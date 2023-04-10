@@ -28,9 +28,9 @@ class CbShaRcb implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PublicUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser($payload),
                 'ApiClients\Client\GitHub\Schema\PublicUser\Plan' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($payload),
                 'ApiClients\Client\GitHub\Schema\GistHistory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($payload),
                 'ApiClients\Client\GitHub\Schema\GistSimple\ForkOf' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
@@ -950,6 +950,15 @@ class CbShaRcb implements ObjectMapper
                 goto after_user;
             }
 
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'user';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
             $properties['user'] = $value;
 
             after_user:
@@ -1019,301 +1028,6 @@ class CbShaRcb implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\GistHistory(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus(array $payload): \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['total'] ?? null;
-
-            if ($value === null) {
-                $properties['total'] = null;
-                goto after_total;
-            }
-
-            $properties['total'] = $value;
-
-            after_total:
-
-            $value = $payload['additions'] ?? null;
-
-            if ($value === null) {
-                $properties['additions'] = null;
-                goto after_additions;
-            }
-
-            $properties['additions'] = $value;
-
-            after_additions:
-
-            $value = $payload['deletions'] ?? null;
-
-            if ($value === null) {
-                $properties['deletions'] = null;
-                goto after_deletions;
-            }
-
-            $properties['deletions'] = $value;
-
-            after_deletions:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf(array $payload): \ApiClients\Client\GitHub\Schema\GistSimple\ForkOf
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-            $value = $payload['forks_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'forks_url';
-                goto after_forksUrl;
-            }
-
-            $properties['forksUrl'] = $value;
-
-            after_forksUrl:
-
-            $value = $payload['commits_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'commits_url';
-                goto after_commitsUrl;
-            }
-
-            $properties['commitsUrl'] = $value;
-
-            after_commitsUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['git_pull_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'git_pull_url';
-                goto after_gitPullUrl;
-            }
-
-            $properties['gitPullUrl'] = $value;
-
-            after_gitPullUrl:
-
-            $value = $payload['git_push_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'git_push_url';
-                goto after_gitPushUrl;
-            }
-
-            $properties['gitPushUrl'] = $value;
-
-            after_gitPushUrl:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['files'] ?? null;
-
-            if ($value === null) {
-                $properties['files'] = null;
-                goto after_files;
-            }
-
-            $properties['files'] = $value;
-
-            after_files:
-
-            $value = $payload['public'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'public';
-                goto after_public;
-            }
-
-            $properties['public'] = $value;
-
-            after_public:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['comments'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'comments';
-                goto after_comments;
-            }
-
-            $properties['comments'] = $value;
-
-            after_comments:
-
-            $value = $payload['user'] ?? null;
-
-            if ($value === null) {
-                $properties['user'] = null;
-                goto after_user;
-            }
-
-            $properties['user'] = $value;
-
-            after_user:
-
-            $value = $payload['comments_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'comments_url';
-                goto after_commentsUrl;
-            }
-
-            $properties['commentsUrl'] = $value;
-
-            after_commentsUrl:
-
-            $value = $payload['owner'] ?? null;
-
-            if ($value === null) {
-                $properties['owner'] = null;
-                goto after_owner;
-            }
-
-            $properties['owner'] = $value;
-
-            after_owner:
-
-            $value = $payload['truncated'] ?? null;
-
-            if ($value === null) {
-                $properties['truncated'] = null;
-                goto after_truncated;
-            }
-
-            $properties['truncated'] = $value;
-
-            after_truncated:
-
-            $value = $payload['forks'] ?? null;
-
-            if ($value === null) {
-                $properties['forks'] = null;
-                goto after_forks;
-            }
-
-            $properties['forks'] = $value;
-
-            after_forks:
-
-            $value = $payload['history'] ?? null;
-
-            if ($value === null) {
-                $properties['history'] = null;
-                goto after_history;
-            }
-
-            $properties['history'] = $value;
-
-            after_history:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistSimple\ForkOf', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistSimple\ForkOf::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\GistSimple\ForkOf(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistSimple\ForkOf', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -1570,6 +1284,319 @@ class CbShaRcb implements ObjectMapper
     }
 
         
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus(array $payload): \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $properties['total'] = null;
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['additions'] ?? null;
+
+            if ($value === null) {
+                $properties['additions'] = null;
+                goto after_additions;
+            }
+
+            $properties['additions'] = $value;
+
+            after_additions:
+
+            $value = $payload['deletions'] ?? null;
+
+            if ($value === null) {
+                $properties['deletions'] = null;
+                goto after_deletions;
+            }
+
+            $properties['deletions'] = $value;
+
+            after_deletions:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf(array $payload): \ApiClients\Client\GitHub\Schema\GistSimple\ForkOf
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'url';
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['forks_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'forks_url';
+                goto after_forksUrl;
+            }
+
+            $properties['forksUrl'] = $value;
+
+            after_forksUrl:
+
+            $value = $payload['commits_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'commits_url';
+                goto after_commitsUrl;
+            }
+
+            $properties['commitsUrl'] = $value;
+
+            after_commitsUrl:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['git_pull_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'git_pull_url';
+                goto after_gitPullUrl;
+            }
+
+            $properties['gitPullUrl'] = $value;
+
+            after_gitPullUrl:
+
+            $value = $payload['git_push_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'git_push_url';
+                goto after_gitPushUrl;
+            }
+
+            $properties['gitPushUrl'] = $value;
+
+            after_gitPushUrl:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+            $value = $payload['files'] ?? null;
+
+            if ($value === null) {
+                $properties['files'] = null;
+                goto after_files;
+            }
+
+            $properties['files'] = $value;
+
+            after_files:
+
+            $value = $payload['public'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'public';
+                goto after_public;
+            }
+
+            $properties['public'] = $value;
+
+            after_public:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'created_at';
+                goto after_createdAt;
+            }
+
+            $properties['createdAt'] = $value;
+
+            after_createdAt:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'updated_at';
+                goto after_updatedAt;
+            }
+
+            $properties['updatedAt'] = $value;
+
+            after_updatedAt:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['comments'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'comments';
+                goto after_comments;
+            }
+
+            $properties['comments'] = $value;
+
+            after_comments:
+
+            $value = $payload['user'] ?? null;
+
+            if ($value === null) {
+                $properties['user'] = null;
+                goto after_user;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'user';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['user'] = $value;
+
+            after_user:
+
+            $value = $payload['comments_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'comments_url';
+                goto after_commentsUrl;
+            }
+
+            $properties['commentsUrl'] = $value;
+
+            after_commentsUrl:
+
+            $value = $payload['owner'] ?? null;
+
+            if ($value === null) {
+                $properties['owner'] = null;
+                goto after_owner;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'owner';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['owner'] = $value;
+
+            after_owner:
+
+            $value = $payload['truncated'] ?? null;
+
+            if ($value === null) {
+                $properties['truncated'] = null;
+                goto after_truncated;
+            }
+
+            $properties['truncated'] = $value;
+
+            after_truncated:
+
+            $value = $payload['forks'] ?? null;
+
+            if ($value === null) {
+                $properties['forks'] = null;
+                goto after_forks;
+            }
+
+            $properties['forks'] = $value;
+
+            after_forks:
+
+            $value = $payload['history'] ?? null;
+
+            if ($value === null) {
+                $properties['history'] = null;
+                goto after_history;
+            }
+
+            $properties['history'] = $value;
+
+            after_history:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistSimple\ForkOf', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\GistSimple\ForkOf::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\GistSimple\ForkOf(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GistSimple\ForkOf', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError
     {
         $properties = []; 
@@ -1821,9 +1848,9 @@ class CbShaRcb implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\PublicUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser($object),
             'ApiClients\Client\GitHub\Schema\PublicUser\Plan' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PublicUser⚡️Plan($object),
             'ApiClients\Client\GitHub\Schema\GistHistory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory($object),
+            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
             'ApiClients\Client\GitHub\Schema\GistHistory\ChangeStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistHistory⚡️ChangeStatus($object),
             'ApiClients\Client\GitHub\Schema\GistSimple\ForkOf' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GistSimple⚡️ForkOf($object),
-            'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
             'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
             'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
@@ -2412,6 +2439,7 @@ class CbShaRcb implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($user);
         after_user:        $result['user'] = $user;
 
         
@@ -2446,6 +2474,115 @@ class CbShaRcb implements ObjectMapper
             goto after_url;
         }
         after_url:        $result['url'] = $url;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
+        $result = [];
+
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+        after_name:        $result['name'] = $name;
+
+        
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+        after_email:        $result['email'] = $email;
+
+        
+        $login = $object->login;
+        after_login:        $result['login'] = $login;
+
+        
+        $id = $object->id;
+        after_id:        $result['id'] = $id;
+
+        
+        $nodeId = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        
+        $avatarUrl = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        
+        $gravatarId = $object->gravatarId;
+
+        if ($gravatarId === null) {
+            goto after_gravatarId;
+        }
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
+
+        
+        $url = $object->url;
+        after_url:        $result['url'] = $url;
+
+        
+        $htmlUrl = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        
+        $followersUrl = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
+
+        
+        $followingUrl = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
+
+        
+        $gistsUrl = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
+
+        
+        $starredUrl = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
+
+        
+        $subscriptionsUrl = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
+
+        
+        $organizationsUrl = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
+
+        
+        $reposUrl = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        
+        $eventsUrl = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        
+        $receivedEventsUrl = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
+
+        
+        $type = $object->type;
+        after_type:        $result['type'] = $type;
+
+        
+        $siteAdmin = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
+
+        
+        $starredAt = $object->starredAt;
+
+        if ($starredAt === null) {
+            goto after_starredAt;
+        }
+        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;
@@ -2559,6 +2696,7 @@ class CbShaRcb implements ObjectMapper
         if ($user === null) {
             goto after_user;
         }
+        $user = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($user);
         after_user:        $result['user'] = $user;
 
         
@@ -2571,6 +2709,7 @@ class CbShaRcb implements ObjectMapper
         if ($owner === null) {
             goto after_owner;
         }
+        $owner = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
         after_owner:        $result['owner'] = $owner;
 
         
@@ -2612,115 +2751,6 @@ class CbShaRcb implements ObjectMapper
         
         $history = $historySerializer0->serialize($history, $this);
         after_history:        $result['history'] = $history;
-
-
-        return $result;
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\SimpleUser);
-        $result = [];
-
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-        after_name:        $result['name'] = $name;
-
-        
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-        after_email:        $result['email'] = $email;
-
-        
-        $login = $object->login;
-        after_login:        $result['login'] = $login;
-
-        
-        $id = $object->id;
-        after_id:        $result['id'] = $id;
-
-        
-        $nodeId = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        
-        $avatarUrl = $object->avatarUrl;
-        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
-
-        
-        $gravatarId = $object->gravatarId;
-
-        if ($gravatarId === null) {
-            goto after_gravatarId;
-        }
-        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
-
-        
-        $url = $object->url;
-        after_url:        $result['url'] = $url;
-
-        
-        $htmlUrl = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        
-        $followersUrl = $object->followersUrl;
-        after_followersUrl:        $result['followers_url'] = $followersUrl;
-
-        
-        $followingUrl = $object->followingUrl;
-        after_followingUrl:        $result['following_url'] = $followingUrl;
-
-        
-        $gistsUrl = $object->gistsUrl;
-        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
-
-        
-        $starredUrl = $object->starredUrl;
-        after_starredUrl:        $result['starred_url'] = $starredUrl;
-
-        
-        $subscriptionsUrl = $object->subscriptionsUrl;
-        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
-
-        
-        $organizationsUrl = $object->organizationsUrl;
-        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
-
-        
-        $reposUrl = $object->reposUrl;
-        after_reposUrl:        $result['repos_url'] = $reposUrl;
-
-        
-        $eventsUrl = $object->eventsUrl;
-        after_eventsUrl:        $result['events_url'] = $eventsUrl;
-
-        
-        $receivedEventsUrl = $object->receivedEventsUrl;
-        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
-
-        
-        $type = $object->type;
-        after_type:        $result['type'] = $type;
-
-        
-        $siteAdmin = $object->siteAdmin;
-        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
-
-        
-        $starredAt = $object->starredAt;
-
-        if ($starredAt === null) {
-            goto after_starredAt;
-        }
-        after_starredAt:        $result['starred_at'] = $starredAt;
 
 
         return $result;

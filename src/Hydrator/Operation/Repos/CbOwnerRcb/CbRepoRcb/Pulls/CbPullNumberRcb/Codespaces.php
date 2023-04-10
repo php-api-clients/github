@@ -33,6 +33,7 @@ class Codespaces implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($payload),
+                'ApiClients\Client\GitHub\Schema\CodespaceMachine' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($payload),
                 'ApiClients\Client\GitHub\Schema\Codespace\GitStatus' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($payload),
                 'ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
@@ -156,6 +157,15 @@ class Codespaces implements ObjectMapper
             if ($value === null) {
                 $properties['machine'] = null;
                 goto after_machine;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'machine';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
 
             $properties['machine'] = $value;
@@ -2140,6 +2150,104 @@ class Codespaces implements ObjectMapper
     }
 
         
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine(array $payload): \ApiClients\Client\GitHub\Schema\CodespaceMachine
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['display_name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'display_name';
+                goto after_displayName;
+            }
+
+            $properties['displayName'] = $value;
+
+            after_displayName:
+
+            $value = $payload['operating_system'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'operating_system';
+                goto after_operatingSystem;
+            }
+
+            $properties['operatingSystem'] = $value;
+
+            after_operatingSystem:
+
+            $value = $payload['storage_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'storage_in_bytes';
+                goto after_storageInBytes;
+            }
+
+            $properties['storageInBytes'] = $value;
+
+            after_storageInBytes:
+
+            $value = $payload['memory_in_bytes'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'memory_in_bytes';
+                goto after_memoryInBytes;
+            }
+
+            $properties['memoryInBytes'] = $value;
+
+            after_memoryInBytes:
+
+            $value = $payload['cpus'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'cpus';
+                goto after_cpus;
+            }
+
+            $properties['cpus'] = $value;
+
+            after_cpus:
+
+            $value = $payload['prebuild_availability'] ?? null;
+
+            if ($value === null) {
+                $properties['prebuildAvailability'] = null;
+                goto after_prebuildAvailability;
+            }
+
+            $properties['prebuildAvailability'] = $value;
+
+            after_prebuildAvailability:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceMachine', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespaceMachine::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\CodespaceMachine(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespaceMachine', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus(array $payload): \ApiClients\Client\GitHub\Schema\Codespace\GitStatus
     {
         $properties = []; 
@@ -2407,6 +2515,7 @@ class Codespaces implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️AdvancedSecurity($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($object),
             'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($object),
+            'ApiClients\Client\GitHub\Schema\CodespaceMachine' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($object),
             'ApiClients\Client\GitHub\Schema\Codespace\GitStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($object),
             'ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
@@ -2533,6 +2642,7 @@ class Codespaces implements ObjectMapper
         if ($machine === null) {
             goto after_machine;
         }
+        $machine = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine($machine);
         after_machine:        $result['machine'] = $machine;
 
         
@@ -3557,6 +3667,47 @@ class Codespaces implements ObjectMapper
             goto after_status;
         }
         after_status:        $result['status'] = $status;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespaceMachine(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespaceMachine);
+        $result = [];
+
+        $name = $object->name;
+        after_name:        $result['name'] = $name;
+
+        
+        $displayName = $object->displayName;
+        after_displayName:        $result['display_name'] = $displayName;
+
+        
+        $operatingSystem = $object->operatingSystem;
+        after_operatingSystem:        $result['operating_system'] = $operatingSystem;
+
+        
+        $storageInBytes = $object->storageInBytes;
+        after_storageInBytes:        $result['storage_in_bytes'] = $storageInBytes;
+
+        
+        $memoryInBytes = $object->memoryInBytes;
+        after_memoryInBytes:        $result['memory_in_bytes'] = $memoryInBytes;
+
+        
+        $cpus = $object->cpus;
+        after_cpus:        $result['cpus'] = $cpus;
+
+        
+        $prebuildAvailability = $object->prebuildAvailability;
+
+        if ($prebuildAvailability === null) {
+            goto after_prebuildAvailability;
+        }
+        after_prebuildAvailability:        $result['prebuild_availability'] = $prebuildAvailability;
 
 
         return $result;
