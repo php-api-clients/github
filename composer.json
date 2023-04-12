@@ -11,7 +11,7 @@
   "require": {
     "php": "^8.2",
     "api-clients/contracts": "^0.1",
-    "cebe/php-openapi": "dev-openapi-31 as 1.6.0",
+    "devizzent/cebe-php-openapi": "^1",
     "eventsauce/object-hydrator": "^1.1",
     "league/openapi-psr7-validator": "^0.21",
     "react/async": "^4.0",
