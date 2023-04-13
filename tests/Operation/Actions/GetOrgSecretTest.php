@@ -13,7 +13,7 @@ final class GetOrgSecretTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCa
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\OrganizationActionsSecret::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,12 @@ final class GetOrgSecretTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCa
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/actions/secrets/generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/actions/secrets/generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetOrgSecret::OPERATION_MATCH, array('org' => 'generated_null', 'secret_name' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetOrgSecret::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['secret_name'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

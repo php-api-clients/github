@@ -13,7 +13,7 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends \WyriHaximus\AsyncTes
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\Operation\Teams\AddOrUpdateProjectPermissionsInOrg\Response\Applicationjson\H403::SCHEMA_EXAMPLE_DATA);

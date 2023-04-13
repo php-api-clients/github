@@ -42,31 +42,30 @@ final class UpdateWebhook
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Hook
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Hook::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Hook::class, $body);
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Validation failed, or the endpoint has been spammed.**/
-            case 422:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Validation failed, or the endpoint has been spammed.
+                    **/
+                    case 422:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
                 break;
         }

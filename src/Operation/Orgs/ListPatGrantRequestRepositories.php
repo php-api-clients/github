@@ -42,43 +42,40 @@ final class ListPatGrantRequestRepositories
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Internal Error
+                    **/
+                    case 500:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(500, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
+                     * Forbidden
+                    **/
+                    case 403:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         foreach ($body as $bodyItem) {
                             $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\MinimalRepository {
                             return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                         });
-                }
-                break;
-            /**Forbidden**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Internal Error**/
-            case 500:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(500, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
                 break;
         }

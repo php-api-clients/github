@@ -13,7 +13,7 @@ final class CreateOrUpdateEnvironmentTest extends \WyriHaximus\AsyncTestUtilitie
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Environment::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -33,7 +33,7 @@ final class CreateOrUpdateEnvironmentTest extends \WyriHaximus\AsyncTestUtilitie
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);

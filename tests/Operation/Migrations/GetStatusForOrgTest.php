@@ -13,7 +13,7 @@ final class GetStatusForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTes
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Migration::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,19 @@ final class GetStatusForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTes
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/migrations/13?exclude=', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/migrations/13?exclude=', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Migrations\GetStatusForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'migration_id' => 13, 'exclude' => null));
+        $client->call(\ApiClients\Client\GitHub\Operation\Migrations\GetStatusForOrg::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['migration_id'] = 13;
+            $data['exclude'] = null;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -37,8 +42,13 @@ final class GetStatusForOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTes
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/migrations/13?exclude=', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/migrations/13?exclude=', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Migrations\GetStatusForOrg::OPERATION_MATCH, array('org' => 'generated_null', 'migration_id' => 13, 'exclude' => null));
+        $client->call(\ApiClients\Client\GitHub\Operation\Migrations\GetStatusForOrg::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['migration_id'] = 13;
+            $data['exclude'] = null;
+            return $data;
+        })(array()));
     }
 }

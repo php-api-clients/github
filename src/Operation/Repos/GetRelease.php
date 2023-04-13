@@ -39,21 +39,22 @@ final class GetRelease
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Release
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /****Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia).**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia).
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Release::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Release::class, $body);
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

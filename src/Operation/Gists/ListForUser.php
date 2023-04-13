@@ -42,25 +42,26 @@ final class ListForUser
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         foreach ($body as $bodyItem) {
                             $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\BaseGist::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\BaseGist {
                             return $this->hydrator->hydrateObject(Schema\BaseGist::class, $body);
                         });
-                }
-                break;
-            /**Validation failed, or the endpoint has been spammed.**/
-            case 422:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Validation failed, or the endpoint has been spammed.
+                    **/
+                    case 422:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                 }

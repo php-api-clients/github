@@ -34,11 +34,13 @@ final class DownloadZipballArchive
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
     {
-        switch ($response->getStatusCode()) {
-            /**Response**/
+        $code = $response->getStatusCode();
+        switch ($code) {
+            /**
+             * Response
+            **/
             case 302:
                 return array('code' => 302, 'location' => $response->getHeaderLine('Location'));
-                break;
         }
         throw new \RuntimeException('Unable to find matching response code and content type');
     }

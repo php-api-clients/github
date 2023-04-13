@@ -13,7 +13,7 @@ final class UpdateRefTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\GitRef::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -33,7 +33,7 @@ final class UpdateRefTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\ValidationError::SCHEMA_EXAMPLE_DATA);

@@ -33,13 +33,16 @@ final class CancelImport
     }
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : mixed
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Unavailable due to service under maintenance.**/
-            case 503:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Unavailable due to service under maintenance.
+                    **/
+                    case 503:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(503, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

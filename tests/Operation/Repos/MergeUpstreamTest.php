@@ -13,7 +13,7 @@ final class MergeUpstreamTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestC
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\MergedUpstream::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);

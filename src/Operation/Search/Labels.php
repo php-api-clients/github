@@ -48,37 +48,34 @@ final class Labels
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Search\Labels\Response\Applicationjson\H200
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Search\Labels\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Operation\Search\Labels\Response\Applicationjson\H200::class, $body);
-                }
-                break;
-            /**Forbidden**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Validation failed, or the endpoint has been spammed.**/
-            case 422:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Forbidden
+                    **/
+                    case 403:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
+                     * Validation failed, or the endpoint has been spammed.
+                    **/
+                    case 422:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                 }

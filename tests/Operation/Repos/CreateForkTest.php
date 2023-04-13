@@ -13,7 +13,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t202td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_202_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(202, array('Content-Type' => 'application/json'), Schema\FullRepository::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -32,7 +32,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t400td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_400_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -52,7 +52,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t400te721a100ec95fd3067a83a0920ca7a5e()
+    public function httpCode_400_requestContentType_application_json_responseContentType_application_scim_json()
     {
         self::expectException(ErrorSchemas\ScimError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/scim+json'), Schema\ScimError::SCHEMA_EXAMPLE_DATA);
@@ -72,7 +72,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
@@ -92,7 +92,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -112,7 +112,7 @@ final class CreateForkTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);

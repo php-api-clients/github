@@ -36,33 +36,32 @@ final class ListPublicEvents
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         foreach ($body as $bodyItem) {
                             $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\Event::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\Event {
                             return $this->hydrator->hydrateObject(Schema\Event::class, $body);
                         });
-                }
-                break;
-            /**Forbidden**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Forbidden
+                    **/
+                    case 403:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Service unavailable**/
-            case 503:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Service unavailable
+                    **/
+                    case 503:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(503, $this->hydrator->hydrateObject(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body));
                 }

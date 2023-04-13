@@ -13,7 +13,7 @@ final class ListReposAccessibleToInstallationTest extends \WyriHaximus\AsyncTest
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Operation\Apps\ListReposAccessibleToInstallation\Response\Applicationjson\H200::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,18 @@ final class ListReposAccessibleToInstallationTest extends \WyriHaximus\AsyncTest
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, array('per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, (static function (array $data) : array {
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -37,14 +41,18 @@ final class ListReposAccessibleToInstallationTest extends \WyriHaximus\AsyncTest
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, array('per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, (static function (array $data) : array {
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t401td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_401_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(401, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -53,8 +61,12 @@ final class ListReposAccessibleToInstallationTest extends \WyriHaximus\AsyncTest
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/installation/repositories?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, array('per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation::OPERATION_MATCH, (static function (array $data) : array {
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
 }

@@ -13,7 +13,7 @@ final class GetPackageForAuthenticatedUserTest extends \WyriHaximus\AsyncTestUti
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Package::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,12 @@ final class GetPackageForAuthenticatedUserTest extends \WyriHaximus\AsyncTestUti
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/user/packages/generated_null/generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/user/packages/generated_null/generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Packages\GetPackageForAuthenticatedUser::OPERATION_MATCH, array('package_type' => 'generated_null', 'package_name' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Packages\GetPackageForAuthenticatedUser::OPERATION_MATCH, (static function (array $data) : array {
+            $data['package_type'] = 'generated_null';
+            $data['package_name'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

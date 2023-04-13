@@ -42,21 +42,22 @@ final class CreateOrUpdateEnvironment
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Environment
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Environment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Environment::class, $body);
-                }
-                break;
-            /**Validation error when the environment name is invalid or when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value**/
-            case 422:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Validation error when the environment name is invalid or when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value
+                    **/
+                    case 422:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(422, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

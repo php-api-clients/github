@@ -37,8 +37,11 @@ final class DownloadWorkflowRunLogsStreaming
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
-        switch ($response->getStatusCode()) {
-            /**Response**/
+        $code = $response->getStatusCode();
+        switch ($code) {
+            /**
+             * Response
+            **/
             case 302:
                 $stream = new \Rx\Subject\Subject();
                 $this->browser->requestStreaming('GET', $response->getHeaderLine('location'))->then(static function (\Psr\Http\Message\ResponseInterface $response) use($stream) : void {
@@ -58,7 +61,6 @@ final class DownloadWorkflowRunLogsStreaming
                     });
                 });
                 return $stream;
-                break;
         }
         throw new \RuntimeException('Unable to find matching response code and content type');
     }

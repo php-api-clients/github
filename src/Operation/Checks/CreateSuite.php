@@ -39,21 +39,22 @@ final class CreateSuite
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CheckSuite
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response when the suite already exists**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response when the suite already exists
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\CheckSuite::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\CheckSuite::class, $body);
-                }
-                break;
-            /**Response when the suite was created**/
-            case 201:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Response when the suite was created
+                    **/
+                    case 201:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\CheckSuite::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\CheckSuite::class, $body);
                 }

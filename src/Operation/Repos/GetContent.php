@@ -38,38 +38,34 @@ final class GetContent
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{path}', '{ref}'), array($this->owner, $this->repo, $this->path, $this->ref), self::PATH . '?ref={ref}'));
     }
     /**
-     * @return Schema\ContentTree|Schema\Operation\Repos\GetContent\Response\Applicationjson\H200
+     * @return Schema\Operation\Repos\GetContent\Response\Applicationjson\H200
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\ContentTree|Schema\Operation\Repos\GetContent\Response\Applicationjson\H200
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Repos\GetContent\Response\Applicationjson\H200
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/vnd.github.object':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ContentTree::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\ContentTree::class, $body);
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\GetContent\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Operation\Repos\GetContent\Response\Applicationjson\H200::class, $body);
-                }
-                break;
-            /**Forbidden**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
+                     * Forbidden
+                    **/
+                    case 403:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
                 break;
         }

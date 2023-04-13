@@ -13,7 +13,7 @@ final class MarkRepoNotificationsAsReadTest extends \WyriHaximus\AsyncTestUtilit
     /**
      * @test
      */
-    public function t202td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_202_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(202, array('Content-Type' => 'application/json'), Schema\Operation\Activity\MarkRepoNotificationsAsRead\Response\Applicationjson\H202::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);

@@ -13,7 +13,7 @@ final class ListSecurityManagerTeamsTest extends \WyriHaximus\AsyncTestUtilities
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), '[' . (Schema\TeamSimple::SCHEMA_EXAMPLE_DATA . ']'));
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,11 @@ final class ListSecurityManagerTeamsTest extends \WyriHaximus\AsyncTestUtilities
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/security-managers', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/security-managers', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListSecurityManagerTeams::OPERATION_MATCH, array('org' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListSecurityManagerTeams::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

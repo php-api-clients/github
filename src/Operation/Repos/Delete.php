@@ -36,29 +36,28 @@ final class Delete
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\BasicError
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Temporary Redirect**/
-            case 307:
-                switch ($contentType) {
-                    case 'application/json':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
-                }
-                break;
-            /**If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, a member will get this response:**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, a member will get this response:
+                    **/
+                    case 403:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\Delete\Response\Applicationjson\H403::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\Operation\Repos\Delete\Response\Applicationjson\H403(403, $this->hydrator->hydrateObject(Schema\Operation\Repos\Delete\Response\Applicationjson\H403::class, $body));
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Temporary Redirect
+                    **/
+                    case 307:
+                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

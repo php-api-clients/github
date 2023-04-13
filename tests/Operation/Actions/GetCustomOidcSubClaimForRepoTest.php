@@ -13,7 +13,7 @@ final class GetCustomOidcSubClaimForRepoTest extends \WyriHaximus\AsyncTestUtili
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,18 @@ final class GetCustomOidcSubClaimForRepoTest extends \WyriHaximus\AsyncTestUtili
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t400td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_400_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -37,14 +41,18 @@ final class GetCustomOidcSubClaimForRepoTest extends \WyriHaximus\AsyncTestUtili
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t400te721a100ec95fd3067a83a0920ca7a5e()
+    public function httpCode_400_responseContentType_application_scim_json()
     {
         self::expectException(ErrorSchemas\ScimError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/scim+json'), Schema\ScimError::SCHEMA_EXAMPLE_DATA);
@@ -53,14 +61,18 @@ final class GetCustomOidcSubClaimForRepoTest extends \WyriHaximus\AsyncTestUtili
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -69,8 +81,12 @@ final class GetCustomOidcSubClaimForRepoTest extends \WyriHaximus\AsyncTestUtili
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/oidc/customization/sub', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

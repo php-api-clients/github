@@ -13,7 +13,7 @@ final class GetEnvironmentPublicKeyTest extends \WyriHaximus\AsyncTestUtilities\
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\ActionsPublicKey::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,12 @@ final class GetEnvironmentPublicKeyTest extends \WyriHaximus\AsyncTestUtilities\
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated_null/secrets/public-key', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repositories/13/environments/generated_null/secrets/public-key', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetEnvironmentPublicKey::OPERATION_MATCH, array('repository_id' => 13, 'environment_name' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetEnvironmentPublicKey::OPERATION_MATCH, (static function (array $data) : array {
+            $data['repository_id'] = 13;
+            $data['environment_name'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

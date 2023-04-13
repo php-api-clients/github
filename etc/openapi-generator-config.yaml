@@ -11,6 +11,9 @@ templates:
 schemas:
   allowDuplication: true
   useAliasesForDuplication: true
+contentType:
+  - ApiClients\Tools\OpenApiClientGenerator\ContentType\Json
+  - ApiClients\Tools\OpenApiClientGenerator\ContentType\Raw
 voter:
   listOperation:
     - ApiClients\Tools\OpenApiClientGenerator\Voter\ListOperation\PageAndPerPageInQuery

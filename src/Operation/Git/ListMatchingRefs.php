@@ -39,13 +39,16 @@ final class ListMatchingRefs
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         foreach ($body as $bodyItem) {
                             $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\GitRef::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }

@@ -13,7 +13,7 @@ final class GetDiscussionCommentInOrgTest extends \WyriHaximus\AsyncTestUtilitie
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\TeamDiscussionComment::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,14 @@ final class GetDiscussionCommentInOrgTest extends \WyriHaximus\AsyncTestUtilitie
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/teams/generated_null/discussions/13/comments/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/teams/generated_null/discussions/13/comments/13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Teams\GetDiscussionCommentInOrg::OPERATION_MATCH, array('org' => 'generated_null', 'team_slug' => 'generated_null', 'discussion_number' => 13, 'comment_number' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Teams\GetDiscussionCommentInOrg::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['team_slug'] = 'generated_null';
+            $data['discussion_number'] = 13;
+            $data['comment_number'] = 13;
+            return $data;
+        })(array()));
     }
 }

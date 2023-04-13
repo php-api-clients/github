@@ -100,6 +100,17 @@ class Runners implements ObjectMapper
 
             after_id:
 
+            $value = $payload['runner_group_id'] ?? null;
+
+            if ($value === null) {
+                $properties['runnerGroupId'] = null;
+                goto after_runnerGroupId;
+            }
+
+            $properties['runnerGroupId'] = $value;
+
+            after_runnerGroupId:
+
             $value = $payload['name'] ?? null;
 
             if ($value === null) {
@@ -374,6 +385,14 @@ class Runners implements ObjectMapper
 
         $id = $object->id;
         after_id:        $result['id'] = $id;
+
+        
+        $runnerGroupId = $object->runnerGroupId;
+
+        if ($runnerGroupId === null) {
+            goto after_runnerGroupId;
+        }
+        after_runnerGroupId:        $result['runner_group_id'] = $runnerGroupId;
 
         
         $name = $object->name;

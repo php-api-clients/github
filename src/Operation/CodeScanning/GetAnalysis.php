@@ -35,44 +35,38 @@ final class GetAnalysis
         return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{analysis_id}'), array($this->owner, $this->repo, $this->analysisId), self::PATH));
     }
     /**
-     * @return Schema\CodeScanningAnalysis|Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200
+     * @return Schema\CodeScanningAnalysis
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningAnalysis|Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200
+    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodeScanningAnalysis
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\CodeScanningAnalysis::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\CodeScanningAnalysis::class, $body);
-                    case 'application/json+sarif':
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        return $this->hydrator->hydrateObject(Schema\Operation\CodeScanning\GetAnalysis\Response\ApplicationjsonPlusSarif\H200::class, $body);
-                }
-                break;
-            /**Response if GitHub Advanced Security is not enabled for this repository**/
-            case 403:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Response if GitHub Advanced Security is not enabled for this repository
+                    **/
+                    case 403:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                }
-                break;
-            /**Service unavailable**/
-            case 503:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Service unavailable
+                    **/
+                    case 503:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(503, $this->hydrator->hydrateObject(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body));
                 }

@@ -13,7 +13,7 @@ final class GetZenTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t200t46849f4a4904cf0d65bfbfb6525045f9()
+    public function httpCode_200_responseContentType_text_plain()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'text/plain'), Schema\Operation\Meta\GetZen\Response\Textplain\H200::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,10 @@ final class GetZenTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/zen', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/zen', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Meta\GetZen::OPERATION_MATCH, array());
+        $client->call(\ApiClients\Client\GitHub\Operation\Meta\GetZen::OPERATION_MATCH, (static function (array $data) : array {
+            return $data;
+        })(array()));
     }
 }

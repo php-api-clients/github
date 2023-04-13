@@ -13,7 +13,7 @@ final class ListPendingInvitationsTest extends \WyriHaximus\AsyncTestUtilities\A
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), '[' . (Schema\OrganizationInvitation::SCHEMA_EXAMPLE_DATA . ']'));
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,21 @@ final class ListPendingInvitationsTest extends \WyriHaximus\AsyncTestUtilities\A
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/invitations?per_page=13&page=13&role=generated_null&invitation_source=generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/invitations?per_page=13&page=13&role=generated_null&invitation_source=generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH, array('org' => 'generated_null', 'per_page' => 13, 'page' => 13, 'role' => 'generated_null', 'invitation_source' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            $data['role'] = 'generated_null';
+            $data['invitation_source'] = 'generated_null';
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -37,8 +44,15 @@ final class ListPendingInvitationsTest extends \WyriHaximus\AsyncTestUtilities\A
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/invitations?per_page=13&page=13&role=generated_null&invitation_source=generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated_null/invitations?per_page=13&page=13&role=generated_null&invitation_source=generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH, array('org' => 'generated_null', 'per_page' => 13, 'page' => 13, 'role' => 'generated_null', 'invitation_source' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\ListPendingInvitations::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            $data['role'] = 'generated_null';
+            $data['invitation_source'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

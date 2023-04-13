@@ -13,7 +13,7 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), '[' . (Schema\Commit::SCHEMA_EXAMPLE_DATA . ']'));
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,26 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t500td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_500_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(500, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -37,14 +49,26 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t400td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_400_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -53,14 +77,26 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t400te721a100ec95fd3067a83a0920ca7a5e()
+    public function httpCode_400_responseContentType_application_scim_json()
     {
         self::expectException(ErrorSchemas\ScimError::class);
         $response = new \React\Http\Message\Response(400, array('Content-Type' => 'application/scim+json'), Schema\ScimError::SCHEMA_EXAMPLE_DATA);
@@ -69,14 +105,26 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -85,14 +133,26 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t409td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_409_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(409, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -101,8 +161,20 @@ final class ListCommitsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/commits?sha=generated_null&path=generated_null&author=generated_null&committer=generated_null&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'sha' => 'generated_null', 'path' => 'generated_null', 'author' => 'generated_null', 'committer' => 'generated_null', 'since' => '1970-01-01T00:00:00+00:00', 'until' => '1970-01-01T00:00:00+00:00', 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['sha'] = 'generated_null';
+            $data['path'] = 'generated_null';
+            $data['author'] = 'generated_null';
+            $data['committer'] = 'generated_null';
+            $data['since'] = '1970-01-01T00:00:00+00:00';
+            $data['until'] = '1970-01-01T00:00:00+00:00';
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
 }

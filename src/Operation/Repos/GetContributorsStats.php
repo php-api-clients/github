@@ -36,25 +36,26 @@ final class GetContributorsStats
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable|Schema\Operation\Repos\GetContributorsStats\Response\Applicationjson\H202
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         foreach ($body as $bodyItem) {
                             $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\ContributorActivity::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
                         return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\ContributorActivity {
                             return $this->hydrator->hydrateObject(Schema\ContributorActivity::class, $body);
                         });
-                }
-                break;
-            /**Accepted**/
-            case 202:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Accepted
+                    **/
+                    case 202:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Repos\GetContributorsStats\Response\Applicationjson\H202::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Operation\Repos\GetContributorsStats\Response\Applicationjson\H202::class, $body);
                 }

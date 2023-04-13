@@ -39,21 +39,22 @@ final class UpdateImport
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Import
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Import::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Import::class, $body);
-                }
-                break;
-            /**Unavailable due to service under maintenance.**/
-            case 503:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Unavailable due to service under maintenance.
+                    **/
+                    case 503:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(503, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

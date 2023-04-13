@@ -237,6 +237,17 @@ class CbAlertNumberRcb implements ObjectMapper
 
             after_fixedAt:
 
+            $value = $payload['auto_dismissed_at'] ?? null;
+
+            if ($value === null) {
+                $properties['autoDismissedAt'] = null;
+                goto after_autoDismissedAt;
+            }
+
+            $properties['autoDismissedAt'] = $value;
+
+            after_autoDismissedAt:
+
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
         }
@@ -1506,6 +1517,14 @@ class CbAlertNumberRcb implements ObjectMapper
             goto after_fixedAt;
         }
         after_fixedAt:        $result['fixed_at'] = $fixedAt;
+
+        
+        $autoDismissedAt = $object->autoDismissedAt;
+
+        if ($autoDismissedAt === null) {
+            goto after_autoDismissedAt;
+        }
+        after_autoDismissedAt:        $result['auto_dismissed_at'] = $autoDismissedAt;
 
 
         return $result;

@@ -13,7 +13,7 @@ final class DeleteLegacyTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCa
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -22,14 +22,17 @@ final class DeleteLegacyTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCa
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/teams/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/teams/13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Teams\DeleteLegacy::OPERATION_MATCH, array('team_id' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Teams\DeleteLegacy::OPERATION_MATCH, (static function (array $data) : array {
+            $data['team_id'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
@@ -38,8 +41,11 @@ final class DeleteLegacyTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCa
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/teams/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/teams/13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Teams\DeleteLegacy::OPERATION_MATCH, array('team_id' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Teams\DeleteLegacy::OPERATION_MATCH, (static function (array $data) : array {
+            $data['team_id'] = 13;
+            return $data;
+        })(array()));
     }
 }

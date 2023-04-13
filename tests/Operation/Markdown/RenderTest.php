@@ -13,7 +13,7 @@ final class RenderTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t200t6ffaad09c30216c38c8888e6d6757d2f()
+    public function httpCode_200_requestContentType_application_json_responseContentType_text_html()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'text/html'), Schema\Operation\Markdown\Render\Response\Texthtml\H200::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);

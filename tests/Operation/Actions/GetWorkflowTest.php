@@ -13,7 +13,7 @@ final class GetWorkflowTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Workflow::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,13 @@ final class GetWorkflowTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCas
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/workflows/', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/workflows/', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetWorkflow::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'workflow_id' => null));
+        $client->call(\ApiClients\Client\GitHub\Operation\Actions\GetWorkflow::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['workflow_id'] = null;
+            return $data;
+        })(array()));
     }
 }

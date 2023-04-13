@@ -13,7 +13,7 @@ final class ListLabelsOnIssueTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), '[' . (Schema\Label::SCHEMA_EXAMPLE_DATA . ']'));
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,14 +21,21 @@ final class ListLabelsOnIssueTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'issue_number' => 13, 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['issue_number'] = 13;
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t301td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_301_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(301, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -36,14 +43,21 @@ final class ListLabelsOnIssueTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'issue_number' => 13, 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['issue_number'] = 13;
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -52,14 +66,21 @@ final class ListLabelsOnIssueTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'issue_number' => 13, 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['issue_number'] = 13;
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t410td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_410_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(410, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -68,8 +89,15 @@ final class ListLabelsOnIssueTest extends \WyriHaximus\AsyncTestUtilities\AsyncT
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/labels?per_page=13&page=13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'issue_number' => 13, 'per_page' => 13, 'page' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['issue_number'] = 13;
+            $data['per_page'] = 13;
+            $data['page'] = 13;
+            return $data;
+        })(array()));
     }
 }

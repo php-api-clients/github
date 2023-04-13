@@ -39,24 +39,25 @@ final class GetStatusForOrg
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Migration
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /***   `pending`, which means the migration hasn't started yet.
-            *   `exporting`, which means the migration is in progress.
-            *   `exported`, which means the migration finished successfully.
-            *   `failed`, which means the migration failed.**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * *   `pending`, which means the migration hasn't started yet.
+                    *   `exporting`, which means the migration is in progress.
+                    *   `exported`, which means the migration finished successfully.
+                    *   `failed`, which means the migration failed.
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Migration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Migration::class, $body);
-                }
-                break;
-            /**Resource not found**/
-            case 404:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Resource not found
+                    **/
+                    case 404:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

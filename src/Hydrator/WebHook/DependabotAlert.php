@@ -23,7 +23,7 @@ class DependabotAlert implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated($payload),
+            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertAutoDismissed($payload),
                 'ApiClients\Client\GitHub\Schema\DependabotAlert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($payload),
                 'ApiClients\Client\GitHub\Schema\DependabotAlert\Dependency' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert⚡️Dependency($payload),
                 'ApiClients\Client\GitHub\Schema\DependabotAlertPackage' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($payload),
@@ -44,16 +44,17 @@ class DependabotAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertDismissed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertDismissed($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertFixed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertFixed($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReintroduced' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReintroduced($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertAutoDismissed(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed
     {
         $properties = []; 
         $missingFields = [];
@@ -190,17 +191,17 @@ class DependabotAlert implements ObjectMapper
             after_sender:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -399,6 +400,17 @@ class DependabotAlert implements ObjectMapper
             $properties['fixedAt'] = $value;
 
             after_fixedAt:
+
+            $value = $payload['auto_dismissed_at'] ?? null;
+
+            if ($value === null) {
+                $properties['autoDismissedAt'] = null;
+                goto after_autoDismissedAt;
+            }
+
+            $properties['autoDismissedAt'] = $value;
+
+            after_autoDismissedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert', $exception, stack: $this->hydrationStack);
@@ -4199,6 +4211,310 @@ class DependabotAlert implements ObjectMapper
     }
 
         
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['action'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'action';
+                goto after_action;
+            }
+
+            $properties['action'] = $value;
+
+            after_action:
+
+            $value = $payload['alert'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'alert';
+                goto after_alert;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'alert';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['alert'] = $value;
+
+            after_alert:
+
+            $value = $payload['installation'] ?? null;
+
+            if ($value === null) {
+                $properties['installation'] = null;
+                goto after_installation;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'installation';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['installation'] = $value;
+
+            after_installation:
+
+            $value = $payload['organization'] ?? null;
+
+            if ($value === null) {
+                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['organization'] = $value;
+
+            after_organization:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
+            $value = $payload['repository'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository';
+                goto after_repository;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'repository';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['repository'] = $value;
+
+            after_repository:
+
+            $value = $payload['sender'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sender';
+                goto after_sender;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'sender';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['sender'] = $value;
+
+            after_sender:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['action'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'action';
+                goto after_action;
+            }
+
+            $properties['action'] = $value;
+
+            after_action:
+
+            $value = $payload['alert'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'alert';
+                goto after_alert;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'alert';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['alert'] = $value;
+
+            after_alert:
+
+            $value = $payload['installation'] ?? null;
+
+            if ($value === null) {
+                $properties['installation'] = null;
+                goto after_installation;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'installation';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['installation'] = $value;
+
+            after_installation:
+
+            $value = $payload['organization'] ?? null;
+
+            if ($value === null) {
+                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['organization'] = $value;
+
+            after_organization:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
+            $value = $payload['repository'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository';
+                goto after_repository;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'repository';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['repository'] = $value;
+
+            after_repository:
+
+            $value = $payload['sender'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'sender';
+                goto after_sender;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'sender';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['sender'] = $value;
+
+            after_sender:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertDismissed(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertDismissed
     {
         $properties = []; 
@@ -4653,158 +4969,6 @@ class DependabotAlert implements ObjectMapper
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReintroduced', $exception, stack: $this->hydrationStack);
         }
     }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['action'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'action';
-                goto after_action;
-            }
-
-            $properties['action'] = $value;
-
-            after_action:
-
-            $value = $payload['alert'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'alert';
-                goto after_alert;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'alert';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['alert'] = $value;
-
-            after_alert:
-
-            $value = $payload['installation'] ?? null;
-
-            if ($value === null) {
-                $properties['installation'] = null;
-                goto after_installation;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'installation';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['installation'] = $value;
-
-            after_installation:
-
-            $value = $payload['organization'] ?? null;
-
-            if ($value === null) {
-                $properties['organization'] = null;
-                goto after_organization;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'organization';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['organization'] = $value;
-
-            after_organization:
-
-            $value = $payload['enterprise'] ?? null;
-
-            if ($value === null) {
-                $properties['enterprise'] = null;
-                goto after_enterprise;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'enterprise';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['enterprise'] = $value;
-
-            after_enterprise:
-
-            $value = $payload['repository'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repository';
-                goto after_repository;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'repository';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['repository'] = $value;
-
-            after_repository:
-
-            $value = $payload['sender'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'sender';
-                goto after_sender;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'sender';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['sender'] = $value;
-
-            after_sender:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened', $exception, stack: $this->hydrationStack);
-        }
-    }
     
     private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
     {
@@ -4837,7 +5001,7 @@ class DependabotAlert implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated($object),
+            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertAutoDismissed($object),
             'ApiClients\Client\GitHub\Schema\DependabotAlert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($object),
             'ApiClients\Client\GitHub\Schema\DependabotAlert\Dependency' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert⚡️Dependency($object),
             'ApiClients\Client\GitHub\Schema\DependabotAlertPackage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertPackage($object),
@@ -4858,10 +5022,11 @@ class DependabotAlert implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Owner($object),
             'ApiClients\Client\GitHub\Schema\Repository\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository⚡️TemplateRepository⚡️Permissions($object),
+            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened($object),
+            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated($object),
             'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertDismissed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertDismissed($object),
             'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertFixed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertFixed($object),
             'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReintroduced' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReintroduced($object),
-            'ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -4935,9 +5100,9 @@ class DependabotAlert implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertAutoDismissed(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed);
         $result = [];
 
         $action = $object->action;
@@ -5073,6 +5238,14 @@ class DependabotAlert implements ObjectMapper
             goto after_fixedAt;
         }
         after_fixedAt:        $result['fixed_at'] = $fixedAt;
+
+        
+        $autoDismissedAt = $object->autoDismissedAt;
+
+        if ($autoDismissedAt === null) {
+            goto after_autoDismissedAt;
+        }
+        after_autoDismissedAt:        $result['auto_dismissed_at'] = $autoDismissedAt;
 
 
         return $result;
@@ -7153,6 +7326,116 @@ class DependabotAlert implements ObjectMapper
     }
 
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened);
+        $result = [];
+
+        $action = $object->action;
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertCreated(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertCreated);
+        $result = [];
+
+        $action = $object->action;
+        after_action:        $result['action'] = $action;
+
+        
+        $alert = $object->alert;
+        $alert = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        
+        $repository = $object->repository;
+        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        
+        $sender = $object->sender;
+        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
+
+
+        return $result;
+    }
+
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertDismissed(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertDismissed);
@@ -7266,61 +7549,6 @@ class DependabotAlert implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReintroduced(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReintroduced);
-        $result = [];
-
-        $action = $object->action;
-        after_action:        $result['action'] = $action;
-
-        
-        $alert = $object->alert;
-        $alert = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlert($alert);
-        after_alert:        $result['alert'] = $alert;
-
-        
-        $installation = $object->installation;
-
-        if ($installation === null) {
-            goto after_installation;
-        }
-        $installation = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
-        after_installation:        $result['installation'] = $installation;
-
-        
-        $organization = $object->organization;
-
-        if ($organization === null) {
-            goto after_organization;
-        }
-        $organization = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
-        after_organization:        $result['organization'] = $organization;
-
-        
-        $enterprise = $object->enterprise;
-
-        if ($enterprise === null) {
-            goto after_enterprise;
-        }
-        $enterprise = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($enterprise);
-        after_enterprise:        $result['enterprise'] = $enterprise;
-
-        
-        $repository = $object->repository;
-        $repository = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Repository($repository);
-        after_repository:        $result['repository'] = $repository;
-
-        
-        $sender = $object->sender;
-        $sender = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
-        after_sender:        $result['sender'] = $sender;
-
-
-        return $result;
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDependabotAlertReopened(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDependabotAlertReopened);
         $result = [];
 
         $action = $object->action;

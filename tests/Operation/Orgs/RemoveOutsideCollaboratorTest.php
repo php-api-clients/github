@@ -13,7 +13,7 @@ final class RemoveOutsideCollaboratorTest extends \WyriHaximus\AsyncTestUtilitie
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_EXAMPLE_DATA);
@@ -22,8 +22,12 @@ final class RemoveOutsideCollaboratorTest extends \WyriHaximus\AsyncTestUtilitie
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/orgs/generated_null/outside_collaborators/generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/orgs/generated_null/outside_collaborators/generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\RemoveOutsideCollaborator::OPERATION_MATCH, array('org' => 'generated_null', 'username' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Orgs\RemoveOutsideCollaborator::OPERATION_MATCH, (static function (array $data) : array {
+            $data['org'] = 'generated_null';
+            $data['username'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

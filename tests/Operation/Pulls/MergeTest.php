@@ -13,7 +13,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\PullRequestMergeResult::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -33,7 +33,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t405td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_405_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\Operation\Pulls\Merge\Response\Applicationjson\H405::class);
         $response = new \React\Http\Message\Response(405, array('Content-Type' => 'application/json'), Schema\Operation\Pulls\Merge\Response\Applicationjson\H405::SCHEMA_EXAMPLE_DATA);
@@ -54,7 +54,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t409td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_409_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\Operation\Pulls\Merge\Response\Applicationjson\H409::class);
         $response = new \React\Http\Message\Response(409, array('Content-Type' => 'application/json'), Schema\Operation\Pulls\Merge\Response\Applicationjson\H409::SCHEMA_EXAMPLE_DATA);
@@ -75,7 +75,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t422td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_422_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
@@ -96,7 +96,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -117,7 +117,7 @@ final class MergeTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);

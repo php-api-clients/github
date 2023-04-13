@@ -33,13 +33,16 @@ final class RenderRaw
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 200:
-                switch ($contentType) {
-                    case 'text/html':
+        switch ($contentType) {
+            case 'text/html':
+                $body = $response->getBody()->getContents();
+                switch ($code) {
+                    /**
+                     * Response
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200::class, $body);
                 }

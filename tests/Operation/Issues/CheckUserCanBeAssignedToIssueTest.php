@@ -13,7 +13,7 @@ final class CheckUserCanBeAssignedToIssueTest extends \WyriHaximus\AsyncTestUtil
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -22,8 +22,14 @@ final class CheckUserCanBeAssignedToIssueTest extends \WyriHaximus\AsyncTestUtil
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/assignees/generated_null', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated_null/generated_null/issues/13/assignees/generated_null', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Issues\CheckUserCanBeAssignedToIssue::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'issue_number' => 13, 'assignee' => 'generated_null'));
+        $client->call(\ApiClients\Client\GitHub\Operation\Issues\CheckUserCanBeAssignedToIssue::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['issue_number'] = 13;
+            $data['assignee'] = 'generated_null';
+            return $data;
+        })(array()));
     }
 }

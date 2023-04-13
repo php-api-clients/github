@@ -13,7 +13,7 @@ final class CreateRepoVariableTest extends \WyriHaximus\AsyncTestUtilities\Async
     /**
      * @test
      */
-    public function t201td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_201_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(201, array('Content-Type' => 'application/json'), Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);

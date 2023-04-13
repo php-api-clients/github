@@ -33,13 +33,16 @@ final class RemoveOutsideCollaborator
     }
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : mixed
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Unprocessable Entity if user is a member of the organization**/
-            case 422:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Unprocessable Entity if user is a member of the organization
+                    **/
+                    case 422:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(422, $this->hydrator->hydrateObject(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body));
                 }

@@ -13,7 +13,7 @@ final class CreateCommentTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestC
     /**
      * @test
      */
-    public function t201td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_201_requestContentType_application_json_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(201, array('Content-Type' => 'application/json'), Schema\GistComment::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -31,7 +31,7 @@ final class CreateCommentTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestC
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -50,7 +50,7 @@ final class CreateCommentTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestC
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_requestContentType_application_json_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);

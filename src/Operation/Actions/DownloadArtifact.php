@@ -41,21 +41,27 @@ final class DownloadArtifact
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : array
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response**/
-            case 302:
-                return array('code' => 302, 'location' => $response->getHeaderLine('Location'));
-                break;
-            /**Gone**/
-            case 410:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Gone
+                    **/
+                    case 410:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         throw new ErrorSchemas\BasicError(410, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
                 break;
+        }
+        switch ($code) {
+            /**
+             * Response
+            **/
+            case 302:
+                return array('code' => 302, 'location' => $response->getHeaderLine('Location'));
         }
         throw new \RuntimeException('Unable to find matching response code and content type');
     }

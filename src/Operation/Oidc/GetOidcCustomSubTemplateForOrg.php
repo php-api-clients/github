@@ -33,13 +33,16 @@ final class GetOidcCustomSubTemplateForOrg
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\OidcCustomSub
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**A JSON serialized template for OIDC subject claim customization**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * A JSON serialized template for OIDC subject claim customization
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\OidcCustomSub::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\OidcCustomSub::class, $body);
                 }

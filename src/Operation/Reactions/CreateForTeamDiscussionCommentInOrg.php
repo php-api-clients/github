@@ -45,21 +45,22 @@ final class CreateForTeamDiscussionCommentInOrg
      */
     public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Reaction
     {
+        $code = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
-        $body = json_decode($response->getBody()->getContents(), true);
-        switch ($response->getStatusCode()) {
-            /**Response when the reaction type has already been added to this team discussion comment**/
-            case 200:
-                switch ($contentType) {
-                    case 'application/json':
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response when the reaction type has already been added to this team discussion comment
+                    **/
+                    case 200:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
-                }
-                break;
-            /**Response**/
-            case 201:
-                switch ($contentType) {
-                    case 'application/json':
+                    /**
+                     * Response
+                    **/
+                    case 201:
                         $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
                 }

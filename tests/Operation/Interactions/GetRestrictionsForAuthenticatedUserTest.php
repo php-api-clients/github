@@ -13,7 +13,7 @@ final class GetRestrictionsForAuthenticatedUserTest extends \WyriHaximus\AsyncTe
     /**
      * @test
      */
-    public function t200td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_200_responseContentType_application_json()
     {
         $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Operation\Interactions\GetRestrictionsForAuthenticatedUser\Response\Applicationjson\H200::SCHEMA_EXAMPLE_DATA);
         $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
@@ -21,8 +21,10 @@ final class GetRestrictionsForAuthenticatedUserTest extends \WyriHaximus\AsyncTe
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/user/interaction-limits', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/user/interaction-limits', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForAuthenticatedUser::OPERATION_MATCH, array());
+        $client->call(\ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForAuthenticatedUser::OPERATION_MATCH, (static function (array $data) : array {
+            return $data;
+        })(array()));
     }
 }

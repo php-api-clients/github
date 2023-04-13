@@ -13,7 +13,7 @@ final class DeleteTagProtectionTest extends \WyriHaximus\AsyncTestUtilities\Asyn
     /**
      * @test
      */
-    public function t403td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_403_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -22,14 +22,19 @@ final class DeleteTagProtectionTest extends \WyriHaximus\AsyncTestUtilities\Asyn
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated_null/generated_null/tags/protection/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated_null/generated_null/tags/protection/13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'tag_protection_id' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['tag_protection_id'] = 13;
+            return $data;
+        })(array()));
     }
     /**
      * @test
      */
-    public function t404td1f5a9d446c6cec2cf63545e8163e585()
+    public function httpCode_404_responseContentType_application_json()
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -38,8 +43,13 @@ final class DeleteTagProtectionTest extends \WyriHaximus\AsyncTestUtilities\Asyn
         $browser = $this->prophesize(\React\Http\Browser::class);
         $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated_null/generated_null/tags/protection/13', \Prophecy\Argument::type('array'), '')->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated_null/generated_null/tags/protection/13', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
         $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection::OPERATION_MATCH, array('owner' => 'generated_null', 'repo' => 'generated_null', 'tag_protection_id' => 13));
+        $client->call(\ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection::OPERATION_MATCH, (static function (array $data) : array {
+            $data['owner'] = 'generated_null';
+            $data['repo'] = 'generated_null';
+            $data['tag_protection_id'] = 13;
+            return $data;
+        })(array()));
     }
 }
