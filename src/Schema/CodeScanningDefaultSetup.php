@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class CodeScanningDefaultSetup
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"state":{"enum":["configured","not-configured"],"type":"string","description":"Code scanning default setup has been configured or not."},"languages":{"type":"array","items":{"enum":["go","javascript","python","ruby","typescript"],"type":"string"},"description":"Languages to be analysed."},"query_suite":{"enum":["default","extended"],"type":"string","description":"CodeQL query suite to be used."},"updated_at":{"type":["string","null"],"description":"Timestamp of latest configuration update.","format":"date-time","examples":["2023-12-06T14:20:20.000Z"]}},"description":"Configuration for code scanning default setup."}';

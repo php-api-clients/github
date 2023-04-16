@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class Committer
 {
     public const SCHEMA_JSON = '{"required":["name","email"],"type":"object","properties":{"name":{"type":"string","description":"The name of the author or committer of the commit. You\'ll receive a `422` status code if `name` is omitted."},"email":{"type":"string","description":"The email of the author or committer of the commit. You\'ll receive a `422` status code if `email` is omitted."},"date":{"type":"string","examples":["\\"2013-01-05T13:13:22+05:00\\""]}},"description":"The person that committed the file. Default: the authenticated user."}';

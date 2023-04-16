@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class RepositorySubscription
 {
     public const SCHEMA_JSON = '{"title":"Repository Invitation","required":["created_at","ignored","reason","subscribed","url","repository_url"],"type":"object","properties":{"subscribed":{"type":"boolean","description":"Determines if notifications should be received from this repository.","examples":[true]},"ignored":{"type":"boolean","description":"Determines if all notifications should be blocked from this repository."},"reason":{"type":["string","null"]},"created_at":{"type":"string","format":"date-time","examples":["2012-10-06T21:34:12Z"]},"url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/repos\\/octocat\\/example\\/subscription"]},"repository_url":{"type":"string","format":"uri","examples":["https:\\/\\/api.github.com\\/repos\\/octocat\\/example"]}},"description":"Repository invitations let you manage who you collaborate with."}';

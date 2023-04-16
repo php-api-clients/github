@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class Applicationjson
 {
     public const SCHEMA_JSON = '{"required":["action","pat_ids"],"type":"object","properties":{"action":{"enum":["revoke"],"type":"string","description":"Action to apply to the fine-grained personal access token."},"pat_ids":{"maxItems":100,"minItems":1,"type":"array","items":{"type":"integer","description":"Unique identifier of the fine-grained personal access token."},"description":"The IDs of the fine-grained personal access tokens."}}}';

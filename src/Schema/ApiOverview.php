@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class ApiOverview
 {
     public const SCHEMA_JSON = '{"title":"Api Overview","required":["verifiable_password_authentication"],"type":"object","properties":{"verifiable_password_authentication":{"type":"boolean","examples":[true]},"ssh_key_fingerprints":{"type":"object","properties":{"SHA256_RSA":{"type":"string"},"SHA256_DSA":{"type":"string"},"SHA256_ECDSA":{"type":"string"},"SHA256_ED25519":{"type":"string"}}},"ssh_keys":{"type":"array","items":{"type":"string"},"examples":["ssh-ed25519 ABCDEFGHIJKLMNOPQRSTUVWXYZ"]},"hooks":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"web":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"api":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"git":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"packages":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"pages":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"importer":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"actions":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]},"dependabot":{"type":"array","items":{"type":"string"},"examples":["192.0.2.1"]}},"description":"Api Overview"}';

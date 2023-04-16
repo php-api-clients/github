@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 /**
  * @internal
  */
@@ -20,7 +22,7 @@ final class DependabotAlert implements \ApiClients\Contracts\OpenAPI\WebHookInte
         $this->requestSchemaValidator = $requestSchemaValidator;
         $this->hydrator = $hydrator;
     }
-    public function resolve(array $headers, array $data) : Schema\WebhookDependabotAlertAutoDismissed|Schema\WebhookDependabotAlertReopened|Schema\WebhookDependabotAlertCreated|Schema\WebhookDependabotAlertDismissed|Schema\WebhookDependabotAlertFixed|Schema\WebhookDependabotAlertReintroduced
+    public function resolve(array $headers, array $data) : Schema\WebhookDependabotAlertAutoDismissed|Schema\WebhookDependabotAlertAutoReopened|Schema\WebhookDependabotAlertCreated|Schema\WebhookDependabotAlertDismissed|Schema\WebhookDependabotAlertFixed|Schema\WebhookDependabotAlertReintroduced|Schema\WebhookDependabotAlertReopened
     {
         $error = new \RuntimeException('No action matching given headers and data');
         if ($headers['content-type'] == 'application/json') {
@@ -48,8 +50,8 @@ final class DependabotAlert implements \ApiClients\Contracts\OpenAPI\WebHookInte
                 $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-github-delivery'], \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], \cebe\openapi\Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\WebhookDependabotAlertReopened::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                return $this->hydrator->hydrateObject(Schema\WebhookDependabotAlertReopened::class, $data);
+                $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\WebhookDependabotAlertAutoReopened::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                return $this->hydrator->hydrateObject(Schema\WebhookDependabotAlertAutoReopened::class, $data);
             } catch (\Throwable $error) {
                 goto actions_aaaab;
             }

@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 abstract readonly class Abstract7b1f87f42ca7f4e6f27ed1bcbfcee301
 {
     public const SCHEMA_JSON = '{"type":"object","properties":{"message":{"type":"string"}}}';

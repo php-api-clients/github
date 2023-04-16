@@ -8,6 +8,8 @@ use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\WebHook;
+use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\ChunkSize;
 final readonly class PageDeployment
 {
     public const SCHEMA_JSON = '{"title":"GitHub Pages","required":["status_url","page_url"],"type":"object","properties":{"status_url":{"type":"string","description":"The URI to monitor GitHub Pages deployment status.","format":"uri","examples":["https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/deployments\\/4fd754f7e594640989b406850d0bc8f06a121251\\/status"]},"page_url":{"type":"string","description":"The URI to the deployed GitHub Pages.","format":"uri","examples":["hello-world.github.io"]},"preview_url":{"type":"string","description":"The URI to the deployed GitHub Pages preview.","format":"uri","examples":["monalisa-1231a2312sa32-23sda74.drafts.github.io"]}},"description":"The GitHub Pages deployment status."}';
