@@ -1,41 +1,54 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Repos;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListPublic
 {
-    public const OPERATION_ID = 'repos/list-public';
+    public const OPERATION_ID    = 'repos/list-public';
     public const OPERATION_MATCH = 'GET /repositories';
-    private const METHOD = 'GET';
-    private const PATH = '/repositories';
+    private const METHOD         = 'GET';
+    private const PATH           = '/repositories';
     /**A repository ID. Only return repositories with an ID greater than this ID.**/
     private int $since;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repositories $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories $hydrator, int $since)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories $hydrator, int $since)
     {
-        $this->since = $since;
+        $this->since                   = $since;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{since}'), array($this->since), self::PATH . '?since={since}'));
+        return new Request(self::METHOD, str_replace(['{since}'], [$this->since], self::PATH . '?since={since}'));
     }
+
     /**
-     * @return \Rx\Observable<Schema\MinimalRepository>
+     * @return Observable<Schema\MinimalRepository>
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(ResponseInterface $response): Observable
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -46,20 +59,25 @@ final class ListPublic
                     **/
                     case 200:
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\MinimalRepository {
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\MinimalRepository {
                             return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                         });
                     /**
                      * Validation failed, or the endpoint has been spammed.
                     **/
+
                     case 422:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

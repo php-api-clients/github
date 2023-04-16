@@ -1,50 +1,60 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Reactions;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function explode;
+use function json_decode;
+use function json_encode;
+use function str_replace;
+
 final class CreateForRelease
 {
-    public const OPERATION_ID = 'reactions/create-for-release';
+    public const OPERATION_ID    = 'reactions/create-for-release';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/releases/{release_id}/reactions';
-    private const METHOD = 'POST';
-    private const PATH = '/repos/{owner}/{repo}/releases/{release_id}/reactions';
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator;
+    private const METHOD         = 'POST';
+    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/reactions';
+    private readonly SchemaValidator $requestSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
     private string $repo;
     /**The unique identifier of the release.**/
     private int $releaseId;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb\Reactions $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $requestSchemaValidator, \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb\Reactions $hydrator, string $owner, string $repo, int $releaseId)
+
+    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb\Reactions $hydrator, string $owner, string $repo, int $releaseId)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->releaseId = $releaseId;
+        $this->requestSchemaValidator  = $requestSchemaValidator;
+        $this->owner                   = $owner;
+        $this->repo                    = $repo;
+        $this->releaseId               = $releaseId;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, \cebe\openapi\Reader::readFromJson(Schema\Reactions\CreateForRelease\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{release_id}'), array($this->owner, $this->repo, $this->releaseId), self::PATH), array('Content-Type' => 'application/json'), json_encode($data));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Reactions\CreateForRelease\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{release_id}'], [$this->owner, $this->repo, $this->releaseId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
-    /**
-     * @return Schema\Reaction
-     */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Reaction
+
+    public function createResponse(ResponseInterface $response): Schema\Reaction
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -54,23 +64,30 @@ final class CreateForRelease
                      * Reaction exists
                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
                     /**
                      * Reaction created
                     **/
+
                     case 201:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
                     /**
                      * Validation failed, or the endpoint has been spammed.
                     **/
+
                     case 422:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

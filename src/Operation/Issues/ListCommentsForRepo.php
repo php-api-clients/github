@@ -1,21 +1,31 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Issues;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListCommentsForRepo
 {
-    public const OPERATION_ID = 'issues/list-comments-for-repo';
+    public const OPERATION_ID    = 'issues/list-comments-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/comments';
-    private const METHOD = 'GET';
-    private const PATH = '/repos/{owner}/{repo}/issues/comments';
+    private const METHOD         = 'GET';
+    private const PATH           = '/repos/{owner}/{repo}/issues/comments';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -30,30 +40,33 @@ final class ListCommentsForRepo
     private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
-        $this->direction = $direction;
-        $this->since = $since;
-        $this->sort = $sort;
-        $this->perPage = $perPage;
-        $this->page = $page;
+        $this->owner                   = $owner;
+        $this->repo                    = $repo;
+        $this->direction               = $direction;
+        $this->since                   = $since;
+        $this->sort                    = $sort;
+        $this->perPage                 = $perPage;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'), array($this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page), self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<Schema\IssueComment>
+     * @return Observable<Schema\IssueComment>
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(ResponseInterface $response): Observable
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -64,26 +77,33 @@ final class ListCommentsForRepo
                     **/
                     case 200:
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\IssueComment {
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\IssueComment {
                             return $this->hydrator->hydrateObject(Schema\IssueComment::class, $body);
                         });
                     /**
                      * Validation failed, or the endpoint has been spammed.
                     **/
+
                     case 422:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                     /**
                      * Resource not found
                     **/
+
                     case 404:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

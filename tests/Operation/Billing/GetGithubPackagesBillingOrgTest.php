@@ -1,33 +1,39 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Tests\Client\GitHub\Operation\Billing;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Client;
+use ApiClients\Client\GitHub\Operation\Billing\GetGithubPackagesBillingOrg;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
-final class GetGithubPackagesBillingOrgTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
+use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use Prophecy\Argument;
+use React\Http\Browser;
+use React\Http\Message\Response;
+use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
+
+use function React\Promise\resolve;
+
+final class GetGithubPackagesBillingOrgTest extends AsyncTestCase
 {
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json()
+    public function httpCode_200_responseContentType_application_json(): void
     {
-        $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\PackagesBillingUsage::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/settings/billing/packages', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Billing\GetGithubPackagesBillingOrg::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PackagesBillingUsage::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated_null/settings/billing/packages', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(GetGithubPackagesBillingOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated_null';
+
             return $data;
-        })(array()));
+        })([]));
     }
 }

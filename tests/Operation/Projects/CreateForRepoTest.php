@@ -1,133 +1,151 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Tests\Client\GitHub\Operation\Projects;
 
+use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operation\Projects\CreateForRepo;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
-final class CreateForRepoTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
+use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use Prophecy\Argument;
+use React\Http\Browser;
+use React\Http\Message\Response;
+use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
+
+use function json_decode;
+use function React\Promise\resolve;
+
+final class CreateForRepoTest extends AsyncTestCase
 {
     /**
      * @test
      */
-    public function httpCode_201_requestContentType_application_json_responseContentType_application_json()
+    public function httpCode_201_requestContentType_application_json_responseContentType_application_json(): void
     {
-        $response = new \React\Http\Message\Response(201, array('Content-Type' => 'application/json'), Schema\Project::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Project::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
             return $data;
         })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
     }
+
     /**
      * @test
      */
-    public function httpCode_401_requestContentType_application_json_responseContentType_application_json()
-    {
-        self::expectException(ErrorSchemas\BasicError::class);
-        $response = new \React\Http\Message\Response(401, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
-            $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
-            return $data;
-        })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
-    }
-    /**
-     * @test
-     */
-    public function httpCode_403_requestContentType_application_json_responseContentType_application_json()
+    public function httpCode_401_requestContentType_application_json_responseContentType_application_json(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new \React\Http\Message\Response(403, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
             return $data;
         })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
     }
+
     /**
      * @test
      */
-    public function httpCode_404_requestContentType_application_json_responseContentType_application_json()
+    public function httpCode_403_requestContentType_application_json_responseContentType_application_json(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new \React\Http\Message\Response(404, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
             return $data;
         })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
     }
+
     /**
      * @test
      */
-    public function httpCode_410_requestContentType_application_json_responseContentType_application_json()
+    public function httpCode_404_requestContentType_application_json_responseContentType_application_json(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new \React\Http\Message\Response(410, array('Content-Type' => 'application/json'), Schema\BasicError::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
             return $data;
         })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
     }
+
     /**
      * @test
      */
-    public function httpCode_422_requestContentType_application_json_responseContentType_application_json()
+    public function httpCode_410_requestContentType_application_json_responseContentType_application_json(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(410, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
+            return $data;
+        })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function httpCode_422_requestContentType_application_json_responseContentType_application_json(): void
     {
         self::expectException(ErrorSchemas\ValidationErrorSimple::class);
-        $response = new \React\Http\Message\Response(422, array('Content-Type' => 'application/json'), Schema\ValidationErrorSimple::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/projects', \Prophecy\Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Projects\CreateForRepo::OPERATION_MATCH, (static function (array $data) : array {
+        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationErrorSimple::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated_null/generated_null/projects', Argument::type('array'), Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(CreateForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+            $data['repo']  = 'generated_null';
+
             return $data;
         })(json_decode(Schema\Projects\CreateForRepo\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
     }

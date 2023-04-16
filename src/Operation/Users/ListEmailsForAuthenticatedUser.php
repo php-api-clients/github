@@ -1,44 +1,57 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Users;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListEmailsForAuthenticatedUser
 {
-    public const OPERATION_ID = 'users/list-emails-for-authenticated-user';
+    public const OPERATION_ID    = 'users/list-emails-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/emails';
-    private const METHOD = 'GET';
-    private const PATH = '/user/emails';
+    private const METHOD         = 'GET';
+    private const PATH           = '/user/emails';
     /**The number of results per page (max 100).**/
     private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Emails $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Emails $hydrator, int $perPage = 30, int $page = 1)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Emails $hydrator, int $perPage = 30, int $page = 1)
     {
-        $this->perPage = $perPage;
-        $this->page = $page;
+        $this->perPage                 = $perPage;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{per_page}', '{page}'), array($this->perPage, $this->page), self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<Schema\Email>
+     * @return Observable<Schema\Email>
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(ResponseInterface $response): Observable
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -49,32 +62,41 @@ final class ListEmailsForAuthenticatedUser
                     **/
                     case 200:
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\Email::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\Email::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\Email {
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Email {
                             return $this->hydrator->hydrateObject(Schema\Email::class, $body);
                         });
                     /**
                      * Resource not found
                     **/
+
                     case 404:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
                     **/
+
                     case 403:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
                     **/
+
                     case 401:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

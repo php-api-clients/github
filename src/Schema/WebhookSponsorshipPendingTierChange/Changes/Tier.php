@@ -1,15 +1,11 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Schema\WebhookSponsorshipPendingTierChange\Changes;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+
 final readonly class Tier extends Schema\AliasAbstract\Abstractf87473c8c3f6c8b5a00abcd48e143093
 {
 }

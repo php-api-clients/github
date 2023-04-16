@@ -1,21 +1,31 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\CodeScanning;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListAlertsForOrg
 {
-    public const OPERATION_ID = 'code-scanning/list-alerts-for-org';
+    public const OPERATION_ID    = 'code-scanning/list-alerts-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/code-scanning/alerts';
-    private const METHOD = 'GET';
-    private const PATH = '/orgs/{org}/code-scanning/alerts';
+    private const METHOD         = 'GET';
+    private const PATH           = '/orgs/{org}/code-scanning/alerts';
     /**The organization name. The name is not case sensitive.**/
     private string $org;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.**/
@@ -38,34 +48,37 @@ final class ListAlertsForOrg
     private string $direction;
     /**The property by which to sort the results.**/
     private string $sort;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator, string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\CodeScanning\Alerts $hydrator, string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
-        $this->org = $org;
-        $this->toolName = $toolName;
-        $this->toolGuid = $toolGuid;
-        $this->before = $before;
-        $this->after = $after;
-        $this->state = $state;
-        $this->severity = $severity;
-        $this->page = $page;
-        $this->perPage = $perPage;
-        $this->direction = $direction;
-        $this->sort = $sort;
+        $this->org                     = $org;
+        $this->toolName                = $toolName;
+        $this->toolGuid                = $toolGuid;
+        $this->before                  = $before;
+        $this->after                   = $after;
+        $this->state                   = $state;
+        $this->severity                = $severity;
+        $this->page                    = $page;
+        $this->perPage                 = $perPage;
+        $this->direction               = $direction;
+        $this->sort                    = $sort;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{org}', '{tool_name}', '{tool_guid}', '{before}', '{after}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'), array($this->org, $this->toolName, $this->toolGuid, $this->before, $this->after, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort), self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&before={before}&after={after}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new Request(self::METHOD, str_replace(['{org}', '{tool_name}', '{tool_guid}', '{before}', '{after}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->org, $this->toolName, $this->toolGuid, $this->before, $this->after, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&before={before}&after={after}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
+
     /**
-     * @return \Rx\Observable<Schema\CodeScanningOrganizationAlertItems>
+     * @return Observable<Schema\CodeScanningOrganizationAlertItems>
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(ResponseInterface $response): Observable
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -76,26 +89,33 @@ final class ListAlertsForOrg
                     **/
                     case 200:
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\CodeScanningOrganizationAlertItems::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\CodeScanningOrganizationAlertItems::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\CodeScanningOrganizationAlertItems {
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\CodeScanningOrganizationAlertItems {
                             return $this->hydrator->hydrateObject(Schema\CodeScanningOrganizationAlertItems::class, $body);
                         });
                     /**
                      * Resource not found
                     **/
+
                     case 404:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Service unavailable
                     **/
+
                     case 503:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(503, $this->hydrator->hydrateObject(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

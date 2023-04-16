@@ -1,21 +1,28 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Actions;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListRequiredWorkflowRuns
 {
-    public const OPERATION_ID = 'actions/list-required-workflow-runs';
+    public const OPERATION_ID    = 'actions/list-required-workflow-runs';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs';
-    private const METHOD = 'GET';
-    private const PATH = '/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs';
+    private const METHOD         = 'GET';
+    private const PATH           = '/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs';
     /**The account owner of the repository. The name is not case sensitive.**/
     private string $owner;
     /**The name of the repository. The name is not case sensitive.**/
@@ -42,36 +49,36 @@ final class ListRequiredWorkflowRuns
     private int $page;
     /**If `true` pull requests are omitted from the response (empty array).**/
     private bool $excludePullRequests;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Runs $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Runs $hydrator, string $owner, string $repo, int $requiredWorkflowIdForRepo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Runs $hydrator, string $owner, string $repo, int $requiredWorkflowIdForRepo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
     {
-        $this->owner = $owner;
-        $this->repo = $repo;
+        $this->owner                     = $owner;
+        $this->repo                      = $repo;
         $this->requiredWorkflowIdForRepo = $requiredWorkflowIdForRepo;
-        $this->actor = $actor;
-        $this->branch = $branch;
-        $this->event = $event;
-        $this->status = $status;
-        $this->created = $created;
-        $this->checkSuiteId = $checkSuiteId;
-        $this->headSha = $headSha;
-        $this->perPage = $perPage;
-        $this->page = $page;
-        $this->excludePullRequests = $excludePullRequests;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->actor                     = $actor;
+        $this->branch                    = $branch;
+        $this->event                     = $event;
+        $this->status                    = $status;
+        $this->created                   = $created;
+        $this->checkSuiteId              = $checkSuiteId;
+        $this->headSha                   = $headSha;
+        $this->perPage                   = $perPage;
+        $this->page                      = $page;
+        $this->excludePullRequests       = $excludePullRequests;
+        $this->responseSchemaValidator   = $responseSchemaValidator;
+        $this->hydrator                  = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{owner}', '{repo}', '{required_workflow_id_for_repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'), array($this->owner, $this->repo, $this->requiredWorkflowIdForRepo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->checkSuiteId, $this->headSha, $this->perPage, $this->page, $this->excludePullRequests), self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{required_workflow_id_for_repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'], [$this->owner, $this->repo, $this->requiredWorkflowIdForRepo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->checkSuiteId, $this->headSha, $this->perPage, $this->page, $this->excludePullRequests], self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
     }
-    /**
-     * @return Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
-     */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
+
+    public function createResponse(ResponseInterface $response): Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -81,11 +88,14 @@ final class ListRequiredWorkflowRuns
                      * Response
                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::class, $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

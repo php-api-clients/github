@@ -1,45 +1,51 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Tests\Client\GitHub\Operation\Actions;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Client;
+use ApiClients\Client\GitHub\Operation\Actions\ListRequiredWorkflowRuns;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
-final class ListRequiredWorkflowRunsTest extends \WyriHaximus\AsyncTestUtilities\AsyncTestCase
+use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use Prophecy\Argument;
+use React\Http\Browser;
+use React\Http\Message\Response;
+use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
+
+use function React\Promise\resolve;
+
+final class ListRequiredWorkflowRunsTest extends AsyncTestCase
 {
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json()
+    public function httpCode_200_responseContentType_application_json(): void
     {
-        $response = new \React\Http\Message\Response(200, array('Content-Type' => 'application/json'), Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_EXAMPLE_DATA);
-        $auth = $this->prophesize(\ApiClients\Contracts\HTTP\Headers\AuthenticationInterface::class);
-        $auth->authHeader(\Prophecy\Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(\React\Http\Browser::class);
-        $browser->withBase(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(\Prophecy\Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/required_workflows/13/runs?actor=generated_null&branch=generated_null&event=generated_null&status=generated_null&created=1970-01-01T00:00:00+00:00&check_suite_id=13&head_sha=generated_null&per_page=13&page=13&exclude_pull_requests=', \Prophecy\Argument::type('array'), \Prophecy\Argument::any())->willReturn(\React\Promise\resolve($response))->shouldBeCalled();
-        $client = new \ApiClients\Client\GitHub\Client($auth->reveal(), $browser->reveal());
-        $client->call(\ApiClients\Client\GitHub\Operation\Actions\ListRequiredWorkflowRuns::OPERATION_MATCH, (static function (array $data) : array {
-            $data['owner'] = 'generated_null';
-            $data['repo'] = 'generated_null';
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated_null/generated_null/actions/required_workflows/13/runs?actor=generated_null&branch=generated_null&event=generated_null&status=generated_null&created=1970-01-01T00:00:00+00:00&check_suite_id=13&head_sha=generated_null&per_page=13&page=13&exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $client->call(ListRequiredWorkflowRuns::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']                         = 'generated_null';
+            $data['repo']                          = 'generated_null';
             $data['required_workflow_id_for_repo'] = 13;
-            $data['actor'] = 'generated_null';
-            $data['branch'] = 'generated_null';
-            $data['event'] = 'generated_null';
-            $data['status'] = 'generated_null';
-            $data['created'] = '1970-01-01T00:00:00+00:00';
-            $data['check_suite_id'] = 13;
-            $data['head_sha'] = 'generated_null';
-            $data['per_page'] = 13;
-            $data['page'] = 13;
-            $data['exclude_pull_requests'] = false;
+            $data['actor']                         = 'generated_null';
+            $data['branch']                        = 'generated_null';
+            $data['event']                         = 'generated_null';
+            $data['status']                        = 'generated_null';
+            $data['created']                       = '1970-01-01T00:00:00+00:00';
+            $data['check_suite_id']                = 13;
+            $data['head_sha']                      = 'generated_null';
+            $data['per_page']                      = 13;
+            $data['page']                          = 13;
+            $data['exclude_pull_requests']         = false;
+
             return $data;
-        })(array()));
+        })([]));
     }
 }

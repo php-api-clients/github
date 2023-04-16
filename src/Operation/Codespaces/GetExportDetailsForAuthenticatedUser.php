@@ -1,44 +1,52 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Codespaces;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class GetExportDetailsForAuthenticatedUser
 {
-    public const OPERATION_ID = 'codespaces/get-export-details-for-authenticated-user';
+    public const OPERATION_ID    = 'codespaces/get-export-details-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/{codespace_name}/exports/{export_id}';
-    private const METHOD = 'GET';
-    private const PATH = '/user/codespaces/{codespace_name}/exports/{export_id}';
+    private const METHOD         = 'GET';
+    private const PATH           = '/user/codespaces/{codespace_name}/exports/{export_id}';
     /**The name of the codespace.**/
     private string $codespaceName;
     /**The ID of the export operation, or `latest`. Currently only `latest` is currently supported.**/
     private string $exportId;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator, string $codespaceName, string $exportId)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports\CbExportIdRcb $hydrator, string $codespaceName, string $exportId)
     {
-        $this->codespaceName = $codespaceName;
-        $this->exportId = $exportId;
+        $this->codespaceName           = $codespaceName;
+        $this->exportId                = $exportId;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{codespace_name}', '{export_id}'), array($this->codespaceName, $this->exportId), self::PATH));
+        return new Request(self::METHOD, str_replace(['{codespace_name}', '{export_id}'], [$this->codespaceName, $this->exportId], self::PATH));
     }
-    /**
-     * @return Schema\CodespaceExportDetails
-     */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\CodespaceExportDetails
+
+    public function createResponse(ResponseInterface $response): Schema\CodespaceExportDetails
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -48,17 +56,22 @@ final class GetExportDetailsForAuthenticatedUser
                      * Response
                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\CodespaceExportDetails::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodespaceExportDetails::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject(Schema\CodespaceExportDetails::class, $body);
                     /**
                      * Resource not found
                     **/
+
                     case 404:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

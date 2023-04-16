@@ -1,21 +1,30 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Teams;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListDiscussionCommentsLegacy
 {
-    public const OPERATION_ID = 'teams/list-discussion-comments-legacy';
+    public const OPERATION_ID    = 'teams/list-discussion-comments-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions/{discussion_number}/comments';
-    private const METHOD = 'GET';
-    private const PATH = '/teams/{team_id}/discussions/{discussion_number}/comments';
+    private const METHOD         = 'GET';
+    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments';
     /**The unique identifier of the team.**/
     private int $teamId;
     /**The number that identifies the discussion.**/
@@ -26,28 +35,31 @@ final class ListDiscussionCommentsLegacy
     private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments $hydrator, int $teamId, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Discussions\CbDiscussionNumberRcb\Comments $hydrator, int $teamId, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->teamId = $teamId;
-        $this->discussionNumber = $discussionNumber;
-        $this->direction = $direction;
-        $this->perPage = $perPage;
-        $this->page = $page;
+        $this->teamId                  = $teamId;
+        $this->discussionNumber        = $discussionNumber;
+        $this->direction               = $direction;
+        $this->perPage                 = $perPage;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{team_id}', '{discussion_number}', '{direction}', '{per_page}', '{page}'), array($this->teamId, $this->discussionNumber, $this->direction, $this->perPage, $this->page), self::PATH . '?direction={direction}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{team_id}', '{discussion_number}', '{direction}', '{per_page}', '{page}'], [$this->teamId, $this->discussionNumber, $this->direction, $this->perPage, $this->page], self::PATH . '?direction={direction}&per_page={per_page}&page={page}'));
     }
+
     /**
-     * @return \Rx\Observable<Schema\TeamDiscussionComment>
+     * @return Observable<Schema\TeamDiscussionComment>
      */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : \Rx\Observable
+    public function createResponse(ResponseInterface $response): Observable
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -58,14 +70,17 @@ final class ListDiscussionCommentsLegacy
                     **/
                     case 200:
                         foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, \cebe\openapi\Reader::readFromJson(Schema\TeamDiscussionComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\TeamDiscussionComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                         }
-                        return \Rx\Observable::fromArray($body, new \Rx\Scheduler\ImmediateScheduler())->map(function (array $body) : Schema\TeamDiscussionComment {
+
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\TeamDiscussionComment {
                             return $this->hydrator->hydrateObject(Schema\TeamDiscussionComment::class, $body);
                         });
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

@@ -1,26 +1,27 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Schema;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use ApiClients\Client\GitHub\Schema\Import\ProjectChoices;
+use EventSauce\ObjectHydrator\MapFrom;
+use EventSauce\ObjectHydrator\PropertyCasters\CastListToType;
+
 final readonly class Import
 {
-    public const SCHEMA_JSON = '{"title":"Import","required":["vcs","vcs_url","status","url","repository_url","html_url","authors_url"],"type":"object","properties":{"vcs":{"type":["string","null"]},"use_lfs":{"type":"boolean"},"vcs_url":{"type":"string","description":"The URL of the originating repository."},"svc_root":{"type":"string"},"tfvc_project":{"type":"string"},"status":{"enum":["auth","error","none","detecting","choose","auth_failed","importing","mapping","waiting_to_push","pushing","complete","setup","unknown","detection_found_multiple","detection_found_nothing","detection_needs_auth"],"type":"string"},"status_text":{"type":["string","null"]},"failed_step":{"type":["string","null"]},"error_message":{"type":["string","null"]},"import_percent":{"type":["integer","null"]},"commit_count":{"type":["integer","null"]},"push_percent":{"type":["integer","null"]},"has_large_files":{"type":"boolean"},"large_files_size":{"type":"integer"},"large_files_count":{"type":"integer"},"project_choices":{"type":"array","items":{"type":"object","properties":{"vcs":{"type":"string"},"tfvc_project":{"type":"string"},"human_name":{"type":"string"}}}},"message":{"type":"string"},"authors_count":{"type":["integer","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"authors_url":{"type":"string","format":"uri"},"repository_url":{"type":"string","format":"uri"},"svn_root":{"type":"string"}},"description":"A repository import from an external source."}';
-    public const SCHEMA_TITLE = 'Import';
-    public const SCHEMA_DESCRIPTION = 'A repository import from an external source.';
+    public const SCHEMA_JSON         = '{"title":"Import","required":["vcs","vcs_url","status","url","repository_url","html_url","authors_url"],"type":"object","properties":{"vcs":{"type":["string","null"]},"use_lfs":{"type":"boolean"},"vcs_url":{"type":"string","description":"The URL of the originating repository."},"svc_root":{"type":"string"},"tfvc_project":{"type":"string"},"status":{"enum":["auth","error","none","detecting","choose","auth_failed","importing","mapping","waiting_to_push","pushing","complete","setup","unknown","detection_found_multiple","detection_found_nothing","detection_needs_auth"],"type":"string"},"status_text":{"type":["string","null"]},"failed_step":{"type":["string","null"]},"error_message":{"type":["string","null"]},"import_percent":{"type":["integer","null"]},"commit_count":{"type":["integer","null"]},"push_percent":{"type":["integer","null"]},"has_large_files":{"type":"boolean"},"large_files_size":{"type":"integer"},"large_files_count":{"type":"integer"},"project_choices":{"type":"array","items":{"type":"object","properties":{"vcs":{"type":"string"},"tfvc_project":{"type":"string"},"human_name":{"type":"string"}}}},"message":{"type":"string"},"authors_count":{"type":["integer","null"]},"url":{"type":"string","format":"uri"},"html_url":{"type":"string","format":"uri"},"authors_url":{"type":"string","format":"uri"},"repository_url":{"type":"string","format":"uri"},"svn_root":{"type":"string"}},"description":"A repository import from an external source."}';
+    public const SCHEMA_TITLE        = 'Import';
+    public const SCHEMA_DESCRIPTION  = 'A repository import from an external source.';
     public const SCHEMA_EXAMPLE_DATA = '{"vcs":"generated_vcs_null","use_lfs":false,"vcs_url":"generated_vcs_url_null","svc_root":"generated_svc_root_null","tfvc_project":"generated_tfvc_project_null","status":"auth","status_text":"generated_status_text_null","failed_step":"generated_failed_step_null","error_message":"generated_error_message_null","import_percent":13,"commit_count":13,"push_percent":13,"has_large_files":false,"large_files_size":13,"large_files_count":13,"project_choices":[{"vcs":"generated_vcs_null","tfvc_project":"generated_tfvc_project_null","human_name":"generated_human_name_null"}],"message":"generated_message_null","authors_count":13,"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","authors_url":"https:\\/\\/example.com\\/","repository_url":"https:\\/\\/example.com\\/","svn_root":"generated_svn_root_null"}';
+
     /**
      * vcsUrl: The URL of the originating repository.
-     * @param ?array<\ApiClients\Client\GitHub\Schema\Import\ProjectChoices> $projectChoices
+     *
+     * @param ?array<ProjectChoices> $projectChoices
      */
-    public function __construct(public ?string $vcs, #[\EventSauce\ObjectHydrator\MapFrom('use_lfs')] public ?bool $useLfs, #[\EventSauce\ObjectHydrator\MapFrom('vcs_url')] public string $vcsUrl, #[\EventSauce\ObjectHydrator\MapFrom('svc_root')] public ?string $svcRoot, #[\EventSauce\ObjectHydrator\MapFrom('tfvc_project')] public ?string $tfvcProject, public string $status, #[\EventSauce\ObjectHydrator\MapFrom('status_text')] public ?string $statusText, #[\EventSauce\ObjectHydrator\MapFrom('failed_step')] public ?string $failedStep, #[\EventSauce\ObjectHydrator\MapFrom('error_message')] public ?string $errorMessage, #[\EventSauce\ObjectHydrator\MapFrom('import_percent')] public ?int $importPercent, #[\EventSauce\ObjectHydrator\MapFrom('commit_count')] public ?int $commitCount, #[\EventSauce\ObjectHydrator\MapFrom('push_percent')] public ?int $pushPercent, #[\EventSauce\ObjectHydrator\MapFrom('has_large_files')] public ?bool $hasLargeFiles, #[\EventSauce\ObjectHydrator\MapFrom('large_files_size')] public ?int $largeFilesSize, #[\EventSauce\ObjectHydrator\MapFrom('large_files_count')] public ?int $largeFilesCount, #[\EventSauce\ObjectHydrator\MapFrom('project_choices')] #[\EventSauce\ObjectHydrator\PropertyCasters\CastListToType(Schema\Import\ProjectChoices::class)] public ?array $projectChoices, public ?string $message, #[\EventSauce\ObjectHydrator\MapFrom('authors_count')] public ?int $authorsCount, public string $url, #[\EventSauce\ObjectHydrator\MapFrom('html_url')] public string $htmlUrl, #[\EventSauce\ObjectHydrator\MapFrom('authors_url')] public string $authorsUrl, #[\EventSauce\ObjectHydrator\MapFrom('repository_url')] public string $repositoryUrl, #[\EventSauce\ObjectHydrator\MapFrom('svn_root')] public ?string $svnRoot)
+    public function __construct(public ?string $vcs, #[MapFrom('use_lfs')] public ?bool $useLfs, #[MapFrom('vcs_url')] public string $vcsUrl, #[MapFrom('svc_root')] public ?string $svcRoot, #[MapFrom('tfvc_project')] public ?string $tfvcProject, public string $status, #[MapFrom('status_text')] public ?string $statusText, #[MapFrom('failed_step')] public ?string $failedStep, #[MapFrom('error_message')] public ?string $errorMessage, #[MapFrom('import_percent')] public ?int $importPercent, #[MapFrom('commit_count')] public ?int $commitCount, #[MapFrom('push_percent')] public ?int $pushPercent, #[MapFrom('has_large_files')] public ?bool $hasLargeFiles, #[MapFrom('large_files_size')] public ?int $largeFilesSize, #[MapFrom('large_files_count')] public ?int $largeFilesCount, #[MapFrom('project_choices')] #[CastListToType(Schema\Import\ProjectChoices::class)] public ?array $projectChoices, public ?string $message, #[MapFrom('authors_count')] public ?int $authorsCount, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('authors_url')] public string $authorsUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('svn_root')] public ?string $svnRoot)
     {
     }
 }

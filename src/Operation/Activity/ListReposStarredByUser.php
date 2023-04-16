@@ -1,21 +1,28 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace ApiClients\Client\GitHub\Operation\Activity;
 
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\WebHook;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Client\GitHub\ChunkSize;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RingCentral\Psr7\Request;
+use RuntimeException;
+
+use function explode;
+use function json_decode;
+use function str_replace;
+
 final class ListReposStarredByUser
 {
-    public const OPERATION_ID = 'activity/list-repos-starred-by-user';
+    public const OPERATION_ID    = 'activity/list-repos-starred-by-user';
     public const OPERATION_MATCH = 'GET /users/{username}/starred';
-    private const METHOD = 'GET';
-    private const PATH = '/users/{username}/starred';
+    private const METHOD         = 'GET';
+    private const PATH           = '/users/{username}/starred';
     /**The handle for the GitHub user account.**/
     private string $username;
     /**The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.**/
@@ -26,28 +33,28 @@ final class ListReposStarredByUser
     private int $perPage;
     /**Page number of the results to fetch.**/
     private int $page;
-    private readonly \League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator;
+    private readonly SchemaValidator $responseSchemaValidator;
     private readonly Hydrator\Operation\Users\CbUsernameRcb\Starred $hydrator;
-    public function __construct(\League\OpenAPIValidation\Schema\SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Starred $hydrator, string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
+
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Starred $hydrator, string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->username = $username;
-        $this->sort = $sort;
-        $this->direction = $direction;
-        $this->perPage = $perPage;
-        $this->page = $page;
+        $this->username                = $username;
+        $this->sort                    = $sort;
+        $this->direction               = $direction;
+        $this->perPage                 = $perPage;
+        $this->page                    = $page;
         $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator = $hydrator;
+        $this->hydrator                = $hydrator;
     }
-    public function createRequest(array $data = array()) : \Psr\Http\Message\RequestInterface
+
+    public function createRequest(array $data = []): RequestInterface
     {
-        return new \RingCentral\Psr7\Request(self::METHOD, \str_replace(array('{username}', '{sort}', '{direction}', '{per_page}', '{page}'), array($this->username, $this->sort, $this->direction, $this->perPage, $this->page), self::PATH . '?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{username}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->username, $this->sort, $this->direction, $this->perPage, $this->page], self::PATH . '?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
-    /**
-     * @return Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200
-     */
-    public function createResponse(\Psr\Http\Message\ResponseInterface $response) : Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200
+
+    public function createResponse(ResponseInterface $response): Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200
     {
-        $code = $response->getStatusCode();
+        $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
             case 'application/json':
@@ -57,11 +64,14 @@ final class ListReposStarredByUser
                      * Response
                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, \cebe\openapi\Reader::readFromJson(Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
                         return $this->hydrator->hydrateObject(Schema\Operation\Activity\ListReposStarredByUser\Response\Applicationjson\H200::class, $body);
                 }
+
                 break;
         }
-        throw new \RuntimeException('Unable to find matching response code and content type');
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }
