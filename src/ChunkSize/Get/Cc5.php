@@ -292,6 +292,16 @@ final class Cc5
                                 return $this->router[Router\Get\Orgs::class]->checkPublicMembershipForUser($params);
                             }
                         }
+                    } elseif ($pathChunks[3] === 'rulesets') {
+                        if ($pathChunks[4] === '{ruleset_id}') {
+                            if ($call === 'GET /orgs/{org}/rulesets/{ruleset_id}') {
+                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Get\Repos::class]->getOrgRuleset($params);
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'secret-scanning') {
                         if ($pathChunks[4] === 'alerts') {
                             if ($call === 'GET /orgs/{org}/secret-scanning/alerts') {
@@ -572,6 +582,14 @@ final class Cc5
                                 }
 
                                 return $this->router[Router\Get\Repos::class]->listReleases($params);
+                            }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($call === 'GET /repos/{owner}/{repo}/rulesets') {
+                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Get\Repos::class]->getRepoRulesets($params);
                             }
                         } elseif ($pathChunks[4] === 'security-advisories') {
                             if ($call === 'GET /repos/{owner}/{repo}/security-advisories') {

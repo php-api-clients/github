@@ -124,6 +124,16 @@ final class Cc5
                                 return $this->router[Router\Put\Orgs::class]->setPublicMembershipForAuthenticatedUser($params);
                             }
                         }
+                    } elseif ($pathChunks[3] === 'rulesets') {
+                        if ($pathChunks[4] === '{ruleset_id}') {
+                            if ($call === 'PUT /orgs/{org}/rulesets/{ruleset_id}') {
+                                if (array_key_exists(Router\Put\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Put\Repos::class]->updateOrgRuleset($params);
+                            }
+                        }
                     }
                 }
             } elseif ($pathChunks[1] === 'projects') {

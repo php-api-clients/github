@@ -312,6 +312,14 @@ final class Cc4
 
                             return $this->router[Router\Get\Repos::class]->listForOrg($params);
                         }
+                    } elseif ($pathChunks[3] === 'rulesets') {
+                        if ($call === 'GET /orgs/{org}/rulesets') {
+                            if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                            }
+
+                            return $this->router[Router\Get\Repos::class]->getOrgRulesets($params);
+                        }
                     } elseif ($pathChunks[3] === 'security-managers') {
                         if ($call === 'GET /orgs/{org}/security-managers') {
                             if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {

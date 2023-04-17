@@ -871,6 +871,16 @@ final class Cc6
                                     return $this->router[Router\Get\Repos::class]->getRelease($params);
                                 }
                             }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($pathChunks[5] === '{ruleset_id}') {
+                                if ($call === 'GET /repos/{owner}/{repo}/rulesets/{ruleset_id}') {
+                                    if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                        $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Get\Repos::class]->getRepoRuleset($params);
+                                }
+                            }
                         } elseif ($pathChunks[4] === 'secret-scanning') {
                             if ($pathChunks[5] === 'alerts') {
                                 if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts') {

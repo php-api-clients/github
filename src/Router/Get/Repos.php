@@ -41,6 +41,7 @@ use ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview;
 use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\ReleaseAsset;
 use ApiClients\Client\GitHub\Schema\RepositoryCollaboratorPermission;
+use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\Topic;
 use ApiClients\Client\GitHub\Schema\ViewTraffic;
@@ -146,6 +147,27 @@ final class Repos
         });
     }
 
+    public function getOrgRulesets(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Rulesets();
+        }
+
+        $operation = new Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class], $arguments['org']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
+            return $operation->createResponse($response);
+        });
+    }
+
     public function get(array $params)
     {
         $arguments = [];
@@ -220,6 +242,33 @@ final class Repos
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function getOrgRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Rulesets🌀CbRulesetIdRcb();
+        }
+
+        $operation = new Operation\Repos\GetOrgRuleset($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class], $arguments['org'], $arguments['ruleset_id']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         });
     }
@@ -895,6 +944,39 @@ final class Repos
         }
 
         $operation = new Operation\Repos\ListReleases($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Releases::class], $arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function getRepoRulesets(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('includes_parents', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: includes_parents');
+        }
+
+        $arguments['includes_parents'] = $params['includes_parents'];
+        unset($params['includes_parents']);
+        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Rulesets();
+        }
+
+        $operation = new Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class], $arguments['owner'], $arguments['repo'], $arguments['includes_parents']);
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
@@ -1748,6 +1830,45 @@ final class Repos
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function getRepoRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('includes_parents', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: includes_parents');
+        }
+
+        $arguments['includes_parents'] = $params['includes_parents'];
+        unset($params['includes_parents']);
+        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Rulesets🌀CbRulesetIdRcb();
+        }
+
+        $operation = new Operation\Repos\GetRepoRuleset($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class], $arguments['owner'], $arguments['repo'], $arguments['ruleset_id'], $arguments['includes_parents']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         });
     }
@@ -2655,6 +2776,39 @@ final class Repos
         }
 
         $operation = new Operation\Repos\ListReleaseAssets($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Releases\CbReleaseIdRcb\Assets::class], $arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['per_page'], $arguments['page']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function getBranchRules(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('branch', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: branch');
+        }
+
+        $arguments['branch'] = $params['branch'];
+        unset($params['branch']);
+        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rules\Branches\CbBranchRcb::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rules\Branches\CbBranchRcb::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Rules🌀Branches🌀CbBranchRcb();
+        }
+
+        $operation = new Operation\Repos\GetBranchRules($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rules\Branches\CbBranchRcb::class], $arguments['owner'], $arguments['repo'], $arguments['branch']);
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {

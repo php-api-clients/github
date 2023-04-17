@@ -283,6 +283,16 @@ final class Cc6
                                     return $this->router[Router\Delete\Repos::class]->deleteRelease($params);
                                 }
                             }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($pathChunks[5] === '{ruleset_id}') {
+                                if ($call === 'DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}') {
+                                    if (array_key_exists(Router\Delete\Repos::class, $this->router) === false) {
+                                        $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Delete\Repos::class]->deleteRepoRuleset($params);
+                                }
+                            }
                         }
                     }
                 }

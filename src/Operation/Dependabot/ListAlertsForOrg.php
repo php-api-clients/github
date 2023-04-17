@@ -30,7 +30,7 @@ final class ListAlertsForOrg
     private string $org;
     /**A comma-separated list of states. If specified, only alerts with these states will be returned.
 
-    Can be: `dismissed`, `fixed`, `open`**/
+    Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`**/
     private string $state;
     /**A comma-separated list of severities. If specified, only alerts with these severities will be returned.
 

@@ -13,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\FileCommit;
 use ApiClients\Client\GitHub\Schema\Operation\Repos\EnableLfsForRepo\Response\Applicationjson\H202;
 use ApiClients\Client\GitHub\Schema\ProtectedBranch;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
+use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use ApiClients\Client\GitHub\Schema\Topic;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -41,6 +42,33 @@ final class Repos
         $this->hydrators               = $hydrators;
         $this->browser                 = $browser;
         $this->authentication          = $authentication;
+    }
+
+    public function updateOrgRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Rulesets🌀CbRulesetIdRcb();
+        }
+
+        $operation = new Operation\Repos\UpdateOrgRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets\CbRulesetIdRcb::class], $arguments['org'], $arguments['ruleset_id']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
+            return $operation->createResponse($response);
+        });
     }
 
     public function enableAutomatedSecurityFixes(array $params)
@@ -298,6 +326,39 @@ final class Repos
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Environment {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function updateRepoRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Rulesets🌀CbRulesetIdRcb();
+        }
+
+        $operation = new Operation\Repos\UpdateRepoRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets\CbRulesetIdRcb::class], $arguments['owner'], $arguments['repo'], $arguments['ruleset_id']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         });
     }

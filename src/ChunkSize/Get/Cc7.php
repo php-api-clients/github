@@ -863,6 +863,18 @@ final class Cc7
                                     }
                                 }
                             }
+                        } elseif ($pathChunks[4] === 'rules') {
+                            if ($pathChunks[5] === 'branches') {
+                                if ($pathChunks[6] === '{branch}') {
+                                    if ($call === 'GET /repos/{owner}/{repo}/rules/branches/{branch}') {
+                                        if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                            $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                        }
+
+                                        return $this->router[Router\Get\Repos::class]->getBranchRules($params);
+                                    }
+                                }
+                            }
                         } elseif ($pathChunks[4] === 'secret-scanning') {
                             if ($pathChunks[5] === 'alerts') {
                                 if ($pathChunks[6] === '{alert_number}') {

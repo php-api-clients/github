@@ -287,6 +287,14 @@ final class Cc5
 
                                 return $this->router[Router\Post\Repos::class]->createRelease($params);
                             }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($call === 'POST /repos/{owner}/{repo}/rulesets') {
+                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Post\Repos::class]->createRepoRuleset($params);
+                            }
                         } elseif ($pathChunks[4] === 'security-advisories') {
                             if ($call === 'POST /repos/{owner}/{repo}/security-advisories') {
                                 if (array_key_exists(Router\Post\SecurityAdvisories::class, $this->router) === false) {

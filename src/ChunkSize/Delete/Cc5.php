@@ -148,6 +148,16 @@ final class Cc5
                                 return $this->router[Router\Delete\Orgs::class]->removePublicMembershipForAuthenticatedUser($params);
                             }
                         }
+                    } elseif ($pathChunks[3] === 'rulesets') {
+                        if ($pathChunks[4] === '{ruleset_id}') {
+                            if ($call === 'DELETE /orgs/{org}/rulesets/{ruleset_id}') {
+                                if (array_key_exists(Router\Delete\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Delete\Repos::class]->deleteOrgRuleset($params);
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'teams') {
                         if ($pathChunks[4] === '{team_slug}') {
                             if ($call === 'DELETE /orgs/{org}/teams/{team_slug}') {

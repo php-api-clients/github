@@ -140,6 +140,14 @@ final class Cc4
 
                             return $this->router[Router\Post\Repos::class]->createInOrg($params);
                         }
+                    } elseif ($pathChunks[3] === 'rulesets') {
+                        if ($call === 'POST /orgs/{org}/rulesets') {
+                            if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
+                                $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                            }
+
+                            return $this->router[Router\Post\Repos::class]->createOrgRuleset($params);
+                        }
                     } elseif ($pathChunks[3] === 'teams') {
                         if ($call === 'POST /orgs/{org}/teams') {
                             if (array_key_exists(Router\Post\Teams::class, $this->router) === false) {

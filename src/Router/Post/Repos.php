@@ -28,6 +28,7 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\ReleaseAsset;
 use ApiClients\Client\GitHub\Schema\ReleaseNotesContent;
 use ApiClients\Client\GitHub\Schema\Repository;
+use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use ApiClients\Client\GitHub\Schema\Status;
 use ApiClients\Client\GitHub\Schema\TagProtection;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -76,6 +77,27 @@ final class Repos
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Repository {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function createOrgRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Rulesets();
+        }
+
+        $operation = new Operation\Repos\CreateOrgRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Rulesets::class], $arguments['org']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         });
     }
@@ -487,6 +509,33 @@ final class Repos
         $request   = $operation->createRequest($params);
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release {
+            return $operation->createResponse($response);
+        });
+    }
+
+    public function createRepoRuleset(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Rulesets();
+        }
+
+        $operation = new Operation\Repos\CreateRepoRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Rulesets::class], $arguments['owner'], $arguments['repo']);
+        $request   = $operation->createRequest($params);
+
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         });
     }
