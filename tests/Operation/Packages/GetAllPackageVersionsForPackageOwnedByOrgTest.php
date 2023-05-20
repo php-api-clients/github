@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Packages;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
@@ -21,32 +22,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
-    {
-        $response = new Response(200, ['Content-Type' => 'application/json'], '[' . Schema\PackageVersion::SCHEMA_EXAMPLE_DATA . ']');
-        $auth     = $this->prophesize(AuthenticationInterface::class);
-        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(Browser::class);
-        $browser->withBase(Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/packages/generated_null/generated_null/versions?page=13&per_page=13&state=generated_null', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
-        $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['package_type'] = 'generated_null';
-            $data['package_name'] = 'generated_null';
-            $data['org']          = 'generated_null';
-            $data['page']         = 13;
-            $data['per_page']     = 13;
-            $data['state']        = 'generated_null';
-
-            return $data;
-        })([]));
-    }
-
-    /**
-     * @test
-     */
-    public function httpCode_404_responseContentType_application_json(): void
+    public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -55,15 +31,15 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/packages/generated_null/generated_null/versions?page=13&per_page=13&state=generated_null', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['package_type'] = 'generated_null';
-            $data['package_name'] = 'generated_null';
-            $data['org']          = 'generated_null';
-            $data['page']         = 13;
-            $data['per_page']     = 13;
-            $data['state']        = 'generated_null';
+        $result = $client->call(Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
+            $data['package_type'] = 'generated';
+            $data['package_name'] = 'generated';
+            $data['org']          = 'generated';
+            $data['page']         = 4;
+            $data['per_page']     = 8;
+            $data['state']        = 'generated';
 
             return $data;
         })([]));
@@ -72,7 +48,24 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_403_responseContentType_application_json(): void
+    public function operations_httpCode_404_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -81,15 +74,15 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/packages/generated_null/generated_null/versions?page=13&per_page=13&state=generated_null', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['package_type'] = 'generated_null';
-            $data['package_name'] = 'generated_null';
-            $data['org']          = 'generated_null';
-            $data['page']         = 13;
-            $data['per_page']     = 13;
-            $data['state']        = 'generated_null';
+        $result = $client->call(Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
+            $data['package_type'] = 'generated';
+            $data['package_name'] = 'generated';
+            $data['org']          = 'generated';
+            $data['page']         = 4;
+            $data['per_page']     = 8;
+            $data['state']        = 'generated';
 
             return $data;
         })([]));
@@ -98,7 +91,24 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_401_responseContentType_application_json(): void
+    public function operations_httpCode_403_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -107,17 +117,34 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/packages/generated_null/generated_null/versions?page=13&per_page=13&state=generated_null', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['package_type'] = 'generated_null';
-            $data['package_name'] = 'generated_null';
-            $data['org']          = 'generated_null';
-            $data['page']         = 13;
-            $data['per_page']     = 13;
-            $data['state']        = 'generated_null';
+        $result = $client->call(Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg::OPERATION_MATCH, (static function (array $data): array {
+            $data['package_type'] = 'generated';
+            $data['package_name'] = 'generated';
+            $data['org']          = 'generated';
+            $data['page']         = 4;
+            $data['per_page']     = 8;
+            $data['state']        = 'generated';
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_401_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
     }
 }

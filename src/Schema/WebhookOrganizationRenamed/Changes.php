@@ -11,7 +11,7 @@ final readonly class Changes
     public const SCHEMA_JSON         = '{"type":"object","properties":{"login":{"type":"object","properties":{"from":{"type":"string"}}}}}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"login":{"from":"generated_from_null"}}';
+    public const SCHEMA_EXAMPLE_DATA = '{"login":{"from":"generated"}}';
 
     public function __construct(public ?Schema\WebhookOrganizationRenamed\Changes\Login $login)
     {

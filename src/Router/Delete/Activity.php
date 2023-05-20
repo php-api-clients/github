@@ -6,12 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -44,16 +43,13 @@ final class Activity
 
         $arguments['thread_id'] = $params['thread_id'];
         unset($params['thread_id']);
-        if (array_key_exists(Hydrator\Operation\Notifications\Threads\CbThreadIdRcb\Subscription::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Notifications\Threads\CbThreadIdRcb\Subscription::class] = $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀CbThreadIdRcb🌀Subscription();
+        if (array_key_exists(Hydrator\Operation\Notifications\Threads\ThreadId\Subscription::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Notifications\Threads\ThreadId\Subscription::class] = $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription();
         }
 
-        $operation = new Operation\Activity\DeleteThreadSubscription($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Notifications\Threads\CbThreadIdRcb\Subscription::class], $arguments['thread_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Activity\DeleteThreadSubscription($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Notifications\Threads\ThreadId\Subscription::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['thread_id']);
     }
 
     public function deleteRepoSubscription(array $params)
@@ -71,12 +67,9 @@ final class Activity
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        $operation = new Operation\Activity\DeleteRepoSubscription($arguments['owner'], $arguments['repo']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Activity\DeleteRepoSubscription($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
     public function unstarRepoForAuthenticatedUser(array $params)
@@ -94,15 +87,12 @@ final class Activity
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        if (array_key_exists(Hydrator\Operation\User\Starred\CbOwnerRcb\CbRepoRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Starred\CbOwnerRcb\CbRepoRcb::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Starred🌀CbOwnerRcb🌀CbRepoRcb();
+        if (array_key_exists(Hydrator\Operation\User\Starred\Owner\Repo::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Starred\Owner\Repo::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Starred🌀Owner🌀Repo();
         }
 
-        $operation = new Operation\Activity\UnstarRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Starred\CbOwnerRcb\CbRepoRcb::class], $arguments['owner'], $arguments['repo']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Activity\UnstarRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Starred\Owner\Repo::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo']);
     }
 }

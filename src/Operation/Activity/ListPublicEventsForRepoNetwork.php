@@ -13,8 +13,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
-use Rx\Observable;
-use Rx\Scheduler\ImmediateScheduler;
 
 use function explode;
 use function json_decode;
@@ -26,18 +24,18 @@ final class ListPublicEventsForRepoNetwork
     public const OPERATION_MATCH = 'GET /networks/{owner}/{repo}/events';
     private const METHOD         = 'GET';
     private const PATH           = '/networks/{owner}/{repo}/events';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The number of results per page (max 100).**/
+    /**The number of results per page (max 100). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Networks\CbOwnerRcb\CbRepoRcb\Events $hydrator;
+    private readonly Hydrator\Operation\Networks\Owner\Repo\Events $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Networks\CbOwnerRcb\CbRepoRcb\Events $hydrator, string $owner, string $repo, int $perPage = 30, int $page = 1)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Networks\Owner\Repo\Events $hydrator, string $owner, string $repo, int $perPage = 30, int $page = 1)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -47,15 +45,15 @@ final class ListPublicEventsForRepoNetwork
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
     /**
-     * @return Observable<Schema\Event>|Schema\BasicError
+     * @return Schema\BasicError|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Observable|Schema\BasicError
+    public function createResponse(ResponseInterface $response): Schema\BasicError|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,43 +62,39 @@ final class ListPublicEventsForRepoNetwork
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * Response
-                    **/
-                    case 200:
-                        foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\Event::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        }
-
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Event {
-                            return $this->hydrator->hydrateObject(Schema\Event::class, $body);
-                        });
-                    /**
                      * Resource not found
-                    **/
-
+                     **/
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Moved permanently
-                    **/
+                     **/
 
                     case 301:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not modified
+             **/
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

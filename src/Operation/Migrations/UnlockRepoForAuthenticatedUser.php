@@ -24,14 +24,14 @@ final class UnlockRepoForAuthenticatedUser
     public const OPERATION_MATCH = 'DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock';
     private const METHOD         = 'DELETE';
     private const PATH           = '/user/migrations/{migration_id}/repos/{repo_name}/lock';
-    /**The unique identifier of the migration.**/
+    /**The unique identifier of the migration. **/
     private int $migrationId;
-    /**repo_name parameter**/
+    /**repo_name parameter **/
     private string $repoName;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator;
+    private readonly Hydrator\Operation\User\Migrations\MigrationId\Repos\RepoName\Lock $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb\Repos\CbRepoNameRcb\Lock $hydrator, int $migrationId, string $repoName)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId\Repos\RepoName\Lock $hydrator, int $migrationId, string $repoName)
     {
         $this->migrationId             = $migrationId;
         $this->repoName                = $repoName;
@@ -39,12 +39,15 @@ final class UnlockRepoForAuthenticatedUser
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{migration_id}', '{repo_name}'], [$this->migrationId, $this->repoName], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,30 +57,44 @@ final class UnlockRepoForAuthenticatedUser
                 switch ($code) {
                     /**
                      * Resource not found
-                    **/
+                     **/
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
-                    **/
+                     **/
 
                     case 401:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Response
+             **/
+            case 204:
+                return ['code' => 204];
+            /**
+             * Not modified
+             **/
+
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

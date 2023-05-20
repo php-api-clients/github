@@ -23,16 +23,16 @@ final class Get
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/check-runs/{check_run_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the check run.**/
+    /**The unique identifier of the check run. **/
     private int $checkRunId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CheckDashRuns\CbCheckRunIdRcb $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\CheckRuns\CheckRunId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CheckDashRuns\CbCheckRunIdRcb $hydrator, string $owner, string $repo, int $checkRunId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CheckRuns\CheckRunId $hydrator, string $owner, string $repo, int $checkRunId)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -41,7 +41,7 @@ final class Get
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{check_run_id}'], [$this->owner, $this->repo, $this->checkRunId], self::PATH));
     }
@@ -56,9 +56,9 @@ final class Get
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CheckRun::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CheckRun::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\CheckRun::class, $body);
                 }

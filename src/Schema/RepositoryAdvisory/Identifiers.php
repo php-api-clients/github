@@ -9,7 +9,7 @@ final readonly class Identifiers
     public const SCHEMA_JSON         = '{"required":["type","value"],"type":"object","properties":{"type":{"enum":["CVE","GHSA"],"type":"string","description":"The type of identifier."},"value":{"type":"string","description":"The identifier value."}}}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"type":"CVE","value":"generated_value_null"}';
+    public const SCHEMA_EXAMPLE_DATA = '{"type":"GHSA","value":"generated"}';
 
     /**
      * type: The type of identifier.

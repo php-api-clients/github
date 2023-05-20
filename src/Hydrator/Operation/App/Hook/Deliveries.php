@@ -23,158 +23,14 @@ class Deliveries implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\HookDeliveryItem' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookDeliveryItem($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\ScimError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
-                'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookDeliveryItem(array $payload): \ApiClients\Client\GitHub\Schema\HookDeliveryItem
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['guid'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'guid';
-                goto after_guid;
-            }
-
-            $properties['guid'] = $value;
-
-            after_guid:
-
-            $value = $payload['delivered_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'delivered_at';
-                goto after_deliveredAt;
-            }
-
-            $properties['deliveredAt'] = $value;
-
-            after_deliveredAt:
-
-            $value = $payload['redelivery'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'redelivery';
-                goto after_redelivery;
-            }
-
-            $properties['redelivery'] = $value;
-
-            after_redelivery:
-
-            $value = $payload['duration'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'duration';
-                goto after_duration;
-            }
-
-            $properties['duration'] = $value;
-
-            after_duration:
-
-            $value = $payload['status'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'status';
-                goto after_status;
-            }
-
-            $properties['status'] = $value;
-
-            after_status:
-
-            $value = $payload['status_code'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'status_code';
-                goto after_statusCode;
-            }
-
-            $properties['statusCode'] = $value;
-
-            after_statusCode:
-
-            $value = $payload['event'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'event';
-                goto after_event;
-            }
-
-            $properties['event'] = $value;
-
-            after_event:
-
-            $value = $payload['action'] ?? null;
-
-            if ($value === null) {
-                $properties['action'] = null;
-                goto after_action;
-            }
-
-            $properties['action'] = $value;
-
-            after_action:
-
-            $value = $payload['installation_id'] ?? null;
-
-            if ($value === null) {
-                $properties['installationId'] = null;
-                goto after_installationId;
-            }
-
-            $properties['installationId'] = $value;
-
-            after_installationId:
-
-            $value = $payload['repository_id'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoryId'] = null;
-                goto after_repositoryId;
-            }
-
-            $properties['repositoryId'] = $value;
-
-            after_repositoryId:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\HookDeliveryItem', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\HookDeliveryItem::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\HookDeliveryItem(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\HookDeliveryItem', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): \ApiClients\Client\GitHub\Schema\BasicError
     {
         $properties = []; 
@@ -361,16 +217,6 @@ class Deliveries implements ObjectMapper
                 goto after_errors;
             }
 
-            static $errorsCaster1;
-
-            if ($errorsCaster1 === null) {
-                $errorsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
-));
-            }
-
-            $value = $errorsCaster1->cast($value, $this);
-
             $properties['errors'] = $value;
 
             after_errors:
@@ -387,93 +233,6 @@ class Deliveries implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\ValidationError(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(array $payload): \ApiClients\Client\GitHub\Schema\ValidationError\Errors
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['resource'] ?? null;
-
-            if ($value === null) {
-                $properties['resource'] = null;
-                goto after_resource;
-            }
-
-            $properties['resource'] = $value;
-
-            after_resource:
-
-            $value = $payload['field'] ?? null;
-
-            if ($value === null) {
-                $properties['field'] = null;
-                goto after_field;
-            }
-
-            $properties['field'] = $value;
-
-            after_field:
-
-            $value = $payload['message'] ?? null;
-
-            if ($value === null) {
-                $properties['message'] = null;
-                goto after_message;
-            }
-
-            $properties['message'] = $value;
-
-            after_message:
-
-            $value = $payload['code'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'code';
-                goto after_code;
-            }
-
-            $properties['code'] = $value;
-
-            after_code:
-
-            $value = $payload['index'] ?? null;
-
-            if ($value === null) {
-                $properties['index'] = null;
-                goto after_index;
-            }
-
-            $properties['index'] = $value;
-
-            after_index:
-
-            $value = $payload['value'] ?? null;
-
-            if ($value === null) {
-                $properties['value'] = null;
-                goto after_value;
-            }
-
-            $properties['value'] = $value;
-
-            after_value:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\ValidationError\Errors::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\ValidationError\Errors(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError\Errors', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -508,11 +267,9 @@ class Deliveries implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\HookDeliveryItem' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookDeliveryItem($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
             'ApiClients\Client\GitHub\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($object),
             'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
-            'ApiClients\Client\GitHub\Schema\ValidationError\Errors' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -583,71 +340,6 @@ class Deliveries implements ObjectMapper
         }
         
         return $serializer->serialize($value, $this);
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookDeliveryItem(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\HookDeliveryItem);
-        $result = [];
-
-        $id = $object->id;
-        after_id:        $result['id'] = $id;
-
-        
-        $guid = $object->guid;
-        after_guid:        $result['guid'] = $guid;
-
-        
-        $deliveredAt = $object->deliveredAt;
-        after_deliveredAt:        $result['delivered_at'] = $deliveredAt;
-
-        
-        $redelivery = $object->redelivery;
-        after_redelivery:        $result['redelivery'] = $redelivery;
-
-        
-        $duration = $object->duration;
-        after_duration:        $result['duration'] = $duration;
-
-        
-        $status = $object->status;
-        after_status:        $result['status'] = $status;
-
-        
-        $statusCode = $object->statusCode;
-        after_statusCode:        $result['status_code'] = $statusCode;
-
-        
-        $event = $object->event;
-        after_event:        $result['event'] = $event;
-
-        
-        $action = $object->action;
-
-        if ($action === null) {
-            goto after_action;
-        }
-        after_action:        $result['action'] = $action;
-
-        
-        $installationId = $object->installationId;
-
-        if ($installationId === null) {
-            goto after_installationId;
-        }
-        after_installationId:        $result['installation_id'] = $installationId;
-
-        
-        $repositoryId = $object->repositoryId;
-
-        if ($repositoryId === null) {
-            goto after_repositoryId;
-        }
-        after_repositoryId:        $result['repository_id'] = $repositoryId;
-
-
-        return $result;
     }
 
 
@@ -778,66 +470,12 @@ class Deliveries implements ObjectMapper
         static $errorsSerializer0;
 
         if ($errorsSerializer0 === null) {
-            $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\ValidationError\\Errors',
+            $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         
         $errors = $errorsSerializer0->serialize($errors, $this);
         after_errors:        $result['errors'] = $errors;
-
-
-        return $result;
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError⚡️Errors(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\ValidationError\Errors);
-        $result = [];
-
-        $resource = $object->resource;
-
-        if ($resource === null) {
-            goto after_resource;
-        }
-        after_resource:        $result['resource'] = $resource;
-
-        
-        $field = $object->field;
-
-        if ($field === null) {
-            goto after_field;
-        }
-        after_field:        $result['field'] = $field;
-
-        
-        $message = $object->message;
-
-        if ($message === null) {
-            goto after_message;
-        }
-        after_message:        $result['message'] = $message;
-
-        
-        $code = $object->code;
-        after_code:        $result['code'] = $code;
-
-        
-        $index = $object->index;
-
-        if ($index === null) {
-            goto after_index;
-        }
-        after_index:        $result['index'] = $index;
-
-        
-        $value = $object->value;
-
-        if ($value === null) {
-            goto after_value;
-        }
-        after_value:        $result['value'] = $value;
 
 
         return $result;

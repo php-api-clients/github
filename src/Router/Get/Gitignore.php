@@ -6,15 +6,12 @@ namespace ApiClients\Client\GitHub\Router\Get;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\GitignoreTemplate;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use Rx\Observable;
 
 use function array_key_exists;
 
@@ -46,30 +43,19 @@ final class Gitignore
 
         $arguments['name'] = $params['name'];
         unset($params['name']);
-        if (array_key_exists(Hydrator\Operation\Gitignore\Templates\CbNameRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gitignore\Templates\CbNameRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates🌀CbNameRcb();
+        if (array_key_exists(Hydrator\Operation\Gitignore\Templates\Name::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gitignore\Templates\Name::class] = $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates🌀Name();
         }
 
-        $operation = new Operation\Gitignore\GetTemplate($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gitignore\Templates\CbNameRcb::class], $arguments['name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gitignore\GetTemplate($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gitignore\Templates\Name::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitignoreTemplate {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['name']);
     }
 
     public function getAllTemplates(array $params)
     {
-        $arguments = [];
-        if (array_key_exists(Hydrator\Operation\Gitignore\Templates::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gitignore\Templates::class] = $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates();
-        }
+        $operator = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication);
 
-        $operation = new Operation\Gitignore\GetAllTemplates($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gitignore\Templates::class]);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call();
     }
 }

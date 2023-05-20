@@ -24,22 +24,22 @@ final class ListJobsForWorkflowRunAttempt
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the workflow run.**/
+    /**The unique identifier of the workflow run. **/
     private int $runId;
-    /**The attempt number of the workflow run.**/
+    /**The attempt number of the workflow run. **/
     private int $attemptNumber;
-    /**The number of results per page (max 100).**/
+    /**The number of results per page (max 100). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb\Attempts\CbAttemptNumberRcb\Jobs $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Attempts\AttemptNumber\Jobs $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb\Attempts\CbAttemptNumberRcb\Jobs $hydrator, string $owner, string $repo, int $runId, int $attemptNumber, int $perPage = 30, int $page = 1)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Attempts\AttemptNumber\Jobs $hydrator, string $owner, string $repo, int $runId, int $attemptNumber, int $perPage = 30, int $page = 1)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -51,12 +51,12 @@ final class ListJobsForWorkflowRunAttempt
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{attempt_number}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->runId, $this->attemptNumber, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListJobsForWorkflowRunAttempt\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -66,17 +66,17 @@ final class ListJobsForWorkflowRunAttempt
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListJobsForWorkflowRunAttempt\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListJobsForWorkflowRunAttempt\Response\Applicationjson\H200::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListJobsForWorkflowRunAttempt\Response\ApplicationJson\Ok::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

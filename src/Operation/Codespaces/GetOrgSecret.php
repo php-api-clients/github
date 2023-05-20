@@ -23,14 +23,14 @@ final class GetOrgSecret
     public const OPERATION_MATCH = 'GET /orgs/{org}/codespaces/secrets/{secret_name}';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/codespaces/secrets/{secret_name}';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The name of the secret.**/
+    /**The name of the secret. **/
     private string $secretName;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Codespaces\Secrets\CbSecretNameRcb $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Codespaces\Secrets\CbSecretNameRcb $hydrator, string $org, string $secretName)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator, string $org, string $secretName)
     {
         $this->org                     = $org;
         $this->secretName              = $secretName;
@@ -38,7 +38,7 @@ final class GetOrgSecret
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], self::PATH));
     }
@@ -53,9 +53,9 @@ final class GetOrgSecret
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodespacesOrgSecret::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodespacesOrgSecret::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\CodespacesOrgSecret::class, $body);
                 }

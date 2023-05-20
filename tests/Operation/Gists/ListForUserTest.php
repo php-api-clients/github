@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Gists;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Gists\ListForUser;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class ListForUserTest extends AsyncTestCase
@@ -21,30 +22,7 @@ final class ListForUserTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
-    {
-        $response = new Response(200, ['Content-Type' => 'application/json'], '[' . Schema\BaseGist::SCHEMA_EXAMPLE_DATA . ']');
-        $auth     = $this->prophesize(AuthenticationInterface::class);
-        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(Browser::class);
-        $browser->withBase(Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated_null/gists?since=1970-01-01T00:00:00+00:00&per_page=13&page=13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
-        $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(ListForUser::OPERATION_MATCH, (static function (array $data): array {
-            $data['username'] = 'generated_null';
-            $data['since']    = '1970-01-01T00:00:00+00:00';
-            $data['per_page'] = 13;
-            $data['page']     = 13;
-
-            return $data;
-        })([]));
-    }
-
-    /**
-     * @test
-     */
-    public function httpCode_422_responseContentType_application_json(): void
+    public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
@@ -53,15 +31,32 @@ final class ListForUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated_null/gists?since=1970-01-01T00:00:00+00:00&per_page=13&page=13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/gists?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(ListForUser::OPERATION_MATCH, (static function (array $data): array {
-            $data['username'] = 'generated_null';
+        $result = $client->call(Operation\Gists\ListForUser::OPERATION_MATCH, (static function (array $data): array {
+            $data['username'] = 'generated';
             $data['since']    = '1970-01-01T00:00:00+00:00';
-            $data['per_page'] = 13;
-            $data['page']     = 13;
+            $data['per_page'] = 8;
+            $data['page']     = 4;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_422_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ValidationError::class);
+        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/users/generated/gists?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->gists()->listForUser('generated', '1970-01-01T00:00:00+00:00', 8, 4));
     }
 }

@@ -13,8 +13,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
-use Rx\Observable;
-use Rx\Scheduler\ImmediateScheduler;
 
 use function explode;
 use function json_decode;
@@ -26,18 +24,18 @@ final class ListPatGrantRequestRepositories
     public const OPERATION_MATCH = 'GET /organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories';
     private const METHOD         = 'GET';
     private const PATH           = '/organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**Unique identifier of the request for access via fine-grained personal access token.**/
+    /**Unique identifier of the request for access via fine-grained personal access token. **/
     private int $patRequestId;
-    /**The number of results per page (max 100).**/
+    /**The number of results per page (max 100). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokenDashRequests\CbPatRequestIdRcb\Repositories $hydrator;
+    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokenDashRequests\CbPatRequestIdRcb\Repositories $hydrator, string $org, int $patRequestId, int $perPage = 30, int $page = 1)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories $hydrator, string $org, int $patRequestId, int $perPage = 30, int $page = 1)
     {
         $this->org                     = $org;
         $this->patRequestId            = $patRequestId;
@@ -47,15 +45,12 @@ final class ListPatGrantRequestRepositories
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{pat_request_id}', '{per_page}', '{page}'], [$this->org, $this->patRequestId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    /**
-     * @return Observable<Schema\MinimalRepository>
-     */
-    public function createResponse(ResponseInterface $response): Observable
+    public function createResponse(ResponseInterface $response): mixed
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -65,39 +60,27 @@ final class ListPatGrantRequestRepositories
                 switch ($code) {
                     /**
                      * Internal Error
-                    **/
+                     **/
                     case 500:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(500, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
-                    /**
-                     * Response
-                    **/
-
-                    case 200:
-                        foreach ($body as $bodyItem) {
-                            $this->responseSchemaValidator->validate($bodyItem, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                        }
-
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\MinimalRepository {
-                            return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
-                        });
                 }
 
                 break;

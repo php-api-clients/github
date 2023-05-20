@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class Permissions extends Schema\AliasAbstract\Abstract7edbae9cab82b9e60b3aaf7cf305338e
+final readonly class Permissions
 {
+    public const SCHEMA_JSON         = '{"type":"object","properties":{"organization":{"type":"object","additionalProperties":{"type":"string"}},"repository":{"type":"object","additionalProperties":{"type":"string"}},"other":{"type":"object","additionalProperties":{"type":"string"}}},"description":"Permissions requested, categorized by type of permission."}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = 'Permissions requested, categorized by type of permission.';
+    public const SCHEMA_EXAMPLE_DATA = '{"organization":"generated","repository":"generated","other":"generated"}';
+
+    public function __construct(public string $organization, public string $repository, public string $other)
+    {
+    }
 }

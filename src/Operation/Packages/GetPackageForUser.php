@@ -23,16 +23,16 @@ final class GetPackageForUser
     public const OPERATION_MATCH = 'GET /users/{username}/packages/{package_type}/{package_name}';
     private const METHOD         = 'GET';
     private const PATH           = '/users/{username}/packages/{package_type}/{package_name}';
-    /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.**/
+    /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
-    /**The name of the package.**/
+    /**The name of the package. **/
     private string $packageName;
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\CbUsernameRcb\Packages\CbPackageTypeRcb\CbPackageNameRcb $hydrator;
+    private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Packages\CbPackageTypeRcb\CbPackageNameRcb $hydrator, string $packageType, string $packageName, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName, string $username)
     {
         $this->packageType             = $packageType;
         $this->packageName             = $packageName;
@@ -41,7 +41,7 @@ final class GetPackageForUser
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{username}'], [$this->packageType, $this->packageName, $this->username], self::PATH));
     }
@@ -56,9 +56,9 @@ final class GetPackageForUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Package::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Package::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Package::class, $body);
                 }

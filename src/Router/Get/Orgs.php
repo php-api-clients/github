@@ -6,20 +6,12 @@ namespace ApiClients\Client\GitHub\Router\Get;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\HookDelivery;
-use ApiClients\Client\GitHub\Schema\Operation\Orgs\ListAppInstallations\Response\Applicationjson\H200;
-use ApiClients\Client\GitHub\Schema\OrganizationFull;
-use ApiClients\Client\GitHub\Schema\OrgHook;
-use ApiClients\Client\GitHub\Schema\OrgMembership;
-use ApiClients\Client\GitHub\Schema\WebhookConfig;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use Rx\Observable;
 
 use function array_key_exists;
 
@@ -57,16 +49,9 @@ final class Orgs
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        if (array_key_exists(Hydrator\Operation\Organizations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations::class] = $this->hydrators->getObjectMapperOperation🌀Organizations();
-        }
+        $operator = new Operator\Orgs\List_($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\List_($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations::class], $arguments['since'], $arguments['per_page']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['since'], $arguments['per_page']);
     }
 
     public function listPatGrantRequests(array $params)
@@ -132,16 +117,13 @@ final class Orgs
 
         $arguments['direction'] = $params['direction'];
         unset($params['direction']);
-        if (array_key_exists(Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokenRequests::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokenRequests::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀CbOrgRcb🌀PersonalAccessTokenRequests();
+        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests();
         }
 
-        $operation = new Operation\Orgs\ListPatGrantRequests($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokenRequests::class], $arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
     public function listPatGrants(array $params)
@@ -207,16 +189,13 @@ final class Orgs
 
         $arguments['direction'] = $params['direction'];
         unset($params['direction']);
-        if (array_key_exists(Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokens::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokens::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀CbOrgRcb🌀PersonalAccessTokens();
+        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens();
         }
 
-        $operation = new Operation\Orgs\ListPatGrants($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalAccessTokens::class], $arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
     public function listBlockedUsers(array $params)
@@ -240,16 +219,9 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Blocks::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Blocks::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Blocks();
-        }
+        $operator = new Operator\Orgs\ListBlockedUsers($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\ListBlockedUsers($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Blocks::class], $arguments['org'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listFailedInvitations(array $params)
@@ -273,16 +245,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\FailedInvitations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\FailedInvitations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀FailedInvitations();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\FailedInvitations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\FailedInvitations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀FailedInvitations();
         }
 
-        $operation = new Operation\Orgs\ListFailedInvitations($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\FailedInvitations::class], $arguments['org'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListFailedInvitations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\FailedInvitations::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listWebhooks(array $params)
@@ -306,16 +275,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Hooks::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Hooks();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Hooks::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks();
         }
 
-        $operation = new Operation\Orgs\ListWebhooks($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks::class], $arguments['org'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListWebhooks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listAppInstallations(array $params)
@@ -339,16 +305,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Installations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Installations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Installations();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Installations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Installations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Installations();
         }
 
-        $operation = new Operation\Orgs\ListAppInstallations($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Installations::class], $arguments['org'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListAppInstallations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Installations::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listPendingInvitations(array $params)
@@ -384,16 +347,13 @@ final class Orgs
 
         $arguments['invitation_source'] = $params['invitation_source'];
         unset($params['invitation_source']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Invitations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Invitations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Invitations();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Invitations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Invitations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Invitations();
         }
 
-        $operation = new Operation\Orgs\ListPendingInvitations($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Invitations::class], $arguments['org'], $arguments['per_page'], $arguments['page'], $arguments['role'], $arguments['invitation_source']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListPendingInvitations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Invitations::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page'], $arguments['role'], $arguments['invitation_source']);
     }
 
     public function listMembers(array $params)
@@ -429,16 +389,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Members::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Members::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Members();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Members::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Members::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members();
         }
 
-        $operation = new Operation\Orgs\ListMembers($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Members::class], $arguments['org'], $arguments['filter'], $arguments['role'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListMembers($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Members::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['filter'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listOutsideCollaborators(array $params)
@@ -468,16 +425,9 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\OutsideCollaborators::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\OutsideCollaborators::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀OutsideCollaborators();
-        }
+        $operator = new Operator\Orgs\ListOutsideCollaborators($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\ListOutsideCollaborators($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\OutsideCollaborators::class], $arguments['org'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listPublicMembers(array $params)
@@ -501,16 +451,9 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\PublicMembers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\PublicMembers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀PublicMembers();
-        }
+        $operator = new Operator\Orgs\ListPublicMembers($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\ListPublicMembers($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\PublicMembers::class], $arguments['org'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listSecurityManagerTeams(array $params)
@@ -522,16 +465,9 @@ final class Orgs
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\SecurityManagers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\SecurityManagers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀SecurityManagers();
-        }
+        $operator = new Operator\Orgs\ListSecurityManagerTeams($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\ListSecurityManagerTeams($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\SecurityManagers::class], $arguments['org']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org']);
     }
 
     public function listMembershipsForAuthenticatedUser(array $params)
@@ -559,12 +495,9 @@ final class Orgs
             $this->hydrator[Hydrator\Operation\User\Memberships\Orgs::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Memberships🌀Orgs();
         }
 
-        $operation = new Operation\Orgs\ListMembershipsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Memberships\Orgs::class], $arguments['state'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListMembershipsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Memberships\Orgs::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listForUser(array $params)
@@ -588,16 +521,9 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Users\CbUsernameRcb\Orgs::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Users\CbUsernameRcb\Orgs::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀CbUsernameRcb🌀Orgs();
-        }
+        $operator = new Operator\Orgs\ListForUser($this->browser, $this->authentication);
 
-        $operation = new Operation\Orgs\ListForUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\CbUsernameRcb\Orgs::class], $arguments['username'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
     public function checkBlockedUser(array $params)
@@ -615,16 +541,13 @@ final class Orgs
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Blocks\CbUsernameRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Blocks\CbUsernameRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Blocks🌀CbUsernameRcb();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Blocks\Username::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Blocks\Username::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Blocks🌀Username();
         }
 
-        $operation = new Operation\Orgs\CheckBlockedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Blocks\CbUsernameRcb::class], $arguments['org'], $arguments['username']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\CheckBlockedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Blocks\Username::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['username']);
     }
 
     public function getWebhook(array $params)
@@ -642,16 +565,13 @@ final class Orgs
 
         $arguments['hook_id'] = $params['hook_id'];
         unset($params['hook_id']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Hooks🌀CbHookIdRcb();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Hooks\HookId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId();
         }
 
-        $operation = new Operation\Orgs\GetWebhook($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb::class], $arguments['org'], $arguments['hook_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\GetWebhook($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgHook {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['hook_id']);
     }
 
     public function checkMembershipForUser(array $params)
@@ -669,12 +589,9 @@ final class Orgs
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        $operation = new Operation\Orgs\CheckMembershipForUser($arguments['org'], $arguments['username']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\CheckMembershipForUser($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['username']);
     }
 
     public function getMembershipForUser(array $params)
@@ -692,16 +609,13 @@ final class Orgs
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Memberships\CbUsernameRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Memberships\CbUsernameRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Memberships🌀CbUsernameRcb();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Memberships\Username::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Memberships\Username::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Memberships🌀Username();
         }
 
-        $operation = new Operation\Orgs\GetMembershipForUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Memberships\CbUsernameRcb::class], $arguments['org'], $arguments['username']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\GetMembershipForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Memberships\Username::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['username']);
     }
 
     public function checkPublicMembershipForUser(array $params)
@@ -719,12 +633,9 @@ final class Orgs
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        $operation = new Operation\Orgs\CheckPublicMembershipForUser($arguments['org'], $arguments['username']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\CheckPublicMembershipForUser($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['username']);
     }
 
     public function getMembershipForAuthenticatedUser(array $params)
@@ -736,16 +647,13 @@ final class Orgs
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\User\Memberships\Orgs\CbOrgRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Memberships\Orgs\CbOrgRcb::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Memberships🌀Orgs🌀CbOrgRcb();
+        if (array_key_exists(Hydrator\Operation\User\Memberships\Orgs\Org::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Memberships\Orgs\Org::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Memberships🌀Orgs🌀Org();
         }
 
-        $operation = new Operation\Orgs\GetMembershipForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Memberships\Orgs\CbOrgRcb::class], $arguments['org']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\GetMembershipForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Memberships\Orgs\Org::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org']);
     }
 
     public function get(array $params)
@@ -757,16 +665,13 @@ final class Orgs
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org();
         }
 
-        $operation = new Operation\Orgs\Get($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb::class], $arguments['org']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationFull {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org']);
     }
 
     public function listForAuthenticatedUser(array $params)
@@ -788,12 +693,9 @@ final class Orgs
             $this->hydrator[Hydrator\Operation\User\Orgs::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Orgs();
         }
 
-        $operation = new Operation\Orgs\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Orgs::class], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Orgs::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function listPatGrantRequestRepositories(array $params)
@@ -823,16 +725,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokenDashRequests\CbPatRequestIdRcb\Repositories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokenDashRequests\CbPatRequestIdRcb\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀CbOrgRcb🌀PersonalDashAccessDashTokenDashRequests🌀CbPatRequestIdRcb🌀Repositories();
+        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId🌀Repositories();
         }
 
-        $operation = new Operation\Orgs\ListPatGrantRequestRepositories($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokenDashRequests\CbPatRequestIdRcb\Repositories::class], $arguments['org'], $arguments['pat_request_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListPatGrantRequestRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['pat_request_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listPatGrantRepositories(array $params)
@@ -862,16 +761,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokens\CbPatIdRcb\Repositories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokens\CbPatIdRcb\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀CbOrgRcb🌀PersonalDashAccessDashTokens🌀CbPatIdRcb🌀Repositories();
+        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories();
         }
 
-        $operation = new Operation\Orgs\ListPatGrantRepositories($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\CbOrgRcb\PersonalDashAccessDashTokens\CbPatIdRcb\Repositories::class], $arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListPatGrantRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getWebhookConfigForOrg(array $params)
@@ -889,16 +785,13 @@ final class Orgs
 
         $arguments['hook_id'] = $params['hook_id'];
         unset($params['hook_id']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Config::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Config::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Hooks🌀CbHookIdRcb🌀Config();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Hooks\HookId\Config::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Config::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Config();
         }
 
-        $operation = new Operation\Orgs\GetWebhookConfigForOrg($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Config::class], $arguments['org'], $arguments['hook_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\GetWebhookConfigForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Config::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WebhookConfig {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['hook_id']);
     }
 
     public function listWebhookDeliveries(array $params)
@@ -934,16 +827,13 @@ final class Orgs
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Hooks🌀CbHookIdRcb🌀Deliveries();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Deliveries();
         }
 
-        $operation = new Operation\Orgs\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries::class], $arguments['org'], $arguments['hook_id'], $arguments['cursor'], $arguments['redelivery'], $arguments['per_page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListWebhookDeliveries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['hook_id'], $arguments['cursor'], $arguments['redelivery'], $arguments['per_page']);
     }
 
     public function listInvitationTeams(array $params)
@@ -973,16 +863,13 @@ final class Orgs
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb\Teams::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb\Teams::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Invitations🌀CbInvitationIdRcb🌀Teams();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Invitations🌀InvitationId🌀Teams();
         }
 
-        $operation = new Operation\Orgs\ListInvitationTeams($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Invitations\CbInvitationIdRcb\Teams::class], $arguments['org'], $arguments['invitation_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\ListInvitationTeams($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['invitation_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getWebhookDelivery(array $params)
@@ -1006,15 +893,12 @@ final class Orgs
 
         $arguments['delivery_id'] = $params['delivery_id'];
         unset($params['delivery_id']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Hooks🌀CbHookIdRcb🌀Deliveries🌀CbDeliveryIdRcb();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries\DeliveryId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries\DeliveryId::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Deliveries🌀DeliveryId();
         }
 
-        $operation = new Operation\Orgs\GetWebhookDelivery($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Hooks\CbHookIdRcb\Deliveries\CbDeliveryIdRcb::class], $arguments['org'], $arguments['hook_id'], $arguments['delivery_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Orgs\GetWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries\DeliveryId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): HookDelivery {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['hook_id'], $arguments['delivery_id']);
     }
 }

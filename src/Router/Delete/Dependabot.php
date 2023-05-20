@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Router\Delete;
 
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -55,12 +54,9 @@ final class Dependabot
 
         $arguments['secret_name'] = $params['secret_name'];
         unset($params['secret_name']);
-        $operation = new Operation\Dependabot\DeleteRepoSecret($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Dependabot\DeleteRepoSecret($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
     public function deleteOrgSecret(array $params)
@@ -78,12 +74,9 @@ final class Dependabot
 
         $arguments['secret_name'] = $params['secret_name'];
         unset($params['secret_name']);
-        $operation = new Operation\Dependabot\DeleteOrgSecret($arguments['org'], $arguments['secret_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Dependabot\DeleteOrgSecret($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
     public function removeSelectedRepoFromOrgSecret(array $params)
@@ -107,11 +100,8 @@ final class Dependabot
 
         $arguments['repository_id'] = $params['repository_id'];
         unset($params['repository_id']);
-        $operation = new Operation\Dependabot\RemoveSelectedRepoFromOrgSecret($arguments['org'], $arguments['secret_name'], $arguments['repository_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Dependabot\RemoveSelectedRepoFromOrgSecret($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['secret_name'], $arguments['repository_id']);
     }
 }

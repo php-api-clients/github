@@ -23,36 +23,36 @@ final class ListRequiredWorkflowRuns
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The ID of the required workflow that has run at least once in a repository.**/
+    /**The ID of the required workflow that has run at least once in a repository. **/
     private int $requiredWorkflowIdForRepo;
-    /**Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.**/
+    /**Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run. **/
     private string $actor;
-    /**Returns workflow runs associated with a branch. Use the name of the branch of the `push`.**/
+    /**Returns workflow runs associated with a branch. Use the name of the branch of the `push`. **/
     private string $branch;
-    /**Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."**/
+    /**Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)." **/
     private string $event;
-    /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.**/
+    /**Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`. **/
     private string $status;
-    /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."**/
+    /**Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)." **/
     private string $created;
-    /**Returns workflow runs with the `check_suite_id` that you specify.**/
+    /**Returns workflow runs with the `check_suite_id` that you specify. **/
     private int $checkSuiteId;
-    /**Only returns workflow runs that are associated with the specified `head_sha`.**/
+    /**Only returns workflow runs that are associated with the specified `head_sha`. **/
     private string $headSha;
-    /**The number of results per page (max 100).**/
+    /**The number of results per page (max 100). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
-    /**If `true` pull requests are omitted from the response (empty array).**/
+    /**If `true` pull requests are omitted from the response (empty array). **/
     private bool $excludePullRequests;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Runs $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\RequiredWorkflows\RequiredWorkflowIdForRepo\Runs $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Runs $hydrator, string $owner, string $repo, int $requiredWorkflowIdForRepo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\RequiredWorkflows\RequiredWorkflowIdForRepo\Runs $hydrator, string $owner, string $repo, int $requiredWorkflowIdForRepo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
     {
         $this->owner                     = $owner;
         $this->repo                      = $repo;
@@ -71,12 +71,12 @@ final class ListRequiredWorkflowRuns
         $this->hydrator                  = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{required_workflow_id_for_repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'], [$this->owner, $this->repo, $this->requiredWorkflowIdForRepo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->checkSuiteId, $this->headSha, $this->perPage, $this->page, $this->excludePullRequests], self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListRequiredWorkflowRuns\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -86,11 +86,11 @@ final class ListRequiredWorkflowRuns
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListRequiredWorkflowRuns\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListRequiredWorkflowRuns\Response\Applicationjson\H200::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListRequiredWorkflowRuns\Response\ApplicationJson\Ok::class, $body);
                 }
 
                 break;

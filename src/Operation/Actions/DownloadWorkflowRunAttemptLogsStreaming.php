@@ -23,13 +23,13 @@ final class DownloadWorkflowRunAttemptLogsStreaming
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the workflow run.**/
+    /**The unique identifier of the workflow run. **/
     private int $runId;
-    /**The attempt number of the workflow run.**/
+    /**The attempt number of the workflow run. **/
     private int $attemptNumber;
     private readonly Browser $browser;
 
@@ -42,7 +42,7 @@ final class DownloadWorkflowRunAttemptLogsStreaming
         $this->browser       = $browser;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{attempt_number}'], [$this->owner, $this->repo, $this->runId, $this->attemptNumber], self::PATH));
     }
@@ -56,7 +56,7 @@ final class DownloadWorkflowRunAttemptLogsStreaming
         switch ($code) {
             /**
              * Response
-            **/
+             **/
             case 302:
                 $stream = new Subject();
                 $this->browser->requestStreaming('GET', $response->getHeaderLine('location'))->then(static function (ResponseInterface $response) use ($stream): void {

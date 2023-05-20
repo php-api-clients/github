@@ -25,21 +25,24 @@ final class GetTemplate
     private const PATH           = '/gitignore/templates/{name}';
     private string $name;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gitignore\Templates\CbNameRcb $hydrator;
+    private readonly Hydrator\Operation\Gitignore\Templates\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gitignore\Templates\CbNameRcb $hydrator, string $name)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gitignore\Templates\Name $hydrator, string $name)
     {
         $this->name                    = $name;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{name}'], [$this->name], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\GitignoreTemplate
+    /**
+     * @return Schema\GitignoreTemplate|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\GitignoreTemplate|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -49,14 +52,22 @@ final class GetTemplate
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GitignoreTemplate::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GitignoreTemplate::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\GitignoreTemplate::class, $body);
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not modified
+             **/
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

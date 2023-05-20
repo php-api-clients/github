@@ -10,6 +10,7 @@ use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
+use RuntimeException;
 
 use function json_encode;
 use function str_replace;
@@ -21,7 +22,7 @@ final class SetGithubActionsPermissionsOrganization
     private const METHOD         = 'PUT';
     private const PATH           = '/orgs/{org}/actions/permissions';
     private readonly SchemaValidator $requestSchemaValidator;
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
 
     public function __construct(SchemaValidator $requestSchemaValidator, string $org)
@@ -30,15 +31,27 @@ final class SetGithubActionsPermissionsOrganization
         $this->org                    = $org;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\SetGithubActionsPermissionsOrganization\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\SetGithubActionsPermissionsOrganization\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): ResponseInterface
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
-        return $response;
+        $code = $response->getStatusCode();
+        switch ($code) {
+            /**
+             * Response
+             **/
+            case 204:
+                return ['code' => 204];
+        }
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

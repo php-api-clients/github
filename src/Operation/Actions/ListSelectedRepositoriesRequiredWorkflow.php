@@ -23,14 +23,14 @@ final class ListSelectedRepositoriesRequiredWorkflow
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The unique identifier of the required workflow.**/
+    /**The unique identifier of the required workflow. **/
     private int $requiredWorkflowId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdRcb\Repositories $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Actions\RequiredWorkflows\RequiredWorkflowId\Repositories $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdRcb\Repositories $hydrator, string $org, int $requiredWorkflowId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\RequiredWorkflows\RequiredWorkflowId\Repositories $hydrator, string $org, int $requiredWorkflowId)
     {
         $this->org                     = $org;
         $this->requiredWorkflowId      = $requiredWorkflowId;
@@ -38,12 +38,15 @@ final class ListSelectedRepositoriesRequiredWorkflow
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{required_workflow_id}'], [$this->org, $this->requiredWorkflowId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\Applicationjson\H200
+    /**
+     * @return Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,14 +56,22 @@ final class ListSelectedRepositoriesRequiredWorkflow
                 switch ($code) {
                     /**
                      * Success
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\Applicationjson\H200::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok::class, $body);
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Resource Not Found
+             **/
+            case 404:
+                return ['code' => 404];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

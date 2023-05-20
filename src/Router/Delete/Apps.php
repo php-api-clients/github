@@ -6,12 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -44,16 +43,13 @@ final class Apps
 
         $arguments['installation_id'] = $params['installation_id'];
         unset($params['installation_id']);
-        if (array_key_exists(Hydrator\Operation\App\Installations\CbInstallationIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\App\Installations\CbInstallationIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀CbInstallationIdRcb();
+        if (array_key_exists(Hydrator\Operation\App\Installations\InstallationId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\App\Installations\InstallationId::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId();
         }
 
-        $operation = new Operation\Apps\DeleteInstallation($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations\CbInstallationIdRcb::class], $arguments['installation_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\DeleteInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations\InstallationId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['installation_id']);
     }
 
     public function deleteAuthorization(array $params)
@@ -65,16 +61,13 @@ final class Apps
 
         $arguments['client_id'] = $params['client_id'];
         unset($params['client_id']);
-        if (array_key_exists(Hydrator\Operation\Applications\CbClientIdRcb\Grant::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Applications\CbClientIdRcb\Grant::class] = $this->hydrators->getObjectMapperOperation🌀Applications🌀CbClientIdRcb🌀Grant();
+        if (array_key_exists(Hydrator\Operation\Applications\ClientId\Grant::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Applications\ClientId\Grant::class] = $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Grant();
         }
 
-        $operation = new Operation\Apps\DeleteAuthorization($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Applications\CbClientIdRcb\Grant::class], $arguments['client_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\DeleteAuthorization($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Applications\ClientId\Grant::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['client_id'], $params);
     }
 
     public function deleteToken(array $params)
@@ -86,16 +79,13 @@ final class Apps
 
         $arguments['client_id'] = $params['client_id'];
         unset($params['client_id']);
-        if (array_key_exists(Hydrator\Operation\Applications\CbClientIdRcb\Token::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Applications\CbClientIdRcb\Token::class] = $this->hydrators->getObjectMapperOperation🌀Applications🌀CbClientIdRcb🌀Token();
+        if (array_key_exists(Hydrator\Operation\Applications\ClientId\Token::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Applications\ClientId\Token::class] = $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Token();
         }
 
-        $operation = new Operation\Apps\DeleteToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Applications\CbClientIdRcb\Token::class], $arguments['client_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\DeleteToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Applications\ClientId\Token::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['client_id'], $params);
     }
 
     public function unsuspendInstallation(array $params)
@@ -107,27 +97,20 @@ final class Apps
 
         $arguments['installation_id'] = $params['installation_id'];
         unset($params['installation_id']);
-        if (array_key_exists(Hydrator\Operation\App\Installations\CbInstallationIdRcb\Suspended::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\App\Installations\CbInstallationIdRcb\Suspended::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀CbInstallationIdRcb🌀Suspended();
+        if (array_key_exists(Hydrator\Operation\App\Installations\InstallationId\Suspended::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\App\Installations\InstallationId\Suspended::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀Suspended();
         }
 
-        $operation = new Operation\Apps\UnsuspendInstallation($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations\CbInstallationIdRcb\Suspended::class], $arguments['installation_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\UnsuspendInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations\InstallationId\Suspended::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['installation_id']);
     }
 
     public function revokeInstallationAccessToken(array $params)
     {
-        $arguments = [];
-        $operation = new Operation\Apps\RevokeInstallationAccessToken();
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call();
     }
 
     public function removeRepoFromInstallationForAuthenticatedUser(array $params)
@@ -145,15 +128,12 @@ final class Apps
 
         $arguments['repository_id'] = $params['repository_id'];
         unset($params['repository_id']);
-        if (array_key_exists(Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀CbInstallationIdRcb🌀Repositories🌀CbRepositoryIdRcb();
+        if (array_key_exists(Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀InstallationId🌀Repositories🌀RepositoryId();
         }
 
-        $operation = new Operation\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Installations\CbInstallationIdRcb\Repositories\CbRepositoryIdRcb::class], $arguments['installation_id'], $arguments['repository_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['installation_id'], $arguments['repository_id']);
     }
 }

@@ -24,16 +24,16 @@ final class GetSarif
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The SARIF ID obtained after uploading.**/
+    /**The SARIF ID obtained after uploading. **/
     private string $sarifId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Sarifs\CbSarifIdRcb $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\CodeDashScanning\Sarifs\CbSarifIdRcb $hydrator, string $owner, string $repo, string $sarifId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator, string $owner, string $repo, string $sarifId)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -42,12 +42,15 @@ final class GetSarif
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{sarif_id}'], [$this->owner, $this->repo, $this->sarifId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\CodeScanningSarifsStatus
+    /**
+     * @return Schema\CodeScanningSarifsStatus|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\CodeScanningSarifsStatus|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -57,30 +60,38 @@ final class GetSarif
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeScanningSarifsStatus::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeScanningSarifsStatus::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\CodeScanningSarifsStatus::class, $body);
                     /**
                      * Response if GitHub Advanced Security is not enabled for this repository
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Service unavailable
-                    **/
+                     **/
 
                     case 503:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503(503, $this->hydrator->hydrateObject(Schema\Operation\SecretScanning\ListAlertsForEnterprise\Response\Applicationjson\H503::class, $body));
+                        throw new ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable(503, $this->hydrator->hydrateObject(Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not Found if the sarif id does not match any upload
+             **/
+            case 404:
+                return ['code' => 404];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

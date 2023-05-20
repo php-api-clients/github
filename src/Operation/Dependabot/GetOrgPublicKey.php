@@ -23,19 +23,19 @@ final class GetOrgPublicKey
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets/public-key';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/dependabot/secrets/public-key';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Dependabot\Secrets\PublicKey $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Dependabot\Secrets\PublicKey $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Dependabot\Secrets\PublicKey $hydrator, string $org)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Dependabot\Secrets\PublicKey $hydrator, string $org)
     {
         $this->org                     = $org;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
     }
@@ -50,9 +50,9 @@ final class GetOrgPublicKey
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\DependabotPublicKey::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\DependabotPublicKey::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\DependabotPublicKey::class, $body);
                 }

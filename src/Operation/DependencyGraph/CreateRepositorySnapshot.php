@@ -25,14 +25,14 @@ final class CreateRepositorySnapshot
     private const METHOD         = 'POST';
     private const PATH           = '/repos/{owner}/{repo}/dependency-graph/snapshots';
     private readonly SchemaValidator $requestSchemaValidator;
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Snapshots $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\DependencyGraph\Snapshots $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\DependencyGraph\Snapshots $hydrator, string $owner, string $repo)
+    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\DependencyGraph\Snapshots $hydrator, string $owner, string $repo)
     {
         $this->requestSchemaValidator  = $requestSchemaValidator;
         $this->owner                   = $owner;
@@ -41,14 +41,14 @@ final class CreateRepositorySnapshot
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Snapshot::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201
+    public function createResponse(ResponseInterface $response): Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,11 +58,11 @@ final class CreateRepositorySnapshot
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operation\DependencyGraph\CreateRepositorySnapshot\Response\Applicationjson\H201::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created::class, $body);
                 }
 
                 break;

@@ -23,19 +23,19 @@ final class GetGithubActionsBillingOrg
     public const OPERATION_MATCH = 'GET /orgs/{org}/settings/billing/actions';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/settings/billing/actions';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing\Actions $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Settings\Billing\Actions $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Settings\Billing\Actions $hydrator, string $org)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Settings\Billing\Actions $hydrator, string $org)
     {
         $this->org                     = $org;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
     }
@@ -50,9 +50,9 @@ final class GetGithubActionsBillingOrg
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsBillingUsage::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsBillingUsage::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsBillingUsage::class, $body);
                 }

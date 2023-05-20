@@ -23,19 +23,19 @@ final class CreateRemoveTokenForOrg
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/remove-token';
     private const METHOD         = 'POST';
     private const PATH           = '/orgs/{org}/actions/runners/remove-token';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\RemoveToken $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RemoveToken $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\RemoveToken $hydrator, string $org)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Runners\RemoveToken $hydrator, string $org)
     {
         $this->org                     = $org;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
     }
@@ -50,9 +50,9 @@ final class CreateRemoveTokenForOrg
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AuthenticationToken::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AuthenticationToken::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\AuthenticationToken::class, $body);
                 }

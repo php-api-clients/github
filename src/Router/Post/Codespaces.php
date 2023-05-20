@@ -6,15 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Post;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\Codespace;
-use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
-use ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -47,16 +43,13 @@ final class Codespaces
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Codespaces\Billing\SelectedUsers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Codespaces\Billing\SelectedUsers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Codespaces🌀Billing🌀SelectedUsers();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers();
         }
 
-        $operation = new Operation\Codespaces\SetCodespacesBillingUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Codespaces\Billing\SelectedUsers::class], $arguments['org']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\SetCodespacesBillingUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $params);
     }
 
     public function createWithRepoForAuthenticatedUser(array $params)
@@ -74,16 +67,13 @@ final class Codespaces
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Codespaces();
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Codespaces::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces();
         }
 
-        $operation = new Operation\Codespaces\CreateWithRepoForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Codespaces::class], $arguments['owner'], $arguments['repo']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\CreateWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Codespaces::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
     public function exportForAuthenticatedUser(array $params)
@@ -95,16 +85,13 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CbCodespaceNameRcb🌀Exports();
+        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Exports();
         }
 
-        $operation = new Operation\Codespaces\ExportForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Exports::class], $arguments['codespace_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\ExportForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceExportDetails {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['codespace_name']);
     }
 
     public function publishForAuthenticatedUser(array $params)
@@ -116,16 +103,13 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Publish::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Publish::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CbCodespaceNameRcb🌀Publish();
+        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Publish();
         }
 
-        $operation = new Operation\Codespaces\PublishForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Publish::class], $arguments['codespace_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\PublishForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceWithFullRepository {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['codespace_name'], $params);
     }
 
     public function startForAuthenticatedUser(array $params)
@@ -137,16 +121,13 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Start::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Start::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CbCodespaceNameRcb🌀Start();
+        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Start::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Start::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Start();
         }
 
-        $operation = new Operation\Codespaces\StartForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Start::class], $arguments['codespace_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\StartForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Start::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['codespace_name']);
     }
 
     public function stopForAuthenticatedUser(array $params)
@@ -158,31 +139,24 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Stop::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Stop::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CbCodespaceNameRcb🌀Stop();
+        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Stop();
         }
 
-        $operation = new Operation\Codespaces\StopForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CbCodespaceNameRcb\Stop::class], $arguments['codespace_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\StopForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['codespace_name']);
     }
 
     public function createForAuthenticatedUser(array $params)
     {
-        $arguments = [];
         if (array_key_exists(Hydrator\Operation\User\Codespaces::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces();
         }
 
-        $operation = new Operation\Codespaces\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces::class]);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($params);
     }
 
     public function createWithPrForAuthenticatedUser(array $params)
@@ -206,16 +180,13 @@ final class Codespaces
 
         $arguments['pull_number'] = $params['pull_number'];
         unset($params['pull_number']);
-        if (array_key_exists(Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀CbOwnerRcb🌀CbRepoRcb🌀Pulls🌀CbPullNumberRcb🌀Codespaces();
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Codespaces();
         }
 
-        $operation = new Operation\Codespaces\CreateWithPrForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Pulls\CbPullNumberRcb\Codespaces::class], $arguments['owner'], $arguments['repo'], $arguments['pull_number']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\CreateWithPrForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
     public function stopInOrganization(array $params)
@@ -239,15 +210,12 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀CbOrgRcb🌀Members🌀CbUsernameRcb🌀Codespaces🌀CbCodespaceNameRcb🌀Stop();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces🌀CodespaceName🌀Stop();
         }
 
-        $operation = new Operation\Codespaces\StopInOrganization($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\CbOrgRcb\Members\CbUsernameRcb\Codespaces\CbCodespaceNameRcb\Stop::class], $arguments['org'], $arguments['username'], $arguments['codespace_name']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Codespaces\StopInOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org'], $arguments['username'], $arguments['codespace_name']);
     }
 }

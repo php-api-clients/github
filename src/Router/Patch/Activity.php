@@ -6,12 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -44,15 +43,12 @@ final class Activity
 
         $arguments['thread_id'] = $params['thread_id'];
         unset($params['thread_id']);
-        if (array_key_exists(Hydrator\Operation\Notifications\Threads\CbThreadIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Notifications\Threads\CbThreadIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀CbThreadIdRcb();
+        if (array_key_exists(Hydrator\Operation\Notifications\Threads\ThreadId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Notifications\Threads\ThreadId::class] = $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId();
         }
 
-        $operation = new Operation\Activity\MarkThreadAsRead($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Notifications\Threads\CbThreadIdRcb::class], $arguments['thread_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Activity\MarkThreadAsRead($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Notifications\Threads\ThreadId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['thread_id']);
     }
 }

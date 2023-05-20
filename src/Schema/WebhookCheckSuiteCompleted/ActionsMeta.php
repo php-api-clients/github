@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookCheckSuiteCompleted;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class ActionsMeta extends Schema\AliasAbstract\Abstractdb3b0ea77d168182903938e35938f560
+final readonly class ActionsMeta
 {
+    public const SCHEMA_JSON         = '{"type":["object","null"]}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = '';
+    public const SCHEMA_EXAMPLE_DATA = '[]';
+
+    public function __construct()
+    {
+    }
 }

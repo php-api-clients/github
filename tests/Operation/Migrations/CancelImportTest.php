@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Migrations;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Migrations\CancelImport;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class CancelImportTest extends AsyncTestCase
@@ -21,7 +22,7 @@ final class CancelImportTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_503_responseContentType_application_json(): void
+    public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(503, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -30,13 +31,69 @@ final class CancelImportTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated_null/generated_null/import', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/import', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CancelImport::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner'] = 'generated_null';
-            $data['repo']  = 'generated_null';
+        $result = $client->call(Operation\Migrations\CancelImport::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_503_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/import', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->migrations()->cancelImport('generated', 'generated'));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/import', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Migrations\CancelImport::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/import', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->migrations()->cancelImport('generated', 'generated'));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(204, $result['code']);
     }
 }

@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Orgs;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Orgs\CancelInvitation;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class CancelInvitationTest extends AsyncTestCase
@@ -21,7 +22,7 @@ final class CancelInvitationTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_422_responseContentType_application_json(): void
+    public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
         $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
@@ -30,10 +31,10 @@ final class CancelInvitationTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/orgs/generated_null/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CancelInvitation::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']           = 'generated_null';
+        $result = $client->call(Operation\Orgs\CancelInvitation::OPERATION_MATCH, (static function (array $data): array {
+            $data['org']           = 'generated';
             $data['invitation_id'] = 13;
 
             return $data;
@@ -43,7 +44,24 @@ final class CancelInvitationTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_404_responseContentType_application_json(): void
+    public function operations_httpCode_422_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ValidationError::class);
+        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->orgs()->cancelInvitation('generated', 13));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -52,13 +70,69 @@ final class CancelInvitationTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/orgs/generated_null/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CancelInvitation::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']           = 'generated_null';
+        $result = $client->call(Operation\Orgs\CancelInvitation::OPERATION_MATCH, (static function (array $data): array {
+            $data['org']           = 'generated';
             $data['invitation_id'] = 13;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_404_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->orgs()->cancelInvitation('generated', 13));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Orgs\CancelInvitation::OPERATION_MATCH, (static function (array $data): array {
+            $data['org']           = 'generated';
+            $data['invitation_id'] = 13;
+
+            return $data;
+        })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/orgs/generated/invitations/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->orgs()->cancelInvitation('generated', 13));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(204, $result['code']);
     }
 }

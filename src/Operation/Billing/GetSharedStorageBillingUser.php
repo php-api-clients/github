@@ -23,19 +23,19 @@ final class GetSharedStorageBillingUser
     public const OPERATION_MATCH = 'GET /users/{username}/settings/billing/shared-storage';
     private const METHOD         = 'GET';
     private const PATH           = '/users/{username}/settings/billing/shared-storage';
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\CbUsernameRcb\Settings\Billing\SharedStorage $hydrator;
+    private readonly Hydrator\Operation\Users\Username\Settings\Billing\SharedStorage $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Settings\Billing\SharedStorage $hydrator, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Settings\Billing\SharedStorage $hydrator, string $username)
     {
         $this->username                = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
     }
@@ -50,9 +50,9 @@ final class GetSharedStorageBillingUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CombinedBillingUsage::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CombinedBillingUsage::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\CombinedBillingUsage::class, $body);
                 }

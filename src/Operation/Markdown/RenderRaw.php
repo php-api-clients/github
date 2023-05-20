@@ -34,14 +34,17 @@ final class RenderRaw
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Markdown\RenderRaw\Request\Textplain::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'text/plain'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200
+    /**
+     * @return string|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): string|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -49,16 +52,19 @@ final class RenderRaw
             case 'text/html':
                 $body = $response->getBody()->getContents();
                 switch ($code) {
-                    /**
-                     * Response
-                    **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
-                        return $this->hydrator->hydrateObject(Schema\Operation\Markdown\RenderRaw\Response\Texthtml\H200::class, $body);
+                        return $body;
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not modified
+             **/
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

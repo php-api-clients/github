@@ -23,26 +23,26 @@ final class GetActionsCacheList
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/caches';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/caches';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
+    /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`. **/
     private string $ref;
-    /**An explicit key or prefix for identifying the cache**/
+    /**An explicit key or prefix for identifying the cache **/
     private string $key;
-    /**The number of results per page (max 100).**/
+    /**The number of results per page (max 100). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
-    /**The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes.**/
+    /**The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes. **/
     private string $sort;
-    /**The direction to sort the results by.**/
+    /**The direction to sort the results by. **/
     private string $direction;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Caches $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Caches $hydrator, string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc')
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator, string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc')
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -56,7 +56,7 @@ final class GetActionsCacheList
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}', '{key}', '{per_page}', '{page}', '{sort}', '{direction}'], [$this->owner, $this->repo, $this->ref, $this->key, $this->perPage, $this->page, $this->sort, $this->direction], self::PATH . '?ref={ref}&key={key}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
     }
@@ -71,9 +71,9 @@ final class GetActionsCacheList
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsCacheList::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsCacheList::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsCacheList::class, $body);
                 }

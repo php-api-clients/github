@@ -25,14 +25,14 @@ final class MergeUpstream
     private const METHOD         = 'POST';
     private const PATH           = '/repos/{owner}/{repo}/merge-upstream';
     private readonly SchemaValidator $requestSchemaValidator;
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\MergeUpstream $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\MergeUpstream $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\MergeUpstream $hydrator, string $owner, string $repo)
+    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\MergeUpstream $hydrator, string $owner, string $repo)
     {
         $this->requestSchemaValidator  = $requestSchemaValidator;
         $this->owner                   = $owner;
@@ -41,14 +41,17 @@ final class MergeUpstream
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\MergeUpstream\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\MergedUpstream
+    /**
+     * @return Schema\MergedUpstream|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\MergedUpstream|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,14 +61,28 @@ final class MergeUpstream
                 switch ($code) {
                     /**
                      * The branch has been successfully synced with the upstream repository
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MergedUpstream::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MergedUpstream::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\MergedUpstream::class, $body);
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * The branch could not be synced because of a merge conflict
+             **/
+            case 409:
+                return ['code' => 409];
+            /**
+             * The branch could not be synced for some other reason
+             **/
+
+            case 422:
+                return ['code' => 422];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

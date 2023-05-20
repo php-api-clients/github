@@ -24,13 +24,13 @@ final class GetStatusForAuthenticatedUser
     public const OPERATION_MATCH = 'GET /user/migrations/{migration_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/user/migrations/{migration_id}';
-    /**The unique identifier of the migration.**/
+    /**The unique identifier of the migration. **/
     private int $migrationId;
     private array $exclude;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\CbMigrationIdRcb $hydrator;
+    private readonly Hydrator\Operation\User\Migrations\MigrationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\CbMigrationIdRcb $hydrator, int $migrationId, array $exclude)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId $hydrator, int $migrationId, array $exclude)
     {
         $this->migrationId             = $migrationId;
         $this->exclude                 = $exclude;
@@ -38,12 +38,15 @@ final class GetStatusForAuthenticatedUser
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{migration_id}', '{exclude}'], [$this->migrationId, $this->exclude], self::PATH . '?exclude={exclude}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Migration
+    /**
+     * @return Schema\Migration|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\Migration|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,38 +56,46 @@ final class GetStatusForAuthenticatedUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Migration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Migration::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Migration::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
-                    **/
+                     **/
 
                     case 401:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not modified
+             **/
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -23,16 +23,16 @@ final class GetWorkflowUsage
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The ID of the workflow. You can also pass the workflow file name as a string.**/
+    /**The ID of the workflow. You can also pass the workflow file name as a string. **/
     private $workflowId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows\CbWorkflowIdRcb\Timing $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Workflows\WorkflowId\Timing $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Workflows\CbWorkflowIdRcb\Timing $hydrator, string $owner, string $repo, $workflowId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Workflows\WorkflowId\Timing $hydrator, string $owner, string $repo, $workflowId)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -41,7 +41,7 @@ final class GetWorkflowUsage
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{workflow_id}'], [$this->owner, $this->repo, $this->workflowId], self::PATH));
     }
@@ -56,9 +56,9 @@ final class GetWorkflowUsage
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowUsage::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowUsage::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\WorkflowUsage::class, $body);
                 }

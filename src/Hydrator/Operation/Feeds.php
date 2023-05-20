@@ -334,16 +334,6 @@ class Feeds implements ObjectMapper
                 goto after_currentUserOrganizations;
             }
 
-            static $currentUserOrganizationsCaster1;
-
-            if ($currentUserOrganizationsCaster1 === null) {
-                $currentUserOrganizationsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\LinkWithType',
-));
-            }
-
-            $value = $currentUserOrganizationsCaster1->cast($value, $this);
-
             $properties['currentUserOrganizations'] = $value;
 
             after_currentUserOrganizations:
@@ -715,8 +705,7 @@ class Feeds implements ObjectMapper
         static $currentUserOrganizationsSerializer0;
 
         if ($currentUserOrganizationsSerializer0 === null) {
-            $currentUserOrganizationsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\LinkWithType',
+            $currentUserOrganizationsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         

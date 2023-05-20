@@ -23,14 +23,14 @@ final class CheckPermissionsForProjectLegacy
     public const OPERATION_MATCH = 'GET /teams/{team_id}/projects/{project_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/teams/{team_id}/projects/{project_id}';
-    /**The unique identifier of the team.**/
+    /**The unique identifier of the team. **/
     private int $teamId;
-    /**The unique identifier of the project.**/
+    /**The unique identifier of the project. **/
     private int $projectId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Projects\CbProjectIdRcb $hydrator;
+    private readonly Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Projects\CbProjectIdRcb $hydrator, int $teamId, int $projectId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator, int $teamId, int $projectId)
     {
         $this->teamId                  = $teamId;
         $this->projectId               = $projectId;
@@ -38,12 +38,15 @@ final class CheckPermissionsForProjectLegacy
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{team_id}', '{project_id}'], [$this->teamId, $this->projectId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\TeamProject
+    /**
+     * @return Schema\TeamProject|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\TeamProject|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,14 +56,22 @@ final class CheckPermissionsForProjectLegacy
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamProject::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamProject::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\TeamProject::class, $body);
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not Found if project is not managed by this team
+             **/
+            case 404:
+                return ['code' => 404];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

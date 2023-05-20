@@ -23,19 +23,19 @@ final class GetOrgPublicKey
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/secrets/public-key';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/actions/secrets/public-key';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\Secrets\PublicKey $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Actions\Secrets\PublicKey $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Secrets\PublicKey $hydrator, string $org)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Secrets\PublicKey $hydrator, string $org)
     {
         $this->org                     = $org;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
     }
@@ -50,9 +50,9 @@ final class GetOrgPublicKey
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsPublicKey::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsPublicKey::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsPublicKey::class, $body);
                 }

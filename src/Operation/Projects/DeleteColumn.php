@@ -24,24 +24,27 @@ final class DeleteColumn
     public const OPERATION_MATCH = 'DELETE /projects/columns/{column_id}';
     private const METHOD         = 'DELETE';
     private const PATH           = '/projects/columns/{column_id}';
-    /**The unique identifier of the column.**/
+    /**The unique identifier of the column. **/
     private int $columnId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\CbColumnIdRcb $hydrator;
+    private readonly Hydrator\Operation\Projects\Columns\ColumnId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\CbColumnIdRcb $hydrator, int $columnId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\ColumnId $hydrator, int $columnId)
     {
         $this->columnId                = $columnId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,22 +54,36 @@ final class DeleteColumn
                 switch ($code) {
                     /**
                      * Forbidden
-                    **/
+                     **/
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
-                    **/
+                     **/
 
                     case 401:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Response
+             **/
+            case 204:
+                return ['code' => 204];
+            /**
+             * Not modified
+             **/
+
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Gitignore;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Operation\Gitignore\GetTemplate;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -13,6 +13,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class GetTemplateTest extends AsyncTestCase
@@ -20,7 +21,7 @@ final class GetTemplateTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
+    public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\GitignoreTemplate::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -28,12 +29,66 @@ final class GetTemplateTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gitignore/templates/generated_null', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gitignore/templates/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetTemplate::OPERATION_MATCH, (static function (array $data): array {
-            $data['name'] = 'generated_null';
+        $result = $client->call(Operation\Gitignore\GetTemplate::OPERATION_MATCH, (static function (array $data): array {
+            $data['name'] = 'generated';
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_200_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\GitignoreTemplate::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/gitignore/templates/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->gitignore()->getTemplate('generated'));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_304_empty(): void
+    {
+        $response = new Response(304, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/gitignore/templates/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Gitignore\GetTemplate::OPERATION_MATCH, (static function (array $data): array {
+            $data['name'] = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_304_empty(): void
+    {
+        $response = new Response(304, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/gitignore/templates/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->gitignore()->getTemplate('generated'));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(304, $result['code']);
     }
 }

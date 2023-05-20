@@ -24,24 +24,27 @@ final class GetSshSigningKeyForAuthenticatedUser
     public const OPERATION_MATCH = 'GET /user/ssh_signing_keys/{ssh_signing_key_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/user/ssh_signing_keys/{ssh_signing_key_id}';
-    /**The unique identifier of the SSH signing key.**/
+    /**The unique identifier of the SSH signing key. **/
     private int $sshSigningKeyId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\SshSigningKeys\CbSshSigningKeyIdRcb $hydrator;
+    private readonly Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys\CbSshSigningKeyIdRcb $hydrator, int $sshSigningKeyId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator, int $sshSigningKeyId)
     {
         $this->sshSigningKeyId         = $sshSigningKeyId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{ssh_signing_key_id}'], [$this->sshSigningKeyId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\SshSigningKey
+    /**
+     * @return Schema\SshSigningKey|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\SshSigningKey|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,38 +54,46 @@ final class GetSshSigningKeyForAuthenticatedUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SshSigningKey::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SshSigningKey::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\SshSigningKey::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
-                    **/
+                     **/
 
                     case 401:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not modified
+             **/
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

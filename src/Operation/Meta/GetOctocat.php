@@ -16,7 +16,7 @@ final class GetOctocat
     public const OPERATION_MATCH = 'GET /octocat';
     private const METHOD         = 'GET';
     private const PATH           = '/octocat';
-    /**The words to show in Octocat's speech bubble**/
+    /**The words to show in Octocat's speech bubble **/
     private string $s;
 
     public function __construct(string $s)
@@ -24,7 +24,7 @@ final class GetOctocat
         $this->s = $s;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{s}'], [$this->s], self::PATH . '?s={s}'));
     }

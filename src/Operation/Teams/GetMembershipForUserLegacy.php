@@ -24,14 +24,14 @@ final class GetMembershipForUserLegacy
     public const OPERATION_MATCH = 'GET /teams/{team_id}/memberships/{username}';
     private const METHOD         = 'GET';
     private const PATH           = '/teams/{team_id}/memberships/{username}';
-    /**The unique identifier of the team.**/
+    /**The unique identifier of the team. **/
     private int $teamId;
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\CbTeamIdRcb\Memberships\CbUsernameRcb $hydrator;
+    private readonly Hydrator\Operation\Teams\TeamId\Memberships\Username $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\CbTeamIdRcb\Memberships\CbUsernameRcb $hydrator, int $teamId, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Memberships\Username $hydrator, int $teamId, string $username)
     {
         $this->teamId                  = $teamId;
         $this->username                = $username;
@@ -39,7 +39,7 @@ final class GetMembershipForUserLegacy
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{team_id}', '{username}'], [$this->teamId, $this->username], self::PATH));
     }
@@ -54,17 +54,17 @@ final class GetMembershipForUserLegacy
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamMembership::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamMembership::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\TeamMembership::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

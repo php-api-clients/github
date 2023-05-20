@@ -6,13 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Get;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\Operation\Search\Code\Response\Applicationjson\H200;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -73,12 +71,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Code::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Code();
         }
 
-        $operation = new Operation\Search\Code($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Code::class], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Code($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Code::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     public function commits(array $params)
@@ -118,12 +113,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Commits::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Commits();
         }
 
-        $operation = new Operation\Search\Commits($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Commits::class], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Commits($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Commits::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\Commits\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     public function issuesAndPullRequests(array $params)
@@ -163,12 +155,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Issues::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Issues();
         }
 
-        $operation = new Operation\Search\IssuesAndPullRequests($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Issues::class], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\IssuesAndPullRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Issues::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\IssuesAndPullRequests\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     public function labels(array $params)
@@ -214,12 +203,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Labels::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Labels();
         }
 
-        $operation = new Operation\Search\Labels($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Labels::class], $arguments['repository_id'], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Labels($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Labels::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\Labels\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['repository_id'], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     public function repos(array $params)
@@ -259,12 +245,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Repositories();
         }
 
-        $operation = new Operation\Search\Repos($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Repositories::class], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Repos($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Repositories::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\Repos\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     public function topics(array $params)
@@ -292,12 +275,9 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Topics::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Topics();
         }
 
-        $operation = new Operation\Search\Topics($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Topics::class], $arguments['q'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Topics($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Topics::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\Topics\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['per_page'], $arguments['page']);
     }
 
     public function users(array $params)
@@ -337,11 +317,8 @@ final class Search
             $this->hydrator[Hydrator\Operation\Search\Users::class] = $this->hydrators->getObjectMapperOperation🌀Search🌀Users();
         }
 
-        $operation = new Operation\Search\Users($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Users::class], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Search\Users($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Search\Users::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): \ApiClients\Client\GitHub\Schema\Operation\Search\Users\Response\Applicationjson\H200 {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 }

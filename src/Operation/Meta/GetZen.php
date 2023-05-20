@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation\Meta;
 
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Schema;
-use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -31,12 +29,12 @@ final class GetZen
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Meta\GetZen\Response\Textplain\H200
+    public function createResponse(ResponseInterface $response): string
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -44,13 +42,8 @@ final class GetZen
             case 'text/plain':
                 $body = $response->getBody()->getContents();
                 switch ($code) {
-                    /**
-                     * Response
-                    **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Meta\GetZen\Response\Textplain\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
-                        return $this->hydrator->hydrateObject(Schema\Operation\Meta\GetZen\Response\Textplain\H200::class, $body);
+                        return $body;
                 }
 
                 break;

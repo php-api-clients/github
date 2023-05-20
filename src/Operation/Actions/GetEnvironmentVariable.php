@@ -23,16 +23,16 @@ final class GetEnvironmentVariable
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     private const METHOD         = 'GET';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    /**The unique identifier of the repository.**/
+    /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment.**/
+    /**The name of the environment. **/
     private string $environmentName;
-    /**The name of the variable.**/
+    /**The name of the variable. **/
     private string $name;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables\CbNameRcb $hydrator;
+    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables\CbNameRcb $hydrator, int $repositoryId, string $environmentName, string $name)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator, int $repositoryId, string $environmentName, string $name)
     {
         $this->repositoryId            = $repositoryId;
         $this->environmentName         = $environmentName;
@@ -41,7 +41,7 @@ final class GetEnvironmentVariable
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{name}'], [$this->repositoryId, $this->environmentName, $this->name], self::PATH));
     }
@@ -56,9 +56,9 @@ final class GetEnvironmentVariable
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsVariable::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsVariable::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsVariable::class, $body);
                 }

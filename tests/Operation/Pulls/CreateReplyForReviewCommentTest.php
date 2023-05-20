@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Pulls;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Pulls\CreateReplyForReviewComment;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -15,6 +15,7 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class CreateReplyForReviewCommentTest extends AsyncTestCase
@@ -22,7 +23,7 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_201_requestContentType_application_json_responseContentType_application_json(): void
+    public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestReviewComment::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -30,22 +31,38 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/pulls/13/comments/13/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pulls/11/comments/10/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CreateReplyForReviewComment::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']       = 'generated_null';
-            $data['repo']        = 'generated_null';
-            $data['pull_number'] = 13;
-            $data['comment_id']  = 13;
+        $result = $client->call(Operation\Pulls\CreateReplyForReviewComment::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']       = 'generated';
+            $data['repo']        = 'generated';
+            $data['pull_number'] = 11;
+            $data['comment_id']  = 10;
 
             return $data;
-        })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
      * @test
      */
-    public function httpCode_404_requestContentType_application_json_responseContentType_application_json(): void
+    public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestReviewComment::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/pulls/11/comments/10/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->pulls()->createReplyForReviewComment('generated', 'generated', 11, 10, json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -54,15 +71,32 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/pulls/13/comments/13/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pulls/11/comments/10/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CreateReplyForReviewComment::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']       = 'generated_null';
-            $data['repo']        = 'generated_null';
-            $data['pull_number'] = 13;
-            $data['comment_id']  = 13;
+        $result = $client->call(Operation\Pulls\CreateReplyForReviewComment::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']       = 'generated';
+            $data['repo']        = 'generated';
+            $data['pull_number'] = 11;
+            $data['comment_id']  = 10;
 
             return $data;
-        })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/pulls/11/comments/10/replies', Argument::type('array'), Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->pulls()->createReplyForReviewComment('generated', 'generated', 11, 10, json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

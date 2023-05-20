@@ -23,18 +23,18 @@ final class DeleteActionsCacheByKey
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/caches';
     private const METHOD         = 'DELETE';
     private const PATH           = '/repos/{owner}/{repo}/actions/caches';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**A key for identifying the cache.**/
+    /**A key for identifying the cache. **/
     private string $key;
-    /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.**/
+    /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`. **/
     private string $ref;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Caches $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Caches $hydrator, string $owner, string $repo, string $key, string $ref)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator, string $owner, string $repo, string $key, string $ref)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -44,7 +44,7 @@ final class DeleteActionsCacheByKey
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{key}', '{ref}'], [$this->owner, $this->repo, $this->key, $this->ref], self::PATH . '?key={key}&ref={ref}'));
     }
@@ -59,9 +59,9 @@ final class DeleteActionsCacheByKey
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsCacheList::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsCacheList::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsCacheList::class, $body);
                 }

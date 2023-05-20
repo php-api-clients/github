@@ -6,12 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -44,16 +43,13 @@ final class Gists
 
         $arguments['gist_id'] = $params['gist_id'];
         unset($params['gist_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Star::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Star::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Star();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Star::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Star::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Star();
         }
 
-        $operation = new Operation\Gists\Unstar($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Star::class], $arguments['gist_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\Unstar($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Star::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id']);
     }
 
     public function deleteComment(array $params)
@@ -71,16 +67,13 @@ final class Gists
 
         $arguments['comment_id'] = $params['comment_id'];
         unset($params['comment_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Comments🌀CbCommentIdRcb();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Comments\CommentId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Comments\CommentId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments🌀CommentId();
         }
 
-        $operation = new Operation\Gists\DeleteComment($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class], $arguments['gist_id'], $arguments['comment_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\DeleteComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Comments\CommentId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['comment_id']);
     }
 
     public function delete(array $params)
@@ -92,15 +85,12 @@ final class Gists
 
         $arguments['gist_id'] = $params['gist_id'];
         unset($params['gist_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId();
         }
 
-        $operation = new Operation\Gists\Delete($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb::class], $arguments['gist_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\Delete($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id']);
     }
 }

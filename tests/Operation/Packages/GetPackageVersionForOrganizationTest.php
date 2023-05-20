@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Packages;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Operation\Packages\GetPackageVersionForOrganization;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -13,6 +13,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class GetPackageVersionForOrganizationTest extends AsyncTestCase
@@ -20,7 +21,7 @@ final class GetPackageVersionForOrganizationTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
+    public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PackageVersion::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -28,15 +29,31 @@ final class GetPackageVersionForOrganizationTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated_null/packages/generated_null/generated_null/versions/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions/18', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetPackageVersionForOrganization::OPERATION_MATCH, (static function (array $data): array {
-            $data['package_type']       = 'generated_null';
-            $data['package_name']       = 'generated_null';
-            $data['org']                = 'generated_null';
-            $data['package_version_id'] = 13;
+        $result = $client->call(Operation\Packages\GetPackageVersionForOrganization::OPERATION_MATCH, (static function (array $data): array {
+            $data['package_type']       = 'generated';
+            $data['package_name']       = 'generated';
+            $data['org']                = 'generated';
+            $data['package_version_id'] = 18;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_200_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PackageVersion::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/packages/generated/generated/versions/18', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->packages()->getPackageVersionForOrganization('generated', 'generated', 'generated', 18));
     }
 }

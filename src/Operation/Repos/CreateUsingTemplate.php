@@ -28,9 +28,9 @@ final class CreateUsingTemplate
     private string $templateOwner;
     private string $templateRepo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb\Generate $hydrator;
+    private readonly Hydrator\Operation\Repos\TemplateOwner\TemplateRepo\Generate $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbTemplateOwnerRcb\CbTemplateRepoRcb\Generate $hydrator, string $templateOwner, string $templateRepo)
+    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\TemplateOwner\TemplateRepo\Generate $hydrator, string $templateOwner, string $templateRepo)
     {
         $this->requestSchemaValidator  = $requestSchemaValidator;
         $this->templateOwner           = $templateOwner;
@@ -39,9 +39,9 @@ final class CreateUsingTemplate
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateUsingTemplate\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateUsingTemplate\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{template_owner}', '{template_repo}'], [$this->templateOwner, $this->templateRepo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
@@ -56,9 +56,9 @@ final class CreateUsingTemplate
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Repository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Repository::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Repository::class, $body);
                 }

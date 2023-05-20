@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Actions;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Operation\Actions\GetWorkflowRun;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -13,6 +13,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class GetWorkflowRunTest extends AsyncTestCase
@@ -20,7 +21,7 @@ final class GetWorkflowRunTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
+    public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -28,15 +29,31 @@ final class GetWorkflowRunTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/actions/runs/13?exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6?exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(GetWorkflowRun::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']                 = 'generated_null';
-            $data['repo']                  = 'generated_null';
-            $data['run_id']                = 13;
+        $result = $client->call(Operation\Actions\GetWorkflowRun::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']                 = 'generated';
+            $data['repo']                  = 'generated';
+            $data['run_id']                = 6;
             $data['exclude_pull_requests'] = false;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_200_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6?exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->actions()->getWorkflowRun('generated', 'generated', 6, false));
     }
 }

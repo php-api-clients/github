@@ -25,14 +25,14 @@ final class CreateEnvironmentVariable
     private const METHOD         = 'POST';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
     private readonly SchemaValidator $requestSchemaValidator;
-    /**The unique identifier of the repository.**/
+    /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment.**/
+    /**The name of the environment. **/
     private string $environmentName;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables $hydrator;
+    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables $hydrator, int $repositoryId, string $environmentName)
+    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName)
     {
         $this->requestSchemaValidator  = $requestSchemaValidator;
         $this->repositoryId            = $repositoryId;
@@ -41,9 +41,9 @@ final class CreateEnvironmentVariable
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateEnvironmentVariable\Request\Applicationjson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}'], [$this->repositoryId, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
@@ -58,9 +58,9 @@ final class CreateEnvironmentVariable
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\EmptyObject::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\EmptyObject::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\EmptyObject::class, $body);
                 }

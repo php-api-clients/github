@@ -6,14 +6,11 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\PrivateUser;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use Rx\Observable;
 
 use function array_key_exists;
 
@@ -38,31 +35,23 @@ final class Users
 
     public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params)
     {
-        $arguments = [];
         if (array_key_exists(Hydrator\Operation\User\Email\Visibility::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Email\Visibility::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Email🌀Visibility();
         }
 
-        $operation = new Operation\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Email\Visibility::class]);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Email\Visibility::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($params);
     }
 
     public function updateAuthenticated(array $params)
     {
-        $arguments = [];
         if (array_key_exists(Hydrator\Operation\User::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User::class] = $this->hydrators->getObjectMapperOperation🌀User();
         }
 
-        $operation = new Operation\Users\UpdateAuthenticated($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User::class]);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Users\UpdateAuthenticated($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PrivateUser {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($params);
     }
 }

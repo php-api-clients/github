@@ -23,14 +23,14 @@ final class CreateRemoveTokenForRepo
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runners/remove-token';
     private const METHOD         = 'POST';
     private const PATH           = '/repos/{owner}/{repo}/actions/runners/remove-token';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runners\RemoveToken $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RemoveToken $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runners\RemoveToken $hydrator, string $owner, string $repo)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RemoveToken $hydrator, string $owner, string $repo)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -38,7 +38,7 @@ final class CreateRemoveTokenForRepo
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
     }
@@ -53,9 +53,9 @@ final class CreateRemoveTokenForRepo
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AuthenticationToken::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AuthenticationToken::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\AuthenticationToken::class, $body);
                 }

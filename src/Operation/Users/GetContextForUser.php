@@ -24,16 +24,16 @@ final class GetContextForUser
     public const OPERATION_MATCH = 'GET /users/{username}/hovercard';
     private const METHOD         = 'GET';
     private const PATH           = '/users/{username}/hovercard';
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
-    /**Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`.**/
+    /**Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`. **/
     private string $subjectType;
-    /**Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`.**/
+    /**Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`. **/
     private string $subjectId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\CbUsernameRcb\Hovercard $hydrator;
+    private readonly Hydrator\Operation\Users\Username\Hovercard $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Hovercard $hydrator, string $username, string $subjectType, string $subjectId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Hovercard $hydrator, string $username, string $subjectType, string $subjectId)
     {
         $this->username                = $username;
         $this->subjectType             = $subjectType;
@@ -42,7 +42,7 @@ final class GetContextForUser
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{username}', '{subject_type}', '{subject_id}'], [$this->username, $this->subjectType, $this->subjectId], self::PATH . '?subject_type={subject_type}&subject_id={subject_id}'));
     }
@@ -57,25 +57,25 @@ final class GetContextForUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Hovercard::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Hovercard::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Hovercard::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Validation failed, or the endpoint has been spammed.
-                    **/
+                     **/
 
                     case 422:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
                 }

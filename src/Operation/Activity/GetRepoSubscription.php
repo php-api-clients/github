@@ -24,14 +24,14 @@ final class GetRepoSubscription
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/subscription';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/subscription';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Subscription $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Subscription $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Subscription $hydrator, string $owner, string $repo)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Subscription $hydrator, string $owner, string $repo)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -39,12 +39,15 @@ final class GetRepoSubscription
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\RepositorySubscription
+    /**
+     * @return Schema\RepositorySubscription|array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): Schema\RepositorySubscription|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,22 +57,30 @@ final class GetRepoSubscription
                 switch ($code) {
                     /**
                      * if you subscribe to the repository
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositorySubscription::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositorySubscription::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\RepositorySubscription::class, $body);
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Not Found if you don't subscribe to the repository
+             **/
+            case 404:
+                return ['code' => 404];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

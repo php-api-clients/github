@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\OrganizationProgrammaticAccessGrantRequest\Permissions;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class Organization extends Schema\AliasAbstract\Abstract79a542c60fea0a939b2ff6241fc22cd9
+final readonly class Organization
 {
+    public const SCHEMA_JSON         = '{"type":"object","additionalProperties":{"type":"string"}}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = '';
+    public const SCHEMA_EXAMPLE_DATA = '[]';
+
+    public function __construct()
+    {
+    }
 }

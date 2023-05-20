@@ -23,18 +23,18 @@ final class ListEnvironmentVariables
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables';
     private const METHOD         = 'GET';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
-    /**The unique identifier of the repository.**/
+    /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment.**/
+    /**The name of the environment. **/
     private string $environmentName;
-    /**The number of results per page (max 30).**/
+    /**The number of results per page (max 30). **/
     private int $perPage;
-    /**Page number of the results to fetch.**/
+    /**Page number of the results to fetch. **/
     private int $page;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables $hydrator;
+    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Variables $hydrator, int $repositoryId, string $environmentName, int $perPage = 10, int $page = 1)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName, int $perPage = 10, int $page = 1)
     {
         $this->repositoryId            = $repositoryId;
         $this->environmentName         = $environmentName;
@@ -44,12 +44,12 @@ final class ListEnvironmentVariables
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{per_page}', '{page}'], [$this->repositoryId, $this->environmentName, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Actions\ListEnvironmentVariables\Response\Applicationjson\H200
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListRepoOrganizationVariables\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -59,11 +59,11 @@ final class ListEnvironmentVariables
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Actions\ListEnvironmentVariables\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListRepoOrganizationVariables\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operation\Actions\ListEnvironmentVariables\Response\Applicationjson\H200::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListRepoOrganizationVariables\Response\ApplicationJson\Ok::class, $body);
                 }
 
                 break;

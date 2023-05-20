@@ -24,24 +24,27 @@ final class DeleteInstallation
     public const OPERATION_MATCH = 'DELETE /app/installations/{installation_id}';
     private const METHOD         = 'DELETE';
     private const PATH           = '/app/installations/{installation_id}';
-    /**The unique identifier of the installation.**/
+    /**The unique identifier of the installation. **/
     private int $installationId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Installations\CbInstallationIdRcb $hydrator;
+    private readonly Hydrator\Operation\App\Installations\InstallationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations\CbInstallationIdRcb $hydrator, int $installationId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations\InstallationId $hydrator, int $installationId)
     {
         $this->installationId          = $installationId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{installation_id}'], [$this->installationId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,14 +54,22 @@ final class DeleteInstallation
                 switch ($code) {
                     /**
                      * Resource not found
-                    **/
+                     **/
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Response
+             **/
+            case 204:
+                return ['code' => 204];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

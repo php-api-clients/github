@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Repos;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Operation\Repos\MergeUpstream;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class MergeUpstreamTest extends AsyncTestCase
@@ -21,7 +22,7 @@ final class MergeUpstreamTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_requestContentType_application_json_responseContentType_application_json(): void
+    public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\MergedUpstream::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -29,13 +30,107 @@ final class MergeUpstreamTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated_null/generated_null/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(MergeUpstream::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner'] = 'generated_null';
-            $data['repo']  = 'generated_null';
+        $result = $client->call(Operation\Repos\MergeUpstream::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\Repos\MergeUpstream\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\MergedUpstream::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->repos()->mergeUpstream('generated', 'generated', json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_409_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(409, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Repos\MergeUpstream::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_409_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(409, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->repos()->mergeUpstream('generated', 'generated', json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(409, $result['code']);
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_422_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Repos\MergeUpstream::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_422_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/merge-upstream', Argument::type('array'), Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->repos()->mergeUpstream('generated', 'generated', json_decode(Schema\Repos\MergeUpstream\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(422, $result['code']);
     }
 }

@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Router\Delete;
 
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 
 use function array_key_exists;
@@ -43,12 +42,9 @@ final class Interactions
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        $operation = new Operation\Interactions\RemoveRestrictionsForOrg($arguments['org']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Interactions\RemoveRestrictionsForOrg($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['org']);
     }
 
     public function removeRestrictionsForRepo(array $params)
@@ -66,22 +62,15 @@ final class Interactions
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        $operation = new Operation\Interactions\RemoveRestrictionsForRepo($arguments['owner'], $arguments['repo']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Interactions\RemoveRestrictionsForRepo($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
     public function removeRestrictionsForAuthenticatedUser(array $params)
     {
-        $arguments = [];
-        $operation = new Operation\Interactions\RemoveRestrictionsForAuthenticatedUser();
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Interactions\RemoveRestrictionsForAuthenticatedUser($this->browser, $this->authentication);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
-            return $operation->createResponse($response);
-        });
+        return $operator->call();
     }
 }

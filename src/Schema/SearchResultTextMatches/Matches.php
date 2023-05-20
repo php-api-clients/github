@@ -9,11 +9,8 @@ final readonly class Matches
     public const SCHEMA_JSON         = '{"type":"object","properties":{"text":{"type":"string"},"indices":{"type":"array","items":{"type":"integer"}}}}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"text":"generated_text_null","indices":[13]}';
+    public const SCHEMA_EXAMPLE_DATA = '{"text":"generated","indices":[8,9]}';
 
-    /**
-     * @param ?array<int> $indices
-     */
     public function __construct(public ?string $text, public ?array $indices)
     {
     }

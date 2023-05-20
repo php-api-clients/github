@@ -6,15 +6,12 @@ namespace ApiClients\Client\GitHub\Router\Get;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\CodeOfConduct;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use Rx\Observable;
 
 use function array_key_exists;
 
@@ -39,17 +36,9 @@ final class CodesOfConduct
 
     public function getAllCodesOfConduct(array $params)
     {
-        $arguments = [];
-        if (array_key_exists(Hydrator\Operation\CodesOfConduct::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\CodesOfConduct::class] = $this->hydrators->getObjectMapperOperation🌀CodesOfConduct();
-        }
+        $operator = new Operator\CodesOfConduct\GetAllCodesOfConduct($this->browser, $this->authentication);
 
-        $operation = new Operation\CodesOfConduct\GetAllCodesOfConduct($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\CodesOfConduct::class]);
-        $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call();
     }
 
     public function getConductCode(array $params)
@@ -61,15 +50,12 @@ final class CodesOfConduct
 
         $arguments['key'] = $params['key'];
         unset($params['key']);
-        if (array_key_exists(Hydrator\Operation\CodesOfConduct\CbKeyRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\CodesOfConduct\CbKeyRcb::class] = $this->hydrators->getObjectMapperOperation🌀CodesOfConduct🌀CbKeyRcb();
+        if (array_key_exists(Hydrator\Operation\CodesOfConduct\Key::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\CodesOfConduct\Key::class] = $this->hydrators->getObjectMapperOperation🌀CodesOfConduct🌀Key();
         }
 
-        $operation = new Operation\CodesOfConduct\GetConductCode($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\CodesOfConduct\CbKeyRcb::class], $arguments['key']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\CodesOfConduct\GetConductCode($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\CodesOfConduct\Key::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodeOfConduct {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['key']);
     }
 }

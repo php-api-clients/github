@@ -23,14 +23,14 @@ final class GetOrgVariable
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/variables/{name}';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/actions/variables/{name}';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The name of the variable.**/
+    /**The name of the variable. **/
     private string $name;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\Variables\CbNameRcb $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Variables\CbNameRcb $hydrator, string $org, string $name)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator, string $org, string $name)
     {
         $this->org                     = $org;
         $this->name                    = $name;
@@ -38,7 +38,7 @@ final class GetOrgVariable
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{name}'], [$this->org, $this->name], self::PATH));
     }
@@ -53,9 +53,9 @@ final class GetOrgVariable
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationActionsVariable::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationActionsVariable::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\OrganizationActionsVariable::class, $body);
                 }

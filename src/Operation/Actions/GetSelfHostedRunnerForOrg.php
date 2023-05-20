@@ -23,14 +23,14 @@ final class GetSelfHostedRunnerForOrg
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/runners/{runner_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/actions/runners/{runner_id}';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**Unique identifier of the self-hosted runner.**/
+    /**Unique identifier of the self-hosted runner. **/
     private int $runnerId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\CbRunnerIdRcb $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Actions\Runners\CbRunnerIdRcb $hydrator, string $org, int $runnerId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId $hydrator, string $org, int $runnerId)
     {
         $this->org                     = $org;
         $this->runnerId                = $runnerId;
@@ -38,7 +38,7 @@ final class GetSelfHostedRunnerForOrg
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{runner_id}'], [$this->org, $this->runnerId], self::PATH));
     }
@@ -53,9 +53,9 @@ final class GetSelfHostedRunnerForOrg
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Runner::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Runner::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Runner::class, $body);
                 }

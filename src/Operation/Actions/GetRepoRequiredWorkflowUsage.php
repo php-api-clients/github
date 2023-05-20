@@ -24,16 +24,16 @@ final class GetRepoRequiredWorkflowUsage
     public const OPERATION_MATCH = 'GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The ID of the required workflow that has run at least once in a repository.**/
+    /**The ID of the required workflow that has run at least once in a repository. **/
     private int $requiredWorkflowIdForRepo;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOrgRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Timing $hydrator;
+    private readonly Hydrator\Operation\Repos\Org\Repo\Actions\RequiredWorkflows\RequiredWorkflowIdForRepo\Timing $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOrgRcb\CbRepoRcb\Actions\RequiredWorkflows\CbRequiredWorkflowIdForRepoRcb\Timing $hydrator, string $org, string $repo, int $requiredWorkflowIdForRepo)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Org\Repo\Actions\RequiredWorkflows\RequiredWorkflowIdForRepo\Timing $hydrator, string $org, string $repo, int $requiredWorkflowIdForRepo)
     {
         $this->org                       = $org;
         $this->repo                      = $repo;
@@ -42,7 +42,7 @@ final class GetRepoRequiredWorkflowUsage
         $this->hydrator                  = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{repo}', '{required_workflow_id_for_repo}'], [$this->org, $this->repo, $this->requiredWorkflowIdForRepo], self::PATH));
     }
@@ -57,17 +57,17 @@ final class GetRepoRequiredWorkflowUsage
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowUsage::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowUsage::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\WorkflowUsage::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

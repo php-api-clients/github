@@ -23,11 +23,11 @@ final class DownloadJobLogsForWorkflowRunStreaming
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/actions/jobs/{job_id}/logs';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/jobs/{job_id}/logs';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the job.**/
+    /**The unique identifier of the job. **/
     private int $jobId;
     private readonly Browser $browser;
 
@@ -39,7 +39,7 @@ final class DownloadJobLogsForWorkflowRunStreaming
         $this->browser = $browser;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{job_id}'], [$this->owner, $this->repo, $this->jobId], self::PATH));
     }
@@ -53,7 +53,7 @@ final class DownloadJobLogsForWorkflowRunStreaming
         switch ($code) {
             /**
              * Response
-            **/
+             **/
             case 302:
                 $stream = new Subject();
                 $this->browser->requestStreaming('GET', $response->getHeaderLine('location'))->then(static function (ResponseInterface $response) use ($stream): void {

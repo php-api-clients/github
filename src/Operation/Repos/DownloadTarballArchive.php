@@ -17,9 +17,9 @@ final class DownloadTarballArchive
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/tarball/{ref}';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/tarball/{ref}';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
     private string $ref;
 
@@ -30,7 +30,7 @@ final class DownloadTarballArchive
         $this->ref   = $ref;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}'], [$this->owner, $this->repo, $this->ref], self::PATH));
     }
@@ -44,7 +44,7 @@ final class DownloadTarballArchive
         switch ($code) {
             /**
              * Response
-            **/
+             **/
             case 302:
                 return ['code' => 302, 'location' => $response->getHeaderLine('Location')];
         }

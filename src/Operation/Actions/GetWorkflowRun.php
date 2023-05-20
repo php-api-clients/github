@@ -23,18 +23,18 @@ final class GetWorkflowRun
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the workflow run.**/
+    /**The unique identifier of the workflow run. **/
     private int $runId;
-    /**If `true` pull requests are omitted from the response (empty array).**/
+    /**If `true` pull requests are omitted from the response (empty array). **/
     private bool $excludePullRequests;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Actions\Runs\CbRunIdRcb $hydrator, string $owner, string $repo, int $runId, bool $excludePullRequests = false)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId $hydrator, string $owner, string $repo, int $runId, bool $excludePullRequests = false)
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -44,7 +44,7 @@ final class GetWorkflowRun
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{exclude_pull_requests}'], [$this->owner, $this->repo, $this->runId, $this->excludePullRequests], self::PATH . '?exclude_pull_requests={exclude_pull_requests}'));
     }
@@ -59,9 +59,9 @@ final class GetWorkflowRun
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowRun::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WorkflowRun::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\WorkflowRun::class, $body);
                 }

@@ -200,46 +200,46 @@ class Meta implements ObjectMapper
             $value = $payload['SHA256_RSA'] ?? null;
 
             if ($value === null) {
-                $properties['sha256Rsa'] = null;
-                goto after_sha256Rsa;
+                $properties['shaTwoHundredFiftySixRsa'] = null;
+                goto after_shaTwoHundredFiftySixRsa;
             }
 
-            $properties['sha256Rsa'] = $value;
+            $properties['shaTwoHundredFiftySixRsa'] = $value;
 
-            after_sha256Rsa:
+            after_shaTwoHundredFiftySixRsa:
 
             $value = $payload['SHA256_DSA'] ?? null;
 
             if ($value === null) {
-                $properties['sha256Dsa'] = null;
-                goto after_sha256Dsa;
+                $properties['shaTwoHundredFiftySixDsa'] = null;
+                goto after_shaTwoHundredFiftySixDsa;
             }
 
-            $properties['sha256Dsa'] = $value;
+            $properties['shaTwoHundredFiftySixDsa'] = $value;
 
-            after_sha256Dsa:
+            after_shaTwoHundredFiftySixDsa:
 
             $value = $payload['SHA256_ECDSA'] ?? null;
 
             if ($value === null) {
-                $properties['sha256Ecdsa'] = null;
-                goto after_sha256Ecdsa;
+                $properties['shaTwoHundredFiftySixEcdsa'] = null;
+                goto after_shaTwoHundredFiftySixEcdsa;
             }
 
-            $properties['sha256Ecdsa'] = $value;
+            $properties['shaTwoHundredFiftySixEcdsa'] = $value;
 
-            after_sha256Ecdsa:
+            after_shaTwoHundredFiftySixEcdsa:
 
             $value = $payload['SHA256_ED25519'] ?? null;
 
             if ($value === null) {
-                $properties['sha256Ed25519'] = null;
-                goto after_sha256Ed25519;
+                $properties['shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen'] = null;
+                goto after_shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen;
             }
 
-            $properties['sha256Ed25519'] = $value;
+            $properties['shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen'] = $value;
 
-            after_sha256Ed25519:
+            after_shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints', $exception, stack: $this->hydrationStack);
@@ -549,36 +549,36 @@ class Meta implements ObjectMapper
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints);
         $result = [];
 
-        $sha256Rsa = $object->sha256Rsa;
+        $shaTwoHundredFiftySixRsa = $object->shaTwoHundredFiftySixRsa;
 
-        if ($sha256Rsa === null) {
-            goto after_sha256Rsa;
+        if ($shaTwoHundredFiftySixRsa === null) {
+            goto after_shaTwoHundredFiftySixRsa;
         }
-        after_sha256Rsa:        $result['SHA256_RSA'] = $sha256Rsa;
+        after_shaTwoHundredFiftySixRsa:        $result['SHA256_RSA'] = $shaTwoHundredFiftySixRsa;
 
         
-        $sha256Dsa = $object->sha256Dsa;
+        $shaTwoHundredFiftySixDsa = $object->shaTwoHundredFiftySixDsa;
 
-        if ($sha256Dsa === null) {
-            goto after_sha256Dsa;
+        if ($shaTwoHundredFiftySixDsa === null) {
+            goto after_shaTwoHundredFiftySixDsa;
         }
-        after_sha256Dsa:        $result['SHA256_DSA'] = $sha256Dsa;
+        after_shaTwoHundredFiftySixDsa:        $result['SHA256_DSA'] = $shaTwoHundredFiftySixDsa;
 
         
-        $sha256Ecdsa = $object->sha256Ecdsa;
+        $shaTwoHundredFiftySixEcdsa = $object->shaTwoHundredFiftySixEcdsa;
 
-        if ($sha256Ecdsa === null) {
-            goto after_sha256Ecdsa;
+        if ($shaTwoHundredFiftySixEcdsa === null) {
+            goto after_shaTwoHundredFiftySixEcdsa;
         }
-        after_sha256Ecdsa:        $result['SHA256_ECDSA'] = $sha256Ecdsa;
+        after_shaTwoHundredFiftySixEcdsa:        $result['SHA256_ECDSA'] = $shaTwoHundredFiftySixEcdsa;
 
         
-        $sha256Ed25519 = $object->sha256Ed25519;
+        $shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen = $object->shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen;
 
-        if ($sha256Ed25519 === null) {
-            goto after_sha256Ed25519;
+        if ($shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen === null) {
+            goto after_shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen;
         }
-        after_sha256Ed25519:        $result['SHA256_ED25519'] = $sha256Ed25519;
+        after_shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen:        $result['SHA256_ED25519'] = $shaTwoHundredFiftySixEdTwentyFiveThousandFiveHundredNineteen;
 
 
         return $result;

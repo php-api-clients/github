@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Teams;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Operation\Teams\CreateDiscussionCommentInOrg;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class CreateDiscussionCommentInOrgTest extends AsyncTestCase
@@ -21,7 +22,7 @@ final class CreateDiscussionCommentInOrgTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_201_requestContentType_application_json_responseContentType_application_json(): void
+    public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\TeamDiscussionComment::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
@@ -29,14 +30,30 @@ final class CreateDiscussionCommentInOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated_null/teams/generated_null/discussions/13/comments', Argument::type('array'), Schema\Teams\CreateDiscussionCommentInOrg\Request\Applicationjson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/teams/generated/discussions/17/comments', Argument::type('array'), Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(CreateDiscussionCommentInOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']               = 'generated_null';
-            $data['team_slug']         = 'generated_null';
-            $data['discussion_number'] = 13;
+        $result = $client->call(Operation\Teams\CreateDiscussionCommentInOrg::OPERATION_MATCH, (static function (array $data): array {
+            $data['org']               = 'generated';
+            $data['team_slug']         = 'generated';
+            $data['discussion_number'] = 17;
 
             return $data;
-        })(json_decode(Schema\Teams\CreateDiscussionCommentInOrg\Request\Applicationjson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\TeamDiscussionComment::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/orgs/generated/teams/generated/discussions/17/comments', Argument::type('array'), Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->teams()->createDiscussionCommentInOrg('generated', 'generated', 17, json_decode(Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

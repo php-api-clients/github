@@ -24,24 +24,27 @@ final class CheckIsStarred
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/star';
     private const METHOD         = 'GET';
     private const PATH           = '/gists/{gist_id}/star';
-    /**The unique identifier of the gist.**/
+    /**The unique identifier of the gist. **/
     private string $gistId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\CbGistIdRcb\Star $hydrator;
+    private readonly Hydrator\Operation\Gists\GistId\Star $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\CbGistIdRcb\Star $hydrator, string $gistId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Star $hydrator, string $gistId)
     {
         $this->gistId                  = $gistId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,22 +54,36 @@ final class CheckIsStarred
                 switch ($code) {
                     /**
                      * Not Found if gist is not starred
-                    **/
+                     **/
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Gists\CheckIsStarred\Response\Applicationjson\H404::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operation\Gists\CheckIsStarred\Response\Applicationjson\H404(404, $this->hydrator->hydrateObject(Schema\Operation\Gists\CheckIsStarred\Response\Applicationjson\H404::class, $body));
+                        throw new ErrorSchemas\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound(404, $this->hydrator->hydrateObject(Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound::class, $body));
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Response if gist is starred
+             **/
+            case 204:
+                return ['code' => 204];
+            /**
+             * Not modified
+             **/
+
+            case 304:
+                return ['code' => 304];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

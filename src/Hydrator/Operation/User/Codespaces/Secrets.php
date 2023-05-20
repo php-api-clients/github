@@ -23,14 +23,13 @@ class Secrets implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️Applicationjson⚡️H200($payload),
-                'ApiClients\Client\GitHub\Schema\CodespacesSecret' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesSecret($payload),
+            'ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️ApplicationJson⚡️Ok($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️Applicationjson⚡️H200(array $payload): \ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️ApplicationJson⚡️Ok(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok
     {
         $properties = []; 
         $missingFields = [];
@@ -53,108 +52,22 @@ class Secrets implements ObjectMapper
                 goto after_secrets;
             }
 
-            static $secretsCaster1;
-
-            if ($secretsCaster1 === null) {
-                $secretsCaster1 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\CodespacesSecret',
-));
-            }
-
-            $value = $secretsCaster1->cast($value, $this);
-
             $properties['secrets'] = $value;
 
             after_secrets:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesSecret(array $payload): \ApiClients\Client\GitHub\Schema\CodespacesSecret
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['visibility'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'visibility';
-                goto after_visibility;
-            }
-
-            $properties['visibility'] = $value;
-
-            after_visibility:
-
-            $value = $payload['selected_repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'selected_repositories_url';
-                goto after_selectedRepositoriesUrl;
-            }
-
-            $properties['selectedRepositoriesUrl'] = $value;
-
-            after_selectedRepositoriesUrl:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesSecret', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CodespacesSecret::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\CodespacesSecret(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodespacesSecret', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -189,8 +102,7 @@ class Secrets implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️Applicationjson⚡️H200($object),
-            'ApiClients\Client\GitHub\Schema\CodespacesSecret' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesSecret($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️ApplicationJson⚡️Ok($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
         } catch (\Throwable $exception) {
@@ -264,9 +176,9 @@ class Secrets implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operation⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️Applicationjson⚡️H200(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Codespaces⚡️ListSecretsForAuthenticatedUser⚡️Response⚡️ApplicationJson⚡️Ok(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operation\Codespaces\ListSecretsForAuthenticatedUser\Response\Applicationjson\H200);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok);
         $result = [];
 
         $totalCount = $object->totalCount;
@@ -277,42 +189,12 @@ class Secrets implements ObjectMapper
         static $secretsSerializer0;
 
         if ($secretsSerializer0 === null) {
-            $secretsSerializer0 = new \EventSauce\ObjectHydrator\PropertyCasters\CastListToType(...array (
-  0 => 'ApiClients\\Client\\GitHub\\Schema\\CodespacesSecret',
+            $secretsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
 ));
         }
         
         $secrets = $secretsSerializer0->serialize($secrets, $this);
         after_secrets:        $result['secrets'] = $secrets;
-
-
-        return $result;
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodespacesSecret(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CodespacesSecret);
-        $result = [];
-
-        $name = $object->name;
-        after_name:        $result['name'] = $name;
-
-        
-        $createdAt = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        
-        $updatedAt = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        
-        $visibility = $object->visibility;
-        after_visibility:        $result['visibility'] = $visibility;
-
-        
-        $selectedRepositoriesUrl = $object->selectedRepositoriesUrl;
-        after_selectedRepositoriesUrl:        $result['selected_repositories_url'] = $selectedRepositoriesUrl;
 
 
         return $result;

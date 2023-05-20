@@ -23,19 +23,19 @@ final class GetUserInstallation
     public const OPERATION_MATCH = 'GET /users/{username}/installation';
     private const METHOD         = 'GET';
     private const PATH           = '/users/{username}/installation';
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\CbUsernameRcb\Installation $hydrator;
+    private readonly Hydrator\Operation\Users\Username\Installation $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb\Installation $hydrator, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Installation $hydrator, string $username)
     {
         $this->username                = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
     }
@@ -50,9 +50,9 @@ final class GetUserInstallation
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Installation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Installation::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Installation::class, $body);
                 }

@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Actions;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Actions\DeleteWorkflowRunLogs;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class DeleteWorkflowRunLogsTest extends AsyncTestCase
@@ -21,7 +22,7 @@ final class DeleteWorkflowRunLogsTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_403_responseContentType_application_json(): void
+    public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -30,12 +31,12 @@ final class DeleteWorkflowRunLogsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated_null/generated_null/actions/runs/13/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(DeleteWorkflowRunLogs::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']  = 'generated_null';
-            $data['repo']   = 'generated_null';
-            $data['run_id'] = 13;
+        $result = $client->call(Operation\Actions\DeleteWorkflowRunLogs::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']  = 'generated';
+            $data['repo']   = 'generated';
+            $data['run_id'] = 6;
 
             return $data;
         })([]));
@@ -44,7 +45,24 @@ final class DeleteWorkflowRunLogsTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_500_responseContentType_application_json(): void
+    public function operations_httpCode_403_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->actions()->deleteWorkflowRunLogs('generated', 'generated', 6));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -53,14 +71,71 @@ final class DeleteWorkflowRunLogsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated_null/generated_null/actions/runs/13/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(DeleteWorkflowRunLogs::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']  = 'generated_null';
-            $data['repo']   = 'generated_null';
-            $data['run_id'] = 13;
+        $result = $client->call(Operation\Actions\DeleteWorkflowRunLogs::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']  = 'generated';
+            $data['repo']   = 'generated';
+            $data['run_id'] = 6;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_500_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->actions()->deleteWorkflowRunLogs('generated', 'generated', 6));
+    }
+
+    /**
+     * @test
+     */
+    public function call_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Actions\DeleteWorkflowRunLogs::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']  = 'generated';
+            $data['repo']   = 'generated';
+            $data['run_id'] = 6;
+
+            return $data;
+        })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_204_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/repos/generated/generated/actions/runs/6/logs', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->actions()->deleteWorkflowRunLogs('generated', 'generated', 6));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(204, $result['code']);
     }
 }

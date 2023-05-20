@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\TimelineReviewedEvent\Links;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class Html extends Schema\AliasAbstract\Abstractf77b7beed3678f701df1eadebe02277d
+final readonly class Html
 {
+    public const SCHEMA_JSON         = '{"required":["href"],"type":"object","properties":{"href":{"type":"string"}}}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = '';
+    public const SCHEMA_EXAMPLE_DATA = '{"href":"generated"}';
+
+    public function __construct(public string $href)
+    {
+    }
 }

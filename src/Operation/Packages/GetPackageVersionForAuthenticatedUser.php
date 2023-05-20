@@ -23,16 +23,16 @@ final class GetPackageVersionForAuthenticatedUser
     public const OPERATION_MATCH = 'GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/user/packages/{package_type}/{package_name}/versions/{package_version_id}';
-    /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.**/
+    /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
-    /**The name of the package.**/
+    /**The name of the package. **/
     private string $packageName;
-    /**Unique identifier of the package version.**/
+    /**Unique identifier of the package version. **/
     private int $packageVersionId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Packages\CbPackageTypeRcb\CbPackageNameRcb\Versions\CbPackageVersionIdRcb $hydrator;
+    private readonly Hydrator\Operation\User\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Packages\CbPackageTypeRcb\CbPackageNameRcb\Versions\CbPackageVersionIdRcb $hydrator, string $packageType, string $packageName, int $packageVersionId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, int $packageVersionId)
     {
         $this->packageType             = $packageType;
         $this->packageName             = $packageName;
@@ -41,7 +41,7 @@ final class GetPackageVersionForAuthenticatedUser
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{package_version_id}'], [$this->packageType, $this->packageName, $this->packageVersionId], self::PATH));
     }
@@ -56,9 +56,9 @@ final class GetPackageVersionForAuthenticatedUser
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PackageVersion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PackageVersion::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\PackageVersion::class, $body);
                 }

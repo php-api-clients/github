@@ -24,16 +24,16 @@ final class GetViews
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/traffic/views';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/traffic/views';
-    /**The account owner of the repository. The name is not case sensitive.**/
+    /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive.**/
+    /**The name of the repository. The name is not case sensitive. **/
     private string $repo;
-    /**The time frame to display results for.**/
+    /**The time frame to display results for. **/
     private string $per;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Traffic\Views $hydrator;
+    private readonly Hydrator\Operation\Repos\Owner\Repo\Traffic\Views $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\CbOwnerRcb\CbRepoRcb\Traffic\Views $hydrator, string $owner, string $repo, string $per = 'day')
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Traffic\Views $hydrator, string $owner, string $repo, string $per = 'day')
     {
         $this->owner                   = $owner;
         $this->repo                    = $repo;
@@ -42,7 +42,7 @@ final class GetViews
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per}'], [$this->owner, $this->repo, $this->per], self::PATH . '?per={per}'));
     }
@@ -57,17 +57,17 @@ final class GetViews
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ViewTraffic::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ViewTraffic::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ViewTraffic::class, $body);
                     /**
                      * Forbidden
-                    **/
+                     **/
 
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

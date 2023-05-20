@@ -23,16 +23,16 @@ final class GetEnvironmentSecret
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
     private const METHOD         = 'GET';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    /**The unique identifier of the repository.**/
+    /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment.**/
+    /**The name of the environment. **/
     private string $environmentName;
-    /**The name of the secret.**/
+    /**The name of the secret. **/
     private string $secretName;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets\CbSecretNameRcb $hydrator;
+    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\CbRepositoryIdRcb\Environments\CbEnvironmentNameRcb\Secrets\CbSecretNameRcb $hydrator, int $repositoryId, string $environmentName, string $secretName)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
     {
         $this->repositoryId            = $repositoryId;
         $this->environmentName         = $environmentName;
@@ -41,7 +41,7 @@ final class GetEnvironmentSecret
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], self::PATH));
     }
@@ -56,9 +56,9 @@ final class GetEnvironmentSecret
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsSecret::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ActionsSecret::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\ActionsSecret::class, $body);
                 }

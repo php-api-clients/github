@@ -6,16 +6,12 @@ namespace ApiClients\Client\GitHub\Router\Get;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operation;
-use ApiClients\Client\GitHub\Schema\GistComment;
-use ApiClients\Client\GitHub\Schema\GistSimple;
+use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use Rx\Observable;
 
 use function array_key_exists;
 
@@ -63,12 +59,9 @@ final class Gists
             $this->hydrator[Hydrator\Operation\Gists::class] = $this->hydrators->getObjectMapperOperation🌀Gists();
         }
 
-        $operation = new Operation\Gists\List_($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists::class], $arguments['since'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\List_($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listComments(array $params)
@@ -92,16 +85,13 @@ final class Gists
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Comments::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Comments();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Comments::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Comments::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments();
         }
 
-        $operation = new Operation\Gists\ListComments($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments::class], $arguments['gist_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListComments($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Comments::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listCommits(array $params)
@@ -125,16 +115,13 @@ final class Gists
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Commits::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Commits::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Commits();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Commits::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Commits::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Commits();
         }
 
-        $operation = new Operation\Gists\ListCommits($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Commits::class], $arguments['gist_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListCommits($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Commits::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listForks(array $params)
@@ -158,16 +145,13 @@ final class Gists
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Forks::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Forks::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Forks();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Forks::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Forks::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Forks();
         }
 
-        $operation = new Operation\Gists\ListForks($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Forks::class], $arguments['gist_id'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListForks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Forks::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function checkIsStarred(array $params)
@@ -179,16 +163,13 @@ final class Gists
 
         $arguments['gist_id'] = $params['gist_id'];
         unset($params['gist_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Star::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Star::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Star();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Star::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Star::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Star();
         }
 
-        $operation = new Operation\Gists\CheckIsStarred($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Star::class], $arguments['gist_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\CheckIsStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Star::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id']);
     }
 
     public function getRevision(array $params)
@@ -206,16 +187,13 @@ final class Gists
 
         $arguments['sha'] = $params['sha'];
         unset($params['sha']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀CbShaRcb();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Sha::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Sha::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Sha();
         }
 
-        $operation = new Operation\Gists\GetRevision($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\CbShaRcb::class], $arguments['gist_id'], $arguments['sha']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\GetRevision($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Sha::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['sha']);
     }
 
     public function listForUser(array $params)
@@ -245,16 +223,13 @@ final class Gists
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Users\CbUsernameRcb\Gists::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Users\CbUsernameRcb\Gists::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀CbUsernameRcb🌀Gists();
+        if (array_key_exists(Hydrator\Operation\Users\Username\Gists::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Users\Username\Gists::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Gists();
         }
 
-        $operation = new Operation\Gists\ListForUser($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\CbUsernameRcb\Gists::class], $arguments['username'], $arguments['since'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\Username\Gists::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['username'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getComment(array $params)
@@ -272,16 +247,13 @@ final class Gists
 
         $arguments['comment_id'] = $params['comment_id'];
         unset($params['comment_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb🌀Comments🌀CbCommentIdRcb();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId\Comments\CommentId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId\Comments\CommentId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments🌀CommentId();
         }
 
-        $operation = new Operation\Gists\GetComment($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb\Comments\CbCommentIdRcb::class], $arguments['gist_id'], $arguments['comment_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\GetComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Comments\CommentId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistComment {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id'], $arguments['comment_id']);
     }
 
     public function listPublic(array $params)
@@ -309,12 +281,9 @@ final class Gists
             $this->hydrator[Hydrator\Operation\Gists\Public_::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_();
         }
 
-        $operation = new Operation\Gists\ListPublic($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Public_::class], $arguments['since'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListPublic($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Public_::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
     public function listStarred(array $params)
@@ -342,12 +311,9 @@ final class Gists
             $this->hydrator[Hydrator\Operation\Gists\Starred::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred();
         }
 
-        $operation = new Operation\Gists\ListStarred($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Starred::class], $arguments['since'], $arguments['per_page'], $arguments['page']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\ListStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Starred::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
     public function get(array $params)
@@ -359,15 +325,12 @@ final class Gists
 
         $arguments['gist_id'] = $params['gist_id'];
         unset($params['gist_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\CbGistIdRcb::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀CbGistIdRcb();
+        if (array_key_exists(Hydrator\Operation\Gists\GistId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId();
         }
 
-        $operation = new Operation\Gists\Get($this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\CbGistIdRcb::class], $arguments['gist_id']);
-        $request   = $operation->createRequest($params);
+        $operator = new Operator\Gists\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId::class]);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple {
-            return $operation->createResponse($response);
-        });
+        return $operator->call($arguments['gist_id']);
     }
 }

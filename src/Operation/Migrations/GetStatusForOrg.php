@@ -24,16 +24,16 @@ final class GetStatusForOrg
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/migrations/{migration_id}';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The unique identifier of the migration.**/
+    /**The unique identifier of the migration. **/
     private int $migrationId;
-    /**Exclude attributes from the API response to improve performance**/
+    /**Exclude attributes from the API response to improve performance **/
     private array $exclude;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\Migrations\CbMigrationIdRcb $hydrator, string $org, int $migrationId, array $exclude)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator, string $org, int $migrationId, array $exclude)
     {
         $this->org                     = $org;
         $this->migrationId             = $migrationId;
@@ -42,7 +42,7 @@ final class GetStatusForOrg
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{migration_id}', '{exclude}'], [$this->org, $this->migrationId, $this->exclude], self::PATH . '?exclude={exclude}'));
     }
@@ -60,17 +60,17 @@ final class GetStatusForOrg
                     *   `exporting`, which means the migration is in progress.
                     *   `exported`, which means the migration finished successfully.
                     *   `failed`, which means the migration failed.
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Migration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Migration::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\Migration::class, $body);
                     /**
                      * Resource not found
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

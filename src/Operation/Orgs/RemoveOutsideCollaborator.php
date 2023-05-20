@@ -24,14 +24,14 @@ final class RemoveOutsideCollaborator
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/outside_collaborators/{username}';
     private const METHOD         = 'DELETE';
     private const PATH           = '/orgs/{org}/outside_collaborators/{username}';
-    /**The organization name. The name is not case sensitive.**/
+    /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\CbOrgRcb\OutsideCollaborators\CbUsernameRcb $hydrator;
+    private readonly Hydrator\Operation\Orgs\Org\OutsideCollaborators\Username $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\CbOrgRcb\OutsideCollaborators\CbUsernameRcb $hydrator, string $org, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\OutsideCollaborators\Username $hydrator, string $org, string $username)
     {
         $this->org                     = $org;
         $this->username                = $username;
@@ -39,12 +39,15 @@ final class RemoveOutsideCollaborator
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /**
+     * @return array{code: int}
+     */
+    public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,14 +57,22 @@ final class RemoveOutsideCollaborator
                 switch ($code) {
                     /**
                      * Unprocessable Entity if user is a member of the organization
-                    **/
+                     **/
                     case 422:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422(422, $this->hydrator->hydrateObject(Schema\Operation\Orgs\RemoveOutsideCollaborator\Response\Applicationjson\H422::class, $body));
+                        throw new ErrorSchemas\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity(422, $this->hydrator->hydrateObject(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class, $body));
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * Response
+             **/
+            case 204:
+                return ['code' => 204];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -6,7 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Reactions;
 
 use ApiClients\Client\GitHub\Client;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
-use ApiClients\Client\GitHub\Operation\Reactions\ListForRelease;
+use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Prophecy\Argument;
@@ -14,6 +14,7 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+use function React\Async\await;
 use function React\Promise\resolve;
 
 final class ListForReleaseTest extends AsyncTestCase
@@ -21,32 +22,7 @@ final class ListForReleaseTest extends AsyncTestCase
     /**
      * @test
      */
-    public function httpCode_200_responseContentType_application_json(): void
-    {
-        $response = new Response(200, ['Content-Type' => 'application/json'], '[' . Schema\Reaction::SCHEMA_EXAMPLE_DATA . ']');
-        $auth     = $this->prophesize(AuthenticationInterface::class);
-        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
-        $browser = $this->prophesize(Browser::class);
-        $browser->withBase(Argument::any())->willReturn($browser->reveal());
-        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/releases/13/reactions?content=generated_null&per_page=13&page=13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
-        $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(ListForRelease::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']      = 'generated_null';
-            $data['repo']       = 'generated_null';
-            $data['release_id'] = 13;
-            $data['content']    = 'generated_null';
-            $data['per_page']   = 13;
-            $data['page']       = 13;
-
-            return $data;
-        })([]));
-    }
-
-    /**
-     * @test
-     */
-    public function httpCode_404_responseContentType_application_json(): void
+    public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
         $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -55,17 +31,34 @@ final class ListForReleaseTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated_null/generated_null/releases/13/reactions?content=generated_null&per_page=13&page=13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/releases/10/reactions?content=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $client->call(ListForRelease::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']      = 'generated_null';
-            $data['repo']       = 'generated_null';
-            $data['release_id'] = 13;
-            $data['content']    = 'generated_null';
-            $data['per_page']   = 13;
-            $data['page']       = 13;
+        $result = $client->call(Operation\Reactions\ListForRelease::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']      = 'generated';
+            $data['repo']       = 'generated';
+            $data['release_id'] = 10;
+            $data['content']    = 'generated';
+            $data['per_page']   = 8;
+            $data['page']       = 4;
 
             return $data;
         })([]));
+    }
+
+    /**
+     * @test
+     */
+    public function operations_httpCode_404_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/releases/10/reactions?content=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->reactions()->listForRelease('generated', 'generated', 10, 'generated', 8, 4));
     }
 }

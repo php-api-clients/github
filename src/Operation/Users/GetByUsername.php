@@ -24,24 +24,24 @@ final class GetByUsername
     public const OPERATION_MATCH = 'GET /users/{username}';
     private const METHOD         = 'GET';
     private const PATH           = '/users/{username}';
-    /**The handle for the GitHub user account.**/
+    /**The handle for the GitHub user account. **/
     private string $username;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\CbUsernameRcb $hydrator;
+    private readonly Hydrator\Operation\Users\Username $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\CbUsernameRcb $hydrator, string $username)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username $hydrator, string $username)
     {
         $this->username                = $username;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operation\Users\GetByUsername\Response\Applicationjson\H200
+    public function createResponse(ResponseInterface $response): mixed
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -50,18 +50,10 @@ final class GetByUsername
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * Response
-                    **/
-                    case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operation\Users\GetByUsername\Response\Applicationjson\H200::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
-                        return $this->hydrator->hydrateObject(Schema\Operation\Users\GetByUsername\Response\Applicationjson\H200::class, $body);
-                    /**
                      * Resource not found
-                    **/
-
+                     **/
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }

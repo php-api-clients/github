@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\SimpleCommit;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class Author extends Schema\AliasAbstract\Abstract21cc71140adfe32b7431f2079176dee1
+final readonly class Author
 {
+    public const SCHEMA_JSON         = '{"required":["name","email"],"type":["object","null"],"properties":{"name":{"type":"string"},"email":{"type":"string"}}}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = '';
+    public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","email":"generated"}';
+
+    public function __construct(public string $name, public string $email)
+    {
+    }
 }

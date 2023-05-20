@@ -24,19 +24,19 @@ final class GetSubscriptionPlanForAccount
     public const OPERATION_MATCH = 'GET /marketplace_listing/accounts/{account_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/marketplace_listing/accounts/{account_id}';
-    /**account_id parameter**/
+    /**account_id parameter **/
     private int $accountId;
     private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\MarketplaceListing\Accounts\CbAccountIdRcb $hydrator;
+    private readonly Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Accounts\CbAccountIdRcb $hydrator, int $accountId)
+    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator, int $accountId)
     {
         $this->accountId               = $accountId;
         $this->responseSchemaValidator = $responseSchemaValidator;
         $this->hydrator                = $hydrator;
     }
 
-    public function createRequest(array $data = []): RequestInterface
+    public function createRequest(): RequestInterface
     {
         return new Request(self::METHOD, str_replace(['{account_id}'], [$this->accountId], self::PATH));
     }
@@ -51,25 +51,25 @@ final class GetSubscriptionPlanForAccount
                 switch ($code) {
                     /**
                      * Response
-                    **/
+                     **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MarketplacePurchase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MarketplacePurchase::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         return $this->hydrator->hydrateObject(Schema\MarketplacePurchase::class, $body);
                     /**
                      * Not Found when the account has not purchased the listing
-                    **/
+                     **/
 
                     case 404:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
                      * Requires authentication
-                    **/
+                     **/
 
                     case 401:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(401, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
