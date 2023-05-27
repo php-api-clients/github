@@ -63,7 +63,7 @@ final class ListForRef
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}', '{check_name}', '{status}', '{app_id}', '{filter}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->ref, $this->checkName, $this->status, $this->appId, $this->filter, $this->perPage, $this->page], self::PATH . '?check_name={check_name}&status={status}&app_id={app_id}&filter={filter}&per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok
+    public function createResponse(ResponseInterface $response): Schema\Operations\Checks\ListForRef\Response\ApplicationJson\Ok\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -75,9 +75,9 @@ final class ListForRef
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Checks\ListForRef\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Checks\ListForRef\Response\ApplicationJson\Ok\Application\Json::class, $body);
                 }
 
                 break;

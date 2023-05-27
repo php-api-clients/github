@@ -32,13 +32,13 @@ final class DeleteTokenTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Apps\DeleteToken::OPERATION_MATCH, (static function (array $data): array {
             $data['client_id'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -53,9 +53,9 @@ final class DeleteTokenTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->apps()->deleteToken('generated', json_decode(Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->apps()->deleteToken('generated', json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -69,13 +69,13 @@ final class DeleteTokenTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Apps\DeleteToken::OPERATION_MATCH, (static function (array $data): array {
             $data['client_id'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -89,9 +89,9 @@ final class DeleteTokenTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/applications/generated/token', Argument::type('array'), Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->apps()->deleteToken('generated', json_decode(Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->apps()->deleteToken('generated', json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }

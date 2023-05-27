@@ -25,7 +25,7 @@ final readonly class OrganizationProgrammaticAccessGrant
      * tokenExpiresAt: Date and time when the associated fine-grained personal access token expires.
      * tokenLastUsedAt: Date and time when the associated fine-grained personal access token was last used for authentication.
      */
-    public function __construct(public int $id, public Schema\SimpleUser $owner, #[MapFrom('repository_selection')] public string $repositorySelection, #[MapFrom('repositories_url')] public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrantRequest\Permissions $permissions, #[MapFrom('access_granted_at')] public string $accessGrantedAt, #[MapFrom('token_expired')] public bool $tokenExpired, #[MapFrom('token_expires_at')] public ?string $tokenExpiresAt, #[MapFrom('token_last_used_at')] public ?string $tokenLastUsedAt)
+    public function __construct(public int $id, public Schema\SimpleUser $owner, #[MapFrom('repository_selection')] public string $repositorySelection, #[MapFrom('repositories_url')] public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrant\Permissions $permissions, #[MapFrom('access_granted_at')] public string $accessGrantedAt, #[MapFrom('token_expired')] public bool $tokenExpired, #[MapFrom('token_expires_at')] public ?string $tokenExpiresAt, #[MapFrom('token_last_used_at')] public ?string $tokenLastUsedAt)
     {
     }
 }

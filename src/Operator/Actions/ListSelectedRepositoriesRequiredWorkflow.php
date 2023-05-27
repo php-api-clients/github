@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Actions;
 
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
@@ -24,14 +24,14 @@ final readonly class ListSelectedRepositoriesRequiredWorkflow
     }
 
     /**
-     * @return PromiseInterface<(Ok|array)>
+     * @return PromiseInterface<(Json|array)>
      **/
     public function call(string $org, int $requiredWorkflowId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListSelectedRepositoriesRequiredWorkflow($this->responseSchemaValidator, $this->hydrator, $org, $requiredWorkflowId);
         $request   = $operation->createRequest();
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
             return $operation->createResponse($response);
         });
     }

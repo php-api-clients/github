@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repos\CreateDeployment\Request;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -24,7 +25,7 @@ final readonly class ApplicationJson
      * transientEnvironment: Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
      * productionEnvironment: Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
      */
-    public function __construct(public string $ref, public ?string $task, #[MapFrom('auto_merge')] public ?bool $autoMerge, #[MapFrom('required_contexts')] public ?array $requiredContexts, public null|Schema\Deployment\Payload\Zero|string $payload, public ?string $environment, public ?string $description, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment)
+    public function __construct(public string $ref, public ?string $task, #[MapFrom('auto_merge')] public ?bool $autoMerge, #[MapFrom('required_contexts')] public ?array $requiredContexts, #[Payload] public null|Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload\Zero|string $payload, public ?string $environment, public ?string $description, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment)
     {
     }
 }

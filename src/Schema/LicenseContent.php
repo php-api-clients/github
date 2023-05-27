@@ -14,7 +14,7 @@ final readonly class LicenseContent
     public const SCHEMA_DESCRIPTION  = 'License Content';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","path":"generated","sha":"generated","size":4,"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","git_url":"https:\\/\\/example.com\\/","download_url":"https:\\/\\/example.com\\/","type":"generated","content":"generated","encoding":"generated","_links":{"git":"https:\\/\\/example.com\\/","html":"https:\\/\\/example.com\\/","self":"https:\\/\\/example.com\\/"},"license":{"key":"mit","name":"MIT License","url":"https:\\/\\/api.github.com\\/licenses\\/mit","spdx_id":"MIT","node_id":"MDc6TGljZW5zZW1pdA==","html_url":"https:\\/\\/example.com\\/"}}';
 
-    public function __construct(public string $name, public string $path, public string $sha, public int $size, public string $url, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('git_url')] public ?string $gitUrl, #[MapFrom('download_url')] public ?string $downloadUrl, public string $type, public string $content, public string $encoding, #[MapFrom('_links')] public Schema\ContentTree\Entries\Links $links, public ?Schema\LicenseSimple $license)
+    public function __construct(public string $name, public string $path, public string $sha, public int $size, public string $url, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('git_url')] public ?string $gitUrl, #[MapFrom('download_url')] public ?string $downloadUrl, public string $type, public string $content, public string $encoding, #[MapFrom('_links')] public Schema\LicenseContent\Links $links, public ?Schema\LicenseSimple $license)
     {
     }
 }

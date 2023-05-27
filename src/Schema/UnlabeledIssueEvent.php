@@ -17,7 +17,7 @@ final readonly class UnlabeledIssueEvent
     /**
      * actor: A GitHub user.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public Schema\LabeledIssueEvent\Label $label)
+    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public Schema\UnlabeledIssueEvent\Label $label)
     {
     }
 }

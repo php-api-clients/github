@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson;
 
-final readonly class NotFound
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{},"additionalProperties":false}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '[]';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct()
-    {
-    }
+final readonly class NotFound extends Schema\AliasAbstract\TietE1799B92\Tiet5032A0F8\Tiet8BB31395\Tiet34B34FE7
+{
 }

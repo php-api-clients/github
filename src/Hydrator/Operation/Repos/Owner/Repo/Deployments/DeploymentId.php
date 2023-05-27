@@ -112,6 +112,15 @@ class DeploymentId implements ObjectMapper
                 goto after_payload;
             }
 
+            static $payloadCaster1;
+
+            if ($payloadCaster1 === null) {
+                $payloadCaster1 = new \ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Deployment\Payload(...array (
+));
+            }
+
+            $value = $payloadCaster1->cast($value, $this);
+
             $properties['payload'] = $value;
 
             after_payload:

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookPackagePublished\Package\PackageVersion;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value;
 use ApiClients\Client\GitHub\Schema;
 
 final readonly class NugetMetadata
@@ -13,7 +14,7 @@ final readonly class NugetMetadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":null,"name":"generated","value":null}';
 
-    public function __construct(public null|int|string $id, public ?string $name, public null|bool|string|int|Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value\Three $value)
+    public function __construct(public null|int|string $id, public ?string $name, #[Value] public null|bool|string|int|Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value\Three $value)
     {
     }
 }

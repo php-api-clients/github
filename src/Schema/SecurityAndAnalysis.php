@@ -14,7 +14,7 @@ final readonly class SecurityAndAnalysis
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"advanced_security":{"status":"disabled"},"secret_scanning":{"status":"disabled"},"secret_scanning_push_protection":{"status":"disabled"}}';
 
-    public function __construct(#[MapFrom('advanced_security')] public ?Schema\SecurityAndAnalysis\AdvancedSecurity $advancedSecurity, #[MapFrom('secret_scanning')] public ?Schema\SecurityAndAnalysis\AdvancedSecurity $secretScanning, #[MapFrom('secret_scanning_push_protection')] public ?Schema\SecurityAndAnalysis\AdvancedSecurity $secretScanningPushProtection)
+    public function __construct(#[MapFrom('advanced_security')] public ?Schema\SecurityAndAnalysis\AdvancedSecurity $advancedSecurity, #[MapFrom('secret_scanning')] public ?Schema\SecurityAndAnalysis\SecretScanning $secretScanning, #[MapFrom('secret_scanning_push_protection')] public ?Schema\SecurityAndAnalysis\SecretScanningPushProtection $secretScanningPushProtection)
     {
     }
 }

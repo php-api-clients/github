@@ -30,13 +30,13 @@ final class CreateDiscussionLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/teams/7/discussions', Argument::type('array'), Schema\Teams\CreateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/teams/7/discussions', Argument::type('array'), Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\CreateDiscussionLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id'] = 7;
 
             return $data;
-        })(json_decode(Schema\Teams\CreateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -50,8 +50,8 @@ final class CreateDiscussionLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/teams/7/discussions', Argument::type('array'), Schema\Teams\CreateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/teams/7/discussions', Argument::type('array'), Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->createDiscussionLegacy(7, json_decode(Schema\Teams\CreateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->createDiscussionLegacy(7, json_decode(Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

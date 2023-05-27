@@ -20,7 +20,7 @@ final readonly class WebhookDiscussionUnanswered
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\Discussion $discussion, #[MapFrom('old_answer')] public Schema\WebhookDiscussionAnswered\Answer $oldAnswer, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Discussion $discussion, #[MapFrom('old_answer')] public Schema\WebhookDiscussionUnanswered\OldAnswer $oldAnswer, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

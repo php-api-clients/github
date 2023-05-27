@@ -31,14 +31,14 @@ final class UpdateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Gists\UpdateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['gist_id']    = 'generated';
             $data['comment_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -52,9 +52,9 @@ final class UpdateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->gists()->updateComment('generated', 10, json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->gists()->updateComment('generated', 10, json_decode(Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -69,14 +69,14 @@ final class UpdateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Gists\UpdateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['gist_id']    = 'generated';
             $data['comment_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -91,8 +91,8 @@ final class UpdateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/gists/generated/comments/10', Argument::type('array'), Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->gists()->updateComment('generated', 10, json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->gists()->updateComment('generated', 10, json_decode(Schema\Gists\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

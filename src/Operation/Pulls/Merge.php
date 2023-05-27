@@ -72,17 +72,17 @@ final class Merge
                      **/
 
                     case 405:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity(405, $this->hydrator->hydrateObject(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class, $body));
+                        throw new ErrorSchemas\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json(405, $this->hydrator->hydrateObject(Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json::class, $body));
                     /**
                      * Conflict if sha was provided and pull request head did not match
                      **/
 
                     case 409:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity(409, $this->hydrator->hydrateObject(Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class, $body));
+                        throw new ErrorSchemas\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json(409, $this->hydrator->hydrateObject(Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json::class, $body));
                     /**
                      * Validation failed, or the endpoint has been spammed.
                      **/

@@ -47,7 +47,7 @@ final class CreateComment
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }

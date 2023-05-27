@@ -30,14 +30,14 @@ final class UpdateDiscussionLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/teams/7/discussions/17', Argument::type('array'), Schema\Teams\UpdateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/teams/7/discussions/17', Argument::type('array'), Schema\Teams\UpdateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\UpdateDiscussionLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']           = 7;
             $data['discussion_number'] = 17;
 
             return $data;
-        })(json_decode(Schema\Teams\UpdateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\UpdateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -51,8 +51,8 @@ final class UpdateDiscussionLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/teams/7/discussions/17', Argument::type('array'), Schema\Teams\UpdateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/teams/7/discussions/17', Argument::type('array'), Schema\Teams\UpdateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->updateDiscussionLegacy(7, 17, json_decode(Schema\Teams\UpdateDiscussionInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->updateDiscussionLegacy(7, 17, json_decode(Schema\Teams\UpdateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

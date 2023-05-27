@@ -44,9 +44,9 @@ final class ListSelectedRepositoriesRequiredWorkflow
     }
 
     /**
-     * @return Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok|array{code: int}
+     * @return Schema\Operations\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\ApplicationJson\Ok\Application\Json|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\ApplicationJson\Ok\Application\Json|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,9 +58,9 @@ final class ListSelectedRepositoriesRequiredWorkflow
                      * Success
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListSelectedRepositoriesRequiredWorkflow\Response\ApplicationJson\Ok\Application\Json::class, $body);
                 }
 
                 break;

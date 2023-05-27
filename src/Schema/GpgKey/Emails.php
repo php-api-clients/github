@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\GpgKey;
 
-final readonly class Emails
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"email":{"type":"string"},"verified":{"type":"boolean"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"email":"generated","verified":false}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $email, public ?bool $verified)
-    {
-    }
+final readonly class Emails extends Schema\AliasAbstract\Tiet0FCE66A6\Tiet71ECC1B1\TietC3D362CA\TietD6E970B8
+{
 }

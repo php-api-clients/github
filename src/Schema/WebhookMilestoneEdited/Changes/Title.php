@@ -4,17 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes;
 
-final readonly class Title
-{
-    public const SCHEMA_JSON         = '{"required":["from"],"type":"object","properties":{"from":{"type":"string","description":"The previous version of the title if the action was `edited`."}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    /**
-     * from: The previous version of the title if the action was `edited`.
-     */
-    public function __construct(public string $from)
-    {
-    }
+final readonly class Title extends Schema\AliasAbstract\Tiet5AC3402A\TietC1416C73\TietB92827C1\TietE5472178
+{
 }

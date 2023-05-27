@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\BranchProtection;
 
-final readonly class RequiredLinearHistory
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"enabled":{"type":"boolean"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"enabled":false}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?bool $enabled)
-    {
-    }
+final readonly class RequiredLinearHistory extends Schema\AliasAbstract\Tiet47C5EFDD\Tiet650C68E6\Tiet0F894B5D\Tiet312F53C8
+{
 }

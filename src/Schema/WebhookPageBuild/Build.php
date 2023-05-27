@@ -14,7 +14,7 @@ final readonly class Build
     public const SCHEMA_DESCRIPTION  = 'The [List GitHub Pages builds](https://docs.github.com/rest/reference/repos#list-github-pages-builds) itself.';
     public const SCHEMA_EXAMPLE_DATA = '{"commit":"generated","created_at":"generated","duration":8,"error":{"message":"generated"},"pusher":{"avatar_url":"https:\\/\\/example.com\\/","deleted":false,"email":"generated","events_url":"generated","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","gravatar_id":"generated","html_url":"https:\\/\\/example.com\\/","id":2,"login":"generated","name":"generated","node_id":"generated","organizations_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","site_admin":false,"starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","type":"Organization","url":"https:\\/\\/example.com\\/"},"status":"generated","updated_at":"generated","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public ?string $commit, #[MapFrom('created_at')] public string $createdAt, public int $duration, public Schema\PageBuild\Error $error, public ?Schema\Discussion\AnswerChosenBy $pusher, public string $status, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(public ?string $commit, #[MapFrom('created_at')] public string $createdAt, public int $duration, public Schema\WebhookPageBuild\Build\Error $error, public ?Schema\WebhookPageBuild\Build\Pusher $pusher, public string $status, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
     {
     }
 }

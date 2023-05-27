@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\PageBuild;
 
-final readonly class Error
-{
-    public const SCHEMA_JSON         = '{"required":["message"],"type":"object","properties":{"message":{"type":["string","null"]}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"message":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $message)
-    {
-    }
+final readonly class Error extends Schema\AliasAbstract\Tiet64B7D8F9\TietB1B1693D\Tiet6F7EB3E9\Tiet2C64727B
+{
 }

@@ -14,7 +14,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"default_branch":{"from":"generated"},"description":{"from":"generated"},"homepage":{"from":"generated"},"topics":{"from":null}}';
 
-    public function __construct(#[MapFrom('default_branch')] public ?Schema\WebhookDiscussionCommentEdited\Changes\Body $defaultBranch, public ?Schema\WebhookProjectCardEdited\Changes\Note $description, public ?Schema\WebhookProjectCardEdited\Changes\Note $homepage, public ?Schema\WebhookRepositoryEdited\Changes\Topics $topics)
+    public function __construct(#[MapFrom('default_branch')] public ?Schema\WebhookRepositoryEdited\Changes\DefaultBranch $defaultBranch, public ?Schema\WebhookRepositoryEdited\Changes\Description $description, public ?Schema\WebhookRepositoryEdited\Changes\Homepage $homepage, public ?Schema\WebhookRepositoryEdited\Changes\Topics $topics)
     {
     }
 }

@@ -26,6 +26,8 @@ class Timing implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WorkflowUsage' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage($payload),
                 'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable($payload),
                 'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($payload),
+                'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos($payload),
+                'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -108,7 +110,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'macos';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -128,7 +130,7 @@ class Timing implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'windows';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($value);
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -182,6 +184,70 @@ class Timing implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_ms'] ?? null;
+
+            if ($value === null) {
+                $properties['totalMs'] = null;
+                goto after_totalMs;
+            }
+
+            $properties['totalMs'] = $value;
+
+            after_totalMs:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows(array $payload): \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['total_ms'] ?? null;
+
+            if ($value === null) {
+                $properties['totalMs'] = null;
+                goto after_totalMs;
+            }
+
+            $properties['totalMs'] = $value;
+
+            after_totalMs:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -284,6 +350,8 @@ class Timing implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WorkflowUsage' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage($object),
             'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable($object),
             'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($object),
+            'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos($object),
+            'ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -391,7 +459,7 @@ class Timing implements ObjectMapper
         if ($macos === null) {
             goto after_macos;
         }
-        $macos = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($macos);
+        $macos = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos($macos);
         after_macos:        $result['MACOS'] = $macos;
 
         
@@ -400,7 +468,7 @@ class Timing implements ObjectMapper
         if ($windows === null) {
             goto after_windows;
         }
-        $windows = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu($windows);
+        $windows = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows($windows);
         after_windows:        $result['WINDOWS'] = $windows;
 
 
@@ -411,6 +479,40 @@ class Timing implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Ubuntu(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Ubuntu);
+        $result = [];
+
+        $totalMs = $object->totalMs;
+
+        if ($totalMs === null) {
+            goto after_totalMs;
+        }
+        after_totalMs:        $result['total_ms'] = $totalMs;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Macos(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Macos);
+        $result = [];
+
+        $totalMs = $object->totalMs;
+
+        if ($totalMs === null) {
+            goto after_totalMs;
+        }
+        after_totalMs:        $result['total_ms'] = $totalMs;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WorkflowUsage⚡️Billable⚡️Windows(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\WorkflowUsage\Billable\Windows);
         $result = [];
 
         $totalMs = $object->totalMs;

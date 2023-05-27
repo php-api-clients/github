@@ -41,7 +41,7 @@ final class Delete
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\WebhookDeploymentCreated\Deployment\Payload\Zero
+    public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class Delete
                      * Accepted
                      **/
                     case 202:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json::class, $body);
                     /**
                      * Resource not found
                      **/

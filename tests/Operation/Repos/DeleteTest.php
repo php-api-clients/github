@@ -24,8 +24,8 @@ final class DeleteTest extends AsyncTestCase
      */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
-        self::expectException(ErrorSchemas\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::SCHEMA_EXAMPLE_DATA);
+        self::expectException(ErrorSchemas\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::class);
+        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -46,8 +46,8 @@ final class DeleteTest extends AsyncTestCase
      */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
-        self::expectException(ErrorSchemas\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::SCHEMA_EXAMPLE_DATA);
+        self::expectException(ErrorSchemas\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::class);
+        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);

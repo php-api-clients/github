@@ -21,7 +21,7 @@ final readonly class WebhookReleaseEdited
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookReleaseEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookReleaseCreated\Release $release, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookReleaseEdited\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookReleaseEdited\Release $release, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
     {
     }
 }

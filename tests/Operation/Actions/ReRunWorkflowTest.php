@@ -30,7 +30,7 @@ final class ReRunWorkflowTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/actions/runs/6/rerun', Argument::type('array'), Schema\Actions\ReRunJobForWorkflowRun\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/actions/runs/6/rerun', Argument::type('array'), Schema\Actions\ReRunWorkflow\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\ReRunWorkflow::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']  = 'generated';
@@ -38,7 +38,7 @@ final class ReRunWorkflowTest extends AsyncTestCase
             $data['run_id'] = 6;
 
             return $data;
-        })(json_decode(Schema\Actions\ReRunJobForWorkflowRun\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\ReRunWorkflow\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -52,8 +52,8 @@ final class ReRunWorkflowTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/actions/runs/6/rerun', Argument::type('array'), Schema\Actions\ReRunJobForWorkflowRun\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/actions/runs/6/rerun', Argument::type('array'), Schema\Actions\ReRunWorkflow\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->reRunWorkflow('generated', 'generated', 6, json_decode(Schema\Actions\ReRunJobForWorkflowRun\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->reRunWorkflow('generated', 'generated', 6, json_decode(Schema\Actions\ReRunWorkflow\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

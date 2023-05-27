@@ -85,9 +85,9 @@ final class CreateCard
                      **/
 
                     case 503:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable(503, $this->hydrator->hydrateObject(Schema\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::class, $body));
+                        throw new ErrorSchemas\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json(503, $this->hydrator->hydrateObject(Schema\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::class, $body));
                 }
 
                 break;

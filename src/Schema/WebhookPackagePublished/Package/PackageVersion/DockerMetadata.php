@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookPackagePublished\Package\PackageVersion;
 
-final readonly class DockerMetadata
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"tags":{"type":"array","items":{"type":"string"}}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"tags":["generated","generated"]}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?array $tags)
-    {
-    }
+final readonly class DockerMetadata extends Schema\AliasAbstract\Tiet95FF9456\Tiet25FCDDCA\Tiet8B3C65A3\TietB6AF054C
+{
 }

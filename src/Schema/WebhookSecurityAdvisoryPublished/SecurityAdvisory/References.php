@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory;
 
-final readonly class References
-{
-    public const SCHEMA_JSON         = '{"required":["url"],"type":"object","properties":{"url":{"type":"string","format":"uri"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/example.com\\/"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public string $url)
-    {
-    }
+final readonly class References extends Schema\AliasAbstract\TietF0FDE5A1\Tiet9EE34E3A\TietA811F484\TietFC1CAEFD
+{
 }

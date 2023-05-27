@@ -62,7 +62,7 @@ final class GetAnalysisTest extends AsyncTestCase
      */
     public function call_httpCode_200_responseContentType_application_json_sarif_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Deployment\Payload\Zero::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Operations\CodeScanning\GetAnalysis\Response\ApplicationJsonSarif\Ok\Application\JsonSarif::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -84,7 +84,7 @@ final class GetAnalysisTest extends AsyncTestCase
      */
     public function operations_httpCode_200_responseContentType_application_json_sarif_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Deployment\Payload\Zero::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Operations\CodeScanning\GetAnalysis\Response\ApplicationJsonSarif\Ok\Application\JsonSarif::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);

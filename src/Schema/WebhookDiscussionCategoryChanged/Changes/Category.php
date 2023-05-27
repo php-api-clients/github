@@ -13,7 +13,7 @@ final readonly class Category
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":{"created_at":"1970-01-01T00:00:00+00:00","description":"generated","emoji":"generated","id":2,"is_answerable":false,"name":"generated","node_id":"generated","repository_id":13,"slug":"generated","updated_at":"generated"}}';
 
-    public function __construct(public Schema\Discussion\Category $from)
+    public function __construct(public Schema\WebhookDiscussionCategoryChanged\Changes\Category\From $from)
     {
     }
 }

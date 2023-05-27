@@ -21,7 +21,7 @@ final readonly class WebhookBranchProtectionRuleDeleted
      * rule: The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\WebhookBranchProtectionRuleCreated\Rule $rule, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\WebhookBranchProtectionRuleDeleted\Rule $rule, public Schema\SimpleUser $sender)
     {
     }
 }

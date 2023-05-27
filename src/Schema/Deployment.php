@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Deployment\Payload;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -22,7 +23,7 @@ final readonly class Deployment
      * transientEnvironment: Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      * productionEnvironment: Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $sha, public string $ref, public string $task, public Schema\Deployment\Payload\Zero|string $payload, #[MapFrom('original_environment')] public ?string $originalEnvironment, public string $environment, public ?string $description, public ?Schema\SimpleUser $creator, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('statuses_url')] public string $statusesUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp)
+    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $sha, public string $ref, public string $task, #[Payload] public Schema\Deployment\Payload\Zero|string $payload, #[MapFrom('original_environment')] public ?string $originalEnvironment, public string $environment, public ?string $description, public ?Schema\SimpleUser $creator, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('statuses_url')] public string $statusesUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp)
     {
     }
 }

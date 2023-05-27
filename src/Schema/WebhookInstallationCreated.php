@@ -21,7 +21,7 @@ final readonly class WebhookInstallationCreated
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, public ?array $repositories, public ?Schema\Repository $repository, public ?Schema\Discussion\AnswerChosenBy $requester, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\Installation $installation, public ?Schema\OrganizationSimple $organization, public ?array $repositories, public ?Schema\Repository $repository, public ?Schema\WebhookInstallationCreated\Requester $requester, public Schema\SimpleUser $sender)
     {
     }
 }

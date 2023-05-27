@@ -38,9 +38,9 @@ final class Get
     }
 
     /**
-     * @return Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization|array{code: int}
+     * @return Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -52,9 +52,9 @@ final class Get
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\OrganizationProgrammaticAccessGrantRequest\Permissions\Organization::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json::class, $body);
                 }
 
                 break;

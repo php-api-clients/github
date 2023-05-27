@@ -50,9 +50,9 @@ final class CreateDeployment
     }
 
     /**
-     * @return Schema\Deployment|Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array{code: int}
+     * @return Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Schema\Deployment|Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array
+    public function createResponse(ResponseInterface $response): Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -72,9 +72,9 @@ final class CreateDeployment
                      **/
 
                     case 202:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json::class, $body);
                     /**
                      * Validation failed, or the endpoint has been spammed.
                      **/

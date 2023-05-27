@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes;
 
-final readonly class AuthorizedActorNames
-{
-    public const SCHEMA_JSON         = '{"required":["from"],"type":"object","properties":{"from":{"type":"array","items":{"type":"string"}}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":["generated","generated"]}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public array $from)
-    {
-    }
+final readonly class AuthorizedActorNames extends Schema\AliasAbstract\Tiet6229AFD3\Tiet64100D1F\Tiet8D5C869C\Tiet17A05C57
+{
 }

@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities;
 
-final readonly class FirstPatchedVersion
-{
-    public const SCHEMA_JSON         = '{"required":["identifier"],"type":["object","null"],"properties":{"identifier":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"identifier":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public string $identifier)
-    {
-    }
+final readonly class FirstPatchedVersion extends Schema\AliasAbstract\Tiet35D8CB5A\TietB8167CE2\TietDE06741D\Tiet76CD4BDC
+{
 }

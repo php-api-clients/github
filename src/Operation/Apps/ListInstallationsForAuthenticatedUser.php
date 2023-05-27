@@ -45,9 +45,9 @@ final class ListInstallationsForAuthenticatedUser
     }
 
     /**
-     * @return Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|array{code: int}
+     * @return Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -59,9 +59,9 @@ final class ListInstallationsForAuthenticatedUser
                      * You can find the permissions for the installation under the `permissions` key.
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json::class, $body);
                     /**
                      * Forbidden
                      **/

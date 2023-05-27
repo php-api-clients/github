@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repository\TemplateRepository;
 
-final readonly class Permissions
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"admin":{"type":"boolean"},"maintain":{"type":"boolean"},"push":{"type":"boolean"},"triage":{"type":"boolean"},"pull":{"type":"boolean"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"admin":false,"maintain":false,"push":false,"triage":false,"pull":false}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?bool $admin, public ?bool $maintain, public ?bool $push, public ?bool $triage, public ?bool $pull)
-    {
-    }
+final readonly class Permissions extends Schema\AliasAbstract\Tiet4D4265E3\Tiet514E6BA6\TietC4D32F0E\Tiet80494F2C
+{
 }

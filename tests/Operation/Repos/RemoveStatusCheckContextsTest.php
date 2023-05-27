@@ -32,7 +32,7 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\RemoveStatusCheckContexts::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']  = 'generated';
@@ -40,7 +40,7 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
             $data['branch'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -55,9 +55,9 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->removeStatusCheckContexts('generated', 'generated', 'generated', json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->repos()->removeStatusCheckContexts('generated', 'generated', 'generated', json_decode(Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -72,7 +72,7 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\RemoveStatusCheckContexts::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']  = 'generated';
@@ -80,7 +80,7 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
             $data['branch'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -95,8 +95,8 @@ final class RemoveStatusCheckContextsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/required_status_checks/contexts', Argument::type('array'), Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->removeStatusCheckContexts('generated', 'generated', 'generated', json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->repos()->removeStatusCheckContexts('generated', 'generated', 'generated', json_decode(Schema\Repos\RemoveStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

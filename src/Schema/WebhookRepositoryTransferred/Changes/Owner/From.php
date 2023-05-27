@@ -13,7 +13,7 @@ final readonly class From
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"organization":{"avatar_url":"https:\\/\\/example.com\\/","description":"generated","events_url":"https:\\/\\/example.com\\/","hooks_url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","id":2,"issues_url":"https:\\/\\/example.com\\/","login":"generated","members_url":"generated","node_id":"generated","public_members_url":"generated","repos_url":"https:\\/\\/example.com\\/","url":"https:\\/\\/example.com\\/"},"user":{"avatar_url":"https:\\/\\/example.com\\/","deleted":false,"email":"generated","events_url":"generated","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","gravatar_id":"generated","html_url":"https:\\/\\/example.com\\/","id":2,"login":"generated","name":"generated","node_id":"generated","organizations_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","site_admin":false,"starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","type":"Organization","url":"https:\\/\\/example.com\\/"}}';
 
-    public function __construct(public ?Schema\WebhookRepositoryTransferred\Changes\Owner\From\Organization $organization, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public ?Schema\WebhookRepositoryTransferred\Changes\Owner\From\Organization $organization, public ?Schema\WebhookRepositoryTransferred\Changes\Owner\From\User $user)
     {
     }
 }

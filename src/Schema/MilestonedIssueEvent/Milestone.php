@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\MilestonedIssueEvent;
 
-final readonly class Milestone
-{
-    public const SCHEMA_JSON         = '{"required":["title"],"type":"object","properties":{"title":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"title":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public string $title)
-    {
-    }
+final readonly class Milestone extends Schema\AliasAbstract\Tiet359AA3A3\Tiet8E01C5FA\TietFDCA314F\Tiet344F71DC
+{
 }

@@ -6,7 +6,7 @@ namespace ApiClients\Client\GitHub\Operator\Repos;
 
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Schema\Deployment;
-use ApiClients\Client\GitHub\Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted;
+use ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
@@ -25,14 +25,14 @@ final readonly class CreateDeployment
     }
 
     /**
-     * @return PromiseInterface<(Deployment|Accepted|array)>
+     * @return PromiseInterface<(Deployment|Json|array)>
      **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Deployment|Accepted|array {
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Deployment|Json|array {
             return $operation->createResponse($response);
         });
     }

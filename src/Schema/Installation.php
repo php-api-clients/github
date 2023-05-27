@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Installation\Account;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -20,7 +21,7 @@ final readonly class Installation
      * targetId: The ID of the user or organization this token is being scoped to.
      * permissions: The permissions granted to the user-to-server access token.
      */
-    public function __construct(public int $id, public Schema\SimpleUser|Schema\Enterprise $account, #[MapFrom('repository_selection')] public string $repositorySelection, #[MapFrom('access_tokens_url')] public string $accessTokensUrl, #[MapFrom('repositories_url')] public string $repositoriesUrl, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('app_id')] public int $appId, #[MapFrom('target_id')] public int $targetId, #[MapFrom('target_type')] public string $targetType, public Schema\AppPermissions $permissions, public array $events, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('single_file_name')] public ?string $singleFileName, #[MapFrom('has_multiple_single_files')] public ?bool $hasMultipleSingleFiles, #[MapFrom('single_file_paths')] public ?array $singleFilePaths, #[MapFrom('app_slug')] public string $appSlug, #[MapFrom('suspended_by')] public ?Schema\SimpleUser $suspendedBy, #[MapFrom('suspended_at')] public ?string $suspendedAt, #[MapFrom('contact_email')] public ?string $contactEmail)
+    public function __construct(public int $id, #[Account] public Schema\SimpleUser|Schema\Enterprise $account, #[MapFrom('repository_selection')] public string $repositorySelection, #[MapFrom('access_tokens_url')] public string $accessTokensUrl, #[MapFrom('repositories_url')] public string $repositoriesUrl, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('app_id')] public int $appId, #[MapFrom('target_id')] public int $targetId, #[MapFrom('target_type')] public string $targetType, public Schema\AppPermissions $permissions, public array $events, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('single_file_name')] public ?string $singleFileName, #[MapFrom('has_multiple_single_files')] public ?bool $hasMultipleSingleFiles, #[MapFrom('single_file_paths')] public ?array $singleFilePaths, #[MapFrom('app_slug')] public string $appSlug, #[MapFrom('suspended_by')] public ?Schema\SimpleUser $suspendedBy, #[MapFrom('suspended_at')] public ?string $suspendedAt, #[MapFrom('contact_email')] public ?string $contactEmail)
     {
     }
 }

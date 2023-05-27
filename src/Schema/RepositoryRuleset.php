@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\RepositoryRuleset\Conditions;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -24,7 +25,7 @@ final readonly class RepositoryRuleset
      * bypassMode: The permission level required to bypass this ruleset. "repository" allows those with bypass permission at the repository level to bypass. "organization" allows those with bypass permission at the organization level to bypass. "none" prevents anyone from bypassing.
      * bypassActors: The actors that can bypass the rules in this ruleset
      */
-    public function __construct(public int $id, public string $name, public ?string $target, #[MapFrom('source_type')] public ?string $sourceType, public string $source, public string $enforcement, #[MapFrom('bypass_mode')] public ?string $bypassMode, #[MapFrom('bypass_actors')] public ?array $bypassActors, #[MapFrom('node_id')] public ?string $nodeId, #[MapFrom('_links')] public ?Schema\RepositoryRuleset\Links $links, public ?Schema\RepositoryRulesetConditions $conditions, public ?array $rules)
+    public function __construct(public int $id, public string $name, public ?string $target, #[MapFrom('source_type')] public ?string $sourceType, public string $source, public string $enforcement, #[MapFrom('bypass_mode')] public ?string $bypassMode, #[MapFrom('bypass_actors')] public ?array $bypassActors, #[MapFrom('node_id')] public ?string $nodeId, #[MapFrom('_links')] public ?Schema\RepositoryRuleset\Links $links, #[Conditions] public ?Schema\RepositoryRulesetConditions $conditions, public ?array $rules)
     {
     }
 }

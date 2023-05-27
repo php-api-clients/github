@@ -52,7 +52,7 @@ final class ListWorkflowRunArtifacts
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->runId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListArtifactsForRepo\Response\ApplicationJson\Ok
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,9 +64,9 @@ final class ListWorkflowRunArtifacts
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListArtifactsForRepo\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListArtifactsForRepo\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json::class, $body);
                 }
 
                 break;

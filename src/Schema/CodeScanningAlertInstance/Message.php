@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\CodeScanningAlertInstance;
 
-final readonly class Message
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"text":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"text":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $text)
-    {
-    }
+final readonly class Message extends Schema\AliasAbstract\Tiet0317CEE1\TietB8FB65D0\Tiet6FC68DD1\TietFE0B93B4
+{
 }

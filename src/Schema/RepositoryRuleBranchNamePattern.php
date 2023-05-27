@@ -13,7 +13,7 @@ final readonly class RepositoryRuleBranchNamePattern
     public const SCHEMA_DESCRIPTION  = 'Parameters to be used for the branch_name_pattern rule';
     public const SCHEMA_EXAMPLE_DATA = '{"type":"branch_name_pattern","parameters":{"name":"generated","negate":false,"operator":"regex","pattern":"generated"}}';
 
-    public function __construct(public string $type, public ?Schema\RepositoryRuleCommitMessagePattern\Parameters $parameters)
+    public function __construct(public string $type, public ?Schema\RepositoryRuleBranchNamePattern\Parameters $parameters)
     {
     }
 }

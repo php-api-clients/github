@@ -56,9 +56,9 @@ final class Delete
                      * Forbidden
                      **/
                     case 403:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden(403, $this->hydrator->hydrateObject(Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden::class, $body));
+                        throw new ErrorSchemas\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json(403, $this->hydrator->hydrateObject(Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json::class, $body));
                     /**
                      * Requires authentication
                      **/

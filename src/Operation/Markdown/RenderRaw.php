@@ -36,7 +36,7 @@ final class RenderRaw
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'text/plain'], json_encode($data));
     }

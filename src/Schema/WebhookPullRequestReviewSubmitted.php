@@ -22,7 +22,7 @@ final readonly class WebhookPullRequestReviewSubmitted
      * review: The review that was affected.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[MapFrom('pull_request')] public Schema\WebhookPullRequestReviewSubmitted\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\WebhookPullRequestReviewEdited\Review $review, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[MapFrom('pull_request')] public Schema\WebhookPullRequestReviewSubmitted\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\WebhookPullRequestReviewSubmitted\Review $review, public Schema\SimpleUser $sender)
     {
     }
 }

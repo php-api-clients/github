@@ -47,9 +47,9 @@ final class MoveColumn
     }
 
     /**
-     * @return Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound|array{code: int}
+     * @return Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array{code: int}
      */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -61,9 +61,9 @@ final class MoveColumn
                      * Response
                      **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Gists\CheckIsStarred\Response\ApplicationJson\NotFound::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json::class, $body);
                     /**
                      * Forbidden
                      **/

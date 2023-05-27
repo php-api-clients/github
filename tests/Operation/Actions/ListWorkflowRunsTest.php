@@ -23,7 +23,7 @@ final class ListWorkflowRunsTest extends AsyncTestCase
      */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListRequiredWorkflowRuns\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -55,7 +55,7 @@ final class ListWorkflowRunsTest extends AsyncTestCase
      */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListRequiredWorkflowRuns\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);

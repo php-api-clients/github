@@ -26,7 +26,8 @@ class ProjectId implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Project' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Project($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
-                'ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️DeleteCard⚡️Response⚡️ApplicationJson⚡️Forbidden($payload),
+                'ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Delete⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($payload),
+                'ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Update⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -545,7 +546,7 @@ class ProjectId implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️DeleteCard⚡️Response⚡️ApplicationJson⚡️Forbidden(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Delete⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json
     {
         $properties = []; 
         $missingFields = [];
@@ -584,17 +585,71 @@ class ProjectId implements ObjectMapper
             after_errors:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Update⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
+            }
+
+            $properties['documentationUrl'] = $value;
+
+            after_documentationUrl:
+
+            $value = $payload['errors'] ?? null;
+
+            if ($value === null) {
+                $properties['errors'] = null;
+                goto after_errors;
+            }
+
+            $properties['errors'] = $value;
+
+            after_errors:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -686,7 +741,8 @@ class ProjectId implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Project' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Project($object),
             'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-            'ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️DeleteCard⚡️Response⚡️ApplicationJson⚡️Forbidden($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Delete⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Update⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($object),
             'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -997,9 +1053,50 @@ class ProjectId implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️DeleteCard⚡️Response⚡️ApplicationJson⚡️Forbidden(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Delete⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Projects\DeleteCard\Response\ApplicationJson\Forbidden);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json);
+        $result = [];
+
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        after_message:        $result['message'] = $message;
+
+        
+        $documentationUrl = $object->documentationUrl;
+
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
+        }
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
+
+        
+        $errors = $object->errors;
+
+        if ($errors === null) {
+            goto after_errors;
+        }
+        static $errorsSerializer0;
+
+        if ($errorsSerializer0 === null) {
+            $errorsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $errors = $errorsSerializer0->serialize($errors, $this);
+        after_errors:        $result['errors'] = $errors;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Update⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json);
         $result = [];
 
         $message = $object->message;

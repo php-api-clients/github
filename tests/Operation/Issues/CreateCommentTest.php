@@ -31,7 +31,7 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Issues\CreateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
@@ -39,7 +39,7 @@ final class CreateCommentTest extends AsyncTestCase
             $data['issue_number'] = 12;
 
             return $data;
-        })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -53,9 +53,9 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -70,7 +70,7 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Issues\CreateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
@@ -78,7 +78,7 @@ final class CreateCommentTest extends AsyncTestCase
             $data['issue_number'] = 12;
 
             return $data;
-        })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -93,9 +93,9 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -110,7 +110,7 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Issues\CreateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
@@ -118,7 +118,7 @@ final class CreateCommentTest extends AsyncTestCase
             $data['issue_number'] = 12;
 
             return $data;
-        })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -133,9 +133,9 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -150,7 +150,7 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Issues\CreateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
@@ -158,7 +158,7 @@ final class CreateCommentTest extends AsyncTestCase
             $data['issue_number'] = 12;
 
             return $data;
-        })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -173,9 +173,9 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -190,7 +190,7 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Issues\CreateComment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
@@ -198,7 +198,7 @@ final class CreateCommentTest extends AsyncTestCase
             $data['issue_number'] = 12;
 
             return $data;
-        })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -213,8 +213,8 @@ final class CreateCommentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/issues/12/comments', Argument::type('array'), Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->issues()->createComment('generated', 'generated', 12, json_decode(Schema\Issues\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

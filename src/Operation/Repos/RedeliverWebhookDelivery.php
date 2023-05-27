@@ -49,7 +49,7 @@ final class RedeliverWebhookDelivery
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{hook_id}', '{delivery_id}'], [$this->owner, $this->repo, $this->hookId, $this->deliveryId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\WebhookDeploymentCreated\Deployment\Payload\Zero
+    public function createResponse(ResponseInterface $response): Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -61,9 +61,9 @@ final class RedeliverWebhookDelivery
                      * Accepted
                      **/
                     case 202:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json::class, $body);
                     /**
                      * Bad Request
                      **/

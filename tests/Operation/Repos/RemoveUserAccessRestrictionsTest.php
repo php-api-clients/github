@@ -32,7 +32,7 @@ final class RemoveUserAccessRestrictionsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/restrictions/users', Argument::type('array'), Schema\Repos\SetUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/restrictions/users', Argument::type('array'), Schema\Repos\RemoveUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\RemoveUserAccessRestrictions::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']  = 'generated';
@@ -40,7 +40,7 @@ final class RemoveUserAccessRestrictionsTest extends AsyncTestCase
             $data['branch'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Repos\SetUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Repos\RemoveUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -55,8 +55,8 @@ final class RemoveUserAccessRestrictionsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/restrictions/users', Argument::type('array'), Schema\Repos\SetUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('DELETE', '/repos/generated/generated/branches/generated/protection/restrictions/users', Argument::type('array'), Schema\Repos\RemoveUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->removeUserAccessRestrictions('generated', 'generated', 'generated', json_decode(Schema\Repos\SetUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->repos()->removeUserAccessRestrictions('generated', 'generated', 'generated', json_decode(Schema\Repos\RemoveUserAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

@@ -30,14 +30,14 @@ final class CreateEnvironmentVariableTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repositories/13/environments/generated/variables', Argument::type('array'), Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repositories/13/environments/generated/variables', Argument::type('array'), Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\CreateEnvironmentVariable::OPERATION_MATCH, (static function (array $data): array {
             $data['repository_id']    = 13;
             $data['environment_name'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -51,8 +51,8 @@ final class CreateEnvironmentVariableTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repositories/13/environments/generated/variables', Argument::type('array'), Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repositories/13/environments/generated/variables', Argument::type('array'), Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->createEnvironmentVariable(13, 'generated', json_decode(Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->createEnvironmentVariable(13, 'generated', json_decode(Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

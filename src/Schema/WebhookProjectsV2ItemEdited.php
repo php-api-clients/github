@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookProjectsV2ItemEdited\Changes;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -20,7 +21,7 @@ final readonly class WebhookProjectsV2ItemEdited
      * projectsVTwoItem: An item belonging to a project
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public null|Schema\WebhookProjectsV2ItemEdited\Changes\Zero|Schema\WebhookProjectsV2ItemEdited\Changes\One $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[MapFrom('projects_v2_item')] public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, #[Changes] public null|Schema\WebhookProjectsV2ItemEdited\Changes\Zero|Schema\WebhookProjectsV2ItemEdited\Changes\One $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[MapFrom('projects_v2_item')] public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUser $sender)
     {
     }
 }

@@ -31,14 +31,14 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateMembershipForUserLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['username'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -52,9 +52,9 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -69,14 +69,14 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateMembershipForUserLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['username'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -91,9 +91,9 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -107,14 +107,14 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateMembershipForUserLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['username'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -128,9 +128,9 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(403, $result['code']);
     }
@@ -146,14 +146,14 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateMembershipForUserLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['username'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -167,9 +167,9 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/teams/7/memberships/generated', Argument::type('array'), Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(422, $result['code']);
     }

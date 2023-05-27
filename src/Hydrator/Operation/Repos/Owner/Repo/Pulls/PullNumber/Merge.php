@@ -24,7 +24,8 @@ class Merge implements ObjectMapper
     {
         return match($className) {
             'ApiClients\Client\GitHub\Schema\PullRequestMergeResult' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMergeResult($payload),
-                'ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️ApplicationJson⚡️UnprocessableEntity($payload),
+                'ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️MethodNotAllowed⚡️Application⚡️Json($payload),
+                'ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️Conflict⚡️Application⚡️Json($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -86,7 +87,7 @@ class Merge implements ObjectMapper
     }
 
         
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️ApplicationJson⚡️UnprocessableEntity(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️MethodNotAllowed⚡️Application⚡️Json(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json
     {
         $properties = []; 
         $missingFields = [];
@@ -114,17 +115,60 @@ class Merge implements ObjectMapper
             after_documentationUrl:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️Conflict⚡️Application⚡️Json(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
+            }
+
+            $properties['documentationUrl'] = $value;
+
+            after_documentationUrl:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -279,7 +323,8 @@ class Merge implements ObjectMapper
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
             'ApiClients\Client\GitHub\Schema\PullRequestMergeResult' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PullRequestMergeResult($object),
-            'ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️ApplicationJson⚡️UnprocessableEntity($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️MethodNotAllowed⚡️Application⚡️Json($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️Conflict⚡️Application⚡️Json($object),
             'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
@@ -376,9 +421,34 @@ class Merge implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Orgs⚡️RemoveOutsideCollaborator⚡️Response⚡️ApplicationJson⚡️UnprocessableEntity(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️MethodNotAllowed⚡️Application⚡️Json(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Orgs\RemoveOutsideCollaborator\Response\ApplicationJson\UnprocessableEntity);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\MethodNotAllowed\Application\Json);
+        $result = [];
+
+        $message = $object->message;
+
+        if ($message === null) {
+            goto after_message;
+        }
+        after_message:        $result['message'] = $message;
+
+        
+        $documentationUrl = $object->documentationUrl;
+
+        if ($documentationUrl === null) {
+            goto after_documentationUrl;
+        }
+        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Pulls⚡️Merge⚡️Response⚡️ApplicationJson⚡️Conflict⚡️Application⚡️Json(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Pulls\Merge\Response\ApplicationJson\Conflict\Application\Json);
         $result = [];
 
         $message = $object->message;

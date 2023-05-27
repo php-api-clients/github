@@ -43,7 +43,7 @@ final class CreateEnvironmentVariable
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateRepoVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}'], [$this->repositoryId, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }

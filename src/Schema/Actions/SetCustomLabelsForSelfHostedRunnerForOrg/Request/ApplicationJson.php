@@ -4,17 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Actions\SetCustomLabelsForSelfHostedRunnerForOrg\Request;
 
-final readonly class ApplicationJson
-{
-    public const SCHEMA_JSON         = '{"required":["labels"],"type":"object","properties":{"labels":{"maxItems":100,"minItems":0,"type":"array","items":{"type":"string"},"description":"The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels."}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"labels":["generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated","generated"]}';
+use ApiClients\Client\GitHub\Schema;
 
-    /**
-     * labels: The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
-     */
-    public function __construct(public array $labels)
-    {
-    }
+final readonly class ApplicationJson extends Schema\AliasAbstract\Tiet26CE37AC\Tiet45C329CF\Tiet34ACA72B\TietD6CFCAE8
+{
 }

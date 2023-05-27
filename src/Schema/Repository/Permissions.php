@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repository;
 
-final readonly class Permissions
-{
-    public const SCHEMA_JSON         = '{"required":["admin","pull","push"],"type":"object","properties":{"admin":{"type":"boolean"},"pull":{"type":"boolean"},"triage":{"type":"boolean"},"push":{"type":"boolean"},"maintain":{"type":"boolean"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"admin":false,"pull":false,"triage":false,"push":false,"maintain":false}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public bool $admin, public bool $pull, public ?bool $triage, public bool $push, public ?bool $maintain)
-    {
-    }
+final readonly class Permissions extends Schema\AliasAbstract\Tiet70F737A8\Tiet8657D2D3\Tiet4F5D0048\Tiet4DA29806
+{
 }

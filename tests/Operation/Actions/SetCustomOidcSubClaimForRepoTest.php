@@ -31,14 +31,14 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\SetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
             $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -52,9 +52,9 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -69,14 +69,14 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\SetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
             $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -91,9 +91,9 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -108,14 +108,14 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\SetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
             $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -130,9 +130,9 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -147,14 +147,14 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\SetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
             $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -169,9 +169,9 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -186,14 +186,14 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\SetCustomOidcSubClaimForRepo::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
             $data['repo']  = 'generated';
 
             return $data;
-        })(json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -208,8 +208,8 @@ final class SetCustomOidcSubClaimForRepoTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/repos/generated/generated/actions/oidc/customization/sub', Argument::type('array'), Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\OidcCustomSubRepo::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->actions()->setCustomOidcSubClaimForRepo('generated', 'generated', json_decode(Schema\Actions\SetCustomOidcSubClaimForRepo\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

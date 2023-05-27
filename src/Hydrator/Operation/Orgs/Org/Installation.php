@@ -54,6 +54,15 @@ class Installation implements ObjectMapper
                 goto after_account;
             }
 
+            static $accountCaster1;
+
+            if ($accountCaster1 === null) {
+                $accountCaster1 = new \ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Installation\Account(...array (
+));
+            }
+
+            $value = $accountCaster1->cast($value, $this);
+
             $properties['account'] = $value;
 
             after_account:

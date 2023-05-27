@@ -30,7 +30,7 @@ final class UpdateDiscussionCommentInOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/orgs/generated/teams/generated/discussions/17/comments/14', Argument::type('array'), Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/orgs/generated/teams/generated/discussions/17/comments/14', Argument::type('array'), Schema\Teams\UpdateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\UpdateDiscussionCommentInOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']               = 'generated';
@@ -39,7 +39,7 @@ final class UpdateDiscussionCommentInOrgTest extends AsyncTestCase
             $data['comment_number']    = 14;
 
             return $data;
-        })(json_decode(Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Teams\UpdateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -53,8 +53,8 @@ final class UpdateDiscussionCommentInOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PATCH', '/orgs/generated/teams/generated/discussions/17/comments/14', Argument::type('array'), Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PATCH', '/orgs/generated/teams/generated/discussions/17/comments/14', Argument::type('array'), Schema\Teams\UpdateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->updateDiscussionCommentInOrg('generated', 'generated', 17, 14, json_decode(Schema\Teams\CreateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->teams()->updateDiscussionCommentInOrg('generated', 'generated', 17, 14, json_decode(Schema\Teams\UpdateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

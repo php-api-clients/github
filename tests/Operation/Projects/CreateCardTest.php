@@ -137,8 +137,8 @@ final class CreateCardTest extends AsyncTestCase
      */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::class);
-        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA);
+        self::expectException(ErrorSchemas\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::class);
+        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -158,8 +158,8 @@ final class CreateCardTest extends AsyncTestCase
      */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::class);
-        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA);
+        self::expectException(ErrorSchemas\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::class);
+        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);

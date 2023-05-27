@@ -21,7 +21,7 @@ final readonly class WebhookDiscussionCommentEdited
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookDiscussionCommentEdited\Changes $changes, public Schema\WebhookDiscussionCommentCreated\Comment $comment, public Schema\Discussion $discussion, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookDiscussionCommentEdited\Changes $changes, public Schema\WebhookDiscussionCommentEdited\Comment $comment, public Schema\Discussion $discussion, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

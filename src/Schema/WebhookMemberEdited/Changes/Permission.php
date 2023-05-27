@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookMemberEdited\Changes;
 
-final readonly class Permission
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"from":{"type":["string","null"]},"to":{"type":["string","null"]}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":"generated","to":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $from, public ?string $to)
-    {
-    }
+final readonly class Permission extends Schema\AliasAbstract\TietCFBDB8CE\TietFC8CF1C6\TietD96B7C73\Tiet987450B9
+{
 }

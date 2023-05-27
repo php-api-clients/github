@@ -13,7 +13,7 @@ final readonly class ContainerMetadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"labels":"generated","manifest":"generated","tag":{"digest":"generated","name":"generated"}}';
 
-    public function __construct(public string $labels, public string $manifest, public ?Schema\WebhookPackagePublished\Package\PackageVersion\ContainerMetadata\Tag $tag)
+    public function __construct(public string $labels, public string $manifest, public ?Schema\WebhookRegistryPackagePublished\RegistryPackage\PackageVersion\ContainerMetadata\Tag $tag)
     {
     }
 }

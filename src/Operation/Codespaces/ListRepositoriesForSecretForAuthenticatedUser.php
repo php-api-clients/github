@@ -41,7 +41,7 @@ final class ListRepositoriesForSecretForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{secret_name}'], [$this->secretName], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class ListRepositoriesForSecretForAuthenticatedUser
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json::class, $body);
                     /**
                      * Requires authentication
                      **/

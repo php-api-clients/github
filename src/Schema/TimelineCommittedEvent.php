@@ -20,7 +20,7 @@ final readonly class TimelineCommittedEvent
      * committer: Identifying information for the git-user
      * message: Message describing the purpose of the commit
      */
-    public function __construct(public ?string $event, public string $sha, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\GitCommit\Author $author, public Schema\GitCommit\Author $committer, public string $message, public Schema\GitCommit\Tree $tree, public array $parents, public Schema\GitCommit\Verification $verification, #[MapFrom('html_url')] public string $htmlUrl)
+    public function __construct(public ?string $event, public string $sha, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\TimelineCommittedEvent\Author $author, public Schema\TimelineCommittedEvent\Committer $committer, public string $message, public Schema\TimelineCommittedEvent\Tree $tree, public array $parents, public Schema\TimelineCommittedEvent\Verification $verification, #[MapFrom('html_url')] public string $htmlUrl)
     {
     }
 }

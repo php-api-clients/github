@@ -20,7 +20,7 @@ final readonly class Review
      * commitId: A commit SHA for the review.
      * id: Unique identifier of the review
      */
-    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestReviewDismissed\Review\Links $links, #[MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('pull_request_url')] public string $pullRequestUrl, public string $state, #[MapFrom('submitted_at')] public string $submittedAt, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $user)
+    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestReviewDismissed\Review\Links $links, #[MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('pull_request_url')] public string $pullRequestUrl, public string $state, #[MapFrom('submitted_at')] public string $submittedAt, public ?Schema\WebhookPullRequestReviewDismissed\Review\User $user)
     {
     }
 }

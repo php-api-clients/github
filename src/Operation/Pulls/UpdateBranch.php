@@ -52,7 +52,7 @@ final class UpdateBranch
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{pull_number}'], [$this->owner, $this->repo, $this->pullNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted
+    public function createResponse(ResponseInterface $response): Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,9 +64,9 @@ final class UpdateBranch
                      * Response
                      **/
                     case 202:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json::class, $body);
                     /**
                      * Validation failed, or the endpoint has been spammed.
                      **/

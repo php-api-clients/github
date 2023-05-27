@@ -31,13 +31,13 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\CreateColumn::OPERATION_MATCH, (static function (array $data): array {
             $data['project_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -51,9 +51,9 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -68,13 +68,13 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\CreateColumn::OPERATION_MATCH, (static function (array $data): array {
             $data['project_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -89,9 +89,9 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -106,13 +106,13 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\CreateColumn::OPERATION_MATCH, (static function (array $data): array {
             $data['project_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -127,9 +127,9 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -144,13 +144,13 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\CreateColumn::OPERATION_MATCH, (static function (array $data): array {
             $data['project_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -165,9 +165,9 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -181,13 +181,13 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\CreateColumn::OPERATION_MATCH, (static function (array $data): array {
             $data['project_id'] = 10;
 
             return $data;
-        })(json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -201,9 +201,9 @@ final class CreateColumnTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/projects/10/columns', Argument::type('array'), Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\UpdateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->projects()->createColumn(10, json_decode(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

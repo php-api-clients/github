@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated\Deployment\Payload;
 
-final readonly class Zero
-{
-    public const SCHEMA_JSON         = '{"type":"object"}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '[]';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct()
-    {
-    }
+final readonly class Zero extends Schema\AliasAbstract\Tiet01FC056E\TietED58C88F\TietE1C507FC\TietD84DD4B7
+{
 }

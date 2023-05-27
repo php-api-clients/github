@@ -30,11 +30,11 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Markdown\RenderRaw::OPERATION_MATCH, (static function (array $data): array {
             return $data;
-        })(json_decode(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -48,9 +48,9 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }
@@ -66,11 +66,11 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Markdown\RenderRaw::OPERATION_MATCH, (static function (array $data): array {
             return $data;
-        })(json_decode(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -84,9 +84,9 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

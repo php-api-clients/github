@@ -21,7 +21,7 @@ final readonly class PerformedViaGithubApp
      * permissions: The set of permissions for the GitHub app
      * slug: The slug name of the GitHub app
      */
-    public function __construct(#[MapFrom('created_at')] public ?string $createdAt, public ?string $description, public ?array $events, #[MapFrom('external_url')] public ?string $externalUrl, #[MapFrom('html_url')] public string $htmlUrl, public ?int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public ?Schema\Discussion\AnswerChosenBy $owner, public ?Schema\WebhookIssueCommentEdited\Issue\PerformedViaGithubApp\Permissions $permissions, public ?string $slug, #[MapFrom('updated_at')] public ?string $updatedAt)
+    public function __construct(#[MapFrom('created_at')] public ?string $createdAt, public ?string $description, public ?array $events, #[MapFrom('external_url')] public ?string $externalUrl, #[MapFrom('html_url')] public string $htmlUrl, public ?int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public ?Schema\WebhookIssuesLabeled\Issue\PerformedViaGithubApp\Owner $owner, public ?Schema\WebhookIssuesLabeled\Issue\PerformedViaGithubApp\Permissions $permissions, public ?string $slug, #[MapFrom('updated_at')] public ?string $updatedAt)
     {
     }
 }

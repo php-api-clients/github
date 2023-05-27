@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\PullRequestMinimal\Head;
 
-final readonly class Repo
-{
-    public const SCHEMA_JSON         = '{"required":["id","url","name"],"type":"object","properties":{"id":{"type":"integer"},"url":{"type":"string"},"name":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"id":2,"url":"generated","name":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public int $id, public string $url, public string $name)
-    {
-    }
+final readonly class Repo extends Schema\AliasAbstract\Tiet72F32616\Tiet6A9787BA\Tiet9DDC9E7E\Tiet8E246D35
+{
 }

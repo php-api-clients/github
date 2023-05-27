@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\SecretScanningLocation\Details;
 use ApiClients\Client\GitHub\Schema;
 
 final readonly class SecretScanningLocation
@@ -16,7 +17,7 @@ final readonly class SecretScanningLocation
     /**
      * type: The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.
      */
-    public function __construct(public string $type, public Schema\SecretScanningLocationCommit|Schema\SecretScanningLocationIssueTitle|Schema\SecretScanningLocationIssueBody|Schema\SecretScanningLocationIssueComment $details)
+    public function __construct(public string $type, #[Details] public Schema\SecretScanningLocationCommit|Schema\SecretScanningLocationIssueTitle|Schema\SecretScanningLocationIssueBody|Schema\SecretScanningLocationIssueComment $details)
     {
     }
 }

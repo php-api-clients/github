@@ -30,7 +30,7 @@ final class CreateForTeamDiscussionCommentLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/teams/7/discussions/17/comments/14/reactions', Argument::type('array'), Schema\Reactions\CreateForTeamDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/teams/7/discussions/17/comments/14/reactions', Argument::type('array'), Schema\Reactions\CreateForTeamDiscussionCommentLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Reactions\CreateForTeamDiscussionCommentLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']           = 7;
@@ -38,7 +38,7 @@ final class CreateForTeamDiscussionCommentLegacyTest extends AsyncTestCase
             $data['comment_number']    = 14;
 
             return $data;
-        })(json_decode(Schema\Reactions\CreateForTeamDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Reactions\CreateForTeamDiscussionCommentLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /**
@@ -52,8 +52,8 @@ final class CreateForTeamDiscussionCommentLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/teams/7/discussions/17/comments/14/reactions', Argument::type('array'), Schema\Reactions\CreateForTeamDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/teams/7/discussions/17/comments/14/reactions', Argument::type('array'), Schema\Reactions\CreateForTeamDiscussionCommentLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->reactions()->createForTeamDiscussionCommentLegacy(7, 17, 14, json_decode(Schema\Reactions\CreateForTeamDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = await($client->operations()->reactions()->createForTeamDiscussionCommentLegacy(7, 17, 14, json_decode(Schema\Reactions\CreateForTeamDiscussionCommentLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 }

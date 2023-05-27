@@ -13,7 +13,7 @@ final readonly class Repository
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":{"from":"generated"}}';
 
-    public function __construct(public Schema\WebhookDiscussionCommentEdited\Changes\Body $name)
+    public function __construct(public Schema\WebhookRepositoryRenamed\Changes\Repository\Name $name)
     {
     }
 }

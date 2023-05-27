@@ -16,7 +16,7 @@ final readonly class Base
     /**
      * repo: A git repository
      */
-    public function __construct(public ?string $label, public string $ref, public Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo $repo, public string $sha, public ?Schema\Discussion\AnswerChosenBy $user)
+    public function __construct(public ?string $label, public string $ref, public Schema\WebhookPullRequestUnassigned\PullRequest\Base\Repo $repo, public string $sha, public ?Schema\WebhookPullRequestUnassigned\PullRequest\Base\User $user)
     {
     }
 }

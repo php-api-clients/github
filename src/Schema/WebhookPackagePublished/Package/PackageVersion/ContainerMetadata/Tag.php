@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookPackagePublished\Package\PackageVersion\ContainerMetadata;
 
-final readonly class Tag
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"digest":{"type":"string"},"name":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"digest":"generated","name":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $digest, public ?string $name)
-    {
-    }
+final readonly class Tag extends Schema\AliasAbstract\TietACA2ABF1\Tiet1486B169\Tiet8AB0E7A7\Tiet4B4F1024
+{
 }

@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookProjectCardEdited\Changes;
 
-final readonly class Note
-{
-    public const SCHEMA_JSON         = '{"required":["from"],"type":"object","properties":{"from":{"type":["string","null"]}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public ?string $from)
-    {
-    }
+final readonly class Note extends Schema\AliasAbstract\TietF544D852\Tiet737856A2\Tiet91CC78C7\TietC3F74F2E
+{
 }

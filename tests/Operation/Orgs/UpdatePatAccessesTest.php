@@ -101,7 +101,7 @@ final class UpdatePatAccessesTest extends AsyncTestCase
      */
     public function call_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -121,7 +121,7 @@ final class UpdatePatAccessesTest extends AsyncTestCase
      */
     public function operations_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\WebhookDeploymentCreated\Deployment\Payload\Zero::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);

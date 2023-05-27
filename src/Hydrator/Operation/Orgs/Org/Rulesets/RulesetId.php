@@ -165,6 +165,15 @@ class RulesetId implements ObjectMapper
                 goto after_conditions;
             }
 
+            static $conditionsCaster1;
+
+            if ($conditionsCaster1 === null) {
+                $conditionsCaster1 = new \ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\RepositoryRuleset\Conditions(...array (
+));
+            }
+
+            $value = $conditionsCaster1->cast($value, $this);
+
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'conditions';
