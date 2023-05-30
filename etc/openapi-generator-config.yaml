@@ -3,6 +3,8 @@ state:
   additionalFiles:
     - composer.json
     - composer.lock
+    - ../../composer.json
+    - ../../composer.lock
 spec: ../../../etc/specs/GitHub/current.spec.yaml
 namespace:
   source: ApiClients\Client\GitHub
