@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f0fed713b39e5d92435d0626ff92cd4",
+    "content-hash": "6173755ebf1a62df9ec7fc73ab97ce22",
     "packages": [
         {
             "name": "api-clients/contracts",
@@ -2922,16 +2922,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.7",
+            "version": "2.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "d477018d3f2ebd76dede3d3988a0b1a7add4d81e"
+                "reference": "4c516146167d1392c8b9b269bb7c24115d262164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/d477018d3f2ebd76dede3d3988a0b1a7add4d81e",
-                "reference": "d477018d3f2ebd76dede3d3988a0b1a7add4d81e",
+                "url": "https://api.github.com/repos/composer/composer/zipball/4c516146167d1392c8b9b269bb7c24115d262164",
+                "reference": "4c516146167d1392c8b9b269bb7c24115d262164",
                 "shasum": ""
             },
             "require": {
@@ -3015,7 +3015,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.7"
+                "source": "https://github.com/composer/composer/tree/2.5.8"
             },
             "funding": [
                 {
@@ -3031,7 +3031,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-24T13:00:40+00:00"
+            "time": "2023-06-09T15:13:21+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -3402,35 +3402,38 @@
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v0.7.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
-                "reference": "1c968e542d8843d7cd71de3c5c9c3ff3ad71a1db"
+                "url": "https://github.com/PHPCSStandards/composer-installer.git",
+                "reference": "4be43904336affa5c2f70744a348312336afd0da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/1c968e542d8843d7cd71de3c5c9c3ff3ad71a1db",
-                "reference": "1c968e542d8843d7cd71de3c5c9c3ff3ad71a1db",
+                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/4be43904336affa5c2f70744a348312336afd0da",
+                "reference": "4be43904336affa5c2f70744a348312336afd0da",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.3",
+                "php": ">=5.4",
                 "squizlabs/php_codesniffer": "^2.0 || ^3.1.0 || ^4.0"
             },
             "require-dev": {
                 "composer/composer": "*",
+                "ext-json": "*",
+                "ext-zip": "*",
                 "php-parallel-lint/php-parallel-lint": "^1.3.1",
-                "phpcompatibility/php-compatibility": "^9.0"
+                "phpcompatibility/php-compatibility": "^9.0",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
+                "class": "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
             },
             "autoload": {
                 "psr-4": {
-                    "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
+                    "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3446,7 +3449,7 @@
                 },
                 {
                     "name": "Contributors",
-                    "homepage": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer/graphs/contributors"
+                    "homepage": "https://github.com/PHPCSStandards/composer-installer/graphs/contributors"
                 }
             ],
             "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
@@ -3470,10 +3473,10 @@
                 "tests"
             ],
             "support": {
-                "issues": "https://github.com/dealerdirect/phpcodesniffer-composer-installer/issues",
-                "source": "https://github.com/dealerdirect/phpcodesniffer-composer-installer"
+                "issues": "https://github.com/PHPCSStandards/composer-installer/issues",
+                "source": "https://github.com/PHPCSStandards/composer-installer"
             },
-            "time": "2022-02-04T12:51:07+00:00"
+            "time": "2023-01-05T11:28:13+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3514,23 +3517,23 @@
         },
         {
             "name": "doctrine/coding-standard",
-            "version": "9.0.2",
+            "version": "12.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/coding-standard.git",
-                "reference": "35a2452c6025cb739c3244b3348bcd1604df07d1"
+                "reference": "1b2b7dc58c68833af481fb9325c25abd40681c79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/coding-standard/zipball/35a2452c6025cb739c3244b3348bcd1604df07d1",
-                "reference": "35a2452c6025cb739c3244b3348bcd1604df07d1",
+                "url": "https://api.github.com/repos/doctrine/coding-standard/zipball/1b2b7dc58c68833af481fb9325c25abd40681c79",
+                "reference": "1b2b7dc58c68833af481fb9325c25abd40681c79",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
-                "php": "^7.1 || ^8.0",
-                "slevomat/coding-standard": "^7.0.0",
-                "squizlabs/php_codesniffer": "^3.6.0"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0.0",
+                "php": "^7.2 || ^8.0",
+                "slevomat/coding-standard": "^8.11",
+                "squizlabs/php_codesniffer": "^3.7"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -3554,6 +3557,7 @@
                 "code",
                 "coding",
                 "cs",
+                "dev",
                 "doctrine",
                 "rules",
                 "sniffer",
@@ -3563,9 +3567,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/coding-standard/issues",
-                "source": "https://github.com/doctrine/coding-standard/tree/9.0.2"
+                "source": "https://github.com/doctrine/coding-standard/tree/12.0.0"
             },
-            "time": "2021-04-12T15:11:14+00:00"
+            "time": "2023-04-24T17:43:28+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -4250,16 +4254,16 @@
         },
         {
             "name": "fidry/cpu-core-counter",
-            "version": "0.4.1",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theofidry/cpu-core-counter.git",
-                "reference": "79261cc280aded96d098e1b0e0ba0c4881b432c2"
+                "reference": "b58e5a3933e541dc286cc91fc4f3898bbc6f1623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/79261cc280aded96d098e1b0e0ba0c4881b432c2",
-                "reference": "79261cc280aded96d098e1b0e0ba0c4881b432c2",
+                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/b58e5a3933e541dc286cc91fc4f3898bbc6f1623",
+                "reference": "b58e5a3933e541dc286cc91fc4f3898bbc6f1623",
                 "shasum": ""
             },
             "require": {
@@ -4299,7 +4303,7 @@
             ],
             "support": {
                 "issues": "https://github.com/theofidry/cpu-core-counter/issues",
-                "source": "https://github.com/theofidry/cpu-core-counter/tree/0.4.1"
+                "source": "https://github.com/theofidry/cpu-core-counter/tree/0.5.1"
             },
             "funding": [
                 {
@@ -4307,7 +4311,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-16T22:01:02+00:00"
+            "time": "2022-12-24T12:35:10+00:00"
         },
         {
             "name": "filp/whoops",
@@ -4981,16 +4985,16 @@
         },
         {
             "name": "infection/infection",
-            "version": "0.26.21",
+            "version": "0.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infection/infection.git",
-                "reference": "9bbe4994d204587e0e27475e6681b66608a690a9"
+                "reference": "a9ff8171577d98b887d7f16428edd81ff69ce887"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infection/infection/zipball/9bbe4994d204587e0e27475e6681b66608a690a9",
-                "reference": "9bbe4994d204587e0e27475e6681b66608a690a9",
+                "url": "https://api.github.com/repos/infection/infection/zipball/a9ff8171577d98b887d7f16428edd81ff69ce887",
+                "reference": "a9ff8171577d98b887d7f16428edd81ff69ce887",
                 "shasum": ""
             },
             "require": {
@@ -5001,7 +5005,7 @@
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
-                "fidry/cpu-core-counter": "^0.4.0",
+                "fidry/cpu-core-counter": "^0.4.0 || ^0.5.0",
                 "infection/abstract-testframework-adapter": "^0.5.0",
                 "infection/extension-installer": "^0.1.0",
                 "infection/include-interceptor": "^0.2.5",
@@ -5032,11 +5036,13 @@
                 "phpspec/prophecy": "^1.15",
                 "phpspec/prophecy-phpunit": "^2.0",
                 "phpstan/extension-installer": "^1.1.0",
-                "phpstan/phpstan": "^1.3.0",
+                "phpstan/phpstan": "^1.10.15",
                 "phpstan/phpstan-phpunit": "^1.0.0",
                 "phpstan/phpstan-strict-rules": "^1.1.0",
                 "phpstan/phpstan-webmozart-assert": "^1.0.2",
                 "phpunit/phpunit": "^9.5.5",
+                "rector/rector": "^0.16.0",
+                "sidz/phpstan-rules": "^0.2.1",
                 "symfony/phpunit-bridge": "^5.4 || ^6.0",
                 "symfony/yaml": "^5.4 || ^6.0",
                 "thecodingmachine/phpstan-safe-rule": "^1.2.0"
@@ -5095,7 +5101,7 @@
             ],
             "support": {
                 "issues": "https://github.com/infection/infection/issues",
-                "source": "https://github.com/infection/infection/tree/0.26.21"
+                "source": "https://github.com/infection/infection/tree/0.27.0"
             },
             "funding": [
                 {
@@ -5107,7 +5113,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-04-25T19:40:27+00:00"
+            "time": "2023-05-16T05:28:04+00:00"
         },
         {
             "name": "jakobbuis/simple-slow-test-reporter",
@@ -6842,24 +6848,22 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.22.0",
+            "version": "1.20.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "ec58baf7b3c7f1c81b3b00617c953249fb8cf30c"
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/ec58baf7b3c7f1c81b3b00617c953249fb8cf30c",
-                "reference": "ec58baf7b3c7f1c81b3b00617c953249fb8cf30c",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "doctrine/annotations": "^2.0",
-                "nikic/php-parser": "^4.15",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^1.5",
@@ -6883,22 +6887,22 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.22.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.4"
             },
-            "time": "2023-06-01T12:35:21+00:00"
+            "time": "2023-05-02T09:19:37+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.18",
+            "version": "1.10.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "52b6416c579663eebdd2f1d97df21971daf3b43f"
+                "reference": "af5a296ff02610c1bfb4ddfac9fd4a08657b9046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/52b6416c579663eebdd2f1d97df21971daf3b43f",
-                "reference": "52b6416c579663eebdd2f1d97df21971daf3b43f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/af5a296ff02610c1bfb4ddfac9fd4a08657b9046",
+                "reference": "af5a296ff02610c1bfb4ddfac9fd4a08657b9046",
                 "shasum": ""
             },
             "require": {
@@ -6947,7 +6951,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-07T22:00:43+00:00"
+            "time": "2023-06-14T15:26:58+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -7469,16 +7473,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.8",
+            "version": "9.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
-                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a9aceaf20a682aeacf28d582654a1670d8826778",
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778",
                 "shasum": ""
             },
             "require": {
@@ -7552,7 +7556,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.9"
             },
             "funding": [
                 {
@@ -7568,7 +7572,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-11T05:14:45+00:00"
+            "time": "2023-06-11T06:13:56+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -8101,20 +8105,20 @@
         },
         {
             "name": "roave/infection-static-analysis-plugin",
-            "version": "1.31.0",
+            "version": "1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/infection-static-analysis-plugin.git",
-                "reference": "c8b4c262f6e7837ae5373ef456f181d231185b55"
+                "reference": "885d4f82458e48a87a6b4b81cbb7e35e35234c8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/infection-static-analysis-plugin/zipball/c8b4c262f6e7837ae5373ef456f181d231185b55",
-                "reference": "c8b4c262f6e7837ae5373ef456f181d231185b55",
+                "url": "https://api.github.com/repos/Roave/infection-static-analysis-plugin/zipball/885d4f82458e48a87a6b4b81cbb7e35e35234c8d",
+                "reference": "885d4f82458e48a87a6b4b81cbb7e35e35234c8d",
                 "shasum": ""
             },
             "require": {
-                "infection/infection": "0.26.21",
+                "infection/infection": "0.27.0",
                 "ocramius/package-versions": "^2.7.0",
                 "php": "~8.1.0 || ~8.2.0",
                 "sanmai/later": "^0.1.2",
@@ -8122,7 +8126,7 @@
             },
             "require-dev": {
                 "doctrine/coding-standard": "^12.0.0",
-                "phpunit/phpunit": "^10.1.2"
+                "phpunit/phpunit": "^10.1.3"
             },
             "bin": [
                 "bin/roave-infection-static-analysis-plugin"
@@ -8146,9 +8150,9 @@
             "description": "Static analysis on top of mutation testing - prevents escaped mutants from being invalid according to static analysis",
             "support": {
                 "issues": "https://github.com/Roave/infection-static-analysis-plugin/issues",
-                "source": "https://github.com/Roave/infection-static-analysis-plugin/tree/1.31.0"
+                "source": "https://github.com/Roave/infection-static-analysis-plugin/tree/1.32.0"
             },
-            "time": "2023-05-09T10:45:35+00:00"
+            "time": "2023-05-21T01:01:51+00:00"
         },
         {
             "name": "roave/signature",
@@ -8250,16 +8254,16 @@
         },
         {
             "name": "sanmai/pipeline",
-            "version": "v6.7",
+            "version": "v6.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sanmai/pipeline.git",
-                "reference": "0e5c45c8046298212347a0bfb659126af8e75d2e"
+                "reference": "2e88e466dd49f20c10a15330b3953d4d49c326e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sanmai/pipeline/zipball/0e5c45c8046298212347a0bfb659126af8e75d2e",
-                "reference": "0e5c45c8046298212347a0bfb659126af8e75d2e",
+                "url": "https://api.github.com/repos/sanmai/pipeline/zipball/2e88e466dd49f20c10a15330b3953d4d49c326e3",
+                "reference": "2e88e466dd49f20c10a15330b3953d4d49c326e3",
                 "shasum": ""
             },
             "require": {
@@ -8267,7 +8271,7 @@
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.8",
-                "friendsofphp/php-cs-fixer": "^3",
+                "friendsofphp/php-cs-fixer": "^3.17",
                 "infection/infection": ">=0.10.5",
                 "league/pipeline": "^0.3 || ^1.0",
                 "phan/phan": ">=1.1",
@@ -8303,7 +8307,7 @@
             "description": "General-purpose collections pipeline",
             "support": {
                 "issues": "https://github.com/sanmai/pipeline/issues",
-                "source": "https://github.com/sanmai/pipeline/tree/v6.7"
+                "source": "https://github.com/sanmai/pipeline/tree/v6.8.1"
             },
             "funding": [
                 {
@@ -8311,7 +8315,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-29T11:21:51+00:00"
+            "time": "2023-06-15T09:14:47+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9452,42 +9456,42 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "7.2.1",
+            "version": "8.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "aff06ae7a84e4534bf6f821dc982a93a5d477c90"
+                "reference": "f69e2524e8770efb9b3e5ac4a0ebc0d54eb446d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/aff06ae7a84e4534bf6f821dc982a93a5d477c90",
-                "reference": "aff06ae7a84e4534bf6f821dc982a93a5d477c90",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/f69e2524e8770efb9b3e5ac4a0ebc0d54eb446d7",
+                "reference": "f69e2524e8770efb9b3e5ac4a0ebc0d54eb446d7",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0",
                 "php": "^7.2 || ^8.0",
-                "phpstan/phpdoc-parser": "^1.5.1",
-                "squizlabs/php_codesniffer": "^3.6.2"
+                "phpstan/phpdoc-parser": ">=1.20.0 <1.21.0",
+                "squizlabs/php_codesniffer": "^3.7.1"
             },
             "require-dev": {
-                "phing/phing": "2.17.3",
+                "phing/phing": "2.17.4",
                 "php-parallel-lint/php-parallel-lint": "1.3.2",
-                "phpstan/phpstan": "1.4.10|1.7.1",
-                "phpstan/phpstan-deprecation-rules": "1.0.0",
-                "phpstan/phpstan-phpunit": "1.0.0|1.1.1",
-                "phpstan/phpstan-strict-rules": "1.2.3",
-                "phpunit/phpunit": "7.5.20|8.5.21|9.5.20"
+                "phpstan/phpstan": "1.10.15",
+                "phpstan/phpstan-deprecation-rules": "1.1.3",
+                "phpstan/phpstan-phpunit": "1.3.11",
+                "phpstan/phpstan-strict-rules": "1.5.1",
+                "phpunit/phpunit": "7.5.20|8.5.21|9.6.8|10.1.3"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.x-dev"
+                    "dev-master": "8.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "SlevomatCodingStandard\\": "SlevomatCodingStandard"
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -9495,9 +9499,13 @@
                 "MIT"
             ],
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
+            "keywords": [
+                "dev",
+                "phpcs"
+            ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/7.2.1"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.12.1"
             },
             "funding": [
                 {
@@ -9509,7 +9517,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-25T10:58:12+00:00"
+            "time": "2023-05-15T21:42:25+00:00"
         },
         {
             "name": "spatie/array-to-xml",
@@ -11533,25 +11541,25 @@
         },
         {
             "name": "wyrihaximus/async-test-utilities",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-async-test-utilities.git",
-                "reference": "26cd3f686632e98128e4d3f6e7711bbae3d862e6"
+                "reference": "d949b9f28581804c0898afb415410bd4ea10aa0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-async-test-utilities/zipball/26cd3f686632e98128e4d3f6e7711bbae3d862e6",
-                "reference": "26cd3f686632e98128e4d3f6e7711bbae3d862e6",
+                "url": "https://api.github.com/repos/WyriHaximus/php-async-test-utilities/zipball/d949b9f28581804c0898afb415410bd4ea10aa0d",
+                "reference": "d949b9f28581804c0898afb415410bd4ea10aa0d",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2",
-                "phpunit/phpunit": "^9.6.7",
+                "phpunit/phpunit": "^9.6.9",
                 "react/async": "^4.0",
-                "react/event-loop": "^1.3.0",
+                "react/event-loop": "^1.4.0",
                 "react/promise": "^2.10.",
-                "wyrihaximus/test-utilities": "^5.5.0 || ^6"
+                "wyrihaximus/test-utilities": "^5.5.4 || ^6"
             },
             "require-dev": {
                 "react/promise-timer": "^1.9",
@@ -11576,7 +11584,7 @@
             "description": "Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-async-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-async-test-utilities/tree/7.0.1"
+                "source": "https://github.com/WyriHaximus/php-async-test-utilities/tree/7.0.2"
             },
             "funding": [
                 {
@@ -11584,27 +11592,27 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-05T11:49:38+00:00"
+            "time": "2023-06-17T13:28:46+00:00"
         },
         {
             "name": "wyrihaximus/coding-standard",
-            "version": "2.13.0",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-coding-standard.git",
-                "reference": "a4639a19942a32b4398251308c7cbe79ea35332a"
+                "reference": "7530678d70ced4d41540df0e60e8811d14813058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-coding-standard/zipball/a4639a19942a32b4398251308c7cbe79ea35332a",
-                "reference": "a4639a19942a32b4398251308c7cbe79ea35332a",
+                "url": "https://api.github.com/repos/WyriHaximus/php-coding-standard/zipball/7530678d70ced4d41540df0e60e8811d14813058",
+                "reference": "7530678d70ced4d41540df0e60e8811d14813058",
                 "shasum": ""
             },
             "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2 || ^1.0.0",
-                "doctrine/coding-standard": "^9.0.2 || ^12.0.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+                "doctrine/coding-standard": "^12.0.0",
                 "php": "^8.1",
-                "slevomat/coding-standard": "^7.2.1 || ^8.0.0",
+                "slevomat/coding-standard": "^8.11.1",
                 "squizlabs/php_codesniffer": "^3.7.2"
             },
             "type": "phpcodesniffer-standard",
@@ -11615,7 +11623,7 @@
             "description": "WyriHaximus Coding Standard",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-coding-standard/issues",
-                "source": "https://github.com/WyriHaximus/php-coding-standard/tree/2.13.0"
+                "source": "https://github.com/WyriHaximus/php-coding-standard/tree/2.14.0"
             },
             "funding": [
                 {
@@ -11623,7 +11631,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-06T11:42:38+00:00"
+            "time": "2023-05-06T11:54:10+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
@@ -11678,22 +11686,22 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "5.5.3",
+            "version": "5.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "d4932828e26a75f34d874ece43855ecae4bde87f"
+                "reference": "5a5e92413523ba74db04ecac52dc3db3d1cf462a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/d4932828e26a75f34d874ece43855ecae4bde87f",
-                "reference": "d4932828e26a75f34d874ece43855ecae4bde87f",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/5a5e92413523ba74db04ecac52dc3db3d1cf462a",
+                "reference": "5a5e92413523ba74db04ecac52dc3db3d1cf462a",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/composer-normalize": "^2.31.0",
-                "icanhazstring/composer-unused": "^0.8.7",
-                "infection/infection": "^0.26.20",
+                "icanhazstring/composer-unused": "^0.8.9",
+                "infection/infection": "^0.27.0",
                 "jakobbuis/simple-slow-test-reporter": "^1.0",
                 "maglnet/composer-require-checker": "^4.6.0",
                 "nunomaduro/collision": "^7.1.0",
@@ -11704,17 +11712,17 @@
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "php-standard-library/psalm-plugin": "^1.1.5 || ^2.2.1",
                 "phpspec/prophecy": "^1.17",
-                "phpspec/prophecy-phpunit": "^2.0.1",
-                "phpstan/phpstan": "^1.10.14",
-                "phpunit/phpunit": "^9.6.7",
+                "phpspec/prophecy-phpunit": "^2.0.2",
+                "phpstan/phpstan": "^1.10.19",
+                "phpunit/phpunit": "^9.6.9",
                 "psalm/plugin-phpunit": "^0.18.4",
                 "roave/backward-compatibility-check": "^8.3.0",
-                "roave/infection-static-analysis-plugin": "^1.30.0",
+                "roave/infection-static-analysis-plugin": "^1.32.0",
                 "squizlabs/php_codesniffer": "^3.7.2",
                 "thecodingmachine/safe": "^2.5.0",
-                "vimeo/psalm": "^5.11.0",
-                "wyrihaximus/coding-standard": "^2.13.0",
-                "wyrihaximus/phpstan-rules-wrapper": "^2.13.0"
+                "vimeo/psalm": "^5.12.0",
+                "wyrihaximus/coding-standard": "^2.14.0",
+                "wyrihaximus/phpstan-rules-wrapper": "^2.14.0"
             },
             "conflict": {
                 "symfony/dependency-injection": "<5.0.0"
@@ -11730,6 +11738,7 @@
                     "nunomaduro/collision",
                     "orklah/psalm-insane-comparison",
                     "php-coveralls/php-coveralls",
+                    "php-parallel-lint/php-console-highlighter",
                     "php-parallel-lint/php-parallel-lint",
                     "php-standard-library/psalm-plugin",
                     "phpstan/phpstan",
@@ -11760,7 +11769,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.5.3"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/5.5.4"
             },
             "funding": [
                 {
@@ -11768,7 +11777,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-06T18:44:14+00:00"
+            "time": "2023-06-15T21:05:33+00:00"
         }
     ],
     "aliases": [],
