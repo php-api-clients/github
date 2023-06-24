@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6173755ebf1a62df9ec7fc73ab97ce22",
+    "content-hash": "75e461586fc1d1dd950f82fe10b7bad0",
     "packages": [
         {
             "name": "api-clients/contracts",
@@ -169,16 +169,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "5187fba33e031b6c96c3b93bdfc21719e54108e0"
+                "reference": "2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/5187fba33e031b6c96c3b93bdfc21719e54108e0",
-                "reference": "5187fba33e031b6c96c3b93bdfc21719e54108e0",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8",
+                "reference": "2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.3.0"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.3.1"
             },
             "funding": [
                 {
@@ -229,7 +229,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-01T13:34:47+00:00"
+            "time": "2023-06-24T13:06:09+00:00"
         },
         {
             "name": "fig/http-message-util",
