@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75e461586fc1d1dd950f82fe10b7bad0",
+    "content-hash": "03ef409878e61bd56cd01e2f44f8e7b9",
     "packages": [
         {
             "name": "api-clients/contracts",
@@ -807,16 +807,16 @@
         },
         {
             "name": "react/async",
-            "version": "v4.0.0",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/async.git",
-                "reference": "2aa8d89057e1059f59666e4204100636249b7be0"
+                "reference": "b9641ac600b4b144e71a87dcf1be4d41dd3a3548"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/async/zipball/2aa8d89057e1059f59666e4204100636249b7be0",
-                "reference": "2aa8d89057e1059f59666e4204100636249b7be0",
+                "url": "https://api.github.com/repos/reactphp/async/zipball/b9641ac600b4b144e71a87dcf1be4d41dd3a3548",
+                "reference": "b9641ac600b4b144e71a87dcf1be4d41dd3a3548",
                 "shasum": ""
             },
             "require": {
@@ -825,7 +825,8 @@
                 "react/promise": "^3.0 || ^2.8 || ^1.2.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3"
+                "phpstan/phpstan": "1.10.18",
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "autoload": {
@@ -869,19 +870,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/async/issues",
-                "source": "https://github.com/reactphp/async/tree/v4.0.0"
+                "source": "https://github.com/reactphp/async/tree/v4.1.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-07-11T14:21:02+00:00"
+            "time": "2023-06-22T14:10:50+00:00"
         },
         {
             "name": "react/cache",
