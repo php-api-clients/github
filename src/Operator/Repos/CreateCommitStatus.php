@@ -23,9 +23,7 @@ final readonly class CreateCommitStatus
     {
     }
 
-    /**
-     * @return PromiseInterface<Status>
-     **/
+    /** @return PromiseInterface<Status> **/
     public function call(string $owner, string $repo, string $sha, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateCommitStatus($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sha);

@@ -23,9 +23,7 @@ final readonly class GetExportDetailsForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespaceExportDetails>
-     **/
+    /** @return PromiseInterface<CodespaceExportDetails> **/
     public function call(string $codespaceName, string $exportId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetExportDetailsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName, $exportId);

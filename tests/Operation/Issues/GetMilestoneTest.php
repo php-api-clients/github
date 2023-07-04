@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetMilestoneTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Milestone::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GetMilestoneTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Milestone::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GetMilestoneTest extends AsyncTestCase
         $result = await($client->operations()->issues()->getMilestone('generated', 'generated', 16));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -80,9 +74,7 @@ final class GetMilestoneTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

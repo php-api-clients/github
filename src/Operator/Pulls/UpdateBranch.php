@@ -23,9 +23,7 @@ final readonly class UpdateBranch
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(string $owner, string $repo, int $pullNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\UpdateBranch($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

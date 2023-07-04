@@ -19,7 +19,15 @@ final readonly class TeamDiscussionComment
      * bodyVersion: The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
      * number: The unique sequence number of a team discussion comment.
      */
-    public function __construct(public ?Schema\SimpleUser $author, public string $body, #[MapFrom('body_html')] public string $bodyHtml, #[MapFrom('body_version')] public string $bodyVersion, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('last_edited_at')] public ?string $lastEditedAt, #[MapFrom('discussion_url')] public string $discussionUrl, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public Schema\SimpleUser|null $author, public string $body, #[MapFrom('body_html')]
+    public string $bodyHtml, #[MapFrom('body_version')]
+    public string $bodyVersion, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('last_edited_at')]
+    public string|null $lastEditedAt, #[MapFrom('discussion_url')]
+    public string $discussionUrl, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

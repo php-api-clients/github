@@ -23,9 +23,7 @@ final readonly class SetThreadSubscription
     {
     }
 
-    /**
-     * @return PromiseInterface<(ThreadSubscription|array)>
-     **/
+    /** @return PromiseInterface<(ThreadSubscription|array)> **/
     public function call(int $threadId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\SetThreadSubscription($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $threadId);

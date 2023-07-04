@@ -26,7 +26,14 @@ final readonly class Page
      * public: Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
      * httpsEnforced: Whether https is enabled on the domain
      */
-    public function __construct(public string $url, public ?string $status, public ?string $cname, #[MapFrom('protected_domain_state')] public ?string $protectedDomainState, #[MapFrom('pending_domain_unverified_at')] public ?string $pendingDomainUnverifiedAt, #[MapFrom('custom_404')] public bool $customFourHundredFour, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('build_type')] public ?string $buildType, public ?Schema\PagesSourceHash $source, public bool $public, #[MapFrom('https_certificate')] public ?Schema\PagesHttpsCertificate $httpsCertificate, #[MapFrom('https_enforced')] public ?bool $httpsEnforced)
+    public function __construct(public string $url, public string|null $status, public string|null $cname, #[MapFrom('protected_domain_state')]
+    public string|null $protectedDomainState, #[MapFrom('pending_domain_unverified_at')]
+    public string|null $pendingDomainUnverifiedAt, #[MapFrom('custom_404')]
+    public bool $customFourHundredFour, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('build_type')]
+    public string|null $buildType, public Schema\PagesSourceHash|null $source, public bool $public, #[MapFrom('https_certificate')]
+    public Schema\PagesHttpsCertificate|null $httpsCertificate, #[MapFrom('https_enforced')]
+    public bool|null $httpsEnforced,)
     {
     }
 }

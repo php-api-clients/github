@@ -23,9 +23,7 @@ final readonly class Update
     {
     }
 
-    /**
-     * @return PromiseInterface<CheckRun>
-     **/
+    /** @return PromiseInterface<CheckRun> **/
     public function call(string $owner, string $repo, int $checkRunId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Checks\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

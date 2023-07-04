@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * permissions: The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
      */
-    public function __construct(public ?string $permissions)
+    public function __construct(public string|null $permissions)
     {
     }
 }

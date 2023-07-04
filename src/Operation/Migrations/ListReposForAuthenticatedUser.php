@@ -30,16 +30,12 @@ final class ListReposForAuthenticatedUser
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\MigrationId\Repositories $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId\Repositories $hydrator, int $migrationId, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Migrations\MigrationId\Repositories $hydrator, int $migrationId, int $perPage = 30, int $page = 1)
     {
-        $this->migrationId             = $migrationId;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->migrationId = $migrationId;
+        $this->perPage     = $perPage;
+        $this->page        = $page;
     }
 
     public function createRequest(): RequestInterface

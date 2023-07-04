@@ -16,7 +16,7 @@ final readonly class RunnerLabel
      * name: Name of the label.
      * type: The type of label. Read-only labels are applied automatically when the runner is configured.
      */
-    public function __construct(public ?int $id, public string $name, public ?string $type)
+    public function __construct(public int|null $id, public string $name, public string|null $type)
     {
     }
 }

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetMembershipForUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OrgMembership::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class GetMembershipForUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OrgMembership::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class GetMembershipForUserTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getMembershipForUser('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class GetMembershipForUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -95,9 +87,7 @@ final class GetMembershipForUserTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getMembershipForUser('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -117,9 +107,7 @@ final class GetMembershipForUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

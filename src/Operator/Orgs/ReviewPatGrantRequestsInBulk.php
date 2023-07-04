@@ -15,17 +15,15 @@ use React\Promise\PromiseInterface;
 final readonly class ReviewPatGrantRequestsInBulk
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-requests-in-bulk';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-token-requests';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-token-requests';
+    private const PATH           = '/orgs/{org}/personal-access-token-requests';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator)
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ReviewPatGrantRequestsInBulk($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

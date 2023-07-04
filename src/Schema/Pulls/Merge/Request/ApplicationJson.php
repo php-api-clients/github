@@ -19,7 +19,10 @@ final readonly class ApplicationJson
      * sha: SHA that pull request head must match to allow merge.
      * mergeMethod: The merge method to use.
      */
-    public function __construct(#[MapFrom('commit_title')] public ?string $commitTitle, #[MapFrom('commit_message')] public ?string $commitMessage, public ?string $sha, #[MapFrom('merge_method')] public ?string $mergeMethod)
+    public function __construct(#[MapFrom('commit_title')]
+    public string|null $commitTitle, #[MapFrom('commit_message')]
+    public string|null $commitMessage, public string|null $sha, #[MapFrom('merge_method')]
+    public string|null $mergeMethod,)
     {
     }
 }

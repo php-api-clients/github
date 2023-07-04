@@ -20,7 +20,18 @@ abstract readonly class TietD28EEAF6
      * tagName: The name of the tag.
      * targetCommitish: Specifies the commitish value that determines where the Git tag is created from.
      */
-    public function __construct(public array $assets, #[MapFrom('assets_url')] public string $assetsUrl, public ?Schema\WebhookReleaseCreated\Release\Author $author, public ?string $body, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('discussion_url')] public ?string $discussionUrl, public bool $draft, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public ?string $name, #[MapFrom('node_id')] public string $nodeId, public bool $prerelease, #[MapFrom('published_at')] public ?string $publishedAt, public ?Schema\WebhookReleaseCreated\Release\Reactions $reactions, #[MapFrom('tag_name')] public string $tagName, #[MapFrom('tarball_url')] public ?string $tarballUrl, #[MapFrom('target_commitish')] public string $targetCommitish, #[MapFrom('upload_url')] public string $uploadUrl, public string $url, #[MapFrom('zipball_url')] public ?string $zipballUrl)
+    public function __construct(public array $assets, #[MapFrom('assets_url')]
+    public string $assetsUrl, public Schema\WebhookReleaseCreated\Release\Author|null $author, public string|null $body, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('discussion_url')]
+    public string|null $discussionUrl, public bool $draft, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public string|null $name, #[MapFrom('node_id')]
+    public string $nodeId, public bool $prerelease, #[MapFrom('published_at')]
+    public string|null $publishedAt, public Schema\WebhookReleaseCreated\Release\Reactions|null $reactions, #[MapFrom('tag_name')]
+    public string $tagName, #[MapFrom('tarball_url')]
+    public string|null $tarballUrl, #[MapFrom('target_commitish')]
+    public string $targetCommitish, #[MapFrom('upload_url')]
+    public string $uploadUrl, public string $url, #[MapFrom('zipball_url')]
+    public string|null $zipballUrl,)
     {
     }
 }

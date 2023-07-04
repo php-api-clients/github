@@ -22,9 +22,7 @@ final readonly class ListNotificationsForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListNotificationsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $since, $before, $all, $participating, $page, $perPage);

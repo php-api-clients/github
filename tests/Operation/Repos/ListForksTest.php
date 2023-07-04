@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListForksTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -44,9 +42,7 @@ final class ListForksTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -61,9 +57,7 @@ final class ListForksTest extends AsyncTestCase
         $result = await($client->operations()->repos()->listForks('generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -86,9 +80,7 @@ final class ListForksTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);

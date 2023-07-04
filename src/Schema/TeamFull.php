@@ -24,7 +24,17 @@ final readonly class TeamFull
      * organization: Team Organization
      * ldapDn: Distinguished Name (DN) that team maps to within LDAP environment
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, #[MapFrom('html_url')] public string $htmlUrl, public string $name, public string $slug, public ?string $description, public ?string $privacy, #[MapFrom('notification_setting')] public ?string $notificationSetting, public string $permission, #[MapFrom('members_url')] public string $membersUrl, #[MapFrom('repositories_url')] public string $repositoriesUrl, public ?Schema\TeamSimple $parent, #[MapFrom('members_count')] public int $membersCount, #[MapFrom('repos_count')] public int $reposCount, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public Schema\TeamOrganization $organization, #[MapFrom('ldap_dn')] public ?string $ldapDn)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, public string $name, public string $slug, public string|null $description, public string|null $privacy, #[MapFrom('notification_setting')]
+    public string|null $notificationSetting, public string $permission, #[MapFrom('members_url')]
+    public string $membersUrl, #[MapFrom('repositories_url')]
+    public string $repositoriesUrl, public Schema\TeamSimple|null $parent, #[MapFrom('members_count')]
+    public int $membersCount, #[MapFrom('repos_count')]
+    public int $reposCount, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\TeamOrganization $organization, #[MapFrom('ldap_dn')]
+    public string|null $ldapDn,)
     {
     }
 }

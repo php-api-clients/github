@@ -14,7 +14,8 @@ final readonly class Zero
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"field_value":{"field_node_id":"generated","field_type":"generated"}}';
 
-    public function __construct(#[MapFrom('field_value')] public Schema\WebhookProjectsV2ItemEdited\Changes\Zero\FieldValue $fieldValue)
+    public function __construct(#[MapFrom('field_value')]
+    public Schema\WebhookProjectsV2ItemEdited\Changes\Zero\FieldValue $fieldValue,)
     {
     }
 }

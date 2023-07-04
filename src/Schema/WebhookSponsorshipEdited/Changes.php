@@ -14,7 +14,8 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"privacy_level":{"from":"generated"}}';
 
-    public function __construct(#[MapFrom('privacy_level')] public ?Schema\WebhookSponsorshipEdited\Changes\PrivacyLevel $privacyLevel)
+    public function __construct(#[MapFrom('privacy_level')]
+    public Schema\WebhookSponsorshipEdited\Changes\PrivacyLevel|null $privacyLevel,)
     {
     }
 }

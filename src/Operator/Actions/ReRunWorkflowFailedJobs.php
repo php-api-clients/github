@@ -23,9 +23,7 @@ final readonly class ReRunWorkflowFailedJobs
     {
     }
 
-    /**
-     * @return PromiseInterface<EmptyObject>
-     **/
+    /** @return PromiseInterface<EmptyObject> **/
     public function call(string $owner, string $repo, int $runId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ReRunWorkflowFailedJobs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

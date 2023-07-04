@@ -20,9 +20,7 @@ final readonly class ListRunnerApplicationsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListRunnerApplicationsForRepo($owner, $repo);

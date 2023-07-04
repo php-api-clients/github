@@ -19,7 +19,8 @@ abstract readonly class Tiet9D8D9B32
      * manifestPath: The full path to the dependency manifest file, relative to the root of the repository.
      * scope: The execution scope of the vulnerable dependency.
      */
-    public function __construct(public ?Schema\DependabotAlertPackage $package, #[MapFrom('manifest_path')] public ?string $manifestPath, public ?string $scope)
+    public function __construct(public Schema\DependabotAlertPackage|null $package, #[MapFrom('manifest_path')]
+    public string|null $manifestPath, public string|null $scope,)
     {
     }
 }

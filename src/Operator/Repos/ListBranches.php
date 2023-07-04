@@ -22,9 +22,7 @@ final readonly class ListBranches
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, bool $protected, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListBranches($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $protected, $perPage, $page);

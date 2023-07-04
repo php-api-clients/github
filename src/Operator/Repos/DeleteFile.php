@@ -23,9 +23,7 @@ final readonly class DeleteFile
     {
     }
 
-    /**
-     * @return PromiseInterface<FileCommit>
-     **/
+    /** @return PromiseInterface<FileCommit> **/
     public function call(string $owner, string $repo, string $path, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteFile($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $path);

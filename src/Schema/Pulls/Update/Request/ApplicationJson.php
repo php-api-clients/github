@@ -20,7 +20,8 @@ final readonly class ApplicationJson
      * base: The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
      * maintainerCanModify: Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
      */
-    public function __construct(public ?string $title, public ?string $body, public ?string $state, public ?string $base, #[MapFrom('maintainer_can_modify')] public ?bool $maintainerCanModify)
+    public function __construct(public string|null $title, public string|null $body, public string|null $state, public string|null $base, #[MapFrom('maintainer_can_modify')]
+    public bool|null $maintainerCanModify,)
     {
     }
 }

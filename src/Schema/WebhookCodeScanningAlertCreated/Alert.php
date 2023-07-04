@@ -23,7 +23,17 @@ final readonly class Alert
      * number: The code scanning alert number.
      * state: State of a code scanning alert.
      */
-    public function __construct(#[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('dismissed_at')] public string $dismissedAt, #[MapFrom('dismissed_by')] public string $dismissedBy, #[MapFrom('dismissed_comment')] public ?string $dismissedComment, #[MapFrom('dismissed_reason')] public string $dismissedReason, #[MapFrom('fixed_at')] public string $fixedAt, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('instances_url')] public ?string $instancesUrl, #[MapFrom('most_recent_instance')] public ?Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertCreated\Alert\Rule $rule, public string $state, public ?Schema\WebhookCodeScanningAlertCreated\Alert\Tool $tool, #[MapFrom('updated_at')] public ?string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('dismissed_at')]
+    public string $dismissedAt, #[MapFrom('dismissed_by')]
+    public string $dismissedBy, #[MapFrom('dismissed_comment')]
+    public string|null $dismissedComment, #[MapFrom('dismissed_reason')]
+    public string $dismissedReason, #[MapFrom('fixed_at')]
+    public string $fixedAt, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('instances_url')]
+    public string|null $instancesUrl, #[MapFrom('most_recent_instance')]
+    public Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance|null $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertCreated\Alert\Rule $rule, public string $state, public Schema\WebhookCodeScanningAlertCreated\Alert\Tool|null $tool, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public string $url,)
     {
     }
 }

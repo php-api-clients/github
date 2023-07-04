@@ -22,9 +22,7 @@ final readonly class List_
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $since, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\List_($this->responseSchemaValidator, $this->hydrator, $since, $perPage, $page);

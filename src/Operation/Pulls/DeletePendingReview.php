@@ -26,23 +26,19 @@ final class DeletePendingReview
     private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The number that identifies the pull request. **/
     private int $pullNumber;
     /**The unique identifier of the review. **/
     private int $reviewId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId $hydrator, string $owner, string $repo, int $pullNumber, int $reviewId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId $hydrator, string $owner, string $repo, int $pullNumber, int $reviewId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->pullNumber              = $pullNumber;
-        $this->reviewId                = $reviewId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner      = $owner;
+        $this->repo       = $repo;
+        $this->pullNumber = $pullNumber;
+        $this->reviewId   = $reviewId;
     }
 
     public function createRequest(): RequestInterface

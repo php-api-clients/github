@@ -68,7 +68,30 @@ final readonly class ApplicationJson
      * secretScanningPushProtectionCustomLinkEnabled: Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
      * secretScanningPushProtectionCustomLink: If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
      */
-    public function __construct(#[MapFrom('billing_email')] public ?string $billingEmail, public ?string $company, public ?string $email, #[MapFrom('twitter_username')] public ?string $twitterUsername, public ?string $location, public ?string $name, public ?string $description, #[MapFrom('has_organization_projects')] public ?bool $hasOrganizationProjects, #[MapFrom('has_repository_projects')] public ?bool $hasRepositoryProjects, #[MapFrom('default_repository_permission')] public ?string $defaultRepositoryPermission, #[MapFrom('members_can_create_repositories')] public ?bool $membersCanCreateRepositories, #[MapFrom('members_can_create_internal_repositories')] public ?bool $membersCanCreateInternalRepositories, #[MapFrom('members_can_create_private_repositories')] public ?bool $membersCanCreatePrivateRepositories, #[MapFrom('members_can_create_public_repositories')] public ?bool $membersCanCreatePublicRepositories, #[MapFrom('members_allowed_repository_creation_type')] public ?string $membersAllowedRepositoryCreationType, #[MapFrom('members_can_create_pages')] public ?bool $membersCanCreatePages, #[MapFrom('members_can_create_public_pages')] public ?bool $membersCanCreatePublicPages, #[MapFrom('members_can_create_private_pages')] public ?bool $membersCanCreatePrivatePages, #[MapFrom('members_can_fork_private_repositories')] public ?bool $membersCanForkPrivateRepositories, #[MapFrom('web_commit_signoff_required')] public ?bool $webCommitSignoffRequired, public ?string $blog, #[MapFrom('advanced_security_enabled_for_new_repositories')] public ?bool $advancedSecurityEnabledForNewRepositories, #[MapFrom('dependabot_alerts_enabled_for_new_repositories')] public ?bool $dependabotAlertsEnabledForNewRepositories, #[MapFrom('dependabot_security_updates_enabled_for_new_repositories')] public ?bool $dependabotSecurityUpdatesEnabledForNewRepositories, #[MapFrom('dependency_graph_enabled_for_new_repositories')] public ?bool $dependencyGraphEnabledForNewRepositories, #[MapFrom('secret_scanning_enabled_for_new_repositories')] public ?bool $secretScanningEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_enabled_for_new_repositories')] public ?bool $secretScanningPushProtectionEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_custom_link_enabled')] public ?bool $secretScanningPushProtectionCustomLinkEnabled, #[MapFrom('secret_scanning_push_protection_custom_link')] public ?string $secretScanningPushProtectionCustomLink)
+    public function __construct(#[MapFrom('billing_email')]
+    public string|null $billingEmail, public string|null $company, public string|null $email, #[MapFrom('twitter_username')]
+    public string|null $twitterUsername, public string|null $location, public string|null $name, public string|null $description, #[MapFrom('has_organization_projects')]
+    public bool|null $hasOrganizationProjects, #[MapFrom('has_repository_projects')]
+    public bool|null $hasRepositoryProjects, #[MapFrom('default_repository_permission')]
+    public string|null $defaultRepositoryPermission, #[MapFrom('members_can_create_repositories')]
+    public bool|null $membersCanCreateRepositories, #[MapFrom('members_can_create_internal_repositories')]
+    public bool|null $membersCanCreateInternalRepositories, #[MapFrom('members_can_create_private_repositories')]
+    public bool|null $membersCanCreatePrivateRepositories, #[MapFrom('members_can_create_public_repositories')]
+    public bool|null $membersCanCreatePublicRepositories, #[MapFrom('members_allowed_repository_creation_type')]
+    public string|null $membersAllowedRepositoryCreationType, #[MapFrom('members_can_create_pages')]
+    public bool|null $membersCanCreatePages, #[MapFrom('members_can_create_public_pages')]
+    public bool|null $membersCanCreatePublicPages, #[MapFrom('members_can_create_private_pages')]
+    public bool|null $membersCanCreatePrivatePages, #[MapFrom('members_can_fork_private_repositories')]
+    public bool|null $membersCanForkPrivateRepositories, #[MapFrom('web_commit_signoff_required')]
+    public bool|null $webCommitSignoffRequired, public string|null $blog, #[MapFrom('advanced_security_enabled_for_new_repositories')]
+    public bool|null $advancedSecurityEnabledForNewRepositories, #[MapFrom('dependabot_alerts_enabled_for_new_repositories')]
+    public bool|null $dependabotAlertsEnabledForNewRepositories, #[MapFrom('dependabot_security_updates_enabled_for_new_repositories')]
+    public bool|null $dependabotSecurityUpdatesEnabledForNewRepositories, #[MapFrom('dependency_graph_enabled_for_new_repositories')]
+    public bool|null $dependencyGraphEnabledForNewRepositories, #[MapFrom('secret_scanning_enabled_for_new_repositories')]
+    public bool|null $secretScanningEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_enabled_for_new_repositories')]
+    public bool|null $secretScanningPushProtectionEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_custom_link_enabled')]
+    public bool|null $secretScanningPushProtectionCustomLinkEnabled, #[MapFrom('secret_scanning_push_protection_custom_link')]
+    public string|null $secretScanningPushProtectionCustomLink,)
     {
     }
 }

@@ -20,7 +20,8 @@ final readonly class DeploymentProtectionRule
      * enabled: Whether the deployment protection rule is enabled for the environment.
      * app: A GitHub App that is providing a custom deployment protection rule.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public bool $enabled, public Schema\CustomDeploymentRuleApp $app)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public bool $enabled, public Schema\CustomDeploymentRuleApp $app,)
     {
     }
 }

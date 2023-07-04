@@ -25,21 +25,15 @@ final class UpdateOrgRuleset
     public const OPERATION_MATCH = 'PUT /orgs/{org}/rulesets/{ruleset_id}';
     private const METHOD         = 'PUT';
     private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The ID of the ruleset. **/
     private int $rulesetId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->rulesetId               = $rulesetId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->rulesetId = $rulesetId;
     }
 
     public function createRequest(array $data): RequestInterface

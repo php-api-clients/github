@@ -23,9 +23,7 @@ final readonly class CreateBlob
     {
     }
 
-    /**
-     * @return PromiseInterface<ShortBlob>
-     **/
+    /** @return PromiseInterface<ShortBlob> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\CreateBlob($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

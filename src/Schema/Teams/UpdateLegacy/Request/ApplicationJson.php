@@ -28,7 +28,9 @@ final readonly class ApplicationJson
      * permission: **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
      * parentTeamId: The ID of a team to set as the parent team.
      */
-    public function __construct(public string $name, public ?string $description, public ?string $privacy, #[MapFrom('notification_setting')] public ?string $notificationSetting, public ?string $permission, #[MapFrom('parent_team_id')] public ?int $parentTeamId)
+    public function __construct(public string $name, public string|null $description, public string|null $privacy, #[MapFrom('notification_setting')]
+    public string|null $notificationSetting, public string|null $permission, #[MapFrom('parent_team_id')]
+    public int|null $parentTeamId,)
     {
     }
 }

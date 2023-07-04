@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * async: When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
      */
-    public function __construct(public ?bool $async)
+    public function __construct(public bool|null $async)
     {
     }
 }

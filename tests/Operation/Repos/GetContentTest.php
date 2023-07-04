@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetContentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_vnd_github_object_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/vnd.github.object'], Schema\ContentTree::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class GetContentTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_vnd_github_object_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/vnd.github.object'], Schema\ContentTree::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class GetContentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getContent('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -82,9 +76,7 @@ final class GetContentTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -99,9 +91,7 @@ final class GetContentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getContent('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -123,9 +113,7 @@ final class GetContentTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -140,9 +128,7 @@ final class GetContentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getContent('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_302_empty(): void
     {
         $response = new Response(302, []);
@@ -163,9 +149,7 @@ final class GetContentTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_302_empty(): void
     {
         $response = new Response(302, []);

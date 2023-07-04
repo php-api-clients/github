@@ -14,7 +14,8 @@ abstract readonly class Tiet9A2269AB
     public const SCHEMA_DESCRIPTION  = 'The membership between the user and the organization. Not present when the action is `member_invited`.';
     public const SCHEMA_EXAMPLE_DATA = '{"organization_url":"https:\\/\\/example.com\\/","role":"generated","state":"generated","url":"https:\\/\\/example.com\\/","user":{"avatar_url":"https:\\/\\/example.com\\/","deleted":false,"email":"generated","events_url":"generated","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","gravatar_id":"generated","html_url":"https:\\/\\/example.com\\/","id":2,"login":"generated","name":"generated","node_id":"generated","organizations_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","site_admin":false,"starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","type":"Organization","url":"https:\\/\\/example.com\\/"}}';
 
-    public function __construct(#[MapFrom('organization_url')] public string $organizationUrl, public string $role, public string $state, public string $url, public ?Schema\WebhookOrganizationDeleted\Membership\User $user)
+    public function __construct(#[MapFrom('organization_url')]
+    public string $organizationUrl, public string $role, public string $state, public string $url, public Schema\WebhookOrganizationDeleted\Membership\User|null $user,)
     {
     }
 }

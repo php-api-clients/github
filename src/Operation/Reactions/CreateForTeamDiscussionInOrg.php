@@ -24,24 +24,18 @@ final class CreateForTeamDiscussionInOrg
     public const OPERATION_MATCH = 'POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
     private const METHOD         = 'POST';
     private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
     private string $teamSlug;
     /**The number that identifies the discussion. **/
     private int $discussionNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Reactions $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Reactions $hydrator, string $org, string $teamSlug, int $discussionNumber)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Reactions $hydrator, string $org, string $teamSlug, int $discussionNumber)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->discussionNumber        = $discussionNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org              = $org;
+        $this->teamSlug         = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
     }
 
     public function createRequest(array $data): RequestInterface

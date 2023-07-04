@@ -16,7 +16,9 @@ final readonly class ActionsSecret
     /**
      * name: The name of the secret.
      */
-    public function __construct(public string $name, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(public string $name, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

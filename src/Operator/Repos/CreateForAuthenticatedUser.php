@@ -23,9 +23,7 @@ final readonly class CreateForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Repository|array)>
-     **/
+    /** @return PromiseInterface<(Repository|array)> **/
     public function call(array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -20,9 +20,7 @@ final readonly class RemoveMemberLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $teamId, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveMemberLegacy($teamId, $username);

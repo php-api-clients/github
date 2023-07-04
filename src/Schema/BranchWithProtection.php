@@ -18,7 +18,10 @@ final readonly class BranchWithProtection
      * commit: Commit
      * protection: Branch Protection
      */
-    public function __construct(public string $name, public Schema\Commit $commit, #[MapFrom('_links')] public Schema\BranchWithProtection\Links $links, public bool $protected, public Schema\BranchProtection $protection, #[MapFrom('protection_url')] public string $protectionUrl, public ?string $pattern, #[MapFrom('required_approving_review_count')] public ?int $requiredApprovingReviewCount)
+    public function __construct(public string $name, public Schema\Commit $commit, #[MapFrom('_links')]
+    public Schema\BranchWithProtection\Links $links, public bool $protected, public Schema\BranchProtection $protection, #[MapFrom('protection_url')]
+    public string $protectionUrl, public string|null $pattern, #[MapFrom('required_approving_review_count')]
+    public int|null $requiredApprovingReviewCount,)
     {
     }
 }

@@ -26,14 +26,10 @@ final class DeleteLegacy
     private const PATH           = '/teams/{team_id}';
     /**The unique identifier of the team. **/
     private int $teamId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId $hydrator, int $teamId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId $hydrator, int $teamId)
     {
-        $this->teamId                  = $teamId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId = $teamId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class DeleteLegacy
         return new Request(self::METHOD, str_replace(['{team_id}'], [$this->teamId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

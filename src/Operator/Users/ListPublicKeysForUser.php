@@ -20,9 +20,7 @@ final readonly class ListPublicKeysForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $username, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListPublicKeysForUser($username, $perPage, $page);

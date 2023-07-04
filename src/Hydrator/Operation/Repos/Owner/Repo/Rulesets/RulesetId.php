@@ -26,9 +26,8 @@ class RulesetId implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\RepositoryRuleset' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Self_($payload),
+                'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
-                'ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions($payload),
-                'ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions⚡️RefName($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -105,17 +104,6 @@ class RulesetId implements ObjectMapper
 
             after_enforcement:
 
-            $value = $payload['bypass_mode'] ?? null;
-
-            if ($value === null) {
-                $properties['bypassMode'] = null;
-                goto after_bypassMode;
-            }
-
-            $properties['bypassMode'] = $value;
-
-            after_bypassMode:
-
             $value = $payload['bypass_actors'] ?? null;
 
             if ($value === null) {
@@ -126,6 +114,17 @@ class RulesetId implements ObjectMapper
             $properties['bypassActors'] = $value;
 
             after_bypassActors:
+
+            $value = $payload['current_user_can_bypass'] ?? null;
+
+            if ($value === null) {
+                $properties['currentUserCanBypass'] = null;
+                goto after_currentUserCanBypass;
+            }
+
+            $properties['currentUserCanBypass'] = $value;
+
+            after_currentUserCanBypass:
 
             $value = $payload['node_id'] ?? null;
 
@@ -174,15 +173,6 @@ class RulesetId implements ObjectMapper
 
             $value = $conditionsCaster1->cast($value, $this);
 
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'conditions';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
             $properties['conditions'] = $value;
 
             after_conditions:
@@ -197,6 +187,28 @@ class RulesetId implements ObjectMapper
             $properties['rules'] = $value;
 
             after_rules:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['createdAt'] = null;
+                goto after_createdAt;
+            }
+
+            $properties['createdAt'] = $value;
+
+            after_createdAt:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
+            }
+
+            $properties['updatedAt'] = $value;
+
+            after_updatedAt:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRuleset', $exception, stack: $this->hydrationStack);
@@ -238,6 +250,26 @@ class RulesetId implements ObjectMapper
             $properties['self'] = $value;
 
             after_self:
+
+            $value = $payload['html'] ?? null;
+
+            if ($value === null) {
+                $properties['html'] = null;
+                goto after_html;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'html';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['html'] = $value;
+
+            after_html:
 
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links', $exception, stack: $this->hydrationStack);
@@ -283,6 +315,38 @@ class RulesetId implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+            $value = $payload['href'] ?? null;
+
+            if ($value === null) {
+                $properties['href'] = null;
+                goto after_href;
+            }
+
+            $properties['href'] = $value;
+
+            after_href:
+
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -350,90 +414,6 @@ class RulesetId implements ObjectMapper
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['ref_name'] ?? null;
-
-            if ($value === null) {
-                $properties['refName'] = null;
-                goto after_refName;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'refName';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions⚡️RefName($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['refName'] = $value;
-
-            after_refName:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions⚡️RefName(array $payload): \ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['include'] ?? null;
-
-            if ($value === null) {
-                $properties['include'] = null;
-                goto after_include;
-            }
-
-            $properties['include'] = $value;
-
-            after_include:
-
-            $value = $payload['exclude'] ?? null;
-
-            if ($value === null) {
-                $properties['exclude'] = null;
-                goto after_exclude;
-            }
-
-            $properties['exclude'] = $value;
-
-            after_exclude:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryRulesetConditions\RefName', $exception, stack: $this->hydrationStack);
-        }
-    }
     
     private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
     {
@@ -469,6 +449,7 @@ class RulesetId implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\RepositoryRuleset' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset($object),
             'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links($object),
             'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Self_($object),
+            'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -580,14 +561,6 @@ class RulesetId implements ObjectMapper
         after_enforcement:        $result['enforcement'] = $enforcement;
 
         
-        $bypassMode = $object->bypassMode;
-
-        if ($bypassMode === null) {
-            goto after_bypassMode;
-        }
-        after_bypassMode:        $result['bypass_mode'] = $bypassMode;
-
-        
         $bypassActors = $object->bypassActors;
 
         if ($bypassActors === null) {
@@ -602,6 +575,14 @@ class RulesetId implements ObjectMapper
         
         $bypassActors = $bypassActorsSerializer0->serialize($bypassActors, $this);
         after_bypassActors:        $result['bypass_actors'] = $bypassActors;
+
+        
+        $currentUserCanBypass = $object->currentUserCanBypass;
+
+        if ($currentUserCanBypass === null) {
+            goto after_currentUserCanBypass;
+        }
+        after_currentUserCanBypass:        $result['current_user_can_bypass'] = $currentUserCanBypass;
 
         
         $nodeId = $object->nodeId;
@@ -626,7 +607,17 @@ class RulesetId implements ObjectMapper
         if ($conditions === null) {
             goto after_conditions;
         }
-        $conditions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRulesetConditions($conditions);
+            static $conditionsSerializer20;
+
+            if ($conditionsSerializer20 === null) {
+                $conditionsSerializer20 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+            }
+            
+            $conditions = $conditionsSerializer20->serialize($conditions, $this);
+        if (is_object($conditions)) {
+            $conditions = $this->serializeObject($conditions);
+        }
         after_conditions:        $result['conditions'] = $conditions;
 
         
@@ -644,6 +635,22 @@ class RulesetId implements ObjectMapper
         
         $rules = $rulesSerializer0->serialize($rules, $this);
         after_rules:        $result['rules'] = $rules;
+
+        
+        $createdAt = $object->createdAt;
+
+        if ($createdAt === null) {
+            goto after_createdAt;
+        }
+        after_createdAt:        $result['created_at'] = $createdAt;
+
+        
+        $updatedAt = $object->updatedAt;
+
+        if ($updatedAt === null) {
+            goto after_updatedAt;
+        }
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
 
         return $result;
@@ -663,6 +670,15 @@ class RulesetId implements ObjectMapper
         $self = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Self_($self);
         after_self:        $result['self'] = $self;
 
+        
+        $html = $object->html;
+
+        if ($html === null) {
+            goto after_html;
+        }
+        $html = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html($html);
+        after_html:        $result['html'] = $html;
+
 
         return $result;
     }
@@ -671,6 +687,23 @@ class RulesetId implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Self_(mixed $object): mixed
     {
         \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_);
+        $result = [];
+
+        $href = $object->href;
+
+        if ($href === null) {
+            goto after_href;
+        }
+        after_href:        $result['href'] = $href;
+
+
+        return $result;
+    }
+
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html(mixed $object): mixed
+    {
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html);
         $result = [];
 
         $href = $object->href;

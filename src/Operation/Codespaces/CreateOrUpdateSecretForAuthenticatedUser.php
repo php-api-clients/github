@@ -25,18 +25,12 @@ final class CreateOrUpdateSecretForAuthenticatedUser
     public const OPERATION_MATCH = 'PUT /user/codespaces/secrets/{secret_name}';
     private const METHOD         = 'PUT';
     private const PATH           = '/user/codespaces/secrets/{secret_name}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator, string $secretName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator, string $secretName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->secretName = $secretName;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class CreateOrUpdateSecretForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{secret_name}'], [$this->secretName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\EmptyObject|array{code: int}
-     */
+    /** @return Schema\EmptyObject|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\EmptyObject|array
     {
         $code          = $response->getStatusCode();

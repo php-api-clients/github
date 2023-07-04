@@ -23,9 +23,7 @@ final readonly class GenerateReleaseNotes
     {
     }
 
-    /**
-     * @return PromiseInterface<ReleaseNotesContent>
-     **/
+    /** @return PromiseInterface<ReleaseNotesContent> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GenerateReleaseNotes($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

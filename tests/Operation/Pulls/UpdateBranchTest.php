@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateBranchTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateBranchTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\UpdateBranch\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateBranchTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->updateBranch('generated', 'generated', 11, json_decode(Schema\Pulls\UpdateBranch\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -81,9 +75,7 @@ final class UpdateBranchTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\UpdateBranch\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -98,9 +90,7 @@ final class UpdateBranchTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->updateBranch('generated', 'generated', 11, json_decode(Schema\Pulls\UpdateBranch\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -121,9 +111,7 @@ final class UpdateBranchTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\UpdateBranch\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

@@ -23,9 +23,7 @@ final readonly class ListSuitesForRef
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, string $ref, int $appId, string $checkName, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Checks\ListSuitesForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $appId, $checkName, $perPage, $page);

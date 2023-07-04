@@ -23,9 +23,7 @@ final readonly class GetCustomDeploymentProtectionRule
     {
     }
 
-    /**
-     * @return PromiseInterface<DeploymentProtectionRule>
-     **/
+    /** @return PromiseInterface<DeploymentProtectionRule> **/
     public function call(string $owner, string $repo, string $environmentName, int $protectionRuleId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCustomDeploymentProtectionRule($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $protectionRuleId);

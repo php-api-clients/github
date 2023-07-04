@@ -23,9 +23,7 @@ final readonly class MapCommitAuthor
     {
     }
 
-    /**
-     * @return PromiseInterface<PorterAuthor>
-     **/
+    /** @return PromiseInterface<PorterAuthor> **/
     public function call(string $owner, string $repo, int $authorId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\MapCommitAuthor($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $authorId);

@@ -21,7 +21,7 @@ final readonly class WebhookOrganizationRenamed
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\WebhookOrganizationRenamed\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\WebhookOrganizationRenamed\Membership $membership, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookOrganizationRenamed\Changes|null $changes, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookOrganizationRenamed\Membership|null $membership, public Schema\OrganizationSimple $organization, public Schema\Repository|null $repository, public Schema\SimpleUser $sender)
     {
     }
 }

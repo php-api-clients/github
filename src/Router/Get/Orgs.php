@@ -19,19 +19,9 @@ final class Orgs
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function list_(array $params)
@@ -52,150 +42,6 @@ final class Orgs
         $operator = new Operator\Orgs\List_($this->browser, $this->authentication);
 
         return $operator->call($arguments['since'], $arguments['per_page']);
-    }
-
-    public function listPatGrantRequests(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repository', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository');
-        }
-
-        $arguments['repository'] = $params['repository'];
-        unset($params['repository']);
-        if (array_key_exists('permission', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: permission');
-        }
-
-        $arguments['permission'] = $params['permission'];
-        unset($params['permission']);
-        if (array_key_exists('last_used_before', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: last_used_before');
-        }
-
-        $arguments['last_used_before'] = $params['last_used_before'];
-        unset($params['last_used_before']);
-        if (array_key_exists('last_used_after', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: last_used_after');
-        }
-
-        $arguments['last_used_after'] = $params['last_used_after'];
-        unset($params['last_used_after']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests();
-        }
-
-        $operator = new Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests::class]);
-
-        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
-    }
-
-    public function listPatGrants(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repository', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository');
-        }
-
-        $arguments['repository'] = $params['repository'];
-        unset($params['repository']);
-        if (array_key_exists('permission', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: permission');
-        }
-
-        $arguments['permission'] = $params['permission'];
-        unset($params['permission']);
-        if (array_key_exists('last_used_before', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: last_used_before');
-        }
-
-        $arguments['last_used_before'] = $params['last_used_before'];
-        unset($params['last_used_before']);
-        if (array_key_exists('last_used_after', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: last_used_after');
-        }
-
-        $arguments['last_used_after'] = $params['last_used_after'];
-        unset($params['last_used_after']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens();
-        }
-
-        $operator = new Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens::class]);
-
-        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
     public function listBlockedUsers(array $params)
@@ -428,6 +274,150 @@ final class Orgs
         $operator = new Operator\Orgs\ListOutsideCollaborators($this->browser, $this->authentication);
 
         return $operator->call($arguments['org'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPatGrantRequests(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repository', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository');
+        }
+
+        $arguments['repository'] = $params['repository'];
+        unset($params['repository']);
+        if (array_key_exists('permission', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: permission');
+        }
+
+        $arguments['permission'] = $params['permission'];
+        unset($params['permission']);
+        if (array_key_exists('last_used_before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: last_used_before');
+        }
+
+        $arguments['last_used_before'] = $params['last_used_before'];
+        unset($params['last_used_before']);
+        if (array_key_exists('last_used_after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: last_used_after');
+        }
+
+        $arguments['last_used_after'] = $params['last_used_after'];
+        unset($params['last_used_after']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests();
+        }
+
+        $operator = new Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests::class]);
+
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
+    }
+
+    public function listPatGrants(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repository', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository');
+        }
+
+        $arguments['repository'] = $params['repository'];
+        unset($params['repository']);
+        if (array_key_exists('permission', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: permission');
+        }
+
+        $arguments['permission'] = $params['permission'];
+        unset($params['permission']);
+        if (array_key_exists('last_used_before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: last_used_before');
+        }
+
+        $arguments['last_used_before'] = $params['last_used_before'];
+        unset($params['last_used_before']);
+        if (array_key_exists('last_used_after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: last_used_after');
+        }
+
+        $arguments['last_used_after'] = $params['last_used_after'];
+        unset($params['last_used_after']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\PersonalAccessTokens::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokens::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens();
+        }
+
+        $operator = new Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokens::class]);
+
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
     public function listPublicMembers(array $params)
@@ -698,78 +688,6 @@ final class Orgs
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function listPatGrantRequestRepositories(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('pat_request_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: pat_request_id');
-        }
-
-        $arguments['pat_request_id'] = $params['pat_request_id'];
-        unset($params['pat_request_id']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId🌀Repositories();
-        }
-
-        $operator = new Operator\Orgs\ListPatGrantRequestRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class]);
-
-        return $operator->call($arguments['org'], $arguments['pat_request_id'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listPatGrantRepositories(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('pat_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: pat_id');
-        }
-
-        $arguments['pat_id'] = $params['pat_id'];
-        unset($params['pat_id']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories();
-        }
-
-        $operator = new Operator\Orgs\ListPatGrantRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories::class]);
-
-        return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
-    }
-
     public function getWebhookConfigForOrg(array $params)
     {
         $arguments = [];
@@ -870,6 +788,78 @@ final class Orgs
         $operator = new Operator\Orgs\ListInvitationTeams($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams::class]);
 
         return $operator->call($arguments['org'], $arguments['invitation_id'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPatGrantRequestRepositories(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('pat_request_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: pat_request_id');
+        }
+
+        $arguments['pat_request_id'] = $params['pat_request_id'];
+        unset($params['pat_request_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId🌀Repositories();
+        }
+
+        $operator = new Operator\Orgs\ListPatGrantRequestRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId\Repositories::class]);
+
+        return $operator->call($arguments['org'], $arguments['pat_request_id'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPatGrantRepositories(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('pat_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: pat_id');
+        }
+
+        $arguments['pat_id'] = $params['pat_id'];
+        unset($params['pat_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories();
+        }
+
+        $operator = new Operator\Orgs\ListPatGrantRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories::class]);
+
+        return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getWebhookDelivery(array $params)

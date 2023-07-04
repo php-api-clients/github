@@ -26,25 +26,27 @@ final class GetRepoRulesets
     private const PATH           = '/repos/{owner}/{repo}/rulesets';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
+    /**The number of results per page (max 100). **/
+    private int $perPage;
+    /**Page number of the results to fetch. **/
+    private int $page;
     /**Include rulesets configured at higher levels that apply to this repository **/
     private bool $includesParents;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator, string $owner, string $repo, bool $includesParents)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator, string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->includesParents         = $includesParents;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner           = $owner;
+        $this->repo            = $repo;
+        $this->perPage         = $perPage;
+        $this->page            = $page;
+        $this->includesParents = $includesParents;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{includes_parents}'], [$this->owner, $this->repo, $this->includesParents], self::PATH . '?includes_parents={includes_parents}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}', '{includes_parents}'], [$this->owner, $this->repo, $this->perPage, $this->page, $this->includesParents], self::PATH . '?per_page={per_page}&page={page}&includes_parents={includes_parents}'));
     }
 
     public function createResponse(ResponseInterface $response): mixed

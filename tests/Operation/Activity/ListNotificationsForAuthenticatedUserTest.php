@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -45,9 +43,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -62,9 +58,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -88,9 +82,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -105,9 +97,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -131,9 +121,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -148,9 +136,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -173,9 +159,7 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

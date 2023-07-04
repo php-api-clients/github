@@ -13,7 +13,25 @@ abstract readonly class TietFD131312
     public const SCHEMA_DESCRIPTION  = 'The set of permissions for the GitHub app';
     public const SCHEMA_EXAMPLE_DATA = '{"actions":"read","administration":"write","checks":"write","content_references":"write","contents":"write","deployments":"read","discussions":"read","emails":"write","environments":"write","issues":"write","keys":"write","members":"read","metadata":"write","organization_administration":"read","organization_hooks":"write","organization_packages":"read","organization_plan":"read","organization_projects":"read","organization_secrets":"write","organization_self_hosted_runners":"write","organization_user_blocking":"write","packages":"write","pages":"read","pull_requests":"read","repository_hooks":"write","repository_projects":"read","secret_scanning_alerts":"write","secrets":"read","security_events":"read","security_scanning_alert":"read","single_file":"read","statuses":"write","team_discussions":"write","vulnerability_alerts":"write","workflows":"read"}';
 
-    public function __construct(public ?string $actions, public ?string $administration, public ?string $checks, #[MapFrom('content_references')] public ?string $contentReferences, public ?string $contents, public ?string $deployments, public ?string $discussions, public ?string $emails, public ?string $environments, public ?string $issues, public ?string $keys, public ?string $members, public ?string $metadata, #[MapFrom('organization_administration')] public ?string $organizationAdministration, #[MapFrom('organization_hooks')] public ?string $organizationHooks, #[MapFrom('organization_packages')] public ?string $organizationPackages, #[MapFrom('organization_plan')] public ?string $organizationPlan, #[MapFrom('organization_projects')] public ?string $organizationProjects, #[MapFrom('organization_secrets')] public ?string $organizationSecrets, #[MapFrom('organization_self_hosted_runners')] public ?string $organizationSelfHostedRunners, #[MapFrom('organization_user_blocking')] public ?string $organizationUserBlocking, public ?string $packages, public ?string $pages, #[MapFrom('pull_requests')] public ?string $pullRequests, #[MapFrom('repository_hooks')] public ?string $repositoryHooks, #[MapFrom('repository_projects')] public ?string $repositoryProjects, #[MapFrom('secret_scanning_alerts')] public ?string $secretScanningAlerts, public ?string $secrets, #[MapFrom('security_events')] public ?string $securityEvents, #[MapFrom('security_scanning_alert')] public ?string $securityScanningAlert, #[MapFrom('single_file')] public ?string $singleFile, public ?string $statuses, #[MapFrom('team_discussions')] public ?string $teamDiscussions, #[MapFrom('vulnerability_alerts')] public ?string $vulnerabilityAlerts, public ?string $workflows)
+    public function __construct(public string|null $actions, public string|null $administration, public string|null $checks, #[MapFrom('content_references')]
+    public string|null $contentReferences, public string|null $contents, public string|null $deployments, public string|null $discussions, public string|null $emails, public string|null $environments, public string|null $issues, public string|null $keys, public string|null $members, public string|null $metadata, #[MapFrom('organization_administration')]
+    public string|null $organizationAdministration, #[MapFrom('organization_hooks')]
+    public string|null $organizationHooks, #[MapFrom('organization_packages')]
+    public string|null $organizationPackages, #[MapFrom('organization_plan')]
+    public string|null $organizationPlan, #[MapFrom('organization_projects')]
+    public string|null $organizationProjects, #[MapFrom('organization_secrets')]
+    public string|null $organizationSecrets, #[MapFrom('organization_self_hosted_runners')]
+    public string|null $organizationSelfHostedRunners, #[MapFrom('organization_user_blocking')]
+    public string|null $organizationUserBlocking, public string|null $packages, public string|null $pages, #[MapFrom('pull_requests')]
+    public string|null $pullRequests, #[MapFrom('repository_hooks')]
+    public string|null $repositoryHooks, #[MapFrom('repository_projects')]
+    public string|null $repositoryProjects, #[MapFrom('secret_scanning_alerts')]
+    public string|null $secretScanningAlerts, public string|null $secrets, #[MapFrom('security_events')]
+    public string|null $securityEvents, #[MapFrom('security_scanning_alert')]
+    public string|null $securityScanningAlert, #[MapFrom('single_file')]
+    public string|null $singleFile, public string|null $statuses, #[MapFrom('team_discussions')]
+    public string|null $teamDiscussions, #[MapFrom('vulnerability_alerts')]
+    public string|null $vulnerabilityAlerts, public string|null $workflows,)
     {
     }
 }

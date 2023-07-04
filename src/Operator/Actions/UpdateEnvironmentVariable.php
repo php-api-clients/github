@@ -21,9 +21,7 @@ final readonly class UpdateEnvironmentVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $repositoryId, string $name, string $environmentName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $repositoryId, $name, $environmentName);

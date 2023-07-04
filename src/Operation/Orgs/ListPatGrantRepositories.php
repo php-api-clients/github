@@ -21,9 +21,9 @@ use function str_replace;
 final class ListPatGrantRepositories
 {
     public const OPERATION_ID    = 'orgs/list-pat-grant-repositories';
-    public const OPERATION_MATCH = 'GET /organizations/{org}/personal-access-tokens/{pat_id}/repositories';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories';
     private const METHOD         = 'GET';
-    private const PATH           = '/organizations/{org}/personal-access-tokens/{pat_id}/repositories';
+    private const PATH           = '/orgs/{org}/personal-access-tokens/{pat_id}/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the fine-grained personal access token. **/
@@ -32,17 +32,13 @@ final class ListPatGrantRepositories
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId\Repositories $hydrator, string $org, int $patId, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories $hydrator, string $org, int $patId, int $perPage = 30, int $page = 1)
     {
-        $this->org                     = $org;
-        $this->patId                   = $patId;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org     = $org;
+        $this->patId   = $patId;
+        $this->perPage = $perPage;
+        $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface

@@ -13,7 +13,22 @@ final readonly class SimpleUser
     public const SCHEMA_DESCRIPTION  = 'A GitHub user.';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","email":"generated","login":"octocat","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif","gravatar_id":"41d064eb2195891e12d0413f63227ea7","url":"https:\\/\\/api.github.com\\/users\\/octocat","html_url":"https:\\/\\/github.com\\/octocat","followers_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/followers","following_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}","gists_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}","starred_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}","subscriptions_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions","organizations_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/orgs","repos_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/repos","events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}","received_events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/received_events","type":"User","site_admin":false,"starred_at":"\\"2020-07-09T00:17:55Z\\""}';
 
-    public function __construct(public ?string $name, public ?string $email, public string $login, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('avatar_url')] public string $avatarUrl, #[MapFrom('gravatar_id')] public ?string $gravatarId, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('followers_url')] public string $followersUrl, #[MapFrom('following_url')] public string $followingUrl, #[MapFrom('gists_url')] public string $gistsUrl, #[MapFrom('starred_url')] public string $starredUrl, #[MapFrom('subscriptions_url')] public string $subscriptionsUrl, #[MapFrom('organizations_url')] public string $organizationsUrl, #[MapFrom('repos_url')] public string $reposUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('received_events_url')] public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')] public bool $siteAdmin, #[MapFrom('starred_at')] public ?string $starredAt)
+    public function __construct(public string|null $name, public string|null $email, public string $login, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('avatar_url')]
+    public string $avatarUrl, #[MapFrom('gravatar_id')]
+    public string|null $gravatarId, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('followers_url')]
+    public string $followersUrl, #[MapFrom('following_url')]
+    public string $followingUrl, #[MapFrom('gists_url')]
+    public string $gistsUrl, #[MapFrom('starred_url')]
+    public string $starredUrl, #[MapFrom('subscriptions_url')]
+    public string $subscriptionsUrl, #[MapFrom('organizations_url')]
+    public string $organizationsUrl, #[MapFrom('repos_url')]
+    public string $reposUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('received_events_url')]
+    public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
+    public bool $siteAdmin, #[MapFrom('starred_at')]
+    public string|null $starredAt,)
     {
     }
 }

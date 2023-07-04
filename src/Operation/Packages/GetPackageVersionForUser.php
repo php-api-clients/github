@@ -31,17 +31,13 @@ final class GetPackageVersionForUser
     private int $packageVersionId;
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, int $packageVersionId, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, int $packageVersionId, string $username)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->packageVersionId        = $packageVersionId;
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType      = $packageType;
+        $this->packageName      = $packageName;
+        $this->packageVersionId = $packageVersionId;
+        $this->username         = $username;
     }
 
     public function createRequest(): RequestInterface

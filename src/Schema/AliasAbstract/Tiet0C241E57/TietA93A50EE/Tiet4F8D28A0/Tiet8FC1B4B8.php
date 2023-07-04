@@ -20,7 +20,11 @@ abstract readonly class Tiet8FC1B4B8
      * permission: Permission that the team will have for its repositories
      * url: URL for the team
      */
-    public function __construct(public ?string $description, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('members_url')] public string $membersUrl, public string $name, #[MapFrom('node_id')] public string $nodeId, public string $permission, public string $privacy, #[MapFrom('repositories_url')] public string $repositoriesUrl, public string $slug, public string $url)
+    public function __construct(public string|null $description, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('members_url')]
+    public string $membersUrl, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public string $permission, public string $privacy, #[MapFrom('repositories_url')]
+    public string $repositoriesUrl, public string $slug, public string $url,)
     {
     }
 }

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class SetSuitesPreferencesTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CheckSuitePreference::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class SetSuitesPreferencesTest extends AsyncTestCase
         })(json_decode(Schema\Checks\SetSuitesPreferences\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CheckSuitePreference::SCHEMA_EXAMPLE_DATA);

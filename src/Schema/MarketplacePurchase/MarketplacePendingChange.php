@@ -17,7 +17,10 @@ final readonly class MarketplacePendingChange
     /**
      * plan: Marketplace Listing Plan
      */
-    public function __construct(#[MapFrom('is_installed')] public ?bool $isInstalled, #[MapFrom('effective_date')] public ?string $effectiveDate, #[MapFrom('unit_count')] public ?int $unitCount, public ?int $id, public ?Schema\MarketplaceListingPlan $plan)
+    public function __construct(#[MapFrom('is_installed')]
+    public bool|null $isInstalled, #[MapFrom('effective_date')]
+    public string|null $effectiveDate, #[MapFrom('unit_count')]
+    public int|null $unitCount, public int|null $id, public Schema\MarketplaceListingPlan|null $plan,)
     {
     }
 }

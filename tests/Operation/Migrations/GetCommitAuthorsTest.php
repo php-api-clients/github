@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetCommitAuthorsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -42,9 +40,7 @@ final class GetCommitAuthorsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -59,9 +55,7 @@ final class GetCommitAuthorsTest extends AsyncTestCase
         $result = await($client->operations()->migrations()->getCommitAuthors('generated', 'generated', 5));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -82,9 +76,7 @@ final class GetCommitAuthorsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

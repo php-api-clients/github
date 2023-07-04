@@ -13,7 +13,14 @@ abstract readonly class Tiet59904AE0
     public const SCHEMA_DESCRIPTION  = 'The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.';
     public const SCHEMA_EXAMPLE_DATA = '{"created_at":"generated","description":"generated","is_custom_ammount":false,"is_custom_amount":false,"is_one_time":false,"monthly_price_in_cents":22,"monthly_price_in_dollars":24,"name":"generated","node_id":"generated"}';
 
-    public function __construct(#[MapFrom('created_at')] public string $createdAt, public string $description, #[MapFrom('is_custom_ammount')] public ?bool $isCustomAmmount, #[MapFrom('is_custom_amount')] public ?bool $isCustomAmount, #[MapFrom('is_one_time')] public bool $isOneTime, #[MapFrom('monthly_price_in_cents')] public int $monthlyPriceInCents, #[MapFrom('monthly_price_in_dollars')] public int $monthlyPriceInDollars, public string $name, #[MapFrom('node_id')] public string $nodeId)
+    public function __construct(#[MapFrom('created_at')]
+    public string $createdAt, public string $description, #[MapFrom('is_custom_ammount')]
+    public bool|null $isCustomAmmount, #[MapFrom('is_custom_amount')]
+    public bool|null $isCustomAmount, #[MapFrom('is_one_time')]
+    public bool $isOneTime, #[MapFrom('monthly_price_in_cents')]
+    public int $monthlyPriceInCents, #[MapFrom('monthly_price_in_dollars')]
+    public int $monthlyPriceInDollars, public string $name, #[MapFrom('node_id')]
+    public string $nodeId,)
     {
     }
 }

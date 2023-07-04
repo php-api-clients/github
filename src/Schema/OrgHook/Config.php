@@ -13,7 +13,9 @@ final readonly class Config
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"\\"http:\\/\\/example.com\\/2\\"","insecure_ssl":"\\"0\\"","content_type":"\\"form\\"","secret":"\\"********\\""}';
 
-    public function __construct(public ?string $url, #[MapFrom('insecure_ssl')] public ?string $insecureSsl, #[MapFrom('content_type')] public ?string $contentType, public ?string $secret)
+    public function __construct(public string|null $url, #[MapFrom('insecure_ssl')]
+    public string|null $insecureSsl, #[MapFrom('content_type')]
+    public string|null $contentType, public string|null $secret,)
     {
     }
 }

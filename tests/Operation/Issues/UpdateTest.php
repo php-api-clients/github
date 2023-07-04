@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Issue::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Issue::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -81,9 +75,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -98,9 +90,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -121,9 +111,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -138,9 +126,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -161,9 +147,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -178,9 +162,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_301_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -200,9 +182,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_301_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -216,9 +196,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -239,9 +217,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -256,9 +232,7 @@ final class UpdateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->update('generated', 'generated', 12, json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -279,9 +253,7 @@ final class UpdateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Update\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

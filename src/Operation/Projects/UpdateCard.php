@@ -25,18 +25,12 @@ final class UpdateCard
     public const OPERATION_MATCH = 'PATCH /projects/columns/cards/{card_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/projects/columns/cards/{card_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the card. **/
     private int $cardId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator, int $cardId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator, int $cardId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->cardId                  = $cardId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->cardId = $cardId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class UpdateCard
         return new Request(self::METHOD, str_replace(['{card_id}'], [$this->cardId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\ProjectCard|array{code: int}
-     */
+    /** @return Schema\ProjectCard|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectCard|array
     {
         $code          = $response->getStatusCode();

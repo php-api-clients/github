@@ -17,7 +17,12 @@ final readonly class ProjectColumn
      * id: The unique identifier of the project column
      * name: Name of the project column
      */
-    public function __construct(public string $url, #[MapFrom('project_url')] public string $projectUrl, #[MapFrom('cards_url')] public string $cardsUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(public string $url, #[MapFrom('project_url')]
+    public string $projectUrl, #[MapFrom('cards_url')]
+    public string $cardsUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

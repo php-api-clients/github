@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * title: A descriptive name for the new key.
      * key: The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
      */
-    public function __construct(public ?string $title, public string $key)
+    public function __construct(public string|null $title, public string $key)
     {
     }
 }

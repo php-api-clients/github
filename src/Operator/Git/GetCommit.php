@@ -23,9 +23,7 @@ final readonly class GetCommit
     {
     }
 
-    /**
-     * @return PromiseInterface<GitCommit>
-     **/
+    /** @return PromiseInterface<GitCommit> **/
     public function call(string $owner, string $repo, string $commitSha): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\GetCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);

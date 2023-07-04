@@ -23,15 +23,9 @@ final class RenderRaw
     public const OPERATION_MATCH = 'POST /markdown/raw';
     private const METHOD         = 'POST';
     private const PATH           = '/markdown/raw';
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Markdown\Raw $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Markdown\Raw $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Markdown\Raw $hydrator)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -41,9 +35,7 @@ final class RenderRaw
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'text/plain'], json_encode($data));
     }
 
-    /**
-     * @return string|array{code: int}
-     */
+    /** @return string|array{code: int} */
     public function createResponse(ResponseInterface $response): string|array
     {
         $code          = $response->getStatusCode();

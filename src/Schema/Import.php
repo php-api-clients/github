@@ -16,7 +16,26 @@ final readonly class Import
     /**
      * vcsUrl: The URL of the originating repository.
      */
-    public function __construct(public ?string $vcs, #[MapFrom('use_lfs')] public ?bool $useLfs, #[MapFrom('vcs_url')] public string $vcsUrl, #[MapFrom('svc_root')] public ?string $svcRoot, #[MapFrom('tfvc_project')] public ?string $tfvcProject, public string $status, #[MapFrom('status_text')] public ?string $statusText, #[MapFrom('failed_step')] public ?string $failedStep, #[MapFrom('error_message')] public ?string $errorMessage, #[MapFrom('import_percent')] public ?int $importPercent, #[MapFrom('commit_count')] public ?int $commitCount, #[MapFrom('push_percent')] public ?int $pushPercent, #[MapFrom('has_large_files')] public ?bool $hasLargeFiles, #[MapFrom('large_files_size')] public ?int $largeFilesSize, #[MapFrom('large_files_count')] public ?int $largeFilesCount, #[MapFrom('project_choices')] public ?array $projectChoices, public ?string $message, #[MapFrom('authors_count')] public ?int $authorsCount, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('authors_url')] public string $authorsUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('svn_root')] public ?string $svnRoot)
+    public function __construct(public string|null $vcs, #[MapFrom('use_lfs')]
+    public bool|null $useLfs, #[MapFrom('vcs_url')]
+    public string $vcsUrl, #[MapFrom('svc_root')]
+    public string|null $svcRoot, #[MapFrom('tfvc_project')]
+    public string|null $tfvcProject, public string $status, #[MapFrom('status_text')]
+    public string|null $statusText, #[MapFrom('failed_step')]
+    public string|null $failedStep, #[MapFrom('error_message')]
+    public string|null $errorMessage, #[MapFrom('import_percent')]
+    public int|null $importPercent, #[MapFrom('commit_count')]
+    public int|null $commitCount, #[MapFrom('push_percent')]
+    public int|null $pushPercent, #[MapFrom('has_large_files')]
+    public bool|null $hasLargeFiles, #[MapFrom('large_files_size')]
+    public int|null $largeFilesSize, #[MapFrom('large_files_count')]
+    public int|null $largeFilesCount, #[MapFrom('project_choices')]
+    public array|null $projectChoices, public string|null $message, #[MapFrom('authors_count')]
+    public int|null $authorsCount, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('authors_url')]
+    public string $authorsUrl, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('svn_root')]
+    public string|null $svnRoot,)
     {
     }
 }

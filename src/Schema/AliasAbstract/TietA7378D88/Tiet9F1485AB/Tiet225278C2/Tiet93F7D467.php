@@ -13,7 +13,9 @@ abstract readonly class Tiet93F7D467
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"generated","name":"generated","node_id":"generated","spdx_id":"generated","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public string $key, public string $name, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('spdx_id')] public string $spdxId, public ?string $url)
+    public function __construct(public string $key, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('spdx_id')]
+    public string $spdxId, public string|null $url,)
     {
     }
 }

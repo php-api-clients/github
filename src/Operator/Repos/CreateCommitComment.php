@@ -23,9 +23,7 @@ final readonly class CreateCommitComment
     {
     }
 
-    /**
-     * @return PromiseInterface<CommitComment>
-     **/
+    /** @return PromiseInterface<CommitComment> **/
     public function call(string $owner, string $repo, string $commitSha, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateCommitComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);

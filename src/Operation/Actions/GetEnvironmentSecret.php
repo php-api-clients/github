@@ -29,16 +29,12 @@ final class GetEnvironmentSecret
     private string $environmentName;
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
+        $this->secretName      = $secretName;
     }
 
     public function createRequest(): RequestInterface

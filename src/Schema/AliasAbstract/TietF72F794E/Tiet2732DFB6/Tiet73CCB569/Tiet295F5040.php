@@ -11,7 +11,7 @@ abstract readonly class Tiet295F5040
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":false}';
 
-    public function __construct(public ?bool $from)
+    public function __construct(public bool|null $from)
     {
     }
 }

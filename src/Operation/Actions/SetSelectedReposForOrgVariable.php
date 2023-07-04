@@ -21,17 +21,15 @@ final class SetSelectedReposForOrgVariable
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/variables/{name}/repositories';
     private const METHOD         = 'PUT';
     private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the variable. **/
     private string $name;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, string $org, string $name)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, string $org, string $name)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->org                    = $org;
-        $this->name                   = $name;
+        $this->org  = $org;
+        $this->name = $name;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -41,9 +39,7 @@ final class SetSelectedReposForOrgVariable
         return new Request(self::METHOD, str_replace(['{org}', '{name}'], [$this->org, $this->name], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

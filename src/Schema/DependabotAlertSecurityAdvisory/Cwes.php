@@ -17,7 +17,8 @@ final readonly class Cwes
      * cweId: The unique CWE ID.
      * name: The short, plain text name of the CWE.
      */
-    public function __construct(#[MapFrom('cwe_id')] public string $cweId, public string $name)
+    public function __construct(#[MapFrom('cwe_id')]
+    public string $cweId, public string $name,)
     {
     }
 }

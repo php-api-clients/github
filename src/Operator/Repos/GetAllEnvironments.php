@@ -23,9 +23,7 @@ final readonly class GetAllEnvironments
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAllEnvironments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

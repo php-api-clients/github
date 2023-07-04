@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateAlertTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\DependabotAlert::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\DependabotAlert::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -121,9 +111,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -138,9 +126,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -161,9 +147,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -178,9 +162,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -201,9 +183,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -218,9 +198,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -241,9 +219,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -258,9 +234,7 @@ final class UpdateAlertTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->updateAlert('generated', 'generated', 12, json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationErrorSimple::class);
@@ -281,9 +255,7 @@ final class UpdateAlertTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\UpdateAlert\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationErrorSimple::class);

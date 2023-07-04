@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreatePagesDeploymentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PageDeployment::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PageDeployment::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -79,9 +73,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -96,9 +88,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -118,9 +108,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -135,9 +123,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -157,9 +143,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -174,9 +158,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -196,9 +178,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

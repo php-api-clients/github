@@ -24,13 +24,9 @@ final class GetAuthenticated
     public const OPERATION_MATCH = 'GET /user';
     private const METHOD         = 'GET';
     private const PATH           = '/user';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -38,9 +34,7 @@ final class GetAuthenticated
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

@@ -20,9 +20,7 @@ final readonly class ListPackagesForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $visibility, int $page = 1, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\ListPackagesForAuthenticatedUser($packageType, $visibility, $page, $perPage);

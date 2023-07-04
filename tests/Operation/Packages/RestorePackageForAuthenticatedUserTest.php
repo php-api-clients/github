@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -42,9 +40,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -59,9 +55,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->packages()->restorePackageForAuthenticatedUser('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -82,9 +76,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -99,9 +91,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->packages()->restorePackageForAuthenticatedUser('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -122,9 +112,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -139,9 +127,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->packages()->restorePackageForAuthenticatedUser('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -161,9 +147,7 @@ final class RestorePackageForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

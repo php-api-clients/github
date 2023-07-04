@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -43,9 +41,7 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -60,9 +56,7 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsInOrg('generated', 'generated', 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -82,9 +76,7 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);

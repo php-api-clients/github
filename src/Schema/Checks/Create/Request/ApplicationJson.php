@@ -27,7 +27,12 @@ final readonly class ApplicationJson
      * output: Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
      * actions: Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
      */
-    public function __construct(public string $name, #[MapFrom('head_sha')] public string $headSha, #[MapFrom('details_url')] public ?string $detailsUrl, #[MapFrom('external_id')] public ?string $externalId, public ?string $status, #[MapFrom('started_at')] public ?string $startedAt, public ?string $conclusion, #[MapFrom('completed_at')] public ?string $completedAt, public ?Schema\Checks\Create\Request\ApplicationJson\Output $output, public ?array $actions)
+    public function __construct(public string $name, #[MapFrom('head_sha')]
+    public string $headSha, #[MapFrom('details_url')]
+    public string|null $detailsUrl, #[MapFrom('external_id')]
+    public string|null $externalId, public string|null $status, #[MapFrom('started_at')]
+    public string|null $startedAt, public string|null $conclusion, #[MapFrom('completed_at')]
+    public string|null $completedAt, public Schema\Checks\Create\Request\ApplicationJson\Output|null $output, public array|null $actions,)
     {
     }
 }

@@ -18,7 +18,8 @@ final readonly class ApplicationJson
      * name: When forking from an existing repository, a new name for the fork.
      * defaultBranchOnly: When forking from an existing repository, fork with only the default branch.
      */
-    public function __construct(public ?string $organization, public ?string $name, #[MapFrom('default_branch_only')] public ?bool $defaultBranchOnly)
+    public function __construct(public string|null $organization, public string|null $name, #[MapFrom('default_branch_only')]
+    public bool|null $defaultBranchOnly,)
     {
     }
 }

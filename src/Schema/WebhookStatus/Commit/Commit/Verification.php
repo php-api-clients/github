@@ -11,7 +11,7 @@ final readonly class Verification
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"payload":"generated","reason":"ocsp_pending","signature":"generated","verified":false}';
 
-    public function __construct(public ?string $payload, public string $reason, public ?string $signature, public bool $verified)
+    public function __construct(public string|null $payload, public string $reason, public string|null $signature, public bool $verified)
     {
     }
 }

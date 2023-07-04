@@ -19,7 +19,28 @@ final readonly class PullRequestSimple
      * autoMerge: The status of auto merging a pull request.
      * draft: Indicates whether or not the pull request is a draft.
      */
-    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('diff_url')] public string $diffUrl, #[MapFrom('patch_url')] public string $patchUrl, #[MapFrom('issue_url')] public string $issueUrl, #[MapFrom('commits_url')] public string $commitsUrl, #[MapFrom('review_comments_url')] public string $reviewCommentsUrl, #[MapFrom('review_comment_url')] public string $reviewCommentUrl, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('statuses_url')] public string $statusesUrl, public int $number, public string $state, public bool $locked, public string $title, public ?Schema\SimpleUser $user, public ?string $body, public array $labels, public ?Schema\Milestone $milestone, #[MapFrom('active_lock_reason')] public ?string $activeLockReason, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('merged_at')] public ?string $mergedAt, #[MapFrom('merge_commit_sha')] public ?string $mergeCommitSha, public ?Schema\SimpleUser $assignee, public ?array $assignees, #[MapFrom('requested_reviewers')] public ?array $requestedReviewers, #[MapFrom('requested_teams')] public ?array $requestedTeams, public Schema\PullRequestSimple\Head $head, public Schema\PullRequestSimple\Base $base, #[MapFrom('_links')] public Schema\PullRequestSimple\Links $links, #[MapFrom('author_association')] public string $authorAssociation, #[MapFrom('auto_merge')] public ?Schema\AutoMerge $autoMerge, public ?bool $draft)
+    public function __construct(public string $url, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('diff_url')]
+    public string $diffUrl, #[MapFrom('patch_url')]
+    public string $patchUrl, #[MapFrom('issue_url')]
+    public string $issueUrl, #[MapFrom('commits_url')]
+    public string $commitsUrl, #[MapFrom('review_comments_url')]
+    public string $reviewCommentsUrl, #[MapFrom('review_comment_url')]
+    public string $reviewCommentUrl, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('statuses_url')]
+    public string $statusesUrl, public int $number, public string $state, public bool $locked, public string $title, public Schema\SimpleUser|null $user, public string|null $body, public array $labels, public Schema\Milestone|null $milestone, #[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('merged_at')]
+    public string|null $mergedAt, #[MapFrom('merge_commit_sha')]
+    public string|null $mergeCommitSha, public Schema\SimpleUser|null $assignee, public array|null $assignees, #[MapFrom('requested_reviewers')]
+    public array|null $requestedReviewers, #[MapFrom('requested_teams')]
+    public array|null $requestedTeams, public Schema\PullRequestSimple\Head $head, public Schema\PullRequestSimple\Base $base, #[MapFrom('_links')]
+    public Schema\PullRequestSimple\Links $links, #[MapFrom('author_association')]
+    public string $authorAssociation, #[MapFrom('auto_merge')]
+    public Schema\AutoMerge|null $autoMerge, public bool|null $draft,)
     {
     }
 }

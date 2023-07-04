@@ -20,7 +20,12 @@ final readonly class Parameters
      * requiredApprovingReviewCount: The number of approving reviews that are required before a pull request can be merged.
      * requiredReviewThreadResolution: All conversations on code must be resolved before a pull request can be merged.
      */
-    public function __construct(#[MapFrom('dismiss_stale_reviews_on_push')] public bool $dismissStaleReviewsOnPush, #[MapFrom('require_code_owner_review')] public bool $requireCodeOwnerReview, #[MapFrom('require_last_push_approval')] public bool $requireLastPushApproval, #[MapFrom('required_approving_review_count')] public int $requiredApprovingReviewCount, #[MapFrom('required_review_thread_resolution')] public bool $requiredReviewThreadResolution)
+    public function __construct(#[MapFrom('dismiss_stale_reviews_on_push')]
+    public bool $dismissStaleReviewsOnPush, #[MapFrom('require_code_owner_review')]
+    public bool $requireCodeOwnerReview, #[MapFrom('require_last_push_approval')]
+    public bool $requireLastPushApproval, #[MapFrom('required_approving_review_count')]
+    public int $requiredApprovingReviewCount, #[MapFrom('required_review_thread_resolution')]
+    public bool $requiredReviewThreadResolution,)
     {
     }
 }

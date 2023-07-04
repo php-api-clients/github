@@ -28,15 +28,11 @@ final class GetMembershipForUser
     private string $org;
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Memberships\Username $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Memberships\Username $hydrator, string $org, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Memberships\Username $hydrator, string $org, string $username)
     {
-        $this->org                     = $org;
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org      = $org;
+        $this->username = $username;
     }
 
     public function createRequest(): RequestInterface

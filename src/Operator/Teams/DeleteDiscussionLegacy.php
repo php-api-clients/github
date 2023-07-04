@@ -20,9 +20,7 @@ final readonly class DeleteDiscussionLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $teamId, int $discussionNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\DeleteDiscussionLegacy($teamId, $discussionNumber);

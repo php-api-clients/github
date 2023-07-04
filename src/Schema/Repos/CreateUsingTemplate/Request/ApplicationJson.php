@@ -20,7 +20,8 @@ final readonly class ApplicationJson
      * includeAllBranches: Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.
      * private: Either `true` to create a new private repository or `false` to create a new public one.
      */
-    public function __construct(public ?string $owner, public string $name, public ?string $description, #[MapFrom('include_all_branches')] public ?bool $includeAllBranches, public ?bool $private)
+    public function __construct(public string|null $owner, public string $name, public string|null $description, #[MapFrom('include_all_branches')]
+    public bool|null $includeAllBranches, public bool|null $private,)
     {
     }
 }

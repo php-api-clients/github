@@ -21,9 +21,7 @@ final readonly class DownloadWorkflowRunLogsStreaming
     {
     }
 
-    /**
-     * @return PromiseInterface<Observable>
-     **/
+    /** @return PromiseInterface<Observable> **/
     public function call(string $owner, string $repo, int $runId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DownloadWorkflowRunLogsStreaming($this->browser, $owner, $repo, $runId);

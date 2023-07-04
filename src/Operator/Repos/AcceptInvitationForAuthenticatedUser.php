@@ -22,9 +22,7 @@ final readonly class AcceptInvitationForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $invitationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\AcceptInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

@@ -16,7 +16,7 @@ final readonly class RepositoryName
      * exclude: Array of repository names or patterns to exclude. The condition will not pass if any of these patterns match.
      * protected: Whether renaming of target repositories is prevented.
      */
-    public function __construct(public ?array $include, public ?array $exclude, public ?bool $protected)
+    public function __construct(public array|null $include, public array|null $exclude, public bool|null $protected)
     {
     }
 }

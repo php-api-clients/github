@@ -13,7 +13,9 @@ final readonly class Output
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"title":"generated","summary":"generated","text":"generated","annotations_count":17,"annotations_url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public ?string $title, public ?string $summary, public ?string $text, #[MapFrom('annotations_count')] public int $annotationsCount, #[MapFrom('annotations_url')] public string $annotationsUrl)
+    public function __construct(public string|null $title, public string|null $summary, public string|null $text, #[MapFrom('annotations_count')]
+    public int $annotationsCount, #[MapFrom('annotations_url')]
+    public string $annotationsUrl,)
     {
     }
 }

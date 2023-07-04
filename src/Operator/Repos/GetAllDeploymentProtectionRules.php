@@ -23,9 +23,7 @@ final readonly class GetAllDeploymentProtectionRules
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $environmentName, string $repo, string $owner): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAllDeploymentProtectionRules($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner);

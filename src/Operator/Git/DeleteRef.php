@@ -22,9 +22,7 @@ final readonly class DeleteRef
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\DeleteRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

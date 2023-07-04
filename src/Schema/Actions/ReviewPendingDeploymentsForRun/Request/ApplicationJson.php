@@ -18,7 +18,8 @@ final readonly class ApplicationJson
      * state: Whether to approve or reject deployment to the specified environments.
      * comment: A comment to accompany the deployment review
      */
-    public function __construct(#[MapFrom('environment_ids')] public array $environmentIds, public string $state, public string $comment)
+    public function __construct(#[MapFrom('environment_ids')]
+    public array $environmentIds, public string $state, public string $comment,)
     {
     }
 }

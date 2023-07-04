@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CreateRepositorySnapshotTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CreateRepositorySnapshotTest extends AsyncTestCase
         })(json_decode(Schema\Snapshot::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created::SCHEMA_EXAMPLE_DATA);

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListLocationsForAlertTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -44,9 +42,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -61,9 +57,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $result = await($client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -85,9 +79,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

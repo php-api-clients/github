@@ -23,9 +23,7 @@ final readonly class DeleteActionsCacheByKey
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsCacheList>
-     **/
+    /** @return PromiseInterface<ActionsCacheList> **/
     public function call(string $owner, string $repo, string $key, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteActionsCacheByKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $key, $ref);

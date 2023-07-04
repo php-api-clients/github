@@ -22,7 +22,8 @@ final readonly class WebhookPullRequestMilestoned
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\Milestone $milestone, public int $number, public ?Schema\OrganizationSimple $organization, #[MapFrom('pull_request')] public Schema\WebhookPullRequestMilestoned\PullRequest $pullRequest, public Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Milestone|null $milestone, public int $number, public Schema\OrganizationSimple|null $organization, #[MapFrom('pull_request')]
+    public Schema\WebhookPullRequestMilestoned\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser|null $sender,)
     {
     }
 }

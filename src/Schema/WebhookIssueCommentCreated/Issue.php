@@ -23,7 +23,22 @@ final readonly class Issue
      * title: Title of the issue
      * url: URL for the issue
      */
-    public function __construct(#[MapFrom('active_lock_reason')] public ?string $activeLockReason, public ?Schema\WebhookIssueCommentCreated\Issue\Assignee $assignee, public array $assignees, #[MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[MapFrom('closed_at')] public ?string $closedAt, public int $comments, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('created_at')] public string $createdAt, public ?bool $draft, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public ?array $labels, #[MapFrom('labels_url')] public string $labelsUrl, public ?bool $locked, public ?Schema\WebhookIssueCommentCreated\Issue\Milestone $milestone, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')] public ?Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp $performedViaGithubApp, #[MapFrom('pull_request')] public ?Schema\WebhookIssueCommentCreated\Issue\PullRequest $pullRequest, public Schema\WebhookIssueCommentCreated\Issue\Reactions $reactions, #[MapFrom('repository_url')] public string $repositoryUrl, public ?string $state, #[MapFrom('state_reason')] public ?string $stateReason, #[MapFrom('timeline_url')] public ?string $timelineUrl, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookIssueCommentCreated\Issue\User $user)
+    public function __construct(#[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, public Schema\WebhookIssueCommentCreated\Issue\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
+    public string $authorAssociation, public string|null $body, #[MapFrom('closed_at')]
+    public string|null $closedAt, public int $comments, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('created_at')]
+    public string $createdAt, public bool|null $draft, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public array|null $labels, #[MapFrom('labels_url')]
+    public string $labelsUrl, public bool|null $locked, public Schema\WebhookIssueCommentCreated\Issue\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
+    public Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
+    public Schema\WebhookIssueCommentCreated\Issue\PullRequest|null $pullRequest, public Schema\WebhookIssueCommentCreated\Issue\Reactions $reactions, #[MapFrom('repository_url')]
+    public string $repositoryUrl, public string|null $state, #[MapFrom('state_reason')]
+    public string|null $stateReason, #[MapFrom('timeline_url')]
+    public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhookIssueCommentCreated\Issue\User|null $user,)
     {
     }
 }

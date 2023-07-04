@@ -16,7 +16,7 @@ abstract readonly class TietBB2EA678
      * body: The discussion post's body text.
      * private: Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
      */
-    public function __construct(public string $title, public string $body, public ?bool $private)
+    public function __construct(public string $title, public string $body, public bool|null $private)
     {
     }
 }

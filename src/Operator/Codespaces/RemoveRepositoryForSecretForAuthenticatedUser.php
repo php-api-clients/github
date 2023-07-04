@@ -22,9 +22,7 @@ final readonly class RemoveRepositoryForSecretForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $secretName, int $repositoryId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName, $repositoryId);

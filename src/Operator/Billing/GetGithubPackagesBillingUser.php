@@ -23,9 +23,7 @@ final readonly class GetGithubPackagesBillingUser
     {
     }
 
-    /**
-     * @return PromiseInterface<PackagesBillingUsage>
-     **/
+    /** @return PromiseInterface<PackagesBillingUsage> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Billing\GetGithubPackagesBillingUser($this->responseSchemaValidator, $this->hydrator, $username);

@@ -52,7 +52,26 @@ final readonly class ApplicationJson
      * hasDownloads: Whether downloads are enabled.
      * isTemplate: Whether this repository acts as a template that can be used to generate new repositories.
      */
-    public function __construct(public string $name, public ?string $description, public ?string $homepage, public ?bool $private, #[MapFrom('has_issues')] public ?bool $hasIssues, #[MapFrom('has_projects')] public ?bool $hasProjects, #[MapFrom('has_wiki')] public ?bool $hasWiki, #[MapFrom('has_discussions')] public ?bool $hasDiscussions, #[MapFrom('team_id')] public ?int $teamId, #[MapFrom('auto_init')] public ?bool $autoInit, #[MapFrom('gitignore_template')] public ?string $gitignoreTemplate, #[MapFrom('license_template')] public ?string $licenseTemplate, #[MapFrom('allow_squash_merge')] public ?bool $allowSquashMerge, #[MapFrom('allow_merge_commit')] public ?bool $allowMergeCommit, #[MapFrom('allow_rebase_merge')] public ?bool $allowRebaseMerge, #[MapFrom('allow_auto_merge')] public ?bool $allowAutoMerge, #[MapFrom('delete_branch_on_merge')] public ?bool $deleteBranchOnMerge, #[MapFrom('squash_merge_commit_title')] public ?string $squashMergeCommitTitle, #[MapFrom('squash_merge_commit_message')] public ?string $squashMergeCommitMessage, #[MapFrom('merge_commit_title')] public ?string $mergeCommitTitle, #[MapFrom('merge_commit_message')] public ?string $mergeCommitMessage, #[MapFrom('has_downloads')] public ?bool $hasDownloads, #[MapFrom('is_template')] public ?bool $isTemplate)
+    public function __construct(public string $name, public string|null $description, public string|null $homepage, public bool|null $private, #[MapFrom('has_issues')]
+    public bool|null $hasIssues, #[MapFrom('has_projects')]
+    public bool|null $hasProjects, #[MapFrom('has_wiki')]
+    public bool|null $hasWiki, #[MapFrom('has_discussions')]
+    public bool|null $hasDiscussions, #[MapFrom('team_id')]
+    public int|null $teamId, #[MapFrom('auto_init')]
+    public bool|null $autoInit, #[MapFrom('gitignore_template')]
+    public string|null $gitignoreTemplate, #[MapFrom('license_template')]
+    public string|null $licenseTemplate, #[MapFrom('allow_squash_merge')]
+    public bool|null $allowSquashMerge, #[MapFrom('allow_merge_commit')]
+    public bool|null $allowMergeCommit, #[MapFrom('allow_rebase_merge')]
+    public bool|null $allowRebaseMerge, #[MapFrom('allow_auto_merge')]
+    public bool|null $allowAutoMerge, #[MapFrom('delete_branch_on_merge')]
+    public bool|null $deleteBranchOnMerge, #[MapFrom('squash_merge_commit_title')]
+    public string|null $squashMergeCommitTitle, #[MapFrom('squash_merge_commit_message')]
+    public string|null $squashMergeCommitMessage, #[MapFrom('merge_commit_title')]
+    public string|null $mergeCommitTitle, #[MapFrom('merge_commit_message')]
+    public string|null $mergeCommitMessage, #[MapFrom('has_downloads')]
+    public bool|null $hasDownloads, #[MapFrom('is_template')]
+    public bool|null $isTemplate,)
     {
     }
 }

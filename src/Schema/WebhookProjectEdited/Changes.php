@@ -13,7 +13,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = 'The changes to the project if the action was `edited`.';
     public const SCHEMA_EXAMPLE_DATA = '{"body":{"from":"generated"},"name":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookProjectEdited\Changes\Body $body, public ?Schema\WebhookProjectEdited\Changes\Name $name)
+    public function __construct(public Schema\WebhookProjectEdited\Changes\Body|null $body, public Schema\WebhookProjectEdited\Changes\Name|null $name)
     {
     }
 }

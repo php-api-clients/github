@@ -20,9 +20,7 @@ final readonly class ListForTeamDiscussionLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(int $teamId, int $discussionNumber, string $content, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\ListForTeamDiscussionLegacy($teamId, $discussionNumber, $content, $perPage, $page);

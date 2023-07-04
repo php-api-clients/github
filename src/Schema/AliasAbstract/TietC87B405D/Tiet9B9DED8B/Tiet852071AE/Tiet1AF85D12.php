@@ -11,7 +11,7 @@ abstract readonly class Tiet1AF85D12
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"name":"generated","description":"generated","color":"generated"}';
 
-    public function __construct(public ?int $id, public ?string $name, public ?string $description, public ?string $color)
+    public function __construct(public int|null $id, public string|null $name, public string|null $description, public string|null $color)
     {
     }
 }

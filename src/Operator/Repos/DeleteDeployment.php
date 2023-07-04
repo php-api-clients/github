@@ -22,9 +22,7 @@ final readonly class DeleteDeployment
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $deploymentId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId);

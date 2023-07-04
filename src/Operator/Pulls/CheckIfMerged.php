@@ -20,9 +20,7 @@ final readonly class CheckIfMerged
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $pullNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\CheckIfMerged($owner, $repo, $pullNumber);

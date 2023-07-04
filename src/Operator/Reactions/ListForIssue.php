@@ -22,9 +22,7 @@ final readonly class ListForIssue
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, int $issueNumber, string $content, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\ListForIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $content, $perPage, $page);

@@ -23,9 +23,7 @@ final readonly class GetSharedStorageBillingUser
     {
     }
 
-    /**
-     * @return PromiseInterface<CombinedBillingUsage>
-     **/
+    /** @return PromiseInterface<CombinedBillingUsage> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Billing\GetSharedStorageBillingUser($this->responseSchemaValidator, $this->hydrator, $username);

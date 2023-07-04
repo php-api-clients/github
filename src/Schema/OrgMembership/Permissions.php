@@ -13,7 +13,8 @@ final readonly class Permissions
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"can_create_repository":false}';
 
-    public function __construct(#[MapFrom('can_create_repository')] public bool $canCreateRepository)
+    public function __construct(#[MapFrom('can_create_repository')]
+    public bool $canCreateRepository,)
     {
     }
 }

@@ -24,7 +24,13 @@ abstract readonly class Tiet1F9716F8
      * title: The title that represents the annotation. The maximum size is 255 characters.
      * rawDetails: Details about this annotation. The maximum size is 64 KB.
      */
-    public function __construct(public string $path, #[MapFrom('start_line')] public int $startLine, #[MapFrom('end_line')] public int $endLine, #[MapFrom('start_column')] public ?int $startColumn, #[MapFrom('end_column')] public ?int $endColumn, #[MapFrom('annotation_level')] public string $annotationLevel, public string $message, public ?string $title, #[MapFrom('raw_details')] public ?string $rawDetails)
+    public function __construct(public string $path, #[MapFrom('start_line')]
+    public int $startLine, #[MapFrom('end_line')]
+    public int $endLine, #[MapFrom('start_column')]
+    public int|null $startColumn, #[MapFrom('end_column')]
+    public int|null $endColumn, #[MapFrom('annotation_level')]
+    public string $annotationLevel, public string $message, public string|null $title, #[MapFrom('raw_details')]
+    public string|null $rawDetails,)
     {
     }
 }

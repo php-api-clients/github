@@ -24,7 +24,23 @@ final readonly class WorkflowJob
      * headBranch: The name of the current branch.
      * workflowName: The name of the workflow.
      */
-    public function __construct(#[MapFrom('check_run_url')] public string $checkRunUrl, #[MapFrom('completed_at')] public ?string $completedAt, public ?string $conclusion, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('head_sha')] public string $headSha, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public array $labels, public string $name, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('run_attempt')] public int $runAttempt, #[MapFrom('run_id')] public int|float $runId, #[MapFrom('run_url')] public string $runUrl, #[MapFrom('runner_group_id')] public ?int $runnerGroupId, #[MapFrom('runner_group_name')] public ?string $runnerGroupName, #[MapFrom('runner_id')] public ?int $runnerId, #[MapFrom('runner_name')] public ?string $runnerName, #[MapFrom('started_at')] public string $startedAt, public string $status, #[MapFrom('head_branch')] public ?string $headBranch, #[MapFrom('workflow_name')] public ?string $workflowName, public array $steps, public string $url)
+    public function __construct(#[MapFrom('check_run_url')]
+    public string $checkRunUrl, #[MapFrom('completed_at')]
+    public string|null $completedAt, public string|null $conclusion, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('head_sha')]
+    public string $headSha, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public array $labels, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('run_attempt')]
+    public int $runAttempt, #[MapFrom('run_id')]
+    public int|float $runId, #[MapFrom('run_url')]
+    public string $runUrl, #[MapFrom('runner_group_id')]
+    public int|null $runnerGroupId, #[MapFrom('runner_group_name')]
+    public string|null $runnerGroupName, #[MapFrom('runner_id')]
+    public int|null $runnerId, #[MapFrom('runner_name')]
+    public string|null $runnerName, #[MapFrom('started_at')]
+    public string $startedAt, public string $status, #[MapFrom('head_branch')]
+    public string|null $headBranch, #[MapFrom('workflow_name')]
+    public string|null $workflowName, public array $steps, public string $url,)
     {
     }
 }

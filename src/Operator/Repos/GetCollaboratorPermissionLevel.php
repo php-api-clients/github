@@ -23,9 +23,7 @@ final readonly class GetCollaboratorPermissionLevel
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryCollaboratorPermission>
-     **/
+    /** @return PromiseInterface<RepositoryCollaboratorPermission> **/
     public function call(string $owner, string $repo, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCollaboratorPermissionLevel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);

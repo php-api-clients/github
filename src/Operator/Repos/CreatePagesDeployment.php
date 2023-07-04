@@ -23,9 +23,7 @@ final readonly class CreatePagesDeployment
     {
     }
 
-    /**
-     * @return PromiseInterface<PageDeployment>
-     **/
+    /** @return PromiseInterface<PageDeployment> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreatePagesDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

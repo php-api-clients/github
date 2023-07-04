@@ -22,7 +22,12 @@ final readonly class CodespaceMachine
      * cpus: How many cores are available to the codespace.
      * prebuildAvailability: Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
      */
-    public function __construct(public string $name, #[MapFrom('display_name')] public string $displayName, #[MapFrom('operating_system')] public string $operatingSystem, #[MapFrom('storage_in_bytes')] public int $storageInBytes, #[MapFrom('memory_in_bytes')] public int $memoryInBytes, public int $cpus, #[MapFrom('prebuild_availability')] public ?string $prebuildAvailability)
+    public function __construct(public string $name, #[MapFrom('display_name')]
+    public string $displayName, #[MapFrom('operating_system')]
+    public string $operatingSystem, #[MapFrom('storage_in_bytes')]
+    public int $storageInBytes, #[MapFrom('memory_in_bytes')]
+    public int $memoryInBytes, public int $cpus, #[MapFrom('prebuild_availability')]
+    public string|null $prebuildAvailability,)
     {
     }
 }

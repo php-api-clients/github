@@ -23,9 +23,7 @@ final readonly class ScopeToken
     {
     }
 
-    /**
-     * @return PromiseInterface<Authorization>
-     **/
+    /** @return PromiseInterface<Authorization> **/
     public function call(string $clientId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ScopeToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);

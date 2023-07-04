@@ -26,14 +26,10 @@ final class MarkThreadAsRead
     private const PATH           = '/notifications/threads/{thread_id}';
     /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)). **/
     private int $threadId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Notifications\Threads\ThreadId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Notifications\Threads\ThreadId $hydrator, int $threadId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Notifications\Threads\ThreadId $hydrator, int $threadId)
     {
-        $this->threadId                = $threadId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->threadId = $threadId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class MarkThreadAsRead
         return new Request(self::METHOD, str_replace(['{thread_id}'], [$this->threadId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

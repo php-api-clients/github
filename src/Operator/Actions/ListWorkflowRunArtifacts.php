@@ -23,9 +23,7 @@ final readonly class ListWorkflowRunArtifacts
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(string $owner, string $repo, int $runId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListWorkflowRunArtifacts($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $perPage, $page);

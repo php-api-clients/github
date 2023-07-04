@@ -27,18 +27,14 @@ final class CheckPermissionsForRepoLegacy
     private int $teamId;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId\Repos\Owner\Repo $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Repos\Owner\Repo $hydrator, int $teamId, string $owner, string $repo)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId\Repos\Owner\Repo $hydrator, int $teamId, string $owner, string $repo)
     {
-        $this->teamId                  = $teamId;
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId = $teamId;
+        $this->owner  = $owner;
+        $this->repo   = $repo;
     }
 
     public function createRequest(): RequestInterface
@@ -46,9 +42,7 @@ final class CheckPermissionsForRepoLegacy
         return new Request(self::METHOD, str_replace(['{team_id}', '{owner}', '{repo}'], [$this->teamId, $this->owner, $this->repo], self::PATH));
     }
 
-    /**
-     * @return Schema\TeamRepository|array{code: int}
-     */
+    /** @return Schema\TeamRepository|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\TeamRepository|array
     {
         $code          = $response->getStatusCode();

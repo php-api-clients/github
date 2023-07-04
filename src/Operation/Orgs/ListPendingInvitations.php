@@ -34,18 +34,14 @@ final class ListPendingInvitations
     private string $role;
     /**Filter invitations by their invitation source. **/
     private string $invitationSource;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Invitations $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Invitations $hydrator, string $org, int $perPage = 30, int $page = 1, string $role = 'all', string $invitationSource = 'all')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Invitations $hydrator, string $org, int $perPage = 30, int $page = 1, string $role = 'all', string $invitationSource = 'all')
     {
-        $this->org                     = $org;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->role                    = $role;
-        $this->invitationSource        = $invitationSource;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org              = $org;
+        $this->perPage          = $perPage;
+        $this->page             = $page;
+        $this->role             = $role;
+        $this->invitationSource = $invitationSource;
     }
 
     public function createRequest(): RequestInterface

@@ -23,9 +23,7 @@ final readonly class CreateDiscussionLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<TeamDiscussion>
-     **/
+    /** @return PromiseInterface<TeamDiscussion> **/
     public function call(int $teamId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CreateDiscussionLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId);

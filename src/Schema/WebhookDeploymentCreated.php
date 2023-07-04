@@ -22,7 +22,8 @@ final readonly class WebhookDeploymentCreated
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookDeploymentCreated\Deployment $deployment, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public ?Schema\WebhookDeploymentCreated\Workflow $workflow, #[MapFrom('workflow_run')] public ?Schema\WebhookDeploymentCreated\WorkflowRun $workflowRun)
+    public function __construct(public string $action, public Schema\WebhookDeploymentCreated\Deployment $deployment, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public Schema\WebhookDeploymentCreated\Workflow|null $workflow, #[MapFrom('workflow_run')]
+    public Schema\WebhookDeploymentCreated\WorkflowRun|null $workflowRun,)
     {
     }
 }

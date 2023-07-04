@@ -23,9 +23,7 @@ final readonly class CreateOrUpdateFileContents
     {
     }
 
-    /**
-     * @return PromiseInterface<FileCommit>
-     **/
+    /** @return PromiseInterface<FileCommit> **/
     public function call(string $owner, string $repo, string $path, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateOrUpdateFileContents($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $path);

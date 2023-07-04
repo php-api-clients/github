@@ -16,7 +16,10 @@ final readonly class RunnerApplication
     /**
      * tempDownloadToken: A short lived bearer token used to download the runner, if needed.
      */
-    public function __construct(public string $os, public string $architecture, #[MapFrom('download_url')] public string $downloadUrl, public string $filename, #[MapFrom('temp_download_token')] public ?string $tempDownloadToken, #[MapFrom('sha256_checksum')] public ?string $shaTwoHundredFiftySixChecksum)
+    public function __construct(public string $os, public string $architecture, #[MapFrom('download_url')]
+    public string $downloadUrl, public string $filename, #[MapFrom('temp_download_token')]
+    public string|null $tempDownloadToken, #[MapFrom('sha256_checksum')]
+    public string|null $shaTwoHundredFiftySixChecksum,)
     {
     }
 }

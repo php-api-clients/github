@@ -26,23 +26,19 @@ final class RepoMachinesForAuthenticatedUser
     private const PATH           = '/repos/{owner}/{repo}/codespaces/machines';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The location to check for available machines. Assigned by IP if not provided. **/
     private string $location;
     /**IP for location auto-detection when proxying a request **/
     private string $clientIp;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $clientIp)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $clientIp)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->location                = $location;
-        $this->clientIp                = $clientIp;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->location = $location;
+        $this->clientIp = $clientIp;
     }
 
     public function createRequest(): RequestInterface
@@ -50,9 +46,7 @@ final class RepoMachinesForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{location}', '{client_ip}'], [$this->owner, $this->repo, $this->location, $this->clientIp], self::PATH . '?location={location}&client_ip={client_ip}'));
     }
 
-    /**
-     * @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code: int}
-     */
+    /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
         $code          = $response->getStatusCode();

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Project::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class GetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Project::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class GetTest extends AsyncTestCase
         $result = await($client->operations()->projects()->get(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -76,9 +70,7 @@ final class GetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -93,9 +85,7 @@ final class GetTest extends AsyncTestCase
         $result = await($client->operations()->projects()->get(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -114,9 +104,7 @@ final class GetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -131,9 +119,7 @@ final class GetTest extends AsyncTestCase
         $result = await($client->operations()->projects()->get(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -151,9 +137,7 @@ final class GetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

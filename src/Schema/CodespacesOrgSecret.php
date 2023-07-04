@@ -20,7 +20,10 @@ final readonly class CodespacesOrgSecret
      * visibility: The type of repositories in the organization that the secret is visible to
      * selectedRepositoriesUrl: The API URL at which the list of repositories this secret is visible to can be retrieved
      */
-    public function __construct(public string $name, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public string $visibility, #[MapFrom('selected_repositories_url')] public ?string $selectedRepositoriesUrl)
+    public function __construct(public string $name, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $visibility, #[MapFrom('selected_repositories_url')]
+    public string|null $selectedRepositoriesUrl,)
     {
     }
 }

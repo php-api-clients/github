@@ -21,9 +21,7 @@ final readonly class UpdateOrgVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $name, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateOrgVariable($this->requestSchemaValidator, $org, $name);

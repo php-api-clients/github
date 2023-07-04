@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListCommentsForRepoTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -46,9 +44,7 @@ final class ListCommentsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -63,9 +59,7 @@ final class ListCommentsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->issues()->listCommentsForRepo('generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -90,9 +84,7 @@ final class ListCommentsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

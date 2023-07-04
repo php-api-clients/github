@@ -18,7 +18,15 @@ final readonly class ProjectCard
      * id: The project card's ID
      * archived: Whether or not the card is archived
      */
-    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public ?string $note, public ?Schema\SimpleUser $creator, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public ?bool $archived, #[MapFrom('column_name')] public ?string $columnName, #[MapFrom('project_id')] public ?string $projectId, #[MapFrom('column_url')] public string $columnUrl, #[MapFrom('content_url')] public ?string $contentUrl, #[MapFrom('project_url')] public string $projectUrl)
+    public function __construct(public string $url, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string|null $note, public Schema\SimpleUser|null $creator, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public bool|null $archived, #[MapFrom('column_name')]
+    public string|null $columnName, #[MapFrom('project_id')]
+    public string|null $projectId, #[MapFrom('column_url')]
+    public string $columnUrl, #[MapFrom('content_url')]
+    public string|null $contentUrl, #[MapFrom('project_url')]
+    public string $projectUrl,)
     {
     }
 }

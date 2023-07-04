@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CompareCommitsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CommitComparison::SCHEMA_EXAMPLE_DATA);
@@ -43,9 +41,7 @@ final class CompareCommitsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CommitComparison::SCHEMA_EXAMPLE_DATA);
@@ -59,9 +55,7 @@ final class CompareCommitsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->compareCommits('generated', 'generated', 'generated', 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -84,9 +78,7 @@ final class CompareCommitsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -101,9 +93,7 @@ final class CompareCommitsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->compareCommits('generated', 'generated', 'generated', 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -126,9 +116,7 @@ final class CompareCommitsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -143,9 +131,7 @@ final class CompareCommitsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->compareCommits('generated', 'generated', 'generated', 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -168,9 +154,7 @@ final class CompareCommitsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);

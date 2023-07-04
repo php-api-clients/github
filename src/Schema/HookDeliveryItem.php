@@ -26,7 +26,11 @@ final readonly class HookDeliveryItem
      * installationId: The id of the GitHub App installation associated with this event.
      * repositoryId: The id of the repository associated with this event.
      */
-    public function __construct(public int $id, public string $guid, #[MapFrom('delivered_at')] public string $deliveredAt, public bool $redelivery, public int|float $duration, public string $status, #[MapFrom('status_code')] public int $statusCode, public string $event, public ?string $action, #[MapFrom('installation_id')] public ?int $installationId, #[MapFrom('repository_id')] public ?int $repositoryId)
+    public function __construct(public int $id, public string $guid, #[MapFrom('delivered_at')]
+    public string $deliveredAt, public bool $redelivery, public int|float $duration, public string $status, #[MapFrom('status_code')]
+    public int $statusCode, public string $event, public string|null $action, #[MapFrom('installation_id')]
+    public int|null $installationId, #[MapFrom('repository_id')]
+    public int|null $repositoryId,)
     {
     }
 }

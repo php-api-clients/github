@@ -19,7 +19,8 @@ final readonly class Links
      * html: Hypermedia Link
      * pullRequest: Hypermedia Link
      */
-    public function __construct(public Schema\Link $self, public Schema\Link $html, #[MapFrom('pull_request')] public Schema\Link $pullRequest)
+    public function __construct(public Schema\Link $self, public Schema\Link $html, #[MapFrom('pull_request')]
+    public Schema\Link $pullRequest,)
     {
     }
 }

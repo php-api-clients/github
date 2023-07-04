@@ -14,7 +14,8 @@ final readonly class NugetMetadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":null,"name":"generated","value":null}';
 
-    public function __construct(public null|int|string $id, public ?string $name, #[Value] public null|bool|string|int|Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value\Three $value)
+    public function __construct(public int|string|null $id, public string|null $name, #[Value]
+    public bool|string|int|Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value\Three|null $value,)
     {
     }
 }

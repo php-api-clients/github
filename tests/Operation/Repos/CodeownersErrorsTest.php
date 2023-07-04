@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class CodeownersErrorsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CodeownersErrors::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CodeownersErrorsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CodeownersErrors::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class CodeownersErrorsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->codeownersErrors('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -78,9 +72,7 @@ final class CodeownersErrorsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

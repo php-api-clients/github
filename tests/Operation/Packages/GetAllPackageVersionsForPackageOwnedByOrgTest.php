@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -45,9 +43,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -62,9 +58,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -88,9 +82,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -105,9 +97,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -131,9 +121,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

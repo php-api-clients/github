@@ -23,9 +23,7 @@ final readonly class GetPublicKeyForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespacesUserPublicKey>
-     **/
+    /** @return PromiseInterface<CodespacesUserPublicKey> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetPublicKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator);

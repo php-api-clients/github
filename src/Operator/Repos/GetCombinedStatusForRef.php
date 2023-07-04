@@ -23,9 +23,7 @@ final readonly class GetCombinedStatusForRef
     {
     }
 
-    /**
-     * @return PromiseInterface<CombinedCommitStatus>
-     **/
+    /** @return PromiseInterface<CombinedCommitStatus> **/
     public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCombinedStatusForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);

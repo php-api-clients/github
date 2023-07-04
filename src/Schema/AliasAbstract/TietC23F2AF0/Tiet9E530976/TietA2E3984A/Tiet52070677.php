@@ -14,7 +14,7 @@ abstract readonly class Tiet52070677
     /**
      * role: The role that this user should have in the team.
      */
-    public function __construct(public ?string $role)
+    public function __construct(public string|null $role)
     {
     }
 }

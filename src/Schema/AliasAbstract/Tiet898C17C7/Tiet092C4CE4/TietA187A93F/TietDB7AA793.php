@@ -20,7 +20,14 @@ abstract readonly class TietDB7AA793
      * commitId: A commit SHA for the review.
      * id: Unique identifier of the review
      */
-    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestReviewEdited\Review\Links $links, #[MapFrom('author_association')] public string $authorAssociation, public ?string $body, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('pull_request_url')] public string $pullRequestUrl, public string $state, #[MapFrom('submitted_at')] public ?string $submittedAt, public ?Schema\WebhookPullRequestReviewEdited\Review\User $user)
+    public function __construct(#[MapFrom('_links')]
+    public Schema\WebhookPullRequestReviewEdited\Review\Links $links, #[MapFrom('author_association')]
+    public string $authorAssociation, public string|null $body, #[MapFrom('commit_id')]
+    public string $commitId, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('pull_request_url')]
+    public string $pullRequestUrl, public string $state, #[MapFrom('submitted_at')]
+    public string|null $submittedAt, public Schema\WebhookPullRequestReviewEdited\Review\User|null $user,)
     {
     }
 }

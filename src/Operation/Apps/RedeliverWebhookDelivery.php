@@ -24,15 +24,9 @@ final class RedeliverWebhookDelivery
     public const OPERATION_MATCH = 'POST /app/hook/deliveries/{delivery_id}/attempts';
     private const METHOD         = 'POST';
     private const PATH           = '/app/hook/deliveries/{delivery_id}/attempts';
-    private int $deliveryId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Hook\Deliveries\DeliveryId\Attempts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Hook\Deliveries\DeliveryId\Attempts $hydrator, int $deliveryId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App\Hook\Deliveries\DeliveryId\Attempts $hydrator, private int $deliveryId)
     {
-        $this->deliveryId              = $deliveryId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -71,6 +65,19 @@ final class RedeliverWebhookDelivery
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
+                }
+
+                break;
+            case 'application/scim+json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Bad Request
+                     **/
+                    case 400:
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ScimError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+                        throw new ErrorSchemas\ScimError(400, $this->hydrator->hydrateObject(Schema\ScimError::class, $body));
                 }
 
                 break;

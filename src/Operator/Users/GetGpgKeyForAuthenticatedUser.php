@@ -23,9 +23,7 @@ final readonly class GetGpgKeyForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(GpgKey|array)>
-     **/
+    /** @return PromiseInterface<(GpgKey|array)> **/
     public function call(int $gpgKeyId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetGpgKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $gpgKeyId);

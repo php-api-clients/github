@@ -23,9 +23,7 @@ final readonly class Merge
     {
     }
 
-    /**
-     * @return PromiseInterface<(Commit|array)>
-     **/
+    /** @return PromiseInterface<(Commit|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Merge($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

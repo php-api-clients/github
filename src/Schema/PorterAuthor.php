@@ -13,7 +13,10 @@ final readonly class PorterAuthor
     public const SCHEMA_DESCRIPTION  = 'Porter Author';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"remote_id":"generated","remote_name":"generated","email":"generated","name":"generated","url":"https:\\/\\/example.com\\/","import_url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public int $id, #[MapFrom('remote_id')] public string $remoteId, #[MapFrom('remote_name')] public string $remoteName, public string $email, public string $name, public string $url, #[MapFrom('import_url')] public string $importUrl)
+    public function __construct(public int $id, #[MapFrom('remote_id')]
+    public string $remoteId, #[MapFrom('remote_name')]
+    public string $remoteName, public string $email, public string $name, public string $url, #[MapFrom('import_url')]
+    public string $importUrl,)
     {
     }
 }

@@ -30,7 +30,9 @@ final readonly class WebhookPush
      * repository: A git repository
      * sender: A GitHub user.
      */
-    public function __construct(public string $after, #[MapFrom('base_ref')] public ?string $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public ?Schema\Enterprise $enterprise, public bool $forced, #[MapFrom('head_commit')] public ?Schema\WebhookPush\HeadCommit $headCommit, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $after, #[MapFrom('base_ref')]
+    public string|null $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public Schema\Enterprise|null $enterprise, public bool $forced, #[MapFrom('head_commit')]
+    public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUser|null $sender,)
     {
     }
 }

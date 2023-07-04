@@ -11,7 +11,7 @@ final readonly class Permissions
     public const SCHEMA_DESCRIPTION  = 'The set of permissions for the GitHub app';
     public const SCHEMA_EXAMPLE_DATA = '{"issues":"generated","checks":"generated","metadata":"generated","contents":"generated","deployments":"generated"}';
 
-    public function __construct(public ?string $issues, public ?string $checks, public ?string $metadata, public ?string $contents, public ?string $deployments)
+    public function __construct(public string|null $issues, public string|null $checks, public string|null $metadata, public string|null $contents, public string|null $deployments)
     {
     }
 }

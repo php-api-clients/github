@@ -16,7 +16,7 @@ abstract readonly class Tiet7CBA9D3B
     /**
      * repo: A git repository
      */
-    public function __construct(public string $label, public string $ref, public Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo $repo, public string $sha, public ?Schema\WebhookPullRequestAssigned\PullRequest\Base\User $user)
+    public function __construct(public string $label, public string $ref, public Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo $repo, public string $sha, public Schema\WebhookPullRequestAssigned\PullRequest\Base\User|null $user)
     {
     }
 }

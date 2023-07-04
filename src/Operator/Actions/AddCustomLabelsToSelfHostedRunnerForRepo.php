@@ -23,9 +23,7 @@ final readonly class AddCustomLabelsToSelfHostedRunnerForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, int $runnerId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\AddCustomLabelsToSelfHostedRunnerForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runnerId);

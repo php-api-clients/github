@@ -17,7 +17,8 @@ final readonly class AutoTriggerChecks
      * appId: The `id` of the GitHub App.
      * setting: Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
      */
-    public function __construct(#[MapFrom('app_id')] public int $appId, public bool $setting)
+    public function __construct(#[MapFrom('app_id')]
+    public int $appId, public bool $setting,)
     {
     }
 }

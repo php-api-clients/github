@@ -21,7 +21,7 @@ final readonly class WebhookIssuesTransferred
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookIssuesTransferred\Changes $changes, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssuesTransferred\Issue $issue, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookIssuesTransferred\Changes $changes, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookIssuesTransferred\Issue $issue, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

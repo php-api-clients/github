@@ -30,78 +30,6 @@ final class Orgs
         return $this->operator[Operator\Orgs\List_::class]->call($since, $perPage);
     }
 
-    public function listPatGrantRequests(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ListPatGrantRequests::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ListPatGrantRequests::class] = new Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests());
-        }
-
-        return $this->operator[Operator\Orgs\ListPatGrantRequests::class]->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
-    }
-
-    public function reviewPatGrantRequestsInBulk(string $org, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ReviewPatGrantRequestsInBulk::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ReviewPatGrantRequestsInBulk::class] = new Operator\Orgs\ReviewPatGrantRequestsInBulk($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests());
-        }
-
-        return $this->operator[Operator\Orgs\ReviewPatGrantRequestsInBulk::class]->call($org, $params);
-    }
-
-    public function reviewPatGrantRequest(string $org, int $patRequestId, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ReviewPatGrantRequest::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ReviewPatGrantRequest::class] = new Operator\Orgs\ReviewPatGrantRequest($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId());
-        }
-
-        return $this->operator[Operator\Orgs\ReviewPatGrantRequest::class]->call($org, $patRequestId, $params);
-    }
-
-    public function listPatGrantRequestRepositories(string $org, int $patRequestId, int $perPage, int $page): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ListPatGrantRequestRepositories::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ListPatGrantRequestRepositories::class] = new Operator\Orgs\ListPatGrantRequestRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Orgs\ListPatGrantRequestRepositories::class]->call($org, $patRequestId, $perPage, $page);
-    }
-
-    public function listPatGrants(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ListPatGrants::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ListPatGrants::class] = new Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens());
-        }
-
-        return $this->operator[Operator\Orgs\ListPatGrants::class]->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
-    }
-
-    public function updatePatAccesses(string $org, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\UpdatePatAccesses::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\UpdatePatAccesses::class] = new Operator\Orgs\UpdatePatAccesses($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens());
-        }
-
-        return $this->operator[Operator\Orgs\UpdatePatAccesses::class]->call($org, $params);
-    }
-
-    public function updatePatAccess(string $org, int $patId, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\UpdatePatAccess::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\UpdatePatAccess::class] = new Operator\Orgs\UpdatePatAccess($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens🌀PatId());
-        }
-
-        return $this->operator[Operator\Orgs\UpdatePatAccess::class]->call($org, $patId, $params);
-    }
-
-    public function listPatGrantRepositories(string $org, int $patId, int $perPage, int $page): PromiseInterface
-    {
-        if (array_key_exists(Operator\Orgs\ListPatGrantRepositories::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\ListPatGrantRepositories::class] = new Operator\Orgs\ListPatGrantRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Orgs\ListPatGrantRepositories::class]->call($org, $patId, $perPage, $page);
-    }
-
     public function get(string $org): PromiseInterface
     {
         if (array_key_exists(Operator\Orgs\Get::class, $this->operator) === false) {
@@ -397,6 +325,78 @@ final class Orgs
         }
 
         return $this->operator[Operator\Orgs\RemoveOutsideCollaborator::class]->call($org, $username);
+    }
+
+    public function listPatGrantRequests(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ListPatGrantRequests::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ListPatGrantRequests::class] = new Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests());
+        }
+
+        return $this->operator[Operator\Orgs\ListPatGrantRequests::class]->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+    }
+
+    public function reviewPatGrantRequestsInBulk(string $org, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ReviewPatGrantRequestsInBulk::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ReviewPatGrantRequestsInBulk::class] = new Operator\Orgs\ReviewPatGrantRequestsInBulk($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests());
+        }
+
+        return $this->operator[Operator\Orgs\ReviewPatGrantRequestsInBulk::class]->call($org, $params);
+    }
+
+    public function reviewPatGrantRequest(string $org, int $patRequestId, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ReviewPatGrantRequest::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ReviewPatGrantRequest::class] = new Operator\Orgs\ReviewPatGrantRequest($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId());
+        }
+
+        return $this->operator[Operator\Orgs\ReviewPatGrantRequest::class]->call($org, $patRequestId, $params);
+    }
+
+    public function listPatGrantRequestRepositories(string $org, int $patRequestId, int $perPage, int $page): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ListPatGrantRequestRepositories::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ListPatGrantRequestRepositories::class] = new Operator\Orgs\ListPatGrantRequestRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests🌀PatRequestId🌀Repositories());
+        }
+
+        return $this->operator[Operator\Orgs\ListPatGrantRequestRepositories::class]->call($org, $patRequestId, $perPage, $page);
+    }
+
+    public function listPatGrants(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ListPatGrants::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ListPatGrants::class] = new Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens());
+        }
+
+        return $this->operator[Operator\Orgs\ListPatGrants::class]->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+    }
+
+    public function updatePatAccesses(string $org, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\UpdatePatAccesses::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\UpdatePatAccesses::class] = new Operator\Orgs\UpdatePatAccesses($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens());
+        }
+
+        return $this->operator[Operator\Orgs\UpdatePatAccesses::class]->call($org, $params);
+    }
+
+    public function updatePatAccess(string $org, int $patId, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\UpdatePatAccess::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\UpdatePatAccess::class] = new Operator\Orgs\UpdatePatAccess($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId());
+        }
+
+        return $this->operator[Operator\Orgs\UpdatePatAccess::class]->call($org, $patId, $params);
+    }
+
+    public function listPatGrantRepositories(string $org, int $patId, int $perPage, int $page): PromiseInterface
+    {
+        if (array_key_exists(Operator\Orgs\ListPatGrantRepositories::class, $this->operator) === false) {
+            $this->operator[Operator\Orgs\ListPatGrantRepositories::class] = new Operator\Orgs\ListPatGrantRepositories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories());
+        }
+
+        return $this->operator[Operator\Orgs\ListPatGrantRepositories::class]->call($org, $patId, $perPage, $page);
     }
 
     public function listPublicMembers(string $org, int $perPage, int $page): PromiseInterface

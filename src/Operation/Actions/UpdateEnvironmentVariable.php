@@ -21,7 +21,6 @@ final class UpdateEnvironmentVariable
     public const OPERATION_MATCH = 'PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the variable. **/
@@ -29,12 +28,11 @@ final class UpdateEnvironmentVariable
     /**The name of the environment. **/
     private string $environmentName;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, int $repositoryId, string $name, string $environmentName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, int $repositoryId, string $name, string $environmentName)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->repositoryId           = $repositoryId;
-        $this->name                   = $name;
-        $this->environmentName        = $environmentName;
+        $this->repositoryId    = $repositoryId;
+        $this->name            = $name;
+        $this->environmentName = $environmentName;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -44,9 +42,7 @@ final class UpdateEnvironmentVariable
         return new Request(self::METHOD, str_replace(['{repository_id}', '{name}', '{environment_name}'], [$this->repositoryId, $this->name, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

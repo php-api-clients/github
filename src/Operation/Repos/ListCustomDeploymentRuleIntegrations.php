@@ -25,7 +25,7 @@ final class ListCustomDeploymentRuleIntegrations
     private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps';
     /**The name of the environment. **/
     private string $environmentName;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
@@ -33,18 +33,14 @@ final class ListCustomDeploymentRuleIntegrations
     private int $page;
     /**The number of results per page (max 100). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\Apps $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\Apps $hydrator, string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\Apps $hydrator, string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30)
     {
-        $this->environmentName         = $environmentName;
-        $this->repo                    = $repo;
-        $this->owner                   = $owner;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->environmentName = $environmentName;
+        $this->repo            = $repo;
+        $this->owner           = $owner;
+        $this->page            = $page;
+        $this->perPage         = $perPage;
     }
 
     public function createRequest(): RequestInterface

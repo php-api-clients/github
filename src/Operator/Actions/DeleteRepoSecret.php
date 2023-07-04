@@ -20,9 +20,7 @@ final readonly class DeleteRepoSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteRepoSecret($owner, $repo, $secretName);

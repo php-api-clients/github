@@ -13,7 +13,17 @@ final readonly class Subkeys
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"primary_key_id":14,"key_id":"generated","public_key":"generated","emails":[{"email":"generated","verified":false},{"email":"generated","verified":false}],"subkeys":["generated","generated"],"can_sign":false,"can_encrypt_comms":false,"can_encrypt_storage":false,"can_certify":false,"created_at":"generated","expires_at":"generated","raw_key":"generated","revoked":false}';
 
-    public function __construct(public ?int $id, #[MapFrom('primary_key_id')] public ?int $primaryKeyId, #[MapFrom('key_id')] public ?string $keyId, #[MapFrom('public_key')] public ?string $publicKey, public ?array $emails, public ?array $subkeys, #[MapFrom('can_sign')] public ?bool $canSign, #[MapFrom('can_encrypt_comms')] public ?bool $canEncryptComms, #[MapFrom('can_encrypt_storage')] public ?bool $canEncryptStorage, #[MapFrom('can_certify')] public ?bool $canCertify, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('expires_at')] public ?string $expiresAt, #[MapFrom('raw_key')] public ?string $rawKey, public ?bool $revoked)
+    public function __construct(public int|null $id, #[MapFrom('primary_key_id')]
+    public int|null $primaryKeyId, #[MapFrom('key_id')]
+    public string|null $keyId, #[MapFrom('public_key')]
+    public string|null $publicKey, public array|null $emails, public array|null $subkeys, #[MapFrom('can_sign')]
+    public bool|null $canSign, #[MapFrom('can_encrypt_comms')]
+    public bool|null $canEncryptComms, #[MapFrom('can_encrypt_storage')]
+    public bool|null $canEncryptStorage, #[MapFrom('can_certify')]
+    public bool|null $canCertify, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('expires_at')]
+    public string|null $expiresAt, #[MapFrom('raw_key')]
+    public string|null $rawKey, public bool|null $revoked,)
     {
     }
 }

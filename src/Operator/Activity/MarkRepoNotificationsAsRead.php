@@ -23,9 +23,7 @@ final readonly class MarkRepoNotificationsAsRead
     {
     }
 
-    /**
-     * @return PromiseInterface<(Accepted|array)>
-     **/
+    /** @return PromiseInterface<(Accepted|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\MarkRepoNotificationsAsRead($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

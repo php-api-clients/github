@@ -23,9 +23,7 @@ final readonly class CheckPermissionsForProjectInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<(TeamProject|array)>
-     **/
+    /** @return PromiseInterface<(TeamProject|array)> **/
     public function call(string $org, string $teamSlug, int $projectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForProjectInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $projectId);

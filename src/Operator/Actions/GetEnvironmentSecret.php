@@ -23,9 +23,7 @@ final readonly class GetEnvironmentSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsSecret>
-     **/
+    /** @return PromiseInterface<ActionsSecret> **/
     public function call(int $repositoryId, string $environmentName, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetEnvironmentSecret($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);

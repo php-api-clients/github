@@ -22,9 +22,7 @@ final readonly class GetAuthenticated
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetAuthenticated($this->responseSchemaValidator, $this->hydrator);

@@ -25,18 +25,12 @@ final class Update
     public const OPERATION_MATCH = 'PATCH /gists/{gist_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/gists/{gist_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId $hydrator, string $gistId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId $hydrator, string $gistId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->gistId                  = $gistId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(array $data): RequestInterface

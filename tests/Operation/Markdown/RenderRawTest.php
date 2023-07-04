@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RenderRawTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_text_plain_empty(): void
     {
         $response = new Response(304, []);
@@ -37,9 +35,7 @@ final class RenderRawTest extends AsyncTestCase
         })(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_text_plain_empty(): void
     {
         $response = new Response(304, []);
@@ -55,9 +51,7 @@ final class RenderRawTest extends AsyncTestCase
         self::assertSame(304, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_text_x_markdown_empty(): void
     {
         $response = new Response(304, []);
@@ -73,9 +67,7 @@ final class RenderRawTest extends AsyncTestCase
         })(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_text_x_markdown_empty(): void
     {
         $response = new Response(304, []);

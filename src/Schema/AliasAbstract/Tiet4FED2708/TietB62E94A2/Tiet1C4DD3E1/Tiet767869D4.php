@@ -17,7 +17,10 @@ abstract readonly class Tiet767869D4
     /**
      * tier: The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
      */
-    public function __construct(#[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookSponsorshipCancelled\Sponsorship\Maintainer $maintainer, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('privacy_level')] public string $privacyLevel, public ?Schema\WebhookSponsorshipCancelled\Sponsorship\Sponsor $sponsor, public ?Schema\WebhookSponsorshipCancelled\Sponsorship\Sponsorable $sponsorable, public Schema\WebhookSponsorshipCancelled\Sponsorship\Tier $tier)
+    public function __construct(#[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookSponsorshipCancelled\Sponsorship\Maintainer|null $maintainer, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('privacy_level')]
+    public string $privacyLevel, public Schema\WebhookSponsorshipCancelled\Sponsorship\Sponsor|null $sponsor, public Schema\WebhookSponsorshipCancelled\Sponsorship\Sponsorable|null $sponsorable, public Schema\WebhookSponsorshipCancelled\Sponsorship\Tier $tier,)
     {
     }
 }

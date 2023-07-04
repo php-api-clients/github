@@ -26,20 +26,16 @@ final class GetSarif
     private const PATH           = '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The SARIF ID obtained after uploading. **/
     private string $sarifId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator, string $owner, string $repo, string $sarifId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator, string $owner, string $repo, string $sarifId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->sarifId                 = $sarifId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner   = $owner;
+        $this->repo    = $repo;
+        $this->sarifId = $sarifId;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class GetSarif
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{sarif_id}'], [$this->owner, $this->repo, $this->sarifId], self::PATH));
     }
 
-    /**
-     * @return Schema\CodeScanningSarifsStatus|array{code: int}
-     */
+    /** @return Schema\CodeScanningSarifsStatus|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\CodeScanningSarifsStatus|array
     {
         $code          = $response->getStatusCode();

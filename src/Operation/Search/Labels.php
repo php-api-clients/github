@@ -36,19 +36,15 @@ final class Labels
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Search\Labels $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Search\Labels $hydrator, int $repositoryId, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Search\Labels $hydrator, int $repositoryId, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->q                       = $q;
-        $this->sort                    = $sort;
-        $this->order                   = $order;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId = $repositoryId;
+        $this->q            = $q;
+        $this->sort         = $sort;
+        $this->order        = $order;
+        $this->perPage      = $perPage;
+        $this->page         = $page;
     }
 
     public function createRequest(): RequestInterface
@@ -56,9 +52,7 @@ final class Labels
         return new Request(self::METHOD, str_replace(['{repository_id}', '{q}', '{sort}', '{order}', '{per_page}', '{page}'], [$this->repositoryId, $this->q, $this->sort, $this->order, $this->perPage, $this->page], self::PATH . '?repository_id={repository_id}&q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
     }
 
-    /**
-     * @return Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array{code: int}
-     */
+    /** @return Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array
     {
         $code          = $response->getStatusCode();

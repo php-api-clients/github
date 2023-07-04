@@ -18,7 +18,8 @@ abstract readonly class Tiet7939956B
      * author: Metaproperties for Git author/committer information.
      * committer: Metaproperties for Git author/committer information.
      */
-    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer $committer, public string $id, public string $message, public string $timestamp, #[MapFrom('tree_id')] public string $treeId)
+    public function __construct(public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Author $author, public Schema\WebhookCheckSuiteCompleted\CheckSuite\HeadCommit\Committer $committer, public string $id, public string $message, public string $timestamp, #[MapFrom('tree_id')]
+    public string $treeId,)
     {
     }
 }

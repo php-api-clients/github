@@ -13,7 +13,10 @@ final readonly class Vulnerabilities
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"severity":"critical","advisory_ghsa_id":"GHSA-rf4j-j272-fj86","advisory_summary":"A summary of the advisory.","advisory_url":"https:\\/\\/github.com\\/advisories\\/GHSA-rf4j-j272-fj86"}';
 
-    public function __construct(public string $severity, #[MapFrom('advisory_ghsa_id')] public string $advisoryGhsaId, #[MapFrom('advisory_summary')] public string $advisorySummary, #[MapFrom('advisory_url')] public string $advisoryUrl)
+    public function __construct(public string $severity, #[MapFrom('advisory_ghsa_id')]
+    public string $advisoryGhsaId, #[MapFrom('advisory_summary')]
+    public string $advisorySummary, #[MapFrom('advisory_url')]
+    public string $advisoryUrl,)
     {
     }
 }

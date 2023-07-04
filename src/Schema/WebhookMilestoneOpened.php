@@ -21,7 +21,7 @@ final readonly class WebhookMilestoneOpened
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookMilestoneOpened\Milestone $milestone, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookMilestoneOpened\Milestone $milestone, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

@@ -26,20 +26,16 @@ final class ListBranchesForHeadCommit
     private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The SHA of the commit. **/
     private string $commitSha;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\BranchesWhereHead $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\BranchesWhereHead $hydrator, string $owner, string $repo, string $commitSha)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\BranchesWhereHead $hydrator, string $owner, string $repo, string $commitSha)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->commitSha               = $commitSha;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->commitSha = $commitSha;
     }
 
     public function createRequest(): RequestInterface

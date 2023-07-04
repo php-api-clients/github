@@ -23,9 +23,7 @@ final readonly class CreateRef
     {
     }
 
-    /**
-     * @return PromiseInterface<GitRef>
-     **/
+    /** @return PromiseInterface<GitRef> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\CreateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

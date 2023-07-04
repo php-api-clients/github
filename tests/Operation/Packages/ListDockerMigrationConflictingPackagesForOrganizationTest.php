@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListDockerMigrationConflictingPackagesForOrganizationTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -40,9 +38,7 @@ final class ListDockerMigrationConflictingPackagesForOrganizationTest extends As
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -57,9 +53,7 @@ final class ListDockerMigrationConflictingPackagesForOrganizationTest extends As
         $result = await($client->operations()->packages()->listDockerMigrationConflictingPackagesForOrganization('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class ListDockerMigrationConflictingPackagesForOrganizationTest extends As
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

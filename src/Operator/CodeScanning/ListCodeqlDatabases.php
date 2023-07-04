@@ -22,9 +22,7 @@ final readonly class ListCodeqlDatabases
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\ListCodeqlDatabases($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

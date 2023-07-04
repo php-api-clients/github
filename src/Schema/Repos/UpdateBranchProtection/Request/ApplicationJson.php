@@ -27,7 +27,17 @@ final readonly class ApplicationJson
      * lockBranch: Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
      * allowForkSyncing: Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
      */
-    public function __construct(#[MapFrom('required_status_checks')] public ?Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\RequiredStatusChecks $requiredStatusChecks, #[MapFrom('enforce_admins')] public ?bool $enforceAdmins, #[MapFrom('required_pull_request_reviews')] public ?Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\RequiredPullRequestReviews $requiredPullRequestReviews, public ?Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\Restrictions $restrictions, #[MapFrom('required_linear_history')] public ?bool $requiredLinearHistory, #[MapFrom('allow_force_pushes')] public ?bool $allowForcePushes, #[MapFrom('allow_deletions')] public ?bool $allowDeletions, #[MapFrom('block_creations')] public ?bool $blockCreations, #[MapFrom('required_conversation_resolution')] public ?bool $requiredConversationResolution, #[MapFrom('lock_branch')] public ?bool $lockBranch, #[MapFrom('allow_fork_syncing')] public ?bool $allowForkSyncing)
+    public function __construct(#[MapFrom('required_status_checks')]
+    public Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\RequiredStatusChecks|null $requiredStatusChecks, #[MapFrom('enforce_admins')]
+    public bool|null $enforceAdmins, #[MapFrom('required_pull_request_reviews')]
+    public Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\RequiredPullRequestReviews|null $requiredPullRequestReviews, public Schema\Repos\UpdateBranchProtection\Request\ApplicationJson\Restrictions|null $restrictions, #[MapFrom('required_linear_history')]
+    public bool|null $requiredLinearHistory, #[MapFrom('allow_force_pushes')]
+    public bool|null $allowForcePushes, #[MapFrom('allow_deletions')]
+    public bool|null $allowDeletions, #[MapFrom('block_creations')]
+    public bool|null $blockCreations, #[MapFrom('required_conversation_resolution')]
+    public bool|null $requiredConversationResolution, #[MapFrom('lock_branch')]
+    public bool|null $lockBranch, #[MapFrom('allow_fork_syncing')]
+    public bool|null $allowForkSyncing,)
     {
     }
 }

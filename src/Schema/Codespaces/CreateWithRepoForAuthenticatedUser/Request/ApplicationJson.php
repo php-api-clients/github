@@ -26,7 +26,14 @@ final readonly class ApplicationJson
      * displayName: Display name for this codespace
      * retentionPeriodMinutes: Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
      */
-    public function __construct(public ?string $ref, public ?string $location, public ?string $geo, #[MapFrom('client_ip')] public ?string $clientIp, public ?string $machine, #[MapFrom('devcontainer_path')] public ?string $devcontainerPath, #[MapFrom('multi_repo_permissions_opt_out')] public ?bool $multiRepoPermissionsOptOut, #[MapFrom('working_directory')] public ?string $workingDirectory, #[MapFrom('idle_timeout_minutes')] public ?int $idleTimeoutMinutes, #[MapFrom('display_name')] public ?string $displayName, #[MapFrom('retention_period_minutes')] public ?int $retentionPeriodMinutes)
+    public function __construct(public string|null $ref, public string|null $location, public string|null $geo, #[MapFrom('client_ip')]
+    public string|null $clientIp, public string|null $machine, #[MapFrom('devcontainer_path')]
+    public string|null $devcontainerPath, #[MapFrom('multi_repo_permissions_opt_out')]
+    public bool|null $multiRepoPermissionsOptOut, #[MapFrom('working_directory')]
+    public string|null $workingDirectory, #[MapFrom('idle_timeout_minutes')]
+    public int|null $idleTimeoutMinutes, #[MapFrom('display_name')]
+    public string|null $displayName, #[MapFrom('retention_period_minutes')]
+    public int|null $retentionPeriodMinutes,)
     {
     }
 }

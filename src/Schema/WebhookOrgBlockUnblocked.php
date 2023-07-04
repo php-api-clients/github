@@ -21,7 +21,8 @@ final readonly class WebhookOrgBlockUnblocked
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, #[MapFrom('blocked_user')] public ?Schema\WebhookOrgBlockUnblocked\BlockedUser $blockedUser, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, #[MapFrom('blocked_user')]
+    public Schema\WebhookOrgBlockUnblocked\BlockedUser|null $blockedUser, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple $organization, public Schema\Repository|null $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

@@ -25,15 +25,9 @@ final class CreateGpgKeyForAuthenticatedUser
     public const OPERATION_MATCH = 'POST /user/gpg_keys';
     private const METHOD         = 'POST';
     private const PATH           = '/user/gpg_keys';
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\GpgKeys $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\GpgKeys $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\GpgKeys $hydrator)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -43,9 +37,7 @@ final class CreateGpgKeyForAuthenticatedUser
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\GpgKey|array{code: int}
-     */
+    /** @return Schema\GpgKey|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GpgKey|array
     {
         $code          = $response->getStatusCode();

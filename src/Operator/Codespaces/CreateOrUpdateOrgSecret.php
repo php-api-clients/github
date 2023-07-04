@@ -23,9 +23,7 @@ final readonly class CreateOrUpdateOrgSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<(EmptyObject|array)>
-     **/
+    /** @return PromiseInterface<(EmptyObject|array)> **/
     public function call(string $org, string $secretName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\CreateOrUpdateOrgSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $secretName);

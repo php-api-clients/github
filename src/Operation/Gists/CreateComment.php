@@ -25,18 +25,12 @@ final class CreateComment
     public const OPERATION_MATCH = 'POST /gists/{gist_id}/comments';
     private const METHOD         = 'POST';
     private const PATH           = '/gists/{gist_id}/comments';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId\Comments $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Comments $hydrator, string $gistId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId\Comments $hydrator, string $gistId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->gistId                  = $gistId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class CreateComment
         return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\GistComment|array{code: int}
-     */
+    /** @return Schema\GistComment|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GistComment|array
     {
         $code          = $response->getStatusCode();

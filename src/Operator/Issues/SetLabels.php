@@ -23,9 +23,7 @@ final readonly class SetLabels
     {
     }
 
-    /**
-     * @return PromiseInterface<BasicError>
-     **/
+    /** @return PromiseInterface<BasicError> **/
     public function call(string $owner, string $repo, int $issueNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\SetLabels($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

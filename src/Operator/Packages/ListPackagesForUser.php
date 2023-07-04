@@ -22,9 +22,7 @@ final readonly class ListPackagesForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $visibility, string $username, int $page = 1, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\ListPackagesForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $visibility, $username, $page, $perPage);

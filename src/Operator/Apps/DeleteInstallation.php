@@ -22,9 +22,7 @@ final readonly class DeleteInstallation
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $installationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\DeleteInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

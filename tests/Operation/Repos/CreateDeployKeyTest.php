@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateDeployKeyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\DeployKey::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CreateDeployKeyTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateDeployKey\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\DeployKey::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class CreateDeployKeyTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createDeployKey('generated', 'generated', json_decode(Schema\Repos\CreateDeployKey\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -79,9 +73,7 @@ final class CreateDeployKeyTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateDeployKey\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

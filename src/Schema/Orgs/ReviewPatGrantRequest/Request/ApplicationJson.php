@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * action: Action to apply to the request.
      * reason: Reason for approving or denying the request. Max 1024 characters.
      */
-    public function __construct(public string $action, public ?string $reason)
+    public function __construct(public string $action, public string|null $reason)
     {
     }
 }

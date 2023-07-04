@@ -30,16 +30,12 @@ final class RestorePackageForAuthenticatedUser
     private string $packageName;
     /**package token **/
     private string $token;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Packages\PackageType\PackageName\Restore $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Packages\PackageType\PackageName\Restore $hydrator, string $packageType, string $packageName, string $token)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Packages\PackageType\PackageName\Restore $hydrator, string $packageType, string $packageName, string $token)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->token                   = $token;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
+        $this->token       = $token;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class RestorePackageForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{token}'], [$this->packageType, $this->packageName, $this->token], self::PATH . '?token={token}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

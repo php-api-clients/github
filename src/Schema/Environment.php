@@ -22,7 +22,13 @@ final readonly class Environment
      * protectionRules: Built-in deployment protection rules for the environment.
      * deploymentBranchPolicy: The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('protection_rules')] public ?array $protectionRules, #[MapFrom('deployment_branch_policy')] public ?Schema\DeploymentBranchPolicySettings $deploymentBranchPolicy)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('protection_rules')]
+    public array|null $protectionRules, #[MapFrom('deployment_branch_policy')]
+    public Schema\DeploymentBranchPolicySettings|null $deploymentBranchPolicy,)
     {
     }
 }

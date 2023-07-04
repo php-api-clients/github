@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListSubscriptionsForAuthenticatedUserStubbedTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class ListSubscriptionsForAuthenticatedUserStubbedTest extends AsyncTestCa
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class ListSubscriptionsForAuthenticatedUserStubbedTest extends AsyncTestCa
         $result = await($client->operations()->apps()->listSubscriptionsForAuthenticatedUserStubbed(8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -79,9 +73,7 @@ final class ListSubscriptionsForAuthenticatedUserStubbedTest extends AsyncTestCa
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

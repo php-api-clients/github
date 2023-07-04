@@ -28,15 +28,11 @@ final class RemoveRepoFromInstallationForAuthenticatedUser
     private int $installationId;
     /**The unique identifier of the repository. **/
     private int $repositoryId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId $hydrator, int $installationId, int $repositoryId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId $hydrator, int $installationId, int $repositoryId)
     {
-        $this->installationId          = $installationId;
-        $this->repositoryId            = $repositoryId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->installationId = $installationId;
+        $this->repositoryId   = $repositoryId;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{installation_id}', '{repository_id}'], [$this->installationId, $this->repositoryId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
@@ -87,6 +81,12 @@ final class RemoveRepoFromInstallationForAuthenticatedUser
 
             case 304:
                 return ['code' => 304];
+            /**
+             * Returned when the application is installed on `all` repositories in the organization, or if this request would remove the last repository that the application has access to in the organization.
+             **/
+
+            case 422:
+                return ['code' => 422];
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

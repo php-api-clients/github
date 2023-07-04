@@ -24,7 +24,8 @@ final readonly class WebhookCodeScanningAlertFixed
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookCodeScanningAlertFixed\Alert $alert, #[MapFrom('commit_oid')] public string $commitOid, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public string $ref, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookCodeScanningAlertFixed\Alert $alert, #[MapFrom('commit_oid')]
+    public string $commitOid, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public string $ref, public Schema\Repository $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

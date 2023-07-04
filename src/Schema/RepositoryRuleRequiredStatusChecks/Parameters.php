@@ -17,7 +17,9 @@ final readonly class Parameters
      * requiredStatusChecks: Status checks that are required.
      * strictRequiredStatusChecksPolicy: Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
      */
-    public function __construct(#[MapFrom('required_status_checks')] public array $requiredStatusChecks, #[MapFrom('strict_required_status_checks_policy')] public bool $strictRequiredStatusChecksPolicy)
+    public function __construct(#[MapFrom('required_status_checks')]
+    public array $requiredStatusChecks, #[MapFrom('strict_required_status_checks_policy')]
+    public bool $strictRequiredStatusChecksPolicy,)
     {
     }
 }

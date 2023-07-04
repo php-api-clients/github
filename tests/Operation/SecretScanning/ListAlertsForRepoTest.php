@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListAlertsForRepoTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -50,9 +48,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -67,9 +63,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->secretScanning()->listAlertsForRepo('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -97,9 +91,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

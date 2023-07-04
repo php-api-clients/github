@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Patch;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -19,43 +18,9 @@ final class Actions
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
-    }
-
-    public function updateRequiredWorkflow(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('required_workflow_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: required_workflow_id');
-        }
-
-        $arguments['required_workflow_id'] = $params['required_workflow_id'];
-        unset($params['required_workflow_id']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Actions\RequiredWorkflows\RequiredWorkflowId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Actions\RequiredWorkflows\RequiredWorkflowId::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId();
-        }
-
-        $operator = new Operator\Actions\UpdateRequiredWorkflow($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Actions\RequiredWorkflows\RequiredWorkflowId::class]);
-
-        return $operator->call($arguments['org'], $arguments['required_workflow_id'], $params);
     }
 
     public function updateOrgVariable(array $params)

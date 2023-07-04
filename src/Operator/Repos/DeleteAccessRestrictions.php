@@ -20,9 +20,7 @@ final readonly class DeleteAccessRestrictions
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $branch): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteAccessRestrictions($owner, $repo, $branch);

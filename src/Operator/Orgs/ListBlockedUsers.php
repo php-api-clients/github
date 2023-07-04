@@ -20,9 +20,7 @@ final readonly class ListBlockedUsers
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListBlockedUsers($org, $perPage, $page);

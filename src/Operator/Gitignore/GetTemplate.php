@@ -23,9 +23,7 @@ final readonly class GetTemplate
     {
     }
 
-    /**
-     * @return PromiseInterface<(GitignoreTemplate|array)>
-     **/
+    /** @return PromiseInterface<(GitignoreTemplate|array)> **/
     public function call(string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gitignore\GetTemplate($this->responseSchemaValidator, $this->hydrator, $name);

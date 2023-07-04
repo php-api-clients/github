@@ -42,22 +42,18 @@ final class ListForOrg
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Issues $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Issues $hydrator, string $org, string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Issues $hydrator, string $org, string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->org                     = $org;
-        $this->labels                  = $labels;
-        $this->since                   = $since;
-        $this->filter                  = $filter;
-        $this->state                   = $state;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->labels    = $labels;
+        $this->since     = $since;
+        $this->filter    = $filter;
+        $this->state     = $state;
+        $this->sort      = $sort;
+        $this->direction = $direction;
+        $this->perPage   = $perPage;
+        $this->page      = $page;
     }
 
     public function createRequest(): RequestInterface

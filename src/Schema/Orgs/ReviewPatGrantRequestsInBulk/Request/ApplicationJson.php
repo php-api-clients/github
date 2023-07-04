@@ -18,7 +18,8 @@ final readonly class ApplicationJson
      * action: Action to apply to the requests.
      * reason: Reason for approving or denying the requests. Max 1024 characters.
      */
-    public function __construct(#[MapFrom('pat_request_ids')] public ?array $patRequestIds, public string $action, public ?string $reason)
+    public function __construct(#[MapFrom('pat_request_ids')]
+    public array|null $patRequestIds, public string $action, public string|null $reason,)
     {
     }
 }

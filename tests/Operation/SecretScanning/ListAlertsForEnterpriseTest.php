@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListAlertsForEnterpriseTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -48,9 +46,7 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -65,9 +61,7 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         $result = await($client->operations()->secretScanning()->listAlertsForEnterprise('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -94,9 +88,7 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);

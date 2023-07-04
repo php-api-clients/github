@@ -23,9 +23,7 @@ final readonly class UpdateMilestone
     {
     }
 
-    /**
-     * @return PromiseInterface<Milestone>
-     **/
+    /** @return PromiseInterface<Milestone> **/
     public function call(string $owner, string $repo, int $milestoneNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\UpdateMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber);

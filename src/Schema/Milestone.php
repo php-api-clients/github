@@ -19,7 +19,16 @@ final readonly class Milestone
      * state: The state of the milestone.
      * title: The title of the milestone.
      */
-    public function __construct(public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('labels_url')] public string $labelsUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public int $number, public string $state, public string $title, public ?string $description, public ?Schema\SimpleUser $creator, #[MapFrom('open_issues')] public int $openIssues, #[MapFrom('closed_issues')] public int $closedIssues, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('due_on')] public ?string $dueOn)
+    public function __construct(public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('labels_url')]
+    public string $labelsUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, public string $state, public string $title, public string|null $description, public Schema\SimpleUser|null $creator, #[MapFrom('open_issues')]
+    public int $openIssues, #[MapFrom('closed_issues')]
+    public int $closedIssues, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('due_on')]
+    public string|null $dueOn,)
     {
     }
 }

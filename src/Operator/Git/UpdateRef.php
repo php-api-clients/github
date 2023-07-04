@@ -23,9 +23,7 @@ final readonly class UpdateRef
     {
     }
 
-    /**
-     * @return PromiseInterface<GitRef>
-     **/
+    /** @return PromiseInterface<GitRef> **/
     public function call(string $owner, string $repo, string $ref, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\UpdateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

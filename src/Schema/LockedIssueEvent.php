@@ -17,7 +17,13 @@ final readonly class LockedIssueEvent
     /**
      * actor: A GitHub user.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, #[MapFrom('lock_reason')] public ?string $lockReason)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')]
+    public string|null $commitId, #[MapFrom('commit_url')]
+    public string|null $commitUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, #[MapFrom('lock_reason')]
+    public string|null $lockReason,)
     {
     }
 }

@@ -26,14 +26,10 @@ final class GetForAuthenticatedUser
     private const PATH           = '/user/codespaces/{codespace_name}';
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName $hydrator, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName $hydrator, string $codespaceName)
     {
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class GetForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{codespace_name}'], [$this->codespaceName], self::PATH));
     }
 
-    /**
-     * @return Schema\Codespace|array{code: int}
-     */
+    /** @return Schema\Codespace|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Codespace|array
     {
         $code          = $response->getStatusCode();

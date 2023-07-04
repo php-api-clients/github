@@ -18,7 +18,7 @@ final class ListAnnotations
     private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the check run. **/
     private int $checkRunId;

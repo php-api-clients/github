@@ -23,7 +23,26 @@ final readonly class ReviewComment
      * startLine: The first line of the range for a multi-line comment.
      * originalStartLine: The original first line of the range for a multi-line comment.
      */
-    public function __construct(public string $url, #[MapFrom('pull_request_review_id')] public ?int $pullRequestReviewId, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('diff_hunk')] public string $diffHunk, public string $path, public ?int $position, #[MapFrom('original_position')] public int $originalPosition, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('original_commit_id')] public string $originalCommitId, #[MapFrom('in_reply_to_id')] public ?int $inReplyToId, public ?Schema\SimpleUser $user, public string $body, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('pull_request_url')] public string $pullRequestUrl, #[MapFrom('author_association')] public string $authorAssociation, #[MapFrom('_links')] public Schema\ReviewComment\Links $links, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('body_html')] public ?string $bodyHtml, public ?Schema\ReactionRollup $reactions, public ?string $side, #[MapFrom('start_side')] public ?string $startSide, public ?int $line, #[MapFrom('original_line')] public ?int $originalLine, #[MapFrom('start_line')] public ?int $startLine, #[MapFrom('original_start_line')] public ?int $originalStartLine)
+    public function __construct(public string $url, #[MapFrom('pull_request_review_id')]
+    public int|null $pullRequestReviewId, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('diff_hunk')]
+    public string $diffHunk, public string $path, public int|null $position, #[MapFrom('original_position')]
+    public int $originalPosition, #[MapFrom('commit_id')]
+    public string $commitId, #[MapFrom('original_commit_id')]
+    public string $originalCommitId, #[MapFrom('in_reply_to_id')]
+    public int|null $inReplyToId, public Schema\SimpleUser|null $user, public string $body, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('pull_request_url')]
+    public string $pullRequestUrl, #[MapFrom('author_association')]
+    public string $authorAssociation, #[MapFrom('_links')]
+    public Schema\ReviewComment\Links $links, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('body_html')]
+    public string|null $bodyHtml, public Schema\ReactionRollup|null $reactions, public string|null $side, #[MapFrom('start_side')]
+    public string|null $startSide, public int|null $line, #[MapFrom('original_line')]
+    public int|null $originalLine, #[MapFrom('start_line')]
+    public int|null $startLine, #[MapFrom('original_start_line')]
+    public int|null $originalStartLine,)
     {
     }
 }

@@ -21,7 +21,14 @@ final readonly class Hook
      * id: Unique identifier of the webhook.
      * name: The type of webhook. The only valid value is 'web'.
      */
-    public function __construct(public bool $active, #[MapFrom('app_id')] public ?int $appId, public Schema\WebhookPing\Hook\Config $config, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('deliveries_url')] public ?string $deliveriesUrl, public array $events, public int $id, #[MapFrom('last_response')] public ?Schema\HookResponse $lastResponse, public string $name, #[MapFrom('ping_url')] public ?string $pingUrl, #[MapFrom('test_url')] public ?string $testUrl, public string $type, #[MapFrom('updated_at')] public string $updatedAt, public ?string $url)
+    public function __construct(public bool $active, #[MapFrom('app_id')]
+    public int|null $appId, public Schema\WebhookPing\Hook\Config $config, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('deliveries_url')]
+    public string|null $deliveriesUrl, public array $events, public int $id, #[MapFrom('last_response')]
+    public Schema\HookResponse|null $lastResponse, public string $name, #[MapFrom('ping_url')]
+    public string|null $pingUrl, #[MapFrom('test_url')]
+    public string|null $testUrl, public string $type, #[MapFrom('updated_at')]
+    public string $updatedAt, public string|null $url,)
     {
     }
 }

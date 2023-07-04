@@ -22,9 +22,7 @@ final readonly class DeleteBranchProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $branch): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

@@ -20,9 +20,7 @@ final readonly class DeleteDeployKey
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $keyId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteDeployKey($owner, $repo, $keyId);

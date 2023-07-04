@@ -24,9 +24,7 @@ final readonly class Update
     {
     }
 
-    /**
-     * @return PromiseInterface<(FullRepository|BasicError)>
-     **/
+    /** @return PromiseInterface<(FullRepository|BasicError)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

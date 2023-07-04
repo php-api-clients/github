@@ -22,9 +22,7 @@ final readonly class GetAllVersions
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\GetAllVersions($this->responseSchemaValidator, $this->hydrator);

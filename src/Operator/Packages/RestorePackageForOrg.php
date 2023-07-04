@@ -22,9 +22,7 @@ final readonly class RestorePackageForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $packageName, string $org, string $token): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\RestorePackageForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $token);

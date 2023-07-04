@@ -20,9 +20,7 @@ final readonly class GetAllCommonlyUsed
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(bool $featured, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Licenses\GetAllCommonlyUsed($featured, $perPage, $page);

@@ -23,9 +23,7 @@ final readonly class GetDefaultSetup
     {
     }
 
-    /**
-     * @return PromiseInterface<CodeScanningDefaultSetup>
-     **/
+    /** @return PromiseInterface<CodeScanningDefaultSetup> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\GetDefaultSetup($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

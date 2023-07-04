@@ -23,9 +23,7 @@ final readonly class CheckToken
     {
     }
 
-    /**
-     * @return PromiseInterface<Authorization>
-     **/
+    /** @return PromiseInterface<Authorization> **/
     public function call(string $clientId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\CheckToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);

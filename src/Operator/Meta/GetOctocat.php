@@ -20,9 +20,7 @@ final readonly class GetOctocat
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $s): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\GetOctocat($s);

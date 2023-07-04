@@ -17,7 +17,8 @@ final readonly class StarredRepository
     /**
      * repo: A repository on GitHub.
      */
-    public function __construct(#[MapFrom('starred_at')] public string $starredAt, public Schema\Repository $repo)
+    public function __construct(#[MapFrom('starred_at')]
+    public string $starredAt, public Schema\Repository $repo,)
     {
     }
 }

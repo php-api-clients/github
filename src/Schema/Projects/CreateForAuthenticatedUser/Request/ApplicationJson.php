@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * name: Name of the project
      * body: Body of the project
      */
-    public function __construct(public string $name, public ?string $body)
+    public function __construct(public string $name, public string|null $body)
     {
     }
 }

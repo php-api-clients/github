@@ -13,7 +13,8 @@ abstract readonly class TietE0507C4B
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"artifacts":[{"id":5,"node_id":"MDEwOkNoZWNrU3VpdGU1","name":"AdventureWorks.Framework","size_in_bytes":12345,"url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/actions\\/artifacts\\/5","archive_download_url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/actions\\/artifacts\\/5\\/zip","expired":false,"created_at":"1970-01-01T00:00:00+00:00","expires_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","workflow_run":{"id":10,"repository_id":42,"head_repository_id":42,"head_branch":"main","head_sha":"009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d"}},{"id":5,"node_id":"MDEwOkNoZWNrU3VpdGU1","name":"AdventureWorks.Framework","size_in_bytes":12345,"url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/actions\\/artifacts\\/5","archive_download_url":"https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/actions\\/artifacts\\/5\\/zip","expired":false,"created_at":"1970-01-01T00:00:00+00:00","expires_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","workflow_run":{"id":10,"repository_id":42,"head_repository_id":42,"head_branch":"main","head_sha":"009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d"}}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $artifacts)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $artifacts,)
     {
     }
 }

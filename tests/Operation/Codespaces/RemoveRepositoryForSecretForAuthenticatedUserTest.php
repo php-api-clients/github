@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         $result = await($client->operations()->codespaces()->removeRepositoryForSecretForAuthenticatedUser('generated', 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -80,9 +74,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -97,9 +89,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         $result = await($client->operations()->codespaces()->removeRepositoryForSecretForAuthenticatedUser('generated', 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -119,9 +109,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -136,9 +124,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         $result = await($client->operations()->codespaces()->removeRepositoryForSecretForAuthenticatedUser('generated', 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -158,9 +144,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -175,9 +159,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         $result = await($client->operations()->codespaces()->removeRepositoryForSecretForAuthenticatedUser('generated', 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -196,9 +178,7 @@ final class RemoveRepositoryForSecretForAuthenticatedUserTest extends AsyncTestC
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

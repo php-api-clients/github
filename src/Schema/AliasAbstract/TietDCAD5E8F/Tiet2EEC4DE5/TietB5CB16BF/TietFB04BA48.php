@@ -13,7 +13,8 @@ abstract readonly class TietFB04BA48
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"machines":[{"name":"standardLinux","display_name":"4 cores, 8 GB RAM, 64 GB storage","operating_system":"linux","storage_in_bytes":68719476736,"memory_in_bytes":8589934592,"cpus":4,"prebuild_availability":"ready"},{"name":"standardLinux","display_name":"4 cores, 8 GB RAM, 64 GB storage","operating_system":"linux","storage_in_bytes":68719476736,"memory_in_bytes":8589934592,"cpus":4,"prebuild_availability":"ready"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $machines)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $machines,)
     {
     }
 }

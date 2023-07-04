@@ -23,9 +23,7 @@ final readonly class CreateOrUpdateEnvironmentSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<(EmptyObject|array)>
-     **/
+    /** @return PromiseInterface<(EmptyObject|array)> **/
     public function call(int $repositoryId, string $environmentName, string $secretName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateOrUpdateEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);

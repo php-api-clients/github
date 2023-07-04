@@ -13,7 +13,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = 'The changes to the label if the action was `edited`.';
     public const SCHEMA_EXAMPLE_DATA = '{"color":{"from":"generated"},"description":{"from":"generated"},"name":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookLabelEdited\Changes\Color $color, public ?Schema\WebhookLabelEdited\Changes\Description $description, public ?Schema\WebhookLabelEdited\Changes\Name $name)
+    public function __construct(public Schema\WebhookLabelEdited\Changes\Color|null $color, public Schema\WebhookLabelEdited\Changes\Description|null $description, public Schema\WebhookLabelEdited\Changes\Name|null $name)
     {
     }
 }

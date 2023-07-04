@@ -18,7 +18,13 @@ abstract readonly class Tiet6F2B22B2
      * name: The file name of the asset.
      * state: State of the release asset.
      */
-    public function __construct(#[MapFrom('browser_download_url')] public string $browserDownloadUrl, #[MapFrom('content_type')] public string $contentType, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('download_count')] public int $downloadCount, public int $id, public ?string $label, public string $name, #[MapFrom('node_id')] public string $nodeId, public int $size, public string $state, #[MapFrom('updated_at')] public string $updatedAt, public ?Schema\WebhookReleaseCreated\Release\Assets\Uploader $uploader, public string $url)
+    public function __construct(#[MapFrom('browser_download_url')]
+    public string $browserDownloadUrl, #[MapFrom('content_type')]
+    public string $contentType, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('download_count')]
+    public int $downloadCount, public int $id, public string|null $label, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public int $size, public string $state, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\WebhookReleaseCreated\Release\Assets\Uploader|null $uploader, public string $url,)
     {
     }
 }

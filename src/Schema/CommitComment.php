@@ -17,7 +17,13 @@ final readonly class CommitComment
     /**
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(#[MapFrom('html_url')] public string $htmlUrl, public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $body, public ?string $path, public ?int $position, public ?int $line, #[MapFrom('commit_id')] public string $commitId, public ?Schema\SimpleUser $user, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('author_association')] public string $authorAssociation, public ?Schema\ReactionRollup $reactions)
+    public function __construct(#[MapFrom('html_url')]
+    public string $htmlUrl, public string $url, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $body, public string|null $path, public int|null $position, public int|null $line, #[MapFrom('commit_id')]
+    public string $commitId, public Schema\SimpleUser|null $user, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('author_association')]
+    public string $authorAssociation, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

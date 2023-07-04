@@ -22,9 +22,7 @@ final readonly class RemoveProjectLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $teamId, int $projectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveProjectLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

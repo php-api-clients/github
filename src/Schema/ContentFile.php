@@ -14,7 +14,12 @@ final readonly class ContentFile
     public const SCHEMA_DESCRIPTION  = 'Content File';
     public const SCHEMA_EXAMPLE_DATA = '{"type":"file","encoding":"generated","size":4,"name":"generated","path":"generated","content":"generated","sha":"generated","url":"https:\\/\\/example.com\\/","git_url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","download_url":"https:\\/\\/example.com\\/","_links":{"git":"https:\\/\\/example.com\\/","html":"https:\\/\\/example.com\\/","self":"https:\\/\\/example.com\\/"},"target":"\\"actual\\/actual.md\\"","submodule_git_url":"\\"git:\\/\\/example.com\\/defunkt\\/dotjs.git\\""}';
 
-    public function __construct(public string $type, public string $encoding, public int $size, public string $name, public string $path, public string $content, public string $sha, public string $url, #[MapFrom('git_url')] public ?string $gitUrl, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('download_url')] public ?string $downloadUrl, #[MapFrom('_links')] public Schema\ContentFile\Links $links, public ?string $target, #[MapFrom('submodule_git_url')] public ?string $submoduleGitUrl)
+    public function __construct(public string $type, public string $encoding, public int $size, public string $name, public string $path, public string $content, public string $sha, public string $url, #[MapFrom('git_url')]
+    public string|null $gitUrl, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('download_url')]
+    public string|null $downloadUrl, #[MapFrom('_links')]
+    public Schema\ContentFile\Links $links, public string|null $target, #[MapFrom('submodule_git_url')]
+    public string|null $submoduleGitUrl,)
     {
     }
 }

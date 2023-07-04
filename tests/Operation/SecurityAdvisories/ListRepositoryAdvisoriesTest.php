@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListRepositoryAdvisoriesTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -47,9 +45,7 @@ final class ListRepositoryAdvisoriesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -64,9 +60,7 @@ final class ListRepositoryAdvisoriesTest extends AsyncTestCase
         $result = await($client->operations()->securityAdvisories()->listRepositoryAdvisories('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -92,9 +86,7 @@ final class ListRepositoryAdvisoriesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -109,9 +101,7 @@ final class ListRepositoryAdvisoriesTest extends AsyncTestCase
         $result = await($client->operations()->securityAdvisories()->listRepositoryAdvisories('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -137,9 +127,7 @@ final class ListRepositoryAdvisoriesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

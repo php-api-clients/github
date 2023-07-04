@@ -23,9 +23,7 @@ final readonly class GetTree
     {
     }
 
-    /**
-     * @return PromiseInterface<GitTree>
-     **/
+    /** @return PromiseInterface<GitTree> **/
     public function call(string $owner, string $repo, string $treeSha, string $recursive): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\GetTree($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $treeSha, $recursive);

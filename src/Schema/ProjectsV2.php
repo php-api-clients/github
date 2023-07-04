@@ -18,7 +18,14 @@ final readonly class ProjectsV2
      * owner: A GitHub user.
      * creator: A GitHub user.
      */
-    public function __construct(public int|float $id, #[MapFrom('node_id')] public string $nodeId, public Schema\SimpleUser $owner, public Schema\SimpleUser $creator, public string $title, public ?string $description, public bool $public, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public int $number, #[MapFrom('short_description')] public ?string $shortDescription, #[MapFrom('deleted_at')] public ?string $deletedAt, #[MapFrom('deleted_by')] public ?Schema\SimpleUser $deletedBy)
+    public function __construct(public int|float $id, #[MapFrom('node_id')]
+    public string $nodeId, public Schema\SimpleUser $owner, public Schema\SimpleUser $creator, public string $title, public string|null $description, public bool $public, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public int $number, #[MapFrom('short_description')]
+    public string|null $shortDescription, #[MapFrom('deleted_at')]
+    public string|null $deletedAt, #[MapFrom('deleted_by')]
+    public Schema\SimpleUser|null $deletedBy,)
     {
     }
 }

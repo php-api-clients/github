@@ -18,7 +18,12 @@ final readonly class TimelineUnassignedIssueEvent
      * actor: A GitHub user.
      * assignee: A GitHub user.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public Schema\SimpleUser $assignee)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')]
+    public string|null $commitId, #[MapFrom('commit_url')]
+    public string|null $commitUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, public Schema\SimpleUser $assignee,)
     {
     }
 }

@@ -22,12 +22,10 @@ final readonly class GetRepoRulesets
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
-    public function call(string $owner, string $repo, bool $includesParents): PromiseInterface
+    /** @return PromiseInterface<mixed> **/
+    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true): PromiseInterface
     {
-        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $includesParents);
+        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page, $includesParents);
         $request   = $operation->createRequest();
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {

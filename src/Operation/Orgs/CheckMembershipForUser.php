@@ -33,9 +33,7 @@ final class CheckMembershipForUser
         return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH));
     }
 
-    /**
-     * @return array{code: int}|array{code: int,location: string}
-     */
+    /** @return array{code: int}|array{code: int,location: string} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

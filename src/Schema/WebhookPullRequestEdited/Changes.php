@@ -13,7 +13,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = 'The changes to the comment if the action was `edited`.';
     public const SCHEMA_EXAMPLE_DATA = '{"base":{"ref":{"from":"generated"},"sha":{"from":"generated"}},"body":{"from":"generated"},"title":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookPullRequestEdited\Changes\Base $base, public ?Schema\WebhookPullRequestEdited\Changes\Body $body, public ?Schema\WebhookPullRequestEdited\Changes\Title $title)
+    public function __construct(public Schema\WebhookPullRequestEdited\Changes\Base|null $base, public Schema\WebhookPullRequestEdited\Changes\Body|null $body, public Schema\WebhookPullRequestEdited\Changes\Title|null $title)
     {
     }
 }

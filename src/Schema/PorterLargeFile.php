@@ -13,7 +13,8 @@ final readonly class PorterLargeFile
     public const SCHEMA_DESCRIPTION  = 'Porter Large File';
     public const SCHEMA_EXAMPLE_DATA = '{"ref_name":"generated","path":"generated","oid":"generated","size":4}';
 
-    public function __construct(#[MapFrom('ref_name')] public string $refName, public string $path, public string $oid, public int $size)
+    public function __construct(#[MapFrom('ref_name')]
+    public string $refName, public string $path, public string $oid, public int $size,)
     {
     }
 }

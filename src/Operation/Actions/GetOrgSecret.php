@@ -27,15 +27,11 @@ final class GetOrgSecret
     private string $org;
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Actions\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Secrets\SecretName $hydrator, string $org, string $secretName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Actions\Secrets\SecretName $hydrator, string $org, string $secretName)
     {
-        $this->org                     = $org;
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org        = $org;
+        $this->secretName = $secretName;
     }
 
     public function createRequest(): RequestInterface

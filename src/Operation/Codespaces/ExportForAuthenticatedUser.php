@@ -26,14 +26,10 @@ final class ExportForAuthenticatedUser
     private const PATH           = '/user/codespaces/{codespace_name}/exports';
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Exports $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName\Exports $hydrator, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Exports $hydrator, string $codespaceName)
     {
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(): RequestInterface

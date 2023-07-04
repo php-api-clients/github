@@ -23,9 +23,7 @@ final readonly class PreFlightWithRepoForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, string $ref, string $clientIp): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\PreFlightWithRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $clientIp);

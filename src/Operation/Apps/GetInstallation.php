@@ -26,14 +26,10 @@ final class GetInstallation
     private const PATH           = '/app/installations/{installation_id}';
     /**The unique identifier of the installation. **/
     private int $installationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Installations\InstallationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations\InstallationId $hydrator, int $installationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App\Installations\InstallationId $hydrator, int $installationId)
     {
-        $this->installationId          = $installationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->installationId = $installationId;
     }
 
     public function createRequest(): RequestInterface

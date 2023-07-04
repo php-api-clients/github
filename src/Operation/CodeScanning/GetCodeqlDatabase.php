@@ -26,20 +26,16 @@ final class GetCodeqlDatabase
     private const PATH           = '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The language of the CodeQL database. **/
     private string $language;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Codeql\Databases\Language $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Codeql\Databases\Language $hydrator, string $owner, string $repo, string $language)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Codeql\Databases\Language $hydrator, string $owner, string $repo, string $language)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->language                = $language;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->language = $language;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class GetCodeqlDatabase
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{language}'], [$this->owner, $this->repo, $this->language], self::PATH));
     }
 
-    /**
-     * @return Schema\CodeScanningCodeqlDatabase|array{code: int}
-     */
+    /** @return Schema\CodeScanningCodeqlDatabase|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\CodeScanningCodeqlDatabase|array
     {
         $code          = $response->getStatusCode();

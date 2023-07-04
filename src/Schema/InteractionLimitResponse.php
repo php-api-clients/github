@@ -16,7 +16,8 @@ final readonly class InteractionLimitResponse
     /**
      * limit: The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
      */
-    public function __construct(public string $limit, public string $origin, #[MapFrom('expires_at')] public string $expiresAt)
+    public function __construct(public string $limit, public string $origin, #[MapFrom('expires_at')]
+    public string $expiresAt,)
     {
     }
 }

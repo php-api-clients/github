@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Four
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -78,26 +68,6 @@ final class Four
                         }
                     }
                 }
-            } elseif ($pathChunks[1] === 'organizations') {
-                if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === 'personal-access-token-requests') {
-                        if ($call === 'POST /organizations/{org}/personal-access-token-requests') {
-                            if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
-                                $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\Post\Orgs::class]->reviewPatGrantRequestsInBulk($params);
-                        }
-                    } elseif ($pathChunks[3] === 'personal-access-tokens') {
-                        if ($call === 'POST /organizations/{org}/personal-access-tokens') {
-                            if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
-                                $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\Post\Orgs::class]->updatePatAccesses($params);
-                        }
-                    }
-                }
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'hooks') {
@@ -123,6 +93,22 @@ final class Four
                             }
 
                             return $this->router[Router\Post\Migrations::class]->startForOrg($params);
+                        }
+                    } elseif ($pathChunks[3] === 'personal-access-token-requests') {
+                        if ($call === 'POST /orgs/{org}/personal-access-token-requests') {
+                            if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
+                                $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                            }
+
+                            return $this->router[Router\Post\Orgs::class]->reviewPatGrantRequestsInBulk($params);
+                        }
+                    } elseif ($pathChunks[3] === 'personal-access-tokens') {
+                        if ($call === 'POST /orgs/{org}/personal-access-tokens') {
+                            if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
+                                $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                            }
+
+                            return $this->router[Router\Post\Orgs::class]->updatePatAccesses($params);
                         }
                     } elseif ($pathChunks[3] === 'projects') {
                         if ($call === 'POST /orgs/{org}/projects') {

@@ -25,15 +25,9 @@ final class CreateSshSigningKeyForAuthenticatedUser
     public const OPERATION_MATCH = 'POST /user/ssh_signing_keys';
     private const METHOD         = 'POST';
     private const PATH           = '/user/ssh_signing_keys';
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\SshSigningKeys $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\SshSigningKeys $hydrator)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -43,9 +37,7 @@ final class CreateSshSigningKeyForAuthenticatedUser
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\SshSigningKey|array{code: int}
-     */
+    /** @return Schema\SshSigningKey|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\SshSigningKey|array
     {
         $code          = $response->getStatusCode();

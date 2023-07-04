@@ -21,14 +21,12 @@ final class SetGithubActionsDefaultWorkflowPermissionsOrganization
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/permissions/workflow';
     private const METHOD         = 'PUT';
     private const PATH           = '/orgs/{org}/actions/permissions/workflow';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, string $org)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, string $org)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->org                    = $org;
+        $this->org = $org;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -38,9 +36,7 @@ final class SetGithubActionsDefaultWorkflowPermissionsOrganization
         return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

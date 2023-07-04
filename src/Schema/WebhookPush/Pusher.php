@@ -14,7 +14,7 @@ final readonly class Pusher
     /**
      * name: The git author's name.
      */
-    public function __construct(public ?string $date, public ?string $email, public string $name, public ?string $username)
+    public function __construct(public string|null $date, public string|null $email, public string $name, public string|null $username)
     {
     }
 }

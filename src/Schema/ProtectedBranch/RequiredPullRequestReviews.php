@@ -17,7 +17,13 @@ final readonly class RequiredPullRequestReviews
     /**
      * requireLastPushApproval: Whether the most recent push must be approved by someone other than the person who pushed it.
      */
-    public function __construct(public string $url, #[MapFrom('dismiss_stale_reviews')] public ?bool $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')] public ?bool $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')] public ?int $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')] public ?bool $requireLastPushApproval, #[MapFrom('dismissal_restrictions')] public ?Schema\ProtectedBranch\RequiredPullRequestReviews\DismissalRestrictions $dismissalRestrictions, #[MapFrom('bypass_pull_request_allowances')] public ?Schema\ProtectedBranch\RequiredPullRequestReviews\BypassPullRequestAllowances $bypassPullRequestAllowances)
+    public function __construct(public string $url, #[MapFrom('dismiss_stale_reviews')]
+    public bool|null $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')]
+    public bool|null $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')]
+    public int|null $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')]
+    public bool|null $requireLastPushApproval, #[MapFrom('dismissal_restrictions')]
+    public Schema\ProtectedBranch\RequiredPullRequestReviews\DismissalRestrictions|null $dismissalRestrictions, #[MapFrom('bypass_pull_request_allowances')]
+    public Schema\ProtectedBranch\RequiredPullRequestReviews\BypassPullRequestAllowances|null $bypassPullRequestAllowances,)
     {
     }
 }

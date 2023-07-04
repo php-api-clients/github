@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * integrationId: The ID of the custom app that will be enabled on the environment.
      */
-    public function __construct(#[MapFrom('integration_id')] public ?int $integrationId)
+    public function __construct(#[MapFrom('integration_id')]
+    public int|null $integrationId,)
     {
     }
 }

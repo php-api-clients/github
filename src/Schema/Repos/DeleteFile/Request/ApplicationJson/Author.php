@@ -15,7 +15,7 @@ final readonly class Author
      * name: The name of the author (or committer) of the commit
      * email: The email of the author (or committer) of the commit
      */
-    public function __construct(public ?string $name, public ?string $email)
+    public function __construct(public string|null $name, public string|null $email)
     {
     }
 }

@@ -25,17 +25,13 @@ final class DownloadTarballArchiveStreaming
     private const PATH           = '/repos/{owner}/{repo}/tarball/{ref}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private string $ref;
-    private readonly Browser $browser;
 
-    public function __construct(Browser $browser, string $owner, string $repo, string $ref)
+    public function __construct(private readonly Browser $browser, string $owner, string $repo, private string $ref)
     {
-        $this->owner   = $owner;
-        $this->repo    = $repo;
-        $this->ref     = $ref;
-        $this->browser = $browser;
+        $this->owner = $owner;
+        $this->repo  = $repo;
     }
 
     public function createRequest(): RequestInterface
@@ -43,9 +39,7 @@ final class DownloadTarballArchiveStreaming
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}'], [$this->owner, $this->repo, $this->ref], self::PATH));
     }
 
-    /**
-     * @return Observable<string>
-     */
+    /** @return Observable<string> */
     public function createResponse(ResponseInterface $response): Observable
     {
         $code = $response->getStatusCode();

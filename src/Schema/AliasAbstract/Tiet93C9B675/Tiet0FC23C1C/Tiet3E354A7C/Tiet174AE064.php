@@ -11,7 +11,7 @@ abstract readonly class Tiet174AE064
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated","branch":"generated","commit":"generated","type":"generated"}';
 
-    public function __construct(public ?string $url, public ?string $branch, public ?string $commit, public ?string $type)
+    public function __construct(public string|null $url, public string|null $branch, public string|null $commit, public string|null $type)
     {
     }
 }

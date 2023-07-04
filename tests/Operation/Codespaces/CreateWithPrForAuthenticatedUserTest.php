@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Codespace::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Codespace::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->createWithPrForAuthenticatedUser('generated', 'generated', 11, json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Codespace::SCHEMA_EXAMPLE_DATA);
@@ -80,9 +74,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Codespace::SCHEMA_EXAMPLE_DATA);
@@ -96,9 +88,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->createWithPrForAuthenticatedUser('generated', 'generated', 11, json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -119,9 +109,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -136,9 +124,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->createWithPrForAuthenticatedUser('generated', 'generated', 11, json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -159,9 +145,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -176,9 +160,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->createWithPrForAuthenticatedUser('generated', 'generated', 11, json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -199,9 +181,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -216,9 +196,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->createWithPrForAuthenticatedUser('generated', 'generated', 11, json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -239,9 +217,7 @@ final class CreateWithPrForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\CreateWithPrForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);

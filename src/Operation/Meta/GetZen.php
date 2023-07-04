@@ -20,13 +20,9 @@ final class GetZen
     public const OPERATION_MATCH = 'GET /zen';
     private const METHOD         = 'GET';
     private const PATH           = '/zen';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Zen $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Zen $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Zen $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RemoveAllCustomLabelsFromSelfHostedRunnerForOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForOrgTest extends AsyncTes
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForOrgTest extends AsyncTes
         $result = await($client->operations()->actions()->removeAllCustomLabelsFromSelfHostedRunnerForOrg('generated', 9));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForOrgTest extends AsyncTes
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

@@ -13,7 +13,9 @@ final readonly class FieldValue
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"field_node_id":"generated","field_type":"generated"}';
 
-    public function __construct(#[MapFrom('field_node_id')] public ?string $fieldNodeId, #[MapFrom('field_type')] public ?string $fieldType)
+    public function __construct(#[MapFrom('field_node_id')]
+    public string|null $fieldNodeId, #[MapFrom('field_type')]
+    public string|null $fieldType,)
     {
     }
 }

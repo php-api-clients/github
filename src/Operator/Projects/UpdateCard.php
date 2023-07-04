@@ -23,9 +23,7 @@ final readonly class UpdateCard
     {
     }
 
-    /**
-     * @return PromiseInterface<(ProjectCard|array)>
-     **/
+    /** @return PromiseInterface<(ProjectCard|array)> **/
     public function call(int $cardId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\UpdateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $cardId);

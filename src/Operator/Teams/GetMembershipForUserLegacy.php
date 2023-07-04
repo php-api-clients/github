@@ -23,9 +23,7 @@ final readonly class GetMembershipForUserLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<TeamMembership>
-     **/
+    /** @return PromiseInterface<TeamMembership> **/
     public function call(int $teamId, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\GetMembershipForUserLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $username);

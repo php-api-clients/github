@@ -13,7 +13,8 @@ final readonly class Devcontainers
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"generated","name":"generated","display_name":"generated"}';
 
-    public function __construct(public string $path, public ?string $name, #[MapFrom('display_name')] public ?string $displayName)
+    public function __construct(public string $path, public string|null $name, #[MapFrom('display_name')]
+    public string|null $displayName,)
     {
     }
 }

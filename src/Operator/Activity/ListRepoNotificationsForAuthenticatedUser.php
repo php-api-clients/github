@@ -20,9 +20,7 @@ final readonly class ListRepoNotificationsForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, string $since, string $before, bool $all = false, bool $participating = false, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListRepoNotificationsForAuthenticatedUser($owner, $repo, $since, $before, $all, $participating, $perPage, $page);

@@ -26,16 +26,10 @@ final class GetStatusForAuthenticatedUser
     private const PATH           = '/user/migrations/{migration_id}';
     /**The unique identifier of the migration. **/
     private int $migrationId;
-    private array $exclude;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\MigrationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId $hydrator, int $migrationId, array $exclude)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Migrations\MigrationId $hydrator, int $migrationId, private array $exclude)
     {
-        $this->migrationId             = $migrationId;
-        $this->exclude                 = $exclude;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->migrationId = $migrationId;
     }
 
     public function createRequest(): RequestInterface
@@ -43,9 +37,7 @@ final class GetStatusForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{migration_id}', '{exclude}'], [$this->migrationId, $this->exclude], self::PATH . '?exclude={exclude}'));
     }
 
-    /**
-     * @return Schema\Migration|array{code: int}
-     */
+    /** @return Schema\Migration|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Migration|array
     {
         $code          = $response->getStatusCode();

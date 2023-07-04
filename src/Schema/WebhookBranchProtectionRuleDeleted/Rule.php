@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Rule extends Schema\AliasAbstract\TietC418EA20\TietBFD7035B\Tiet02C672E3\TietC3E7A65E
+final readonly class Rule extends Schema\AliasAbstract\Tiet0ABDF2D6\TietD332BA16\Tiet9CCDE2C1\Tiet52522D82
 {
 }

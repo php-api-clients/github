@@ -22,24 +22,18 @@ use function str_replace;
 final class ReviewPatGrantRequest
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-request';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-token-requests/{pat_request_id}';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests/{pat_request_id}';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-token-requests/{pat_request_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
+    private const PATH           = '/orgs/{org}/personal-access-token-requests/{pat_request_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the request for access via fine-grained personal access token. **/
     private int $patRequestId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId $hydrator, string $org, int $patRequestId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId $hydrator, string $org, int $patRequestId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->patRequestId            = $patRequestId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org          = $org;
+        $this->patRequestId = $patRequestId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -49,9 +43,7 @@ final class ReviewPatGrantRequest
         return new Request(self::METHOD, str_replace(['{org}', '{pat_request_id}'], [$this->org, $this->patRequestId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

@@ -23,9 +23,7 @@ final readonly class ListRepositoriesForSecretForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\ListRepositoriesForSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName);

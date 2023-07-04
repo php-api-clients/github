@@ -26,7 +26,10 @@ You can check which security and analysis features are currently enabled by usin
      * secretScanning: Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
      * secretScanningPushProtection: Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
      */
-    public function __construct(#[MapFrom('advanced_security')] public ?Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\AdvancedSecurity $advancedSecurity, #[MapFrom('secret_scanning')] public ?Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanning $secretScanning, #[MapFrom('secret_scanning_push_protection')] public ?Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningPushProtection $secretScanningPushProtection)
+    public function __construct(#[MapFrom('advanced_security')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\AdvancedSecurity|null $advancedSecurity, #[MapFrom('secret_scanning')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanning|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningPushProtection|null $secretScanningPushProtection,)
     {
     }
 }

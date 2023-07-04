@@ -24,15 +24,9 @@ final class GetBySlug
     public const OPERATION_MATCH = 'GET /apps/{app_slug}';
     private const METHOD         = 'GET';
     private const PATH           = '/apps/{app_slug}';
-    private string $appSlug;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Apps\AppSlug $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Apps\AppSlug $hydrator, string $appSlug)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Apps\AppSlug $hydrator, private string $appSlug)
     {
-        $this->appSlug                 = $appSlug;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

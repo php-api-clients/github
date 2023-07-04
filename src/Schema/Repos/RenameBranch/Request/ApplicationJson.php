@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * newName: The new name of the branch.
      */
-    public function __construct(#[MapFrom('new_name')] public string $newName)
+    public function __construct(#[MapFrom('new_name')]
+    public string $newName,)
     {
     }
 }

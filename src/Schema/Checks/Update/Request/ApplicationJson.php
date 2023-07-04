@@ -26,7 +26,11 @@ final readonly class ApplicationJson
      * output: Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
      * actions: Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
      */
-    public function __construct(public ?string $name, #[MapFrom('details_url')] public ?string $detailsUrl, #[MapFrom('external_id')] public ?string $externalId, #[MapFrom('started_at')] public ?string $startedAt, public ?string $status, public ?string $conclusion, #[MapFrom('completed_at')] public ?string $completedAt, public ?Schema\Checks\Update\Request\ApplicationJson\Output $output, public ?array $actions)
+    public function __construct(public string|null $name, #[MapFrom('details_url')]
+    public string|null $detailsUrl, #[MapFrom('external_id')]
+    public string|null $externalId, #[MapFrom('started_at')]
+    public string|null $startedAt, public string|null $status, public string|null $conclusion, #[MapFrom('completed_at')]
+    public string|null $completedAt, public Schema\Checks\Update\Request\ApplicationJson\Output|null $output, public array|null $actions,)
     {
     }
 }

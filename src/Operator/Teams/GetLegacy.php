@@ -23,9 +23,7 @@ final readonly class GetLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<TeamFull>
-     **/
+    /** @return PromiseInterface<TeamFull> **/
     public function call(int $teamId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\GetLegacy($this->responseSchemaValidator, $this->hydrator, $teamId);

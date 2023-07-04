@@ -22,9 +22,7 @@ final readonly class PingWebhook
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, int $hookId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\PingWebhook($this->responseSchemaValidator, $this->hydrator, $org, $hookId);

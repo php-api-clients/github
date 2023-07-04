@@ -26,20 +26,16 @@ final class GetViews
     private const PATH           = '/repos/{owner}/{repo}/traffic/views';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The time frame to display results for. **/
     private string $per;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Traffic\Views $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Traffic\Views $hydrator, string $owner, string $repo, string $per = 'day')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Traffic\Views $hydrator, string $owner, string $repo, string $per = 'day')
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->per                     = $per;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
+        $this->per   = $per;
     }
 
     public function createRequest(): RequestInterface

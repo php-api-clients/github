@@ -27,15 +27,11 @@ final class GetSelfHostedRunnerForOrg
     private string $org;
     /**Unique identifier of the self-hosted runner. **/
     private int $runnerId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId $hydrator, string $org, int $runnerId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId $hydrator, string $org, int $runnerId)
     {
-        $this->org                     = $org;
-        $this->runnerId                = $runnerId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org      = $org;
+        $this->runnerId = $runnerId;
     }
 
     public function createRequest(): RequestInterface

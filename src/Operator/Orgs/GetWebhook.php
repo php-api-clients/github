@@ -23,9 +23,7 @@ final readonly class GetWebhook
     {
     }
 
-    /**
-     * @return PromiseInterface<OrgHook>
-     **/
+    /** @return PromiseInterface<OrgHook> **/
     public function call(string $org, int $hookId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\GetWebhook($this->responseSchemaValidator, $this->hydrator, $org, $hookId);

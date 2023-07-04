@@ -22,9 +22,7 @@ final readonly class Block
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\Block($this->responseSchemaValidator, $this->hydrator, $username);

@@ -11,7 +11,7 @@ abstract readonly class Tiet295E84AF
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"git":"https:\\/\\/example.com\\/","html":"https:\\/\\/example.com\\/","self":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public ?string $git, public ?string $html, public string $self)
+    public function __construct(public string|null $git, public string|null $html, public string $self)
     {
     }
 }

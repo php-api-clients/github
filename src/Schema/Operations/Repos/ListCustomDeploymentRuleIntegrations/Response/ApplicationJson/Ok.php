@@ -16,7 +16,9 @@ final readonly class Ok
     /**
      * totalCount: The total number of custom deployment protection rule integrations available for this environment.
      */
-    public function __construct(#[MapFrom('total_count')] public ?int $totalCount, #[MapFrom('available_custom_deployment_protection_rule_integrations')] public ?array $availableCustomDeploymentProtectionRuleIntegrations)
+    public function __construct(#[MapFrom('total_count')]
+    public int|null $totalCount, #[MapFrom('available_custom_deployment_protection_rule_integrations')]
+    public array|null $availableCustomDeploymentProtectionRuleIntegrations,)
     {
     }
 }

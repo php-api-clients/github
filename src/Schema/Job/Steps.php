@@ -20,7 +20,9 @@ final readonly class Steps
      * startedAt: The time that the step started, in ISO 8601 format.
      * completedAt: The time that the job finished, in ISO 8601 format.
      */
-    public function __construct(public string $status, public ?string $conclusion, public string $name, public int $number, #[MapFrom('started_at')] public ?string $startedAt, #[MapFrom('completed_at')] public ?string $completedAt)
+    public function __construct(public string $status, public string|null $conclusion, public string $name, public int $number, #[MapFrom('started_at')]
+    public string|null $startedAt, #[MapFrom('completed_at')]
+    public string|null $completedAt,)
     {
     }
 }

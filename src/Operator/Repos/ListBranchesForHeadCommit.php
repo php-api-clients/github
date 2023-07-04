@@ -22,9 +22,7 @@ final readonly class ListBranchesForHeadCommit
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, string $commitSha): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListBranchesForHeadCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);

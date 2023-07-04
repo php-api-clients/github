@@ -23,9 +23,7 @@ final readonly class DeleteForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(string $codespaceName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

@@ -18,7 +18,25 @@ final readonly class IssueSearchResultItem
      * authorAssociation: How the author is associated with the repository.
      * repository: A repository on GitHub.
      */
-    public function __construct(public string $url, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('labels_url')] public string $labelsUrl, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public int $number, public string $title, public bool $locked, #[MapFrom('active_lock_reason')] public ?string $activeLockReason, public ?array $assignees, public ?Schema\SimpleUser $user, public array $labels, public string $state, #[MapFrom('state_reason')] public ?string $stateReason, public ?Schema\SimpleUser $assignee, public ?Schema\Milestone $milestone, public int $comments, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('text_matches')] public ?array $textMatches, #[MapFrom('pull_request')] public ?Schema\IssueSearchResultItem\PullRequest $pullRequest, public ?string $body, public int|float $score, #[MapFrom('author_association')] public string $authorAssociation, public ?bool $draft, public ?Schema\Repository $repository, #[MapFrom('body_html')] public ?string $bodyHtml, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('timeline_url')] public ?string $timelineUrl, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public string $url, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('labels_url')]
+    public string $labelsUrl, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, public string $title, public bool $locked, #[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, public array|null $assignees, public Schema\SimpleUser|null $user, public array $labels, public string $state, #[MapFrom('state_reason')]
+    public string|null $stateReason, public Schema\SimpleUser|null $assignee, public Schema\Milestone|null $milestone, public int $comments, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('text_matches')]
+    public array|null $textMatches, #[MapFrom('pull_request')]
+    public Schema\IssueSearchResultItem\PullRequest|null $pullRequest, public string|null $body, public int|float $score, #[MapFrom('author_association')]
+    public string $authorAssociation, public bool|null $draft, public Schema\Repository|null $repository, #[MapFrom('body_html')]
+    public string|null $bodyHtml, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('timeline_url')]
+    public string|null $timelineUrl, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

@@ -26,20 +26,16 @@ final class GetCommitAuthors
     private const PATH           = '/repos/{owner}/{repo}/import/authors';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**A user ID. Only return users with an ID greater than this ID. **/
     private int $since;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Import\Authors $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Import\Authors $hydrator, string $owner, string $repo, int $since)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Import\Authors $hydrator, string $owner, string $repo, int $since)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->since                   = $since;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
+        $this->since = $since;
     }
 
     public function createRequest(): RequestInterface

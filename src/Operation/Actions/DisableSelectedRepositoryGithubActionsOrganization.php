@@ -33,9 +33,7 @@ final class DisableSelectedRepositoryGithubActionsOrganization
         return new Request(self::METHOD, str_replace(['{org}', '{repository_id}'], [$this->org, $this->repositoryId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

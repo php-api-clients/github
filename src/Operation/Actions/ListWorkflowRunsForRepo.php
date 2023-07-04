@@ -25,7 +25,7 @@ final class ListWorkflowRunsForRepo
     private const PATH           = '/repos/{owner}/{repo}/actions/runs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run. **/
     private string $actor;
@@ -47,25 +47,21 @@ final class ListWorkflowRunsForRepo
     private int $page;
     /**If `true` pull requests are omitted from the response (empty array). **/
     private bool $excludePullRequests;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runs $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Runs $hydrator, string $owner, string $repo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runs $hydrator, string $owner, string $repo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->actor                   = $actor;
-        $this->branch                  = $branch;
-        $this->event                   = $event;
-        $this->status                  = $status;
-        $this->created                 = $created;
-        $this->checkSuiteId            = $checkSuiteId;
-        $this->headSha                 = $headSha;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->excludePullRequests     = $excludePullRequests;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner               = $owner;
+        $this->repo                = $repo;
+        $this->actor               = $actor;
+        $this->branch              = $branch;
+        $this->event               = $event;
+        $this->status              = $status;
+        $this->created             = $created;
+        $this->checkSuiteId        = $checkSuiteId;
+        $this->headSha             = $headSha;
+        $this->perPage             = $perPage;
+        $this->page                = $page;
+        $this->excludePullRequests = $excludePullRequests;
     }
 
     public function createRequest(): RequestInterface
@@ -73,7 +69,7 @@ final class ListWorkflowRunsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{actor}', '{branch}', '{event}', '{status}', '{created}', '{check_suite_id}', '{head_sha}', '{per_page}', '{page}', '{exclude_pull_requests}'], [$this->owner, $this->repo, $this->actor, $this->branch, $this->event, $this->status, $this->created, $this->checkSuiteId, $this->headSha, $this->perPage, $this->page, $this->excludePullRequests], self::PATH . '?actor={actor}&branch={branch}&event={event}&status={status}&created={created}&check_suite_id={check_suite_id}&head_sha={head_sha}&per_page={per_page}&page={page}&exclude_pull_requests={exclude_pull_requests}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok\Application\Json
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -85,9 +81,9 @@ final class ListWorkflowRunsForRepo
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok\Application\Json::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::class, $body);
                 }
 
                 break;

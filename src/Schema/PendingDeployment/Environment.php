@@ -17,7 +17,9 @@ final readonly class Environment
      * id: The id of the environment.
      * name: The name of the environment.
      */
-    public function __construct(public ?int $id, #[MapFrom('node_id')] public ?string $nodeId, public ?string $name, public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl)
+    public function __construct(public int|null $id, #[MapFrom('node_id')]
+    public string|null $nodeId, public string|null $name, public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl,)
     {
     }
 }

@@ -11,7 +11,7 @@ abstract readonly class TietFE0B93B4
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"text":"generated"}';
 
-    public function __construct(public ?string $text)
+    public function __construct(public string|null $text)
     {
     }
 }

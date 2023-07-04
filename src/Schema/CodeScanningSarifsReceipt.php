@@ -15,7 +15,7 @@ final readonly class CodeScanningSarifsReceipt
      * id: An identifier for the upload.
      * url: The REST API URL for checking the status of the upload.
      */
-    public function __construct(public ?string $id, public ?string $url)
+    public function __construct(public string|null $id, public string|null $url)
     {
     }
 }

@@ -22,9 +22,7 @@ final readonly class DeleteSshSigningKeyForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $sshSigningKeyId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeleteSshSigningKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sshSigningKeyId);

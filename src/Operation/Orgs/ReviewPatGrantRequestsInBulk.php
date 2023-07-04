@@ -22,21 +22,15 @@ use function str_replace;
 final class ReviewPatGrantRequestsInBulk
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-requests-in-bulk';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-token-requests';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-token-requests';
-    private readonly SchemaValidator $requestSchemaValidator;
+    private const PATH           = '/orgs/{org}/personal-access-token-requests';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests $hydrator, string $org)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator, string $org)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org = $org;
     }
 
     public function createRequest(array $data): RequestInterface

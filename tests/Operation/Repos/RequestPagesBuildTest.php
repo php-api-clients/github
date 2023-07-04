@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class RequestPagesBuildTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PageBuildStatus::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class RequestPagesBuildTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PageBuildStatus::SCHEMA_EXAMPLE_DATA);

@@ -31,7 +31,19 @@ final readonly class SecretScanningAlert
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public ?int $number, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt, public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('locations_url')] public ?string $locationsUrl, public ?string $state, public ?string $resolution, #[MapFrom('resolved_at')] public ?string $resolvedAt, #[MapFrom('resolved_by')] public ?Schema\SimpleUser $resolvedBy, #[MapFrom('resolution_comment')] public ?string $resolutionComment, #[MapFrom('secret_type')] public ?string $secretType, #[MapFrom('secret_type_display_name')] public ?string $secretTypeDisplayName, public ?string $secret, #[MapFrom('push_protection_bypassed')] public ?bool $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')] public ?Schema\SimpleUser $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')] public ?string $pushProtectionBypassedAt)
+    public function __construct(public int|null $number, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('locations_url')]
+    public string|null $locationsUrl, public string|null $state, public string|null $resolution, #[MapFrom('resolved_at')]
+    public string|null $resolvedAt, #[MapFrom('resolved_by')]
+    public Schema\SimpleUser|null $resolvedBy, #[MapFrom('resolution_comment')]
+    public string|null $resolutionComment, #[MapFrom('secret_type')]
+    public string|null $secretType, #[MapFrom('secret_type_display_name')]
+    public string|null $secretTypeDisplayName, public string|null $secret, #[MapFrom('push_protection_bypassed')]
+    public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
+    public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
+    public string|null $pushProtectionBypassedAt,)
     {
     }
 }

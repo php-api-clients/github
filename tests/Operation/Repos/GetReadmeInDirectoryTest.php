@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetReadmeInDirectoryTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ContentFile::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class GetReadmeInDirectoryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ContentFile::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class GetReadmeInDirectoryTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getReadmeInDirectory('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -82,9 +76,7 @@ final class GetReadmeInDirectoryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -99,9 +91,7 @@ final class GetReadmeInDirectoryTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getReadmeInDirectory('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -123,9 +113,7 @@ final class GetReadmeInDirectoryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

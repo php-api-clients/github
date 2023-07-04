@@ -21,7 +21,9 @@ abstract readonly class Tiet16830F80
      * ref: The full Git reference, formatted as `refs/heads/<branch name>`.
      * state: State of a code scanning alert.
      */
-    public function __construct(#[MapFrom('analysis_key')] public string $analysisKey, public ?string $category, public ?array $classifications, #[MapFrom('commit_sha')] public ?string $commitSha, public string $environment, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location $location, public ?Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message $message, public string $ref, public string $state)
+    public function __construct(#[MapFrom('analysis_key')]
+    public string $analysisKey, public string|null $category, public array|null $classifications, #[MapFrom('commit_sha')]
+    public string|null $commitSha, public string $environment, public Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Location|null $location, public Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\MostRecentInstance\Message|null $message, public string $ref, public string $state,)
     {
     }
 }

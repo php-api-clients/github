@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateCommitCommentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CommitComment::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateCommitCommentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\UpdateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CommitComment::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateCommitCommentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->updateCommitComment('generated', 'generated', 10, json_decode(Schema\Repos\UpdateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class UpdateCommitCommentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\UpdateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

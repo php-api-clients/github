@@ -25,21 +25,15 @@ final class UpdateComment
     public const OPERATION_MATCH = 'PATCH /gists/{gist_id}/comments/{comment_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/gists/{gist_id}/comments/{comment_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the gist. **/
     private string $gistId;
     /**The unique identifier of the comment. **/
     private int $commentId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId\Comments\CommentId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Comments\CommentId $hydrator, string $gistId, int $commentId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId\Comments\CommentId $hydrator, string $gistId, int $commentId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->gistId                  = $gistId;
-        $this->commentId               = $commentId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId    = $gistId;
+        $this->commentId = $commentId;
     }
 
     public function createRequest(array $data): RequestInterface

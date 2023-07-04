@@ -14,7 +14,8 @@ abstract readonly class TietE129B0E5
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"html":{"href":"generated"},"pull_request":{"href":"generated"}}';
 
-    public function __construct(public Schema\WebhookPullRequestReviewDismissed\Review\Links\Html $html, #[MapFrom('pull_request')] public Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest $pullRequest)
+    public function __construct(public Schema\WebhookPullRequestReviewDismissed\Review\Links\Html $html, #[MapFrom('pull_request')]
+    public Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest $pullRequest,)
     {
     }
 }

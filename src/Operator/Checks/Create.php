@@ -23,9 +23,7 @@ final readonly class Create
     {
     }
 
-    /**
-     * @return PromiseInterface<CheckRun>
-     **/
+    /** @return PromiseInterface<CheckRun> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Checks\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

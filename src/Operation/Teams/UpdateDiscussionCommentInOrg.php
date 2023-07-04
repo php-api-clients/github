@@ -24,7 +24,6 @@ final class UpdateDiscussionCommentInOrg
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -33,18 +32,13 @@ final class UpdateDiscussionCommentInOrg
     private int $discussionNumber;
     /**The number that identifies the comment. **/
     private int $commentNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator, string $org, string $teamSlug, int $discussionNumber, int $commentNumber)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator, string $org, string $teamSlug, int $discussionNumber, int $commentNumber)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->discussionNumber        = $discussionNumber;
-        $this->commentNumber           = $commentNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org              = $org;
+        $this->teamSlug         = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
+        $this->commentNumber    = $commentNumber;
     }
 
     public function createRequest(array $data): RequestInterface

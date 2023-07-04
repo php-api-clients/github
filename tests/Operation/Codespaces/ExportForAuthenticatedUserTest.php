@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ExportForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\CodespaceExportDetails::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\CodespaceExportDetails::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->exportForAuthenticatedUser('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -76,9 +70,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -93,9 +85,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->exportForAuthenticatedUser('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -114,9 +104,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -131,9 +119,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->exportForAuthenticatedUser('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -152,9 +138,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -169,9 +153,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->exportForAuthenticatedUser('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -190,9 +172,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -207,9 +187,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->exportForAuthenticatedUser('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -228,9 +206,7 @@ final class ExportForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

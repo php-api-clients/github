@@ -23,9 +23,7 @@ final readonly class ListLabelsForSelfHostedRunnerForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $org, int $runnerId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListLabelsForSelfHostedRunnerForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerId);

@@ -22,9 +22,7 @@ final readonly class GetArchiveForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $migrationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetArchiveForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId);

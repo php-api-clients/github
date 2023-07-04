@@ -28,15 +28,11 @@ final class GetByName
     private string $org;
     /**The slug of the team name. **/
     private string $teamSlug;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug $hydrator, string $org, string $teamSlug)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug $hydrator, string $org, string $teamSlug)
     {
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org      = $org;
+        $this->teamSlug = $teamSlug;
     }
 
     public function createRequest(): RequestInterface

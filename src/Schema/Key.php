@@ -13,7 +13,9 @@ final readonly class Key
     public const SCHEMA_DESCRIPTION  = 'Key';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"generated","id":2,"url":"generated","title":"generated","created_at":"1970-01-01T00:00:00+00:00","verified":false,"read_only":false}';
 
-    public function __construct(public string $key, public int $id, public string $url, public string $title, #[MapFrom('created_at')] public string $createdAt, public bool $verified, #[MapFrom('read_only')] public bool $readOnly)
+    public function __construct(public string $key, public int $id, public string $url, public string $title, #[MapFrom('created_at')]
+    public string $createdAt, public bool $verified, #[MapFrom('read_only')]
+    public bool $readOnly,)
     {
     }
 }

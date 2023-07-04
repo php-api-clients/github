@@ -22,9 +22,7 @@ final readonly class ListReposForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $org, int $migrationId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\ListReposForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId, $perPage, $page);

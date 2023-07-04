@@ -14,7 +14,8 @@ final readonly class GitRef
     public const SCHEMA_DESCRIPTION  = 'Git references within a repository';
     public const SCHEMA_EXAMPLE_DATA = '{"ref":"generated","node_id":"generated","url":"https:\\/\\/example.com\\/","object":{"type":"generated","sha":"7638417db6d59f3c431d3e1f261cc637155684cd","url":"https:\\/\\/example.com\\/"}}';
 
-    public function __construct(public string $ref, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\GitRef\Object_ $object)
+    public function __construct(public string $ref, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public Schema\GitRef\Object_ $object,)
     {
     }
 }

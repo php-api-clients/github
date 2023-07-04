@@ -22,9 +22,7 @@ final readonly class DeleteToken
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $clientId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\DeleteToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);

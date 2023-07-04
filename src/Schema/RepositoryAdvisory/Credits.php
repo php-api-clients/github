@@ -15,7 +15,7 @@ final readonly class Credits
      * login: The username of the user credited.
      * type: The type of credit the user is receiving.
      */
-    public function __construct(public ?string $login, public ?string $type)
+    public function __construct(public string|null $login, public string|null $type)
     {
     }
 }

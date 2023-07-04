@@ -25,15 +25,9 @@ final class Create
     public const OPERATION_MATCH = 'POST /gists';
     private const METHOD         = 'POST';
     private const PATH           = '/gists';
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists $hydrator)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -43,9 +37,7 @@ final class Create
         return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\GistSimple|array{code: int}
-     */
+    /** @return Schema\GistSimple|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GistSimple|array
     {
         $code          = $response->getStatusCode();

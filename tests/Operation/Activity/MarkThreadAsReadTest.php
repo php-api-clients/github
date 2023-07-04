@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class MarkThreadAsReadTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -40,9 +38,7 @@ final class MarkThreadAsReadTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -57,9 +53,7 @@ final class MarkThreadAsReadTest extends AsyncTestCase
         $result = await($client->operations()->activity()->markThreadAsRead(9));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_205_empty(): void
     {
         $response = new Response(205, []);
@@ -77,9 +71,7 @@ final class MarkThreadAsReadTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_205_empty(): void
     {
         $response = new Response(205, []);
@@ -95,9 +87,7 @@ final class MarkThreadAsReadTest extends AsyncTestCase
         self::assertSame(205, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -115,9 +105,7 @@ final class MarkThreadAsReadTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

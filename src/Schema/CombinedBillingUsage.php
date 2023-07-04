@@ -18,7 +18,10 @@ final readonly class CombinedBillingUsage
      * estimatedPaidStorageForMonth: Estimated storage space (GB) used in billing cycle.
      * estimatedStorageForMonth: Estimated sum of free and paid storage space (GB) used in billing cycle.
      */
-    public function __construct(#[MapFrom('days_left_in_billing_cycle')] public int $daysLeftInBillingCycle, #[MapFrom('estimated_paid_storage_for_month')] public int $estimatedPaidStorageForMonth, #[MapFrom('estimated_storage_for_month')] public int $estimatedStorageForMonth)
+    public function __construct(#[MapFrom('days_left_in_billing_cycle')]
+    public int $daysLeftInBillingCycle, #[MapFrom('estimated_paid_storage_for_month')]
+    public int $estimatedPaidStorageForMonth, #[MapFrom('estimated_storage_for_month')]
+    public int $estimatedStorageForMonth,)
     {
     }
 }

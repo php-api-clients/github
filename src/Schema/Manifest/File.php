@@ -16,7 +16,8 @@ final readonly class File
     /**
      * sourceLocation: The path of the manifest file relative to the root of the Git repository.
      */
-    public function __construct(#[MapFrom('source_location')] public ?string $sourceLocation)
+    public function __construct(#[MapFrom('source_location')]
+    public string|null $sourceLocation,)
     {
     }
 }

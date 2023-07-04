@@ -14,7 +14,8 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"content_type":{"from":"generated","to":"generated"}}';
 
-    public function __construct(#[MapFrom('content_type')] public ?Schema\WebhookProjectsV2ItemConverted\Changes\ContentType $contentType)
+    public function __construct(#[MapFrom('content_type')]
+    public Schema\WebhookProjectsV2ItemConverted\Changes\ContentType|null $contentType,)
     {
     }
 }

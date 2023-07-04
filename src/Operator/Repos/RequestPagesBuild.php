@@ -23,9 +23,7 @@ final readonly class RequestPagesBuild
     {
     }
 
-    /**
-     * @return PromiseInterface<PageBuildStatus>
-     **/
+    /** @return PromiseInterface<PageBuildStatus> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\RequestPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

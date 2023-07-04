@@ -16,7 +16,8 @@ final readonly class SecretScanningLocationIssueComment
     /**
      * issueCommentUrl: The API URL to get the issue comment where the secret was detected.
      */
-    public function __construct(#[MapFrom('issue_comment_url')] public string $issueCommentUrl)
+    public function __construct(#[MapFrom('issue_comment_url')]
+    public string $issueCommentUrl,)
     {
     }
 }

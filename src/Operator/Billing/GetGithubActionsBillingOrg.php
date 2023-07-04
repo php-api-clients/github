@@ -23,9 +23,7 @@ final readonly class GetGithubActionsBillingOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsBillingUsage>
-     **/
+    /** @return PromiseInterface<ActionsBillingUsage> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Billing\GetGithubActionsBillingOrg($this->responseSchemaValidator, $this->hydrator, $org);

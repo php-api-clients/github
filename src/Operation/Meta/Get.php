@@ -23,13 +23,9 @@ final class Get
     public const OPERATION_MATCH = 'GET /meta';
     private const METHOD         = 'GET';
     private const PATH           = '/meta';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Meta $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Meta $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Meta $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -37,9 +33,7 @@ final class Get
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    /**
-     * @return Schema\ApiOverview|array{code: int}
-     */
+    /** @return Schema\ApiOverview|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ApiOverview|array
     {
         $code          = $response->getStatusCode();

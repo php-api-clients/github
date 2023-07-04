@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(License|array)>
-     **/
+    /** @return PromiseInterface<(License|array)> **/
     public function call(string $license): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Licenses\Get($this->responseSchemaValidator, $this->hydrator, $license);

@@ -21,9 +21,7 @@ final readonly class DownloadZipballArchiveStreaming
     {
     }
 
-    /**
-     * @return PromiseInterface<Observable>
-     **/
+    /** @return PromiseInterface<Observable> **/
     public function call(string $owner, string $repo, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DownloadZipballArchiveStreaming($this->browser, $owner, $repo, $ref);

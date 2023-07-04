@@ -18,7 +18,7 @@ final readonly class CodeScanningAlertRuleSummary
      * severity: The severity of the alert.
      * description: A short description of the rule used to detect the alert.
      */
-    public function __construct(public ?string $id, public ?string $name, public ?array $tags, public ?string $severity, public ?string $description)
+    public function __construct(public string|null $id, public string|null $name, public array|null $tags, public string|null $severity, public string|null $description)
     {
     }
 }

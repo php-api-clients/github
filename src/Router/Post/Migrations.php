@@ -19,19 +19,9 @@ final class Migrations
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function startForOrg(array $params)

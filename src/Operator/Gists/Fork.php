@@ -23,9 +23,7 @@ final readonly class Fork
     {
     }
 
-    /**
-     * @return PromiseInterface<(BaseGist|array)>
-     **/
+    /** @return PromiseInterface<(BaseGist|array)> **/
     public function call(string $gistId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Fork($this->responseSchemaValidator, $this->hydrator, $gistId);

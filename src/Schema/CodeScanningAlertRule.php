@@ -24,7 +24,10 @@ final readonly class CodeScanningAlertRule
      * help: Detailed documentation for the rule as GitHub Flavored Markdown.
      * helpUri: A link to the documentation for the rule used to detect the alert.
      */
-    public function __construct(public ?string $id, public ?string $name, public ?string $severity, #[MapFrom('security_severity_level')] public ?string $securitySeverityLevel, public ?string $description, #[MapFrom('full_description')] public ?string $fullDescription, public ?array $tags, public ?string $help, #[MapFrom('help_uri')] public ?string $helpUri)
+    public function __construct(public string|null $id, public string|null $name, public string|null $severity, #[MapFrom('security_severity_level')]
+    public string|null $securitySeverityLevel, public string|null $description, #[MapFrom('full_description')]
+    public string|null $fullDescription, public array|null $tags, public string|null $help, #[MapFrom('help_uri')]
+    public string|null $helpUri,)
     {
     }
 }

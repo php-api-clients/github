@@ -14,7 +14,8 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"previous_projects_v2_item_node_id":{"from":"generated","to":"generated"}}';
 
-    public function __construct(#[MapFrom('previous_projects_v2_item_node_id')] public ?Schema\WebhookProjectsV2ItemReordered\Changes\PreviousProjectsVTwoItemNodeId $previousProjectsVTwoItemNodeId)
+    public function __construct(#[MapFrom('previous_projects_v2_item_node_id')]
+    public Schema\WebhookProjectsV2ItemReordered\Changes\PreviousProjectsVTwoItemNodeId|null $previousProjectsVTwoItemNodeId,)
     {
     }
 }

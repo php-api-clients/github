@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Six
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -54,7 +44,15 @@ final class Six
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
                         if ($pathChunks[4] === 'runners') {
-                            if ($pathChunks[5] === 'registration-token') {
+                            if ($pathChunks[5] === 'generate-jitconfig') {
+                                if ($call === 'POST /orgs/{org}/actions/runners/generate-jitconfig') {
+                                    if (array_key_exists(Router\Post\Actions::class, $this->router) === false) {
+                                        $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Post\Actions::class]->generateRunnerJitconfigForOrg($params);
+                                }
+                            } elseif ($pathChunks[5] === 'registration-token') {
                                 if ($call === 'POST /orgs/{org}/actions/runners/registration-token') {
                                     if (array_key_exists(Router\Post\Actions::class, $this->router) === false) {
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);

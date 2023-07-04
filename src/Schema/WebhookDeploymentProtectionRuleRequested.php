@@ -24,7 +24,9 @@ final readonly class WebhookDeploymentProtectionRuleRequested
      * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $action, public ?string $environment, public ?string $event, #[MapFrom('deployment_callback_url')] public ?string $deploymentCallbackUrl, public ?Schema\Deployment $deployment, #[MapFrom('pull_requests')] public ?array $pullRequests, public ?Schema\Repository $repository, public ?Schema\OrganizationSimple $organization, public ?Schema\SimpleInstallation $installation, public ?Schema\SimpleUser $sender)
+    public function __construct(public string|null $action, public string|null $environment, public string|null $event, #[MapFrom('deployment_callback_url')]
+    public string|null $deploymentCallbackUrl, public Schema\Deployment|null $deployment, #[MapFrom('pull_requests')]
+    public array|null $pullRequests, public Schema\Repository|null $repository, public Schema\OrganizationSimple|null $organization, public Schema\SimpleInstallation|null $installation, public Schema\SimpleUser|null $sender,)
     {
     }
 }

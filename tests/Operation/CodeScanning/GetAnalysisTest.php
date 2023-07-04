@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetAnalysisTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CodeScanningAnalysis::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GetAnalysisTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\CodeScanningAnalysis::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GetAnalysisTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->getAnalysis('generated', 'generated', 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_sarif_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Operations\CodeScanning\GetAnalysis\Response\ApplicationJsonSarif\Ok\Application\JsonSarif::SCHEMA_EXAMPLE_DATA);
@@ -79,9 +73,7 @@ final class GetAnalysisTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_sarif_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json+sarif'], Schema\Operations\CodeScanning\GetAnalysis\Response\ApplicationJsonSarif\Ok\Application\JsonSarif::SCHEMA_EXAMPLE_DATA);
@@ -95,9 +87,7 @@ final class GetAnalysisTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->getAnalysis('generated', 'generated', 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -118,9 +108,7 @@ final class GetAnalysisTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -135,9 +123,7 @@ final class GetAnalysisTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->getAnalysis('generated', 'generated', 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -158,9 +144,7 @@ final class GetAnalysisTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -175,9 +159,7 @@ final class GetAnalysisTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->getAnalysis('generated', 'generated', 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -198,9 +180,7 @@ final class GetAnalysisTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);

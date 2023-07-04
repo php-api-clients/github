@@ -17,7 +17,8 @@ final readonly class SimpleInstallation
      * id: The ID of the installation.
      * nodeId: The global node ID of the installation.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId,)
     {
     }
 }

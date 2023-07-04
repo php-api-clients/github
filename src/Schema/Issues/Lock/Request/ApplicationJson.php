@@ -20,7 +20,8 @@ final readonly class ApplicationJson
      * `resolved`
      * `spam`
      */
-    public function __construct(#[MapFrom('lock_reason')] public ?string $lockReason)
+    public function __construct(#[MapFrom('lock_reason')]
+    public string|null $lockReason,)
     {
     }
 }

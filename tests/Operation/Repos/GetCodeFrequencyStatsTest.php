@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class GetCodeFrequencyStatsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getCodeFrequencyStats('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -76,9 +70,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

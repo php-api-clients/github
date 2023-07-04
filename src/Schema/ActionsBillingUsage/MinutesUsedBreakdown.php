@@ -30,7 +30,21 @@ final readonly class MinutesUsedBreakdown
      * macosTwelveCore: Total minutes used on macOS 12 core runner machines.
      * total: Total minutes used on all runner machines.
      */
-    public function __construct(#[MapFrom('UBUNTU')] public ?int $ubuntu, #[MapFrom('MACOS')] public ?int $macos, #[MapFrom('WINDOWS')] public ?int $windows, #[MapFrom('ubuntu_4_core')] public ?int $ubuntuFourCore, #[MapFrom('ubuntu_8_core')] public ?int $ubuntuEightCore, #[MapFrom('ubuntu_16_core')] public ?int $ubuntuSixteenCore, #[MapFrom('ubuntu_32_core')] public ?int $ubuntuThirtyTwoCore, #[MapFrom('ubuntu_64_core')] public ?int $ubuntuSixtyFourCore, #[MapFrom('windows_4_core')] public ?int $windowsFourCore, #[MapFrom('windows_8_core')] public ?int $windowsEightCore, #[MapFrom('windows_16_core')] public ?int $windowsSixteenCore, #[MapFrom('windows_32_core')] public ?int $windowsThirtyTwoCore, #[MapFrom('windows_64_core')] public ?int $windowsSixtyFourCore, #[MapFrom('macos_12_core')] public ?int $macosTwelveCore, public ?int $total)
+    public function __construct(#[MapFrom('UBUNTU')]
+    public int|null $ubuntu, #[MapFrom('MACOS')]
+    public int|null $macos, #[MapFrom('WINDOWS')]
+    public int|null $windows, #[MapFrom('ubuntu_4_core')]
+    public int|null $ubuntuFourCore, #[MapFrom('ubuntu_8_core')]
+    public int|null $ubuntuEightCore, #[MapFrom('ubuntu_16_core')]
+    public int|null $ubuntuSixteenCore, #[MapFrom('ubuntu_32_core')]
+    public int|null $ubuntuThirtyTwoCore, #[MapFrom('ubuntu_64_core')]
+    public int|null $ubuntuSixtyFourCore, #[MapFrom('windows_4_core')]
+    public int|null $windowsFourCore, #[MapFrom('windows_8_core')]
+    public int|null $windowsEightCore, #[MapFrom('windows_16_core')]
+    public int|null $windowsSixteenCore, #[MapFrom('windows_32_core')]
+    public int|null $windowsThirtyTwoCore, #[MapFrom('windows_64_core')]
+    public int|null $windowsSixtyFourCore, #[MapFrom('macos_12_core')]
+    public int|null $macosTwelveCore, public int|null $total,)
     {
     }
 }

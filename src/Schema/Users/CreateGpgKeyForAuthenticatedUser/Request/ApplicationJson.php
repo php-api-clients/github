@@ -17,7 +17,8 @@ final readonly class ApplicationJson
      * name: A descriptive name for the new key.
      * armoredPublicKey: A GPG key in ASCII-armored format.
      */
-    public function __construct(public ?string $name, #[MapFrom('armored_public_key')] public string $armoredPublicKey)
+    public function __construct(public string|null $name, #[MapFrom('armored_public_key')]
+    public string $armoredPublicKey,)
     {
     }
 }

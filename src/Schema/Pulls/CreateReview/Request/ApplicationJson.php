@@ -19,7 +19,8 @@ final readonly class ApplicationJson
      * event: The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls#submit-a-review-for-a-pull-request) when you are ready.
      * comments: Use the following table to specify the location, destination, and contents of the draft review comment.
      */
-    public function __construct(#[MapFrom('commit_id')] public ?string $commitId, public ?string $body, public ?string $event, public ?array $comments)
+    public function __construct(#[MapFrom('commit_id')]
+    public string|null $commitId, public string|null $body, public string|null $event, public array|null $comments,)
     {
     }
 }

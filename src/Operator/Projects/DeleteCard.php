@@ -22,9 +22,7 @@ final readonly class DeleteCard
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $cardId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\DeleteCard($this->responseSchemaValidator, $this->hydrator, $cardId);

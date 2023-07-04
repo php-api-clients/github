@@ -17,7 +17,9 @@ final readonly class ActionsCacheList
      * totalCount: Total number of caches
      * actionsCaches: Array of caches
      */
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, #[MapFrom('actions_caches')] public array $actionsCaches)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, #[MapFrom('actions_caches')]
+    public array $actionsCaches,)
     {
     }
 }

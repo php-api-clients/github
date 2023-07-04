@@ -26,19 +26,21 @@ final class GetOrgRulesets
     private const PATH           = '/orgs/{org}/rulesets';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Rulesets $hydrator;
+    /**The number of results per page (max 100). **/
+    private int $perPage;
+    /**Page number of the results to fetch. **/
+    private int $page;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Rulesets $hydrator, string $org)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Rulesets $hydrator, string $org, int $perPage = 30, int $page = 1)
     {
-        $this->org                     = $org;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org     = $org;
+        $this->perPage = $perPage;
+        $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): mixed

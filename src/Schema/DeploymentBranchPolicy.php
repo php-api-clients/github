@@ -17,7 +17,8 @@ final readonly class DeploymentBranchPolicy
      * id: The unique identifier of the branch policy.
      * name: The name pattern that branches must match in order to deploy to the environment.
      */
-    public function __construct(public ?int $id, #[MapFrom('node_id')] public ?string $nodeId, public ?string $name)
+    public function __construct(public int|null $id, #[MapFrom('node_id')]
+    public string|null $nodeId, public string|null $name,)
     {
     }
 }

@@ -25,18 +25,12 @@ final class ResetToken
     public const OPERATION_MATCH = 'PATCH /applications/{client_id}/token';
     private const METHOD         = 'PATCH';
     private const PATH           = '/applications/{client_id}/token';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The client ID of the GitHub app. **/
     private string $clientId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Applications\ClientId\Token $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Applications\ClientId\Token $hydrator, string $clientId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Applications\ClientId\Token $hydrator, string $clientId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->clientId                = $clientId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->clientId = $clientId;
     }
 
     public function createRequest(array $data): RequestInterface

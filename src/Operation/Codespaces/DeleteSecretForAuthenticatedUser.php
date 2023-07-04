@@ -30,9 +30,7 @@ final class DeleteSecretForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{secret_name}'], [$this->secretName], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

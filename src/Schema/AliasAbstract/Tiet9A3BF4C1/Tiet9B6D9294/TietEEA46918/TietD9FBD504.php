@@ -16,7 +16,8 @@ abstract readonly class TietD9FBD504
     /**
      * accessToken: The access_token of the OAuth or GitHub application.
      */
-    public function __construct(#[MapFrom('access_token')] public string $accessToken)
+    public function __construct(#[MapFrom('access_token')]
+    public string $accessToken,)
     {
     }
 }

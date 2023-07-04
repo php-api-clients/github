@@ -26,14 +26,10 @@ final class DeleteColumn
     private const PATH           = '/projects/columns/{column_id}';
     /**The unique identifier of the column. **/
     private int $columnId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\ColumnId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\ColumnId $hydrator, int $columnId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\ColumnId $hydrator, int $columnId)
     {
-        $this->columnId                = $columnId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->columnId = $columnId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class DeleteColumn
         return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

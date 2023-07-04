@@ -19,19 +19,9 @@ final class Actions
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function setGithubActionsPermissionsOrganization(array $params)
@@ -66,26 +56,6 @@ final class Actions
         $operator = new Operator\Actions\EnableSelectedRepositoryGithubActionsOrganization($this->browser, $this->authentication);
 
         return $operator->call($arguments['org'], $arguments['repository_id']);
-    }
-
-    public function setSelectedReposToRequiredWorkflow(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('required_workflow_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: required_workflow_id');
-        }
-
-        $arguments['required_workflow_id'] = $params['required_workflow_id'];
-        unset($params['required_workflow_id']);
-        $operator = new Operator\Actions\SetSelectedReposToRequiredWorkflow($this->browser, $this->authentication, $this->requestSchemaValidator);
-
-        return $operator->call($arguments['org'], $arguments['required_workflow_id'], $params);
     }
 
     public function setCustomLabelsForSelfHostedRunnerForOrg(array $params)
@@ -356,32 +326,6 @@ final class Actions
         $operator = new Operator\Actions\SetGithubActionsPermissionsRepository($this->browser, $this->authentication, $this->requestSchemaValidator);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
-    }
-
-    public function addSelectedRepoToRequiredWorkflow(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('required_workflow_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: required_workflow_id');
-        }
-
-        $arguments['required_workflow_id'] = $params['required_workflow_id'];
-        unset($params['required_workflow_id']);
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        $operator = new Operator\Actions\AddSelectedRepoToRequiredWorkflow($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['required_workflow_id'], $arguments['repository_id']);
     }
 
     public function addSelectedRepoToOrgSecret(array $params)

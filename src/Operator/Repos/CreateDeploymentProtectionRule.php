@@ -23,9 +23,7 @@ final readonly class CreateDeploymentProtectionRule
     {
     }
 
-    /**
-     * @return PromiseInterface<DeploymentProtectionRule>
-     **/
+    /** @return PromiseInterface<DeploymentProtectionRule> **/
     public function call(string $environmentName, string $repo, string $owner, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeploymentProtectionRule($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner);

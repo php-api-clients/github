@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SetRestrictionsForOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\InteractionLimitResponse::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class SetRestrictionsForOrgTest extends AsyncTestCase
         })(json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\InteractionLimitResponse::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class SetRestrictionsForOrgTest extends AsyncTestCase
         $result = await($client->operations()->interactions()->setRestrictionsForOrg('generated', json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -77,9 +71,7 @@ final class SetRestrictionsForOrgTest extends AsyncTestCase
         })(json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

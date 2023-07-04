@@ -13,7 +13,9 @@ abstract readonly class Tiet8B7662E9
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"login":"generated","node_id":"generated","organization_billing_email":"generated","type":"generated"}';
 
-    public function __construct(public int $id, public string $login, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('organization_billing_email')] public ?string $organizationBillingEmail, public string $type)
+    public function __construct(public int $id, public string $login, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('organization_billing_email')]
+    public string|null $organizationBillingEmail, public string $type,)
     {
     }
 }

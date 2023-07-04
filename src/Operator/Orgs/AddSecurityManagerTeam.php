@@ -20,9 +20,7 @@ final readonly class AddSecurityManagerTeam
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $teamSlug): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\AddSecurityManagerTeam($org, $teamSlug);

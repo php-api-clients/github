@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetRepoSubscriptionTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositorySubscription::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class GetRepoSubscriptionTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositorySubscription::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class GetRepoSubscriptionTest extends AsyncTestCase
         $result = await($client->operations()->activity()->getRepoSubscription('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class GetRepoSubscriptionTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -95,9 +87,7 @@ final class GetRepoSubscriptionTest extends AsyncTestCase
         $result = await($client->operations()->activity()->getRepoSubscription('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -116,9 +106,7 @@ final class GetRepoSubscriptionTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

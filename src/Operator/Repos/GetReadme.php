@@ -23,9 +23,7 @@ final readonly class GetReadme
     {
     }
 
-    /**
-     * @return PromiseInterface<ContentFile>
-     **/
+    /** @return PromiseInterface<ContentFile> **/
     public function call(string $owner, string $repo, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetReadme($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

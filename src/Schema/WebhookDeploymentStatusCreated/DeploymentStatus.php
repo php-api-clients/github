@@ -20,7 +20,16 @@ final readonly class DeploymentStatus
      * state: The new state. Can be `pending`, `success`, `failure`, or `error`.
      * targetUrl: The optional link added to the status.
      */
-    public function __construct(#[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookDeploymentStatusCreated\DeploymentStatus\Creator $creator, #[MapFrom('deployment_url')] public string $deploymentUrl, public string $description, public string $environment, #[MapFrom('environment_url')] public ?string $environmentUrl, public int $id, #[MapFrom('log_url')] public ?string $logUrl, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('performed_via_github_app')] public ?Schema\WebhookDeploymentStatusCreated\DeploymentStatus\PerformedViaGithubApp $performedViaGithubApp, #[MapFrom('repository_url')] public string $repositoryUrl, public string $state, #[MapFrom('target_url')] public string $targetUrl, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookDeploymentStatusCreated\DeploymentStatus\Creator|null $creator, #[MapFrom('deployment_url')]
+    public string $deploymentUrl, public string $description, public string $environment, #[MapFrom('environment_url')]
+    public string|null $environmentUrl, public int $id, #[MapFrom('log_url')]
+    public string|null $logUrl, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('performed_via_github_app')]
+    public Schema\WebhookDeploymentStatusCreated\DeploymentStatus\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('repository_url')]
+    public string $repositoryUrl, public string $state, #[MapFrom('target_url')]
+    public string $targetUrl, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

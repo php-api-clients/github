@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class DeleteTokenTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -41,9 +39,7 @@ final class DeleteTokenTest extends AsyncTestCase
         })(json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -58,9 +54,7 @@ final class DeleteTokenTest extends AsyncTestCase
         $result = await($client->operations()->apps()->deleteToken('generated', json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -78,9 +72,7 @@ final class DeleteTokenTest extends AsyncTestCase
         })(json_decode(Schema\Apps\DeleteToken\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);

@@ -25,20 +25,16 @@ final class CodeownersErrors
     private const PATH           = '/repos/{owner}/{repo}/codeowners/errors';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**A branch, tag or commit name used to determine which version of the CODEOWNERS file to use. Default: the repository's default branch (e.g. `main`) **/
     private string $ref;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors $hydrator, string $owner, string $repo, string $ref)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors $hydrator, string $owner, string $repo, string $ref)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->ref                     = $ref;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
+        $this->ref   = $ref;
     }
 
     public function createRequest(): RequestInterface
@@ -46,9 +42,7 @@ final class CodeownersErrors
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}'], [$this->owner, $this->repo, $this->ref], self::PATH . '?ref={ref}'));
     }
 
-    /**
-     * @return Schema\CodeownersErrors|array{code: int}
-     */
+    /** @return Schema\CodeownersErrors|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\CodeownersErrors|array
     {
         $code          = $response->getStatusCode();

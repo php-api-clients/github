@@ -20,9 +20,7 @@ final readonly class EnableSelectedRepositoryGithubActionsOrganization
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, int $repositoryId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\EnableSelectedRepositoryGithubActionsOrganization($org, $repositoryId);

@@ -23,9 +23,7 @@ final readonly class GetWorkflowRunUsage
     {
     }
 
-    /**
-     * @return PromiseInterface<WorkflowRunUsage>
-     **/
+    /** @return PromiseInterface<WorkflowRunUsage> **/
     public function call(string $owner, string $repo, int $runId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetWorkflowRunUsage($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

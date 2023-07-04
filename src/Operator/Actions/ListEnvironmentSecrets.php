@@ -23,9 +23,7 @@ final readonly class ListEnvironmentSecrets
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListEnvironmentSecrets($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $perPage, $page);

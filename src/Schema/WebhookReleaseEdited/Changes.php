@@ -14,7 +14,8 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"body":{"from":"generated"},"name":{"from":"generated"},"make_latest":{"to":false}}';
 
-    public function __construct(public ?Schema\WebhookReleaseEdited\Changes\Body $body, public ?Schema\WebhookReleaseEdited\Changes\Name $name, #[MapFrom('make_latest')] public ?Schema\WebhookReleaseEdited\Changes\MakeLatest $makeLatest)
+    public function __construct(public Schema\WebhookReleaseEdited\Changes\Body|null $body, public Schema\WebhookReleaseEdited\Changes\Name|null $name, #[MapFrom('make_latest')]
+    public Schema\WebhookReleaseEdited\Changes\MakeLatest|null $makeLatest,)
     {
     }
 }

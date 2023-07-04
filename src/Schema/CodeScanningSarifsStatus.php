@@ -18,7 +18,9 @@ final readonly class CodeScanningSarifsStatus
      * analysesUrl: The REST API URL for getting the analyses associated with the upload.
      * errors: Any errors that ocurred during processing of the delivery.
      */
-    public function __construct(#[MapFrom('processing_status')] public ?string $processingStatus, #[MapFrom('analyses_url')] public ?string $analysesUrl, public ?array $errors)
+    public function __construct(#[MapFrom('processing_status')]
+    public string|null $processingStatus, #[MapFrom('analyses_url')]
+    public string|null $analysesUrl, public array|null $errors,)
     {
     }
 }

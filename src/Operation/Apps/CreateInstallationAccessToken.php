@@ -25,18 +25,12 @@ final class CreateInstallationAccessToken
     public const OPERATION_MATCH = 'POST /app/installations/{installation_id}/access_tokens';
     private const METHOD         = 'POST';
     private const PATH           = '/app/installations/{installation_id}/access_tokens';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the installation. **/
     private int $installationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Installations\InstallationId\AccessTokens $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations\InstallationId\AccessTokens $hydrator, int $installationId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App\Installations\InstallationId\AccessTokens $hydrator, int $installationId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->installationId          = $installationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->installationId = $installationId;
     }
 
     public function createRequest(array $data): RequestInterface

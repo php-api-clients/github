@@ -23,9 +23,7 @@ final readonly class GetOrgSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<OrganizationDependabotSecret>
-     **/
+    /** @return PromiseInterface<OrganizationDependabotSecret> **/
     public function call(string $org, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\GetOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

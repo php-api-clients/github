@@ -21,7 +21,16 @@ final readonly class TimelineReviewedEvent
      * commitId: A commit SHA for the review.
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(public string $event, public int $id, #[MapFrom('node_id')] public string $nodeId, public Schema\SimpleUser $user, public ?string $body, public string $state, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('pull_request_url')] public string $pullRequestUrl, #[MapFrom('_links')] public Schema\TimelineReviewedEvent\Links $links, #[MapFrom('submitted_at')] public ?string $submittedAt, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('body_html')] public ?string $bodyHtml, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('author_association')] public string $authorAssociation)
+    public function __construct(public string $event, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public Schema\SimpleUser $user, public string|null $body, public string $state, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('pull_request_url')]
+    public string $pullRequestUrl, #[MapFrom('_links')]
+    public Schema\TimelineReviewedEvent\Links $links, #[MapFrom('submitted_at')]
+    public string|null $submittedAt, #[MapFrom('commit_id')]
+    public string $commitId, #[MapFrom('body_html')]
+    public string|null $bodyHtml, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('author_association')]
+    public string $authorAssociation,)
     {
     }
 }

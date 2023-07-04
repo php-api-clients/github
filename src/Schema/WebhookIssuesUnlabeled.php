@@ -21,7 +21,7 @@ final readonly class WebhookIssuesUnlabeled
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public Schema\WebhookIssuesUnlabeled\Issue $issue, public ?Schema\WebhookIssuesUnlabeled\Label $label, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookIssuesUnlabeled\Issue $issue, public Schema\WebhookIssuesUnlabeled\Label|null $label, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

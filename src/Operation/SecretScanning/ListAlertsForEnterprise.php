@@ -44,22 +44,18 @@ final class ListAlertsForEnterprise
     private string $direction;
     /**The number of results per page (max 100). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts $hydrator, string $enterprise, string $state, string $secretType, string $resolution, string $before, string $after, string $sort = 'created', string $direction = 'desc', int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts $hydrator, string $enterprise, string $state, string $secretType, string $resolution, string $before, string $after, string $sort = 'created', string $direction = 'desc', int $perPage = 30)
     {
-        $this->enterprise              = $enterprise;
-        $this->state                   = $state;
-        $this->secretType              = $secretType;
-        $this->resolution              = $resolution;
-        $this->before                  = $before;
-        $this->after                   = $after;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->enterprise = $enterprise;
+        $this->state      = $state;
+        $this->secretType = $secretType;
+        $this->resolution = $resolution;
+        $this->before     = $before;
+        $this->after      = $after;
+        $this->sort       = $sort;
+        $this->direction  = $direction;
+        $this->perPage    = $perPage;
     }
 
     public function createRequest(): RequestInterface

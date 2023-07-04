@@ -21,9 +21,7 @@ final readonly class AddOrUpdateRepoPermissionsInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $teamSlug, string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateRepoPermissionsInOrg($this->requestSchemaValidator, $org, $teamSlug, $owner, $repo);

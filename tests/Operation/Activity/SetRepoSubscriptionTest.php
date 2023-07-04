@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class SetRepoSubscriptionTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositorySubscription::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class SetRepoSubscriptionTest extends AsyncTestCase
         })(json_decode(Schema\Activity\SetRepoSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositorySubscription::SCHEMA_EXAMPLE_DATA);

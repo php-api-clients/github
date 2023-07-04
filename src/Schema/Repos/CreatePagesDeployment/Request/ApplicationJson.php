@@ -19,7 +19,10 @@ final readonly class ApplicationJson
      * pagesBuildVersion: A unique string that represents the version of the build for this deployment.
      * oidcToken: The OIDC token issued by GitHub Actions certifying the origin of the deployment.
      */
-    public function __construct(#[MapFrom('artifact_url')] public string $artifactUrl, public ?string $environment, #[MapFrom('pages_build_version')] public string $pagesBuildVersion, #[MapFrom('oidc_token')] public string $oidcToken)
+    public function __construct(#[MapFrom('artifact_url')]
+    public string $artifactUrl, public string|null $environment, #[MapFrom('pages_build_version')]
+    public string $pagesBuildVersion, #[MapFrom('oidc_token')]
+    public string $oidcToken,)
     {
     }
 }

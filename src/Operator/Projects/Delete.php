@@ -22,9 +22,7 @@ final readonly class Delete
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $projectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Delete($this->responseSchemaValidator, $this->hydrator, $projectId);

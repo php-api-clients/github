@@ -13,7 +13,8 @@ abstract readonly class TietF31B8C6B
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"labels":[{"id":2,"name":"generated","type":"custom"},{"id":2,"name":"generated","type":"custom"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $labels)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $labels,)
     {
     }
 }

@@ -18,7 +18,15 @@ final readonly class ProjectCard
      * archived: Whether or not the card is archived
      * id: The project card's ID
      */
-    public function __construct(#[MapFrom('after_id')] public ?int $afterId, public bool $archived, #[MapFrom('column_id')] public int $columnId, #[MapFrom('column_url')] public string $columnUrl, #[MapFrom('content_url')] public ?string $contentUrl, #[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookProjectCardMoved\ProjectCard\Creator $creator, public int $id, #[MapFrom('node_id')] public string $nodeId, public ?string $note, #[MapFrom('project_url')] public string $projectUrl, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('after_id')]
+    public int|null $afterId, public bool $archived, #[MapFrom('column_id')]
+    public int $columnId, #[MapFrom('column_url')]
+    public string $columnUrl, #[MapFrom('content_url')]
+    public string|null $contentUrl, #[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookProjectCardMoved\ProjectCard\Creator|null $creator, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string|null $note, #[MapFrom('project_url')]
+    public string $projectUrl, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

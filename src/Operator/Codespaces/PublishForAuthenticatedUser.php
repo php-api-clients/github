@@ -23,9 +23,7 @@ final readonly class PublishForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespaceWithFullRepository>
-     **/
+    /** @return PromiseInterface<CodespaceWithFullRepository> **/
     public function call(string $codespaceName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\PublishForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);

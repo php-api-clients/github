@@ -22,9 +22,7 @@ final readonly class ListCommentsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListCommentsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $direction, $since, $sort, $perPage, $page);

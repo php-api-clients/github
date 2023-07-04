@@ -26,7 +26,7 @@ final class ListAlertsForRepo
     private const PATH           = '/repos/{owner}/{repo}/dependabot/alerts';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**A comma-separated list of states. If specified, only alerts with these states will be returned.
 
@@ -68,29 +68,25 @@ final class ListAlertsForRepo
     This parameter must not be used in combination with `last`.
     Instead, use `per_page` in combination with `after` to fetch the first page of results. **/
     private int $first;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts $hydrator, string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts $hydrator, string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->state                   = $state;
-        $this->severity                = $severity;
-        $this->ecosystem               = $ecosystem;
-        $this->package                 = $package;
-        $this->manifest                = $manifest;
-        $this->scope                   = $scope;
-        $this->before                  = $before;
-        $this->after                   = $after;
-        $this->last                    = $last;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->first                   = $first;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->state     = $state;
+        $this->severity  = $severity;
+        $this->ecosystem = $ecosystem;
+        $this->package   = $package;
+        $this->manifest  = $manifest;
+        $this->scope     = $scope;
+        $this->before    = $before;
+        $this->after     = $after;
+        $this->last      = $last;
+        $this->sort      = $sort;
+        $this->direction = $direction;
+        $this->page      = $page;
+        $this->perPage   = $perPage;
+        $this->first     = $first;
     }
 
     public function createRequest(): RequestInterface
@@ -98,9 +94,7 @@ final class ListAlertsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{state}', '{severity}', '{ecosystem}', '{package}', '{manifest}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{page}', '{per_page}', '{first}'], [$this->owner, $this->repo, $this->state, $this->severity, $this->ecosystem, $this->package, $this->manifest, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->page, $this->perPage, $this->first], self::PATH . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&manifest={manifest}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&first={first}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();
@@ -140,6 +134,19 @@ final class ListAlertsForRepo
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationErrorSimple::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\ValidationErrorSimple(422, $this->hydrator->hydrateObject(Schema\ValidationErrorSimple::class, $body));
+                }
+
+                break;
+            case 'application/scim+json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Bad Request
+                     **/
+                    case 400:
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ScimError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+                        throw new ErrorSchemas\ScimError(400, $this->hydrator->hydrateObject(Schema\ScimError::class, $body));
                 }
 
                 break;

@@ -16,7 +16,7 @@ final readonly class ApplicationJson
      * `admin` - The user will become an owner of the organization.
      * `member` - The user will become a non-owner member of the organization.
      */
-    public function __construct(public ?string $role)
+    public function __construct(public string|null $role)
     {
     }
 }

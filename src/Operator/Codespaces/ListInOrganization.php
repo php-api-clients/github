@@ -23,9 +23,7 @@ final readonly class ListInOrganization
     {
     }
 
-    /**
-     * @return PromiseInterface<(Ok|array)>
-     **/
+    /** @return PromiseInterface<(Ok|array)> **/
     public function call(string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\ListInOrganization($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

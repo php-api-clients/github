@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateDispatchEventTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -42,9 +40,7 @@ final class CreateDispatchEventTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateDispatchEvent\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -59,9 +55,7 @@ final class CreateDispatchEventTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createDispatchEvent('generated', 'generated', json_decode(Schema\Repos\CreateDispatchEvent\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -80,9 +74,7 @@ final class CreateDispatchEventTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateDispatchEvent\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);

@@ -17,7 +17,8 @@ final readonly class ReviewCustomGatesCommentRequired
      * environmentName: The name of the environment to approve or reject.
      * comment: Comment associated with the pending deployment protection rule. **Required when state is not provided.**
      */
-    public function __construct(#[MapFrom('environment_name')] public string $environmentName, public string $comment)
+    public function __construct(#[MapFrom('environment_name')]
+    public string $environmentName, public string $comment,)
     {
     }
 }

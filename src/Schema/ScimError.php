@@ -13,7 +13,8 @@ final readonly class ScimError
     public const SCHEMA_DESCRIPTION  = 'Scim Error';
     public const SCHEMA_EXAMPLE_DATA = '{"message":"generated","documentation_url":"generated","detail":"generated","status":6,"scimType":"generated","schemas":["generated","generated"]}';
 
-    public function __construct(public ?string $message, #[MapFrom('documentation_url')] public ?string $documentationUrl, public ?string $detail, public ?int $status, public ?string $scimType, public ?array $schemas)
+    public function __construct(public string|null $message, #[MapFrom('documentation_url')]
+    public string|null $documentationUrl, public string|null $detail, public int|null $status, public string|null $scimType, public array|null $schemas,)
     {
     }
 }

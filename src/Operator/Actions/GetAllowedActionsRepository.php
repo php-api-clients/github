@@ -23,9 +23,7 @@ final readonly class GetAllowedActionsRepository
     {
     }
 
-    /**
-     * @return PromiseInterface<SelectedActions>
-     **/
+    /** @return PromiseInterface<SelectedActions> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetAllowedActionsRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -19,7 +19,11 @@ final readonly class Environments
      * createdAt: The time that the environment was created, in ISO 8601 format.
      * updatedAt: The time that the environment was last updated, in ISO 8601 format.
      */
-    public function __construct(public ?int $id, #[MapFrom('node_id')] public ?string $nodeId, public ?string $name, public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt)
+    public function __construct(public int|null $id, #[MapFrom('node_id')]
+    public string|null $nodeId, public string|null $name, public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt,)
     {
     }
 }

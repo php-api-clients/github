@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateCommitCommentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\CommitComment::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class CreateCommitCommentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\CommitComment::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class CreateCommitCommentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createCommitComment('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class CreateCommitCommentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class CreateCommitCommentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createCommitComment('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -121,9 +111,7 @@ final class CreateCommitCommentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

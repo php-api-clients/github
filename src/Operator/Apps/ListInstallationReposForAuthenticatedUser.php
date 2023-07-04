@@ -23,9 +23,7 @@ final readonly class ListInstallationReposForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Ok|array)>
-     **/
+    /** @return PromiseInterface<(Ok|array)> **/
     public function call(int $installationId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListInstallationReposForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $installationId, $perPage, $page);

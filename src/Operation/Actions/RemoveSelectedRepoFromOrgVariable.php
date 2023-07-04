@@ -21,13 +21,11 @@ final class RemoveSelectedRepoFromOrgVariable
     private string $org;
     /**The name of the variable. **/
     private string $name;
-    private int $repositoryId;
 
-    public function __construct(string $org, string $name, int $repositoryId)
+    public function __construct(string $org, string $name, private int $repositoryId)
     {
-        $this->org          = $org;
-        $this->name         = $name;
-        $this->repositoryId = $repositoryId;
+        $this->org  = $org;
+        $this->name = $name;
     }
 
     public function createRequest(): RequestInterface
@@ -35,9 +33,7 @@ final class RemoveSelectedRepoFromOrgVariable
         return new Request(self::METHOD, str_replace(['{org}', '{name}', '{repository_id}'], [$this->org, $this->name, $this->repositoryId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

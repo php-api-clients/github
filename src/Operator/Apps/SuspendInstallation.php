@@ -22,9 +22,7 @@ final readonly class SuspendInstallation
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $installationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\SuspendInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

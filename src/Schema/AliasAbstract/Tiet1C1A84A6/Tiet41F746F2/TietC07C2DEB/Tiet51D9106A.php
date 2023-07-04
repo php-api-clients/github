@@ -21,7 +21,11 @@ abstract readonly class Tiet51D9106A
      * permission: Permission that the team will have for its repositories
      * url: URL for the team
      */
-    public function __construct(public ?bool $deleted, public ?string $description, #[MapFrom('html_url')] public ?string $htmlUrl, public int $id, #[MapFrom('members_url')] public ?string $membersUrl, public string $name, #[MapFrom('node_id')] public ?string $nodeId, public ?Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_ $parent, public ?string $permission, public ?string $privacy, #[MapFrom('repositories_url')] public ?string $repositoriesUrl, public ?string $slug, public ?string $url)
+    public function __construct(public bool|null $deleted, public string|null $description, #[MapFrom('html_url')]
+    public string|null $htmlUrl, public int $id, #[MapFrom('members_url')]
+    public string|null $membersUrl, public string $name, #[MapFrom('node_id')]
+    public string|null $nodeId, public Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_|null $parent, public string|null $permission, public string|null $privacy, #[MapFrom('repositories_url')]
+    public string|null $repositoriesUrl, public string|null $slug, public string|null $url,)
     {
     }
 }

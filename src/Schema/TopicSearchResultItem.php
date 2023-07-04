@@ -13,7 +13,15 @@ final readonly class TopicSearchResultItem
     public const SCHEMA_DESCRIPTION  = 'Topic Search Result Item';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","display_name":"generated","short_description":"generated","description":"generated","created_by":"generated","released":"generated","created_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","featured":false,"curated":false,"score":0.5,"repository_count":16,"logo_url":"https:\\/\\/example.com\\/","text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}],"related":null,"aliases":null}';
 
-    public function __construct(public string $name, #[MapFrom('display_name')] public ?string $displayName, #[MapFrom('short_description')] public ?string $shortDescription, public ?string $description, #[MapFrom('created_by')] public ?string $createdBy, public ?string $released, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public bool $featured, public bool $curated, public int|float $score, #[MapFrom('repository_count')] public ?int $repositoryCount, #[MapFrom('logo_url')] public ?string $logoUrl, #[MapFrom('text_matches')] public ?array $textMatches, public ?array $related, public ?array $aliases)
+    public function __construct(public string $name, #[MapFrom('display_name')]
+    public string|null $displayName, #[MapFrom('short_description')]
+    public string|null $shortDescription, public string|null $description, #[MapFrom('created_by')]
+    public string|null $createdBy, public string|null $released, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public bool $featured, public bool $curated, public int|float $score, #[MapFrom('repository_count')]
+    public int|null $repositoryCount, #[MapFrom('logo_url')]
+    public string|null $logoUrl, #[MapFrom('text_matches')]
+    public array|null $textMatches, public array|null $related, public array|null $aliases,)
     {
     }
 }

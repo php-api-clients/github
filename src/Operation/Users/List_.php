@@ -33,9 +33,7 @@ final class List_
         return new Request(self::METHOD, str_replace(['{since}', '{per_page}'], [$this->since, $this->perPage], self::PATH . '?since={since}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

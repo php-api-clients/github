@@ -22,9 +22,7 @@ final readonly class UnlockRepoForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $migrationId, string $repoName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\UnlockRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $repoName);

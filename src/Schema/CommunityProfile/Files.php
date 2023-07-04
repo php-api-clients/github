@@ -14,7 +14,11 @@ final readonly class Files
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"code_of_conduct":{"url":"https:\\/\\/api.github.com\\/repos\\/github\\/docs\\/community\\/code_of_conduct","key":"citizen_code_of_conduct","name":"Citizen Code of Conduct","html_url":"https:\\/\\/github.com\\/github\\/docs\\/blob\\/main\\/CODE_OF_CONDUCT.md"},"code_of_conduct_file":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"license":{"key":"mit","name":"MIT License","url":"https:\\/\\/api.github.com\\/licenses\\/mit","spdx_id":"MIT","node_id":"MDc6TGljZW5zZW1pdA==","html_url":"https:\\/\\/example.com\\/"},"contributing":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"readme":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"issue_template":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"pull_request_template":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"}}';
 
-    public function __construct(#[MapFrom('code_of_conduct')] public ?Schema\CodeOfConductSimple $codeOfConduct, #[MapFrom('code_of_conduct_file')] public ?Schema\CommunityHealthFile $codeOfConductFile, public ?Schema\LicenseSimple $license, public ?Schema\CommunityHealthFile $contributing, public ?Schema\CommunityHealthFile $readme, #[MapFrom('issue_template')] public ?Schema\CommunityHealthFile $issueTemplate, #[MapFrom('pull_request_template')] public ?Schema\CommunityHealthFile $pullRequestTemplate)
+    public function __construct(#[MapFrom('code_of_conduct')]
+    public Schema\CodeOfConductSimple|null $codeOfConduct, #[MapFrom('code_of_conduct_file')]
+    public Schema\CommunityHealthFile|null $codeOfConductFile, public Schema\LicenseSimple|null $license, public Schema\CommunityHealthFile|null $contributing, public Schema\CommunityHealthFile|null $readme, #[MapFrom('issue_template')]
+    public Schema\CommunityHealthFile|null $issueTemplate, #[MapFrom('pull_request_template')]
+    public Schema\CommunityHealthFile|null $pullRequestTemplate,)
     {
     }
 }

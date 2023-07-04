@@ -19,7 +19,7 @@ final class DownloadJobLogsForWorkflowRun
     private const PATH           = '/repos/{owner}/{repo}/actions/jobs/{job_id}/logs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the job. **/
     private int $jobId;
@@ -36,9 +36,7 @@ final class DownloadJobLogsForWorkflowRun
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{job_id}'], [$this->owner, $this->repo, $this->jobId], self::PATH));
     }
 
-    /**
-     * @return array{code: int,location: string}
-     */
+    /** @return array{code: int,location: string} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

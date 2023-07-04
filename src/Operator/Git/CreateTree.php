@@ -23,9 +23,7 @@ final readonly class CreateTree
     {
     }
 
-    /**
-     * @return PromiseInterface<GitTree>
-     **/
+    /** @return PromiseInterface<GitTree> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\CreateTree($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

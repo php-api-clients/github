@@ -16,7 +16,8 @@ abstract readonly class Tiet79DAB836
     /**
      * accessToken: The OAuth access token used to authenticate to the GitHub API.
      */
-    public function __construct(#[MapFrom('access_token')] public string $accessToken)
+    public function __construct(#[MapFrom('access_token')]
+    public string $accessToken,)
     {
     }
 }

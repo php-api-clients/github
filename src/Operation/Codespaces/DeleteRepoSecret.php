@@ -19,7 +19,7 @@ final class DeleteRepoSecret
     private const PATH           = '/repos/{owner}/{repo}/codespaces/secrets/{secret_name}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The name of the secret. **/
     private string $secretName;
@@ -36,9 +36,7 @@ final class DeleteRepoSecret
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{secret_name}'], [$this->owner, $this->repo, $this->secretName], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

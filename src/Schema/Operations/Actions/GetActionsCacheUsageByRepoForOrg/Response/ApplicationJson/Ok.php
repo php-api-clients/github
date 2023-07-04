@@ -13,7 +13,9 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"repository_cache_usages":[{"full_name":"octo-org\\/Hello-World","active_caches_size_in_bytes":2322142,"active_caches_count":3},{"full_name":"octo-org\\/Hello-World","active_caches_size_in_bytes":2322142,"active_caches_count":3}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, #[MapFrom('repository_cache_usages')] public array $repositoryCacheUsages)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, #[MapFrom('repository_cache_usages')]
+    public array $repositoryCacheUsages,)
     {
     }
 }

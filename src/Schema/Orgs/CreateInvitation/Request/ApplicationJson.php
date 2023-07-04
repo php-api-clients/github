@@ -22,7 +22,9 @@ final readonly class ApplicationJson
      * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
      * teamIds: Specify IDs for the teams you want to invite new members to.
      */
-    public function __construct(#[MapFrom('invitee_id')] public ?int $inviteeId, public ?string $email, public ?string $role, #[MapFrom('team_ids')] public ?array $teamIds)
+    public function __construct(#[MapFrom('invitee_id')]
+    public int|null $inviteeId, public string|null $email, public string|null $role, #[MapFrom('team_ids')]
+    public array|null $teamIds,)
     {
     }
 }

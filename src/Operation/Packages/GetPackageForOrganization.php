@@ -29,16 +29,12 @@ final class GetPackageForOrganization
     private string $packageName;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName, string $org)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName, string $org)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->org                     = $org;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
+        $this->org         = $org;
     }
 
     public function createRequest(): RequestInterface

@@ -23,13 +23,9 @@ final class GetAuthenticated
     public const OPERATION_MATCH = 'GET /app';
     private const METHOD         = 'GET';
     private const PATH           = '/app';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

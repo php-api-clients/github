@@ -21,7 +21,8 @@ final readonly class ApplicationJson
      * description: A short description of the status.
      * context: A string label to differentiate this status from the status of other systems. This field is case-insensitive.
      */
-    public function __construct(public string $state, #[MapFrom('target_url')] public ?string $targetUrl, public ?string $description, public ?string $context)
+    public function __construct(public string $state, #[MapFrom('target_url')]
+    public string|null $targetUrl, public string|null $description, public string|null $context,)
     {
     }
 }

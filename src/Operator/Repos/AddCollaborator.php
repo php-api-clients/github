@@ -23,9 +23,7 @@ final readonly class AddCollaborator
     {
     }
 
-    /**
-     * @return PromiseInterface<(RepositoryInvitation|array)>
-     **/
+    /** @return PromiseInterface<(RepositoryInvitation|array)> **/
     public function call(string $owner, string $repo, string $username, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\AddCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);

@@ -23,9 +23,7 @@ final readonly class CreatePublicSshKeyForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Key|array)>
-     **/
+    /** @return PromiseInterface<(Key|array)> **/
     public function call(array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CreatePublicSshKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

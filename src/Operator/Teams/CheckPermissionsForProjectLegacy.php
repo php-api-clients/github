@@ -23,9 +23,7 @@ final readonly class CheckPermissionsForProjectLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<(TeamProject|array)>
-     **/
+    /** @return PromiseInterface<(TeamProject|array)> **/
     public function call(int $teamId, int $projectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForProjectLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

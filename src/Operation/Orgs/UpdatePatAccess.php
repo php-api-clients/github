@@ -22,24 +22,18 @@ use function str_replace;
 final class UpdatePatAccess
 {
     public const OPERATION_ID    = 'orgs/update-pat-access';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-tokens/{pat_id}';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-tokens/{pat_id}';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-tokens/{pat_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
+    private const PATH           = '/orgs/{org}/personal-access-tokens/{pat_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the fine-grained personal access token. **/
     private int $patId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId $hydrator, string $org, int $patId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId $hydrator, string $org, int $patId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->patId                   = $patId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org   = $org;
+        $this->patId = $patId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -49,9 +43,7 @@ final class UpdatePatAccess
         return new Request(self::METHOD, str_replace(['{org}', '{pat_id}'], [$this->org, $this->patId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

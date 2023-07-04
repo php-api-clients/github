@@ -23,9 +23,7 @@ final readonly class Labels
     {
     }
 
-    /**
-     * @return PromiseInterface<(Ok|array)>
-     **/
+    /** @return PromiseInterface<(Ok|array)> **/
     public function call(int $repositoryId, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Search\Labels($this->responseSchemaValidator, $this->hydrator, $repositoryId, $q, $sort, $order, $perPage, $page);

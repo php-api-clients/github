@@ -23,9 +23,7 @@ final readonly class GetRepoSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsSecret>
-     **/
+    /** @return PromiseInterface<ActionsSecret> **/
     public function call(string $owner, string $repo, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetRepoSecret($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $secretName);

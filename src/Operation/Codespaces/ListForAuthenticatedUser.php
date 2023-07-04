@@ -30,16 +30,12 @@ final class ListForAuthenticatedUser
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces $hydrator, int $repositoryId, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces $hydrator, int $repositoryId, int $perPage = 30, int $page = 1)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId = $repositoryId;
+        $this->perPage      = $perPage;
+        $this->page         = $page;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class ListForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{repository_id}', '{per_page}', '{page}'], [$this->repositoryId, $this->perPage, $this->page], self::PATH . '?repository_id={repository_id}&per_page={per_page}&page={page}'));
     }
 
-    /**
-     * @return Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code: int}
-     */
+    /** @return Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
         $code          = $response->getStatusCode();

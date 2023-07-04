@@ -23,9 +23,7 @@ final readonly class StartForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Codespace|array)>
-     **/
+    /** @return PromiseInterface<(Codespace|array)> **/
     public function call(string $codespaceName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\StartForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

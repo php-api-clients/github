@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RemoveAllLabelsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->removeAllLabels('generated', 'generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -80,9 +74,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -97,9 +89,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->removeAllLabels('generated', 'generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_410_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -120,9 +110,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_410_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -137,9 +125,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->removeAllLabels('generated', 'generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -159,9 +145,7 @@ final class RemoveAllLabelsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

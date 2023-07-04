@@ -25,18 +25,12 @@ final class MoveCard
     public const OPERATION_MATCH = 'POST /projects/columns/cards/{card_id}/moves';
     private const METHOD         = 'POST';
     private const PATH           = '/projects/columns/cards/{card_id}/moves';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the card. **/
     private int $cardId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\Cards\CardId\Moves $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\Cards\CardId\Moves $hydrator, int $cardId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\Cards\CardId\Moves $hydrator, int $cardId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->cardId                  = $cardId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->cardId = $cardId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class MoveCard
         return new Request(self::METHOD, str_replace(['{card_id}'], [$this->cardId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|array{code: int}
-     */
+    /** @return Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|array
     {
         $code          = $response->getStatusCode();

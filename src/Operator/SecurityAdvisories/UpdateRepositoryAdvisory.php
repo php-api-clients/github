@@ -23,9 +23,7 @@ final readonly class UpdateRepositoryAdvisory
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryAdvisory>
-     **/
+    /** @return PromiseInterface<RepositoryAdvisory> **/
     public function call(string $owner, string $repo, string $ghsaId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecurityAdvisories\UpdateRepositoryAdvisory($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ghsaId);

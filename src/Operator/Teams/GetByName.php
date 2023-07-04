@@ -23,9 +23,7 @@ final readonly class GetByName
     {
     }
 
-    /**
-     * @return PromiseInterface<TeamFull>
-     **/
+    /** @return PromiseInterface<TeamFull> **/
     public function call(string $org, string $teamSlug): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\GetByName($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug);

@@ -19,7 +19,16 @@ abstract readonly class Tiet25B04BEE
      * state: The state of the milestone.
      * title: The title of the milestone.
      */
-    public function __construct(#[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('closed_issues')] public int $closedIssues, #[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookIssuesDemilestoned\Milestone\Creator $creator, public ?string $description, #[MapFrom('due_on')] public ?string $dueOn, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('labels_url')] public string $labelsUrl, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('open_issues')] public int $openIssues, public string $state, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('closed_issues')]
+    public int $closedIssues, #[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookIssuesDemilestoned\Milestone\Creator|null $creator, public string|null $description, #[MapFrom('due_on')]
+    public string|null $dueOn, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('labels_url')]
+    public string $labelsUrl, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('open_issues')]
+    public int $openIssues, public string $state, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

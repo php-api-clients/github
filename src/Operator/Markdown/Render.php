@@ -22,9 +22,7 @@ final readonly class Render
     {
     }
 
-    /**
-     * @return PromiseInterface<(array|string)>
-     **/
+    /** @return PromiseInterface<(array|string)> **/
     public function call(array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Markdown\Render($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

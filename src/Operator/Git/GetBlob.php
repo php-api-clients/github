@@ -23,9 +23,7 @@ final readonly class GetBlob
     {
     }
 
-    /**
-     * @return PromiseInterface<Blob>
-     **/
+    /** @return PromiseInterface<Blob> **/
     public function call(string $owner, string $repo, string $fileSha): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\GetBlob($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $fileSha);

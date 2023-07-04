@@ -22,9 +22,7 @@ final readonly class DownloadArtifact
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $artifactId, string $archiveFormat): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DownloadArtifact($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $artifactId, $archiveFormat);

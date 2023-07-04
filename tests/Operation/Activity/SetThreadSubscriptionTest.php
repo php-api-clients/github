@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SetThreadSubscriptionTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ThreadSubscription::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         })(json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ThreadSubscription::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         $result = await($client->operations()->activity()->setThreadSubscription(9, json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -77,9 +71,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         })(json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,9 +86,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         $result = await($client->operations()->activity()->setThreadSubscription(9, json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         })(json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -132,9 +120,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         $result = await($client->operations()->activity()->setThreadSubscription(9, json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -152,9 +138,7 @@ final class SetThreadSubscriptionTest extends AsyncTestCase
         })(json_decode(Schema\Activity\SetThreadSubscription\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

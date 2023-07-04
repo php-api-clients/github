@@ -20,9 +20,7 @@ final readonly class DisableLfsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DisableLfsForRepo($owner, $repo);

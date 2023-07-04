@@ -25,20 +25,16 @@ final class GetAllDeploymentProtectionRules
     private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
     /**The name of the environment. **/
     private string $environmentName;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules $hydrator, string $environmentName, string $repo, string $owner)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules $hydrator, string $environmentName, string $repo, string $owner)
     {
-        $this->environmentName         = $environmentName;
-        $this->repo                    = $repo;
-        $this->owner                   = $owner;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->environmentName = $environmentName;
+        $this->repo            = $repo;
+        $this->owner           = $owner;
     }
 
     public function createRequest(): RequestInterface

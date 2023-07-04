@@ -13,7 +13,8 @@ final readonly class Subject
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"title":"generated","url":"generated","latest_comment_url":"generated","type":"generated"}';
 
-    public function __construct(public string $title, public string $url, #[MapFrom('latest_comment_url')] public string $latestCommentUrl, public string $type)
+    public function __construct(public string $title, public string $url, #[MapFrom('latest_comment_url')]
+    public string $latestCommentUrl, public string $type,)
     {
     }
 }

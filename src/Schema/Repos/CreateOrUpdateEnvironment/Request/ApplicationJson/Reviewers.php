@@ -15,7 +15,7 @@ final readonly class Reviewers
      * type: The type of reviewer.
      * id: The id of the user or team who can review the deployment
      */
-    public function __construct(public ?string $type, public ?int $id)
+    public function __construct(public string|null $type, public int|null $id)
     {
     }
 }

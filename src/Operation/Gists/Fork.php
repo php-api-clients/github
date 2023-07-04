@@ -26,14 +26,10 @@ final class Fork
     private const PATH           = '/gists/{gist_id}/forks';
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId\Forks $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Forks $hydrator, string $gistId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId\Forks $hydrator, string $gistId)
     {
-        $this->gistId                  = $gistId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class Fork
         return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH));
     }
 
-    /**
-     * @return Schema\BaseGist|array{code: int}
-     */
+    /** @return Schema\BaseGist|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\BaseGist|array
     {
         $code          = $response->getStatusCode();

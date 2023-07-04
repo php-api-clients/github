@@ -13,7 +13,9 @@ final readonly class Pages
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"page_name":"generated","title":"generated","summary":"generated","action":"generated","sha":"generated","html_url":"generated"}';
 
-    public function __construct(#[MapFrom('page_name')] public ?string $pageName, public ?string $title, public ?string $summary, public ?string $action, public ?string $sha, #[MapFrom('html_url')] public ?string $htmlUrl)
+    public function __construct(#[MapFrom('page_name')]
+    public string|null $pageName, public string|null $title, public string|null $summary, public string|null $action, public string|null $sha, #[MapFrom('html_url')]
+    public string|null $htmlUrl,)
     {
     }
 }

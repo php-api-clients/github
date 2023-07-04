@@ -31,17 +31,13 @@ final class ListEnvironmentSecrets
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator, int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator, int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
+        $this->perPage         = $perPage;
+        $this->page            = $page;
     }
 
     public function createRequest(): RequestInterface

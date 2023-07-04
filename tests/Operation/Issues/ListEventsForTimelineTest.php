@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListEventsForTimelineTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -44,9 +42,7 @@ final class ListEventsForTimelineTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -61,9 +57,7 @@ final class ListEventsForTimelineTest extends AsyncTestCase
         $result = await($client->operations()->issues()->listEventsForTimeline('generated', 'generated', 12, 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_410_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -86,9 +80,7 @@ final class ListEventsForTimelineTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_410_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

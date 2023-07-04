@@ -25,18 +25,12 @@ final class CreateColumn
     public const OPERATION_MATCH = 'POST /projects/{project_id}/columns';
     private const METHOD         = 'POST';
     private const PATH           = '/projects/{project_id}/columns';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the project. **/
     private int $projectId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\ProjectId\Columns $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\ProjectId\Columns $hydrator, int $projectId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\ProjectId\Columns $hydrator, int $projectId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->projectId               = $projectId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->projectId = $projectId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class CreateColumn
         return new Request(self::METHOD, str_replace(['{project_id}'], [$this->projectId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\ProjectColumn|array{code: int}
-     */
+    /** @return Schema\ProjectColumn|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectColumn|array
     {
         $code          = $response->getStatusCode();

@@ -20,7 +20,10 @@ final readonly class OrganizationActionsVariable
      * updatedAt: The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * visibility: Visibility of a variable
      */
-    public function __construct(public string $name, public string $value, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public string $visibility, #[MapFrom('selected_repositories_url')] public ?string $selectedRepositoriesUrl)
+    public function __construct(public string $name, public string $value, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $visibility, #[MapFrom('selected_repositories_url')]
+    public string|null $selectedRepositoriesUrl,)
     {
     }
 }

@@ -20,7 +20,8 @@ final readonly class Runner
      * os: The Operating System of the runner.
      * status: The status of the runner.
      */
-    public function __construct(public int $id, #[MapFrom('runner_group_id')] public ?int $runnerGroupId, public string $name, public string $os, public string $status, public bool $busy, public array $labels)
+    public function __construct(public int $id, #[MapFrom('runner_group_id')]
+    public int|null $runnerGroupId, public string $name, public string $os, public string $status, public bool $busy, public array $labels,)
     {
     }
 }

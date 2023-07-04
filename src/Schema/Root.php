@@ -13,7 +13,40 @@ final readonly class Root
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"current_user_url":"generated","current_user_authorizations_html_url":"generated","authorizations_url":"generated","code_search_url":"generated","commit_search_url":"generated","emails_url":"generated","emojis_url":"generated","events_url":"generated","feeds_url":"generated","followers_url":"generated","following_url":"generated","gists_url":"generated","hub_url":"generated","issue_search_url":"generated","issues_url":"generated","keys_url":"generated","label_search_url":"generated","notifications_url":"generated","organization_url":"generated","organization_repositories_url":"generated","organization_teams_url":"generated","public_gists_url":"generated","rate_limit_url":"generated","repository_url":"generated","repository_search_url":"generated","current_user_repositories_url":"generated","starred_url":"generated","starred_gists_url":"generated","topic_search_url":"generated","user_url":"generated","user_organizations_url":"generated","user_repositories_url":"generated","user_search_url":"generated"}';
 
-    public function __construct(#[MapFrom('current_user_url')] public string $currentUserUrl, #[MapFrom('current_user_authorizations_html_url')] public string $currentUserAuthorizationsHtmlUrl, #[MapFrom('authorizations_url')] public string $authorizationsUrl, #[MapFrom('code_search_url')] public string $codeSearchUrl, #[MapFrom('commit_search_url')] public string $commitSearchUrl, #[MapFrom('emails_url')] public string $emailsUrl, #[MapFrom('emojis_url')] public string $emojisUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('feeds_url')] public string $feedsUrl, #[MapFrom('followers_url')] public string $followersUrl, #[MapFrom('following_url')] public string $followingUrl, #[MapFrom('gists_url')] public string $gistsUrl, #[MapFrom('hub_url')] public string $hubUrl, #[MapFrom('issue_search_url')] public string $issueSearchUrl, #[MapFrom('issues_url')] public string $issuesUrl, #[MapFrom('keys_url')] public string $keysUrl, #[MapFrom('label_search_url')] public string $labelSearchUrl, #[MapFrom('notifications_url')] public string $notificationsUrl, #[MapFrom('organization_url')] public string $organizationUrl, #[MapFrom('organization_repositories_url')] public string $organizationRepositoriesUrl, #[MapFrom('organization_teams_url')] public string $organizationTeamsUrl, #[MapFrom('public_gists_url')] public string $publicGistsUrl, #[MapFrom('rate_limit_url')] public string $rateLimitUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('repository_search_url')] public string $repositorySearchUrl, #[MapFrom('current_user_repositories_url')] public string $currentUserRepositoriesUrl, #[MapFrom('starred_url')] public string $starredUrl, #[MapFrom('starred_gists_url')] public string $starredGistsUrl, #[MapFrom('topic_search_url')] public ?string $topicSearchUrl, #[MapFrom('user_url')] public string $userUrl, #[MapFrom('user_organizations_url')] public string $userOrganizationsUrl, #[MapFrom('user_repositories_url')] public string $userRepositoriesUrl, #[MapFrom('user_search_url')] public string $userSearchUrl)
+    public function __construct(#[MapFrom('current_user_url')]
+    public string $currentUserUrl, #[MapFrom('current_user_authorizations_html_url')]
+    public string $currentUserAuthorizationsHtmlUrl, #[MapFrom('authorizations_url')]
+    public string $authorizationsUrl, #[MapFrom('code_search_url')]
+    public string $codeSearchUrl, #[MapFrom('commit_search_url')]
+    public string $commitSearchUrl, #[MapFrom('emails_url')]
+    public string $emailsUrl, #[MapFrom('emojis_url')]
+    public string $emojisUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('feeds_url')]
+    public string $feedsUrl, #[MapFrom('followers_url')]
+    public string $followersUrl, #[MapFrom('following_url')]
+    public string $followingUrl, #[MapFrom('gists_url')]
+    public string $gistsUrl, #[MapFrom('hub_url')]
+    public string $hubUrl, #[MapFrom('issue_search_url')]
+    public string $issueSearchUrl, #[MapFrom('issues_url')]
+    public string $issuesUrl, #[MapFrom('keys_url')]
+    public string $keysUrl, #[MapFrom('label_search_url')]
+    public string $labelSearchUrl, #[MapFrom('notifications_url')]
+    public string $notificationsUrl, #[MapFrom('organization_url')]
+    public string $organizationUrl, #[MapFrom('organization_repositories_url')]
+    public string $organizationRepositoriesUrl, #[MapFrom('organization_teams_url')]
+    public string $organizationTeamsUrl, #[MapFrom('public_gists_url')]
+    public string $publicGistsUrl, #[MapFrom('rate_limit_url')]
+    public string $rateLimitUrl, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('repository_search_url')]
+    public string $repositorySearchUrl, #[MapFrom('current_user_repositories_url')]
+    public string $currentUserRepositoriesUrl, #[MapFrom('starred_url')]
+    public string $starredUrl, #[MapFrom('starred_gists_url')]
+    public string $starredGistsUrl, #[MapFrom('topic_search_url')]
+    public string|null $topicSearchUrl, #[MapFrom('user_url')]
+    public string $userUrl, #[MapFrom('user_organizations_url')]
+    public string $userOrganizationsUrl, #[MapFrom('user_repositories_url')]
+    public string $userRepositoriesUrl, #[MapFrom('user_search_url')]
+    public string $userSearchUrl,)
     {
     }
 }

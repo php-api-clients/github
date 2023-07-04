@@ -22,9 +22,7 @@ final readonly class ListWebhookDeliveries
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $org, int $hookId, string $cursor, bool $redelivery, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator, $org, $hookId, $cursor, $redelivery, $perPage);

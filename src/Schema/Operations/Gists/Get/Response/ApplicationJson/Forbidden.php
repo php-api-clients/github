@@ -14,7 +14,8 @@ final readonly class Forbidden
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"block":{"reason":"generated","created_at":"generated","html_url":"generated"},"message":"generated","documentation_url":"generated"}';
 
-    public function __construct(public ?Schema\Operations\Gists\Get\Response\ApplicationJson\Forbidden\Block $block, public ?string $message, #[MapFrom('documentation_url')] public ?string $documentationUrl)
+    public function __construct(public Schema\Operations\Gists\Get\Response\ApplicationJson\Forbidden\Block|null $block, public string|null $message, #[MapFrom('documentation_url')]
+    public string|null $documentationUrl,)
     {
     }
 }

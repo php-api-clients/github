@@ -23,9 +23,7 @@ final readonly class GetUserInstallation
     {
     }
 
-    /**
-     * @return PromiseInterface<Installation>
-     **/
+    /** @return PromiseInterface<Installation> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetUserInstallation($this->responseSchemaValidator, $this->hydrator, $username);

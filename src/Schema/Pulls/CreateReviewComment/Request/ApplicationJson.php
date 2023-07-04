@@ -25,7 +25,12 @@ final readonly class ApplicationJson
      * inReplyTo: The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.
      * subjectType: The level at which the comment is targeted.
      */
-    public function __construct(public string $body, #[MapFrom('commit_id')] public string $commitId, public string $path, public ?int $position, public ?string $side, public ?int $line, #[MapFrom('start_line')] public ?int $startLine, #[MapFrom('start_side')] public ?string $startSide, #[MapFrom('in_reply_to')] public ?int $inReplyTo, #[MapFrom('subject_type')] public ?string $subjectType)
+    public function __construct(public string $body, #[MapFrom('commit_id')]
+    public string $commitId, public string $path, public int|null $position, public string|null $side, public int|null $line, #[MapFrom('start_line')]
+    public int|null $startLine, #[MapFrom('start_side')]
+    public string|null $startSide, #[MapFrom('in_reply_to')]
+    public int|null $inReplyTo, #[MapFrom('subject_type')]
+    public string|null $subjectType,)
     {
     }
 }

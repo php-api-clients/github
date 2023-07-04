@@ -16,7 +16,9 @@ final readonly class Ok
     /**
      * totalCount: The number of deployment branch policies for the environment.
      */
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, #[MapFrom('branch_policies')] public array $branchPolicies)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, #[MapFrom('branch_policies')]
+    public array $branchPolicies,)
     {
     }
 }

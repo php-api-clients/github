@@ -29,16 +29,12 @@ final class GetPackageVersionForAuthenticatedUser
     private string $packageName;
     /**Unique identifier of the package version. **/
     private int $packageVersionId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, int $packageVersionId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, int $packageVersionId)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->packageVersionId        = $packageVersionId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType      = $packageType;
+        $this->packageName      = $packageName;
+        $this->packageVersionId = $packageVersionId;
     }
 
     public function createRequest(): RequestInterface

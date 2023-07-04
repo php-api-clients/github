@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * name: A name for the new repository.
      * private: Whether the new repository should be private.
      */
-    public function __construct(public ?string $name, public ?bool $private)
+    public function __construct(public string|null $name, public bool|null $private)
     {
     }
 }

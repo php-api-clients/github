@@ -23,13 +23,9 @@ final class GetFeeds
     public const OPERATION_MATCH = 'GET /feeds';
     private const METHOD         = 'GET';
     private const PATH           = '/feeds';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Feeds $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Feeds $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Feeds $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

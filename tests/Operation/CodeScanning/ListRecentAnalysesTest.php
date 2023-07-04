@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListRecentAnalysesTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -49,9 +47,7 @@ final class ListRecentAnalysesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -66,9 +62,7 @@ final class ListRecentAnalysesTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->listRecentAnalyses('generated', 'generated', 'generated', null, 'generated', 'generated', 4, 8, 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -96,9 +90,7 @@ final class ListRecentAnalysesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -113,9 +105,7 @@ final class ListRecentAnalysesTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->listRecentAnalyses('generated', 'generated', 'generated', null, 'generated', 'generated', 4, 8, 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -143,9 +133,7 @@ final class ListRecentAnalysesTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);

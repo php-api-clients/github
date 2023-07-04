@@ -20,7 +20,10 @@ final readonly class ApplicationJson
      * httpsEnforced: Specify whether HTTPS should be enforced for the repository.
      * buildType: The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
      */
-    public function __construct(public ?string $cname, #[MapFrom('https_enforced')] public ?bool $httpsEnforced, #[MapFrom('build_type')] public ?string $buildType, #[Source] public null|string|Schema\Repos\UpdateInformationAboutPagesSite\Request\ApplicationJson\Source\One $source)
+    public function __construct(public string|null $cname, #[MapFrom('https_enforced')]
+    public bool|null $httpsEnforced, #[MapFrom('build_type')]
+    public string|null $buildType, #[Source]
+    public string|Schema\Repos\UpdateInformationAboutPagesSite\Request\ApplicationJson\Source\One|null $source,)
     {
     }
 }

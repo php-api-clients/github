@@ -23,9 +23,7 @@ final readonly class DeleteAnalysis
     {
     }
 
-    /**
-     * @return PromiseInterface<CodeScanningAnalysisDeletion>
-     **/
+    /** @return PromiseInterface<CodeScanningAnalysisDeletion> **/
     public function call(string $owner, string $repo, int $analysisId, string|null $confirmDelete): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\DeleteAnalysis($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $analysisId, $confirmDelete);

@@ -23,9 +23,7 @@ final readonly class StopInOrganization
     {
     }
 
-    /**
-     * @return PromiseInterface<(Codespace|array)>
-     **/
+    /** @return PromiseInterface<(Codespace|array)> **/
     public function call(string $org, string $username, string $codespaceName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\StopInOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

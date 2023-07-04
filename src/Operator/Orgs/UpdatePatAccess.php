@@ -14,17 +14,15 @@ use React\Promise\PromiseInterface;
 final readonly class UpdatePatAccess
 {
     public const OPERATION_ID    = 'orgs/update-pat-access';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-tokens/{pat_id}';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-tokens/{pat_id}';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-tokens/{pat_id}';
+    private const PATH           = '/orgs/{org}/personal-access-tokens/{pat_id}';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Organizations\Org\PersonalAccessTokens\PatId $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId $hydrator)
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, int $patId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\UpdatePatAccess($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patId);

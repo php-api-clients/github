@@ -22,9 +22,7 @@ final readonly class ListChildLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(int $teamId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListChildLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

@@ -23,9 +23,7 @@ final readonly class GetActionsCacheUsageForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsCacheUsageOrgEnterprise>
-     **/
+    /** @return PromiseInterface<ActionsCacheUsageOrgEnterprise> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetActionsCacheUsageForOrg($this->responseSchemaValidator, $this->hydrator, $org);

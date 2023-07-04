@@ -23,9 +23,7 @@ final readonly class UpdateComment
     {
     }
 
-    /**
-     * @return PromiseInterface<IssueComment>
-     **/
+    /** @return PromiseInterface<IssueComment> **/
     public function call(string $owner, string $repo, int $commentId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\UpdateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

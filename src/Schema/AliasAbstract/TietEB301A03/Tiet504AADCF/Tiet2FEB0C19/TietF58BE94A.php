@@ -17,7 +17,9 @@ abstract readonly class TietF58BE94A
      * useDefault: Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
      * includeClaimKeys: Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
      */
-    public function __construct(#[MapFrom('use_default')] public bool $useDefault, #[MapFrom('include_claim_keys')] public ?array $includeClaimKeys)
+    public function __construct(#[MapFrom('use_default')]
+    public bool $useDefault, #[MapFrom('include_claim_keys')]
+    public array|null $includeClaimKeys,)
     {
     }
 }

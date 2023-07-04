@@ -22,7 +22,16 @@ final readonly class Integration
      * events: The list of events for the GitHub app
      * installationsCount: The number of installations associated with the GitHub app
      */
-    public function __construct(public int $id, public ?string $slug, #[MapFrom('node_id')] public string $nodeId, public ?Schema\SimpleUser $owner, public string $name, public ?string $description, #[MapFrom('external_url')] public string $externalUrl, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public Schema\Integration\Permissions $permissions, public array $events, #[MapFrom('installations_count')] public ?int $installationsCount, #[MapFrom('client_id')] public ?string $clientId, #[MapFrom('client_secret')] public ?string $clientSecret, #[MapFrom('webhook_secret')] public ?string $webhookSecret, public ?string $pem)
+    public function __construct(public int $id, public string|null $slug, #[MapFrom('node_id')]
+    public string $nodeId, public Schema\SimpleUser|null $owner, public string $name, public string|null $description, #[MapFrom('external_url')]
+    public string $externalUrl, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\Integration\Permissions $permissions, public array $events, #[MapFrom('installations_count')]
+    public int|null $installationsCount, #[MapFrom('client_id')]
+    public string|null $clientId, #[MapFrom('client_secret')]
+    public string|null $clientSecret, #[MapFrom('webhook_secret')]
+    public string|null $webhookSecret, public string|null $pem,)
     {
     }
 }

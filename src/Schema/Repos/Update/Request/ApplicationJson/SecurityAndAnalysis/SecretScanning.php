@@ -14,7 +14,7 @@ final readonly class SecretScanning
     /**
      * status: Can be `enabled` or `disabled`.
      */
-    public function __construct(public ?string $status)
+    public function __construct(public string|null $status)
     {
     }
 }

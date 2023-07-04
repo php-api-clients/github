@@ -23,9 +23,7 @@ final readonly class Transfer
     {
     }
 
-    /**
-     * @return PromiseInterface<MinimalRepository>
-     **/
+    /** @return PromiseInterface<MinimalRepository> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Transfer($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

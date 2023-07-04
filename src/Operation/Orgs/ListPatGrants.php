@@ -21,9 +21,9 @@ use function str_replace;
 final class ListPatGrants
 {
     public const OPERATION_ID    = 'orgs/list-pat-grants';
-    public const OPERATION_MATCH = 'GET /organizations/{org}/personal-access-tokens';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/personal-access-tokens';
     private const METHOD         = 'GET';
-    private const PATH           = '/organizations/{org}/personal-access-tokens';
+    private const PATH           = '/orgs/{org}/personal-access-tokens';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**A list of owner usernames to use to filter the results. **/
@@ -44,23 +44,19 @@ final class ListPatGrants
     private string $sort;
     /**The direction to sort the results by. **/
     private string $direction;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Organizations\Org\PersonalAccessTokens $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Organizations\Org\PersonalAccessTokens $hydrator, string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage = 30, int $page = 1, string $sort = 'created_at', string $direction = 'desc')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\PersonalAccessTokens $hydrator, string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage = 30, int $page = 1, string $sort = 'created_at', string $direction = 'desc')
     {
-        $this->org                     = $org;
-        $this->owner                   = $owner;
-        $this->repository              = $repository;
-        $this->permission              = $permission;
-        $this->lastUsedBefore          = $lastUsedBefore;
-        $this->lastUsedAfter           = $lastUsedAfter;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org            = $org;
+        $this->owner          = $owner;
+        $this->repository     = $repository;
+        $this->permission     = $permission;
+        $this->lastUsedBefore = $lastUsedBefore;
+        $this->lastUsedAfter  = $lastUsedAfter;
+        $this->perPage        = $perPage;
+        $this->page           = $page;
+        $this->sort           = $sort;
+        $this->direction      = $direction;
     }
 
     public function createRequest(): RequestInterface

@@ -23,9 +23,7 @@ final readonly class GetStatusChecksProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<StatusCheckPolicy>
-     **/
+    /** @return PromiseInterface<StatusCheckPolicy> **/
     public function call(string $owner, string $repo, string $branch): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetStatusChecksProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

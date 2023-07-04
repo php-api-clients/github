@@ -18,7 +18,9 @@ abstract readonly class TietDD2CEF24
      * name: The name of the repository.
      * private: Whether the repository is private or public.
      */
-    public function __construct(#[MapFrom('full_name')] public string $fullName, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public bool $private)
+    public function __construct(#[MapFrom('full_name')]
+    public string $fullName, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public bool $private,)
     {
     }
 }

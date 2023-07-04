@@ -23,9 +23,7 @@ final readonly class UpdateCommitComment
     {
     }
 
-    /**
-     * @return PromiseInterface<CommitComment>
-     **/
+    /** @return PromiseInterface<CommitComment> **/
     public function call(string $owner, string $repo, int $commentId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdateCommitComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

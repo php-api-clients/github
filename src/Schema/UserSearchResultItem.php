@@ -13,7 +13,27 @@ final readonly class UserSearchResultItem
     public const SCHEMA_DESCRIPTION  = 'User Search Result Item';
     public const SCHEMA_EXAMPLE_DATA = '{"login":"generated","id":2,"node_id":"generated","avatar_url":"https:\\/\\/example.com\\/","gravatar_id":"generated","url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","followers_url":"https:\\/\\/example.com\\/","subscriptions_url":"https:\\/\\/example.com\\/","organizations_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","type":"generated","score":0.5,"following_url":"generated","gists_url":"generated","starred_url":"generated","events_url":"generated","public_repos":12,"public_gists":12,"followers":9,"following":9,"created_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","name":"generated","bio":"generated","email":"hi@example.com","location":"generated","site_admin":false,"hireable":false,"text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}],"blog":"generated","company":"generated","suspended_at":"1970-01-01T00:00:00+00:00"}';
 
-    public function __construct(public string $login, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('avatar_url')] public string $avatarUrl, #[MapFrom('gravatar_id')] public ?string $gravatarId, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('followers_url')] public string $followersUrl, #[MapFrom('subscriptions_url')] public string $subscriptionsUrl, #[MapFrom('organizations_url')] public string $organizationsUrl, #[MapFrom('repos_url')] public string $reposUrl, #[MapFrom('received_events_url')] public string $receivedEventsUrl, public string $type, public int|float $score, #[MapFrom('following_url')] public string $followingUrl, #[MapFrom('gists_url')] public string $gistsUrl, #[MapFrom('starred_url')] public string $starredUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('public_repos')] public ?int $publicRepos, #[MapFrom('public_gists')] public ?int $publicGists, public ?int $followers, public ?int $following, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt, public ?string $name, public ?string $bio, public ?string $email, public ?string $location, #[MapFrom('site_admin')] public bool $siteAdmin, public ?bool $hireable, #[MapFrom('text_matches')] public ?array $textMatches, public ?string $blog, public ?string $company, #[MapFrom('suspended_at')] public ?string $suspendedAt)
+    public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('avatar_url')]
+    public string $avatarUrl, #[MapFrom('gravatar_id')]
+    public string|null $gravatarId, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('followers_url')]
+    public string $followersUrl, #[MapFrom('subscriptions_url')]
+    public string $subscriptionsUrl, #[MapFrom('organizations_url')]
+    public string $organizationsUrl, #[MapFrom('repos_url')]
+    public string $reposUrl, #[MapFrom('received_events_url')]
+    public string $receivedEventsUrl, public string $type, public int|float $score, #[MapFrom('following_url')]
+    public string $followingUrl, #[MapFrom('gists_url')]
+    public string $gistsUrl, #[MapFrom('starred_url')]
+    public string $starredUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('public_repos')]
+    public int|null $publicRepos, #[MapFrom('public_gists')]
+    public int|null $publicGists, public int|null $followers, public int|null $following, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public string|null $name, public string|null $bio, public string|null $email, public string|null $location, #[MapFrom('site_admin')]
+    public bool $siteAdmin, public bool|null $hireable, #[MapFrom('text_matches')]
+    public array|null $textMatches, public string|null $blog, public string|null $company, #[MapFrom('suspended_at')]
+    public string|null $suspendedAt,)
     {
     }
 }

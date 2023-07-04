@@ -28,15 +28,11 @@ final class CancelInvitation
     private string $org;
     /**The unique identifier of the invitation. **/
     private int $invitationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Invitations\InvitationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Invitations\InvitationId $hydrator, string $org, int $invitationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Invitations\InvitationId $hydrator, string $org, int $invitationId)
     {
-        $this->org                     = $org;
-        $this->invitationId            = $invitationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org          = $org;
+        $this->invitationId = $invitationId;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class CancelInvitation
         return new Request(self::METHOD, str_replace(['{org}', '{invitation_id}'], [$this->org, $this->invitationId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

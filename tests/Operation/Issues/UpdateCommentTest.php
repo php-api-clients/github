@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateCommentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\IssueComment::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\IssueComment::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateCommentTest extends AsyncTestCase
         $result = await($client->operations()->issues()->updateComment('generated', 'generated', 10, json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -81,9 +75,7 @@ final class UpdateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Issues\UpdateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

@@ -23,9 +23,7 @@ final readonly class GetAlert
     {
     }
 
-    /**
-     * @return PromiseInterface<(DependabotAlert|array)>
-     **/
+    /** @return PromiseInterface<(DependabotAlert|array)> **/
     public function call(string $owner, string $repo, int $alertNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\GetAlert($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

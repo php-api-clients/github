@@ -13,7 +13,10 @@ final readonly class Actor
     public const SCHEMA_DESCRIPTION  = 'Actor';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"login":"generated","display_login":"generated","gravatar_id":"generated","url":"https:\\/\\/example.com\\/","avatar_url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public int $id, public string $login, #[MapFrom('display_login')] public ?string $displayLogin, #[MapFrom('gravatar_id')] public ?string $gravatarId, public string $url, #[MapFrom('avatar_url')] public string $avatarUrl)
+    public function __construct(public int $id, public string $login, #[MapFrom('display_login')]
+    public string|null $displayLogin, #[MapFrom('gravatar_id')]
+    public string|null $gravatarId, public string $url, #[MapFrom('avatar_url')]
+    public string $avatarUrl,)
     {
     }
 }

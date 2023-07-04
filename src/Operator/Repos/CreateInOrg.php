@@ -23,9 +23,7 @@ final readonly class CreateInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Repository>
-     **/
+    /** @return PromiseInterface<Repository> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

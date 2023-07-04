@@ -26,7 +26,7 @@ final class ListAlertsForRepo
     private const PATH           = '/repos/{owner}/{repo}/code-scanning/alerts';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both. **/
     private string $toolName;
@@ -46,24 +46,20 @@ final class ListAlertsForRepo
     private string $direction;
     /**The property by which to sort the results. **/
     private string $sort;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->toolName                = $toolName;
-        $this->toolGuid                = $toolGuid;
-        $this->ref                     = $ref;
-        $this->state                   = $state;
-        $this->severity                = $severity;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->direction               = $direction;
-        $this->sort                    = $sort;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->toolName  = $toolName;
+        $this->toolGuid  = $toolGuid;
+        $this->ref       = $ref;
+        $this->state     = $state;
+        $this->severity  = $severity;
+        $this->page      = $page;
+        $this->perPage   = $perPage;
+        $this->direction = $direction;
+        $this->sort      = $sort;
     }
 
     public function createRequest(): RequestInterface
@@ -71,9 +67,7 @@ final class ListAlertsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

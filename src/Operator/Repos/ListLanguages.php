@@ -23,9 +23,7 @@ final readonly class ListLanguages
     {
     }
 
-    /**
-     * @return PromiseInterface<Language>
-     **/
+    /** @return PromiseInterface<Language> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListLanguages($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

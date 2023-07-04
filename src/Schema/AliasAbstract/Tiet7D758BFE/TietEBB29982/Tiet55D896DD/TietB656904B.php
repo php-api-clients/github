@@ -16,7 +16,7 @@ abstract readonly class TietB656904B
      * teams: The list of team `slug`s with dismissal access
      * apps: The list of app `slug`s with dismissal access
      */
-    public function __construct(public ?array $users, public ?array $teams, public ?array $apps)
+    public function __construct(public array|null $users, public array|null $teams, public array|null $apps)
     {
     }
 }

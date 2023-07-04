@@ -27,15 +27,11 @@ final class GetDiscussionLegacy
     private int $teamId;
     /**The number that identifies the discussion. **/
     private int $discussionNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber $hydrator, int $teamId, int $discussionNumber)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber $hydrator, int $teamId, int $discussionNumber)
     {
-        $this->teamId                  = $teamId;
-        $this->discussionNumber        = $discussionNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId           = $teamId;
+        $this->discussionNumber = $discussionNumber;
     }
 
     public function createRequest(): RequestInterface

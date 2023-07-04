@@ -23,9 +23,7 @@ final readonly class ListSelectedReposForOrgVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(string $org, string $name, int $page = 1, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListSelectedReposForOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name, $page, $perPage);

@@ -18,7 +18,9 @@ final readonly class ApplicationJson
      * displayName: Display name for this codespace
      * recentFolders: Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
      */
-    public function __construct(public ?string $machine, #[MapFrom('display_name')] public ?string $displayName, #[MapFrom('recent_folders')] public ?array $recentFolders)
+    public function __construct(public string|null $machine, #[MapFrom('display_name')]
+    public string|null $displayName, #[MapFrom('recent_folders')]
+    public array|null $recentFolders,)
     {
     }
 }

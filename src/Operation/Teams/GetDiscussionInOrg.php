@@ -29,16 +29,12 @@ final class GetDiscussionInOrg
     private string $teamSlug;
     /**The number that identifies the discussion. **/
     private int $discussionNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber $hydrator, string $org, string $teamSlug, int $discussionNumber)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber $hydrator, string $org, string $teamSlug, int $discussionNumber)
     {
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->discussionNumber        = $discussionNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org              = $org;
+        $this->teamSlug         = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
     }
 
     public function createRequest(): RequestInterface

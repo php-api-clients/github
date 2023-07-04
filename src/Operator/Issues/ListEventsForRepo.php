@@ -22,9 +22,7 @@ final readonly class ListEventsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListEventsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamMembership::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamMembership::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -79,9 +73,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -96,9 +88,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateMembershipForUserLegacy(7, 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_empty(): void
     {
         $response = new Response(403, []);
@@ -117,9 +107,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_empty(): void
     {
         $response = new Response(403, []);
@@ -135,9 +123,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         self::assertSame(403, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);
@@ -156,9 +142,7 @@ final class AddOrUpdateMembershipForUserLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);

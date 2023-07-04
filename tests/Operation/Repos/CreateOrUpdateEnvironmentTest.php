@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateOrUpdateEnvironmentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Environment::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class CreateOrUpdateEnvironmentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateEnvironment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Environment::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class CreateOrUpdateEnvironmentTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrUpdateEnvironment('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateOrUpdateEnvironment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class CreateOrUpdateEnvironmentTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateEnvironment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

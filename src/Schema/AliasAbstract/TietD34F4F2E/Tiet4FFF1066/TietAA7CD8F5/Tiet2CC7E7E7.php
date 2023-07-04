@@ -16,7 +16,8 @@ abstract readonly class Tiet2CC7E7E7
     /**
      * allowedPortPrivacySettings: The privacy settings a user can select from when forwarding a port.
      */
-    public function __construct(#[MapFrom('allowed_port_privacy_settings')] public ?array $allowedPortPrivacySettings)
+    public function __construct(#[MapFrom('allowed_port_privacy_settings')]
+    public array|null $allowedPortPrivacySettings,)
     {
     }
 }

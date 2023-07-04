@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class MarkRepoNotificationsAsReadTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class MarkRepoNotificationsAsReadTest extends AsyncTestCase
         })(json_decode(Schema\Activity\MarkRepoNotificationsAsRead\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class MarkRepoNotificationsAsReadTest extends AsyncTestCase
         $result = await($client->operations()->activity()->markRepoNotificationsAsRead('generated', 'generated', json_decode(Schema\Activity\MarkRepoNotificationsAsRead\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_205_requestContentType_application_json_empty(): void
     {
         $response = new Response(205, []);
@@ -77,9 +71,7 @@ final class MarkRepoNotificationsAsReadTest extends AsyncTestCase
         })(json_decode(Schema\Activity\MarkRepoNotificationsAsRead\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_205_requestContentType_application_json_empty(): void
     {
         $response = new Response(205, []);

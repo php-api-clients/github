@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class AddLabelsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_301_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class AddLabelsTest extends AsyncTestCase
         })(json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_301_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class AddLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->addLabels('generated', 'generated', 12, json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class AddLabelsTest extends AsyncTestCase
         })(json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class AddLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->addLabels('generated', 'generated', 12, json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -121,9 +111,7 @@ final class AddLabelsTest extends AsyncTestCase
         })(json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -138,9 +126,7 @@ final class AddLabelsTest extends AsyncTestCase
         $result = await($client->operations()->issues()->addLabels('generated', 'generated', 12, json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -161,9 +147,7 @@ final class AddLabelsTest extends AsyncTestCase
         })(json_decode(Schema\Issues\AddLabels\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

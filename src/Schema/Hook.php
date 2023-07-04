@@ -20,7 +20,13 @@ final readonly class Hook
      * active: Determines whether the hook is actually triggered on pushes.
      * events: Determines what events the hook is triggered for. Default: ['push'].
      */
-    public function __construct(public string $type, public int $id, public string $name, public bool $active, public array $events, public Schema\Hook\Config $config, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('created_at')] public string $createdAt, public string $url, #[MapFrom('test_url')] public string $testUrl, #[MapFrom('ping_url')] public string $pingUrl, #[MapFrom('deliveries_url')] public ?string $deliveriesUrl, #[MapFrom('last_response')] public Schema\HookResponse $lastResponse)
+    public function __construct(public string $type, public int $id, public string $name, public bool $active, public array $events, public Schema\Hook\Config $config, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('created_at')]
+    public string $createdAt, public string $url, #[MapFrom('test_url')]
+    public string $testUrl, #[MapFrom('ping_url')]
+    public string $pingUrl, #[MapFrom('deliveries_url')]
+    public string|null $deliveriesUrl, #[MapFrom('last_response')]
+    public Schema\HookResponse $lastResponse,)
     {
     }
 }

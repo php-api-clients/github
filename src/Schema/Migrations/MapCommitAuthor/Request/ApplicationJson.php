@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * email: The new Git author email.
      * name: The new Git author name.
      */
-    public function __construct(public ?string $email, public ?string $name)
+    public function __construct(public string|null $email, public string|null $name)
     {
     }
 }

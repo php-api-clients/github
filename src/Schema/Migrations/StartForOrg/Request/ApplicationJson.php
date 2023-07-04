@@ -24,7 +24,14 @@ final readonly class ApplicationJson
      * orgMetadataOnly: Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
      * exclude: Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
      */
-    public function __construct(public array $repositories, #[MapFrom('lock_repositories')] public ?bool $lockRepositories, #[MapFrom('exclude_metadata')] public ?bool $excludeMetadata, #[MapFrom('exclude_git_data')] public ?bool $excludeGitData, #[MapFrom('exclude_attachments')] public ?bool $excludeAttachments, #[MapFrom('exclude_releases')] public ?bool $excludeReleases, #[MapFrom('exclude_owner_projects')] public ?bool $excludeOwnerProjects, #[MapFrom('org_metadata_only')] public ?bool $orgMetadataOnly, public ?array $exclude)
+    public function __construct(public array $repositories, #[MapFrom('lock_repositories')]
+    public bool|null $lockRepositories, #[MapFrom('exclude_metadata')]
+    public bool|null $excludeMetadata, #[MapFrom('exclude_git_data')]
+    public bool|null $excludeGitData, #[MapFrom('exclude_attachments')]
+    public bool|null $excludeAttachments, #[MapFrom('exclude_releases')]
+    public bool|null $excludeReleases, #[MapFrom('exclude_owner_projects')]
+    public bool|null $excludeOwnerProjects, #[MapFrom('org_metadata_only')]
+    public bool|null $orgMetadataOnly, public array|null $exclude,)
     {
     }
 }

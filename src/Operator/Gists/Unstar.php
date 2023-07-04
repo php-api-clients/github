@@ -22,9 +22,7 @@ final readonly class Unstar
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $gistId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Unstar($this->responseSchemaValidator, $this->hydrator, $gistId);

@@ -15,7 +15,7 @@ abstract readonly class Tiet6504F76F
      * title: The discussion post's title.
      * body: The discussion post's body text.
      */
-    public function __construct(public ?string $title, public ?string $body)
+    public function __construct(public string|null $title, public string|null $body)
     {
     }
 }

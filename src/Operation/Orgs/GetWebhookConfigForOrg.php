@@ -27,15 +27,11 @@ final class GetWebhookConfigForOrg
     private string $org;
     /**The unique identifier of the hook. **/
     private int $hookId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator, string $org, int $hookId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator, string $org, int $hookId)
     {
-        $this->org                     = $org;
-        $this->hookId                  = $hookId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org    = $org;
+        $this->hookId = $hookId;
     }
 
     public function createRequest(): RequestInterface

@@ -21,9 +21,7 @@ final readonly class CreateWorkflowDispatch
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, $workflowId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateWorkflowDispatch($this->requestSchemaValidator, $owner, $repo, $workflowId);

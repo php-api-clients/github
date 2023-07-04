@@ -23,9 +23,7 @@ final readonly class MoveColumn
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(int $columnId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\MoveColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

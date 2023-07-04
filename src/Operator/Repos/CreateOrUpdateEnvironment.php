@@ -23,9 +23,7 @@ final readonly class CreateOrUpdateEnvironment
     {
     }
 
-    /**
-     * @return PromiseInterface<Environment>
-     **/
+    /** @return PromiseInterface<Environment> **/
     public function call(string $owner, string $repo, string $environmentName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateOrUpdateEnvironment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);

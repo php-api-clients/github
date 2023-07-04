@@ -24,24 +24,18 @@ final class CreateOrUpdateEnvironmentSecret
     public const OPERATION_MATCH = 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
     private const METHOD         = 'PUT';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
     private string $environmentName;
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
+        $this->secretName      = $secretName;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -51,9 +45,7 @@ final class CreateOrUpdateEnvironmentSecret
         return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\EmptyObject|array{code: int}
-     */
+    /** @return Schema\EmptyObject|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\EmptyObject|array
     {
         $code          = $response->getStatusCode();

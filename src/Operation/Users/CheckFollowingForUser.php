@@ -19,12 +19,10 @@ final class CheckFollowingForUser
     private const PATH           = '/users/{username}/following/{target_user}';
     /**The handle for the GitHub user account. **/
     private string $username;
-    private string $targetUser;
 
-    public function __construct(string $username, string $targetUser)
+    public function __construct(string $username, private string $targetUser)
     {
-        $this->username   = $username;
-        $this->targetUser = $targetUser;
+        $this->username = $username;
     }
 
     public function createRequest(): RequestInterface
@@ -32,9 +30,7 @@ final class CheckFollowingForUser
         return new Request(self::METHOD, str_replace(['{username}', '{target_user}'], [$this->username, $this->targetUser], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

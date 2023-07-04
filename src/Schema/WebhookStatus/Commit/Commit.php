@@ -14,7 +14,8 @@ final readonly class Commit
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"date":"1970-01-01T00:00:00+00:00","email":"hi@example.com","name":"generated","username":"generated"},"comment_count":13,"committer":{"date":"1970-01-01T00:00:00+00:00","email":"hi@example.com","name":"generated","username":"generated"},"message":"generated","tree":{"sha":"generated","url":"https:\\/\\/example.com\\/"},"url":"https:\\/\\/example.com\\/","verification":{"payload":"generated","reason":"ocsp_pending","signature":"generated","verified":false}}';
 
-    public function __construct(public Schema\WebhookStatus\Commit\Commit\Author $author, #[MapFrom('comment_count')] public int $commentCount, public Schema\WebhookStatus\Commit\Commit\Committer $committer, public string $message, public Schema\WebhookStatus\Commit\Commit\Tree $tree, public string $url, public Schema\WebhookStatus\Commit\Commit\Verification $verification)
+    public function __construct(public Schema\WebhookStatus\Commit\Commit\Author $author, #[MapFrom('comment_count')]
+    public int $commentCount, public Schema\WebhookStatus\Commit\Commit\Committer $committer, public string $message, public Schema\WebhookStatus\Commit\Commit\Tree $tree, public string $url, public Schema\WebhookStatus\Commit\Commit\Verification $verification,)
     {
     }
 }

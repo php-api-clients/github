@@ -19,7 +19,11 @@ final readonly class ActionsBillingUsage
      * totalPaidMinutesUsed: The total paid GitHub Actions minutes used.
      * includedMinutes: The amount of free GitHub Actions minutes available.
      */
-    public function __construct(#[MapFrom('total_minutes_used')] public int $totalMinutesUsed, #[MapFrom('total_paid_minutes_used')] public int $totalPaidMinutesUsed, #[MapFrom('included_minutes')] public int $includedMinutes, #[MapFrom('minutes_used_breakdown')] public Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutesUsedBreakdown)
+    public function __construct(#[MapFrom('total_minutes_used')]
+    public int $totalMinutesUsed, #[MapFrom('total_paid_minutes_used')]
+    public int $totalPaidMinutesUsed, #[MapFrom('included_minutes')]
+    public int $includedMinutes, #[MapFrom('minutes_used_breakdown')]
+    public Schema\ActionsBillingUsage\MinutesUsedBreakdown $minutesUsedBreakdown,)
     {
     }
 }

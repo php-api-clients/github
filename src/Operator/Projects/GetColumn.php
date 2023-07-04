@@ -23,9 +23,7 @@ final readonly class GetColumn
     {
     }
 
-    /**
-     * @return PromiseInterface<(ProjectColumn|array)>
-     **/
+    /** @return PromiseInterface<(ProjectColumn|array)> **/
     public function call(int $columnId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\GetColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

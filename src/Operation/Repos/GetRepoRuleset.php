@@ -26,23 +26,19 @@ final class GetRepoRuleset
     private const PATH           = '/repos/{owner}/{repo}/rulesets/{ruleset_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The ID of the ruleset. **/
     private int $rulesetId;
     /**Include rulesets configured at higher levels that apply to this repository **/
     private bool $includesParents;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId, bool $includesParents)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId, bool $includesParents = true)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->rulesetId               = $rulesetId;
-        $this->includesParents         = $includesParents;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner           = $owner;
+        $this->repo            = $repo;
+        $this->rulesetId       = $rulesetId;
+        $this->includesParents = $includesParents;
     }
 
     public function createRequest(): RequestInterface

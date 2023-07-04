@@ -32,17 +32,13 @@ final class ListInvitationTeams
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams $hydrator, string $org, int $invitationId, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams $hydrator, string $org, int $invitationId, int $perPage = 30, int $page = 1)
     {
-        $this->org                     = $org;
-        $this->invitationId            = $invitationId;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org          = $org;
+        $this->invitationId = $invitationId;
+        $this->perPage      = $perPage;
+        $this->page         = $page;
     }
 
     public function createRequest(): RequestInterface

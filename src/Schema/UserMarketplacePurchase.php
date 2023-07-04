@@ -17,7 +17,13 @@ final readonly class UserMarketplacePurchase
     /**
      * plan: Marketplace Listing Plan
      */
-    public function __construct(#[MapFrom('billing_cycle')] public string $billingCycle, #[MapFrom('next_billing_date')] public ?string $nextBillingDate, #[MapFrom('unit_count')] public ?int $unitCount, #[MapFrom('on_free_trial')] public bool $onFreeTrial, #[MapFrom('free_trial_ends_on')] public ?string $freeTrialEndsOn, #[MapFrom('updated_at')] public ?string $updatedAt, public Schema\MarketplaceAccount $account, public Schema\MarketplaceListingPlan $plan)
+    public function __construct(#[MapFrom('billing_cycle')]
+    public string $billingCycle, #[MapFrom('next_billing_date')]
+    public string|null $nextBillingDate, #[MapFrom('unit_count')]
+    public int|null $unitCount, #[MapFrom('on_free_trial')]
+    public bool $onFreeTrial, #[MapFrom('free_trial_ends_on')]
+    public string|null $freeTrialEndsOn, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public Schema\MarketplaceAccount $account, public Schema\MarketplaceListingPlan $plan,)
     {
     }
 }

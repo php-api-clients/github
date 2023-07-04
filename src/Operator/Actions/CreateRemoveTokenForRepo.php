@@ -23,9 +23,7 @@ final readonly class CreateRemoveTokenForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<AuthenticationToken>
-     **/
+    /** @return PromiseInterface<AuthenticationToken> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateRemoveTokenForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

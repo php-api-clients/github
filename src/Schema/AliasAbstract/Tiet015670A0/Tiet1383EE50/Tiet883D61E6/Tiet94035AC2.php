@@ -11,7 +11,7 @@ abstract readonly class Tiet94035AC2
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"verified":false,"reason":"generated","signature":"generated","payload":"generated"}';
 
-    public function __construct(public bool $verified, public string $reason, public ?string $signature, public ?string $payload)
+    public function __construct(public bool $verified, public string $reason, public string|null $signature, public string|null $payload)
     {
     }
 }

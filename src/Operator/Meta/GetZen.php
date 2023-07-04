@@ -22,9 +22,7 @@ final readonly class GetZen
     {
     }
 
-    /**
-     * @return PromiseInterface<string>
-     **/
+    /** @return PromiseInterface<string> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\GetZen($this->responseSchemaValidator, $this->hydrator);

@@ -22,7 +22,19 @@ final readonly class BranchProtection
      * lockBranch: Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
      * allowForkSyncing: Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
      */
-    public function __construct(public ?string $url, public ?bool $enabled, #[MapFrom('required_status_checks')] public ?Schema\ProtectedBranchRequiredStatusCheck $requiredStatusChecks, #[MapFrom('enforce_admins')] public ?Schema\ProtectedBranchAdminEnforced $enforceAdmins, #[MapFrom('required_pull_request_reviews')] public ?Schema\ProtectedBranchPullRequestReview $requiredPullRequestReviews, public ?Schema\BranchRestrictionPolicy $restrictions, #[MapFrom('required_linear_history')] public ?Schema\BranchProtection\RequiredLinearHistory $requiredLinearHistory, #[MapFrom('allow_force_pushes')] public ?Schema\BranchProtection\AllowForcePushes $allowForcePushes, #[MapFrom('allow_deletions')] public ?Schema\BranchProtection\AllowDeletions $allowDeletions, #[MapFrom('block_creations')] public ?Schema\BranchProtection\BlockCreations $blockCreations, #[MapFrom('required_conversation_resolution')] public ?Schema\BranchProtection\RequiredConversationResolution $requiredConversationResolution, public ?string $name, #[MapFrom('protection_url')] public ?string $protectionUrl, #[MapFrom('required_signatures')] public ?Schema\BranchProtection\RequiredSignatures $requiredSignatures, #[MapFrom('lock_branch')] public ?Schema\BranchProtection\LockBranch $lockBranch, #[MapFrom('allow_fork_syncing')] public ?Schema\BranchProtection\AllowForkSyncing $allowForkSyncing)
+    public function __construct(public string|null $url, public bool|null $enabled, #[MapFrom('required_status_checks')]
+    public Schema\ProtectedBranchRequiredStatusCheck|null $requiredStatusChecks, #[MapFrom('enforce_admins')]
+    public Schema\ProtectedBranchAdminEnforced|null $enforceAdmins, #[MapFrom('required_pull_request_reviews')]
+    public Schema\ProtectedBranchPullRequestReview|null $requiredPullRequestReviews, public Schema\BranchRestrictionPolicy|null $restrictions, #[MapFrom('required_linear_history')]
+    public Schema\BranchProtection\RequiredLinearHistory|null $requiredLinearHistory, #[MapFrom('allow_force_pushes')]
+    public Schema\BranchProtection\AllowForcePushes|null $allowForcePushes, #[MapFrom('allow_deletions')]
+    public Schema\BranchProtection\AllowDeletions|null $allowDeletions, #[MapFrom('block_creations')]
+    public Schema\BranchProtection\BlockCreations|null $blockCreations, #[MapFrom('required_conversation_resolution')]
+    public Schema\BranchProtection\RequiredConversationResolution|null $requiredConversationResolution, public string|null $name, #[MapFrom('protection_url')]
+    public string|null $protectionUrl, #[MapFrom('required_signatures')]
+    public Schema\BranchProtection\RequiredSignatures|null $requiredSignatures, #[MapFrom('lock_branch')]
+    public Schema\BranchProtection\LockBranch|null $lockBranch, #[MapFrom('allow_fork_syncing')]
+    public Schema\BranchProtection\AllowForkSyncing|null $allowForkSyncing,)
     {
     }
 }

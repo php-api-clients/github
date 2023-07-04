@@ -20,7 +20,9 @@ abstract readonly class TietDBD699D1
      * hasUncommittedChanges: Whether the local repository has uncommitted changes.
      * ref: The current branch (or SHA if in detached HEAD state) of the local repository.
      */
-    public function __construct(public ?int $ahead, public ?int $behind, #[MapFrom('has_unpushed_changes')] public ?bool $hasUnpushedChanges, #[MapFrom('has_uncommitted_changes')] public ?bool $hasUncommittedChanges, public ?string $ref)
+    public function __construct(public int|null $ahead, public int|null $behind, #[MapFrom('has_unpushed_changes')]
+    public bool|null $hasUnpushedChanges, #[MapFrom('has_uncommitted_changes')]
+    public bool|null $hasUncommittedChanges, public string|null $ref,)
     {
     }
 }

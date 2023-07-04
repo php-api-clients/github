@@ -13,7 +13,9 @@ final readonly class MarketplaceAccount
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/example.com\\/","id":2,"type":"generated","node_id":"generated","login":"generated","email":"hi@example.com","organization_billing_email":"hi@example.com"}';
 
-    public function __construct(public string $url, public int $id, public string $type, #[MapFrom('node_id')] public ?string $nodeId, public string $login, public ?string $email, #[MapFrom('organization_billing_email')] public ?string $organizationBillingEmail)
+    public function __construct(public string $url, public int $id, public string $type, #[MapFrom('node_id')]
+    public string|null $nodeId, public string $login, public string|null $email, #[MapFrom('organization_billing_email')]
+    public string|null $organizationBillingEmail,)
     {
     }
 }

@@ -34,17 +34,11 @@ final class DownloadArchiveForOrgStreaming
     private string $org;
     /**The unique identifier of the migration. **/
     private int $migrationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator;
-    private readonly Browser $browser;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator, Browser $browser, string $org, int $migrationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator, private readonly Browser $browser, string $org, int $migrationId)
     {
-        $this->org                     = $org;
-        $this->migrationId             = $migrationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
-        $this->browser                 = $browser;
+        $this->org         = $org;
+        $this->migrationId = $migrationId;
     }
 
     public function createRequest(): RequestInterface
@@ -52,9 +46,7 @@ final class DownloadArchiveForOrgStreaming
         return new Request(self::METHOD, str_replace(['{org}', '{migration_id}'], [$this->org, $this->migrationId], self::PATH));
     }
 
-    /**
-     * @return Observable<string>
-     */
+    /** @return Observable<string> */
     public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();

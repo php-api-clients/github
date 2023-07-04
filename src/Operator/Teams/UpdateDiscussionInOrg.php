@@ -23,9 +23,7 @@ final readonly class UpdateDiscussionInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<TeamDiscussion>
-     **/
+    /** @return PromiseInterface<TeamDiscussion> **/
     public function call(string $org, string $teamSlug, int $discussionNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\UpdateDiscussionInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber);

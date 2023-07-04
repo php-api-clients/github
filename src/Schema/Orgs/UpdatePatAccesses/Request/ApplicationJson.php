@@ -17,7 +17,8 @@ final readonly class ApplicationJson
      * action: Action to apply to the fine-grained personal access token.
      * patIds: The IDs of the fine-grained personal access tokens.
      */
-    public function __construct(public string $action, #[MapFrom('pat_ids')] public array $patIds)
+    public function __construct(public string $action, #[MapFrom('pat_ids')]
+    public array $patIds,)
     {
     }
 }

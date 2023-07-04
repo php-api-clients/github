@@ -23,9 +23,7 @@ final readonly class UpdateImport
     {
     }
 
-    /**
-     * @return PromiseInterface<Import>
-     **/
+    /** @return PromiseInterface<Import> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\UpdateImport($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

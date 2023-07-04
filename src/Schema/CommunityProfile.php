@@ -14,7 +14,10 @@ final readonly class CommunityProfile
     public const SCHEMA_DESCRIPTION  = 'Community Profile';
     public const SCHEMA_EXAMPLE_DATA = '{"health_percentage":100,"description":"My first repository on GitHub!","documentation":"example.com","files":{"code_of_conduct":{"url":"https:\\/\\/api.github.com\\/repos\\/github\\/docs\\/community\\/code_of_conduct","key":"citizen_code_of_conduct","name":"Citizen Code of Conduct","html_url":"https:\\/\\/github.com\\/github\\/docs\\/blob\\/main\\/CODE_OF_CONDUCT.md"},"code_of_conduct_file":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"license":{"key":"mit","name":"MIT License","url":"https:\\/\\/api.github.com\\/licenses\\/mit","spdx_id":"MIT","node_id":"MDc6TGljZW5zZW1pdA==","html_url":"https:\\/\\/example.com\\/"},"contributing":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"readme":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"issue_template":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"},"pull_request_template":{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"}},"updated_at":"2017-02-28T19:09:29Z","content_reports_enabled":true}';
 
-    public function __construct(#[MapFrom('health_percentage')] public int $healthPercentage, public ?string $description, public ?string $documentation, public Schema\CommunityProfile\Files $files, #[MapFrom('updated_at')] public ?string $updatedAt, #[MapFrom('content_reports_enabled')] public ?bool $contentReportsEnabled)
+    public function __construct(#[MapFrom('health_percentage')]
+    public int $healthPercentage, public string|null $description, public string|null $documentation, public Schema\CommunityProfile\Files $files, #[MapFrom('updated_at')]
+    public string|null $updatedAt, #[MapFrom('content_reports_enabled')]
+    public bool|null $contentReportsEnabled,)
     {
     }
 }

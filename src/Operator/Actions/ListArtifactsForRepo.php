@@ -23,9 +23,7 @@ final readonly class ListArtifactsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, string $name, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListArtifactsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name, $perPage, $page);

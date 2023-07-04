@@ -28,15 +28,11 @@ final class RemoveCollaborator
     private int $projectId;
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\ProjectId\Collaborators\Username $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\ProjectId\Collaborators\Username $hydrator, int $projectId, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\ProjectId\Collaborators\Username $hydrator, int $projectId, string $username)
     {
-        $this->projectId               = $projectId;
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->projectId = $projectId;
+        $this->username  = $username;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class RemoveCollaborator
         return new Request(self::METHOD, str_replace(['{project_id}', '{username}'], [$this->projectId, $this->username], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

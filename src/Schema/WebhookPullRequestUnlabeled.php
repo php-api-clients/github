@@ -22,7 +22,8 @@ final readonly class WebhookPullRequestUnlabeled
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\WebhookPullRequestUnlabeled\Label $label, public int $number, public ?Schema\OrganizationSimple $organization, #[MapFrom('pull_request')] public Schema\WebhookPullRequestUnlabeled\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookPullRequestUnlabeled\Label|null $label, public int $number, public Schema\OrganizationSimple|null $organization, #[MapFrom('pull_request')]
+    public Schema\WebhookPullRequestUnlabeled\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

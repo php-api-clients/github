@@ -23,9 +23,7 @@ final readonly class GetStatusForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Migration>
-     **/
+    /** @return PromiseInterface<Migration> **/
     public function call(string $org, int $migrationId, array $exclude): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetStatusForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId, $exclude);

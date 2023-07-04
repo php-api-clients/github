@@ -13,7 +13,8 @@ abstract readonly class Tiet0E7CC885
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"score":0.5,"vector_string":"generated"}';
 
-    public function __construct(public int|float $score, #[MapFrom('vector_string')] public ?string $vectorString)
+    public function __construct(public int|float $score, #[MapFrom('vector_string')]
+    public string|null $vectorString,)
     {
     }
 }

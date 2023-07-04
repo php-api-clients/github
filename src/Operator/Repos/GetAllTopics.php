@@ -23,9 +23,7 @@ final readonly class GetAllTopics
     {
     }
 
-    /**
-     * @return PromiseInterface<Topic>
-     **/
+    /** @return PromiseInterface<Topic> **/
     public function call(string $owner, string $repo, int $page = 1, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAllTopics($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $page, $perPage);

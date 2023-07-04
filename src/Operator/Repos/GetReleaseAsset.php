@@ -23,9 +23,7 @@ final readonly class GetReleaseAsset
     {
     }
 
-    /**
-     * @return PromiseInterface<(ReleaseAsset|array)>
-     **/
+    /** @return PromiseInterface<(ReleaseAsset|array)> **/
     public function call(string $owner, string $repo, int $assetId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetReleaseAsset($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $assetId);

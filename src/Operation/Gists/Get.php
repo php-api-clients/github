@@ -26,14 +26,10 @@ final class Get
     private const PATH           = '/gists/{gist_id}';
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId $hydrator, string $gistId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId $hydrator, string $gistId)
     {
-        $this->gistId                  = $gistId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class Get
         return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH));
     }
 
-    /**
-     * @return Schema\GistSimple|array{code: int}
-     */
+    /** @return Schema\GistSimple|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GistSimple|array
     {
         $code          = $response->getStatusCode();

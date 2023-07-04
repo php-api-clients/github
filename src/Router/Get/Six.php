@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Six
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -45,34 +35,6 @@ final class Six
                                     }
 
                                     return $this->router[Router\Get\Apps::class]->listAccountsForPlanStubbed($params);
-                                }
-                            }
-                        }
-                    }
-                }
-            } elseif ($pathChunks[1] === 'organizations') {
-                if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === 'personal-access-token-requests') {
-                        if ($pathChunks[4] === '{pat_request_id}') {
-                            if ($pathChunks[5] === 'repositories') {
-                                if ($call === 'GET /organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories') {
-                                    if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {
-                                        $this->router[Router\Get\Orgs::class] = new Router\Get\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                    }
-
-                                    return $this->router[Router\Get\Orgs::class]->listPatGrantRequestRepositories($params);
-                                }
-                            }
-                        }
-                    } elseif ($pathChunks[3] === 'personal-access-tokens') {
-                        if ($pathChunks[4] === '{pat_id}') {
-                            if ($pathChunks[5] === 'repositories') {
-                                if ($call === 'GET /organizations/{org}/personal-access-tokens/{pat_id}/repositories') {
-                                    if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {
-                                        $this->router[Router\Get\Orgs::class] = new Router\Get\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                    }
-
-                                    return $this->router[Router\Get\Orgs::class]->listPatGrantRepositories($params);
                                 }
                             }
                         }
@@ -123,16 +85,6 @@ final class Six
                                     }
 
                                     return $this->router[Router\Get\Actions::class]->getGithubActionsDefaultWorkflowPermissionsOrganization($params);
-                                }
-                            }
-                        } elseif ($pathChunks[4] === 'required_workflows') {
-                            if ($pathChunks[5] === '{required_workflow_id}') {
-                                if ($call === 'GET /orgs/{org}/actions/required_workflows/{required_workflow_id}') {
-                                    if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                        $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                    }
-
-                                    return $this->router[Router\Get\Actions::class]->getRequiredWorkflow($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'runners') {
@@ -298,6 +250,30 @@ final class Six
                                 }
                             }
                         }
+                    } elseif ($pathChunks[3] === 'personal-access-token-requests') {
+                        if ($pathChunks[4] === '{pat_request_id}') {
+                            if ($pathChunks[5] === 'repositories') {
+                                if ($call === 'GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories') {
+                                    if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {
+                                        $this->router[Router\Get\Orgs::class] = new Router\Get\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Get\Orgs::class]->listPatGrantRequestRepositories($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'personal-access-tokens') {
+                        if ($pathChunks[4] === '{pat_id}') {
+                            if ($pathChunks[5] === 'repositories') {
+                                if ($call === 'GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories') {
+                                    if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {
+                                        $this->router[Router\Get\Orgs::class] = new Router\Get\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Get\Orgs::class]->listPatGrantRepositories($params);
+                                }
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'settings') {
                         if ($pathChunks[4] === 'billing') {
                             if ($pathChunks[5] === 'actions') {
@@ -397,21 +373,7 @@ final class Six
                     }
                 }
             } elseif ($pathChunks[1] === 'repos') {
-                if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === '{repo}') {
-                        if ($pathChunks[4] === 'actions') {
-                            if ($pathChunks[5] === 'required_workflows') {
-                                if ($call === 'GET /repos/{org}/{repo}/actions/required_workflows') {
-                                    if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                        $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                    }
-
-                                    return $this->router[Router\Get\Actions::class]->listRepoRequiredWorkflows($params);
-                                }
-                            }
-                        }
-                    }
-                } elseif ($pathChunks[2] === '{owner}') {
+                if ($pathChunks[2] === '{owner}') {
                     if ($pathChunks[3] === '{repo}') {
                         if ($pathChunks[4] === 'actions') {
                             if ($pathChunks[5] === 'artifacts') {

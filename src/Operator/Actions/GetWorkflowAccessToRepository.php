@@ -23,9 +23,7 @@ final readonly class GetWorkflowAccessToRepository
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsWorkflowAccessToRepository>
-     **/
+    /** @return PromiseInterface<ActionsWorkflowAccessToRepository> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetWorkflowAccessToRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

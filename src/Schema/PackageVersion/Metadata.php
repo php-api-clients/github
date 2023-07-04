@@ -14,7 +14,8 @@ final readonly class Metadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"package_type":"docker","container":{"tags":["generated","generated"]},"docker":{"tag":["generated","generated"]}}';
 
-    public function __construct(#[MapFrom('package_type')] public string $packageType, public ?Schema\PackageVersion\Metadata\Container $container, public ?Schema\PackageVersion\Metadata\Docker $docker)
+    public function __construct(#[MapFrom('package_type')]
+    public string $packageType, public Schema\PackageVersion\Metadata\Container|null $container, public Schema\PackageVersion\Metadata\Docker|null $docker,)
     {
     }
 }

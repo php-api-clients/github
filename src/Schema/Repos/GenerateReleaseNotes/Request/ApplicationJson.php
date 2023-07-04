@@ -19,7 +19,11 @@ final readonly class ApplicationJson
      * previousTagName: The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
      * configurationFilePath: Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
      */
-    public function __construct(#[MapFrom('tag_name')] public string $tagName, #[MapFrom('target_commitish')] public ?string $targetCommitish, #[MapFrom('previous_tag_name')] public ?string $previousTagName, #[MapFrom('configuration_file_path')] public ?string $configurationFilePath)
+    public function __construct(#[MapFrom('tag_name')]
+    public string $tagName, #[MapFrom('target_commitish')]
+    public string|null $targetCommitish, #[MapFrom('previous_tag_name')]
+    public string|null $previousTagName, #[MapFrom('configuration_file_path')]
+    public string|null $configurationFilePath,)
     {
     }
 }

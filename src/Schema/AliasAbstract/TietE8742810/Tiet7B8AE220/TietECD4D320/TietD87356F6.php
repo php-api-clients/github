@@ -13,7 +13,9 @@ abstract readonly class TietD87356F6
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","space":5,"private_repos":13,"filled_seats":12,"seats":5}';
 
-    public function __construct(public string $name, public int $space, #[MapFrom('private_repos')] public int $privateRepos, #[MapFrom('filled_seats')] public ?int $filledSeats, public ?int $seats)
+    public function __construct(public string $name, public int $space, #[MapFrom('private_repos')]
+    public int $privateRepos, #[MapFrom('filled_seats')]
+    public int|null $filledSeats, public int|null $seats,)
     {
     }
 }

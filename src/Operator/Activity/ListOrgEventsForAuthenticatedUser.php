@@ -20,9 +20,7 @@ final readonly class ListOrgEventsForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $username, string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListOrgEventsForAuthenticatedUser($username, $org, $perPage, $page);

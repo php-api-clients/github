@@ -19,7 +19,7 @@ final class DisableDeploymentProtectionRule
     private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}';
     /**The name of the environment. **/
     private string $environmentName;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
@@ -39,9 +39,7 @@ final class DisableDeploymentProtectionRule
         return new Request(self::METHOD, str_replace(['{environment_name}', '{repo}', '{owner}', '{protection_rule_id}'], [$this->environmentName, $this->repo, $this->owner, $this->protectionRuleId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

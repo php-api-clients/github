@@ -22,9 +22,7 @@ final readonly class ListAccountsForPlanStubbed
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(int $planId, string $direction, string $sort = 'created', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListAccountsForPlanStubbed($this->responseSchemaValidator, $this->hydrator, $planId, $direction, $sort, $perPage, $page);

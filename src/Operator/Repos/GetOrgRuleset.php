@@ -23,9 +23,7 @@ final readonly class GetOrgRuleset
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryRuleset>
-     **/
+    /** @return PromiseInterface<RepositoryRuleset> **/
     public function call(string $org, int $rulesetId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetOrgRuleset($this->responseSchemaValidator, $this->hydrator, $org, $rulesetId);

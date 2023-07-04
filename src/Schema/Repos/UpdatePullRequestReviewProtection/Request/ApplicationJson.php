@@ -22,7 +22,13 @@ final readonly class ApplicationJson
      * requireLastPushApproval: Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
      * bypassPullRequestAllowances: Allow specific users, teams, or apps to bypass pull request requirements.
      */
-    public function __construct(#[MapFrom('dismissal_restrictions')] public ?Schema\Repos\UpdatePullRequestReviewProtection\Request\ApplicationJson\DismissalRestrictions $dismissalRestrictions, #[MapFrom('dismiss_stale_reviews')] public ?bool $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')] public ?bool $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')] public ?int $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')] public ?bool $requireLastPushApproval, #[MapFrom('bypass_pull_request_allowances')] public ?Schema\Repos\UpdatePullRequestReviewProtection\Request\ApplicationJson\BypassPullRequestAllowances $bypassPullRequestAllowances)
+    public function __construct(#[MapFrom('dismissal_restrictions')]
+    public Schema\Repos\UpdatePullRequestReviewProtection\Request\ApplicationJson\DismissalRestrictions|null $dismissalRestrictions, #[MapFrom('dismiss_stale_reviews')]
+    public bool|null $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')]
+    public bool|null $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')]
+    public int|null $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')]
+    public bool|null $requireLastPushApproval, #[MapFrom('bypass_pull_request_allowances')]
+    public Schema\Repos\UpdatePullRequestReviewProtection\Request\ApplicationJson\BypassPullRequestAllowances|null $bypassPullRequestAllowances,)
     {
     }
 }

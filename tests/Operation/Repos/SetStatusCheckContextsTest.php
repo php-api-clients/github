@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SetStatusCheckContextsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -43,9 +41,7 @@ final class SetStatusCheckContextsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -60,9 +56,7 @@ final class SetStatusCheckContextsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->setStatusCheckContexts('generated', 'generated', 'generated', json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -83,9 +77,7 @@ final class SetStatusCheckContextsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

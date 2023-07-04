@@ -22,9 +22,7 @@ final readonly class RestorePackageVersionForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $packageName, int $packageVersionId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\RestorePackageVersionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $packageVersionId);

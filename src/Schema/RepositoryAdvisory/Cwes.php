@@ -17,7 +17,8 @@ final readonly class Cwes
      * cweId: The Common Weakness Enumeration (CWE) identifier.
      * name: The name of the CWE.
      */
-    public function __construct(#[MapFrom('cwe_id')] public string $cweId, public string $name)
+    public function __construct(#[MapFrom('cwe_id')]
+    public string $cweId, public string $name,)
     {
     }
 }

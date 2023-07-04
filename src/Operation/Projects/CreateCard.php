@@ -25,18 +25,12 @@ final class CreateCard
     public const OPERATION_MATCH = 'POST /projects/columns/{column_id}/cards';
     private const METHOD         = 'POST';
     private const PATH           = '/projects/columns/{column_id}/cards';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the column. **/
     private int $columnId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\ColumnId\Cards $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\ColumnId\Cards $hydrator, int $columnId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\ColumnId\Cards $hydrator, int $columnId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->columnId                = $columnId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->columnId = $columnId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class CreateCard
         return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\ProjectCard|array{code: int}
-     */
+    /** @return Schema\ProjectCard|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectCard|array
     {
         $code          = $response->getStatusCode();

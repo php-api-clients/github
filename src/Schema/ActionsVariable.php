@@ -19,7 +19,9 @@ final readonly class ActionsVariable
      * createdAt: The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * updatedAt: The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      */
-    public function __construct(public string $name, public string $value, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(public string $name, public string $value, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

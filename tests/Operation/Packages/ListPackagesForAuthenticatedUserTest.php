@@ -17,9 +17,7 @@ use function React\Promise\resolve;
 
 final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_empty(): void
     {
         $response = new Response(400, []);
@@ -40,9 +38,7 @@ final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_empty(): void
     {
         $response = new Response(400, []);

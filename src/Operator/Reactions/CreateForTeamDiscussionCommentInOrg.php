@@ -23,9 +23,7 @@ final readonly class CreateForTeamDiscussionCommentInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Reaction>
-     **/
+    /** @return PromiseInterface<Reaction> **/
     public function call(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\CreateForTeamDiscussionCommentInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber, $commentNumber);

@@ -25,7 +25,7 @@ final class GetActionsCacheList
     private const PATH           = '/repos/{owner}/{repo}/actions/caches';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`. **/
     private string $ref;
@@ -39,21 +39,17 @@ final class GetActionsCacheList
     private string $sort;
     /**The direction to sort the results by. **/
     private string $direction;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator, string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator, string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc')
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->ref                     = $ref;
-        $this->key                     = $key;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->ref       = $ref;
+        $this->key       = $key;
+        $this->perPage   = $perPage;
+        $this->page      = $page;
+        $this->sort      = $sort;
+        $this->direction = $direction;
     }
 
     public function createRequest(): RequestInterface

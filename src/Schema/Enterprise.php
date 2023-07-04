@@ -20,7 +20,13 @@ final readonly class Enterprise
      * name: The name of the enterprise.
      * slug: The slug url identifier for the enterprise.
      */
-    public function __construct(public ?string $description, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('website_url')] public ?string $websiteUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, public string $slug, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt, #[MapFrom('avatar_url')] public string $avatarUrl)
+    public function __construct(public string|null $description, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('website_url')]
+    public string|null $websiteUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, public string $slug, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt, #[MapFrom('avatar_url')]
+    public string $avatarUrl,)
     {
     }
 }

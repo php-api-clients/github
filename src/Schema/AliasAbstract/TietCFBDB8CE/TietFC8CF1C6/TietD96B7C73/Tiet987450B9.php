@@ -11,7 +11,7 @@ abstract readonly class Tiet987450B9
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":"generated","to":"generated"}';
 
-    public function __construct(public ?string $from, public ?string $to)
+    public function __construct(public string|null $from, public string|null $to)
     {
     }
 }

@@ -23,15 +23,13 @@ final readonly class GetRelease
     {
     }
 
-    /**
-     * @return PromiseInterface<Release>
-     **/
+    /** @return PromiseInterface<(Release|array)> **/
     public function call(string $owner, string $repo, int $releaseId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetRelease($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId);
         $request   = $operation->createRequest();
 
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release {
+        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release|array {
             return $operation->createResponse($response);
         });
     }

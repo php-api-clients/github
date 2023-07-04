@@ -13,7 +13,10 @@ abstract readonly class TietD2E15261
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"+1":11,"-1":10,"confused":8,"eyes":4,"heart":5,"hooray":6,"laugh":5,"rocket":6,"total_count":11,"url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(#[MapFrom('+1')] public int $plusOne, #[MapFrom('-1')] public int $minOne, public int $confused, public int $eyes, public int $heart, public int $hooray, public int $laugh, public int $rocket, #[MapFrom('total_count')] public int $totalCount, public string $url)
+    public function __construct(#[MapFrom('+1')]
+    public int $plusOne, #[MapFrom('-1')]
+    public int $minOne, public int $confused, public int $eyes, public int $heart, public int $hooray, public int $laugh, public int $rocket, #[MapFrom('total_count')]
+    public int $totalCount, public string $url,)
     {
     }
 }

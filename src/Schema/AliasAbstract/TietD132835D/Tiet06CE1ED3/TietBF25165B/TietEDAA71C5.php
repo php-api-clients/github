@@ -11,7 +11,7 @@ abstract readonly class TietEDAA71C5
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"admin":false,"maintain":false,"pull":false,"push":false,"triage":false}';
 
-    public function __construct(public bool $admin, public ?bool $maintain, public bool $pull, public bool $push, public ?bool $triage)
+    public function __construct(public bool $admin, public bool|null $maintain, public bool $pull, public bool $push, public bool|null $triage)
     {
     }
 }

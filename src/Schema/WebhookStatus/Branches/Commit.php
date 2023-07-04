@@ -11,7 +11,7 @@ final readonly class Commit
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"sha":"generated","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public ?string $sha, public ?string $url)
+    public function __construct(public string|null $sha, public string|null $url)
     {
     }
 }

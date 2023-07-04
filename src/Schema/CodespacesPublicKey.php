@@ -17,7 +17,9 @@ final readonly class CodespacesPublicKey
      * keyId: The identifier for the key.
      * key: The Base64 encoded public key.
      */
-    public function __construct(#[MapFrom('key_id')] public string $keyId, public string $key, public ?int $id, public ?string $url, public ?string $title, #[MapFrom('created_at')] public ?string $createdAt)
+    public function __construct(#[MapFrom('key_id')]
+    public string $keyId, public string $key, public int|null $id, public string|null $url, public string|null $title, #[MapFrom('created_at')]
+    public string|null $createdAt,)
     {
     }
 }

@@ -31,17 +31,13 @@ final class GetPackageVersionForOrganization
     private string $org;
     /**Unique identifier of the package version. **/
     private int $packageVersionId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, string $org, int $packageVersionId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator, string $packageType, string $packageName, string $org, int $packageVersionId)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->org                     = $org;
-        $this->packageVersionId        = $packageVersionId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType      = $packageType;
+        $this->packageName      = $packageName;
+        $this->org              = $org;
+        $this->packageVersionId = $packageVersionId;
     }
 
     public function createRequest(): RequestInterface

@@ -16,7 +16,8 @@ final readonly class SecretScanningLocationIssueTitle
     /**
      * issueTitleUrl: The API URL to get the issue where the secret was detected.
      */
-    public function __construct(#[MapFrom('issue_title_url')] public string $issueTitleUrl)
+    public function __construct(#[MapFrom('issue_title_url')]
+    public string $issueTitleUrl,)
     {
     }
 }

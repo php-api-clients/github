@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Issue::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Issue::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,77 @@ final class CreateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
+    public function call_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(400, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/issues', Argument::type('array'), Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Issues\Create::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
+    public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(400, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/issues', Argument::type('array'), Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
+    public function call_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ScimError::class);
+        $response = new Response(400, ['Content-Type' => 'application/scim+json'], Schema\ScimError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/issues', Argument::type('array'), Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Issues\Create::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
+    public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ScimError::class);
+        $response = new Response(400, ['Content-Type' => 'application/scim+json'], Schema\ScimError::SCHEMA_EXAMPLE_DATA);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('POST', '/repos/generated/generated/issues', Argument::type('array'), Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -79,9 +143,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -96,9 +158,7 @@ final class CreateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -118,9 +178,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -135,9 +193,7 @@ final class CreateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -157,9 +213,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -174,9 +228,7 @@ final class CreateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -196,9 +248,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -213,9 +263,7 @@ final class CreateTest extends AsyncTestCase
         $result = await($client->operations()->issues()->create('generated', 'generated', json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -235,9 +283,7 @@ final class CreateTest extends AsyncTestCase
         })(json_decode(Schema\Issues\Create\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_410_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

@@ -26,19 +26,13 @@ final class GetEvent
     private const PATH           = '/repos/{owner}/{repo}/issues/events/{event_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private int $eventId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Issues\Events\EventId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Issues\Events\EventId $hydrator, string $owner, string $repo, int $eventId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Issues\Events\EventId $hydrator, string $owner, string $repo, private int $eventId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->eventId                 = $eventId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
     }
 
     public function createRequest(): RequestInterface

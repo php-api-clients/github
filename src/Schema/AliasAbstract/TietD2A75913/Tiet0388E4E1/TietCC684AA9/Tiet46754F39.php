@@ -16,7 +16,8 @@ abstract readonly class Tiet46754F39
     /**
      * enableDebugLogging: Whether to enable debug logging for the re-run.
      */
-    public function __construct(#[MapFrom('enable_debug_logging')] public ?bool $enableDebugLogging)
+    public function __construct(#[MapFrom('enable_debug_logging')]
+    public bool|null $enableDebugLogging,)
     {
     }
 }

@@ -13,7 +13,14 @@ final readonly class CheckAnnotation
     public const SCHEMA_DESCRIPTION  = 'Check Annotation';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"README.md","start_line":2,"end_line":2,"start_column":5,"end_column":10,"annotation_level":"warning","title":"Spell Checker","message":"Check your spelling for \'banaas\'.","raw_details":"Do you mean \'bananas\' or \'banana\'?","blob_href":"generated"}';
 
-    public function __construct(public string $path, #[MapFrom('start_line')] public int $startLine, #[MapFrom('end_line')] public int $endLine, #[MapFrom('start_column')] public ?int $startColumn, #[MapFrom('end_column')] public ?int $endColumn, #[MapFrom('annotation_level')] public ?string $annotationLevel, public ?string $title, public ?string $message, #[MapFrom('raw_details')] public ?string $rawDetails, #[MapFrom('blob_href')] public string $blobHref)
+    public function __construct(public string $path, #[MapFrom('start_line')]
+    public int $startLine, #[MapFrom('end_line')]
+    public int $endLine, #[MapFrom('start_column')]
+    public int|null $startColumn, #[MapFrom('end_column')]
+    public int|null $endColumn, #[MapFrom('annotation_level')]
+    public string|null $annotationLevel, public string|null $title, public string|null $message, #[MapFrom('raw_details')]
+    public string|null $rawDetails, #[MapFrom('blob_href')]
+    public string $blobHref,)
     {
     }
 }

@@ -20,7 +20,7 @@ final readonly class Errors
      * message: A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
      * path: The path of the file where the error occured.
      */
-    public function __construct(public int $line, public int $column, public ?string $source, public string $kind, public ?string $suggestion, public string $message, public string $path)
+    public function __construct(public int $line, public int $column, public string|null $source, public string $kind, public string|null $suggestion, public string $message, public string $path)
     {
     }
 }

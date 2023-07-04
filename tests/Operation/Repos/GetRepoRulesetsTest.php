@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetRepoRulesetsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -31,20 +29,20 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetRepoRulesets::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
             $data['repo']             = 'generated';
+            $data['per_page']         = 8;
+            $data['page']             = 4;
             $data['includes_parents'] = false;
 
             return $data;
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -54,14 +52,12 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->getRepoRulesets('generated', 'generated', false));
+        $result = await($client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 4, false));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -71,20 +67,20 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetRepoRulesets::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
             $data['repo']             = 'generated';
+            $data['per_page']         = 8;
+            $data['page']             = 4;
             $data['includes_parents'] = false;
 
             return $data;
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,8 +90,8 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->getRepoRulesets('generated', 'generated', false));
+        $result = await($client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 4, false));
     }
 }

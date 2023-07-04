@@ -23,9 +23,7 @@ final readonly class StopForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Codespace>
-     **/
+    /** @return PromiseInterface<Codespace> **/
     public function call(string $codespaceName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\StopForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

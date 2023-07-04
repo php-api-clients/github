@@ -24,7 +24,9 @@ abstract readonly class Tiet58068E3B
      * reviewComment: Hypermedia Link
      * self: Hypermedia Link
      */
-    public function __construct(public Schema\Link $comments, public Schema\Link $commits, public Schema\Link $statuses, public Schema\Link $html, public Schema\Link $issue, #[MapFrom('review_comments')] public Schema\Link $reviewComments, #[MapFrom('review_comment')] public Schema\Link $reviewComment, public Schema\Link $self)
+    public function __construct(public Schema\Link $comments, public Schema\Link $commits, public Schema\Link $statuses, public Schema\Link $html, public Schema\Link $issue, #[MapFrom('review_comments')]
+    public Schema\Link $reviewComments, #[MapFrom('review_comment')]
+    public Schema\Link $reviewComment, public Schema\Link $self,)
     {
     }
 }

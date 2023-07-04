@@ -23,9 +23,7 @@ final readonly class GetReadmeInDirectory
     {
     }
 
-    /**
-     * @return PromiseInterface<ContentFile>
-     **/
+    /** @return PromiseInterface<ContentFile> **/
     public function call(string $owner, string $repo, string $dir, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetReadmeInDirectory($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $dir, $ref);

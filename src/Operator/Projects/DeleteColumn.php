@@ -22,9 +22,7 @@ final readonly class DeleteColumn
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $columnId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\DeleteColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

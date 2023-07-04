@@ -26,14 +26,10 @@ final class DeleteArchiveForAuthenticatedUser
     private const PATH           = '/user/migrations/{migration_id}/archive';
     /**The unique identifier of the migration. **/
     private int $migrationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\MigrationId\Archive $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId\Archive $hydrator, int $migrationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Migrations\MigrationId\Archive $hydrator, int $migrationId)
     {
-        $this->migrationId             = $migrationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->migrationId = $migrationId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class DeleteArchiveForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{migration_id}'], [$this->migrationId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

@@ -17,7 +17,7 @@ final readonly class Payload
      * issue: Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
      * comment: Comments provide a way for people to collaborate on an issue.
      */
-    public function __construct(public ?string $action, public ?Schema\Issue $issue, public ?Schema\IssueComment $comment, public ?array $pages)
+    public function __construct(public string|null $action, public Schema\Issue|null $issue, public Schema\IssueComment|null $comment, public array|null $pages)
     {
     }
 }

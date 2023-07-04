@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\MarketplacePurchase::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\MarketplacePurchase::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
         $result = await($client->operations()->apps()->getSubscriptionPlanForAccountStubbed(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -76,9 +70,7 @@ final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -93,9 +85,7 @@ final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
         $result = await($client->operations()->apps()->getSubscriptionPlanForAccountStubbed(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -113,9 +103,7 @@ final class GetSubscriptionPlanForAccountStubbedTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

@@ -29,16 +29,12 @@ final class Topics
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Search\Topics $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Search\Topics $hydrator, string $q, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Search\Topics $hydrator, string $q, int $perPage = 30, int $page = 1)
     {
-        $this->q                       = $q;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->q       = $q;
+        $this->perPage = $perPage;
+        $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface
@@ -46,9 +42,7 @@ final class Topics
         return new Request(self::METHOD, str_replace(['{q}', '{per_page}', '{page}'], [$this->q, $this->perPage, $this->page], self::PATH . '?q={q}&per_page={per_page}&page={page}'));
     }
 
-    /**
-     * @return Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array{code: int}
-     */
+    /** @return Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array
     {
         $code          = $response->getStatusCode();

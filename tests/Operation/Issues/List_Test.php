@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class List_Test extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -51,9 +49,7 @@ final class List_Test extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -68,9 +64,7 @@ final class List_Test extends AsyncTestCase
         $result = await($client->operations()->issues()->list('generated', '1970-01-01T00:00:00+00:00', false, false, false, false, 'generated', 'generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -100,9 +94,7 @@ final class List_Test extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -117,9 +109,7 @@ final class List_Test extends AsyncTestCase
         $result = await($client->operations()->issues()->list('generated', '1970-01-01T00:00:00+00:00', false, false, false, false, 'generated', 'generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -148,9 +138,7 @@ final class List_Test extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

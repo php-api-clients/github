@@ -17,7 +17,9 @@ final readonly class Reaction
     /**
      * content: The reaction to use
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public ?Schema\SimpleUser $user, public string $content, #[MapFrom('created_at')] public string $createdAt)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public Schema\SimpleUser|null $user, public string $content, #[MapFrom('created_at')]
+    public string $createdAt,)
     {
     }
 }

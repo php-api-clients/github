@@ -13,7 +13,11 @@ abstract readonly class Tiet0D18AA1D
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"diff_url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","merged_at":"1970-01-01T00:00:00+00:00","patch_url":"https:\\/\\/example.com\\/","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(#[MapFrom('diff_url')] public ?string $diffUrl, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('merged_at')] public ?string $mergedAt, #[MapFrom('patch_url')] public ?string $patchUrl, public ?string $url)
+    public function __construct(#[MapFrom('diff_url')]
+    public string|null $diffUrl, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('merged_at')]
+    public string|null $mergedAt, #[MapFrom('patch_url')]
+    public string|null $patchUrl, public string|null $url,)
     {
     }
 }

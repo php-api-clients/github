@@ -19,7 +19,11 @@ abstract readonly class Tiet51ABC919
      * commitTitle: Title for the merge commit message.
      * mergeMethod: The merge method to use.
      */
-    public function __construct(#[MapFrom('commit_message')] public ?string $commitMessage, #[MapFrom('commit_title')] public string $commitTitle, #[MapFrom('enabled_by')] public ?Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest\AutoMerge\EnabledBy $enabledBy, #[MapFrom('merge_method')] public string $mergeMethod)
+    public function __construct(#[MapFrom('commit_message')]
+    public string|null $commitMessage, #[MapFrom('commit_title')]
+    public string $commitTitle, #[MapFrom('enabled_by')]
+    public Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest\AutoMerge\EnabledBy|null $enabledBy, #[MapFrom('merge_method')]
+    public string $mergeMethod,)
     {
     }
 }

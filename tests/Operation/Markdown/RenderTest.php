@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RenderTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -37,9 +35,7 @@ final class RenderTest extends AsyncTestCase
         })(json_decode(Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

@@ -22,9 +22,7 @@ final readonly class ListForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $username, string $since, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListForUser($this->responseSchemaValidator, $this->hydrator, $username, $since, $perPage, $page);

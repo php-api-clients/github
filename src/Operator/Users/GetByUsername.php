@@ -22,9 +22,7 @@ final readonly class GetByUsername
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetByUsername($this->responseSchemaValidator, $this->hydrator, $username);

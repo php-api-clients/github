@@ -23,9 +23,7 @@ final readonly class DownloadArchiveForOrgStreaming
     {
     }
 
-    /**
-     * @return PromiseInterface<Observable>
-     **/
+    /** @return PromiseInterface<Observable> **/
     public function call(string $org, int $migrationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\DownloadArchiveForOrgStreaming($this->responseSchemaValidator, $this->hydrator, $this->browser, $org, $migrationId);

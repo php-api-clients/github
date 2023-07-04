@@ -23,9 +23,7 @@ final readonly class GetEnvironment
     {
     }
 
-    /**
-     * @return PromiseInterface<Environment>
-     **/
+    /** @return PromiseInterface<Environment> **/
     public function call(string $owner, string $repo, string $environmentName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetEnvironment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);

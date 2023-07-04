@@ -20,9 +20,7 @@ final readonly class ListPendingInvitationsInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListPendingInvitationsInOrg($org, $teamSlug, $perPage, $page);

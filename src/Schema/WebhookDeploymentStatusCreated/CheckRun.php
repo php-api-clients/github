@@ -20,7 +20,14 @@ final readonly class CheckRun
      * name: The name of the check run.
      * status: The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
      */
-    public function __construct(#[MapFrom('completed_at')] public ?string $completedAt, public ?string $conclusion, #[MapFrom('details_url')] public string $detailsUrl, #[MapFrom('external_id')] public string $externalId, #[MapFrom('head_sha')] public string $headSha, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('started_at')] public string $startedAt, public string $status, public string $url)
+    public function __construct(#[MapFrom('completed_at')]
+    public string|null $completedAt, public string|null $conclusion, #[MapFrom('details_url')]
+    public string $detailsUrl, #[MapFrom('external_id')]
+    public string $externalId, #[MapFrom('head_sha')]
+    public string $headSha, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('started_at')]
+    public string $startedAt, public string $status, public string $url,)
     {
     }
 }

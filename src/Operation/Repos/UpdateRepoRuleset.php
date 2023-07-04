@@ -25,24 +25,18 @@ final class UpdateRepoRuleset
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}';
     private const METHOD         = 'PUT';
     private const PATH           = '/repos/{owner}/{repo}/rulesets/{ruleset_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The ID of the ruleset. **/
     private int $rulesetId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->rulesetId               = $rulesetId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->rulesetId = $rulesetId;
     }
 
     public function createRequest(array $data): RequestInterface

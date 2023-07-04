@@ -17,7 +17,8 @@ final readonly class ApplicationJson
      * reviewers: An array of user `login`s that will be requested.
      * teamReviewers: An array of team `slug`s that will be requested.
      */
-    public function __construct(public ?array $reviewers, #[MapFrom('team_reviewers')] public ?array $teamReviewers)
+    public function __construct(public array|null $reviewers, #[MapFrom('team_reviewers')]
+    public array|null $teamReviewers,)
     {
     }
 }

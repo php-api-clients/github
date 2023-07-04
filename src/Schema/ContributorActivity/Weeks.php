@@ -11,7 +11,7 @@ final readonly class Weeks
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"w":1,"a":1,"d":1,"c":1}';
 
-    public function __construct(public ?int $w, public ?int $a, public ?int $d, public ?int $c)
+    public function __construct(public int|null $w, public int|null $a, public int|null $d, public int|null $c)
     {
     }
 }

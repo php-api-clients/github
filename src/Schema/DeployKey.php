@@ -13,7 +13,11 @@ final readonly class DeployKey
     public const SCHEMA_DESCRIPTION  = 'An SSH key granting access to a single repository.';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"key":"generated","url":"generated","title":"generated","verified":false,"created_at":"generated","read_only":false,"added_by":"generated","last_used":"generated"}';
 
-    public function __construct(public int $id, public string $key, public string $url, public string $title, public bool $verified, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('read_only')] public bool $readOnly, #[MapFrom('added_by')] public ?string $addedBy, #[MapFrom('last_used')] public ?string $lastUsed)
+    public function __construct(public int $id, public string $key, public string $url, public string $title, public bool $verified, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('read_only')]
+    public bool $readOnly, #[MapFrom('added_by')]
+    public string|null $addedBy, #[MapFrom('last_used')]
+    public string|null $lastUsed,)
     {
     }
 }

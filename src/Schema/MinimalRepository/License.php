@@ -13,7 +13,9 @@ final readonly class License
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"generated","name":"generated","spdx_id":"generated","url":"generated","node_id":"generated"}';
 
-    public function __construct(public ?string $key, public ?string $name, #[MapFrom('spdx_id')] public ?string $spdxId, public ?string $url, #[MapFrom('node_id')] public ?string $nodeId)
+    public function __construct(public string|null $key, public string|null $name, #[MapFrom('spdx_id')]
+    public string|null $spdxId, public string|null $url, #[MapFrom('node_id')]
+    public string|null $nodeId,)
     {
     }
 }

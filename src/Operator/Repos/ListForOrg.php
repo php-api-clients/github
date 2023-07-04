@@ -20,9 +20,7 @@ final readonly class ListForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org, string $direction, string $type = 'all', string $sort = 'created', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListForOrg($org, $direction, $type, $sort, $perPage, $page);

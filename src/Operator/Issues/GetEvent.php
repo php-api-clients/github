@@ -23,9 +23,7 @@ final readonly class GetEvent
     {
     }
 
-    /**
-     * @return PromiseInterface<IssueEvent>
-     **/
+    /** @return PromiseInterface<IssueEvent> **/
     public function call(string $owner, string $repo, int $eventId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\GetEvent($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $eventId);

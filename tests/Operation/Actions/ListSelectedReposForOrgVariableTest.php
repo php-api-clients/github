@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class ListSelectedReposForOrgVariableTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class ListSelectedReposForOrgVariableTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class ListSelectedReposForOrgVariableTest extends AsyncTestCase
         $result = await($client->operations()->actions()->listSelectedReposForOrgVariable('generated', 'generated', 4, 8));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_empty(): void
     {
         $response = new Response(409, []);
@@ -80,9 +74,7 @@ final class ListSelectedReposForOrgVariableTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_empty(): void
     {
         $response = new Response(409, []);

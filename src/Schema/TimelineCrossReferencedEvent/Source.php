@@ -16,7 +16,7 @@ final readonly class Source
     /**
      * issue: Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
      */
-    public function __construct(public ?string $type, public ?Schema\Issue $issue)
+    public function __construct(public string|null $type, public Schema\Issue|null $issue)
     {
     }
 }

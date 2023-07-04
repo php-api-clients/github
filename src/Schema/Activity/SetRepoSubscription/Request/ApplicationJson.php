@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * subscribed: Determines if notifications should be received from this repository.
      * ignored: Determines if all notifications should be blocked from this repository.
      */
-    public function __construct(public ?bool $subscribed, public ?bool $ignored)
+    public function __construct(public bool|null $subscribed, public bool|null $ignored)
     {
     }
 }

@@ -19,7 +19,8 @@ final readonly class ApplicationJson
      * visibility: The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
      * selectedRepositoryIds: An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
      */
-    public function __construct(public ?string $name, public ?string $value, public ?string $visibility, #[MapFrom('selected_repository_ids')] public ?array $selectedRepositoryIds)
+    public function __construct(public string|null $name, public string|null $value, public string|null $visibility, #[MapFrom('selected_repository_ids')]
+    public array|null $selectedRepositoryIds,)
     {
     }
 }

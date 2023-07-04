@@ -20,7 +20,7 @@ final readonly class Tree
      * content: The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.
      * *Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
      */
-    public function __construct(public ?string $path, public ?string $mode, public ?string $type, public ?string $sha, public ?string $content)
+    public function __construct(public string|null $path, public string|null $mode, public string|null $type, public string|null $sha, public string|null $content)
     {
     }
 }

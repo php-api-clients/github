@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -47,9 +45,7 @@ final class ListForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -64,9 +60,7 @@ final class ListForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->issues()->listForAuthenticatedUser('generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -91,9 +85,7 @@ final class ListForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

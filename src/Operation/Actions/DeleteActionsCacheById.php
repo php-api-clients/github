@@ -19,7 +19,7 @@ final class DeleteActionsCacheById
     private const PATH           = '/repos/{owner}/{repo}/actions/caches/{cache_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the GitHub Actions cache. **/
     private int $cacheId;
@@ -36,9 +36,7 @@ final class DeleteActionsCacheById
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{cache_id}'], [$this->owner, $this->repo, $this->cacheId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

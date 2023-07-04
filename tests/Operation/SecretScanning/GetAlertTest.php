@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetAlertTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\SecretScanningAlert::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GetAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\SecretScanningAlert::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GetAlertTest extends AsyncTestCase
         $result = await($client->operations()->secretScanning()->getAlert('generated', 'generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -80,9 +74,7 @@ final class GetAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -97,9 +89,7 @@ final class GetAlertTest extends AsyncTestCase
         $result = await($client->operations()->secretScanning()->getAlert('generated', 'generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -119,9 +109,7 @@ final class GetAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -137,9 +125,7 @@ final class GetAlertTest extends AsyncTestCase
         self::assertSame(304, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -159,9 +145,7 @@ final class GetAlertTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

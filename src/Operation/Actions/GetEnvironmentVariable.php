@@ -29,16 +29,12 @@ final class GetEnvironmentVariable
     private string $environmentName;
     /**The name of the variable. **/
     private string $name;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator, int $repositoryId, string $environmentName, string $name)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator, int $repositoryId, string $environmentName, string $name)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->name                    = $name;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
+        $this->name            = $name;
     }
 
     public function createRequest(): RequestInterface

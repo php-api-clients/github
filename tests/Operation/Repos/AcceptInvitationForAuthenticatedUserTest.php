@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -40,9 +38,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -57,9 +53,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->repos()->acceptInvitationForAuthenticatedUser(13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -95,9 +87,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->repos()->acceptInvitationForAuthenticatedUser(13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -116,9 +106,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -133,9 +121,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->repos()->acceptInvitationForAuthenticatedUser(13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -153,9 +139,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -171,9 +155,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -191,9 +173,7 @@ final class AcceptInvitationForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

@@ -20,9 +20,7 @@ final readonly class ListReleaseAssets
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, int $releaseId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListReleaseAssets($owner, $repo, $releaseId, $perPage, $page);

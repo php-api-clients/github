@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class TopicsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Search\Topics\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class TopicsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Search\Topics\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class TopicsTest extends AsyncTestCase
         $result = await($client->operations()->search()->topics('generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -78,9 +72,7 @@ final class TopicsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

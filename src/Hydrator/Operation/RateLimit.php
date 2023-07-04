@@ -158,6 +158,26 @@ class RateLimit implements ObjectMapper
 
             after_search:
 
+            $value = $payload['code_search'] ?? null;
+
+            if ($value === null) {
+                $properties['codeSearch'] = null;
+                goto after_codeSearch;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'codeSearch';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['codeSearch'] = $value;
+
+            after_codeSearch:
+
             $value = $payload['source_import'] ?? null;
 
             if ($value === null) {
@@ -572,6 +592,15 @@ class RateLimit implements ObjectMapper
         $search = $object->search;
         $search = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($search);
         after_search:        $result['search'] = $search;
+
+        
+        $codeSearch = $object->codeSearch;
+
+        if ($codeSearch === null) {
+            goto after_codeSearch;
+        }
+        $codeSearch = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($codeSearch);
+        after_codeSearch:        $result['code_search'] = $codeSearch;
 
         
         $sourceImport = $object->sourceImport;

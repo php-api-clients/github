@@ -13,7 +13,7 @@ abstract readonly class TietE59F6EA8
     public const SCHEMA_DESCRIPTION  = 'The changes to the comment.';
     public const SCHEMA_EXAMPLE_DATA = '{"body":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookIssueCommentEdited\Changes\Body $body)
+    public function __construct(public Schema\WebhookIssueCommentEdited\Changes\Body|null $body)
     {
     }
 }

@@ -26,20 +26,16 @@ final class DeleteRepoRuleset
     private const PATH           = '/repos/{owner}/{repo}/rulesets/{ruleset_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The ID of the ruleset. **/
     private int $rulesetId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator, string $owner, string $repo, int $rulesetId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->rulesetId               = $rulesetId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->rulesetId = $rulesetId;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class DeleteRepoRuleset
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ruleset_id}'], [$this->owner, $this->repo, $this->rulesetId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

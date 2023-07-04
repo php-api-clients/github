@@ -23,9 +23,7 @@ final readonly class GetAdminBranchProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<ProtectedBranchAdminEnforced>
-     **/
+    /** @return PromiseInterface<ProtectedBranchAdminEnforced> **/
     public function call(string $owner, string $repo, string $branch): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAdminBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

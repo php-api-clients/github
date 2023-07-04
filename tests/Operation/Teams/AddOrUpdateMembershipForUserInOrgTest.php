@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamMembership::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamMembership::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateMembershipForUserInOrg('generated', 'generated', 'generated', json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_empty(): void
     {
         $response = new Response(403, []);
@@ -79,9 +73,7 @@ final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_empty(): void
     {
         $response = new Response(403, []);
@@ -97,9 +89,7 @@ final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
         self::assertSame(403, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);
@@ -119,9 +109,7 @@ final class AddOrUpdateMembershipForUserInOrgTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);

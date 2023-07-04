@@ -36,19 +36,15 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
     private int $perPage;
     /**The state of the package, either active or deleted. **/
     private string $state;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions $hydrator, string $packageType, string $packageName, string $org, int $page = 1, int $perPage = 30, string $state = 'active')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions $hydrator, string $packageType, string $packageName, string $org, int $page = 1, int $perPage = 30, string $state = 'active')
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->org                     = $org;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->state                   = $state;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
+        $this->org         = $org;
+        $this->page        = $page;
+        $this->perPage     = $perPage;
+        $this->state       = $state;
     }
 
     public function createRequest(): RequestInterface

@@ -26,14 +26,10 @@ final class DeleteSshSigningKeyForAuthenticatedUser
     private const PATH           = '/user/ssh_signing_keys/{ssh_signing_key_id}';
     /**The unique identifier of the SSH signing key. **/
     private int $sshSigningKeyId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator, int $sshSigningKeyId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator, int $sshSigningKeyId)
     {
-        $this->sshSigningKeyId         = $sshSigningKeyId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->sshSigningKeyId = $sshSigningKeyId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class DeleteSshSigningKeyForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{ssh_signing_key_id}'], [$this->sshSigningKeyId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

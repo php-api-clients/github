@@ -14,7 +14,7 @@ final readonly class RequestedAction
     /**
      * identifier: The integrator reference of the action requested by the user.
      */
-    public function __construct(public ?string $identifier)
+    public function __construct(public string|null $identifier)
     {
     }
 }

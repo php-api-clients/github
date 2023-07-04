@@ -26,14 +26,10 @@ final class SuspendInstallation
     private const PATH           = '/app/installations/{installation_id}/suspended';
     /**The unique identifier of the installation. **/
     private int $installationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Installations\InstallationId\Suspended $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Installations\InstallationId\Suspended $hydrator, int $installationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App\Installations\InstallationId\Suspended $hydrator, int $installationId)
     {
-        $this->installationId          = $installationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->installationId = $installationId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class SuspendInstallation
         return new Request(self::METHOD, str_replace(['{installation_id}'], [$this->installationId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

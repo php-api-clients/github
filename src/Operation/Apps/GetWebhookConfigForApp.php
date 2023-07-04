@@ -23,13 +23,9 @@ final class GetWebhookConfigForApp
     public const OPERATION_MATCH = 'GET /app/hook/config';
     private const METHOD         = 'GET';
     private const PATH           = '/app/hook/config';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\App\Hook\Config $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\App\Hook\Config $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\App\Hook\Config $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

@@ -18,7 +18,9 @@ final readonly class Changes
      * newDiscussion: A Discussion in a repository.
      * newRepository: A repository on GitHub.
      */
-    public function __construct(#[MapFrom('new_discussion')] public Schema\Discussion $newDiscussion, #[MapFrom('new_repository')] public Schema\Repository $newRepository)
+    public function __construct(#[MapFrom('new_discussion')]
+    public Schema\Discussion $newDiscussion, #[MapFrom('new_repository')]
+    public Schema\Repository $newRepository,)
     {
     }
 }

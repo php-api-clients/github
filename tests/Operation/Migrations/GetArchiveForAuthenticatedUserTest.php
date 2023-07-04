@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -40,9 +38,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -57,9 +53,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->migrations()->getArchiveForAuthenticatedUser(12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -95,9 +87,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->migrations()->getArchiveForAuthenticatedUser(12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_302_empty(): void
     {
         $response = new Response(302, []);
@@ -115,9 +105,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_302_empty(): void
     {
         $response = new Response(302, []);
@@ -133,9 +121,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         self::assertSame(302, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -153,9 +139,7 @@ final class GetArchiveForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

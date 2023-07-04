@@ -23,9 +23,7 @@ final readonly class SetMembershipForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<OrgMembership>
-     **/
+    /** @return PromiseInterface<OrgMembership> **/
     public function call(string $org, string $username, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\SetMembershipForUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $username);

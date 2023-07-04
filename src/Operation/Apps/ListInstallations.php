@@ -18,18 +18,16 @@ final class ListInstallations
     private const PATH           = '/app/installations';
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
-    private string $outdated;
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(string $since, string $outdated, int $perPage = 30, int $page = 1)
+    public function __construct(string $since, private string $outdated, int $perPage = 30, int $page = 1)
     {
-        $this->since    = $since;
-        $this->outdated = $outdated;
-        $this->perPage  = $perPage;
-        $this->page     = $page;
+        $this->since   = $since;
+        $this->perPage = $perPage;
+        $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface

@@ -23,9 +23,7 @@ final readonly class ListRequestedReviewers
     {
     }
 
-    /**
-     * @return PromiseInterface<PullRequestReviewRequest>
-     **/
+    /** @return PromiseInterface<PullRequestReviewRequest> **/
     public function call(string $owner, string $repo, int $pullNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\ListRequestedReviewers($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

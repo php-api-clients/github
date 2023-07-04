@@ -13,7 +13,8 @@ abstract readonly class Tiet1D00D525
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated","html_url":"generated","sha":"generated"}';
 
-    public function __construct(public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl, public ?string $sha)
+    public function __construct(public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl, public string|null $sha,)
     {
     }
 }

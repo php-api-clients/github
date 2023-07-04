@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetWebhookDeliveryTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\HookDelivery::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\HookDelivery::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getWebhookDelivery('generated', 7, 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -80,9 +74,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -97,9 +89,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getWebhookDelivery('generated', 7, 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -120,9 +110,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
@@ -137,9 +125,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getWebhookDelivery('generated', 7, 11));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -160,9 +146,7 @@ final class GetWebhookDeliveryTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

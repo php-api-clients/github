@@ -23,13 +23,9 @@ final class Root
     public const OPERATION_MATCH = 'GET /';
     private const METHOD         = 'GET';
     private const PATH           = '/';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Root $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Root $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Root $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

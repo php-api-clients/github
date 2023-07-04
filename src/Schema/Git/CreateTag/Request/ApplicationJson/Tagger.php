@@ -16,7 +16,7 @@ final readonly class Tagger
      * email: The email of the author of the tag
      * date: When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(public string $name, public string $email, public ?string $date)
+    public function __construct(public string $name, public string $email, public string|null $date)
     {
     }
 }

@@ -23,9 +23,7 @@ final readonly class GetRepoSubscription
     {
     }
 
-    /**
-     * @return PromiseInterface<(RepositorySubscription|array)>
-     **/
+    /** @return PromiseInterface<(RepositorySubscription|array)> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetRepoSubscription($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

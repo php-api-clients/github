@@ -15,7 +15,9 @@ final readonly class NugetMetadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":null,"name":"generated","value":null}';
 
-    public function __construct(#[Id] public null|string|Schema\WebhookRegistryPackagePublished\RegistryPackage\PackageVersion\NugetMetadata\Id\One|int $id, public ?string $name, #[Value] public null|bool|string|int|Schema\WebhookRegistryPackagePublished\RegistryPackage\PackageVersion\NugetMetadata\Value\Three $value)
+    public function __construct(#[Id]
+    public string|Schema\WebhookRegistryPackagePublished\RegistryPackage\PackageVersion\NugetMetadata\Id\One|int|null $id, public string|null $name, #[Value]
+    public bool|string|int|Schema\WebhookRegistryPackagePublished\RegistryPackage\PackageVersion\NugetMetadata\Value\Three|null $value,)
     {
     }
 }

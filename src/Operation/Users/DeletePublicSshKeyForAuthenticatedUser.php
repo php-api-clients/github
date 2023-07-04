@@ -26,14 +26,10 @@ final class DeletePublicSshKeyForAuthenticatedUser
     private const PATH           = '/user/keys/{key_id}';
     /**The unique identifier of the key. **/
     private int $keyId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Keys\KeyId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Keys\KeyId $hydrator, int $keyId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Keys\KeyId $hydrator, int $keyId)
     {
-        $this->keyId                   = $keyId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->keyId = $keyId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class DeletePublicSshKeyForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{key_id}'], [$this->keyId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

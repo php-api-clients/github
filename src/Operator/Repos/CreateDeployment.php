@@ -24,9 +24,7 @@ final readonly class CreateDeployment
     {
     }
 
-    /**
-     * @return PromiseInterface<(Deployment|Json|array)>
-     **/
+    /** @return PromiseInterface<(Deployment|Json|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

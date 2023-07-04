@@ -17,7 +17,8 @@ abstract readonly class TietE8583A84
      * context: The name of the required check
      * appId: The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
      */
-    public function __construct(public string $context, #[MapFrom('app_id')] public ?int $appId)
+    public function __construct(public string $context, #[MapFrom('app_id')]
+    public int|null $appId,)
     {
     }
 }

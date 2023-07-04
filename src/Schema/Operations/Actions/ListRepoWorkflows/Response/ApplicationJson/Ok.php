@@ -13,7 +13,8 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"workflows":[{"id":5,"node_id":"MDg6V29ya2Zsb3cxMg==","name":"CI","path":"ruby.yaml","state":"active","created_at":"2019-12-06T14:20:20.000Z","updated_at":"2019-12-06T14:20:20.000Z","url":"https:\\/\\/api.github.com\\/repos\\/actions\\/setup-ruby\\/workflows\\/5","html_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/blob\\/master\\/.github\\/workflows\\/ruby.yaml","badge_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/workflows\\/CI\\/badge.svg","deleted_at":"2019-12-06T14:20:20.000Z"},{"id":5,"node_id":"MDg6V29ya2Zsb3cxMg==","name":"CI","path":"ruby.yaml","state":"active","created_at":"2019-12-06T14:20:20.000Z","updated_at":"2019-12-06T14:20:20.000Z","url":"https:\\/\\/api.github.com\\/repos\\/actions\\/setup-ruby\\/workflows\\/5","html_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/blob\\/master\\/.github\\/workflows\\/ruby.yaml","badge_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/workflows\\/CI\\/badge.svg","deleted_at":"2019-12-06T14:20:20.000Z"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $workflows)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $workflows,)
     {
     }
 }

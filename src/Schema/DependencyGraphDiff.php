@@ -16,7 +16,10 @@ final readonly class DependencyGraphDiff
     /**
      * scope: Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
      */
-    public function __construct(#[MapFrom('change_type')] public string $changeType, public string $manifest, public string $ecosystem, public string $name, public string $version, #[MapFrom('package_url')] public ?string $packageUrl, public ?string $license, #[MapFrom('source_repository_url')] public ?string $sourceRepositoryUrl, public array $vulnerabilities, public string $scope)
+    public function __construct(#[MapFrom('change_type')]
+    public string $changeType, public string $manifest, public string $ecosystem, public string $name, public string $version, #[MapFrom('package_url')]
+    public string|null $packageUrl, public string|null $license, #[MapFrom('source_repository_url')]
+    public string|null $sourceRepositoryUrl, public array $vulnerabilities, public string $scope,)
     {
     }
 }

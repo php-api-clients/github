@@ -11,7 +11,7 @@ final readonly class Matches
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"text":"generated","indices":[8,9]}';
 
-    public function __construct(public ?string $text, public ?array $indices)
+    public function __construct(public string|null $text, public array|null $indices)
     {
     }
 }

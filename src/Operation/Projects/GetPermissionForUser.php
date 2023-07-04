@@ -28,15 +28,11 @@ final class GetPermissionForUser
     private int $projectId;
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\ProjectId\Collaborators\Username\Permission $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\ProjectId\Collaborators\Username\Permission $hydrator, int $projectId, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\ProjectId\Collaborators\Username\Permission $hydrator, int $projectId, string $username)
     {
-        $this->projectId               = $projectId;
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->projectId = $projectId;
+        $this->username  = $username;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class GetPermissionForUser
         return new Request(self::METHOD, str_replace(['{project_id}', '{username}'], [$this->projectId, $this->username], self::PATH));
     }
 
-    /**
-     * @return Schema\ProjectCollaboratorPermission|array{code: int}
-     */
+    /** @return Schema\ProjectCollaboratorPermission|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectCollaboratorPermission|array
     {
         $code          = $response->getStatusCode();

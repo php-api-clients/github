@@ -18,7 +18,7 @@ final readonly class ApplicationJson
      * labels: Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
      * assignees: Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
      */
-    public function __construct(public string|int $title, public ?string $body, public ?string $assignee, public null|string|int $milestone, public ?array $labels, public ?array $assignees)
+    public function __construct(public string|int $title, public string|null $body, public string|null $assignee, public string|int|null $milestone, public array|null $labels, public array|null $assignees)
     {
     }
 }

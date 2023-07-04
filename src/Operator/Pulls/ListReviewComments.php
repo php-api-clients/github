@@ -20,9 +20,7 @@ final readonly class ListReviewComments
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, int $pullNumber, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\ListReviewComments($owner, $repo, $pullNumber, $direction, $since, $sort, $perPage, $page);

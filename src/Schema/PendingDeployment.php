@@ -20,7 +20,10 @@ final readonly class PendingDeployment
      * currentUserCanApprove: Whether the currently authenticated user can approve the deployment
      * reviewers: The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      */
-    public function __construct(public Schema\PendingDeployment\Environment $environment, #[MapFrom('wait_timer')] public int $waitTimer, #[MapFrom('wait_timer_started_at')] public ?string $waitTimerStartedAt, #[MapFrom('current_user_can_approve')] public bool $currentUserCanApprove, public array $reviewers)
+    public function __construct(public Schema\PendingDeployment\Environment $environment, #[MapFrom('wait_timer')]
+    public int $waitTimer, #[MapFrom('wait_timer_started_at')]
+    public string|null $waitTimerStartedAt, #[MapFrom('current_user_can_approve')]
+    public bool $currentUserCanApprove, public array $reviewers,)
     {
     }
 }

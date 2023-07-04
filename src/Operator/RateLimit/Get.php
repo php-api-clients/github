@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(RateLimitOverview|array)>
-     **/
+    /** @return PromiseInterface<(RateLimitOverview|array)> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\RateLimit\Get($this->responseSchemaValidator, $this->hydrator);

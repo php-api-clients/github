@@ -26,20 +26,16 @@ final class DeleteTagProtection
     private const PATH           = '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the tag protection. **/
     private int $tagProtectionId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Tags\Protection\TagProtectionId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Tags\Protection\TagProtectionId $hydrator, string $owner, string $repo, int $tagProtectionId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Tags\Protection\TagProtectionId $hydrator, string $owner, string $repo, int $tagProtectionId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->tagProtectionId         = $tagProtectionId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner           = $owner;
+        $this->repo            = $repo;
+        $this->tagProtectionId = $tagProtectionId;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class DeleteTagProtection
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{tag_protection_id}'], [$this->owner, $this->repo, $this->tagProtectionId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

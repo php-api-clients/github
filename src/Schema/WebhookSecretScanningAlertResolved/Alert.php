@@ -32,7 +32,19 @@ final readonly class Alert
      * updatedAt: The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * url: The REST API URL of the alert resource.
      */
-    public function __construct(#[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('locations_url')] public ?string $locationsUrl, public ?int $number, #[MapFrom('push_protection_bypassed')] public ?bool $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_at')] public ?string $pushProtectionBypassedAt, #[MapFrom('push_protection_bypassed_by')] public ?Schema\SimpleUser $pushProtectionBypassedBy, public ?string $resolution, #[MapFrom('resolved_at')] public ?string $resolvedAt, #[MapFrom('resolved_by')] public ?Schema\SimpleUser $resolvedBy, #[MapFrom('resolution_comment')] public ?string $resolutionComment, public ?string $secret, #[MapFrom('secret_type')] public ?string $secretType, #[MapFrom('secret_type_display_name')] public ?string $secretTypeDisplayName, public ?string $state, #[MapFrom('updated_at')] public ?string $updatedAt, public ?string $url)
+    public function __construct(#[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('locations_url')]
+    public string|null $locationsUrl, public int|null $number, #[MapFrom('push_protection_bypassed')]
+    public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_at')]
+    public string|null $pushProtectionBypassedAt, #[MapFrom('push_protection_bypassed_by')]
+    public Schema\SimpleUser|null $pushProtectionBypassedBy, public string|null $resolution, #[MapFrom('resolved_at')]
+    public string|null $resolvedAt, #[MapFrom('resolved_by')]
+    public Schema\SimpleUser|null $resolvedBy, #[MapFrom('resolution_comment')]
+    public string|null $resolutionComment, public string|null $secret, #[MapFrom('secret_type')]
+    public string|null $secretType, #[MapFrom('secret_type_display_name')]
+    public string|null $secretTypeDisplayName, public string|null $state, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public string|null $url,)
     {
     }
 }

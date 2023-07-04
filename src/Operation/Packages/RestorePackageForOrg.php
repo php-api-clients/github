@@ -32,17 +32,13 @@ final class RestorePackageForOrg
     private string $org;
     /**package token **/
     private string $token;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Restore $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Restore $hydrator, string $packageType, string $packageName, string $org, string $token)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Restore $hydrator, string $packageType, string $packageName, string $org, string $token)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->org                     = $org;
-        $this->token                   = $token;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
+        $this->org         = $org;
+        $this->token       = $token;
     }
 
     public function createRequest(): RequestInterface
@@ -50,9 +46,7 @@ final class RestorePackageForOrg
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{org}', '{token}'], [$this->packageType, $this->packageName, $this->org, $this->token], self::PATH . '?token={token}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

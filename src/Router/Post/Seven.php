@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Seven
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -71,7 +61,15 @@ final class Seven
                     if ($pathChunks[3] === '{repo}') {
                         if ($pathChunks[4] === 'actions') {
                             if ($pathChunks[5] === 'runners') {
-                                if ($pathChunks[6] === 'registration-token') {
+                                if ($pathChunks[6] === 'generate-jitconfig') {
+                                    if ($call === 'POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig') {
+                                        if (array_key_exists(Router\Post\Actions::class, $this->router) === false) {
+                                            $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                        }
+
+                                        return $this->router[Router\Post\Actions::class]->generateRunnerJitconfigForRepo($params);
+                                    }
+                                } elseif ($pathChunks[6] === 'registration-token') {
                                     if ($call === 'POST /repos/{owner}/{repo}/actions/runners/registration-token') {
                                         if (array_key_exists(Router\Post\Actions::class, $this->router) === false) {
                                             $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);

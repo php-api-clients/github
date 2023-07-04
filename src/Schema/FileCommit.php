@@ -13,7 +13,7 @@ final readonly class FileCommit
     public const SCHEMA_DESCRIPTION  = 'File Commit';
     public const SCHEMA_EXAMPLE_DATA = '{"content":{"name":"generated","path":"generated","sha":"generated","size":4,"url":"generated","html_url":"generated","git_url":"generated","download_url":"generated","type":"generated","_links":{"self":"generated","git":"generated","html":"generated"}},"commit":{"sha":"generated","node_id":"generated","url":"generated","html_url":"generated","author":{"date":"generated","name":"generated","email":"generated"},"committer":{"date":"generated","name":"generated","email":"generated"},"message":"generated","tree":{"url":"generated","sha":"generated"},"parents":[{"url":"generated","html_url":"generated","sha":"generated"},{"url":"generated","html_url":"generated","sha":"generated"}],"verification":{"verified":false,"reason":"generated","signature":"generated","payload":"generated"}}}';
 
-    public function __construct(public ?Schema\FileCommit\Content $content, public Schema\FileCommit\Commit $commit)
+    public function __construct(public Schema\FileCommit\Content|null $content, public Schema\FileCommit\Commit $commit)
     {
     }
 }

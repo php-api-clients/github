@@ -27,15 +27,11 @@ final class GetEnvironmentPublicKey
     private int $repositoryId;
     /**The name of the environment. **/
     private string $environmentName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\PublicKey $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\PublicKey $hydrator, int $repositoryId, string $environmentName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\PublicKey $hydrator, int $repositoryId, string $environmentName)
     {
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
     }
 
     public function createRequest(): RequestInterface

@@ -19,7 +19,13 @@ abstract readonly class Tiet80E5E205
      * name: Name of the project
      * state: State of the project; either 'open' or 'closed'
      */
-    public function __construct(public ?string $body, #[MapFrom('columns_url')] public string $columnsUrl, #[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookProjectClosed\Project\Creator $creator, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('owner_url')] public string $ownerUrl, public string $state, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(public string|null $body, #[MapFrom('columns_url')]
+    public string $columnsUrl, #[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookProjectClosed\Project\Creator|null $creator, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('owner_url')]
+    public string $ownerUrl, public string $state, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

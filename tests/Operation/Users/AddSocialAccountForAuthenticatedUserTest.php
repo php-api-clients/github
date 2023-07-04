@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -39,9 +37,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -56,9 +52,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->addSocialAccountForAuthenticatedUser(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -75,9 +69,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -92,9 +84,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->addSocialAccountForAuthenticatedUser(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -111,9 +101,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -128,9 +116,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->addSocialAccountForAuthenticatedUser(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -147,9 +133,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -164,9 +148,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->addSocialAccountForAuthenticatedUser(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -182,9 +164,7 @@ final class AddSocialAccountForAuthenticatedUserTest extends AsyncTestCase
         })(json_decode(Schema\Users\AddSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

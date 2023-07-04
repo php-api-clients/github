@@ -20,9 +20,7 @@ final readonly class DeleteForRelease
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $releaseId, int $reactionId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\DeleteForRelease($owner, $repo, $releaseId, $reactionId);

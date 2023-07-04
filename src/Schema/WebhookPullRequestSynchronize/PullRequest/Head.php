@@ -16,7 +16,7 @@ final readonly class Head
     /**
      * repo: A git repository
      */
-    public function __construct(public string $label, public string $ref, public Schema\WebhookPullRequestSynchronize\PullRequest\Head\Repo $repo, public string $sha, public ?Schema\WebhookPullRequestSynchronize\PullRequest\Head\User $user)
+    public function __construct(public string $label, public string $ref, public Schema\WebhookPullRequestSynchronize\PullRequest\Head\Repo $repo, public string $sha, public Schema\WebhookPullRequestSynchronize\PullRequest\Head\User|null $user)
     {
     }
 }

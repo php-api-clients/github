@@ -18,7 +18,10 @@ final readonly class ApplicationJson
      * keyId: ID of the key you used to encrypt the secret.
      * selectedRepositoryIds: An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret) endpoints.
      */
-    public function __construct(#[MapFrom('encrypted_value')] public ?string $encryptedValue, #[MapFrom('key_id')] public string $keyId, #[MapFrom('selected_repository_ids')] public ?array $selectedRepositoryIds)
+    public function __construct(#[MapFrom('encrypted_value')]
+    public string|null $encryptedValue, #[MapFrom('key_id')]
+    public string $keyId, #[MapFrom('selected_repository_ids')]
+    public array|null $selectedRepositoryIds,)
     {
     }
 }

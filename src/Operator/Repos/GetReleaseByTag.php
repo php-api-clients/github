@@ -23,9 +23,7 @@ final readonly class GetReleaseByTag
     {
     }
 
-    /**
-     * @return PromiseInterface<Release>
-     **/
+    /** @return PromiseInterface<Release> **/
     public function call(string $owner, string $repo, string $tag): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetReleaseByTag($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tag);

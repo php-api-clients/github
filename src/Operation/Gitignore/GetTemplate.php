@@ -23,15 +23,9 @@ final class GetTemplate
     public const OPERATION_MATCH = 'GET /gitignore/templates/{name}';
     private const METHOD         = 'GET';
     private const PATH           = '/gitignore/templates/{name}';
-    private string $name;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gitignore\Templates\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gitignore\Templates\Name $hydrator, string $name)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gitignore\Templates\Name $hydrator, private string $name)
     {
-        $this->name                    = $name;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -39,9 +33,7 @@ final class GetTemplate
         return new Request(self::METHOD, str_replace(['{name}'], [$this->name], self::PATH));
     }
 
-    /**
-     * @return Schema\GitignoreTemplate|array{code: int}
-     */
+    /** @return Schema\GitignoreTemplate|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GitignoreTemplate|array
     {
         $code          = $response->getStatusCode();

@@ -23,9 +23,7 @@ final readonly class GetImportStatus
     {
     }
 
-    /**
-     * @return PromiseInterface<Import>
-     **/
+    /** @return PromiseInterface<Import> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetImportStatus($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

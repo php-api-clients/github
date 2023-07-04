@@ -26,14 +26,10 @@ final class GetGpgKeyForAuthenticatedUser
     private const PATH           = '/user/gpg_keys/{gpg_key_id}';
     /**The unique identifier of the GPG key. **/
     private int $gpgKeyId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\GpgKeys\GpgKeyId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\GpgKeys\GpgKeyId $hydrator, int $gpgKeyId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\GpgKeys\GpgKeyId $hydrator, int $gpgKeyId)
     {
-        $this->gpgKeyId                = $gpgKeyId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gpgKeyId = $gpgKeyId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class GetGpgKeyForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{gpg_key_id}'], [$this->gpgKeyId], self::PATH));
     }
 
-    /**
-     * @return Schema\GpgKey|array{code: int}
-     */
+    /** @return Schema\GpgKey|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\GpgKey|array
     {
         $code          = $response->getStatusCode();

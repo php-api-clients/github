@@ -42,9 +42,7 @@ final class ListPackagesForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{package_type}', '{visibility}', '{page}', '{per_page}'], [$this->packageType, $this->visibility, $this->page, $this->perPage], self::PATH . '?package_type={package_type}&visibility={visibility}&page={page}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

@@ -23,9 +23,7 @@ final readonly class DeleteFromOrganization
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(string $org, string $username, string $codespaceName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteFromOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

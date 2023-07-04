@@ -26,7 +26,7 @@ final class ListRecentAnalyses
     private const PATH           = '/repos/{owner}/{repo}/code-scanning/analyses';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both. **/
     private string $toolName;
@@ -44,23 +44,19 @@ final class ListRecentAnalyses
     private string $direction;
     /**The property by which to sort the results. **/
     private string $sort;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Analyses $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Analyses $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Analyses $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->toolName                = $toolName;
-        $this->toolGuid                = $toolGuid;
-        $this->ref                     = $ref;
-        $this->sarifId                 = $sarifId;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->direction               = $direction;
-        $this->sort                    = $sort;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->toolName  = $toolName;
+        $this->toolGuid  = $toolGuid;
+        $this->ref       = $ref;
+        $this->sarifId   = $sarifId;
+        $this->page      = $page;
+        $this->perPage   = $perPage;
+        $this->direction = $direction;
+        $this->sort      = $sort;
     }
 
     public function createRequest(): RequestInterface

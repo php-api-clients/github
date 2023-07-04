@@ -20,7 +20,15 @@ final readonly class ReviewRequestRemovedIssueEvent
      * requestedTeam: Groups of organization members that gives permissions on specified repositories.
      * requestedReviewer: A GitHub user.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, #[MapFrom('review_requester')] public Schema\SimpleUser $reviewRequester, #[MapFrom('requested_team')] public ?Schema\Team $requestedTeam, #[MapFrom('requested_reviewer')] public ?Schema\SimpleUser $requestedReviewer)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')]
+    public string|null $commitId, #[MapFrom('commit_url')]
+    public string|null $commitUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, #[MapFrom('review_requester')]
+    public Schema\SimpleUser $reviewRequester, #[MapFrom('requested_team')]
+    public Schema\Team|null $requestedTeam, #[MapFrom('requested_reviewer')]
+    public Schema\SimpleUser|null $requestedReviewer,)
     {
     }
 }

@@ -16,7 +16,8 @@ final readonly class OidcCustomSub
     /**
      * includeClaimKeys: Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
      */
-    public function __construct(#[MapFrom('include_claim_keys')] public array $includeClaimKeys)
+    public function __construct(#[MapFrom('include_claim_keys')]
+    public array $includeClaimKeys,)
     {
     }
 }

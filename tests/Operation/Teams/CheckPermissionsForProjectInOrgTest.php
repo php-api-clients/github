@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class CheckPermissionsForProjectInOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamProject::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CheckPermissionsForProjectInOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamProject::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class CheckPermissionsForProjectInOrgTest extends AsyncTestCase
         $result = await($client->operations()->teams()->checkPermissionsForProjectInOrg('generated', 'generated', 10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -78,9 +72,7 @@ final class CheckPermissionsForProjectInOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

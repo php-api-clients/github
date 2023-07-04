@@ -18,7 +18,9 @@ final readonly class RepositoriesRemoved
      * name: The name of the repository.
      * private: Whether the repository is private or public.
      */
-    public function __construct(#[MapFrom('full_name')] public ?string $fullName, public ?int $id, public ?string $name, #[MapFrom('node_id')] public ?string $nodeId, public ?bool $private)
+    public function __construct(#[MapFrom('full_name')]
+    public string|null $fullName, public int|null $id, public string|null $name, #[MapFrom('node_id')]
+    public string|null $nodeId, public bool|null $private,)
     {
     }
 }

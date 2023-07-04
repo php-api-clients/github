@@ -16,7 +16,8 @@ abstract readonly class Tiet5DF48315
     /**
      * sha: SHA for the commit
      */
-    public function __construct(public string $sha, public string $url, #[MapFrom('html_url')] public string $htmlUrl)
+    public function __construct(public string $sha, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl,)
     {
     }
 }

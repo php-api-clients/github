@@ -13,7 +13,8 @@ abstract readonly class TietBF973B47
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"variables":[{"name":"USERNAME","value":"octocat","created_at":"2019-01-24T22:45:36.000Z","updated_at":"2019-01-24T22:45:36.000Z"},{"name":"USERNAME","value":"octocat","created_at":"2019-01-24T22:45:36.000Z","updated_at":"2019-01-24T22:45:36.000Z"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $variables)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $variables,)
     {
     }
 }

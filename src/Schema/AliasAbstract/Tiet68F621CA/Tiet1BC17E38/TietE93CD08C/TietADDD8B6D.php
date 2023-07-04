@@ -19,7 +19,9 @@ abstract readonly class TietADDD8B6D
      * id: A unique identifier for the rule used to detect the alert.
      * severity: The severity of the alert.
      */
-    public function __construct(public string $description, #[MapFrom('full_description')] public ?string $fullDescription, public ?string $help, #[MapFrom('help_uri')] public ?string $helpUri, public string $id, public ?string $name, public ?string $severity, public ?array $tags)
+    public function __construct(public string $description, #[MapFrom('full_description')]
+    public string|null $fullDescription, public string|null $help, #[MapFrom('help_uri')]
+    public string|null $helpUri, public string $id, public string|null $name, public string|null $severity, public array|null $tags,)
     {
     }
 }

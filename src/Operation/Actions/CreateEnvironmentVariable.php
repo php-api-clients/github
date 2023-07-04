@@ -24,21 +24,15 @@ final class CreateEnvironmentVariable
     public const OPERATION_MATCH = 'POST /repositories/{repository_id}/environments/{environment_name}/variables';
     private const METHOD         = 'POST';
     private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
     private string $environmentName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->repositoryId            = $repositoryId;
-        $this->environmentName         = $environmentName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->repositoryId    = $repositoryId;
+        $this->environmentName = $environmentName;
     }
 
     public function createRequest(array $data): RequestInterface

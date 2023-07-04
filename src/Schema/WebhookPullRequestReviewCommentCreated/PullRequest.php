@@ -19,7 +19,28 @@ final readonly class PullRequest
      * autoMerge: The status of auto merging a pull request.
      * milestone: A collection of related issues and pull requests.
      */
-    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Links $links, #[MapFrom('active_lock_reason')] public ?string $activeLockReason, public ?Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Assignee $assignee, public array $assignees, #[MapFrom('author_association')] public string $authorAssociation, #[MapFrom('auto_merge')] public ?Schema\WebhookPullRequestReviewCommentCreated\PullRequest\AutoMerge $autoMerge, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Base $base, public ?string $body, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('commits_url')] public string $commitsUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('diff_url')] public string $diffUrl, public ?bool $draft, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Head $head, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('issue_url')] public string $issueUrl, public array $labels, public bool $locked, #[MapFrom('merge_commit_sha')] public ?string $mergeCommitSha, #[MapFrom('merged_at')] public ?string $mergedAt, public ?Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Milestone $milestone, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('patch_url')] public string $patchUrl, #[MapFrom('requested_reviewers')] public array $requestedReviewers, #[MapFrom('requested_teams')] public array $requestedTeams, #[MapFrom('review_comment_url')] public string $reviewCommentUrl, #[MapFrom('review_comments_url')] public string $reviewCommentsUrl, public string $state, #[MapFrom('statuses_url')] public string $statusesUrl, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookPullRequestReviewCommentCreated\PullRequest\User $user)
+    public function __construct(#[MapFrom('_links')]
+    public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Links $links, #[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
+    public string $authorAssociation, #[MapFrom('auto_merge')]
+    public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\AutoMerge|null $autoMerge, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Base $base, public string|null $body, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('commits_url')]
+    public string $commitsUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('diff_url')]
+    public string $diffUrl, public bool|null $draft, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Head $head, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('issue_url')]
+    public string $issueUrl, public array $labels, public bool $locked, #[MapFrom('merge_commit_sha')]
+    public string|null $mergeCommitSha, #[MapFrom('merged_at')]
+    public string|null $mergedAt, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('patch_url')]
+    public string $patchUrl, #[MapFrom('requested_reviewers')]
+    public array $requestedReviewers, #[MapFrom('requested_teams')]
+    public array $requestedTeams, #[MapFrom('review_comment_url')]
+    public string $reviewCommentUrl, #[MapFrom('review_comments_url')]
+    public string $reviewCommentsUrl, public string $state, #[MapFrom('statuses_url')]
+    public string $statusesUrl, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhookPullRequestReviewCommentCreated\PullRequest\User|null $user,)
     {
     }
 }

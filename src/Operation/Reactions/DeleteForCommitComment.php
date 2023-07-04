@@ -19,7 +19,7 @@ final class DeleteForCommitComment
     private const PATH           = '/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the comment. **/
     private int $commentId;
@@ -39,9 +39,7 @@ final class DeleteForCommitComment
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{comment_id}', '{reaction_id}'], [$this->owner, $this->repo, $this->commentId, $this->reactionId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateOrUpdateFileContentsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\FileCommit::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\FileCommit::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrUpdateFileContents('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\FileCommit::SCHEMA_EXAMPLE_DATA);
@@ -80,9 +74,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\FileCommit::SCHEMA_EXAMPLE_DATA);
@@ -96,9 +88,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrUpdateFileContents('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -119,9 +109,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -136,9 +124,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrUpdateFileContents('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -159,9 +145,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -176,9 +160,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrUpdateFileContents('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -199,9 +181,7 @@ final class CreateOrUpdateFileContentsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

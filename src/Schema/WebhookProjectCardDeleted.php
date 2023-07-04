@@ -20,7 +20,8 @@ final readonly class WebhookProjectCardDeleted
      * organization: A GitHub organization.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[MapFrom('project_card')] public Schema\WebhookProjectCardDeleted\ProjectCard $projectCard, public ?Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, #[MapFrom('project_card')]
+    public Schema\WebhookProjectCardDeleted\ProjectCard $projectCard, public Schema\Repository|null $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

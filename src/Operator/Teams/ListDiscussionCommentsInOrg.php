@@ -20,9 +20,7 @@ final readonly class ListDiscussionCommentsInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org, string $teamSlug, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListDiscussionCommentsInOrg($org, $teamSlug, $discussionNumber, $direction, $perPage, $page);

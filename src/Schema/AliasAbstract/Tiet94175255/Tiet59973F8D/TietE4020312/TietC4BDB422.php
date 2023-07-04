@@ -11,7 +11,7 @@ abstract readonly class TietC4BDB422
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total":5,"additions":9,"deletions":9}';
 
-    public function __construct(public ?int $total, public ?int $additions, public ?int $deletions)
+    public function __construct(public int|null $total, public int|null $additions, public int|null $deletions)
     {
     }
 }

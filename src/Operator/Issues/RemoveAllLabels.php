@@ -23,9 +23,7 @@ final readonly class RemoveAllLabels
     {
     }
 
-    /**
-     * @return PromiseInterface<(BasicError|array)>
-     **/
+    /** @return PromiseInterface<(BasicError|array)> **/
     public function call(string $owner, string $repo, int $issueNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\RemoveAllLabels($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

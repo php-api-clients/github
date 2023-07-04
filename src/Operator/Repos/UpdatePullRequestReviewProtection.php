@@ -23,9 +23,7 @@ final readonly class UpdatePullRequestReviewProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<ProtectedBranchPullRequestReview>
-     **/
+    /** @return PromiseInterface<ProtectedBranchPullRequestReview> **/
     public function call(string $owner, string $repo, string $branch, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdatePullRequestReviewProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

@@ -18,7 +18,8 @@ final readonly class ApplicationJson
      * buildType: The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
      * source: The source branch and directory used to publish your Pages site.
      */
-    public function __construct(#[MapFrom('build_type')] public ?string $buildType, public ?Schema\Repos\CreatePagesSite\Request\ApplicationJson\Source $source)
+    public function __construct(#[MapFrom('build_type')]
+    public string|null $buildType, public Schema\Repos\CreatePagesSite\Request\ApplicationJson\Source|null $source,)
     {
     }
 }

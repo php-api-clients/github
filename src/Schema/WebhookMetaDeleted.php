@@ -22,7 +22,8 @@ final readonly class WebhookMetaDeleted
      * organization: A GitHub organization.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public Schema\WebhookMetaDeleted\Hook $hook, #[MapFrom('hook_id')] public int $hookId, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\WebhookMetaDeleted\Hook $hook, #[MapFrom('hook_id')]
+    public int $hookId, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public Schema\Repository|null $repository, public Schema\SimpleUser|null $sender,)
     {
     }
 }

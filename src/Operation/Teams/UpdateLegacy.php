@@ -25,18 +25,12 @@ final class UpdateLegacy
     public const OPERATION_MATCH = 'PATCH /teams/{team_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/teams/{team_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the team. **/
     private int $teamId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId $hydrator, int $teamId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId $hydrator, int $teamId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->teamId                  = $teamId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId = $teamId;
     }
 
     public function createRequest(array $data): RequestInterface

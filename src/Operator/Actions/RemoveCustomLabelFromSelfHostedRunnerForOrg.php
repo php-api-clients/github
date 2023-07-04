@@ -23,9 +23,7 @@ final readonly class RemoveCustomLabelFromSelfHostedRunnerForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $org, int $runnerId, string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\RemoveCustomLabelFromSelfHostedRunnerForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerId, $name);

@@ -23,9 +23,7 @@ final readonly class GetActionsCacheList
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsCacheList>
-     **/
+    /** @return PromiseInterface<ActionsCacheList> **/
     public function call(string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc'): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetActionsCacheList($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $key, $perPage, $page, $sort, $direction);

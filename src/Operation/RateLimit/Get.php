@@ -24,13 +24,9 @@ final class Get
     public const OPERATION_MATCH = 'GET /rate_limit';
     private const METHOD         = 'GET';
     private const PATH           = '/rate_limit';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\RateLimit $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\RateLimit $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\RateLimit $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -38,9 +34,7 @@ final class Get
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    /**
-     * @return Schema\RateLimitOverview|array{code: int}
-     */
+    /** @return Schema\RateLimitOverview|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\RateLimitOverview|array
     {
         $code          = $response->getStatusCode();

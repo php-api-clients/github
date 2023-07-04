@@ -13,7 +13,9 @@ final readonly class SearchResultTextMatches
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}';
 
-    public function __construct(#[MapFrom('object_url')] public ?string $objectUrl, #[MapFrom('object_type')] public ?string $objectType, public ?string $property, public ?string $fragment, public ?array $matches)
+    public function __construct(#[MapFrom('object_url')]
+    public string|null $objectUrl, #[MapFrom('object_type')]
+    public string|null $objectType, public string|null $property, public string|null $fragment, public array|null $matches,)
     {
     }
 }

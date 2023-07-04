@@ -22,9 +22,7 @@ final readonly class DeleteComment
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $gistId, int $commentId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\DeleteComment($this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);

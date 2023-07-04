@@ -20,9 +20,7 @@ final readonly class ListPendingInvitationsLegacy
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(int $teamId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListPendingInvitationsLegacy($teamId, $perPage, $page);

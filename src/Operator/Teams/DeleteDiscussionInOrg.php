@@ -20,9 +20,7 @@ final readonly class DeleteDiscussionInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $teamSlug, int $discussionNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\DeleteDiscussionInOrg($org, $teamSlug, $discussionNumber);

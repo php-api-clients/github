@@ -38,7 +38,25 @@ final readonly class Comment
      * subjectType: The level at which the comment is targeted, can be a diff line or a file.
      * url: URL for the pull request review comment
      */
-    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestReviewCommentCreated\Comment\Links $links, #[MapFrom('author_association')] public string $authorAssociation, public string $body, #[MapFrom('commit_id')] public string $commitId, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('diff_hunk')] public string $diffHunk, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('in_reply_to_id')] public ?int $inReplyToId, public ?int $line, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('original_commit_id')] public string $originalCommitId, #[MapFrom('original_line')] public ?int $originalLine, #[MapFrom('original_position')] public int $originalPosition, #[MapFrom('original_start_line')] public ?int $originalStartLine, public string $path, public ?int $position, #[MapFrom('pull_request_review_id')] public ?int $pullRequestReviewId, #[MapFrom('pull_request_url')] public string $pullRequestUrl, public Schema\WebhookPullRequestReviewCommentCreated\Comment\Reactions $reactions, public string $side, #[MapFrom('start_line')] public ?int $startLine, #[MapFrom('start_side')] public ?string $startSide, #[MapFrom('subject_type')] public ?string $subjectType, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookPullRequestReviewCommentCreated\Comment\User $user)
+    public function __construct(#[MapFrom('_links')]
+    public Schema\WebhookPullRequestReviewCommentCreated\Comment\Links $links, #[MapFrom('author_association')]
+    public string $authorAssociation, public string $body, #[MapFrom('commit_id')]
+    public string $commitId, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('diff_hunk')]
+    public string $diffHunk, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('in_reply_to_id')]
+    public int|null $inReplyToId, public int|null $line, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('original_commit_id')]
+    public string $originalCommitId, #[MapFrom('original_line')]
+    public int|null $originalLine, #[MapFrom('original_position')]
+    public int $originalPosition, #[MapFrom('original_start_line')]
+    public int|null $originalStartLine, public string $path, public int|null $position, #[MapFrom('pull_request_review_id')]
+    public int|null $pullRequestReviewId, #[MapFrom('pull_request_url')]
+    public string $pullRequestUrl, public Schema\WebhookPullRequestReviewCommentCreated\Comment\Reactions $reactions, public string $side, #[MapFrom('start_line')]
+    public int|null $startLine, #[MapFrom('start_side')]
+    public string|null $startSide, #[MapFrom('subject_type')]
+    public string|null $subjectType, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhookPullRequestReviewCommentCreated\Comment\User|null $user,)
     {
     }
 }

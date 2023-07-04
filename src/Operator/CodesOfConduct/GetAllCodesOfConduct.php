@@ -20,9 +20,7 @@ final readonly class GetAllCodesOfConduct
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodesOfConduct\GetAllCodesOfConduct();

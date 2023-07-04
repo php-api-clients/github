@@ -14,17 +14,15 @@ use React\Promise\PromiseInterface;
 final readonly class ReviewPatGrantRequest
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-request';
-    public const OPERATION_MATCH = 'POST /organizations/{org}/personal-access-token-requests/{pat_request_id}';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests/{pat_request_id}';
     private const METHOD         = 'POST';
-    private const PATH           = '/organizations/{org}/personal-access-token-requests/{pat_request_id}';
+    private const PATH           = '/orgs/{org}/personal-access-token-requests/{pat_request_id}';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Organizations\Org\PersonalAccessTokenRequests\PatRequestId $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId $hydrator)
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, int $patRequestId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ReviewPatGrantRequest($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patRequestId);

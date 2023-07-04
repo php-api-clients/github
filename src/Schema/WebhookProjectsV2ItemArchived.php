@@ -20,7 +20,8 @@ final readonly class WebhookProjectsV2ItemArchived
      * projectsVTwoItem: An item belonging to a project
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemArchived\Changes $changes, public ?Schema\SimpleInstallation $installation, public Schema\OrganizationSimple $organization, #[MapFrom('projects_v2_item')] public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemArchived\Changes $changes, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple $organization, #[MapFrom('projects_v2_item')]
+    public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUser $sender,)
     {
     }
 }

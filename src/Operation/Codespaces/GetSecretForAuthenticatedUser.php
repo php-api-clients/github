@@ -25,14 +25,10 @@ final class GetSecretForAuthenticatedUser
     private const PATH           = '/user/codespaces/secrets/{secret_name}';
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator, string $secretName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator, string $secretName)
     {
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->secretName = $secretName;
     }
 
     public function createRequest(): RequestInterface

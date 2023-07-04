@@ -11,7 +11,7 @@ abstract readonly class TietD6E970B8
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"email":"generated","verified":false}';
 
-    public function __construct(public ?string $email, public ?bool $verified)
+    public function __construct(public string|null $email, public bool|null $verified)
     {
     }
 }

@@ -22,7 +22,17 @@ final readonly class TeamDiscussion
      * private: Whether or not this discussion should be restricted to team members and organization administrators.
      * title: The title of the discussion.
      */
-    public function __construct(public ?Schema\SimpleUser $author, public string $body, #[MapFrom('body_html')] public string $bodyHtml, #[MapFrom('body_version')] public string $bodyVersion, #[MapFrom('comments_count')] public int $commentsCount, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('last_edited_at')] public ?string $lastEditedAt, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('node_id')] public string $nodeId, public int $number, public bool $pinned, public bool $private, #[MapFrom('team_url')] public string $teamUrl, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public Schema\SimpleUser|null $author, public string $body, #[MapFrom('body_html')]
+    public string $bodyHtml, #[MapFrom('body_version')]
+    public string $bodyVersion, #[MapFrom('comments_count')]
+    public int $commentsCount, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('last_edited_at')]
+    public string|null $lastEditedAt, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, public bool $pinned, public bool $private, #[MapFrom('team_url')]
+    public string $teamUrl, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

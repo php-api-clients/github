@@ -23,9 +23,7 @@ final readonly class UpdateWebhook
     {
     }
 
-    /**
-     * @return PromiseInterface<Hook>
-     **/
+    /** @return PromiseInterface<Hook> **/
     public function call(string $owner, string $repo, int $hookId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdateWebhook($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId);

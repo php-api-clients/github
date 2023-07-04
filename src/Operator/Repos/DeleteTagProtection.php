@@ -22,9 +22,7 @@ final readonly class DeleteTagProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $tagProtectionId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tagProtectionId);

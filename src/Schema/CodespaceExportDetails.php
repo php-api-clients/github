@@ -22,7 +22,10 @@ final readonly class CodespaceExportDetails
      * exportUrl: Url for fetching export details
      * htmlUrl: Web url for the exported branch
      */
-    public function __construct(public ?string $state, #[MapFrom('completed_at')] public ?string $completedAt, public ?string $branch, public ?string $sha, public ?string $id, #[MapFrom('export_url')] public ?string $exportUrl, #[MapFrom('html_url')] public ?string $htmlUrl)
+    public function __construct(public string|null $state, #[MapFrom('completed_at')]
+    public string|null $completedAt, public string|null $branch, public string|null $sha, public string|null $id, #[MapFrom('export_url')]
+    public string|null $exportUrl, #[MapFrom('html_url')]
+    public string|null $htmlUrl,)
     {
     }
 }

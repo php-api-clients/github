@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(PullRequest|array)>
-     **/
+    /** @return PromiseInterface<(PullRequest|array)> **/
     public function call(string $owner, string $repo, int $pullNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

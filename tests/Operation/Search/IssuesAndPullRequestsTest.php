@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class IssuesAndPullRequestsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
@@ -43,9 +41,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
@@ -59,9 +55,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         $result = await($client->operations()->search()->issuesAndPullRequests('generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -84,9 +78,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -101,9 +93,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         $result = await($client->operations()->search()->issuesAndPullRequests('generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -126,9 +116,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -143,9 +131,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         $result = await($client->operations()->search()->issuesAndPullRequests('generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -168,9 +154,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -185,9 +169,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         $result = await($client->operations()->search()->issuesAndPullRequests('generated', 'generated', 'generated', 8, 4));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -209,9 +191,7 @@ final class IssuesAndPullRequestsTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

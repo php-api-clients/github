@@ -23,9 +23,7 @@ final readonly class UpdateReleaseAsset
     {
     }
 
-    /**
-     * @return PromiseInterface<ReleaseAsset>
-     **/
+    /** @return PromiseInterface<ReleaseAsset> **/
     public function call(string $owner, string $repo, int $assetId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdateReleaseAsset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $assetId);

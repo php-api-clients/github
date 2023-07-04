@@ -22,9 +22,7 @@ final readonly class GetCommitAuthors
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, int $since): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetCommitAuthors($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $since);

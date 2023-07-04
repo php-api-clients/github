@@ -23,9 +23,7 @@ final readonly class GetMembershipForUserInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<(TeamMembership|array)>
-     **/
+    /** @return PromiseInterface<(TeamMembership|array)> **/
     public function call(string $org, string $teamSlug, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\GetMembershipForUserInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $username);

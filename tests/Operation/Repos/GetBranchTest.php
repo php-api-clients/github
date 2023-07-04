@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetBranchTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\BranchWithProtection::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GetBranchTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\BranchWithProtection::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GetBranchTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getBranch('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -79,9 +73,7 @@ final class GetBranchTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -95,9 +87,7 @@ final class GetBranchTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getBranch('generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -118,9 +108,7 @@ final class GetBranchTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

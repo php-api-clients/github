@@ -16,7 +16,8 @@ final readonly class Parameters
     /**
      * requiredDeploymentEnvironments: The environments that must be successfully deployed to before branches can be merged.
      */
-    public function __construct(#[MapFrom('required_deployment_environments')] public array $requiredDeploymentEnvironments)
+    public function __construct(#[MapFrom('required_deployment_environments')]
+    public array $requiredDeploymentEnvironments,)
     {
     }
 }

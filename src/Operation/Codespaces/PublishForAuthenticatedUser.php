@@ -25,18 +25,12 @@ final class PublishForAuthenticatedUser
     public const OPERATION_MATCH = 'POST /user/codespaces/{codespace_name}/publish';
     private const METHOD         = 'POST';
     private const PATH           = '/user/codespaces/{codespace_name}/publish';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Publish $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName\Publish $hydrator, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Publish $hydrator, string $codespaceName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(array $data): RequestInterface

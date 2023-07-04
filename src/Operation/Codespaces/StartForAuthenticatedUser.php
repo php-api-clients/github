@@ -26,14 +26,10 @@ final class StartForAuthenticatedUser
     private const PATH           = '/user/codespaces/{codespace_name}/start';
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Start $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName\Start $hydrator, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Start $hydrator, string $codespaceName)
     {
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class StartForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{codespace_name}'], [$this->codespaceName], self::PATH));
     }
 
-    /**
-     * @return Schema\Codespace|array{code: int}
-     */
+    /** @return Schema\Codespace|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Codespace|array
     {
         $code          = $response->getStatusCode();
@@ -115,6 +109,19 @@ final class StartForAuthenticatedUser
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
                         throw new ErrorSchemas\BasicError(409, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                }
+
+                break;
+            case 'application/scim+json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Bad Request
+                     **/
+                    case 400:
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ScimError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+                        throw new ErrorSchemas\ScimError(400, $this->hydrator->hydrateObject(Schema\ScimError::class, $body));
                 }
 
                 break;

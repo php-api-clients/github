@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * selectedRepositoryIds: The IDs of the repositories that can access the organization variable.
      */
-    public function __construct(#[MapFrom('selected_repository_ids')] public array $selectedRepositoryIds)
+    public function __construct(#[MapFrom('selected_repository_ids')]
+    public array $selectedRepositoryIds,)
     {
     }
 }

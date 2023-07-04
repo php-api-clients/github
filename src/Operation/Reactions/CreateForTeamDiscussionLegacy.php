@@ -24,21 +24,15 @@ final class CreateForTeamDiscussionLegacy
     public const OPERATION_MATCH = 'POST /teams/{team_id}/discussions/{discussion_number}/reactions';
     private const METHOD         = 'POST';
     private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/reactions';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number that identifies the discussion. **/
     private int $discussionNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Reactions $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Reactions $hydrator, int $teamId, int $discussionNumber)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Reactions $hydrator, int $teamId, int $discussionNumber)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->teamId                  = $teamId;
-        $this->discussionNumber        = $discussionNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId           = $teamId;
+        $this->discussionNumber = $discussionNumber;
     }
 
     public function createRequest(array $data): RequestInterface

@@ -23,9 +23,7 @@ final readonly class ListCommitStatusesForRef
     {
     }
 
-    /**
-     * @return PromiseInterface<BasicError>
-     **/
+    /** @return PromiseInterface<BasicError> **/
     public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCommitStatusesForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);

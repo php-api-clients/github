@@ -25,21 +25,15 @@ final class AddCustomLabelsToSelfHostedRunnerForOrg
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/{runner_id}/labels';
     private const METHOD         = 'POST';
     private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the self-hosted runner. **/
     private int $runnerId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels $hydrator, string $org, int $runnerId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels $hydrator, string $org, int $runnerId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->runnerId                = $runnerId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org      = $org;
+        $this->runnerId = $runnerId;
     }
 
     public function createRequest(array $data): RequestInterface

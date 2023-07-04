@@ -23,9 +23,7 @@ final readonly class GetAnalysis
     {
     }
 
-    /**
-     * @return PromiseInterface<CodeScanningAnalysis>
-     **/
+    /** @return PromiseInterface<CodeScanningAnalysis> **/
     public function call(string $owner, string $repo, int $analysisId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\GetAnalysis($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $analysisId);

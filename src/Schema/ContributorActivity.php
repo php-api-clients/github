@@ -13,7 +13,7 @@ final readonly class ContributorActivity
     public const SCHEMA_DESCRIPTION  = 'Contributor Activity';
     public const SCHEMA_EXAMPLE_DATA = '{"author":{"name":"generated","email":"generated","login":"octocat","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif","gravatar_id":"41d064eb2195891e12d0413f63227ea7","url":"https:\\/\\/api.github.com\\/users\\/octocat","html_url":"https:\\/\\/github.com\\/octocat","followers_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/followers","following_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}","gists_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}","starred_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}","subscriptions_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions","organizations_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/orgs","repos_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/repos","events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}","received_events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/received_events","type":"User","site_admin":false,"starred_at":"\\"2020-07-09T00:17:55Z\\""},"total":135,"weeks":[{"w":"1367712000","a":6898,"d":77,"c":10},{"w":"1367712000","a":6898,"d":77,"c":10}]}';
 
-    public function __construct(public ?Schema\SimpleUser $author, public int $total, public array $weeks)
+    public function __construct(public Schema\SimpleUser|null $author, public int $total, public array $weeks)
     {
     }
 }

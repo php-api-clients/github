@@ -23,9 +23,7 @@ final readonly class GetWebhookConfigForApp
     {
     }
 
-    /**
-     * @return PromiseInterface<WebhookConfig>
-     **/
+    /** @return PromiseInterface<WebhookConfig> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetWebhookConfigForApp($this->responseSchemaValidator, $this->hydrator);

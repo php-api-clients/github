@@ -22,7 +22,21 @@ final readonly class Release
      * author: A GitHub user.
      * discussionUrl: The URL of the release discussion.
      */
-    public function __construct(public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('assets_url')] public string $assetsUrl, #[MapFrom('upload_url')] public string $uploadUrl, #[MapFrom('tarball_url')] public ?string $tarballUrl, #[MapFrom('zipball_url')] public ?string $zipballUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('tag_name')] public string $tagName, #[MapFrom('target_commitish')] public string $targetCommitish, public ?string $name, public ?string $body, public bool $draft, public bool $prerelease, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('published_at')] public ?string $publishedAt, public Schema\SimpleUser $author, public array $assets, #[MapFrom('body_html')] public ?string $bodyHtml, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('mentions_count')] public ?int $mentionsCount, #[MapFrom('discussion_url')] public ?string $discussionUrl, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('assets_url')]
+    public string $assetsUrl, #[MapFrom('upload_url')]
+    public string $uploadUrl, #[MapFrom('tarball_url')]
+    public string|null $tarballUrl, #[MapFrom('zipball_url')]
+    public string|null $zipballUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('tag_name')]
+    public string $tagName, #[MapFrom('target_commitish')]
+    public string $targetCommitish, public string|null $name, public string|null $body, public bool $draft, public bool $prerelease, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('published_at')]
+    public string|null $publishedAt, public Schema\SimpleUser $author, public array $assets, #[MapFrom('body_html')]
+    public string|null $bodyHtml, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('mentions_count')]
+    public int|null $mentionsCount, #[MapFrom('discussion_url')]
+    public string|null $discussionUrl, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

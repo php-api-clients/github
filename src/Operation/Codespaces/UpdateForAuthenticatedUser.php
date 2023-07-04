@@ -25,18 +25,12 @@ final class UpdateForAuthenticatedUser
     public const OPERATION_MATCH = 'PATCH /user/codespaces/{codespace_name}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/user/codespaces/{codespace_name}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName $hydrator, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName $hydrator, string $codespaceName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(array $data): RequestInterface

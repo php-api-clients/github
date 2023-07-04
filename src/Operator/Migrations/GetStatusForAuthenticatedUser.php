@@ -23,9 +23,7 @@ final readonly class GetStatusForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Migration|array)>
-     **/
+    /** @return PromiseInterface<(Migration|array)> **/
     public function call(int $migrationId, array $exclude): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetStatusForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $exclude);

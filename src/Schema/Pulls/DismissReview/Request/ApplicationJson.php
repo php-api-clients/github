@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * message: The message for the pull request review dismissal
      */
-    public function __construct(public string $message, public ?string $event)
+    public function __construct(public string $message, public string|null $event)
     {
     }
 }

@@ -23,9 +23,7 @@ final readonly class CreateInvitation
     {
     }
 
-    /**
-     * @return PromiseInterface<OrganizationInvitation>
-     **/
+    /** @return PromiseInterface<OrganizationInvitation> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\CreateInvitation($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

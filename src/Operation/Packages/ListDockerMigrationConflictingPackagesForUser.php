@@ -26,14 +26,10 @@ final class ListDockerMigrationConflictingPackagesForUser
     private const PATH           = '/users/{username}/docker/conflicts';
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Docker\Conflicts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Docker\Conflicts $hydrator, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Docker\Conflicts $hydrator, string $username)
     {
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->username = $username;
     }
 
     public function createRequest(): RequestInterface

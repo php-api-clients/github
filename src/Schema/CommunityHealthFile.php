@@ -13,7 +13,8 @@ final readonly class CommunityHealthFile
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(public string $url, #[MapFrom('html_url')] public string $htmlUrl)
+    public function __construct(public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl,)
     {
     }
 }

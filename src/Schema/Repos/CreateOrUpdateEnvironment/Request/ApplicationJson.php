@@ -19,7 +19,9 @@ final readonly class ApplicationJson
      * reviewers: The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      * deploymentBranchPolicy: The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
-    public function __construct(#[MapFrom('wait_timer')] public ?int $waitTimer, public ?array $reviewers, #[MapFrom('deployment_branch_policy')] public ?Schema\DeploymentBranchPolicySettings $deploymentBranchPolicy)
+    public function __construct(#[MapFrom('wait_timer')]
+    public int|null $waitTimer, public array|null $reviewers, #[MapFrom('deployment_branch_policy')]
+    public Schema\DeploymentBranchPolicySettings|null $deploymentBranchPolicy,)
     {
     }
 }

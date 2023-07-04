@@ -23,9 +23,7 @@ final readonly class GetRepoPublicKey
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespacesPublicKey>
-     **/
+    /** @return PromiseInterface<CodespacesPublicKey> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetRepoPublicKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

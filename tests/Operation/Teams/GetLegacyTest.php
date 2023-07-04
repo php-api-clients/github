@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetLegacyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamFull::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class GetLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamFull::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class GetLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->getLegacy(7));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -76,9 +70,7 @@ final class GetLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

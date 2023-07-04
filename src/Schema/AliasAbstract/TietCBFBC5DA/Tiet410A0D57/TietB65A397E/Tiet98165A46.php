@@ -18,7 +18,8 @@ abstract readonly class Tiet98165A46
      * name: The name of the label.
      * url: URL for the label
      */
-    public function __construct(public string $color, public bool $default, public ?string $description, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public string $url)
+    public function __construct(public string $color, public bool $default, public string|null $description, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public string $url,)
     {
     }
 }

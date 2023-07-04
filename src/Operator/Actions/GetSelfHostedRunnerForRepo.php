@@ -23,9 +23,7 @@ final readonly class GetSelfHostedRunnerForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<Runner>
-     **/
+    /** @return PromiseInterface<Runner> **/
     public function call(string $owner, string $repo, int $runnerId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetSelfHostedRunnerForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runnerId);

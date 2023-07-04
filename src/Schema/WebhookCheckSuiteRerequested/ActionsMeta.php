@@ -14,7 +14,8 @@ final readonly class ActionsMeta
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"rerun_info":{"plan_id":"generated","job_ids":["generated","generated"]}}';
 
-    public function __construct(#[MapFrom('rerun_info')] public ?Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo $rerunInfo)
+    public function __construct(#[MapFrom('rerun_info')]
+    public Schema\WebhookCheckSuiteRerequested\ActionsMeta\RerunInfo|null $rerunInfo,)
     {
     }
 }

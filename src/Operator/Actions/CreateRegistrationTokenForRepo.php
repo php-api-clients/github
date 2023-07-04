@@ -23,9 +23,7 @@ final readonly class CreateRegistrationTokenForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<AuthenticationToken>
-     **/
+    /** @return PromiseInterface<AuthenticationToken> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateRegistrationTokenForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

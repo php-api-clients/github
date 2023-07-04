@@ -62,7 +62,46 @@ final readonly class SimpleRepository
      * treesUrl: A template for the API URL to create or retrieve a raw Git tree of the repository.
      * hooksUrl: The API URL to list the hooks on the repository.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, #[MapFrom('full_name')] public string $fullName, public Schema\SimpleUser $owner, public bool $private, #[MapFrom('html_url')] public string $htmlUrl, public ?string $description, public bool $fork, public string $url, #[MapFrom('archive_url')] public string $archiveUrl, #[MapFrom('assignees_url')] public string $assigneesUrl, #[MapFrom('blobs_url')] public string $blobsUrl, #[MapFrom('branches_url')] public string $branchesUrl, #[MapFrom('collaborators_url')] public string $collaboratorsUrl, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('commits_url')] public string $commitsUrl, #[MapFrom('compare_url')] public string $compareUrl, #[MapFrom('contents_url')] public string $contentsUrl, #[MapFrom('contributors_url')] public string $contributorsUrl, #[MapFrom('deployments_url')] public string $deploymentsUrl, #[MapFrom('downloads_url')] public string $downloadsUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('forks_url')] public string $forksUrl, #[MapFrom('git_commits_url')] public string $gitCommitsUrl, #[MapFrom('git_refs_url')] public string $gitRefsUrl, #[MapFrom('git_tags_url')] public string $gitTagsUrl, #[MapFrom('issue_comment_url')] public string $issueCommentUrl, #[MapFrom('issue_events_url')] public string $issueEventsUrl, #[MapFrom('issues_url')] public string $issuesUrl, #[MapFrom('keys_url')] public string $keysUrl, #[MapFrom('labels_url')] public string $labelsUrl, #[MapFrom('languages_url')] public string $languagesUrl, #[MapFrom('merges_url')] public string $mergesUrl, #[MapFrom('milestones_url')] public string $milestonesUrl, #[MapFrom('notifications_url')] public string $notificationsUrl, #[MapFrom('pulls_url')] public string $pullsUrl, #[MapFrom('releases_url')] public string $releasesUrl, #[MapFrom('stargazers_url')] public string $stargazersUrl, #[MapFrom('statuses_url')] public string $statusesUrl, #[MapFrom('subscribers_url')] public string $subscribersUrl, #[MapFrom('subscription_url')] public string $subscriptionUrl, #[MapFrom('tags_url')] public string $tagsUrl, #[MapFrom('teams_url')] public string $teamsUrl, #[MapFrom('trees_url')] public string $treesUrl, #[MapFrom('hooks_url')] public string $hooksUrl)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, #[MapFrom('full_name')]
+    public string $fullName, public Schema\SimpleUser $owner, public bool $private, #[MapFrom('html_url')]
+    public string $htmlUrl, public string|null $description, public bool $fork, public string $url, #[MapFrom('archive_url')]
+    public string $archiveUrl, #[MapFrom('assignees_url')]
+    public string $assigneesUrl, #[MapFrom('blobs_url')]
+    public string $blobsUrl, #[MapFrom('branches_url')]
+    public string $branchesUrl, #[MapFrom('collaborators_url')]
+    public string $collaboratorsUrl, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('commits_url')]
+    public string $commitsUrl, #[MapFrom('compare_url')]
+    public string $compareUrl, #[MapFrom('contents_url')]
+    public string $contentsUrl, #[MapFrom('contributors_url')]
+    public string $contributorsUrl, #[MapFrom('deployments_url')]
+    public string $deploymentsUrl, #[MapFrom('downloads_url')]
+    public string $downloadsUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('forks_url')]
+    public string $forksUrl, #[MapFrom('git_commits_url')]
+    public string $gitCommitsUrl, #[MapFrom('git_refs_url')]
+    public string $gitRefsUrl, #[MapFrom('git_tags_url')]
+    public string $gitTagsUrl, #[MapFrom('issue_comment_url')]
+    public string $issueCommentUrl, #[MapFrom('issue_events_url')]
+    public string $issueEventsUrl, #[MapFrom('issues_url')]
+    public string $issuesUrl, #[MapFrom('keys_url')]
+    public string $keysUrl, #[MapFrom('labels_url')]
+    public string $labelsUrl, #[MapFrom('languages_url')]
+    public string $languagesUrl, #[MapFrom('merges_url')]
+    public string $mergesUrl, #[MapFrom('milestones_url')]
+    public string $milestonesUrl, #[MapFrom('notifications_url')]
+    public string $notificationsUrl, #[MapFrom('pulls_url')]
+    public string $pullsUrl, #[MapFrom('releases_url')]
+    public string $releasesUrl, #[MapFrom('stargazers_url')]
+    public string $stargazersUrl, #[MapFrom('statuses_url')]
+    public string $statusesUrl, #[MapFrom('subscribers_url')]
+    public string $subscribersUrl, #[MapFrom('subscription_url')]
+    public string $subscriptionUrl, #[MapFrom('tags_url')]
+    public string $tagsUrl, #[MapFrom('teams_url')]
+    public string $teamsUrl, #[MapFrom('trees_url')]
+    public string $treesUrl, #[MapFrom('hooks_url')]
+    public string $hooksUrl,)
     {
     }
 }

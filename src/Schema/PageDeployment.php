@@ -18,7 +18,10 @@ final readonly class PageDeployment
      * pageUrl: The URI to the deployed GitHub Pages.
      * previewUrl: The URI to the deployed GitHub Pages preview.
      */
-    public function __construct(#[MapFrom('status_url')] public string $statusUrl, #[MapFrom('page_url')] public string $pageUrl, #[MapFrom('preview_url')] public ?string $previewUrl)
+    public function __construct(#[MapFrom('status_url')]
+    public string $statusUrl, #[MapFrom('page_url')]
+    public string $pageUrl, #[MapFrom('preview_url')]
+    public string|null $previewUrl,)
     {
     }
 }

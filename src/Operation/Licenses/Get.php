@@ -24,15 +24,9 @@ final class Get
     public const OPERATION_MATCH = 'GET /licenses/{license}';
     private const METHOD         = 'GET';
     private const PATH           = '/licenses/{license}';
-    private string $license;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Licenses\License $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Licenses\License $hydrator, string $license)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Licenses\License $hydrator, private string $license)
     {
-        $this->license                 = $license;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -40,9 +34,7 @@ final class Get
         return new Request(self::METHOD, str_replace(['{license}'], [$this->license], self::PATH));
     }
 
-    /**
-     * @return Schema\License|array{code: int}
-     */
+    /** @return Schema\License|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\License|array
     {
         $code          = $response->getStatusCode();

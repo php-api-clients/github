@@ -23,9 +23,7 @@ final readonly class UpdateForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Codespace>
-     **/
+    /** @return PromiseInterface<Codespace> **/
     public function call(string $codespaceName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\UpdateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);

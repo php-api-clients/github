@@ -25,18 +25,12 @@ final class DeleteToken
     public const OPERATION_MATCH = 'DELETE /applications/{client_id}/token';
     private const METHOD         = 'DELETE';
     private const PATH           = '/applications/{client_id}/token';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The client ID of the GitHub app. **/
     private string $clientId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Applications\ClientId\Token $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Applications\ClientId\Token $hydrator, string $clientId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Applications\ClientId\Token $hydrator, string $clientId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->clientId                = $clientId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->clientId = $clientId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class DeleteToken
         return new Request(self::METHOD, str_replace(['{client_id}'], [$this->clientId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

@@ -17,7 +17,8 @@ final readonly class RepositoryRuleParamsStatusCheckConfiguration
      * context: The status check context name that must be present on the commit.
      * integrationId: The optional integration ID that this status check must originate from.
      */
-    public function __construct(public string $context, #[MapFrom('integration_id')] public ?int $integrationId)
+    public function __construct(public string $context, #[MapFrom('integration_id')]
+    public int|null $integrationId,)
     {
     }
 }

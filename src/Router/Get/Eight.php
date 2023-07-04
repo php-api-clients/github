@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Eight
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -91,25 +81,7 @@ final class Eight
                     }
                 }
             } elseif ($pathChunks[1] === 'repos') {
-                if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === '{repo}') {
-                        if ($pathChunks[4] === 'actions') {
-                            if ($pathChunks[5] === 'required_workflows') {
-                                if ($pathChunks[6] === '{required_workflow_id_for_repo}') {
-                                    if ($pathChunks[7] === 'timing') {
-                                        if ($call === 'GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing') {
-                                            if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Get\Actions::class]->getRepoRequiredWorkflowUsage($params);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } elseif ($pathChunks[2] === '{owner}') {
+                if ($pathChunks[2] === '{owner}') {
                     if ($pathChunks[3] === '{repo}') {
                         if ($pathChunks[4] === 'actions') {
                             if ($pathChunks[5] === 'artifacts') {
@@ -145,18 +117,6 @@ final class Eight
                                             }
 
                                             return $this->router[Router\Get\Actions::class]->getCustomOidcSubClaimForRepo($params);
-                                        }
-                                    }
-                                }
-                            } elseif ($pathChunks[5] === 'required_workflows') {
-                                if ($pathChunks[6] === '{required_workflow_id_for_repo}') {
-                                    if ($pathChunks[7] === 'runs') {
-                                        if ($call === 'GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs') {
-                                            if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Get\Actions::class]->listRequiredWorkflowRuns($params);
                                         }
                                     }
                                 }

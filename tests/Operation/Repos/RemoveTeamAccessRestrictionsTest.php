@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class RemoveTeamAccessRestrictionsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -43,9 +41,7 @@ final class RemoveTeamAccessRestrictionsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\RemoveTeamAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

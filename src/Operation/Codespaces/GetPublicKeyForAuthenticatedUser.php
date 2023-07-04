@@ -23,13 +23,9 @@ final class GetPublicKeyForAuthenticatedUser
     public const OPERATION_MATCH = 'GET /user/codespaces/secrets/public-key';
     private const METHOD         = 'GET';
     private const PATH           = '/user/codespaces/secrets/public-key';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\Secrets\PublicKey $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\PublicKey $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\Secrets\PublicKey $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

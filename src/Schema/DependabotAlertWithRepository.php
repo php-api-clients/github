@@ -31,7 +31,18 @@ final readonly class DependabotAlertWithRepository
      * autoDismissedAt: The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * repository: A GitHub repository.
      */
-    public function __construct(public int $number, public string $state, public Schema\DependabotAlertWithRepository\Dependency $dependency, #[MapFrom('security_advisory')] public Schema\DependabotAlertSecurityAdvisory $securityAdvisory, #[MapFrom('security_vulnerability')] public Schema\DependabotAlertSecurityVulnerability $securityVulnerability, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('dismissed_at')] public ?string $dismissedAt, #[MapFrom('dismissed_by')] public ?Schema\SimpleUser $dismissedBy, #[MapFrom('dismissed_reason')] public ?string $dismissedReason, #[MapFrom('dismissed_comment')] public ?string $dismissedComment, #[MapFrom('fixed_at')] public ?string $fixedAt, #[MapFrom('auto_dismissed_at')] public ?string $autoDismissedAt, public Schema\SimpleRepository $repository)
+    public function __construct(public int $number, public string $state, public Schema\DependabotAlertWithRepository\Dependency $dependency, #[MapFrom('security_advisory')]
+    public Schema\DependabotAlertSecurityAdvisory $securityAdvisory, #[MapFrom('security_vulnerability')]
+    public Schema\DependabotAlertSecurityVulnerability $securityVulnerability, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('dismissed_at')]
+    public string|null $dismissedAt, #[MapFrom('dismissed_by')]
+    public Schema\SimpleUser|null $dismissedBy, #[MapFrom('dismissed_reason')]
+    public string|null $dismissedReason, #[MapFrom('dismissed_comment')]
+    public string|null $dismissedComment, #[MapFrom('fixed_at')]
+    public string|null $fixedAt, #[MapFrom('auto_dismissed_at')]
+    public string|null $autoDismissedAt, public Schema\SimpleRepository $repository,)
     {
     }
 }

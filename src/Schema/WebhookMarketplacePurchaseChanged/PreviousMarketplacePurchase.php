@@ -14,7 +14,12 @@ final readonly class PreviousMarketplacePurchase
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"account":{"id":2,"login":"generated","node_id":"generated","organization_billing_email":"generated","type":"generated"},"billing_cycle":"generated","free_trial_ends_on":"generated","next_billing_date":"generated","on_free_trial":false,"plan":{"bullets":["generated","generated"],"description":"generated","has_free_trial":false,"id":2,"monthly_price_in_cents":22,"name":"generated","price_model":"FREE","unit_name":"generated","yearly_price_in_cents":21},"unit_count":10}';
 
-    public function __construct(public Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase\Account $account, #[MapFrom('billing_cycle')] public string $billingCycle, #[MapFrom('free_trial_ends_on')] public ?string $freeTrialEndsOn, #[MapFrom('next_billing_date')] public ?string $nextBillingDate, #[MapFrom('on_free_trial')] public ?bool $onFreeTrial, public Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase\Plan $plan, #[MapFrom('unit_count')] public int $unitCount)
+    public function __construct(public Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase\Account $account, #[MapFrom('billing_cycle')]
+    public string $billingCycle, #[MapFrom('free_trial_ends_on')]
+    public string|null $freeTrialEndsOn, #[MapFrom('next_billing_date')]
+    public string|null $nextBillingDate, #[MapFrom('on_free_trial')]
+    public bool|null $onFreeTrial, public Schema\WebhookMarketplacePurchaseChanged\PreviousMarketplacePurchase\Plan $plan, #[MapFrom('unit_count')]
+    public int $unitCount,)
     {
     }
 }

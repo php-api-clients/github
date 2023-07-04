@@ -20,9 +20,7 @@ final readonly class ListMembersInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org, string $teamSlug, string $role = 'all', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListMembersInOrg($org, $teamSlug, $role, $perPage, $page);

@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class EnableLfsForRepoTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\EnableLfsForRepo\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class EnableLfsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\EnableLfsForRepo\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -55,9 +51,7 @@ final class EnableLfsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->repos()->enableLfsForRepo('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_empty(): void
     {
         $response = new Response(403, []);
@@ -76,9 +70,7 @@ final class EnableLfsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_empty(): void
     {
         $response = new Response(403, []);

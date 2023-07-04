@@ -11,7 +11,7 @@ abstract readonly class Tiet24A1EBA4
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"path":"generated","ref":"generated","sha":"generated"}';
 
-    public function __construct(public string $path, public ?string $ref, public string $sha)
+    public function __construct(public string $path, public string|null $ref, public string $sha)
     {
     }
 }

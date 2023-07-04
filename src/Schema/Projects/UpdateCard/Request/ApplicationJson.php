@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * note: The project card's note
      * archived: Whether or not the card is archived
      */
-    public function __construct(public ?string $note, public ?bool $archived)
+    public function __construct(public string|null $note, public bool|null $archived)
     {
     }
 }

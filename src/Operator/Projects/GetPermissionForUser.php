@@ -23,9 +23,7 @@ final readonly class GetPermissionForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(ProjectCollaboratorPermission|array)>
-     **/
+    /** @return PromiseInterface<(ProjectCollaboratorPermission|array)> **/
     public function call(int $projectId, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\GetPermissionForUser($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

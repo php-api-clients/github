@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CreateDiscussionLegacyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\TeamDiscussion::SCHEMA_EXAMPLE_DATA);
@@ -39,9 +37,7 @@ final class CreateDiscussionLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\TeamDiscussion::SCHEMA_EXAMPLE_DATA);

@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<CheckRun>
-     **/
+    /** @return PromiseInterface<CheckRun> **/
     public function call(string $owner, string $repo, int $checkRunId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Checks\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

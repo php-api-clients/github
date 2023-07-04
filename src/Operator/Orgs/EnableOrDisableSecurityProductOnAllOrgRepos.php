@@ -20,9 +20,7 @@ final readonly class EnableOrDisableSecurityProductOnAllOrgRepos
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $securityProduct, string $enablement): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($org, $securityProduct, $enablement);

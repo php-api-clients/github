@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateCommentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\GistComment::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CreateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\GistComment::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class CreateCommentTest extends AsyncTestCase
         $result = await($client->operations()->gists()->createComment('generated', json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -77,9 +71,7 @@ final class CreateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,9 +86,7 @@ final class CreateCommentTest extends AsyncTestCase
         $result = await($client->operations()->gists()->createComment('generated', json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class CreateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -132,9 +120,7 @@ final class CreateCommentTest extends AsyncTestCase
         $result = await($client->operations()->gists()->createComment('generated', json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -152,9 +138,7 @@ final class CreateCommentTest extends AsyncTestCase
         })(json_decode(Schema\Gists\CreateComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

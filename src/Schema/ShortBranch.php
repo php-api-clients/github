@@ -17,7 +17,8 @@ final readonly class ShortBranch
     /**
      * protection: Branch Protection
      */
-    public function __construct(public string $name, public Schema\ShortBranch\Commit $commit, public bool $protected, public ?Schema\BranchProtection $protection, #[MapFrom('protection_url')] public ?string $protectionUrl)
+    public function __construct(public string $name, public Schema\ShortBranch\Commit $commit, public bool $protected, public Schema\BranchProtection|null $protection, #[MapFrom('protection_url')]
+    public string|null $protectionUrl,)
     {
     }
 }

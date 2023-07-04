@@ -23,9 +23,7 @@ final readonly class RequestReviewers
     {
     }
 
-    /**
-     * @return PromiseInterface<(PullRequestSimple|array)>
-     **/
+    /** @return PromiseInterface<(PullRequestSimple|array)> **/
     public function call(string $owner, string $repo, int $pullNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\RequestReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

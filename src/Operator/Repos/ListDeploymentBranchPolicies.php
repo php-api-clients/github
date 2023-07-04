@@ -23,9 +23,7 @@ final readonly class ListDeploymentBranchPolicies
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, string $environmentName, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeploymentBranchPolicies($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $perPage, $page);

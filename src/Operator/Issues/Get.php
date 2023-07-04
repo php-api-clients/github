@@ -24,9 +24,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(Issue|BasicError|array)>
-     **/
+    /** @return PromiseInterface<(Issue|BasicError|array)> **/
     public function call(string $owner, string $repo, int $issueNumber): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

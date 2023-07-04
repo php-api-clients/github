@@ -11,7 +11,7 @@ abstract readonly class Tiet2426F5B8
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"date":"generated","name":"generated","email":"generated"}';
 
-    public function __construct(public ?string $date, public ?string $name, public ?string $email)
+    public function __construct(public string|null $date, public string|null $name, public string|null $email)
     {
     }
 }

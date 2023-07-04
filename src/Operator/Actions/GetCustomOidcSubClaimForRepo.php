@@ -23,9 +23,7 @@ final readonly class GetCustomOidcSubClaimForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<OidcCustomSubRepo>
-     **/
+    /** @return PromiseInterface<OidcCustomSubRepo> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetCustomOidcSubClaimForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

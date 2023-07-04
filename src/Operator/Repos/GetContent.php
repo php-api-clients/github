@@ -22,9 +22,7 @@ final readonly class GetContent
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $path, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetContent($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $path, $ref);

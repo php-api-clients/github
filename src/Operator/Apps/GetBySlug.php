@@ -23,9 +23,7 @@ final readonly class GetBySlug
     {
     }
 
-    /**
-     * @return PromiseInterface<Integration>
-     **/
+    /** @return PromiseInterface<Integration> **/
     public function call(string $appSlug): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetBySlug($this->responseSchemaValidator, $this->hydrator, $appSlug);

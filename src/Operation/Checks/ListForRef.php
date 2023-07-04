@@ -25,37 +25,31 @@ final class ListForRef
     private const PATH           = '/repos/{owner}/{repo}/commits/{ref}/check-runs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**ref parameter **/
+    /**The commit reference. Can be a commit SHA, branch name (`heads/BRANCH_NAME`), or tag name (`tags/TAG_NAME`). For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation. **/
     private string $ref;
     /**Returns check runs with the specified `name`. **/
     private string $checkName;
     /**Returns check runs with the specified `status`. **/
     private string $status;
-    private int $appId;
     /**Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs. **/
     private string $filter;
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\CheckRuns $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\CheckRuns $hydrator, string $owner, string $repo, string $ref, string $checkName, string $status, int $appId, string $filter = 'latest', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\CheckRuns $hydrator, string $owner, string $repo, string $ref, string $checkName, string $status, private int $appId, string $filter = 'latest', int $perPage = 30, int $page = 1)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->ref                     = $ref;
-        $this->checkName               = $checkName;
-        $this->status                  = $status;
-        $this->appId                   = $appId;
-        $this->filter                  = $filter;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->ref       = $ref;
+        $this->checkName = $checkName;
+        $this->status    = $status;
+        $this->filter    = $filter;
+        $this->perPage   = $perPage;
+        $this->page      = $page;
     }
 
     public function createRequest(): RequestInterface

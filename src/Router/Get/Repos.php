@@ -19,19 +19,9 @@ final class Repos
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function listPublic(array $params)
@@ -105,13 +95,25 @@ final class Repos
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
         if (array_key_exists(Hydrator\Operation\Orgs\Org\Rulesets::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\Orgs\Org\Rulesets::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets();
         }
 
         $operator = new Operator\Repos\GetOrgRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Rulesets::class]);
 
-        return $operator->call($arguments['org']);
+        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     public function get(array $params)
@@ -831,6 +833,18 @@ final class Repos
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
         if (array_key_exists('includes_parents', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: includes_parents');
         }
@@ -843,7 +857,7 @@ final class Repos
 
         $operator = new Operator\Repos\GetRepoRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Rulesets::class]);
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['includes_parents']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page'], $arguments['includes_parents']);
     }
 
     public function listTags(array $params)
@@ -905,7 +919,11 @@ final class Repos
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Repos\ListTeams($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Teams::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Teams::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Teams();
+        }
+
+        $operator = new Operator\Repos\ListTeams($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Teams::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
@@ -2515,9 +2533,21 @@ final class Repos
 
         $arguments['branch'] = $params['branch'];
         unset($params['branch']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
         $operator = new Operator\Repos\GetBranchRules($this->browser, $this->authentication);
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getTopPaths(array $params)

@@ -23,9 +23,7 @@ final readonly class GetAutolink
     {
     }
 
-    /**
-     * @return PromiseInterface<Autolink>
-     **/
+    /** @return PromiseInterface<Autolink> **/
     public function call(string $owner, string $repo, int $autolinkId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAutolink($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $autolinkId);

@@ -17,7 +17,8 @@ final readonly class ApplicationJson
      * lastReadAt: Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
      * read: Whether the notification has been read.
      */
-    public function __construct(#[MapFrom('last_read_at')] public ?string $lastReadAt, public ?bool $read)
+    public function __construct(#[MapFrom('last_read_at')]
+    public string|null $lastReadAt, public bool|null $read,)
     {
     }
 }

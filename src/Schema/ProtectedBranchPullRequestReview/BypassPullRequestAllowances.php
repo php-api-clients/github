@@ -16,7 +16,7 @@ final readonly class BypassPullRequestAllowances
      * teams: The list of teams allowed to bypass pull request requirements.
      * apps: The list of apps allowed to bypass pull request requirements.
      */
-    public function __construct(public ?array $users, public ?array $teams, public ?array $apps)
+    public function __construct(public array|null $users, public array|null $teams, public array|null $apps)
     {
     }
 }

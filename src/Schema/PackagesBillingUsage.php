@@ -18,7 +18,10 @@ final readonly class PackagesBillingUsage
      * totalPaidGigabytesBandwidthUsed: Total paid storage space (GB) for GitHuub Packages.
      * includedGigabytesBandwidth: Free storage space (GB) for GitHub Packages.
      */
-    public function __construct(#[MapFrom('total_gigabytes_bandwidth_used')] public int $totalGigabytesBandwidthUsed, #[MapFrom('total_paid_gigabytes_bandwidth_used')] public int $totalPaidGigabytesBandwidthUsed, #[MapFrom('included_gigabytes_bandwidth')] public int $includedGigabytesBandwidth)
+    public function __construct(#[MapFrom('total_gigabytes_bandwidth_used')]
+    public int $totalGigabytesBandwidthUsed, #[MapFrom('total_paid_gigabytes_bandwidth_used')]
+    public int $totalPaidGigabytesBandwidthUsed, #[MapFrom('included_gigabytes_bandwidth')]
+    public int $includedGigabytesBandwidth,)
     {
     }
 }

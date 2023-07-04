@@ -25,18 +25,12 @@ final class UpdateColumn
     public const OPERATION_MATCH = 'PATCH /projects/columns/{column_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/projects/columns/{column_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the column. **/
     private int $columnId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\ColumnId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\ColumnId $hydrator, int $columnId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\ColumnId $hydrator, int $columnId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->columnId                = $columnId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->columnId = $columnId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class UpdateColumn
         return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\ProjectColumn|array{code: int}
-     */
+    /** @return Schema\ProjectColumn|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectColumn|array
     {
         $code          = $response->getStatusCode();

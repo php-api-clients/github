@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * headSha: The sha of the head commit.
      */
-    public function __construct(#[MapFrom('head_sha')] public string $headSha)
+    public function __construct(#[MapFrom('head_sha')]
+    public string $headSha,)
     {
     }
 }

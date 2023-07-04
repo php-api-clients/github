@@ -26,7 +26,7 @@ final class ListLocationsForAlert
     private const PATH           = '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation. **/
     private int $alertNumber;
@@ -34,18 +34,14 @@ final class ListLocationsForAlert
     private int $page;
     /**The number of results per page (max 100). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber\Locations $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber\Locations $hydrator, string $owner, string $repo, int $alertNumber, int $page = 1, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber\Locations $hydrator, string $owner, string $repo, int $alertNumber, int $page = 1, int $perPage = 30)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->alertNumber             = $alertNumber;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner       = $owner;
+        $this->repo        = $repo;
+        $this->alertNumber = $alertNumber;
+        $this->page        = $page;
+        $this->perPage     = $perPage;
     }
 
     public function createRequest(): RequestInterface
@@ -53,9 +49,7 @@ final class ListLocationsForAlert
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{alert_number}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->alertNumber, $this->page, $this->perPage], self::PATH . '?page={page}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

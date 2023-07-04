@@ -22,7 +22,8 @@ final readonly class WebhookPing
      * sender: A GitHub user.
      * zen: Random string of GitHub zen.
      */
-    public function __construct(public ?Schema\WebhookPing\Hook $hook, #[MapFrom('hook_id')] public ?int $hookId, public ?Schema\OrganizationSimple $organization, public ?Schema\Repository $repository, public ?Schema\SimpleUser $sender, public ?string $zen)
+    public function __construct(public Schema\WebhookPing\Hook|null $hook, #[MapFrom('hook_id')]
+    public int|null $hookId, public Schema\OrganizationSimple|null $organization, public Schema\Repository|null $repository, public Schema\SimpleUser|null $sender, public string|null $zen,)
     {
     }
 }

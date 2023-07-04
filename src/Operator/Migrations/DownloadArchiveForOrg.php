@@ -22,9 +22,7 @@ final readonly class DownloadArchiveForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, int $migrationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\DownloadArchiveForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId);

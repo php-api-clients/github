@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * accountUrls: Full URLs for the social media profiles to delete.
      */
-    public function __construct(#[MapFrom('account_urls')] public array $accountUrls)
+    public function __construct(#[MapFrom('account_urls')]
+    public array $accountUrls,)
     {
     }
 }

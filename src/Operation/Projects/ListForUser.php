@@ -32,17 +32,13 @@ final class ListForUser
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Projects $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Projects $hydrator, string $username, string $state = 'open', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Projects $hydrator, string $username, string $state = 'open', int $perPage = 30, int $page = 1)
     {
-        $this->username                = $username;
-        $this->state                   = $state;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->username = $username;
+        $this->state    = $state;
+        $this->perPage  = $perPage;
+        $this->page     = $page;
     }
 
     public function createRequest(): RequestInterface

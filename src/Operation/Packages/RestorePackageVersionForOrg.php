@@ -32,17 +32,13 @@ final class RestorePackageVersionForOrg
     private string $org;
     /**Unique identifier of the package version. **/
     private int $packageVersionId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator, string $packageType, string $packageName, string $org, int $packageVersionId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator, string $packageType, string $packageName, string $org, int $packageVersionId)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->org                     = $org;
-        $this->packageVersionId        = $packageVersionId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType      = $packageType;
+        $this->packageName      = $packageName;
+        $this->org              = $org;
+        $this->packageVersionId = $packageVersionId;
     }
 
     public function createRequest(): RequestInterface
@@ -50,9 +46,7 @@ final class RestorePackageVersionForOrg
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{org}', '{package_version_id}'], [$this->packageType, $this->packageName, $this->org, $this->packageVersionId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

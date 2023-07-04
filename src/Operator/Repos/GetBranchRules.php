@@ -20,12 +20,10 @@ final readonly class GetBranchRules
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
-    public function call(string $owner, string $repo, string $branch): PromiseInterface
+    /** @return PromiseInterface<ResponseInterface> **/
+    public function call(string $owner, string $repo, string $branch, int $perPage = 30, int $page = 1): PromiseInterface
     {
-        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetBranchRules($owner, $repo, $branch);
+        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetBranchRules($owner, $repo, $branch, $perPage, $page);
         $request   = $operation->createRequest();
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {

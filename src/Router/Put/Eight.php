@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Eight
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -37,21 +27,7 @@ final class Eight
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'required_workflows') {
-                            if ($pathChunks[5] === '{required_workflow_id}') {
-                                if ($pathChunks[6] === 'repositories') {
-                                    if ($pathChunks[7] === '{repository_id}') {
-                                        if ($call === 'PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}') {
-                                            if (array_key_exists(Router\Put\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Put\Actions::class] = new Router\Put\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Put\Actions::class]->addSelectedRepoToRequiredWorkflow($params);
-                                        }
-                                    }
-                                }
-                            }
-                        } elseif ($pathChunks[4] === 'secrets') {
+                        if ($pathChunks[4] === 'secrets') {
                             if ($pathChunks[5] === '{secret_name}') {
                                 if ($pathChunks[6] === 'repositories') {
                                     if ($pathChunks[7] === '{repository_id}') {

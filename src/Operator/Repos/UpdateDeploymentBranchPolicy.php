@@ -23,9 +23,7 @@ final readonly class UpdateDeploymentBranchPolicy
     {
     }
 
-    /**
-     * @return PromiseInterface<DeploymentBranchPolicy>
-     **/
+    /** @return PromiseInterface<DeploymentBranchPolicy> **/
     public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdateDeploymentBranchPolicy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $branchPolicyId);

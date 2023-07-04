@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class MoveCardTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class MoveCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->moveCard(7, json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\Forbidden::class);
@@ -77,9 +71,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\Forbidden::class);
@@ -94,9 +86,7 @@ final class MoveCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->moveCard(7, json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -132,9 +120,7 @@ final class MoveCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->moveCard(7, json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::class);
@@ -153,9 +139,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\MoveCard\Response\ApplicationJson\ServiceUnavailable::class);
@@ -170,9 +154,7 @@ final class MoveCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->moveCard(7, json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -191,9 +173,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -208,9 +188,7 @@ final class MoveCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->moveCard(7, json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -228,9 +206,7 @@ final class MoveCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\MoveCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

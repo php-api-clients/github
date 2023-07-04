@@ -23,9 +23,7 @@ final readonly class GetOrgPublicKey
     {
     }
 
-    /**
-     * @return PromiseInterface<DependabotPublicKey>
-     **/
+    /** @return PromiseInterface<DependabotPublicKey> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\GetOrgPublicKey($this->responseSchemaValidator, $this->hydrator, $org);

@@ -16,7 +16,7 @@ abstract readonly class Tiet23FE6CB4
      * teams: The list of team `slug`s allowed to bypass pull request requirements.
      * apps: The list of app `slug`s allowed to bypass pull request requirements.
      */
-    public function __construct(public ?array $users, public ?array $teams, public ?array $apps)
+    public function __construct(public array|null $users, public array|null $teams, public array|null $apps)
     {
     }
 }

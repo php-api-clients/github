@@ -26,14 +26,10 @@ final class AcceptInvitationForAuthenticatedUser
     private const PATH           = '/user/repository_invitations/{invitation_id}';
     /**The unique identifier of the invitation. **/
     private int $invitationId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\RepositoryInvitations\InvitationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\RepositoryInvitations\InvitationId $hydrator, int $invitationId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\RepositoryInvitations\InvitationId $hydrator, int $invitationId)
     {
-        $this->invitationId            = $invitationId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->invitationId = $invitationId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class AcceptInvitationForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{invitation_id}'], [$this->invitationId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

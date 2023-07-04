@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(Project|array)>
-     **/
+    /** @return PromiseInterface<(Project|array)> **/
     public function call(int $projectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Get($this->responseSchemaValidator, $this->hydrator, $projectId);

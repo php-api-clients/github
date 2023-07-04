@@ -13,7 +13,8 @@ final readonly class Parents
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"html_url":"https:\\/\\/example.com\\/","sha":"generated","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(#[MapFrom('html_url')] public string $htmlUrl, public string $sha, public string $url)
+    public function __construct(#[MapFrom('html_url')]
+    public string $htmlUrl, public string $sha, public string $url,)
     {
     }
 }

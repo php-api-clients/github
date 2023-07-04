@@ -17,7 +17,9 @@ final readonly class CodeScanningAnalysisDeletion
      * nextAnalysisUrl: Next deletable analysis in chain, without last analysis deletion confirmation
      * confirmDeleteUrl: Next deletable analysis in chain, with last analysis deletion confirmation
      */
-    public function __construct(#[MapFrom('next_analysis_url')] public ?string $nextAnalysisUrl, #[MapFrom('confirm_delete_url')] public ?string $confirmDeleteUrl)
+    public function __construct(#[MapFrom('next_analysis_url')]
+    public string|null $nextAnalysisUrl, #[MapFrom('confirm_delete_url')]
+    public string|null $confirmDeleteUrl,)
     {
     }
 }

@@ -13,7 +13,8 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"variables":[{"name":"USERNAME","value":"octocat","created_at":"2019-01-24T22:45:36.000Z","updated_at":"2019-01-24T22:45:36.000Z","visibility":"selected","selected_repositories_url":"https:\\/\\/api.github.com\\/organizations\\/org\\/variables\\/USERNAME\\/repositories"},{"name":"USERNAME","value":"octocat","created_at":"2019-01-24T22:45:36.000Z","updated_at":"2019-01-24T22:45:36.000Z","visibility":"selected","selected_repositories_url":"https:\\/\\/api.github.com\\/organizations\\/org\\/variables\\/USERNAME\\/repositories"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $variables)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $variables,)
     {
     }
 }

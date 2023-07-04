@@ -23,9 +23,7 @@ final readonly class ExportSbom
     {
     }
 
-    /**
-     * @return PromiseInterface<DependencyGraphSpdxSbom>
-     **/
+    /** @return PromiseInterface<DependencyGraphSpdxSbom> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\DependencyGraph\ExportSbom($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

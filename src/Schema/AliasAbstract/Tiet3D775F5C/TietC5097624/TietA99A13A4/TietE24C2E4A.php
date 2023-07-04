@@ -13,7 +13,8 @@ abstract readonly class TietE24C2E4A
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"collaborators":13,"name":"generated","space":5,"private_repos":13}';
 
-    public function __construct(public int $collaborators, public string $name, public int $space, #[MapFrom('private_repos')] public int $privateRepos)
+    public function __construct(public int $collaborators, public string $name, public int $space, #[MapFrom('private_repos')]
+    public int $privateRepos,)
     {
     }
 }

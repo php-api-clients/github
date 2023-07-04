@@ -26,16 +26,10 @@ final class AddRepositoryForSecretForAuthenticatedUser
     private const PATH           = '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
     /**The name of the secret. **/
     private string $secretName;
-    private int $repositoryId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName\Repositories\RepositoryId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\Secrets\SecretName\Repositories\RepositoryId $hydrator, string $secretName, int $repositoryId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\Secrets\SecretName\Repositories\RepositoryId $hydrator, string $secretName, private int $repositoryId)
     {
-        $this->secretName              = $secretName;
-        $this->repositoryId            = $repositoryId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->secretName = $secretName;
     }
 
     public function createRequest(): RequestInterface
@@ -43,9 +37,7 @@ final class AddRepositoryForSecretForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{secret_name}', '{repository_id}'], [$this->secretName, $this->repositoryId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

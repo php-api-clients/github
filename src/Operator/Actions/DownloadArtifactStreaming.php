@@ -23,9 +23,7 @@ final readonly class DownloadArtifactStreaming
     {
     }
 
-    /**
-     * @return PromiseInterface<Observable>
-     **/
+    /** @return PromiseInterface<Observable> **/
     public function call(string $owner, string $repo, int $artifactId, string $archiveFormat): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DownloadArtifactStreaming($this->responseSchemaValidator, $this->hydrator, $this->browser, $owner, $repo, $artifactId, $archiveFormat);

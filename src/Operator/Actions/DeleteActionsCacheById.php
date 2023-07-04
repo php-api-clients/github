@@ -20,9 +20,7 @@ final readonly class DeleteActionsCacheById
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $cacheId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteActionsCacheById($owner, $repo, $cacheId);

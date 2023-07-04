@@ -23,9 +23,7 @@ final readonly class CreateTagProtection
     {
     }
 
-    /**
-     * @return PromiseInterface<TagProtection>
-     **/
+    /** @return PromiseInterface<TagProtection> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateTagProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

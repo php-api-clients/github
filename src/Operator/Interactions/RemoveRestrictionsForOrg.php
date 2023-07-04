@@ -20,9 +20,7 @@ final readonly class RemoveRestrictionsForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\RemoveRestrictionsForOrg($org);

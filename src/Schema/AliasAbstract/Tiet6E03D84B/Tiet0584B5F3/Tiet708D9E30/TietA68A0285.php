@@ -17,7 +17,13 @@ abstract readonly class TietA68A0285
      * id: The unique identifier of the project column
      * name: Name of the project column
      */
-    public function __construct(#[MapFrom('after_id')] public ?int $afterId, #[MapFrom('cards_url')] public string $cardsUrl, #[MapFrom('created_at')] public string $createdAt, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('project_url')] public string $projectUrl, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('after_id')]
+    public int|null $afterId, #[MapFrom('cards_url')]
+    public string $cardsUrl, #[MapFrom('created_at')]
+    public string $createdAt, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('project_url')]
+    public string $projectUrl, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

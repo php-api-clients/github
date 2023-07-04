@@ -13,7 +13,12 @@ abstract readonly class TietD2AF103B
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"badge_url":"https:\\/\\/example.com\\/","created_at":"1970-01-01T00:00:00+00:00","html_url":"https:\\/\\/example.com\\/","id":2,"name":"generated","node_id":"generated","path":"generated","state":"generated","updated_at":"1970-01-01T00:00:00+00:00","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(#[MapFrom('badge_url')] public string $badgeUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')] public string $nodeId, public string $path, public string $state, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('badge_url')]
+    public string $badgeUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public string $name, #[MapFrom('node_id')]
+    public string $nodeId, public string $path, public string $state, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

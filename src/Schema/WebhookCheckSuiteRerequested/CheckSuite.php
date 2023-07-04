@@ -23,7 +23,17 @@ final readonly class CheckSuite
      * status: The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
      * url: URL that points to the check suite API resource.
      */
-    public function __construct(public ?string $after, public Schema\WebhookCheckSuiteRerequested\CheckSuite\App $app, public ?string $before, #[MapFrom('check_runs_url')] public string $checkRunsUrl, public ?string $conclusion, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('head_branch')] public ?string $headBranch, #[MapFrom('head_commit')] public Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit $headCommit, #[MapFrom('head_sha')] public string $headSha, public int $id, #[MapFrom('latest_check_runs_count')] public int $latestCheckRunsCount, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('pull_requests')] public array $pullRequests, public ?bool $rerequestable, #[MapFrom('runs_rerequestable')] public ?bool $runsRerequestable, public ?string $status, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(public string|null $after, public Schema\WebhookCheckSuiteRerequested\CheckSuite\App $app, public string|null $before, #[MapFrom('check_runs_url')]
+    public string $checkRunsUrl, public string|null $conclusion, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('head_branch')]
+    public string|null $headBranch, #[MapFrom('head_commit')]
+    public Schema\WebhookCheckSuiteRerequested\CheckSuite\HeadCommit $headCommit, #[MapFrom('head_sha')]
+    public string $headSha, public int $id, #[MapFrom('latest_check_runs_count')]
+    public int $latestCheckRunsCount, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('pull_requests')]
+    public array $pullRequests, public bool|null $rerequestable, #[MapFrom('runs_rerequestable')]
+    public bool|null $runsRerequestable, public string|null $status, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

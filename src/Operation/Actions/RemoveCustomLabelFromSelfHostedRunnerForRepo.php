@@ -26,23 +26,19 @@ final class RemoveCustomLabelFromSelfHostedRunnerForRepo
     private const PATH           = '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**Unique identifier of the self-hosted runner. **/
     private int $runnerId;
     /**The name of a self-hosted runner's custom label. **/
     private string $name;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RunnerId\Labels\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RunnerId\Labels\Name $hydrator, string $owner, string $repo, int $runnerId, string $name)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RunnerId\Labels\Name $hydrator, string $owner, string $repo, int $runnerId, string $name)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->runnerId                = $runnerId;
-        $this->name                    = $name;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->runnerId = $runnerId;
+        $this->name     = $name;
     }
 
     public function createRequest(): RequestInterface

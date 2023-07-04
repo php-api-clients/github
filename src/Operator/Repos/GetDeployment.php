@@ -23,9 +23,7 @@ final readonly class GetDeployment
     {
     }
 
-    /**
-     * @return PromiseInterface<Deployment>
-     **/
+    /** @return PromiseInterface<Deployment> **/
     public function call(string $owner, string $repo, int $deploymentId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId);

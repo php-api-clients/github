@@ -13,7 +13,13 @@ final readonly class MarketplaceListingPlan
     public const SCHEMA_DESCRIPTION  = 'Marketplace Listing Plan';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"https:\\/\\/api.github.com\\/marketplace_listing\\/plans\\/1313","accounts_url":"https:\\/\\/api.github.com\\/marketplace_listing\\/plans\\/1313\\/accounts","id":1313,"number":3,"name":"Pro","description":"A professional-grade CI solution","monthly_price_in_cents":1099,"yearly_price_in_cents":11870,"price_model":"FLAT_RATE","has_free_trial":true,"unit_name":"generated","state":"published","bullets":["Up to 25 private repositories","Up to 25 private repositories"]}';
 
-    public function __construct(public string $url, #[MapFrom('accounts_url')] public string $accountsUrl, public int $id, public int $number, public string $name, public string $description, #[MapFrom('monthly_price_in_cents')] public int $monthlyPriceInCents, #[MapFrom('yearly_price_in_cents')] public int $yearlyPriceInCents, #[MapFrom('price_model')] public string $priceModel, #[MapFrom('has_free_trial')] public bool $hasFreeTrial, #[MapFrom('unit_name')] public ?string $unitName, public string $state, public array $bullets)
+    public function __construct(public string $url, #[MapFrom('accounts_url')]
+    public string $accountsUrl, public int $id, public int $number, public string $name, public string $description, #[MapFrom('monthly_price_in_cents')]
+    public int $monthlyPriceInCents, #[MapFrom('yearly_price_in_cents')]
+    public int $yearlyPriceInCents, #[MapFrom('price_model')]
+    public string $priceModel, #[MapFrom('has_free_trial')]
+    public bool $hasFreeTrial, #[MapFrom('unit_name')]
+    public string|null $unitName, public string $state, public array $bullets,)
     {
     }
 }

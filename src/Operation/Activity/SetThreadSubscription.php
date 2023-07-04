@@ -25,18 +25,12 @@ final class SetThreadSubscription
     public const OPERATION_MATCH = 'PUT /notifications/threads/{thread_id}/subscription';
     private const METHOD         = 'PUT';
     private const PATH           = '/notifications/threads/{thread_id}/subscription';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)). **/
     private int $threadId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator, int $threadId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator, int $threadId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->threadId                = $threadId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->threadId = $threadId;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -46,9 +40,7 @@ final class SetThreadSubscription
         return new Request(self::METHOD, str_replace(['{thread_id}'], [$this->threadId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\ThreadSubscription|array{code: int}
-     */
+    /** @return Schema\ThreadSubscription|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ThreadSubscription|array
     {
         $code          = $response->getStatusCode();

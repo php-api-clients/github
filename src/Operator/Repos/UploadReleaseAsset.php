@@ -23,9 +23,7 @@ final readonly class UploadReleaseAsset
     {
     }
 
-    /**
-     * @return PromiseInterface<(ReleaseAsset|array)>
-     **/
+    /** @return PromiseInterface<(ReleaseAsset|array)> **/
     public function call(string $owner, string $repo, int $releaseId, string $name, string $label, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UploadReleaseAsset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId, $name, $label);

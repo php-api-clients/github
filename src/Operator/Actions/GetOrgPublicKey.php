@@ -23,9 +23,7 @@ final readonly class GetOrgPublicKey
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsPublicKey>
-     **/
+    /** @return PromiseInterface<ActionsPublicKey> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetOrgPublicKey($this->responseSchemaValidator, $this->hydrator, $org);

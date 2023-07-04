@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class RerequestSuiteTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class RerequestSuiteTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);

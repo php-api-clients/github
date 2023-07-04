@@ -25,7 +25,11 @@ final readonly class ApplicationJson
      * validate: Whether the SARIF file will be validated according to the code scanning specifications.
     This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
      */
-    public function __construct(#[MapFrom('commit_sha')] public string $commitSha, public string $ref, public string $sarif, #[MapFrom('checkout_uri')] public ?string $checkoutUri, #[MapFrom('started_at')] public ?string $startedAt, #[MapFrom('tool_name')] public ?string $toolName, public ?bool $validate)
+    public function __construct(#[MapFrom('commit_sha')]
+    public string $commitSha, public string $ref, public string $sarif, #[MapFrom('checkout_uri')]
+    public string|null $checkoutUri, #[MapFrom('started_at')]
+    public string|null $startedAt, #[MapFrom('tool_name')]
+    public string|null $toolName, public bool|null $validate,)
     {
     }
 }

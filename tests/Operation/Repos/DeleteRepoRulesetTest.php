@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class DeleteRepoRulesetTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -42,9 +40,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -59,9 +55,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         $result = await($client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -82,9 +76,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -99,9 +91,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         $result = await($client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -121,9 +111,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

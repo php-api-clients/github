@@ -19,7 +19,7 @@ final readonly class ApplicationJson
      * events: Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
      * active: Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    public function __construct(public ?string $name, public ?Schema\Repos\CreateWebhook\Request\ApplicationJson\Config $config, public ?array $events, public ?bool $active)
+    public function __construct(public string|null $name, public Schema\Repos\CreateWebhook\Request\ApplicationJson\Config|null $config, public array|null $events, public bool|null $active)
     {
     }
 }

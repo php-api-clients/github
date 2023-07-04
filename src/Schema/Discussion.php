@@ -21,7 +21,19 @@ final readonly class Discussion
     `transferring` means that the discussion is being transferred from another repository.
      * stateReason: The reason for the current state
      */
-    public function __construct(#[MapFrom('active_lock_reason')] public ?string $activeLockReason, #[MapFrom('answer_chosen_at')] public ?string $answerChosenAt, #[MapFrom('answer_chosen_by')] public ?Schema\Discussion\AnswerChosenBy $answerChosenBy, #[MapFrom('answer_html_url')] public ?string $answerHtmlUrl, #[MapFrom('author_association')] public string $authorAssociation, public string $body, public Schema\Discussion\Category $category, public int $comments, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('html_url')] public string $htmlUrl, public int $id, public bool $locked, #[MapFrom('node_id')] public string $nodeId, public int $number, public ?Schema\Discussion\Reactions $reactions, #[MapFrom('repository_url')] public string $repositoryUrl, public string $state, #[MapFrom('state_reason')] public ?string $stateReason, #[MapFrom('timeline_url')] public ?string $timelineUrl, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public ?Schema\Discussion\User $user)
+    public function __construct(#[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, #[MapFrom('answer_chosen_at')]
+    public string|null $answerChosenAt, #[MapFrom('answer_chosen_by')]
+    public Schema\Discussion\AnswerChosenBy|null $answerChosenBy, #[MapFrom('answer_html_url')]
+    public string|null $answerHtmlUrl, #[MapFrom('author_association')]
+    public string $authorAssociation, public string $body, public Schema\Discussion\Category $category, public int $comments, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, public bool $locked, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, public Schema\Discussion\Reactions|null $reactions, #[MapFrom('repository_url')]
+    public string $repositoryUrl, public string $state, #[MapFrom('state_reason')]
+    public string|null $stateReason, #[MapFrom('timeline_url')]
+    public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\Discussion\User|null $user,)
     {
     }
 }

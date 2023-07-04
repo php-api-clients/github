@@ -28,15 +28,11 @@ final class GetOrgRuleset
     private string $org;
     /**The ID of the ruleset. **/
     private int $rulesetId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
     {
-        $this->org                     = $org;
-        $this->rulesetId               = $rulesetId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->rulesetId = $rulesetId;
     }
 
     public function createRequest(): RequestInterface

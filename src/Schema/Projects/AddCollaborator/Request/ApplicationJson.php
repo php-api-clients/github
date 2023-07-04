@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * permission: The permission to grant the collaborator.
      */
-    public function __construct(public ?string $permission)
+    public function __construct(public string|null $permission)
     {
     }
 }

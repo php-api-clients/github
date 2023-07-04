@@ -13,7 +13,9 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"incomplete_results":false,"items":[{"name":"generated","display_name":"generated","short_description":"generated","description":"generated","created_by":"generated","released":"generated","created_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","featured":false,"curated":false,"score":0.5,"repository_count":16,"logo_url":"https:\\/\\/example.com\\/","text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}],"related":null,"aliases":null},{"name":"generated","display_name":"generated","short_description":"generated","description":"generated","created_by":"generated","released":"generated","created_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","featured":false,"curated":false,"score":0.5,"repository_count":16,"logo_url":"https:\\/\\/example.com\\/","text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}],"related":null,"aliases":null}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, #[MapFrom('incomplete_results')] public bool $incompleteResults, public array $items)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, #[MapFrom('incomplete_results')]
+    public bool $incompleteResults, public array $items,)
     {
     }
 }

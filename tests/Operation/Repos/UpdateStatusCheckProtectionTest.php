@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateStatusCheckProtectionTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\StatusCheckPolicy::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateStatusCheckProtectionTest extends AsyncTestCase
         })(json_decode(Schema\Repos\UpdateStatusCheckProtection\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\StatusCheckPolicy::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateStatusCheckProtectionTest extends AsyncTestCase
         $result = await($client->operations()->repos()->updateStatusCheckProtection('generated', 'generated', 'generated', json_decode(Schema\Repos\UpdateStatusCheckProtection\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class UpdateStatusCheckProtectionTest extends AsyncTestCase
         })(json_decode(Schema\Repos\UpdateStatusCheckProtection\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class UpdateStatusCheckProtectionTest extends AsyncTestCase
         $result = await($client->operations()->repos()->updateStatusCheckProtection('generated', 'generated', 'generated', json_decode(Schema\Repos\UpdateStatusCheckProtection\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -121,9 +111,7 @@ final class UpdateStatusCheckProtectionTest extends AsyncTestCase
         })(json_decode(Schema\Repos\UpdateStatusCheckProtection\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

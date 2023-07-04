@@ -22,7 +22,16 @@ final readonly class DeploymentStatus
      * environmentUrl: The URL for accessing your environment.
      * logUrl: The URL to associate with this status.
      */
-    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $state, public ?Schema\SimpleUser $creator, public string $description, public ?string $environment, #[MapFrom('target_url')] public string $targetUrl, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('deployment_url')] public string $deploymentUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('environment_url')] public ?string $environmentUrl, #[MapFrom('log_url')] public ?string $logUrl, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp)
+    public function __construct(public string $url, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $state, public Schema\SimpleUser|null $creator, public string $description, public string|null $environment, #[MapFrom('target_url')]
+    public string $targetUrl, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('deployment_url')]
+    public string $deploymentUrl, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('environment_url')]
+    public string|null $environmentUrl, #[MapFrom('log_url')]
+    public string|null $logUrl, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp,)
     {
     }
 }

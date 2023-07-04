@@ -25,21 +25,15 @@ final class CreateOrUpdateOrgSecret
     public const OPERATION_MATCH = 'PUT /orgs/{org}/codespaces/secrets/{secret_name}';
     private const METHOD         = 'PUT';
     private const PATH           = '/orgs/{org}/codespaces/secrets/{secret_name}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the secret. **/
     private string $secretName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator, string $org, string $secretName)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator, string $org, string $secretName)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->secretName              = $secretName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org        = $org;
+        $this->secretName = $secretName;
     }
 
     public function createRequest(array $data): RequestInterface
@@ -49,9 +43,7 @@ final class CreateOrUpdateOrgSecret
         return new Request(self::METHOD, str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /**
-     * @return Schema\EmptyObject|array{code: int}
-     */
+    /** @return Schema\EmptyObject|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\EmptyObject|array
     {
         $code          = $response->getStatusCode();

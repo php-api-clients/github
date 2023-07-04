@@ -21,7 +21,8 @@ final readonly class WebhookPullRequestReviewThreadUnresolved
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public string $action, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, #[MapFrom('pull_request')] public Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest $pullRequest, public Schema\Repository $repository, public ?Schema\SimpleUser $sender, public Schema\WebhookPullRequestReviewThreadUnresolved\Thread $thread)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, #[MapFrom('pull_request')]
+    public Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest $pullRequest, public Schema\Repository $repository, public Schema\SimpleUser|null $sender, public Schema\WebhookPullRequestReviewThreadUnresolved\Thread $thread,)
     {
     }
 }

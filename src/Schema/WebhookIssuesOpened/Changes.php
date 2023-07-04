@@ -18,7 +18,9 @@ final readonly class Changes
      * oldIssue: The [issue](https://docs.github.com/rest/reference/issues) itself.
      * oldRepository: A git repository
      */
-    public function __construct(#[MapFrom('old_issue')] public ?Schema\WebhookIssuesOpened\Changes\OldIssue $oldIssue, #[MapFrom('old_repository')] public Schema\WebhookIssuesOpened\Changes\OldRepository $oldRepository)
+    public function __construct(#[MapFrom('old_issue')]
+    public Schema\WebhookIssuesOpened\Changes\OldIssue|null $oldIssue, #[MapFrom('old_repository')]
+    public Schema\WebhookIssuesOpened\Changes\OldRepository $oldRepository,)
     {
     }
 }

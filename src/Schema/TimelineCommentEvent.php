@@ -22,7 +22,16 @@ final readonly class TimelineCommentEvent
      * user: A GitHub user.
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(public string $event, public Schema\SimpleUser $actor, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public ?string $body, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('body_html')] public ?string $bodyHtml, #[MapFrom('html_url')] public string $htmlUrl, public Schema\SimpleUser $user, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('issue_url')] public string $issueUrl, #[MapFrom('author_association')] public string $authorAssociation, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public string $event, public Schema\SimpleUser $actor, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public string|null $body, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('body_html')]
+    public string|null $bodyHtml, #[MapFrom('html_url')]
+    public string $htmlUrl, public Schema\SimpleUser $user, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('issue_url')]
+    public string $issueUrl, #[MapFrom('author_association')]
+    public string $authorAssociation, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

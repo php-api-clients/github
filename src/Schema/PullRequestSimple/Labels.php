@@ -13,7 +13,8 @@ final readonly class Labels
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"node_id":"generated","url":"generated","name":"generated","description":"generated","color":"generated","default":false}';
 
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public string $name, public string $description, public string $color, public bool $default)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public string $name, public string $description, public string $color, public bool $default,)
     {
     }
 }

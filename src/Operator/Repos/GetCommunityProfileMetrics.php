@@ -23,9 +23,7 @@ final readonly class GetCommunityProfileMetrics
     {
     }
 
-    /**
-     * @return PromiseInterface<CommunityProfile>
-     **/
+    /** @return PromiseInterface<CommunityProfile> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCommunityProfileMetrics($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

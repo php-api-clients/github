@@ -15,7 +15,7 @@ final readonly class InteractionLimit
      * limit: The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
      * expiry: The duration of the interaction restriction. Default: `one_day`.
      */
-    public function __construct(public string $limit, public ?string $expiry)
+    public function __construct(public string $limit, public string|null $expiry)
     {
     }
 }

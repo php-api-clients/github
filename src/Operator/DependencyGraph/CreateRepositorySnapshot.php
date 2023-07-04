@@ -23,9 +23,7 @@ final readonly class CreateRepositorySnapshot
     {
     }
 
-    /**
-     * @return PromiseInterface<Created>
-     **/
+    /** @return PromiseInterface<Created> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\DependencyGraph\CreateRepositorySnapshot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

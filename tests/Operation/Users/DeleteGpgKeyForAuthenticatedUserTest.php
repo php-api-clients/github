@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -40,9 +38,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -57,9 +53,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->deleteGpgKeyForAuthenticatedUser(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -78,9 +72,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -95,9 +87,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->deleteGpgKeyForAuthenticatedUser(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -116,9 +106,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -133,9 +121,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->deleteGpgKeyForAuthenticatedUser(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -154,9 +140,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -171,9 +155,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         $result = await($client->operations()->users()->deleteGpgKeyForAuthenticatedUser(10));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -191,9 +173,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -209,9 +189,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -229,9 +207,7 @@ final class DeleteGpgKeyForAuthenticatedUserTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

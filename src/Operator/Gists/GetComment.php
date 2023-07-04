@@ -23,9 +23,7 @@ final readonly class GetComment
     {
     }
 
-    /**
-     * @return PromiseInterface<(GistComment|array)>
-     **/
+    /** @return PromiseInterface<(GistComment|array)> **/
     public function call(string $gistId, int $commentId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\GetComment($this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);

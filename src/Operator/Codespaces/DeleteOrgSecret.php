@@ -22,9 +22,7 @@ final readonly class DeleteOrgSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

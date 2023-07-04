@@ -16,7 +16,7 @@ final readonly class From
      * pull: The previous version of the team member's `pull` permission on a repository, if the action was `edited`.
      * push: The previous version of the team member's `push` permission on a repository, if the action was `edited`.
      */
-    public function __construct(public ?bool $admin, public ?bool $pull, public ?bool $push)
+    public function __construct(public bool|null $admin, public bool|null $pull, public bool|null $push)
     {
     }
 }

@@ -26,19 +26,13 @@ final class GetBlob
     private const PATH           = '/repos/{owner}/{repo}/git/blobs/{file_sha}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private string $fileSha;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha $hydrator, string $owner, string $repo, string $fileSha)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha $hydrator, string $owner, string $repo, private string $fileSha)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->fileSha                 = $fileSha;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
     }
 
     public function createRequest(): RequestInterface

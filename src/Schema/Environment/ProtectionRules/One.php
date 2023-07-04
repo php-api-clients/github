@@ -16,7 +16,8 @@ final readonly class One
     /**
      * reviewers: The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $type, public ?array $reviewers)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $type, public array|null $reviewers,)
     {
     }
 }

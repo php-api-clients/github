@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class GetTemplateTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\GitignoreTemplate::SCHEMA_EXAMPLE_DATA);
@@ -38,9 +36,7 @@ final class GetTemplateTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\GitignoreTemplate::SCHEMA_EXAMPLE_DATA);
@@ -54,9 +50,7 @@ final class GetTemplateTest extends AsyncTestCase
         $result = await($client->operations()->gitignore()->getTemplate('generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -74,9 +68,7 @@ final class GetTemplateTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

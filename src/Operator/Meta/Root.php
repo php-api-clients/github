@@ -22,9 +22,7 @@ final readonly class Root
     {
     }
 
-    /**
-     * @return PromiseInterface<\ApiClients\Client\GitHub\Schema\Root>
-     **/
+    /** @return PromiseInterface<\ApiClients\Client\GitHub\Schema\Root> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\Root($this->responseSchemaValidator, $this->hydrator);

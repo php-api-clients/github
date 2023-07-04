@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SetAppAccessRestrictionsTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -43,9 +41,7 @@ final class SetAppAccessRestrictionsTest extends AsyncTestCase
         })(json_decode(Schema\Repos\SetAppAccessRestrictions\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

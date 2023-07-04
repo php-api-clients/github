@@ -23,7 +23,8 @@ final readonly class ApplicationJson
      * hireable: The new hiring availability of the user.
      * bio: The new short biography of the user.
      */
-    public function __construct(public ?string $name, public ?string $email, public ?string $blog, #[MapFrom('twitter_username')] public ?string $twitterUsername, public ?string $company, public ?string $location, public ?bool $hireable, public ?string $bio)
+    public function __construct(public string|null $name, public string|null $email, public string|null $blog, #[MapFrom('twitter_username')]
+    public string|null $twitterUsername, public string|null $company, public string|null $location, public bool|null $hireable, public string|null $bio,)
     {
     }
 }

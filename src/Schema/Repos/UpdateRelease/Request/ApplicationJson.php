@@ -23,7 +23,11 @@ final readonly class ApplicationJson
      * makeLatest: Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
      * discussionCategoryName: If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
      */
-    public function __construct(#[MapFrom('tag_name')] public ?string $tagName, #[MapFrom('target_commitish')] public ?string $targetCommitish, public ?string $name, public ?string $body, public ?bool $draft, public ?bool $prerelease, #[MapFrom('make_latest')] public ?string $makeLatest, #[MapFrom('discussion_category_name')] public ?string $discussionCategoryName)
+    public function __construct(#[MapFrom('tag_name')]
+    public string|null $tagName, #[MapFrom('target_commitish')]
+    public string|null $targetCommitish, public string|null $name, public string|null $body, public bool|null $draft, public bool|null $prerelease, #[MapFrom('make_latest')]
+    public string|null $makeLatest, #[MapFrom('discussion_category_name')]
+    public string|null $discussionCategoryName,)
     {
     }
 }

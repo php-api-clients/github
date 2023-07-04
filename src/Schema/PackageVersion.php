@@ -18,7 +18,12 @@ final readonly class PackageVersion
      * id: Unique identifier of the package version.
      * name: The name of the package version.
      */
-    public function __construct(public int $id, public string $name, public string $url, #[MapFrom('package_html_url')] public string $packageHtmlUrl, #[MapFrom('html_url')] public ?string $htmlUrl, public ?string $license, public ?string $description, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('deleted_at')] public ?string $deletedAt, public ?Schema\PackageVersion\Metadata $metadata)
+    public function __construct(public int $id, public string $name, public string $url, #[MapFrom('package_html_url')]
+    public string $packageHtmlUrl, #[MapFrom('html_url')]
+    public string|null $htmlUrl, public string|null $license, public string|null $description, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('deleted_at')]
+    public string|null $deletedAt, public Schema\PackageVersion\Metadata|null $metadata,)
     {
     }
 }

@@ -13,7 +13,8 @@ final readonly class ValidationErrorSimple
     public const SCHEMA_DESCRIPTION  = 'Validation Error Simple';
     public const SCHEMA_EXAMPLE_DATA = '{"message":"generated","documentation_url":"generated","errors":["generated","generated"]}';
 
-    public function __construct(public string $message, #[MapFrom('documentation_url')] public string $documentationUrl, public ?array $errors)
+    public function __construct(public string $message, #[MapFrom('documentation_url')]
+    public string $documentationUrl, public array|null $errors,)
     {
     }
 }

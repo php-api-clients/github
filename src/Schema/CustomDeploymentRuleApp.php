@@ -19,7 +19,9 @@ final readonly class CustomDeploymentRuleApp
      * integrationUrl: The URL for the endpoint to get details about the app.
      * nodeId: The node ID for the deployment protection rule integration.
      */
-    public function __construct(public int $id, public string $slug, #[MapFrom('integration_url')] public string $integrationUrl, #[MapFrom('node_id')] public string $nodeId)
+    public function __construct(public int $id, public string $slug, #[MapFrom('integration_url')]
+    public string $integrationUrl, #[MapFrom('node_id')]
+    public string $nodeId,)
     {
     }
 }

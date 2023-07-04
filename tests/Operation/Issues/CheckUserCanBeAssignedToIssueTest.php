@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CheckUserCanBeAssignedToIssueTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -43,9 +41,7 @@ final class CheckUserCanBeAssignedToIssueTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -60,9 +56,7 @@ final class CheckUserCanBeAssignedToIssueTest extends AsyncTestCase
         $result = await($client->operations()->issues()->checkUserCanBeAssignedToIssue('generated', 'generated', 12, 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -83,9 +77,7 @@ final class CheckUserCanBeAssignedToIssueTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

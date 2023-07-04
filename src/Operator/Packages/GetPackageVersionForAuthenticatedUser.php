@@ -23,9 +23,7 @@ final readonly class GetPackageVersionForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<PackageVersion>
-     **/
+    /** @return PromiseInterface<PackageVersion> **/
     public function call(string $packageType, string $packageName, int $packageVersionId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\GetPackageVersionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $packageVersionId);

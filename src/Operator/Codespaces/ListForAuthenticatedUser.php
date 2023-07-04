@@ -23,9 +23,7 @@ final readonly class ListForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(int $repositoryId, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $repositoryId, $perPage, $page);

@@ -28,15 +28,11 @@ final class GetExportDetailsForAuthenticatedUser
     private string $codespaceName;
     /**The ID of the export operation, or `latest`. Currently only `latest` is currently supported. **/
     private string $exportId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Exports\ExportId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Codespaces\CodespaceName\Exports\ExportId $hydrator, string $codespaceName, string $exportId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Codespaces\CodespaceName\Exports\ExportId $hydrator, string $codespaceName, string $exportId)
     {
-        $this->codespaceName           = $codespaceName;
-        $this->exportId                = $exportId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->codespaceName = $codespaceName;
+        $this->exportId      = $exportId;
     }
 
     public function createRequest(): RequestInterface

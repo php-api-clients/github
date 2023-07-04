@@ -23,9 +23,7 @@ final readonly class CreateRepoRuleset
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryRuleset>
-     **/
+    /** @return PromiseInterface<RepositoryRuleset> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateRepoRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

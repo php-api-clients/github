@@ -21,9 +21,7 @@ final readonly class UpdateRepoVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $name, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateRepoVariable($this->requestSchemaValidator, $owner, $repo, $name);

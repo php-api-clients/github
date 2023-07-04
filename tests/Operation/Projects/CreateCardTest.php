@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateCardTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\ProjectCard::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CreateCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\ProjectCard::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class CreateCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->createCard(9, json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -77,9 +71,7 @@ final class CreateCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,9 +86,7 @@ final class CreateCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->createCard(9, json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class CreateCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -132,9 +120,7 @@ final class CreateCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->createCard(9, json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::class);
@@ -153,9 +139,7 @@ final class CreateCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Projects\CreateCard\Response\ApplicationJson\ServiceUnavailable\Application\Json::class);
@@ -170,9 +154,7 @@ final class CreateCardTest extends AsyncTestCase
         $result = await($client->operations()->projects()->createCard(9, json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -190,9 +172,7 @@ final class CreateCardTest extends AsyncTestCase
         })(json_decode(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);

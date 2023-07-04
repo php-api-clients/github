@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class ListAlertsForRepoTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -50,9 +48,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -67,9 +63,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->listAlertsForRepo('generated', 'generated', 'generated', null, 'generated', 'generated', 'generated', 4, 8, 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +92,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +107,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->listAlertsForRepo('generated', 'generated', 'generated', null, 'generated', 'generated', 'generated', 4, 8, 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -146,9 +136,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
@@ -163,9 +151,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->codeScanning()->listAlertsForRepo('generated', 'generated', 'generated', null, 'generated', 'generated', 'generated', 4, 8, 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -193,9 +179,7 @@ final class ListAlertsForRepoTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

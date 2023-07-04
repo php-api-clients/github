@@ -11,7 +11,7 @@ abstract readonly class TietF785C18A
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"message":"generated","url":"generated"}';
 
-    public function __construct(public ?string $message, public ?string $url)
+    public function __construct(public string|null $message, public string|null $url)
     {
     }
 }

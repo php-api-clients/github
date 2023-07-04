@@ -28,15 +28,11 @@ final class DeletePackageForAuthenticatedUser
     private string $packageType;
     /**The name of the package. **/
     private string $packageName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Packages\PackageType\PackageName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class DeletePackageForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}'], [$this->packageType, $this->packageName], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

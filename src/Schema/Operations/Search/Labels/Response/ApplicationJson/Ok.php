@@ -13,7 +13,9 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"incomplete_results":false,"items":[{"id":2,"node_id":"generated","url":"https:\\/\\/example.com\\/","name":"generated","color":"generated","default":false,"description":"generated","score":0.5,"text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}]},{"id":2,"node_id":"generated","url":"https:\\/\\/example.com\\/","name":"generated","color":"generated","default":false,"description":"generated","score":0.5,"text_matches":[{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]},{"object_url":"generated","object_type":"generated","property":"generated","fragment":"generated","matches":[{"text":"generated","indices":[8,9]},{"text":"generated","indices":[8,9]}]}]}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, #[MapFrom('incomplete_results')] public bool $incompleteResults, public array $items)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, #[MapFrom('incomplete_results')]
+    public bool $incompleteResults, public array $items,)
     {
     }
 }

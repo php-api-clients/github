@@ -18,7 +18,9 @@ final readonly class DismissalRestrictions
      * teams: The list of teams with review dismissal access.
      * apps: The list of apps with review dismissal access.
      */
-    public function __construct(public ?array $users, public ?array $teams, public ?array $apps, public ?string $url, #[MapFrom('users_url')] public ?string $usersUrl, #[MapFrom('teams_url')] public ?string $teamsUrl)
+    public function __construct(public array|null $users, public array|null $teams, public array|null $apps, public string|null $url, #[MapFrom('users_url')]
+    public string|null $usersUrl, #[MapFrom('teams_url')]
+    public string|null $teamsUrl,)
     {
     }
 }

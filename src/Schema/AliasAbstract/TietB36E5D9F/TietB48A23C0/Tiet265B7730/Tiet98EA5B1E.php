@@ -18,7 +18,8 @@ abstract readonly class Tiet98EA5B1E
      * imageUrl: The full URL of the image.
      * caption: A short image description.
      */
-    public function __construct(public string $alt, #[MapFrom('image_url')] public string $imageUrl, public ?string $caption)
+    public function __construct(public string $alt, #[MapFrom('image_url')]
+    public string $imageUrl, public string|null $caption,)
     {
     }
 }

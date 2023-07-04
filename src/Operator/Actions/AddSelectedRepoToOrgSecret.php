@@ -20,9 +20,7 @@ final readonly class AddSelectedRepoToOrgSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $secretName, int $repositoryId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\AddSelectedRepoToOrgSecret($org, $secretName, $repositoryId);

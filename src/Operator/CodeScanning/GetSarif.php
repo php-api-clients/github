@@ -23,9 +23,7 @@ final readonly class GetSarif
     {
     }
 
-    /**
-     * @return PromiseInterface<(CodeScanningSarifsStatus|array)>
-     **/
+    /** @return PromiseInterface<(CodeScanningSarifsStatus|array)> **/
     public function call(string $owner, string $repo, string $sarifId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\GetSarif($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sarifId);

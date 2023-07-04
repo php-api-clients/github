@@ -18,7 +18,13 @@ final readonly class ProtectedBranchPullRequestReview
      * bypassPullRequestAllowances: Allow specific users, teams, or apps to bypass pull request requirements.
      * requireLastPushApproval: Whether the most recent push must be approved by someone other than the person who pushed it.
      */
-    public function __construct(public ?string $url, #[MapFrom('dismissal_restrictions')] public ?Schema\ProtectedBranchPullRequestReview\DismissalRestrictions $dismissalRestrictions, #[MapFrom('bypass_pull_request_allowances')] public ?Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances $bypassPullRequestAllowances, #[MapFrom('dismiss_stale_reviews')] public bool $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')] public bool $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')] public ?int $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')] public ?bool $requireLastPushApproval)
+    public function __construct(public string|null $url, #[MapFrom('dismissal_restrictions')]
+    public Schema\ProtectedBranchPullRequestReview\DismissalRestrictions|null $dismissalRestrictions, #[MapFrom('bypass_pull_request_allowances')]
+    public Schema\ProtectedBranchPullRequestReview\BypassPullRequestAllowances|null $bypassPullRequestAllowances, #[MapFrom('dismiss_stale_reviews')]
+    public bool $dismissStaleReviews, #[MapFrom('require_code_owner_reviews')]
+    public bool $requireCodeOwnerReviews, #[MapFrom('required_approving_review_count')]
+    public int|null $requiredApprovingReviewCount, #[MapFrom('require_last_push_approval')]
+    public bool|null $requireLastPushApproval,)
     {
     }
 }

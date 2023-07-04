@@ -39,9 +39,7 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
         return new Request(self::METHOD, str_replace(['{org}', '{security_product}', '{enablement}'], [$this->org, $this->securityProduct, $this->enablement], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

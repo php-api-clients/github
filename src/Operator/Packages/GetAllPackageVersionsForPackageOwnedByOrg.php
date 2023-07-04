@@ -22,9 +22,7 @@ final readonly class GetAllPackageVersionsForPackageOwnedByOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $packageType, string $packageName, string $org, int $page = 1, int $perPage = 30, string $state = 'active'): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $page, $perPage, $state);

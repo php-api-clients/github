@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class DownloadArchiveForOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class DownloadArchiveForOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class DownloadArchiveForOrgTest extends AsyncTestCase
         $result = await($client->operations()->migrations()->downloadArchiveForOrg('generated', 12));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_302_empty(): void
     {
         $response = new Response(302, []);
@@ -79,9 +73,7 @@ final class DownloadArchiveForOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_302_empty(): void
     {
         $response = new Response(302, []);

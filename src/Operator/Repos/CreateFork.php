@@ -23,9 +23,7 @@ final readonly class CreateFork
     {
     }
 
-    /**
-     * @return PromiseInterface<FullRepository>
-     **/
+    /** @return PromiseInterface<FullRepository> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateFork($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -23,9 +23,7 @@ final readonly class GetConductCode
     {
     }
 
-    /**
-     * @return PromiseInterface<(CodeOfConduct|array)>
-     **/
+    /** @return PromiseInterface<(CodeOfConduct|array)> **/
     public function call(string $key): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodesOfConduct\GetConductCode($this->responseSchemaValidator, $this->hydrator, $key);

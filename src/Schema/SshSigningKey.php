@@ -13,7 +13,8 @@ final readonly class SshSigningKey
     public const SCHEMA_DESCRIPTION  = 'A public SSH key used to sign Git commits';
     public const SCHEMA_EXAMPLE_DATA = '{"key":"generated","id":2,"title":"generated","created_at":"1970-01-01T00:00:00+00:00"}';
 
-    public function __construct(public string $key, public int $id, public string $title, #[MapFrom('created_at')] public string $createdAt)
+    public function __construct(public string $key, public int $id, public string $title, #[MapFrom('created_at')]
+    public string $createdAt,)
     {
     }
 }

@@ -22,9 +22,7 @@ final readonly class DiffRange
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, string $basehead, string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\DependencyGraph\DiffRange($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $basehead, $name);

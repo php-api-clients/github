@@ -14,7 +14,8 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = 'The changes to the collaborator permissions';
     public const SCHEMA_EXAMPLE_DATA = '{"old_permission":{"from":"generated"},"permission":{"from":"generated","to":"generated"}}';
 
-    public function __construct(#[MapFrom('old_permission')] public ?Schema\WebhookMemberEdited\Changes\OldPermission $oldPermission, public ?Schema\WebhookMemberEdited\Changes\Permission $permission)
+    public function __construct(#[MapFrom('old_permission')]
+    public Schema\WebhookMemberEdited\Changes\OldPermission|null $oldPermission, public Schema\WebhookMemberEdited\Changes\Permission|null $permission,)
     {
     }
 }

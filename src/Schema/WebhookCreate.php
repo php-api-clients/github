@@ -26,7 +26,10 @@ final readonly class WebhookCreate
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?string $description, public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, #[MapFrom('master_branch')] public string $masterBranch, public ?Schema\OrganizationSimple $organization, #[MapFrom('pusher_type')] public string $pusherType, public string $ref, #[MapFrom('ref_type')] public string $refType, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string|null $description, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, #[MapFrom('master_branch')]
+    public string $masterBranch, public Schema\OrganizationSimple|null $organization, #[MapFrom('pusher_type')]
+    public string $pusherType, public string $ref, #[MapFrom('ref_type')]
+    public string $refType, public Schema\Repository $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

@@ -13,7 +13,8 @@ abstract readonly class Tiet9C643BC5
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_ms":8}';
 
-    public function __construct(#[MapFrom('total_ms')] public ?int $totalMs)
+    public function __construct(#[MapFrom('total_ms')]
+    public int|null $totalMs,)
     {
     }
 }

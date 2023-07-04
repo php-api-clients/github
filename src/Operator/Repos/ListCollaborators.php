@@ -22,9 +22,7 @@ final readonly class ListCollaborators
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, string $permission, string $affiliation = 'all', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCollaborators($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $permission, $affiliation, $perPage, $page);

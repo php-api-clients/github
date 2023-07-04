@@ -26,7 +26,7 @@ final class ListCommentsForRepo
     private const PATH           = '/repos/{owner}/{repo}/issues/comments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**Either `asc` or `desc`. Ignored without the `sort` parameter. **/
     private string $direction;
@@ -38,20 +38,16 @@ final class ListCommentsForRepo
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Issues\Comments $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Issues\Comments $hydrator, string $owner, string $repo, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->direction               = $direction;
-        $this->since                   = $since;
-        $this->sort                    = $sort;
-        $this->perPage                 = $perPage;
-        $this->page                    = $page;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner     = $owner;
+        $this->repo      = $repo;
+        $this->direction = $direction;
+        $this->since     = $since;
+        $this->sort      = $sort;
+        $this->perPage   = $perPage;
+        $this->page      = $page;
     }
 
     public function createRequest(): RequestInterface

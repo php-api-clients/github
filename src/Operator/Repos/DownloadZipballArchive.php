@@ -20,9 +20,7 @@ final readonly class DownloadZipballArchive
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, string $ref): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DownloadZipballArchive($owner, $repo, $ref);

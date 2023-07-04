@@ -18,7 +18,16 @@ final readonly class CommitComparison
      * baseCommit: Commit
      * mergeBaseCommit: Commit
      */
-    public function __construct(public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('permalink_url')] public string $permalinkUrl, #[MapFrom('diff_url')] public string $diffUrl, #[MapFrom('patch_url')] public string $patchUrl, #[MapFrom('base_commit')] public Schema\Commit $baseCommit, #[MapFrom('merge_base_commit')] public Schema\Commit $mergeBaseCommit, public string $status, #[MapFrom('ahead_by')] public int $aheadBy, #[MapFrom('behind_by')] public int $behindBy, #[MapFrom('total_commits')] public int $totalCommits, public array $commits, public ?array $files)
+    public function __construct(public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('permalink_url')]
+    public string $permalinkUrl, #[MapFrom('diff_url')]
+    public string $diffUrl, #[MapFrom('patch_url')]
+    public string $patchUrl, #[MapFrom('base_commit')]
+    public Schema\Commit $baseCommit, #[MapFrom('merge_base_commit')]
+    public Schema\Commit $mergeBaseCommit, public string $status, #[MapFrom('ahead_by')]
+    public int $aheadBy, #[MapFrom('behind_by')]
+    public int $behindBy, #[MapFrom('total_commits')]
+    public int $totalCommits, public array $commits, public array|null $files,)
     {
     }
 }

@@ -21,9 +21,7 @@ final readonly class ReviewCustomGatesForRun
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $owner, string $repo, int $runId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ReviewCustomGatesForRun($this->requestSchemaValidator, $owner, $repo, $runId);

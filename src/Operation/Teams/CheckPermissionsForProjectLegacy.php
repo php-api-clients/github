@@ -27,15 +27,11 @@ final class CheckPermissionsForProjectLegacy
     private int $teamId;
     /**The unique identifier of the project. **/
     private int $projectId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator, int $teamId, int $projectId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator, int $teamId, int $projectId)
     {
-        $this->teamId                  = $teamId;
-        $this->projectId               = $projectId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId    = $teamId;
+        $this->projectId = $projectId;
     }
 
     public function createRequest(): RequestInterface
@@ -43,9 +39,7 @@ final class CheckPermissionsForProjectLegacy
         return new Request(self::METHOD, str_replace(['{team_id}', '{project_id}'], [$this->teamId, $this->projectId], self::PATH));
     }
 
-    /**
-     * @return Schema\TeamProject|array{code: int}
-     */
+    /** @return Schema\TeamProject|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\TeamProject|array
     {
         $code          = $response->getStatusCode();

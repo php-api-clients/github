@@ -30,16 +30,12 @@ final class DeleteFromOrganization
     private string $username;
     /**The name of the codespace. **/
     private string $codespaceName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName $hydrator, string $org, string $username, string $codespaceName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName $hydrator, string $org, string $username, string $codespaceName)
     {
-        $this->org                     = $org;
-        $this->username                = $username;
-        $this->codespaceName           = $codespaceName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org           = $org;
+        $this->username      = $username;
+        $this->codespaceName = $codespaceName;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class DeleteFromOrganization
         return new Request(self::METHOD, str_replace(['{org}', '{username}', '{codespace_name}'], [$this->org, $this->username, $this->codespaceName], self::PATH));
     }
 
-    /**
-     * @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code: int}
-     */
+    /** @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array
     {
         $code          = $response->getStatusCode();

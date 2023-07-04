@@ -23,9 +23,7 @@ final readonly class GetCodespacesForUserInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<(Json|array)>
-     **/
+    /** @return PromiseInterface<(Json|array)> **/
     public function call(string $org, string $username, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetCodespacesForUserInOrg($this->responseSchemaValidator, $this->hydrator, $org, $username, $perPage, $page);

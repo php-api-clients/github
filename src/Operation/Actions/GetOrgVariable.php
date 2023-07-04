@@ -27,15 +27,11 @@ final class GetOrgVariable
     private string $org;
     /**The name of the variable. **/
     private string $name;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator, string $org, string $name)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator, string $org, string $name)
     {
-        $this->org                     = $org;
-        $this->name                    = $name;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org  = $org;
+        $this->name = $name;
     }
 
     public function createRequest(): RequestInterface

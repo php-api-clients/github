@@ -29,16 +29,12 @@ final class CheckPermissionsForProjectInOrg
     private string $teamSlug;
     /**The unique identifier of the project. **/
     private int $projectId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects\ProjectId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects\ProjectId $hydrator, string $org, string $teamSlug, int $projectId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects\ProjectId $hydrator, string $org, string $teamSlug, int $projectId)
     {
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->projectId               = $projectId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->teamSlug  = $teamSlug;
+        $this->projectId = $projectId;
     }
 
     public function createRequest(): RequestInterface
@@ -46,9 +42,7 @@ final class CheckPermissionsForProjectInOrg
         return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{project_id}'], [$this->org, $this->teamSlug, $this->projectId], self::PATH));
     }
 
-    /**
-     * @return Schema\TeamProject|array{code: int}
-     */
+    /** @return Schema\TeamProject|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\TeamProject|array
     {
         $code          = $response->getStatusCode();

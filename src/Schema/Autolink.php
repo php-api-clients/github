@@ -18,7 +18,10 @@ final readonly class Autolink
      * urlTemplate: A template for the target URL that is generated if a key was found.
      * isAlphanumeric: Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
      */
-    public function __construct(public int $id, #[MapFrom('key_prefix')] public string $keyPrefix, #[MapFrom('url_template')] public string $urlTemplate, #[MapFrom('is_alphanumeric')] public bool $isAlphanumeric)
+    public function __construct(public int $id, #[MapFrom('key_prefix')]
+    public string $keyPrefix, #[MapFrom('url_template')]
+    public string $urlTemplate, #[MapFrom('is_alphanumeric')]
+    public bool $isAlphanumeric,)
     {
     }
 }

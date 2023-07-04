@@ -16,7 +16,7 @@ final readonly class RequiredStatusChecks
      * contexts: **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
      * checks: The list of status checks to require in order to merge into this branch.
      */
-    public function __construct(public bool $strict, public array $contexts, public ?array $checks)
+    public function __construct(public bool $strict, public array $contexts, public array|null $checks)
     {
     }
 }

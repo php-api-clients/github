@@ -22,9 +22,7 @@ final readonly class RemoveRepoFromInstallationForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $installationId, int $repositoryId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $installationId, $repositoryId);

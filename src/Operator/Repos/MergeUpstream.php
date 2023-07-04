@@ -23,9 +23,7 @@ final readonly class MergeUpstream
     {
     }
 
-    /**
-     * @return PromiseInterface<(MergedUpstream|array)>
-     **/
+    /** @return PromiseInterface<(MergedUpstream|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\MergeUpstream($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

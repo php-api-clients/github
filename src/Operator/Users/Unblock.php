@@ -22,9 +22,7 @@ final readonly class Unblock
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\Unblock($this->responseSchemaValidator, $this->hydrator, $username);

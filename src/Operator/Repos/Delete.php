@@ -23,9 +23,7 @@ final readonly class Delete
     {
     }
 
-    /**
-     * @return PromiseInterface<(BasicError|array)>
-     **/
+    /** @return PromiseInterface<(BasicError|array)> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Delete($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

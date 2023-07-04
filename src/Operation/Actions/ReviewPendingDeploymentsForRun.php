@@ -20,20 +20,18 @@ final class ReviewPendingDeploymentsForRun
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
     private const METHOD         = 'POST';
     private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The unique identifier of the workflow run. **/
     private int $runId;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, string $owner, string $repo, int $runId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, string $owner, string $repo, int $runId)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->owner                  = $owner;
-        $this->repo                   = $repo;
-        $this->runId                  = $runId;
+        $this->owner = $owner;
+        $this->repo  = $repo;
+        $this->runId = $runId;
     }
 
     public function createRequest(array $data): RequestInterface

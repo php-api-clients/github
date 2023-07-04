@@ -22,9 +22,7 @@ final readonly class ListForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, string $state = 'open', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\ListForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $perPage, $page);

@@ -15,7 +15,7 @@ abstract readonly class Tiet80A33F9B
      * name: The name of the tool used to generate the code scanning analysis alert.
      * version: The version of the tool used to detect the alert.
      */
-    public function __construct(public string $name, public ?string $version)
+    public function __construct(public string $name, public string|null $version)
     {
     }
 }

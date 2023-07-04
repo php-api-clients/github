@@ -24,21 +24,15 @@ final class UpdateWebhookConfigForOrg
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/hooks/{hook_id}/config';
     private const METHOD         = 'PATCH';
     private const PATH           = '/orgs/{org}/hooks/{hook_id}/config';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. **/
     private int $hookId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator, string $org, int $hookId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator, string $org, int $hookId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->org                     = $org;
-        $this->hookId                  = $hookId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org    = $org;
+        $this->hookId = $hookId;
     }
 
     public function createRequest(array $data): RequestInterface

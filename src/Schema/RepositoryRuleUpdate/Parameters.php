@@ -16,7 +16,8 @@ final readonly class Parameters
     /**
      * updateAllowsFetchAndMerge: Branch can pull changes from its upstream repository
      */
-    public function __construct(#[MapFrom('update_allows_fetch_and_merge')] public bool $updateAllowsFetchAndMerge)
+    public function __construct(#[MapFrom('update_allows_fetch_and_merge')]
+    public bool $updateAllowsFetchAndMerge,)
     {
     }
 }

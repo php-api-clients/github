@@ -23,9 +23,7 @@ final readonly class StartForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<Migration>
-     **/
+    /** @return PromiseInterface<Migration> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\StartForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

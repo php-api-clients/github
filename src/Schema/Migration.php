@@ -18,7 +18,18 @@ final readonly class Migration
      * repositories: The repositories included in the migration. Only returned for export migrations.
      * exclude: Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
      */
-    public function __construct(public int $id, public ?Schema\SimpleUser $owner, public string $guid, public string $state, #[MapFrom('lock_repositories')] public bool $lockRepositories, #[MapFrom('exclude_metadata')] public bool $excludeMetadata, #[MapFrom('exclude_git_data')] public bool $excludeGitData, #[MapFrom('exclude_attachments')] public bool $excludeAttachments, #[MapFrom('exclude_releases')] public bool $excludeReleases, #[MapFrom('exclude_owner_projects')] public bool $excludeOwnerProjects, #[MapFrom('org_metadata_only')] public bool $orgMetadataOnly, public array $repositories, public string $url, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('archive_url')] public ?string $archiveUrl, public ?array $exclude)
+    public function __construct(public int $id, public Schema\SimpleUser|null $owner, public string $guid, public string $state, #[MapFrom('lock_repositories')]
+    public bool $lockRepositories, #[MapFrom('exclude_metadata')]
+    public bool $excludeMetadata, #[MapFrom('exclude_git_data')]
+    public bool $excludeGitData, #[MapFrom('exclude_attachments')]
+    public bool $excludeAttachments, #[MapFrom('exclude_releases')]
+    public bool $excludeReleases, #[MapFrom('exclude_owner_projects')]
+    public bool $excludeOwnerProjects, #[MapFrom('org_metadata_only')]
+    public bool $orgMetadataOnly, public array $repositories, public string $url, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('archive_url')]
+    public string|null $archiveUrl, public array|null $exclude,)
     {
     }
 }

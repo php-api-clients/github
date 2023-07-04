@@ -19,7 +19,7 @@ final class DeleteForIssue
     private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The number that identifies the issue. **/
     private int $issueNumber;
@@ -39,9 +39,7 @@ final class DeleteForIssue
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}', '{reaction_id}'], [$this->owner, $this->repo, $this->issueNumber, $this->reactionId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

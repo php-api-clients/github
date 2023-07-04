@@ -23,9 +23,7 @@ final readonly class GetSubscriptionPlanForAccountStubbed
     {
     }
 
-    /**
-     * @return PromiseInterface<(MarketplacePurchase|array)>
-     **/
+    /** @return PromiseInterface<(MarketplacePurchase|array)> **/
     public function call(int $accountId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetSubscriptionPlanForAccountStubbed($this->responseSchemaValidator, $this->hydrator, $accountId);

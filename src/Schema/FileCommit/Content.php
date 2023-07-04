@@ -14,7 +14,11 @@ final readonly class Content
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":"generated","path":"generated","sha":"generated","size":4,"url":"generated","html_url":"generated","git_url":"generated","download_url":"generated","type":"generated","_links":{"self":"generated","git":"generated","html":"generated"}}';
 
-    public function __construct(public ?string $name, public ?string $path, public ?string $sha, public ?int $size, public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('git_url')] public ?string $gitUrl, #[MapFrom('download_url')] public ?string $downloadUrl, public ?string $type, #[MapFrom('_links')] public ?Schema\FileCommit\Content\Links $links)
+    public function __construct(public string|null $name, public string|null $path, public string|null $sha, public int|null $size, public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('git_url')]
+    public string|null $gitUrl, #[MapFrom('download_url')]
+    public string|null $downloadUrl, public string|null $type, #[MapFrom('_links')]
+    public Schema\FileCommit\Content\Links|null $links,)
     {
     }
 }

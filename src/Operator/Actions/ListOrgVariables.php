@@ -23,9 +23,7 @@ final readonly class ListOrgVariables
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $org, int $perPage = 10, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListOrgVariables($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

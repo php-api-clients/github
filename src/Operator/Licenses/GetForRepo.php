@@ -23,9 +23,7 @@ final readonly class GetForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<LicenseContent>
-     **/
+    /** @return PromiseInterface<LicenseContent> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Licenses\GetForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

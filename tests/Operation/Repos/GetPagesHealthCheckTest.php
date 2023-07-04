@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetPagesHealthCheckTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PagesHealthCheck::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PagesHealthCheck::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getPagesHealthCheck('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -77,9 +71,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_202_responseContentType_application_json_zero(): void
     {
         $response = new Response(202, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -93,9 +85,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getPagesHealthCheck('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -132,9 +120,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getPagesHealthCheck('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_empty(): void
     {
         $response = new Response(400, []);
@@ -153,9 +139,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_empty(): void
     {
         $response = new Response(400, []);
@@ -171,9 +155,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         self::assertSame(400, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_empty(): void
     {
         $response = new Response(422, []);
@@ -192,9 +174,7 @@ final class GetPagesHealthCheckTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_empty(): void
     {
         $response = new Response(422, []);

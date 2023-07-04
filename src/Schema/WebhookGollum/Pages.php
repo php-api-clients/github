@@ -20,7 +20,9 @@ final readonly class Pages
      * sha: The latest commit SHA of the page.
      * title: The current page title.
      */
-    public function __construct(public string $action, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('page_name')] public string $pageName, public string $sha, public ?string $summary, public string $title)
+    public function __construct(public string $action, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('page_name')]
+    public string $pageName, public string $sha, public string|null $summary, public string $title,)
     {
     }
 }

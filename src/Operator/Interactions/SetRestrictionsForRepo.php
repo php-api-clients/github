@@ -23,9 +23,7 @@ final readonly class SetRestrictionsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<(InteractionLimitResponse|array)>
-     **/
+    /** @return PromiseInterface<(InteractionLimitResponse|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\SetRestrictionsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

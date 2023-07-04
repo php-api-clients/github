@@ -25,14 +25,10 @@ final class GetGithubPackagesBillingUser
     private const PATH           = '/users/{username}/settings/billing/packages';
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Settings\Billing\Packages $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Settings\Billing\Packages $hydrator, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Settings\Billing\Packages $hydrator, string $username)
     {
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->username = $username;
     }
 
     public function createRequest(): RequestInterface

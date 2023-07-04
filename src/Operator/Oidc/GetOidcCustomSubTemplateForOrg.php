@@ -23,9 +23,7 @@ final readonly class GetOidcCustomSubTemplateForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<OidcCustomSub>
-     **/
+    /** @return PromiseInterface<OidcCustomSub> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Oidc\GetOidcCustomSubTemplateForOrg($this->responseSchemaValidator, $this->hydrator, $org);

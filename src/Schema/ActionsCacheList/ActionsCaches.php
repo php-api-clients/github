@@ -13,7 +13,10 @@ final readonly class ActionsCaches
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"ref":"refs\\/heads\\/main","key":"Linux-node-958aff96db2d75d67787d1e634ae70b659de937b","version":"73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0","last_accessed_at":"2019-01-24T22:45:36.000Z","created_at":"2019-01-24T22:45:36.000Z","size_in_bytes":1024}';
 
-    public function __construct(public ?int $id, public ?string $ref, public ?string $key, public ?string $version, #[MapFrom('last_accessed_at')] public ?string $lastAccessedAt, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('size_in_bytes')] public ?int $sizeInBytes)
+    public function __construct(public int|null $id, public string|null $ref, public string|null $key, public string|null $version, #[MapFrom('last_accessed_at')]
+    public string|null $lastAccessedAt, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('size_in_bytes')]
+    public int|null $sizeInBytes,)
     {
     }
 }

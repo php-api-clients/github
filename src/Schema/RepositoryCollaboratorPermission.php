@@ -14,7 +14,8 @@ final readonly class RepositoryCollaboratorPermission
     public const SCHEMA_DESCRIPTION  = 'Repository Collaborator Permission';
     public const SCHEMA_EXAMPLE_DATA = '{"permission":"generated","role_name":"admin","user":{"login":"octocat","id":1,"email":"generated","name":"generated","node_id":"MDQ6VXNlcjE=","avatar_url":"https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif","gravatar_id":"41d064eb2195891e12d0413f63227ea7","url":"https:\\/\\/api.github.com\\/users\\/octocat","html_url":"https:\\/\\/github.com\\/octocat","followers_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/followers","following_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}","gists_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}","starred_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}","subscriptions_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions","organizations_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/orgs","repos_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/repos","events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}","received_events_url":"https:\\/\\/api.github.com\\/users\\/octocat\\/received_events","type":"User","site_admin":false,"permissions":{"pull":false,"triage":false,"push":false,"maintain":false,"admin":false},"role_name":"admin"}}';
 
-    public function __construct(public string $permission, #[MapFrom('role_name')] public string $roleName, public ?Schema\Collaborator $user)
+    public function __construct(public string $permission, #[MapFrom('role_name')]
+    public string $roleName, public Schema\Collaborator|null $user,)
     {
     }
 }

@@ -23,9 +23,7 @@ final readonly class UpdateAuthenticated
     {
     }
 
-    /**
-     * @return PromiseInterface<(PrivateUser|array)>
-     **/
+    /** @return PromiseInterface<(PrivateUser|array)> **/
     public function call(array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\UpdateAuthenticated($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

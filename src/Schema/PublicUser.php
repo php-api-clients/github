@@ -14,7 +14,31 @@ final readonly class PublicUser
     public const SCHEMA_DESCRIPTION  = 'Public User';
     public const SCHEMA_EXAMPLE_DATA = '{"login":"generated","id":2,"node_id":"generated","avatar_url":"https:\\/\\/example.com\\/","gravatar_id":"generated","url":"https:\\/\\/example.com\\/","html_url":"https:\\/\\/example.com\\/","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","organizations_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","events_url":"generated","received_events_url":"https:\\/\\/example.com\\/","type":"generated","site_admin":false,"name":"generated","company":"generated","blog":"generated","location":"generated","email":"hi@example.com","hireable":false,"bio":"generated","twitter_username":"generated","public_repos":12,"public_gists":12,"followers":9,"following":9,"created_at":"1970-01-01T00:00:00+00:00","updated_at":"1970-01-01T00:00:00+00:00","plan":{"collaborators":13,"name":"generated","space":5,"private_repos":13},"suspended_at":"1970-01-01T00:00:00+00:00","private_gists":1,"total_private_repos":2,"owned_private_repos":2,"disk_usage":1,"collaborators":3}';
 
-    public function __construct(public string $login, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('avatar_url')] public string $avatarUrl, #[MapFrom('gravatar_id')] public ?string $gravatarId, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('followers_url')] public string $followersUrl, #[MapFrom('following_url')] public string $followingUrl, #[MapFrom('gists_url')] public string $gistsUrl, #[MapFrom('starred_url')] public string $starredUrl, #[MapFrom('subscriptions_url')] public string $subscriptionsUrl, #[MapFrom('organizations_url')] public string $organizationsUrl, #[MapFrom('repos_url')] public string $reposUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('received_events_url')] public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')] public bool $siteAdmin, public ?string $name, public ?string $company, public ?string $blog, public ?string $location, public ?string $email, public ?bool $hireable, public ?string $bio, #[MapFrom('twitter_username')] public ?string $twitterUsername, #[MapFrom('public_repos')] public int $publicRepos, #[MapFrom('public_gists')] public int $publicGists, public int $followers, public int $following, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public ?Schema\PublicUser\Plan $plan, #[MapFrom('suspended_at')] public ?string $suspendedAt, #[MapFrom('private_gists')] public ?int $privateGists, #[MapFrom('total_private_repos')] public ?int $totalPrivateRepos, #[MapFrom('owned_private_repos')] public ?int $ownedPrivateRepos, #[MapFrom('disk_usage')] public ?int $diskUsage, public ?int $collaborators)
+    public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('avatar_url')]
+    public string $avatarUrl, #[MapFrom('gravatar_id')]
+    public string|null $gravatarId, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('followers_url')]
+    public string $followersUrl, #[MapFrom('following_url')]
+    public string $followingUrl, #[MapFrom('gists_url')]
+    public string $gistsUrl, #[MapFrom('starred_url')]
+    public string $starredUrl, #[MapFrom('subscriptions_url')]
+    public string $subscriptionsUrl, #[MapFrom('organizations_url')]
+    public string $organizationsUrl, #[MapFrom('repos_url')]
+    public string $reposUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('received_events_url')]
+    public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
+    public bool $siteAdmin, public string|null $name, public string|null $company, public string|null $blog, public string|null $location, public string|null $email, public bool|null $hireable, public string|null $bio, #[MapFrom('twitter_username')]
+    public string|null $twitterUsername, #[MapFrom('public_repos')]
+    public int $publicRepos, #[MapFrom('public_gists')]
+    public int $publicGists, public int $followers, public int $following, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\PublicUser\Plan|null $plan, #[MapFrom('suspended_at')]
+    public string|null $suspendedAt, #[MapFrom('private_gists')]
+    public int|null $privateGists, #[MapFrom('total_private_repos')]
+    public int|null $totalPrivateRepos, #[MapFrom('owned_private_repos')]
+    public int|null $ownedPrivateRepos, #[MapFrom('disk_usage')]
+    public int|null $diskUsage, public int|null $collaborators,)
     {
     }
 }

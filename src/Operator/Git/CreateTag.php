@@ -23,9 +23,7 @@ final readonly class CreateTag
     {
     }
 
-    /**
-     * @return PromiseInterface<GitTag>
-     **/
+    /** @return PromiseInterface<GitTag> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\CreateTag($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

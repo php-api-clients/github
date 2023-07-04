@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * selectedRepositoryIds: List of repository IDs to enable for GitHub Actions.
      */
-    public function __construct(#[MapFrom('selected_repository_ids')] public array $selectedRepositoryIds)
+    public function __construct(#[MapFrom('selected_repository_ids')]
+    public array $selectedRepositoryIds,)
     {
     }
 }

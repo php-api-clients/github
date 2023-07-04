@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * assignees: Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
      */
-    public function __construct(public ?array $assignees)
+    public function __construct(public array|null $assignees)
     {
     }
 }

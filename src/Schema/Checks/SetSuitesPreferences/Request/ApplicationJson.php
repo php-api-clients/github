@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * autoTriggerChecks: Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
      */
-    public function __construct(#[MapFrom('auto_trigger_checks')] public ?array $autoTriggerChecks)
+    public function __construct(#[MapFrom('auto_trigger_checks')]
+    public array|null $autoTriggerChecks,)
     {
     }
 }

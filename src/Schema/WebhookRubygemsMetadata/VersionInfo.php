@@ -11,7 +11,7 @@ final readonly class VersionInfo
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"version":"generated"}';
 
-    public function __construct(public ?string $version)
+    public function __construct(public string|null $version)
     {
     }
 }

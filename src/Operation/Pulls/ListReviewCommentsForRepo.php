@@ -18,9 +18,8 @@ final class ListReviewCommentsForRepo
     private const PATH           = '/repos/{owner}/{repo}/pulls/comments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private string $sort;
     /**The direction to sort results. Ignored without `sort` parameter. **/
     private string $direction;
     /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
@@ -30,11 +29,10 @@ final class ListReviewCommentsForRepo
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(string $owner, string $repo, string $sort, string $direction, string $since, int $perPage = 30, int $page = 1)
+    public function __construct(string $owner, string $repo, private string $sort, string $direction, string $since, int $perPage = 30, int $page = 1)
     {
         $this->owner     = $owner;
         $this->repo      = $repo;
-        $this->sort      = $sort;
         $this->direction = $direction;
         $this->since     = $since;
         $this->perPage   = $perPage;

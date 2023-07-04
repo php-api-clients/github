@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CreateOrUpdateRepoSecretTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CreateOrUpdateRepoSecretTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\CreateOrUpdateRepoSecret\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class CreateOrUpdateRepoSecretTest extends AsyncTestCase
         $result = await($client->operations()->dependabot()->createOrUpdateRepoSecret('generated', 'generated', 'generated', json_decode(Schema\Dependabot\CreateOrUpdateRepoSecret\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -79,9 +73,7 @@ final class CreateOrUpdateRepoSecretTest extends AsyncTestCase
         })(json_decode(Schema\Dependabot\CreateOrUpdateRepoSecret\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);

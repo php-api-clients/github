@@ -23,9 +23,7 @@ final readonly class UpdateInvitation
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryInvitation>
-     **/
+    /** @return PromiseInterface<RepositoryInvitation> **/
     public function call(string $owner, string $repo, int $invitationId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\UpdateInvitation($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $invitationId);

@@ -21,7 +21,7 @@ final readonly class ApplicationJson
      * committer: The person that committed the file. Default: the authenticated user.
      * author: The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
      */
-    public function __construct(public string $message, public string $content, public ?string $sha, public ?string $branch, public ?Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson\Committer $committer, public ?Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson\Author $author)
+    public function __construct(public string $message, public string $content, public string|null $sha, public string|null $branch, public Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson\Committer|null $committer, public Schema\Repos\CreateOrUpdateFileContents\Request\ApplicationJson\Author|null $author)
     {
     }
 }

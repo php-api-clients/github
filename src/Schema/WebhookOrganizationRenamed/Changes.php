@@ -13,7 +13,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"login":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookOrganizationRenamed\Changes\Login $login)
+    public function __construct(public Schema\WebhookOrganizationRenamed\Changes\Login|null $login)
     {
     }
 }

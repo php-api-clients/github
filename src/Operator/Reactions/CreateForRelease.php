@@ -23,9 +23,7 @@ final readonly class CreateForRelease
     {
     }
 
-    /**
-     * @return PromiseInterface<Reaction>
-     **/
+    /** @return PromiseInterface<Reaction> **/
     public function call(string $owner, string $repo, int $releaseId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\CreateForRelease($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId);

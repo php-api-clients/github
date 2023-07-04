@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class DeleteTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -41,9 +39,7 @@ final class DeleteTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Repos\Delete\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -58,9 +54,7 @@ final class DeleteTest extends AsyncTestCase
         $result = await($client->operations()->repos()->delete('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_307_responseContentType_application_json_zero(): void
     {
         $response = new Response(307, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -79,9 +73,7 @@ final class DeleteTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_307_responseContentType_application_json_zero(): void
     {
         $response = new Response(307, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -95,9 +87,7 @@ final class DeleteTest extends AsyncTestCase
         $result = await($client->operations()->repos()->delete('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -117,9 +107,7 @@ final class DeleteTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -134,9 +122,7 @@ final class DeleteTest extends AsyncTestCase
         $result = await($client->operations()->repos()->delete('generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -155,9 +141,7 @@ final class DeleteTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

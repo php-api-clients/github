@@ -23,9 +23,7 @@ final readonly class Update
     {
     }
 
-    /**
-     * @return PromiseInterface<(Project|array)>
-     **/
+    /** @return PromiseInterface<(Project|array)> **/
     public function call(int $projectId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId);

@@ -13,7 +13,15 @@ final readonly class OrganizationSimple
     public const SCHEMA_DESCRIPTION  = 'A GitHub organization.';
     public const SCHEMA_EXAMPLE_DATA = '{"login":"github","id":1,"node_id":"MDEyOk9yZ2FuaXphdGlvbjE=","url":"https:\\/\\/api.github.com\\/orgs\\/github","repos_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/repos","events_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/events","hooks_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/hooks","issues_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/issues","members_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/members{\\/member}","public_members_url":"https:\\/\\/api.github.com\\/orgs\\/github\\/public_members{\\/member}","avatar_url":"https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif","description":"A great organization"}';
 
-    public function __construct(public string $login, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, #[MapFrom('repos_url')] public string $reposUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('hooks_url')] public string $hooksUrl, #[MapFrom('issues_url')] public string $issuesUrl, #[MapFrom('members_url')] public string $membersUrl, #[MapFrom('public_members_url')] public string $publicMembersUrl, #[MapFrom('avatar_url')] public string $avatarUrl, public ?string $description)
+    public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, #[MapFrom('repos_url')]
+    public string $reposUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('hooks_url')]
+    public string $hooksUrl, #[MapFrom('issues_url')]
+    public string $issuesUrl, #[MapFrom('members_url')]
+    public string $membersUrl, #[MapFrom('public_members_url')]
+    public string $publicMembersUrl, #[MapFrom('avatar_url')]
+    public string $avatarUrl, public string|null $description,)
     {
     }
 }

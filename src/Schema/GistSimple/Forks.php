@@ -17,7 +17,9 @@ final readonly class Forks
     /**
      * user: Public User
      */
-    public function __construct(public ?string $id, public ?string $url, public ?Schema\PublicUser $user, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt)
+    public function __construct(public string|null $id, public string|null $url, public Schema\PublicUser|null $user, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt,)
     {
     }
 }

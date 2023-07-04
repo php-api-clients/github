@@ -26,23 +26,19 @@ final class PreFlightWithRepoForAuthenticatedUser
     private const PATH           = '/repos/{owner}/{repo}/codespaces/new';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The branch or commit to check for a default devcontainer path. If not specified, the default branch will be checked. **/
     private string $ref;
     /**An alternative IP for default location auto-detection, such as when proxying a request. **/
     private string $clientIp;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Codespaces\New_ $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Codespaces\New_ $hydrator, string $owner, string $repo, string $ref, string $clientIp)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Codespaces\New_ $hydrator, string $owner, string $repo, string $ref, string $clientIp)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->ref                     = $ref;
-        $this->clientIp                = $clientIp;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner    = $owner;
+        $this->repo     = $repo;
+        $this->ref      = $ref;
+        $this->clientIp = $clientIp;
     }
 
     public function createRequest(): RequestInterface

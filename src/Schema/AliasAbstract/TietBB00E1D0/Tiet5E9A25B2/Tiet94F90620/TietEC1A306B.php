@@ -11,7 +11,7 @@ abstract readonly class TietEC1A306B
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"status":"disabled"}';
 
-    public function __construct(public ?string $status)
+    public function __construct(public string|null $status)
     {
     }
 }

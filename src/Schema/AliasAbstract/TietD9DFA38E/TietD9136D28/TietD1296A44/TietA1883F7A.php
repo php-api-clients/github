@@ -14,7 +14,8 @@ abstract readonly class TietA1883F7A
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"topic_relation":{"id":2,"name":"generated","topic_id":8,"relation_type":"generated"}}';
 
-    public function __construct(#[MapFrom('topic_relation')] public ?Schema\TopicSearchResultItem\Related\TopicRelation $topicRelation)
+    public function __construct(#[MapFrom('topic_relation')]
+    public Schema\TopicSearchResultItem\Related\TopicRelation|null $topicRelation,)
     {
     }
 }

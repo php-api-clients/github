@@ -13,7 +13,11 @@ abstract readonly class TietCA3AFB31
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"end_column":10,"end_line":8,"path":"generated","start_column":12,"start_line":10}';
 
-    public function __construct(#[MapFrom('end_column')] public ?int $endColumn, #[MapFrom('end_line')] public ?int $endLine, public ?string $path, #[MapFrom('start_column')] public ?int $startColumn, #[MapFrom('start_line')] public ?int $startLine)
+    public function __construct(#[MapFrom('end_column')]
+    public int|null $endColumn, #[MapFrom('end_line')]
+    public int|null $endLine, public string|null $path, #[MapFrom('start_column')]
+    public int|null $startColumn, #[MapFrom('start_line')]
+    public int|null $startLine,)
     {
     }
 }

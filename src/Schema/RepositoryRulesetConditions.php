@@ -14,7 +14,8 @@ final readonly class RepositoryRulesetConditions
     public const SCHEMA_DESCRIPTION  = 'Parameters for a repository ruleset ref name condition';
     public const SCHEMA_EXAMPLE_DATA = '{"ref_name":{"include":["generated","generated"],"exclude":["generated","generated"]}}';
 
-    public function __construct(#[MapFrom('ref_name')] public ?Schema\RepositoryRulesetConditions\RefName $refName)
+    public function __construct(#[MapFrom('ref_name')]
+    public Schema\RepositoryRulesetConditions\RefName|null $refName,)
     {
     }
 }

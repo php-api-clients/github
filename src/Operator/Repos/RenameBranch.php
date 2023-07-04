@@ -23,9 +23,7 @@ final readonly class RenameBranch
     {
     }
 
-    /**
-     * @return PromiseInterface<BranchWithProtection>
-     **/
+    /** @return PromiseInterface<BranchWithProtection> **/
     public function call(string $owner, string $repo, string $branch, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\RenameBranch($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

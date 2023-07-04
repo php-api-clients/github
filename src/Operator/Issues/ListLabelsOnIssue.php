@@ -23,9 +23,7 @@ final readonly class ListLabelsOnIssue
     {
     }
 
-    /**
-     * @return PromiseInterface<BasicError>
-     **/
+    /** @return PromiseInterface<BasicError> **/
     public function call(string $owner, string $repo, int $issueNumber, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $perPage, $page);

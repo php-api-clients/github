@@ -13,7 +13,8 @@ final readonly class ServiceUnavailable
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"code":"generated","message":"generated","documentation_url":"generated"}';
 
-    public function __construct(public ?string $code, public ?string $message, #[MapFrom('documentation_url')] public ?string $documentationUrl)
+    public function __construct(public string|null $code, public string|null $message, #[MapFrom('documentation_url')]
+    public string|null $documentationUrl,)
     {
     }
 }

@@ -18,7 +18,9 @@ final readonly class ActionsRepositoryPermissions
      * allowedActions: The permissions policy that controls the actions and reusable workflows that are allowed to run.
      * selectedActionsUrl: The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
      */
-    public function __construct(public bool $enabled, #[MapFrom('allowed_actions')] public ?string $allowedActions, #[MapFrom('selected_actions_url')] public ?string $selectedActionsUrl)
+    public function __construct(public bool $enabled, #[MapFrom('allowed_actions')]
+    public string|null $allowedActions, #[MapFrom('selected_actions_url')]
+    public string|null $selectedActionsUrl,)
     {
     }
 }

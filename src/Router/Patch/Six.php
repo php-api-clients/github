@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Six
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -37,17 +27,7 @@ final class Six
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'required_workflows') {
-                            if ($pathChunks[5] === '{required_workflow_id}') {
-                                if ($call === 'PATCH /orgs/{org}/actions/required_workflows/{required_workflow_id}') {
-                                    if (array_key_exists(Router\Patch\Actions::class, $this->router) === false) {
-                                        $this->router[Router\Patch\Actions::class] = new Router\Patch\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                    }
-
-                                    return $this->router[Router\Patch\Actions::class]->updateRequiredWorkflow($params);
-                                }
-                            }
-                        } elseif ($pathChunks[4] === 'variables') {
+                        if ($pathChunks[4] === 'variables') {
                             if ($pathChunks[5] === '{name}') {
                                 if ($call === 'PATCH /orgs/{org}/actions/variables/{name}') {
                                     if (array_key_exists(Router\Patch\Actions::class, $this->router) === false) {

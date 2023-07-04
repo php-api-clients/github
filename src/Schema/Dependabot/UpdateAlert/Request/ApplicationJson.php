@@ -19,7 +19,9 @@ final readonly class ApplicationJson
      * dismissedReason: **Required when `state` is `dismissed`.** A reason for dismissing the alert.
      * dismissedComment: An optional comment associated with dismissing the alert.
      */
-    public function __construct(public string $state, #[MapFrom('dismissed_reason')] public ?string $dismissedReason, #[MapFrom('dismissed_comment')] public ?string $dismissedComment)
+    public function __construct(public string $state, #[MapFrom('dismissed_reason')]
+    public string|null $dismissedReason, #[MapFrom('dismissed_comment')]
+    public string|null $dismissedComment,)
     {
     }
 }

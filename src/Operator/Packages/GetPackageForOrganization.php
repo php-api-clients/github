@@ -23,9 +23,7 @@ final readonly class GetPackageForOrganization
     {
     }
 
-    /**
-     * @return PromiseInterface<Package>
-     **/
+    /** @return PromiseInterface<Package> **/
     public function call(string $packageType, string $packageName, string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\GetPackageForOrganization($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org);

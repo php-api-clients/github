@@ -23,9 +23,7 @@ final readonly class GetArtifact
     {
     }
 
-    /**
-     * @return PromiseInterface<Artifact>
-     **/
+    /** @return PromiseInterface<Artifact> **/
     public function call(string $owner, string $repo, int $artifactId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetArtifact($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $artifactId);

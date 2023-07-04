@@ -37,18 +37,14 @@ final class ListPackagesForUser
     private int $page;
     /**The number of results per page (max 100). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Packages $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Packages $hydrator, string $packageType, string $visibility, string $username, int $page = 1, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Packages $hydrator, string $packageType, string $visibility, string $username, int $page = 1, int $perPage = 30)
     {
-        $this->packageType             = $packageType;
-        $this->visibility              = $visibility;
-        $this->username                = $username;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->visibility  = $visibility;
+        $this->username    = $username;
+        $this->page        = $page;
+        $this->perPage     = $perPage;
     }
 
     public function createRequest(): RequestInterface
@@ -56,9 +52,7 @@ final class ListPackagesForUser
         return new Request(self::METHOD, str_replace(['{package_type}', '{visibility}', '{username}', '{page}', '{per_page}'], [$this->packageType, $this->visibility, $this->username, $this->page, $this->perPage], self::PATH . '?package_type={package_type}&visibility={visibility}&page={page}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

@@ -31,17 +31,13 @@ final class GetDiscussionCommentInOrg
     private int $discussionNumber;
     /**The number that identifies the comment. **/
     private int $commentNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator, string $org, string $teamSlug, int $discussionNumber, int $commentNumber)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments\CommentNumber $hydrator, string $org, string $teamSlug, int $discussionNumber, int $commentNumber)
     {
-        $this->org                     = $org;
-        $this->teamSlug                = $teamSlug;
-        $this->discussionNumber        = $discussionNumber;
-        $this->commentNumber           = $commentNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org              = $org;
+        $this->teamSlug         = $teamSlug;
+        $this->discussionNumber = $discussionNumber;
+        $this->commentNumber    = $commentNumber;
     }
 
     public function createRequest(): RequestInterface

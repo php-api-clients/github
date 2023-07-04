@@ -23,13 +23,9 @@ final class Get
     public const OPERATION_MATCH = 'GET /emojis';
     private const METHOD         = 'GET';
     private const PATH           = '/emojis';
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Emojis $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Emojis $hydrator)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Emojis $hydrator)
     {
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -37,9 +33,7 @@ final class Get
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    /**
-     * @return Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array{code: int}
-     */
+    /** @return Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array
     {
         $code          = $response->getStatusCode();

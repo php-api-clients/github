@@ -23,9 +23,7 @@ final readonly class GetSecretForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespacesSecret>
-     **/
+    /** @return PromiseInterface<CodespacesSecret> **/
     public function call(string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName);

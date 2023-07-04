@@ -22,9 +22,7 @@ final readonly class RemoveCollaborator
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $projectId, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\RemoveCollaborator($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

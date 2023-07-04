@@ -32,17 +32,13 @@ final class RestorePackageVersionForUser
     private string $username;
     /**Unique identifier of the package version. **/
     private int $packageVersionId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator, string $packageType, string $packageName, string $username, int $packageVersionId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator, string $packageType, string $packageName, string $username, int $packageVersionId)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->username                = $username;
-        $this->packageVersionId        = $packageVersionId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType      = $packageType;
+        $this->packageName      = $packageName;
+        $this->username         = $username;
+        $this->packageVersionId = $packageVersionId;
     }
 
     public function createRequest(): RequestInterface
@@ -50,9 +46,7 @@ final class RestorePackageVersionForUser
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{username}', '{package_version_id}'], [$this->packageType, $this->packageName, $this->username, $this->packageVersionId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

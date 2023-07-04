@@ -19,7 +19,14 @@ final readonly class Artifact
      * sizeInBytes: The size in bytes of the artifact.
      * expired: Whether or not the artifact has expired.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, #[MapFrom('size_in_bytes')] public int $sizeInBytes, public string $url, #[MapFrom('archive_download_url')] public string $archiveDownloadUrl, public bool $expired, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('expires_at')] public ?string $expiresAt, #[MapFrom('updated_at')] public ?string $updatedAt, #[MapFrom('workflow_run')] public ?Schema\Artifact\WorkflowRun $workflowRun)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, #[MapFrom('size_in_bytes')]
+    public int $sizeInBytes, public string $url, #[MapFrom('archive_download_url')]
+    public string $archiveDownloadUrl, public bool $expired, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('expires_at')]
+    public string|null $expiresAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt, #[MapFrom('workflow_run')]
+    public Schema\Artifact\WorkflowRun|null $workflowRun,)
     {
     }
 }

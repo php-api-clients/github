@@ -16,7 +16,8 @@ final readonly class ApplicationJson
     /**
      * selectedUsernames: The usernames of the organization members whose codespaces be billed to the organization.
      */
-    public function __construct(#[MapFrom('selected_usernames')] public array $selectedUsernames)
+    public function __construct(#[MapFrom('selected_usernames')]
+    public array $selectedUsernames,)
     {
     }
 }

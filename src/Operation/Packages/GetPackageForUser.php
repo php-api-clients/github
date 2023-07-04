@@ -29,16 +29,12 @@ final class GetPackageForUser
     private string $packageName;
     /**The handle for the GitHub user account. **/
     private string $username;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName, string $username)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator, string $packageType, string $packageName, string $username)
     {
-        $this->packageType             = $packageType;
-        $this->packageName             = $packageName;
-        $this->username                = $username;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->packageType = $packageType;
+        $this->packageName = $packageName;
+        $this->username    = $username;
     }
 
     public function createRequest(): RequestInterface

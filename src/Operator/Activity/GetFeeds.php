@@ -23,9 +23,7 @@ final readonly class GetFeeds
     {
     }
 
-    /**
-     * @return PromiseInterface<Feed>
-     **/
+    /** @return PromiseInterface<Feed> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetFeeds($this->responseSchemaValidator, $this->hydrator);

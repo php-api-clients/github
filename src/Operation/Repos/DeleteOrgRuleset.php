@@ -28,15 +28,11 @@ final class DeleteOrgRuleset
     private string $org;
     /**The ID of the ruleset. **/
     private int $rulesetId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator, string $org, int $rulesetId)
     {
-        $this->org                     = $org;
-        $this->rulesetId               = $rulesetId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->rulesetId = $rulesetId;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class DeleteOrgRuleset
         return new Request(self::METHOD, str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

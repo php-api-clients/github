@@ -19,19 +19,9 @@ final class Actions
 {
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function disableSelectedRepositoryGithubActionsOrganization(array $params)
@@ -286,26 +276,6 @@ final class Actions
         return $operator->call($arguments['repository_id'], $arguments['name'], $arguments['environment_name']);
     }
 
-    public function deleteRequiredWorkflow(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('required_workflow_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: required_workflow_id');
-        }
-
-        $arguments['required_workflow_id'] = $params['required_workflow_id'];
-        unset($params['required_workflow_id']);
-        $operator = new Operator\Actions\DeleteRequiredWorkflow($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['required_workflow_id']);
-    }
-
     public function deleteSelfHostedRunnerFromOrg(array $params)
     {
         $arguments = [];
@@ -400,32 +370,6 @@ final class Actions
         $operator = new Operator\Actions\DeleteActionsCacheByKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Actions\Caches::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
-    }
-
-    public function removeSelectedRepoFromRequiredWorkflow(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('required_workflow_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: required_workflow_id');
-        }
-
-        $arguments['required_workflow_id'] = $params['required_workflow_id'];
-        unset($params['required_workflow_id']);
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        $operator = new Operator\Actions\RemoveSelectedRepoFromRequiredWorkflow($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['required_workflow_id'], $arguments['repository_id']);
     }
 
     public function removeCustomLabelFromSelfHostedRunnerForOrg(array $params)

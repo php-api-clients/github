@@ -26,14 +26,10 @@ final class GetCard
     private const PATH           = '/projects/columns/cards/{card_id}';
     /**The unique identifier of the card. **/
     private int $cardId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator, int $cardId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator, int $cardId)
     {
-        $this->cardId                  = $cardId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->cardId = $cardId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class GetCard
         return new Request(self::METHOD, str_replace(['{card_id}'], [$this->cardId], self::PATH));
     }
 
-    /**
-     * @return Schema\ProjectCard|array{code: int}
-     */
+    /** @return Schema\ProjectCard|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\ProjectCard|array
     {
         $code          = $response->getStatusCode();

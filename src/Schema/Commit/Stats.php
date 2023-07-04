@@ -11,7 +11,7 @@ final readonly class Stats
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"additions":9,"deletions":9,"total":5}';
 
-    public function __construct(public ?int $additions, public ?int $deletions, public ?int $total)
+    public function __construct(public int|null $additions, public int|null $deletions, public int|null $total)
     {
     }
 }

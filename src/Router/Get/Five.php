@@ -16,19 +16,9 @@ use function array_key_exists;
 final class Five
 {
     private array $router = [];
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrators $hydrators;
-    private readonly Browser $browser;
-    private readonly AuthenticationInterface $authentication;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrators $hydrators, Browser $browser, AuthenticationInterface $authentication)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrators               = $hydrators;
-        $this->browser                 = $browser;
-        $this->authentication          = $authentication;
     }
 
     public function call(string $call, array $params, array $pathChunks)
@@ -150,14 +140,6 @@ final class Five
                                 }
 
                                 return $this->router[Router\Get\Actions::class]->getGithubActionsPermissionsOrganization($params);
-                            }
-                        } elseif ($pathChunks[4] === 'required_workflows') {
-                            if ($call === 'GET /orgs/{org}/actions/required_workflows') {
-                                if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                    $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Get\Actions::class]->listRequiredWorkflows($params);
                             }
                         } elseif ($pathChunks[4] === 'runners') {
                             if ($call === 'GET /orgs/{org}/actions/runners') {

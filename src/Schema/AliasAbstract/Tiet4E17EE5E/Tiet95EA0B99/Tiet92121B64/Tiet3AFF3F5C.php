@@ -13,7 +13,9 @@ abstract readonly class Tiet3AFF3F5C
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"name":"generated","topic_id":8,"relation_type":"generated"}';
 
-    public function __construct(public ?int $id, public ?string $name, #[MapFrom('topic_id')] public ?int $topicId, #[MapFrom('relation_type')] public ?string $relationType)
+    public function __construct(public int|null $id, public string|null $name, #[MapFrom('topic_id')]
+    public int|null $topicId, #[MapFrom('relation_type')]
+    public string|null $relationType,)
     {
     }
 }

@@ -20,9 +20,7 @@ final readonly class ListInstallations
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $since, string $outdated, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListInstallations($since, $outdated, $perPage, $page);

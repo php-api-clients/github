@@ -13,7 +13,8 @@ final readonly class Permissions
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"metadata":"generated","contents":"generated","issues":"generated","single_file":"generated"}';
 
-    public function __construct(public ?string $metadata, public ?string $contents, public ?string $issues, #[MapFrom('single_file')] public ?string $singleFile)
+    public function __construct(public string|null $metadata, public string|null $contents, public string|null $issues, #[MapFrom('single_file')]
+    public string|null $singleFile,)
     {
     }
 }

@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class SetRestrictionsForRepoTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\InteractionLimitResponse::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class SetRestrictionsForRepoTest extends AsyncTestCase
         })(json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\InteractionLimitResponse::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class SetRestrictionsForRepoTest extends AsyncTestCase
         $result = await($client->operations()->interactions()->setRestrictionsForRepo('generated', 'generated', json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_requestContentType_application_json_empty(): void
     {
         $response = new Response(409, []);
@@ -77,9 +71,7 @@ final class SetRestrictionsForRepoTest extends AsyncTestCase
         })(json_decode(Schema\InteractionLimit::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_requestContentType_application_json_empty(): void
     {
         $response = new Response(409, []);

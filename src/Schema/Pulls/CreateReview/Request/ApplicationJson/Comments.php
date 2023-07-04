@@ -18,7 +18,9 @@ final readonly class Comments
      * position: The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
      * body: Text of the review comment.
      */
-    public function __construct(public string $path, public ?int $position, public string $body, public ?int $line, public ?string $side, #[MapFrom('start_line')] public ?int $startLine, #[MapFrom('start_side')] public ?string $startSide)
+    public function __construct(public string $path, public int|null $position, public string $body, public int|null $line, public string|null $side, #[MapFrom('start_line')]
+    public int|null $startLine, #[MapFrom('start_side')]
+    public string|null $startSide,)
     {
     }
 }

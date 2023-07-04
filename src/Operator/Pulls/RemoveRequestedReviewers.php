@@ -23,9 +23,7 @@ final readonly class RemoveRequestedReviewers
     {
     }
 
-    /**
-     * @return PromiseInterface<PullRequestSimple>
-     **/
+    /** @return PromiseInterface<PullRequestSimple> **/
     public function call(string $owner, string $repo, int $pullNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\RemoveRequestedReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

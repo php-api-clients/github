@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class ListCommitStatusesForRefTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class ListCommitStatusesForRefTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_301_responseContentType_application_json_zero(): void
     {
         $response = new Response(301, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);

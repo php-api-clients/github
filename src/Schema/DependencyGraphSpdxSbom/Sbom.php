@@ -22,7 +22,8 @@ final readonly class Sbom
      * documentDescribes: The name of the repository that the SPDX document describes.
      * documentNamespace: The namespace for the SPDX document.
      */
-    public function __construct(#[MapFrom('SPDXID')] public string $spdxid, public string $spdxVersion, public Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo $creationInfo, public string $name, public string $dataLicense, public array $documentDescribes, public string $documentNamespace, public array $packages)
+    public function __construct(#[MapFrom('SPDXID')]
+    public string $spdxid, public string $spdxVersion, public Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo $creationInfo, public string $name, public string $dataLicense, public array $documentDescribes, public string $documentNamespace, public array $packages,)
     {
     }
 }

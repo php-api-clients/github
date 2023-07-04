@@ -17,7 +17,14 @@ final readonly class OrganizationInvitation
     /**
      * inviter: A GitHub user.
      */
-    public function __construct(public int $id, public ?string $login, public ?string $email, public string $role, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('failed_at')] public ?string $failedAt, #[MapFrom('failed_reason')] public ?string $failedReason, public Schema\SimpleUser $inviter, #[MapFrom('team_count')] public int $teamCount, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('invitation_teams_url')] public string $invitationTeamsUrl, #[MapFrom('invitation_source')] public ?string $invitationSource)
+    public function __construct(public int $id, public string|null $login, public string|null $email, public string $role, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('failed_at')]
+    public string|null $failedAt, #[MapFrom('failed_reason')]
+    public string|null $failedReason, public Schema\SimpleUser $inviter, #[MapFrom('team_count')]
+    public int $teamCount, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('invitation_teams_url')]
+    public string $invitationTeamsUrl, #[MapFrom('invitation_source')]
+    public string|null $invitationSource,)
     {
     }
 }

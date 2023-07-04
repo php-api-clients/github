@@ -25,7 +25,12 @@ final readonly class ApplicationJson
      * transientEnvironment: Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
      * productionEnvironment: Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
      */
-    public function __construct(public string $ref, public ?string $task, #[MapFrom('auto_merge')] public ?bool $autoMerge, #[MapFrom('required_contexts')] public ?array $requiredContexts, #[Payload] public null|Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload\Zero|string $payload, public ?string $environment, public ?string $description, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment)
+    public function __construct(public string $ref, public string|null $task, #[MapFrom('auto_merge')]
+    public bool|null $autoMerge, #[MapFrom('required_contexts')]
+    public array|null $requiredContexts, #[Payload]
+    public Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload\Zero|string|null $payload, public string|null $environment, public string|null $description, #[MapFrom('transient_environment')]
+    public bool|null $transientEnvironment, #[MapFrom('production_environment')]
+    public bool|null $productionEnvironment,)
     {
     }
 }

@@ -23,9 +23,7 @@ final readonly class GetEnvironmentPublicKey
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsPublicKey>
-     **/
+    /** @return PromiseInterface<ActionsPublicKey> **/
     public function call(int $repositoryId, string $environmentName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetEnvironmentPublicKey($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName);

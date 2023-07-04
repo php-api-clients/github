@@ -23,9 +23,7 @@ final readonly class GetOrgVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<OrganizationActionsVariable>
-     **/
+    /** @return PromiseInterface<OrganizationActionsVariable> **/
     public function call(string $org, string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name);

@@ -19,7 +19,14 @@ final readonly class TeamProject
      * organizationPermission: The organization permission for this project. Only present when owner is an organization.
      * private: Whether the project is private or not. Only present when owner is an organization.
      */
-    public function __construct(#[MapFrom('owner_url')] public string $ownerUrl, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('columns_url')] public string $columnsUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, public ?string $body, public int $number, public string $state, public Schema\SimpleUser $creator, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('organization_permission')] public ?string $organizationPermission, public ?bool $private, public Schema\TeamProject\Permissions $permissions)
+    public function __construct(#[MapFrom('owner_url')]
+    public string $ownerUrl, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('columns_url')]
+    public string $columnsUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, public string|null $body, public int $number, public string $state, public Schema\SimpleUser $creator, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('organization_permission')]
+    public string|null $organizationPermission, public bool|null $private, public Schema\TeamProject\Permissions $permissions,)
     {
     }
 }

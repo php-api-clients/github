@@ -16,7 +16,8 @@ final readonly class PagesHttpsCertificate
     /**
      * domains: Array of the domain set and its alternate name (if it is configured)
      */
-    public function __construct(public string $state, public string $description, public array $domains, #[MapFrom('expires_at')] public ?string $expiresAt)
+    public function __construct(public string $state, public string $description, public array $domains, #[MapFrom('expires_at')]
+    public string|null $expiresAt,)
     {
     }
 }

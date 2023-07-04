@@ -23,9 +23,7 @@ final readonly class CreateComment
     {
     }
 
-    /**
-     * @return PromiseInterface<(GistComment|array)>
-     **/
+    /** @return PromiseInterface<(GistComment|array)> **/
     public function call(string $gistId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId);

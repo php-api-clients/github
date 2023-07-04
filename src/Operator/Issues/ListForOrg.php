@@ -22,9 +22,7 @@ final readonly class ListForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $org, string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListForOrg($this->responseSchemaValidator, $this->hydrator, $org, $labels, $since, $filter, $state, $sort, $direction, $perPage, $page);

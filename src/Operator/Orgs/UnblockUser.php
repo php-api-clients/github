@@ -20,9 +20,7 @@ final readonly class UnblockUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\UnblockUser($org, $username);

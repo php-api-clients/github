@@ -25,7 +25,15 @@ final readonly class Links
      * repositoryDiscussions: Hypermedia Link with Type
      * repositoryDiscussionsCategory: Hypermedia Link with Type
      */
-    public function __construct(public Schema\LinkWithType $timeline, public Schema\LinkWithType $user, #[MapFrom('security_advisories')] public ?Schema\LinkWithType $securityAdvisories, #[MapFrom('current_user')] public ?Schema\LinkWithType $currentUser, #[MapFrom('current_user_public')] public ?Schema\LinkWithType $currentUserPublic, #[MapFrom('current_user_actor')] public ?Schema\LinkWithType $currentUserActor, #[MapFrom('current_user_organization')] public ?Schema\LinkWithType $currentUserOrganization, #[MapFrom('current_user_organizations')] public ?array $currentUserOrganizations, #[MapFrom('repository_discussions')] public ?Schema\LinkWithType $repositoryDiscussions, #[MapFrom('repository_discussions_category')] public ?Schema\LinkWithType $repositoryDiscussionsCategory)
+    public function __construct(public Schema\LinkWithType $timeline, public Schema\LinkWithType $user, #[MapFrom('security_advisories')]
+    public Schema\LinkWithType|null $securityAdvisories, #[MapFrom('current_user')]
+    public Schema\LinkWithType|null $currentUser, #[MapFrom('current_user_public')]
+    public Schema\LinkWithType|null $currentUserPublic, #[MapFrom('current_user_actor')]
+    public Schema\LinkWithType|null $currentUserActor, #[MapFrom('current_user_organization')]
+    public Schema\LinkWithType|null $currentUserOrganization, #[MapFrom('current_user_organizations')]
+    public array|null $currentUserOrganizations, #[MapFrom('repository_discussions')]
+    public Schema\LinkWithType|null $repositoryDiscussions, #[MapFrom('repository_discussions_category')]
+    public Schema\LinkWithType|null $repositoryDiscussionsCategory,)
     {
     }
 }

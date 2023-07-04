@@ -24,24 +24,18 @@ final class CreateForTeamDiscussionCommentLegacy
     public const OPERATION_MATCH = 'POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions';
     private const METHOD         = 'POST';
     private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number that identifies the discussion. **/
     private int $discussionNumber;
     /**The number that identifies the comment. **/
     private int $commentNumber;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments\CommentNumber\Reactions $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments\CommentNumber\Reactions $hydrator, int $teamId, int $discussionNumber, int $commentNumber)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments\CommentNumber\Reactions $hydrator, int $teamId, int $discussionNumber, int $commentNumber)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->teamId                  = $teamId;
-        $this->discussionNumber        = $discussionNumber;
-        $this->commentNumber           = $commentNumber;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->teamId           = $teamId;
+        $this->discussionNumber = $discussionNumber;
+        $this->commentNumber    = $commentNumber;
     }
 
     public function createRequest(array $data): RequestInterface

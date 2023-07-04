@@ -13,7 +13,12 @@ abstract readonly class Tiet25B29EDD
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"created_at":"1970-01-01T00:00:00+00:00","description":"generated","emoji":"generated","id":2,"is_answerable":false,"name":"generated","node_id":"generated","repository_id":13,"slug":"generated","updated_at":"generated"}';
 
-    public function __construct(#[MapFrom('created_at')] public string $createdAt, public string $description, public string $emoji, public int $id, #[MapFrom('is_answerable')] public bool $isAnswerable, public string $name, #[MapFrom('node_id')] public ?string $nodeId, #[MapFrom('repository_id')] public int $repositoryId, public string $slug, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(#[MapFrom('created_at')]
+    public string $createdAt, public string $description, public string $emoji, public int $id, #[MapFrom('is_answerable')]
+    public bool $isAnswerable, public string $name, #[MapFrom('node_id')]
+    public string|null $nodeId, #[MapFrom('repository_id')]
+    public int $repositoryId, public string $slug, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

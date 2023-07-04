@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsLegacy\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -42,9 +40,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsLegacy\Response\ApplicationJson\Forbidden\Application\Json::class);
@@ -59,9 +55,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsLegacy(7, 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsLegacy(7, 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -120,9 +110,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -137,9 +125,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsLegacy(7, 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -158,9 +144,7 @@ final class AddOrUpdateProjectPermissionsLegacyTest extends AsyncTestCase
         })(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsLegacy\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);

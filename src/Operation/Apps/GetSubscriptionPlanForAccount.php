@@ -26,14 +26,10 @@ final class GetSubscriptionPlanForAccount
     private const PATH           = '/marketplace_listing/accounts/{account_id}';
     /**account_id parameter **/
     private int $accountId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator, int $accountId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator, int $accountId)
     {
-        $this->accountId               = $accountId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->accountId = $accountId;
     }
 
     public function createRequest(): RequestInterface

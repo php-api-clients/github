@@ -24,9 +24,7 @@ final readonly class GetPagesHealthCheck
     {
     }
 
-    /**
-     * @return PromiseInterface<(PagesHealthCheck|EmptyObject|array)>
-     **/
+    /** @return PromiseInterface<(PagesHealthCheck|EmptyObject|array)> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetPagesHealthCheck($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

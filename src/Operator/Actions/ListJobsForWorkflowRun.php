@@ -23,9 +23,7 @@ final readonly class ListJobsForWorkflowRun
     {
     }
 
-    /**
-     * @return PromiseInterface<Json>
-     **/
+    /** @return PromiseInterface<Json> **/
     public function call(string $owner, string $repo, int $runId, string $filter = 'latest', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListJobsForWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $filter, $perPage, $page);

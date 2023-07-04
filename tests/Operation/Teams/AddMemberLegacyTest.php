@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class AddMemberLegacyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         $result = await($client->operations()->teams()->addMemberLegacy(7, 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -79,9 +73,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -97,9 +89,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -118,9 +108,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -136,9 +124,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         self::assertSame(404, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_empty(): void
     {
         $response = new Response(422, []);
@@ -157,9 +143,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_empty(): void
     {
         $response = new Response(422, []);

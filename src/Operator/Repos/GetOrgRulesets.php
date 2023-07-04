@@ -22,12 +22,10 @@ final readonly class GetOrgRulesets
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
-    public function call(string $org): PromiseInterface
+    /** @return PromiseInterface<mixed> **/
+    public function call(string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
-        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator, $org);
+        $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);
         $request   = $operation->createRequest();
 
         return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {

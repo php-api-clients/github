@@ -11,7 +11,7 @@ final readonly class Errors
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"code":"generated","message":"generated","resource":"generated","field":"generated"}';
 
-    public function __construct(public ?string $code, public ?string $message, public ?string $resource, public ?string $field)
+    public function __construct(public string|null $code, public string|null $message, public string|null $resource, public string|null $field)
     {
     }
 }

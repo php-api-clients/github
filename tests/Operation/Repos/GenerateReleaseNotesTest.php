@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class GenerateReleaseNotesTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ReleaseNotesContent::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class GenerateReleaseNotesTest extends AsyncTestCase
         })(json_decode(Schema\Repos\GenerateReleaseNotes\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ReleaseNotesContent::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class GenerateReleaseNotesTest extends AsyncTestCase
         $result = await($client->operations()->repos()->generateReleaseNotes('generated', 'generated', json_decode(Schema\Repos\GenerateReleaseNotes\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -79,9 +73,7 @@ final class GenerateReleaseNotesTest extends AsyncTestCase
         })(json_decode(Schema\Repos\GenerateReleaseNotes\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

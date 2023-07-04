@@ -11,7 +11,7 @@ final readonly class Tree
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated","sha":"generated"}';
 
-    public function __construct(public ?string $url, public ?string $sha)
+    public function __construct(public string|null $url, public string|null $sha)
     {
     }
 }

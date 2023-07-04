@@ -14,7 +14,10 @@ final readonly class Billable
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"UBUNTU":{"total_ms":8,"jobs":4,"job_runs":[{"job_id":6,"duration_ms":11},{"job_id":6,"duration_ms":11}]},"MACOS":{"total_ms":8,"jobs":4,"job_runs":[{"job_id":6,"duration_ms":11},{"job_id":6,"duration_ms":11}]},"WINDOWS":{"total_ms":8,"jobs":4,"job_runs":[{"job_id":6,"duration_ms":11},{"job_id":6,"duration_ms":11}]}}';
 
-    public function __construct(#[MapFrom('UBUNTU')] public ?Schema\WorkflowRunUsage\Billable\Ubuntu $ubuntu, #[MapFrom('MACOS')] public ?Schema\WorkflowRunUsage\Billable\Macos $macos, #[MapFrom('WINDOWS')] public ?Schema\WorkflowRunUsage\Billable\Windows $windows)
+    public function __construct(#[MapFrom('UBUNTU')]
+    public Schema\WorkflowRunUsage\Billable\Ubuntu|null $ubuntu, #[MapFrom('MACOS')]
+    public Schema\WorkflowRunUsage\Billable\Macos|null $macos, #[MapFrom('WINDOWS')]
+    public Schema\WorkflowRunUsage\Billable\Windows|null $windows,)
     {
     }
 }

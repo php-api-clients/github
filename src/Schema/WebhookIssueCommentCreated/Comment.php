@@ -20,7 +20,14 @@ final readonly class Comment
      * id: Unique identifier of the issue comment
      * url: URL for the issue comment
      */
-    public function __construct(#[MapFrom('author_association')] public string $authorAssociation, public string $body, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('issue_url')] public string $issueUrl, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, public Schema\WebhookIssueCommentCreated\Comment\Reactions $reactions, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookIssueCommentCreated\Comment\User $user)
+    public function __construct(#[MapFrom('author_association')]
+    public string $authorAssociation, public string $body, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('issue_url')]
+    public string $issueUrl, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, public Schema\WebhookIssueCommentCreated\Comment\Reactions $reactions, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhookIssueCommentCreated\Comment\User|null $user,)
     {
     }
 }

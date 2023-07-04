@@ -19,7 +19,7 @@ final class EnableAutomatedSecurityFixes
     private const PATH           = '/repos/{owner}/{repo}/automated-security-fixes';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
 
     public function __construct(string $owner, string $repo)
@@ -33,9 +33,7 @@ final class EnableAutomatedSecurityFixes
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

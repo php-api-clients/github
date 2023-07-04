@@ -23,9 +23,7 @@ final readonly class GetOrgSecret
     {
     }
 
-    /**
-     * @return PromiseInterface<CodespacesOrgSecret>
-     **/
+    /** @return PromiseInterface<CodespacesOrgSecret> **/
     public function call(string $org, string $secretName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

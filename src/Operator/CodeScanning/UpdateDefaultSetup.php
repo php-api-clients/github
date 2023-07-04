@@ -24,9 +24,7 @@ final readonly class UpdateDefaultSetup
     {
     }
 
-    /**
-     * @return PromiseInterface<(EmptyObject|CodeScanningDefaultSetupUpdateResponse)>
-     **/
+    /** @return PromiseInterface<(EmptyObject|CodeScanningDefaultSetupUpdateResponse)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\UpdateDefaultSetup($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

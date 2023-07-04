@@ -62,26 +62,22 @@ final class ListAlertsForEnterprise
     private int $first;
     /**The number of results per page (max 100). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts $hydrator, string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $first = 30, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts $hydrator, string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $first = 30, int $perPage = 30)
     {
-        $this->enterprise              = $enterprise;
-        $this->state                   = $state;
-        $this->severity                = $severity;
-        $this->ecosystem               = $ecosystem;
-        $this->package                 = $package;
-        $this->scope                   = $scope;
-        $this->before                  = $before;
-        $this->after                   = $after;
-        $this->last                    = $last;
-        $this->sort                    = $sort;
-        $this->direction               = $direction;
-        $this->first                   = $first;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->enterprise = $enterprise;
+        $this->state      = $state;
+        $this->severity   = $severity;
+        $this->ecosystem  = $ecosystem;
+        $this->package    = $package;
+        $this->scope      = $scope;
+        $this->before     = $before;
+        $this->after      = $after;
+        $this->last       = $last;
+        $this->sort       = $sort;
+        $this->direction  = $direction;
+        $this->first      = $first;
+        $this->perPage    = $perPage;
     }
 
     public function createRequest(): RequestInterface
@@ -89,9 +85,7 @@ final class ListAlertsForEnterprise
         return new Request(self::METHOD, str_replace(['{enterprise}', '{state}', '{severity}', '{ecosystem}', '{package}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{first}', '{per_page}'], [$this->enterprise, $this->state, $this->severity, $this->ecosystem, $this->package, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->first, $this->perPage], self::PATH . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&first={first}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

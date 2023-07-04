@@ -28,15 +28,11 @@ final class UnlockRepoForAuthenticatedUser
     private int $migrationId;
     /**repo_name parameter **/
     private string $repoName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\User\Migrations\MigrationId\Repos\RepoName\Lock $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\User\Migrations\MigrationId\Repos\RepoName\Lock $hydrator, int $migrationId, string $repoName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\User\Migrations\MigrationId\Repos\RepoName\Lock $hydrator, int $migrationId, string $repoName)
     {
-        $this->migrationId             = $migrationId;
-        $this->repoName                = $repoName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->migrationId = $migrationId;
+        $this->repoName    = $repoName;
     }
 
     public function createRequest(): RequestInterface
@@ -44,9 +40,7 @@ final class UnlockRepoForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{migration_id}', '{repo_name}'], [$this->migrationId, $this->repoName], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

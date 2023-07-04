@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositoryAdvisory::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         })(json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\RepositoryAdvisory::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         $result = await($client->operations()->securityAdvisories()->updateRepositoryAdvisory('generated', 'generated', 'generated', json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         })(json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         $result = await($client->operations()->securityAdvisories()->updateRepositoryAdvisory('generated', 'generated', 'generated', json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -121,9 +111,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         })(json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -138,9 +126,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         $result = await($client->operations()->securityAdvisories()->updateRepositoryAdvisory('generated', 'generated', 'generated', json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -161,9 +147,7 @@ final class UpdateRepositoryAdvisoryTest extends AsyncTestCase
         })(json_decode(Schema\RepositoryAdvisoryUpdate::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);

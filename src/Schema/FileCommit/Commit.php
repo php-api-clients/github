@@ -14,7 +14,9 @@ final readonly class Commit
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"sha":"generated","node_id":"generated","url":"generated","html_url":"generated","author":{"date":"generated","name":"generated","email":"generated"},"committer":{"date":"generated","name":"generated","email":"generated"},"message":"generated","tree":{"url":"generated","sha":"generated"},"parents":[{"url":"generated","html_url":"generated","sha":"generated"},{"url":"generated","html_url":"generated","sha":"generated"}],"verification":{"verified":false,"reason":"generated","signature":"generated","payload":"generated"}}';
 
-    public function __construct(public ?string $sha, #[MapFrom('node_id')] public ?string $nodeId, public ?string $url, #[MapFrom('html_url')] public ?string $htmlUrl, public ?Schema\FileCommit\Commit\Author $author, public ?Schema\FileCommit\Commit\Committer $committer, public ?string $message, public ?Schema\FileCommit\Commit\Tree $tree, public ?array $parents, public ?Schema\FileCommit\Commit\Verification $verification)
+    public function __construct(public string|null $sha, #[MapFrom('node_id')]
+    public string|null $nodeId, public string|null $url, #[MapFrom('html_url')]
+    public string|null $htmlUrl, public Schema\FileCommit\Commit\Author|null $author, public Schema\FileCommit\Commit\Committer|null $committer, public string|null $message, public Schema\FileCommit\Commit\Tree|null $tree, public array|null $parents, public Schema\FileCommit\Commit\Verification|null $verification,)
     {
     }
 }

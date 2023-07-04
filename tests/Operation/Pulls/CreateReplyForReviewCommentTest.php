@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateReplyForReviewCommentTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestReviewComment::SCHEMA_EXAMPLE_DATA);
@@ -43,9 +41,7 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestReviewComment::SCHEMA_EXAMPLE_DATA);
@@ -59,9 +55,7 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->createReplyForReviewComment('generated', 'generated', 11, 10, json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -83,9 +77,7 @@ final class CreateReplyForReviewCommentTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\CreateReplyForReviewComment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

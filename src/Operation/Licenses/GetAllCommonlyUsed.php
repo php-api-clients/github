@@ -17,17 +17,15 @@ final class GetAllCommonlyUsed
     public const OPERATION_MATCH = 'GET /licenses';
     private const METHOD         = 'GET';
     private const PATH           = '/licenses';
-    private bool $featured;
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(bool $featured, int $perPage = 30, int $page = 1)
+    public function __construct(private bool $featured, int $perPage = 30, int $page = 1)
     {
-        $this->featured = $featured;
-        $this->perPage  = $perPage;
-        $this->page     = $page;
+        $this->perPage = $perPage;
+        $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface
@@ -35,9 +33,7 @@ final class GetAllCommonlyUsed
         return new Request(self::METHOD, str_replace(['{featured}', '{per_page}', '{page}'], [$this->featured, $this->perPage, $this->page], self::PATH . '?featured={featured}&per_page={per_page}&page={page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code = $response->getStatusCode();

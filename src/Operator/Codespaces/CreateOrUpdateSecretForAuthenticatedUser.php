@@ -23,9 +23,7 @@ final readonly class CreateOrUpdateSecretForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(EmptyObject|array)>
-     **/
+    /** @return PromiseInterface<(EmptyObject|array)> **/
     public function call(string $secretName, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\CreateOrUpdateSecretForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $secretName);

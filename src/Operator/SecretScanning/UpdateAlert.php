@@ -23,9 +23,7 @@ final readonly class UpdateAlert
     {
     }
 
-    /**
-     * @return PromiseInterface<(SecretScanningAlert|array)>
-     **/
+    /** @return PromiseInterface<(SecretScanningAlert|array)> **/
     public function call(string $owner, string $repo, int $alertNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecretScanning\UpdateAlert($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SubmitReviewTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PullRequestReview::SCHEMA_EXAMPLE_DATA);
@@ -43,9 +41,7 @@ final class SubmitReviewTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\PullRequestReview::SCHEMA_EXAMPLE_DATA);
@@ -59,9 +55,7 @@ final class SubmitReviewTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->submitReview('generated', 'generated', 11, 9, json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -83,9 +77,7 @@ final class SubmitReviewTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -100,9 +92,7 @@ final class SubmitReviewTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->submitReview('generated', 'generated', 11, 9, json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationErrorSimple::class);
@@ -124,9 +114,7 @@ final class SubmitReviewTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationErrorSimple::class);
@@ -141,9 +129,7 @@ final class SubmitReviewTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->submitReview('generated', 'generated', 11, 9, json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -165,9 +151,7 @@ final class SubmitReviewTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\SubmitReview\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

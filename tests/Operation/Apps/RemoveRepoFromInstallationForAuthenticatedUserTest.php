@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         $result = await($client->operations()->apps()->removeRepoFromInstallationForAuthenticatedUser(15, 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -80,9 +74,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -97,9 +89,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         $result = await($client->operations()->apps()->removeRepoFromInstallationForAuthenticatedUser(15, 13));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -118,9 +108,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -136,9 +124,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -157,9 +143,7 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -173,5 +157,40 @@ final class RemoveRepoFromInstallationForAuthenticatedUserTest extends AsyncTest
         $result = await($client->operations()->apps()->removeRepoFromInstallationForAuthenticatedUser(15, 13));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
+    }
+
+    /** @test */
+    public function call_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/user/installations/15/repositories/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Operation\Apps\RemoveRepoFromInstallationForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
+            $data['installation_id'] = 15;
+            $data['repository_id']   = 13;
+
+            return $data;
+        })([]));
+    }
+
+    /** @test */
+    public function operations_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('DELETE', '/user/installations/15/repositories/13', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = await($client->operations()->apps()->removeRepoFromInstallationForAuthenticatedUser(15, 13));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(422, $result['code']);
     }
 }

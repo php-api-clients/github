@@ -17,9 +17,7 @@ use function React\Promise\resolve;
 
 final class GetAllCommonlyUsedTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_empty(): void
     {
         $response = new Response(304, []);
@@ -39,9 +37,7 @@ final class GetAllCommonlyUsedTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_empty(): void
     {
         $response = new Response(304, []);

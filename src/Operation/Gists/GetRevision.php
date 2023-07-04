@@ -26,16 +26,10 @@ final class GetRevision
     private const PATH           = '/gists/{gist_id}/{sha}';
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private string $sha;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId\Sha $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Sha $hydrator, string $gistId, string $sha)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId\Sha $hydrator, string $gistId, private string $sha)
     {
-        $this->gistId                  = $gistId;
-        $this->sha                     = $sha;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(): RequestInterface

@@ -20,9 +20,7 @@ final readonly class GetRestrictionsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForRepo($owner, $repo);

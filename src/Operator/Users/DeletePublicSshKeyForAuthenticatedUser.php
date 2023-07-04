@@ -22,9 +22,7 @@ final readonly class DeletePublicSshKeyForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $keyId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeletePublicSshKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $keyId);

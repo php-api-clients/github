@@ -23,9 +23,7 @@ final readonly class GetPages
     {
     }
 
-    /**
-     * @return PromiseInterface<Page>
-     **/
+    /** @return PromiseInterface<Page> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetPages($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

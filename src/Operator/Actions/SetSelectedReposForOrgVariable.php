@@ -21,9 +21,7 @@ final readonly class SetSelectedReposForOrgVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $org, string $name, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetSelectedReposForOrgVariable($this->requestSchemaValidator, $org, $name);

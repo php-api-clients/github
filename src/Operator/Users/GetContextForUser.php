@@ -23,9 +23,7 @@ final readonly class GetContextForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Hovercard>
-     **/
+    /** @return PromiseInterface<Hovercard> **/
     public function call(string $username, string $subjectType, string $subjectId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetContextForUser($this->responseSchemaValidator, $this->hydrator, $username, $subjectType, $subjectId);

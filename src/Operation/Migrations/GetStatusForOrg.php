@@ -30,16 +30,12 @@ final class GetStatusForOrg
     private int $migrationId;
     /**Exclude attributes from the API response to improve performance **/
     private array $exclude;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator, string $org, int $migrationId, array $exclude)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator, string $org, int $migrationId, array $exclude)
     {
-        $this->org                     = $org;
-        $this->migrationId             = $migrationId;
-        $this->exclude                 = $exclude;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org         = $org;
+        $this->migrationId = $migrationId;
+        $this->exclude     = $exclude;
     }
 
     public function createRequest(): RequestInterface

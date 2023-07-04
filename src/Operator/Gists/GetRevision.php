@@ -23,9 +23,7 @@ final readonly class GetRevision
     {
     }
 
-    /**
-     * @return PromiseInterface<GistSimple>
-     **/
+    /** @return PromiseInterface<GistSimple> **/
     public function call(string $gistId, string $sha): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\GetRevision($this->responseSchemaValidator, $this->hydrator, $gistId, $sha);

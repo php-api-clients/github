@@ -13,7 +13,8 @@ abstract readonly class Tiet1DB2FC80
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"cwe_id":"generated","name":"generated"}';
 
-    public function __construct(#[MapFrom('cwe_id')] public string $cweId, public string $name)
+    public function __construct(#[MapFrom('cwe_id')]
+    public string $cweId, public string $name,)
     {
     }
 }

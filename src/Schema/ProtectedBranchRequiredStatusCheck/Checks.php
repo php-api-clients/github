@@ -13,7 +13,8 @@ final readonly class Checks
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"context":"generated","app_id":6}';
 
-    public function __construct(public string $context, #[MapFrom('app_id')] public ?int $appId)
+    public function __construct(public string $context, #[MapFrom('app_id')]
+    public int|null $appId,)
     {
     }
 }

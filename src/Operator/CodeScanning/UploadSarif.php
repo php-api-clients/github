@@ -23,9 +23,7 @@ final readonly class UploadSarif
     {
     }
 
-    /**
-     * @return PromiseInterface<(CodeScanningSarifsReceipt|array)>
-     **/
+    /** @return PromiseInterface<(CodeScanningSarifsReceipt|array)> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\UploadSarif($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

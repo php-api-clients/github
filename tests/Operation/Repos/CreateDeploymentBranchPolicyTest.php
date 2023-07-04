@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\DeploymentBranchPolicy::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\DeploymentBranchPolicy::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_empty(): void
     {
         $response = new Response(404, []);
@@ -79,9 +73,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_empty(): void
     {
         $response = new Response(404, []);
@@ -97,9 +89,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         self::assertSame(404, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_303_requestContentType_application_json_empty(): void
     {
         $response = new Response(303, []);
@@ -119,9 +109,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_303_requestContentType_application_json_empty(): void
     {
         $response = new Response(303, []);

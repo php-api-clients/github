@@ -17,7 +17,8 @@ final readonly class Ok
     /**
      * billableOwner: A GitHub user.
      */
-    public function __construct(#[MapFrom('billable_owner')] public ?Schema\SimpleUser $billableOwner, public ?Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok\Defaults $defaults)
+    public function __construct(#[MapFrom('billable_owner')]
+    public Schema\SimpleUser|null $billableOwner, public Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok\Defaults|null $defaults,)
     {
     }
 }

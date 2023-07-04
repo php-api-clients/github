@@ -18,7 +18,9 @@ You should not rely on this always being an actions workflow run object.';
      * runId: ID of the corresponding run.
      * runUrl: URL of the corresponding run.
      */
-    public function __construct(#[MapFrom('run_id')] public ?int $runId, #[MapFrom('run_url')] public ?string $runUrl)
+    public function __construct(#[MapFrom('run_id')]
+    public int|null $runId, #[MapFrom('run_url')]
+    public string|null $runUrl,)
     {
     }
 }

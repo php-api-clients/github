@@ -27,7 +27,8 @@ final readonly class Packages
     was not available when the SPDX document was created.
      * supplier: The distribution source of this package, or NOASSERTION if this was not determined.
      */
-    public function __construct(#[MapFrom('SPDXID')] public ?string $spdxid, public ?string $name, public ?string $versionInfo, public ?string $downloadLocation, public ?bool $filesAnalyzed, public ?string $licenseConcluded, public ?string $licenseDeclared, public ?string $supplier, public ?array $externalRefs)
+    public function __construct(#[MapFrom('SPDXID')]
+    public string|null $spdxid, public string|null $name, public string|null $versionInfo, public string|null $downloadLocation, public bool|null $filesAnalyzed, public string|null $licenseConcluded, public string|null $licenseDeclared, public string|null $supplier, public array|null $externalRefs,)
     {
     }
 }

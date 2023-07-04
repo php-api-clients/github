@@ -23,9 +23,7 @@ final readonly class Get
     {
     }
 
-    /**
-     * @return PromiseInterface<(ApiOverview|array)>
-     **/
+    /** @return PromiseInterface<(ApiOverview|array)> **/
     public function call(): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\Get($this->responseSchemaValidator, $this->hydrator);

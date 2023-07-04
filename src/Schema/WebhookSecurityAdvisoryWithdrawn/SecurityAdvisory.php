@@ -14,7 +14,11 @@ final readonly class SecurityAdvisory
     public const SCHEMA_DESCRIPTION  = 'The details of the security advisory, including summary, description, and severity.';
     public const SCHEMA_EXAMPLE_DATA = '{"cvss":{"score":0.5,"vector_string":"generated"},"cwes":[{"cwe_id":"generated","name":"generated"},{"cwe_id":"generated","name":"generated"}],"description":"generated","ghsa_id":"generated","identifiers":[{"type":"generated","value":"generated"},{"type":"generated","value":"generated"}],"published_at":"generated","references":[{"url":"https:\\/\\/example.com\\/"},{"url":"https:\\/\\/example.com\\/"}],"severity":"generated","summary":"generated","updated_at":"generated","vulnerabilities":[{"first_patched_version":{"identifier":"generated"},"package":{"ecosystem":"generated","name":"generated"},"severity":"generated","vulnerable_version_range":"generated"},{"first_patched_version":{"identifier":"generated"},"package":{"ecosystem":"generated","name":"generated"},"severity":"generated","vulnerable_version_range":"generated"}],"withdrawn_at":"generated"}';
 
-    public function __construct(public Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory\Cvss $cvss, public array $cwes, public string $description, #[MapFrom('ghsa_id')] public string $ghsaId, public array $identifiers, #[MapFrom('published_at')] public string $publishedAt, public array $references, public string $severity, public string $summary, #[MapFrom('updated_at')] public string $updatedAt, public array $vulnerabilities, #[MapFrom('withdrawn_at')] public string $withdrawnAt)
+    public function __construct(public Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory\Cvss $cvss, public array $cwes, public string $description, #[MapFrom('ghsa_id')]
+    public string $ghsaId, public array $identifiers, #[MapFrom('published_at')]
+    public string $publishedAt, public array $references, public string $severity, public string $summary, #[MapFrom('updated_at')]
+    public string $updatedAt, public array $vulnerabilities, #[MapFrom('withdrawn_at')]
+    public string $withdrawnAt,)
     {
     }
 }

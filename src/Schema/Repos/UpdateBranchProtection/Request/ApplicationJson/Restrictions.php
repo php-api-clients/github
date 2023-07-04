@@ -16,7 +16,7 @@ final readonly class Restrictions
      * teams: The list of team `slug`s with push access
      * apps: The list of app `slug`s with push access
      */
-    public function __construct(public array $users, public array $teams, public ?array $apps)
+    public function __construct(public array $users, public array $teams, public array|null $apps)
     {
     }
 }

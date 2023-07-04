@@ -13,7 +13,13 @@ final readonly class Workflow
     public const SCHEMA_DESCRIPTION  = 'A GitHub Actions workflow';
     public const SCHEMA_EXAMPLE_DATA = '{"id":5,"node_id":"MDg6V29ya2Zsb3cxMg==","name":"CI","path":"ruby.yaml","state":"active","created_at":"2019-12-06T14:20:20.000Z","updated_at":"2019-12-06T14:20:20.000Z","url":"https:\\/\\/api.github.com\\/repos\\/actions\\/setup-ruby\\/workflows\\/5","html_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/blob\\/master\\/.github\\/workflows\\/ruby.yaml","badge_url":"https:\\/\\/github.com\\/actions\\/setup-ruby\\/workflows\\/CI\\/badge.svg","deleted_at":"2019-12-06T14:20:20.000Z"}';
 
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, public string $path, public string $state, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public string $url, #[MapFrom('html_url')] public string $htmlUrl, #[MapFrom('badge_url')] public string $badgeUrl, #[MapFrom('deleted_at')] public ?string $deletedAt)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, public string $path, public string $state, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, #[MapFrom('html_url')]
+    public string $htmlUrl, #[MapFrom('badge_url')]
+    public string $badgeUrl, #[MapFrom('deleted_at')]
+    public string|null $deletedAt,)
     {
     }
 }

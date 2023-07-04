@@ -18,7 +18,14 @@ final readonly class ProjectsV2Item
      * contentType: The type of content tracked in a project item
      * creator: A GitHub user.
      */
-    public function __construct(public int|float $id, #[MapFrom('node_id')] public ?string $nodeId, #[MapFrom('project_node_id')] public ?string $projectNodeId, #[MapFrom('content_node_id')] public string $contentNodeId, #[MapFrom('content_type')] public string $contentType, public ?Schema\SimpleUser $creator, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('archived_at')] public ?string $archivedAt)
+    public function __construct(public int|float $id, #[MapFrom('node_id')]
+    public string|null $nodeId, #[MapFrom('project_node_id')]
+    public string|null $projectNodeId, #[MapFrom('content_node_id')]
+    public string $contentNodeId, #[MapFrom('content_type')]
+    public string $contentType, public Schema\SimpleUser|null $creator, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('archived_at')]
+    public string|null $archivedAt,)
     {
     }
 }

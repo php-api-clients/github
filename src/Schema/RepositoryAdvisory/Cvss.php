@@ -17,7 +17,8 @@ final readonly class Cvss
      * vectorString: The CVSS vector.
      * score: The CVSS score.
      */
-    public function __construct(#[MapFrom('vector_string')] public ?string $vectorString, public null|int|float $score)
+    public function __construct(#[MapFrom('vector_string')]
+    public string|null $vectorString, public int|float|null $score,)
     {
     }
 }

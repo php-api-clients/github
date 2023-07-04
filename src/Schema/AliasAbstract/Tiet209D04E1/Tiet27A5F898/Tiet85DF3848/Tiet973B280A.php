@@ -13,7 +13,11 @@ abstract readonly class Tiet973B280A
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"url":"https:\\/\\/example.com\\/","project_id":10,"project_url":"https:\\/\\/example.com\\/","column_name":"generated","previous_column_name":"generated"}';
 
-    public function __construct(public int $id, public string $url, #[MapFrom('project_id')] public int $projectId, #[MapFrom('project_url')] public string $projectUrl, #[MapFrom('column_name')] public string $columnName, #[MapFrom('previous_column_name')] public ?string $previousColumnName)
+    public function __construct(public int $id, public string $url, #[MapFrom('project_id')]
+    public int $projectId, #[MapFrom('project_url')]
+    public string $projectUrl, #[MapFrom('column_name')]
+    public string $columnName, #[MapFrom('previous_column_name')]
+    public string|null $previousColumnName,)
     {
     }
 }

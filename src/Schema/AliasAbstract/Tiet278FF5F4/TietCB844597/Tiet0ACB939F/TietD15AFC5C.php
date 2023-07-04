@@ -14,7 +14,9 @@ abstract readonly class TietD15AFC5C
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"first_patched_version":{"identifier":"generated"},"package":{"ecosystem":"generated","name":"generated"},"severity":"generated","vulnerable_version_range":"generated"}';
 
-    public function __construct(#[MapFrom('first_patched_version')] public ?Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\FirstPatchedVersion $firstPatchedVersion, public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\Package $package, public string $severity, #[MapFrom('vulnerable_version_range')] public string $vulnerableVersionRange)
+    public function __construct(#[MapFrom('first_patched_version')]
+    public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\FirstPatchedVersion|null $firstPatchedVersion, public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\Package $package, public string $severity, #[MapFrom('vulnerable_version_range')]
+    public string $vulnerableVersionRange,)
     {
     }
 }

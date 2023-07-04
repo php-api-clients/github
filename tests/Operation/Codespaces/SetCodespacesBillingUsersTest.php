@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class SetCodespacesBillingUsersTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -41,9 +39,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -58,9 +54,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->setCodespacesBillingUsers('generated', json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -79,9 +73,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -96,9 +88,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->setCodespacesBillingUsers('generated', json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -117,9 +107,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -134,9 +122,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         $result = await($client->operations()->codespaces()->setCodespacesBillingUsers('generated', json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -154,9 +140,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -172,9 +156,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -192,9 +174,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_304_requestContentType_application_json_empty(): void
     {
         $response = new Response(304, []);
@@ -210,9 +190,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         self::assertSame(304, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_400_requestContentType_application_json_empty(): void
     {
         $response = new Response(400, []);
@@ -230,9 +208,7 @@ final class SetCodespacesBillingUsersTest extends AsyncTestCase
         })(json_decode(Schema\Codespaces\SetCodespacesBillingUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_400_requestContentType_application_json_empty(): void
     {
         $response = new Response(400, []);

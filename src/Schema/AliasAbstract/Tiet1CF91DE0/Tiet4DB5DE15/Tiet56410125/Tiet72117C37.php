@@ -14,7 +14,19 @@ abstract readonly class Tiet72117C37
     public const SCHEMA_DESCRIPTION  = 'The security alert of the vulnerable dependency.';
     public const SCHEMA_EXAMPLE_DATA = '{"affected_package_name":"generated","affected_range":"generated","created_at":"generated","dismiss_reason":"generated","dismissed_at":"generated","dismisser":{"avatar_url":"https:\\/\\/example.com\\/","deleted":false,"email":"generated","events_url":"generated","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","gravatar_id":"generated","html_url":"https:\\/\\/example.com\\/","id":2,"login":"generated","name":"generated","node_id":"generated","organizations_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","site_admin":false,"starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","type":"Organization","url":"https:\\/\\/example.com\\/"},"external_identifier":"generated","external_reference":"https:\\/\\/example.com\\/","fix_reason":"generated","fixed_at":"1970-01-01T00:00:00+00:00","fixed_in":"generated","ghsa_id":"generated","id":2,"node_id":"generated","number":6,"severity":"generated","state":"open"}';
 
-    public function __construct(#[MapFrom('affected_package_name')] public string $affectedPackageName, #[MapFrom('affected_range')] public string $affectedRange, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('dismiss_reason')] public ?string $dismissReason, #[MapFrom('dismissed_at')] public ?string $dismissedAt, public ?Schema\WebhookRepositoryVulnerabilityAlertCreate\Alert\Dismisser $dismisser, #[MapFrom('external_identifier')] public string $externalIdentifier, #[MapFrom('external_reference')] public ?string $externalReference, #[MapFrom('fix_reason')] public ?string $fixReason, #[MapFrom('fixed_at')] public ?string $fixedAt, #[MapFrom('fixed_in')] public ?string $fixedIn, #[MapFrom('ghsa_id')] public string $ghsaId, public int $id, #[MapFrom('node_id')] public string $nodeId, public int $number, public string $severity, public string $state)
+    public function __construct(#[MapFrom('affected_package_name')]
+    public string $affectedPackageName, #[MapFrom('affected_range')]
+    public string $affectedRange, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('dismiss_reason')]
+    public string|null $dismissReason, #[MapFrom('dismissed_at')]
+    public string|null $dismissedAt, public Schema\WebhookRepositoryVulnerabilityAlertCreate\Alert\Dismisser|null $dismisser, #[MapFrom('external_identifier')]
+    public string $externalIdentifier, #[MapFrom('external_reference')]
+    public string|null $externalReference, #[MapFrom('fix_reason')]
+    public string|null $fixReason, #[MapFrom('fixed_at')]
+    public string|null $fixedAt, #[MapFrom('fixed_in')]
+    public string|null $fixedIn, #[MapFrom('ghsa_id')]
+    public string $ghsaId, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, public string $severity, public string $state,)
     {
     }
 }

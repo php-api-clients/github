@@ -22,7 +22,19 @@ final readonly class IssueEvent
      * rename: Issue Event Rename
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public ?Schema\SimpleUser $actor, public string $event, #[MapFrom('commit_id')] public ?string $commitId, #[MapFrom('commit_url')] public ?string $commitUrl, #[MapFrom('created_at')] public string $createdAt, public ?Schema\Issue $issue, public ?Schema\IssueEventLabel $label, public ?Schema\SimpleUser $assignee, public ?Schema\SimpleUser $assigner, #[MapFrom('review_requester')] public ?Schema\SimpleUser $reviewRequester, #[MapFrom('requested_reviewer')] public ?Schema\SimpleUser $requestedReviewer, #[MapFrom('requested_team')] public ?Schema\Team $requestedTeam, #[MapFrom('dismissed_review')] public ?Schema\IssueEventDismissedReview $dismissedReview, public ?Schema\IssueEventMilestone $milestone, #[MapFrom('project_card')] public ?Schema\IssueEventProjectCard $projectCard, public ?Schema\IssueEventRename $rename, #[MapFrom('author_association')] public ?string $authorAssociation, #[MapFrom('lock_reason')] public ?string $lockReason, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public Schema\SimpleUser|null $actor, public string $event, #[MapFrom('commit_id')]
+    public string|null $commitId, #[MapFrom('commit_url')]
+    public string|null $commitUrl, #[MapFrom('created_at')]
+    public string $createdAt, public Schema\Issue|null $issue, public Schema\IssueEventLabel|null $label, public Schema\SimpleUser|null $assignee, public Schema\SimpleUser|null $assigner, #[MapFrom('review_requester')]
+    public Schema\SimpleUser|null $reviewRequester, #[MapFrom('requested_reviewer')]
+    public Schema\SimpleUser|null $requestedReviewer, #[MapFrom('requested_team')]
+    public Schema\Team|null $requestedTeam, #[MapFrom('dismissed_review')]
+    public Schema\IssueEventDismissedReview|null $dismissedReview, public Schema\IssueEventMilestone|null $milestone, #[MapFrom('project_card')]
+    public Schema\IssueEventProjectCard|null $projectCard, public Schema\IssueEventRename|null $rename, #[MapFrom('author_association')]
+    public string|null $authorAssociation, #[MapFrom('lock_reason')]
+    public string|null $lockReason, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp,)
     {
     }
 }

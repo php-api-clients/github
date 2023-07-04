@@ -14,7 +14,7 @@ final readonly class Self_
     /**
      * href: The URL of the ruleset
      */
-    public function __construct(public ?string $href)
+    public function __construct(public string|null $href)
     {
     }
 }

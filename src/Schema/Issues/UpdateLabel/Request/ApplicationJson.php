@@ -18,7 +18,8 @@ final readonly class ApplicationJson
      * color: The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
      * description: A short description of the label. Must be 100 characters or fewer.
      */
-    public function __construct(#[MapFrom('new_name')] public ?string $newName, public ?string $color, public ?string $description)
+    public function __construct(#[MapFrom('new_name')]
+    public string|null $newName, public string|null $color, public string|null $description,)
     {
     }
 }

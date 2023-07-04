@@ -24,15 +24,9 @@ final class CreateFromManifest
     public const OPERATION_MATCH = 'POST /app-manifests/{code}/conversions';
     private const METHOD         = 'POST';
     private const PATH           = '/app-manifests/{code}/conversions';
-    private string $code;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\AppManifests\Code\Conversions $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\AppManifests\Code\Conversions $hydrator, string $code)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\AppManifests\Code\Conversions $hydrator, private string $code)
     {
-        $this->code                    = $code;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface

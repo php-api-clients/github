@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class GetEnvironmentSecretTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ActionsSecret::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class GetEnvironmentSecretTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\ActionsSecret::SCHEMA_EXAMPLE_DATA);

@@ -19,7 +19,8 @@ final readonly class OrgMembership
      * role: The user's membership type in the organization.
      * organization: A GitHub organization.
      */
-    public function __construct(public string $url, public string $state, public string $role, #[MapFrom('organization_url')] public string $organizationUrl, public Schema\OrganizationSimple $organization, public ?Schema\SimpleUser $user, public ?Schema\OrgMembership\Permissions $permissions)
+    public function __construct(public string $url, public string $state, public string $role, #[MapFrom('organization_url')]
+    public string $organizationUrl, public Schema\OrganizationSimple $organization, public Schema\SimpleUser|null $user, public Schema\OrgMembership\Permissions|null $permissions,)
     {
     }
 }

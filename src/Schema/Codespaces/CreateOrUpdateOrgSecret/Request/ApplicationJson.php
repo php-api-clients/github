@@ -19,7 +19,10 @@ final readonly class ApplicationJson
      * visibility: Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
      * selectedRepositoryIds: An array of repository IDs that can access the organization secret. You can only provide a list of repository IDs when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/codespaces#remove-selected-repository-from-an-organization-secret) endpoints.
      */
-    public function __construct(#[MapFrom('encrypted_value')] public ?string $encryptedValue, #[MapFrom('key_id')] public ?string $keyId, public string $visibility, #[MapFrom('selected_repository_ids')] public ?array $selectedRepositoryIds)
+    public function __construct(#[MapFrom('encrypted_value')]
+    public string|null $encryptedValue, #[MapFrom('key_id')]
+    public string|null $keyId, public string $visibility, #[MapFrom('selected_repository_ids')]
+    public array|null $selectedRepositoryIds,)
     {
     }
 }

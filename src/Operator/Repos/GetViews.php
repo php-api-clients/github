@@ -23,9 +23,7 @@ final readonly class GetViews
     {
     }
 
-    /**
-     * @return PromiseInterface<ViewTraffic>
-     **/
+    /** @return PromiseInterface<ViewTraffic> **/
     public function call(string $owner, string $repo, string $per = 'day'): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetViews($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $per);

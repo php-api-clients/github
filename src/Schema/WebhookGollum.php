@@ -21,7 +21,7 @@ final readonly class WebhookGollum
      * repository: A repository on GitHub.
      * sender: A GitHub user.
      */
-    public function __construct(public ?Schema\Enterprise $enterprise, public ?Schema\SimpleInstallation $installation, public ?Schema\OrganizationSimple $organization, public array $pages, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public array $pages, public Schema\Repository $repository, public Schema\SimpleUser $sender)
     {
     }
 }

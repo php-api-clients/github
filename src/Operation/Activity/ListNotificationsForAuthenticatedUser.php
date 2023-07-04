@@ -36,19 +36,15 @@ final class ListNotificationsForAuthenticatedUser
     private int $page;
     /**The number of results per page (max 50). **/
     private int $perPage;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Notifications $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Notifications $hydrator, string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Notifications $hydrator, string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50)
     {
-        $this->since                   = $since;
-        $this->before                  = $before;
-        $this->all                     = $all;
-        $this->participating           = $participating;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->since         = $since;
+        $this->before        = $before;
+        $this->all           = $all;
+        $this->participating = $participating;
+        $this->page          = $page;
+        $this->perPage       = $perPage;
     }
 
     public function createRequest(): RequestInterface
@@ -56,9 +52,7 @@ final class ListNotificationsForAuthenticatedUser
         return new Request(self::METHOD, str_replace(['{since}', '{before}', '{all}', '{participating}', '{page}', '{per_page}'], [$this->since, $this->before, $this->all, $this->participating, $this->page, $this->perPage], self::PATH . '?since={since}&before={before}&all={all}&participating={participating}&page={page}&per_page={per_page}'));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

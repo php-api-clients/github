@@ -13,7 +13,8 @@ final readonly class Two
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":3515,"node_id":"MDQ6R2F0ZTM1MTU=","type":"branch_policy"}';
 
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $type)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $type,)
     {
     }
 }

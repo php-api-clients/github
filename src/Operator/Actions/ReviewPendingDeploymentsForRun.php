@@ -21,9 +21,7 @@ final readonly class ReviewPendingDeploymentsForRun
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, int $runId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ReviewPendingDeploymentsForRun($this->requestSchemaValidator, $owner, $repo, $runId);

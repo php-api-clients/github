@@ -25,23 +25,19 @@ final class GetCustomDeploymentProtectionRule
     private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The name of the environment. **/
     private string $environmentName;
     /**The unique identifier of the protection rule. **/
     private int $protectionRuleId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\ProtectionRuleId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\ProtectionRuleId $hydrator, string $owner, string $repo, string $environmentName, int $protectionRuleId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\ProtectionRuleId $hydrator, string $owner, string $repo, string $environmentName, int $protectionRuleId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->environmentName         = $environmentName;
-        $this->protectionRuleId        = $protectionRuleId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner            = $owner;
+        $this->repo             = $repo;
+        $this->environmentName  = $environmentName;
+        $this->protectionRuleId = $protectionRuleId;
     }
 
     public function createRequest(): RequestInterface

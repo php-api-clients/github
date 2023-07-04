@@ -26,14 +26,10 @@ final class CheckIsStarred
     private const PATH           = '/gists/{gist_id}/star';
     /**The unique identifier of the gist. **/
     private string $gistId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Gists\GistId\Star $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Gists\GistId\Star $hydrator, string $gistId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Gists\GistId\Star $hydrator, string $gistId)
     {
-        $this->gistId                  = $gistId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->gistId = $gistId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class CheckIsStarred
         return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

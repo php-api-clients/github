@@ -17,7 +17,16 @@ abstract readonly class Tiet0EC30987
     /**
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(#[MapFrom('author_association')] public string $authorAssociation, public string $body, #[MapFrom('child_comment_count')] public int $childCommentCount, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('discussion_id')] public int $discussionId, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('parent_id')] public ?int $parentId, public Schema\WebhookDiscussionCommentCreated\Comment\Reactions $reactions, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('updated_at')] public string $updatedAt, public ?Schema\WebhookDiscussionCommentCreated\Comment\User $user)
+    public function __construct(#[MapFrom('author_association')]
+    public string $authorAssociation, public string $body, #[MapFrom('child_comment_count')]
+    public int $childCommentCount, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('discussion_id')]
+    public int $discussionId, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('parent_id')]
+    public int|null $parentId, public Schema\WebhookDiscussionCommentCreated\Comment\Reactions $reactions, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\WebhookDiscussionCommentCreated\Comment\User|null $user,)
     {
     }
 }

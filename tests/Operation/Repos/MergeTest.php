@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class MergeTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Commit::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Commit::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class MergeTest extends AsyncTestCase
         $result = await($client->operations()->repos()->merge('generated', 'generated', json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -79,9 +73,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -96,9 +88,7 @@ final class MergeTest extends AsyncTestCase
         $result = await($client->operations()->repos()->merge('generated', 'generated', json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -118,9 +108,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
@@ -135,9 +123,7 @@ final class MergeTest extends AsyncTestCase
         $result = await($client->operations()->repos()->merge('generated', 'generated', json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -156,9 +142,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_requestContentType_application_json_empty(): void
     {
         $response = new Response(204, []);
@@ -174,9 +158,7 @@ final class MergeTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_empty(): void
     {
         $response = new Response(404, []);
@@ -195,9 +177,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_empty(): void
     {
         $response = new Response(404, []);
@@ -213,9 +193,7 @@ final class MergeTest extends AsyncTestCase
         self::assertSame(404, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_409_requestContentType_application_json_empty(): void
     {
         $response = new Response(409, []);
@@ -234,9 +212,7 @@ final class MergeTest extends AsyncTestCase
         })(json_decode(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_409_requestContentType_application_json_empty(): void
     {
         $response = new Response(409, []);

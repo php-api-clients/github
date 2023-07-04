@@ -24,7 +24,33 @@ abstract readonly class Tiet0FEE60B9
      * state: State of this Pull Request. Either `open` or `closed`.
      * title: The title of the pull request.
      */
-    public function __construct(#[MapFrom('_links')] public Schema\WebhookPullRequestDemilestoned\PullRequest\Links $links, #[MapFrom('active_lock_reason')] public ?string $activeLockReason, public ?int $additions, public ?Schema\WebhookPullRequestDemilestoned\PullRequest\Assignee $assignee, public array $assignees, #[MapFrom('author_association')] public string $authorAssociation, #[MapFrom('auto_merge')] public ?Schema\WebhookPullRequestDemilestoned\PullRequest\AutoMerge $autoMerge, public Schema\WebhookPullRequestDemilestoned\PullRequest\Base $base, public ?string $body, #[MapFrom('changed_files')] public ?int $changedFiles, #[MapFrom('closed_at')] public ?string $closedAt, public ?int $comments, #[MapFrom('comments_url')] public string $commentsUrl, public ?int $commits, #[MapFrom('commits_url')] public string $commitsUrl, #[MapFrom('created_at')] public string $createdAt, public ?int $deletions, #[MapFrom('diff_url')] public string $diffUrl, public bool $draft, public Schema\WebhookPullRequestDemilestoned\PullRequest\Head $head, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('issue_url')] public string $issueUrl, public array $labels, public bool $locked, #[MapFrom('maintainer_can_modify')] public ?bool $maintainerCanModify, #[MapFrom('merge_commit_sha')] public ?string $mergeCommitSha, public ?bool $mergeable, #[MapFrom('mergeable_state')] public ?string $mergeableState, public ?bool $merged, #[MapFrom('merged_at')] public ?string $mergedAt, #[MapFrom('merged_by')] public ?Schema\WebhookPullRequestDemilestoned\PullRequest\MergedBy $mergedBy, public ?Schema\WebhookPullRequestDemilestoned\PullRequest\Milestone $milestone, #[MapFrom('node_id')] public string $nodeId, public int $number, #[MapFrom('patch_url')] public string $patchUrl, public ?bool $rebaseable, #[MapFrom('requested_reviewers')] public array $requestedReviewers, #[MapFrom('requested_teams')] public array $requestedTeams, #[MapFrom('review_comment_url')] public string $reviewCommentUrl, #[MapFrom('review_comments')] public ?int $reviewComments, #[MapFrom('review_comments_url')] public string $reviewCommentsUrl, public string $state, #[MapFrom('statuses_url')] public string $statusesUrl, public string $title, #[MapFrom('updated_at')] public string $updatedAt, public string $url, public ?Schema\WebhookPullRequestDemilestoned\PullRequest\User $user)
+    public function __construct(#[MapFrom('_links')]
+    public Schema\WebhookPullRequestDemilestoned\PullRequest\Links $links, #[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, public int|null $additions, public Schema\WebhookPullRequestDemilestoned\PullRequest\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
+    public string $authorAssociation, #[MapFrom('auto_merge')]
+    public Schema\WebhookPullRequestDemilestoned\PullRequest\AutoMerge|null $autoMerge, public Schema\WebhookPullRequestDemilestoned\PullRequest\Base $base, public string|null $body, #[MapFrom('changed_files')]
+    public int|null $changedFiles, #[MapFrom('closed_at')]
+    public string|null $closedAt, public int|null $comments, #[MapFrom('comments_url')]
+    public string $commentsUrl, public int|null $commits, #[MapFrom('commits_url')]
+    public string $commitsUrl, #[MapFrom('created_at')]
+    public string $createdAt, public int|null $deletions, #[MapFrom('diff_url')]
+    public string $diffUrl, public bool $draft, public Schema\WebhookPullRequestDemilestoned\PullRequest\Head $head, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('issue_url')]
+    public string $issueUrl, public array $labels, public bool $locked, #[MapFrom('maintainer_can_modify')]
+    public bool|null $maintainerCanModify, #[MapFrom('merge_commit_sha')]
+    public string|null $mergeCommitSha, public bool|null $mergeable, #[MapFrom('mergeable_state')]
+    public string|null $mergeableState, public bool|null $merged, #[MapFrom('merged_at')]
+    public string|null $mergedAt, #[MapFrom('merged_by')]
+    public Schema\WebhookPullRequestDemilestoned\PullRequest\MergedBy|null $mergedBy, public Schema\WebhookPullRequestDemilestoned\PullRequest\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $nodeId, public int $number, #[MapFrom('patch_url')]
+    public string $patchUrl, public bool|null $rebaseable, #[MapFrom('requested_reviewers')]
+    public array $requestedReviewers, #[MapFrom('requested_teams')]
+    public array $requestedTeams, #[MapFrom('review_comment_url')]
+    public string $reviewCommentUrl, #[MapFrom('review_comments')]
+    public int|null $reviewComments, #[MapFrom('review_comments_url')]
+    public string $reviewCommentsUrl, public string $state, #[MapFrom('statuses_url')]
+    public string $statusesUrl, public string $title, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhookPullRequestDemilestoned\PullRequest\User|null $user,)
     {
     }
 }

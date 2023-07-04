@@ -23,9 +23,7 @@ final readonly class UpdateColumn
     {
     }
 
-    /**
-     * @return PromiseInterface<(ProjectColumn|array)>
-     **/
+    /** @return PromiseInterface<(ProjectColumn|array)> **/
     public function call(int $columnId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\UpdateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

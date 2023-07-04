@@ -17,7 +17,9 @@ final readonly class ActionsGetDefaultWorkflowPermissions
      * defaultWorkflowPermissions: The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
      * canApprovePullRequestReviews: Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
      */
-    public function __construct(#[MapFrom('default_workflow_permissions')] public string $defaultWorkflowPermissions, #[MapFrom('can_approve_pull_request_reviews')] public bool $canApprovePullRequestReviews)
+    public function __construct(#[MapFrom('default_workflow_permissions')]
+    public string $defaultWorkflowPermissions, #[MapFrom('can_approve_pull_request_reviews')]
+    public bool $canApprovePullRequestReviews,)
     {
     }
 }

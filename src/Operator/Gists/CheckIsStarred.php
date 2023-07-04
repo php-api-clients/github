@@ -22,9 +22,7 @@ final readonly class CheckIsStarred
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $gistId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\CheckIsStarred($this->responseSchemaValidator, $this->hydrator, $gistId);

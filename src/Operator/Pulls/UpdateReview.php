@@ -23,9 +23,7 @@ final readonly class UpdateReview
     {
     }
 
-    /**
-     * @return PromiseInterface<PullRequestReview>
-     **/
+    /** @return PromiseInterface<PullRequestReview> **/
     public function call(string $owner, string $repo, int $pullNumber, int $reviewId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\UpdateReview($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $reviewId);

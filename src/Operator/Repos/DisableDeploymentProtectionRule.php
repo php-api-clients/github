@@ -20,9 +20,7 @@ final readonly class DisableDeploymentProtectionRule
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $environmentName, string $repo, string $owner, int $protectionRuleId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DisableDeploymentProtectionRule($environmentName, $repo, $owner, $protectionRuleId);

@@ -23,9 +23,7 @@ final readonly class ListRepoOrganizationVariables
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, int $perPage = 10, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListRepoOrganizationVariables($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

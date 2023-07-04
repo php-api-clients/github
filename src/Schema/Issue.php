@@ -25,7 +25,25 @@ final readonly class Issue
      * repository: A repository on GitHub.
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('labels_url')] public string $labelsUrl, #[MapFrom('comments_url')] public string $commentsUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('html_url')] public string $htmlUrl, public int $number, public string $state, #[MapFrom('state_reason')] public ?string $stateReason, public string $title, public ?string $body, public ?Schema\SimpleUser $user, public array $labels, public ?Schema\SimpleUser $assignee, public ?array $assignees, public ?Schema\Milestone $milestone, public bool $locked, #[MapFrom('active_lock_reason')] public ?string $activeLockReason, public int $comments, #[MapFrom('pull_request')] public ?Schema\Issue\PullRequest $pullRequest, #[MapFrom('closed_at')] public ?string $closedAt, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public ?bool $draft, #[MapFrom('closed_by')] public ?Schema\SimpleUser $closedBy, #[MapFrom('body_html')] public ?string $bodyHtml, #[MapFrom('body_text')] public ?string $bodyText, #[MapFrom('timeline_url')] public ?string $timelineUrl, public ?Schema\Repository $repository, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp, #[MapFrom('author_association')] public string $authorAssociation, public ?Schema\ReactionRollup $reactions)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('labels_url')]
+    public string $labelsUrl, #[MapFrom('comments_url')]
+    public string $commentsUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $number, public string $state, #[MapFrom('state_reason')]
+    public string|null $stateReason, public string $title, public string|null $body, public Schema\SimpleUser|null $user, public array $labels, public Schema\SimpleUser|null $assignee, public array|null $assignees, public Schema\Milestone|null $milestone, public bool $locked, #[MapFrom('active_lock_reason')]
+    public string|null $activeLockReason, public int $comments, #[MapFrom('pull_request')]
+    public Schema\Issue\PullRequest|null $pullRequest, #[MapFrom('closed_at')]
+    public string|null $closedAt, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public bool|null $draft, #[MapFrom('closed_by')]
+    public Schema\SimpleUser|null $closedBy, #[MapFrom('body_html')]
+    public string|null $bodyHtml, #[MapFrom('body_text')]
+    public string|null $bodyText, #[MapFrom('timeline_url')]
+    public string|null $timelineUrl, public Schema\Repository|null $repository, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp, #[MapFrom('author_association')]
+    public string $authorAssociation, public Schema\ReactionRollup|null $reactions,)
     {
     }
 }

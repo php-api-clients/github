@@ -19,9 +19,7 @@ use function React\Promise\resolve;
 
 final class GetWebhookTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OrgHook::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class GetWebhookTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OrgHook::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class GetWebhookTest extends AsyncTestCase
         $result = await($client->operations()->orgs()->getWebhook('generated', 7));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -78,9 +72,7 @@ final class GetWebhookTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

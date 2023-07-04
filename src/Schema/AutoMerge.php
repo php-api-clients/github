@@ -20,7 +20,11 @@ final readonly class AutoMerge
      * commitTitle: Title for the merge commit message.
      * commitMessage: Commit message for the merge commit.
      */
-    public function __construct(#[MapFrom('enabled_by')] public Schema\SimpleUser $enabledBy, #[MapFrom('merge_method')] public string $mergeMethod, #[MapFrom('commit_title')] public string $commitTitle, #[MapFrom('commit_message')] public string $commitMessage)
+    public function __construct(#[MapFrom('enabled_by')]
+    public Schema\SimpleUser $enabledBy, #[MapFrom('merge_method')]
+    public string $mergeMethod, #[MapFrom('commit_title')]
+    public string $commitTitle, #[MapFrom('commit_message')]
+    public string $commitMessage,)
     {
     }
 }

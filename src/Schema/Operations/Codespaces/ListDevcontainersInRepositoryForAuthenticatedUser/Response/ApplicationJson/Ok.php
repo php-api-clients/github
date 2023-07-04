@@ -13,7 +13,8 @@ final readonly class Ok
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"total_count":11,"devcontainers":[{"path":"generated","name":"generated","display_name":"generated"},{"path":"generated","name":"generated","display_name":"generated"}]}';
 
-    public function __construct(#[MapFrom('total_count')] public int $totalCount, public array $devcontainers)
+    public function __construct(#[MapFrom('total_count')]
+    public int $totalCount, public array $devcontainers,)
     {
     }
 }

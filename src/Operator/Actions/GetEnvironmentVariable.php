@@ -23,9 +23,7 @@ final readonly class GetEnvironmentVariable
     {
     }
 
-    /**
-     * @return PromiseInterface<ActionsVariable>
-     **/
+    /** @return PromiseInterface<ActionsVariable> **/
     public function call(int $repositoryId, string $environmentName, string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetEnvironmentVariable($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $name);

@@ -23,9 +23,7 @@ final readonly class ListAppInstallations
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListAppInstallations($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

@@ -22,9 +22,7 @@ final readonly class DeclineInvitationForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $invitationId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeclineInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

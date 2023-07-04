@@ -20,9 +20,7 @@ final readonly class ListSecurityManagerTeams
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $org): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListSecurityManagerTeams($org);

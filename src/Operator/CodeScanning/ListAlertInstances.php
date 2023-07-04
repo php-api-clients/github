@@ -22,9 +22,7 @@ final readonly class ListAlertInstances
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $owner, string $repo, int $alertNumber, string $ref, int $page = 1, int $perPage = 30): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\ListAlertInstances($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber, $ref, $page, $perPage);

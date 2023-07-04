@@ -23,9 +23,7 @@ final readonly class CreateFromManifest
     {
     }
 
-    /**
-     * @return PromiseInterface<Integration>
-     **/
+    /** @return PromiseInterface<Integration> **/
     public function call(string $code): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\CreateFromManifest($this->responseSchemaValidator, $this->hydrator, $code);

@@ -17,7 +17,7 @@ abstract readonly class Tiet2C35EA3B
      * operator: The operator to use for matching.
      * pattern: The pattern to match with.
      */
-    public function __construct(public ?string $name, public ?bool $negate, public string $operator, public string $pattern)
+    public function __construct(public string|null $name, public bool|null $negate, public string $operator, public string $pattern)
     {
     }
 }

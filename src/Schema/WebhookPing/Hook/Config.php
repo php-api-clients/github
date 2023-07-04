@@ -18,7 +18,9 @@ final readonly class Config
      * secret: If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
      * url: The URL to which the payloads will be delivered.
      */
-    public function __construct(#[MapFrom('content_type')] public ?string $contentType, #[MapFrom('insecure_ssl')] public null|string|int|float $insecureSsl, public ?string $secret, public ?string $url)
+    public function __construct(#[MapFrom('content_type')]
+    public string|null $contentType, #[MapFrom('insecure_ssl')]
+    public string|int|float|null $insecureSsl, public string|null $secret, public string|null $url,)
     {
     }
 }

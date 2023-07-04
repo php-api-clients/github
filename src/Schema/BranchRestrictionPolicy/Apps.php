@@ -14,7 +14,12 @@ final readonly class Apps
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"id":2,"slug":"generated","node_id":"generated","owner":{"login":"generated","id":2,"node_id":"generated","url":"generated","repos_url":"generated","events_url":"generated","hooks_url":"generated","issues_url":"generated","members_url":"generated","public_members_url":"generated","avatar_url":"generated","description":"generated","gravatar_id":"\\"\\"","html_url":"\\"https:\\/\\/github.com\\/testorg-ea8ec76d71c3af4b\\"","followers_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/followers\\"","following_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/following{\\/other_user}\\"","gists_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/gists{\\/gist_id}\\"","starred_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/starred{\\/owner}{\\/repo}\\"","subscriptions_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/subscriptions\\"","organizations_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/orgs\\"","received_events_url":"\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/received_events\\"","type":"\\"Organization\\"","site_admin":false},"name":"generated","description":"generated","external_url":"generated","html_url":"generated","created_at":"generated","updated_at":"generated","permissions":{"metadata":"generated","contents":"generated","issues":"generated","single_file":"generated"},"events":["generated","generated"]}';
 
-    public function __construct(public ?int $id, public ?string $slug, #[MapFrom('node_id')] public ?string $nodeId, public ?Schema\BranchRestrictionPolicy\Apps\Owner $owner, public ?string $name, public ?string $description, #[MapFrom('external_url')] public ?string $externalUrl, #[MapFrom('html_url')] public ?string $htmlUrl, #[MapFrom('created_at')] public ?string $createdAt, #[MapFrom('updated_at')] public ?string $updatedAt, public ?Schema\BranchRestrictionPolicy\Apps\Permissions $permissions, public ?array $events)
+    public function __construct(public int|null $id, public string|null $slug, #[MapFrom('node_id')]
+    public string|null $nodeId, public Schema\BranchRestrictionPolicy\Apps\Owner|null $owner, public string|null $name, public string|null $description, #[MapFrom('external_url')]
+    public string|null $externalUrl, #[MapFrom('html_url')]
+    public string|null $htmlUrl, #[MapFrom('created_at')]
+    public string|null $createdAt, #[MapFrom('updated_at')]
+    public string|null $updatedAt, public Schema\BranchRestrictionPolicy\Apps\Permissions|null $permissions, public array|null $events,)
     {
     }
 }

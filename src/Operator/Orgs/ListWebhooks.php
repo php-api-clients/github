@@ -22,9 +22,7 @@ final readonly class ListWebhooks
     {
     }
 
-    /**
-     * @return PromiseInterface<mixed>
-     **/
+    /** @return PromiseInterface<mixed> **/
     public function call(string $org, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListWebhooks($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

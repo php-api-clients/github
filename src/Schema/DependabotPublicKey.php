@@ -17,7 +17,8 @@ final readonly class DependabotPublicKey
      * keyId: The identifier for the key.
      * key: The Base64 encoded public key.
      */
-    public function __construct(#[MapFrom('key_id')] public string $keyId, public string $key)
+    public function __construct(#[MapFrom('key_id')]
+    public string $keyId, public string $key,)
     {
     }
 }

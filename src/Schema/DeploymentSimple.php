@@ -21,7 +21,16 @@ final readonly class DeploymentSimple
      * transientEnvironment: Specifies if the given environment is will no longer exist at some point in the future. Default: false.
      * productionEnvironment: Specifies if the given environment is one that end-users directly interact with. Default: false.
      */
-    public function __construct(public string $url, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $task, #[MapFrom('original_environment')] public ?string $originalEnvironment, public string $environment, public ?string $description, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('statuses_url')] public string $statusesUrl, #[MapFrom('repository_url')] public string $repositoryUrl, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('production_environment')] public ?bool $productionEnvironment, #[MapFrom('performed_via_github_app')] public ?Schema\Integration $performedViaGithubApp)
+    public function __construct(public string $url, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $task, #[MapFrom('original_environment')]
+    public string|null $originalEnvironment, public string $environment, public string|null $description, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('statuses_url')]
+    public string $statusesUrl, #[MapFrom('repository_url')]
+    public string $repositoryUrl, #[MapFrom('transient_environment')]
+    public bool|null $transientEnvironment, #[MapFrom('production_environment')]
+    public bool|null $productionEnvironment, #[MapFrom('performed_via_github_app')]
+    public Schema\Integration|null $performedViaGithubApp,)
     {
     }
 }

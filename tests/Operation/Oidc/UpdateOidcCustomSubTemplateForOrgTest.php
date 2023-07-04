@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         })(json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\EmptyObject::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         $result = await($client->operations()->oidc()->updateOidcCustomSubTemplateForOrg('generated', json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -77,9 +71,7 @@ final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         })(json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,9 +86,7 @@ final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         $result = await($client->operations()->oidc()->updateOidcCustomSubTemplateForOrg('generated', json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class UpdateOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         })(json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

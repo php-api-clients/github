@@ -13,7 +13,9 @@ final readonly class ProtectedBranchRequiredStatusCheck
     public const SCHEMA_DESCRIPTION  = 'Protected Branch Required Status Check';
     public const SCHEMA_EXAMPLE_DATA = '{"url":"generated","enforcement_level":"generated","contexts":["generated","generated"],"checks":[{"context":"generated","app_id":6},{"context":"generated","app_id":6}],"contexts_url":"generated","strict":false}';
 
-    public function __construct(public ?string $url, #[MapFrom('enforcement_level')] public ?string $enforcementLevel, public array $contexts, public array $checks, #[MapFrom('contexts_url')] public ?string $contextsUrl, public ?bool $strict)
+    public function __construct(public string|null $url, #[MapFrom('enforcement_level')]
+    public string|null $enforcementLevel, public array $contexts, public array $checks, #[MapFrom('contexts_url')]
+    public string|null $contextsUrl, public bool|null $strict,)
     {
     }
 }

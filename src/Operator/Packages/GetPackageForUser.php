@@ -23,9 +23,7 @@ final readonly class GetPackageForUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Package>
-     **/
+    /** @return PromiseInterface<Package> **/
     public function call(string $packageType, string $packageName, string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\GetPackageForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username);

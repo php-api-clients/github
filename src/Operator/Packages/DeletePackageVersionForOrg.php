@@ -22,9 +22,7 @@ final readonly class DeletePackageVersionForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $packageName, string $org, int $packageVersionId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\DeletePackageVersionForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $packageVersionId);

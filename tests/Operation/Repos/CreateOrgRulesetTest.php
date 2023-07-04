@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class CreateOrgRulesetTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\RepositoryRuleset::SCHEMA_EXAMPLE_DATA);
@@ -40,9 +38,7 @@ final class CreateOrgRulesetTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrgRuleset\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\RepositoryRuleset::SCHEMA_EXAMPLE_DATA);
@@ -56,9 +52,7 @@ final class CreateOrgRulesetTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrgRuleset('generated', json_decode(Schema\Repos\CreateOrgRuleset\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -77,9 +71,7 @@ final class CreateOrgRulesetTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrgRuleset\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -94,9 +86,7 @@ final class CreateOrgRulesetTest extends AsyncTestCase
         $result = await($client->operations()->repos()->createOrgRuleset('generated', json_decode(Schema\Repos\CreateOrgRuleset\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_500_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -115,9 +105,7 @@ final class CreateOrgRulesetTest extends AsyncTestCase
         })(json_decode(Schema\Repos\CreateOrgRuleset\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_500_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);

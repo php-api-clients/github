@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Tests\Client\GitHub\Operation\Repos;
 
 use ApiClients\Client\GitHub\Client;
-use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -19,9 +18,7 @@ use function React\Promise\resolve;
 
 final class GetReleaseTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Release::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +38,7 @@ final class GetReleaseTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Release::SCHEMA_EXAMPLE_DATA);
@@ -57,13 +52,10 @@ final class GetReleaseTest extends AsyncTestCase
         $result = await($client->operations()->repos()->getRelease('generated', 'generated', 10));
     }
 
-    /**
-     * @test
-     */
-    public function call_httpCode_404_responseContentType_application_json_zero(): void
+    /** @test */
+    public function call_httpCode_401_empty(): void
     {
-        self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, []);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -80,13 +72,10 @@ final class GetReleaseTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
-    public function operations_httpCode_404_responseContentType_application_json_zero(): void
+    /** @test */
+    public function operations_httpCode_401_empty(): void
     {
-        self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, []);
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -95,5 +84,7 @@ final class GetReleaseTest extends AsyncTestCase
         $browser->request('GET', '/repos/generated/generated/releases/10', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = await($client->operations()->repos()->getRelease('generated', 'generated', 10));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(401, $result['code']);
     }
 }

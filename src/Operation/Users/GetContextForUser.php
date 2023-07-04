@@ -30,16 +30,12 @@ final class GetContextForUser
     private string $subjectType;
     /**Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`. **/
     private string $subjectId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Users\Username\Hovercard $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Users\Username\Hovercard $hydrator, string $username, string $subjectType, string $subjectId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Hovercard $hydrator, string $username, string $subjectType, string $subjectId)
     {
-        $this->username                = $username;
-        $this->subjectType             = $subjectType;
-        $this->subjectId               = $subjectId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->username    = $username;
+        $this->subjectType = $subjectType;
+        $this->subjectId   = $subjectId;
     }
 
     public function createRequest(): RequestInterface

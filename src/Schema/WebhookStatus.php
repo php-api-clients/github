@@ -27,7 +27,11 @@ final readonly class WebhookStatus
      * state: The new state. Can be `pending`, `success`, `failure`, or `error`.
      * targetUrl: The optional link added to the status.
      */
-    public function __construct(#[MapFrom('avatar_url')] public ?string $avatarUrl, public array $branches, public Schema\WebhookStatus\Commit $commit, public string $context, #[MapFrom('created_at')] public string $createdAt, public ?string $description, public ?Schema\Enterprise $enterprise, public int $id, public ?Schema\SimpleInstallation $installation, public string $name, public ?Schema\OrganizationSimple $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public string $sha, public string $state, #[MapFrom('target_url')] public ?string $targetUrl, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(#[MapFrom('avatar_url')]
+    public string|null $avatarUrl, public array $branches, public Schema\WebhookStatus\Commit $commit, public string $context, #[MapFrom('created_at')]
+    public string $createdAt, public string|null $description, public Schema\Enterprise|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public string $sha, public string $state, #[MapFrom('target_url')]
+    public string|null $targetUrl, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

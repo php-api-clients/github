@@ -16,7 +16,8 @@ final readonly class Ok
     /**
      * totalCount: The number of environments in this repository
      */
-    public function __construct(#[MapFrom('total_count')] public ?int $totalCount, public ?array $environments)
+    public function __construct(#[MapFrom('total_count')]
+    public int|null $totalCount, public array|null $environments,)
     {
     }
 }

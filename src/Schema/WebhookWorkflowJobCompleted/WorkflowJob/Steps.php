@@ -13,7 +13,9 @@ final readonly class Steps
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"completed_at":"generated","conclusion":"cancelled","name":"generated","number":6,"started_at":"generated","status":"queued"}';
 
-    public function __construct(#[MapFrom('completed_at')] public ?string $completedAt, public ?string $conclusion, public string $name, public int $number, #[MapFrom('started_at')] public ?string $startedAt, public string $status)
+    public function __construct(#[MapFrom('completed_at')]
+    public string|null $completedAt, public string|null $conclusion, public string $name, public int $number, #[MapFrom('started_at')]
+    public string|null $startedAt, public string $status,)
     {
     }
 }

@@ -19,7 +19,10 @@ final readonly class ApplicationJson
      * vcs: The type of version control system you are migrating from.
      * tfvcProject: For a tfvc import, the name of the project that is being imported.
      */
-    public function __construct(#[MapFrom('vcs_username')] public ?string $vcsUsername, #[MapFrom('vcs_password')] public ?string $vcsPassword, public ?string $vcs, #[MapFrom('tfvc_project')] public ?string $tfvcProject)
+    public function __construct(#[MapFrom('vcs_username')]
+    public string|null $vcsUsername, #[MapFrom('vcs_password')]
+    public string|null $vcsPassword, public string|null $vcs, #[MapFrom('tfvc_project')]
+    public string|null $tfvcProject,)
     {
     }
 }

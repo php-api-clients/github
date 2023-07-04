@@ -23,9 +23,7 @@ final readonly class CreateForPullRequestReviewComment
     {
     }
 
-    /**
-     * @return PromiseInterface<Reaction>
-     **/
+    /** @return PromiseInterface<Reaction> **/
     public function call(string $owner, string $repo, int $commentId, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\CreateForPullRequestReviewComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

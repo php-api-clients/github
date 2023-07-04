@@ -11,7 +11,7 @@ final readonly class Docker
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"tag":["generated","generated"]}';
 
-    public function __construct(public ?array $tag)
+    public function __construct(public array|null $tag)
     {
     }
 }

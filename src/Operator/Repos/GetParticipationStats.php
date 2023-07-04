@@ -23,9 +23,7 @@ final readonly class GetParticipationStats
     {
     }
 
-    /**
-     * @return PromiseInterface<ParticipationStats>
-     **/
+    /** @return PromiseInterface<ParticipationStats> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetParticipationStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

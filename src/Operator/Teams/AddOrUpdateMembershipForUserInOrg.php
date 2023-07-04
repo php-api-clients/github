@@ -23,9 +23,7 @@ final readonly class AddOrUpdateMembershipForUserInOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<(TeamMembership|array)>
-     **/
+    /** @return PromiseInterface<(TeamMembership|array)> **/
     public function call(string $org, string $teamSlug, string $username, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateMembershipForUserInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $username);

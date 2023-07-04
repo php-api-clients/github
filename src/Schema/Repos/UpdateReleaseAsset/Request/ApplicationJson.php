@@ -15,7 +15,7 @@ final readonly class ApplicationJson
      * name: The file name of the asset.
      * label: An alternate short description of the asset. Used in place of the filename.
      */
-    public function __construct(public ?string $name, public ?string $label, public ?string $state)
+    public function __construct(public string|null $name, public string|null $label, public string|null $state)
     {
     }
 }

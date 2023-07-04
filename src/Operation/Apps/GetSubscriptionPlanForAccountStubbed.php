@@ -26,14 +26,10 @@ final class GetSubscriptionPlanForAccountStubbed
     private const PATH           = '/marketplace_listing/stubbed/accounts/{account_id}';
     /**account_id parameter **/
     private int $accountId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\MarketplaceListing\Stubbed\Accounts\AccountId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\MarketplaceListing\Stubbed\Accounts\AccountId $hydrator, int $accountId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\MarketplaceListing\Stubbed\Accounts\AccountId $hydrator, int $accountId)
     {
-        $this->accountId               = $accountId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->accountId = $accountId;
     }
 
     public function createRequest(): RequestInterface
@@ -41,9 +37,7 @@ final class GetSubscriptionPlanForAccountStubbed
         return new Request(self::METHOD, str_replace(['{account_id}'], [$this->accountId], self::PATH));
     }
 
-    /**
-     * @return Schema\MarketplacePurchase|array{code: int}
-     */
+    /** @return Schema\MarketplacePurchase|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\MarketplacePurchase|array
     {
         $code          = $response->getStatusCode();

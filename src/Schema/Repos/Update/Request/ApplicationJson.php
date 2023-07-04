@@ -63,7 +63,26 @@ final readonly class ApplicationJson
      * allowForking: Either `true` to allow private forks, or `false` to prevent private forks.
      * webCommitSignoffRequired: Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
      */
-    public function __construct(public ?string $name, public ?string $description, public ?string $homepage, public ?bool $private, public ?string $visibility, #[MapFrom('security_and_analysis')] public ?Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis $securityAndAnalysis, #[MapFrom('has_issues')] public ?bool $hasIssues, #[MapFrom('has_projects')] public ?bool $hasProjects, #[MapFrom('has_wiki')] public ?bool $hasWiki, #[MapFrom('is_template')] public ?bool $isTemplate, #[MapFrom('default_branch')] public ?string $defaultBranch, #[MapFrom('allow_squash_merge')] public ?bool $allowSquashMerge, #[MapFrom('allow_merge_commit')] public ?bool $allowMergeCommit, #[MapFrom('allow_rebase_merge')] public ?bool $allowRebaseMerge, #[MapFrom('allow_auto_merge')] public ?bool $allowAutoMerge, #[MapFrom('delete_branch_on_merge')] public ?bool $deleteBranchOnMerge, #[MapFrom('allow_update_branch')] public ?bool $allowUpdateBranch, #[MapFrom('use_squash_pr_title_as_default')] public ?bool $useSquashPrTitleAsDefault, #[MapFrom('squash_merge_commit_title')] public ?string $squashMergeCommitTitle, #[MapFrom('squash_merge_commit_message')] public ?string $squashMergeCommitMessage, #[MapFrom('merge_commit_title')] public ?string $mergeCommitTitle, #[MapFrom('merge_commit_message')] public ?string $mergeCommitMessage, public ?bool $archived, #[MapFrom('allow_forking')] public ?bool $allowForking, #[MapFrom('web_commit_signoff_required')] public ?bool $webCommitSignoffRequired)
+    public function __construct(public string|null $name, public string|null $description, public string|null $homepage, public bool|null $private, public string|null $visibility, #[MapFrom('security_and_analysis')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis|null $securityAndAnalysis, #[MapFrom('has_issues')]
+    public bool|null $hasIssues, #[MapFrom('has_projects')]
+    public bool|null $hasProjects, #[MapFrom('has_wiki')]
+    public bool|null $hasWiki, #[MapFrom('is_template')]
+    public bool|null $isTemplate, #[MapFrom('default_branch')]
+    public string|null $defaultBranch, #[MapFrom('allow_squash_merge')]
+    public bool|null $allowSquashMerge, #[MapFrom('allow_merge_commit')]
+    public bool|null $allowMergeCommit, #[MapFrom('allow_rebase_merge')]
+    public bool|null $allowRebaseMerge, #[MapFrom('allow_auto_merge')]
+    public bool|null $allowAutoMerge, #[MapFrom('delete_branch_on_merge')]
+    public bool|null $deleteBranchOnMerge, #[MapFrom('allow_update_branch')]
+    public bool|null $allowUpdateBranch, #[MapFrom('use_squash_pr_title_as_default')]
+    public bool|null $useSquashPrTitleAsDefault, #[MapFrom('squash_merge_commit_title')]
+    public string|null $squashMergeCommitTitle, #[MapFrom('squash_merge_commit_message')]
+    public string|null $squashMergeCommitMessage, #[MapFrom('merge_commit_title')]
+    public string|null $mergeCommitTitle, #[MapFrom('merge_commit_message')]
+    public string|null $mergeCommitMessage, public bool|null $archived, #[MapFrom('allow_forking')]
+    public bool|null $allowForking, #[MapFrom('web_commit_signoff_required')]
+    public bool|null $webCommitSignoffRequired,)
     {
     }
 }

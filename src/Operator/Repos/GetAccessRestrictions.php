@@ -23,9 +23,7 @@ final readonly class GetAccessRestrictions
     {
     }
 
-    /**
-     * @return PromiseInterface<BranchRestrictionPolicy>
-     **/
+    /** @return PromiseInterface<BranchRestrictionPolicy> **/
     public function call(string $owner, string $repo, string $branch): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAccessRestrictions($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

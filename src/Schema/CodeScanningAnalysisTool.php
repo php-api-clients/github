@@ -16,7 +16,7 @@ final readonly class CodeScanningAnalysisTool
      * version: The version of the tool used to generate the code scanning analysis.
      * guid: The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
      */
-    public function __construct(public ?string $name, public ?string $version, public ?string $guid)
+    public function __construct(public string|null $name, public string|null $version, public string|null $guid)
     {
     }
 }

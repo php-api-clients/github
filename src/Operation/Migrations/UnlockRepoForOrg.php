@@ -30,16 +30,12 @@ final class UnlockRepoForOrg
     private int $migrationId;
     /**repo_name parameter **/
     private string $repoName;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock $hydrator, string $org, int $migrationId, string $repoName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock $hydrator, string $org, int $migrationId, string $repoName)
     {
-        $this->org                     = $org;
-        $this->migrationId             = $migrationId;
-        $this->repoName                = $repoName;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org         = $org;
+        $this->migrationId = $migrationId;
+        $this->repoName    = $repoName;
     }
 
     public function createRequest(): RequestInterface
@@ -47,9 +43,7 @@ final class UnlockRepoForOrg
         return new Request(self::METHOD, str_replace(['{org}', '{migration_id}', '{repo_name}'], [$this->org, $this->migrationId, $this->repoName], self::PATH));
     }
 
-    /**
-     * @return array{code: int}
-     */
+    /** @return array{code: int} */
     public function createResponse(ResponseInterface $response): array
     {
         $code          = $response->getStatusCode();

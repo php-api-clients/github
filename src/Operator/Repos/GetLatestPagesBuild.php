@@ -23,9 +23,7 @@ final readonly class GetLatestPagesBuild
     {
     }
 
-    /**
-     * @return PromiseInterface<PageBuild>
-     **/
+    /** @return PromiseInterface<PageBuild> **/
     public function call(string $owner, string $repo): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetLatestPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

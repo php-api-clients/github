@@ -22,9 +22,7 @@ final readonly class DeletePackageForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $packageType, string $packageName): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\DeletePackageForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName);

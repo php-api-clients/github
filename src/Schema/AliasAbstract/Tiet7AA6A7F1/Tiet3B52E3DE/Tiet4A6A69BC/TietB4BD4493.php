@@ -13,7 +13,12 @@ abstract readonly class TietB4BD4493
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"bullets":["generated","generated"],"description":"generated","has_free_trial":false,"id":2,"monthly_price_in_cents":22,"name":"generated","price_model":"FREE","unit_name":"generated","yearly_price_in_cents":21}';
 
-    public function __construct(public array $bullets, public string $description, #[MapFrom('has_free_trial')] public bool $hasFreeTrial, public int $id, #[MapFrom('monthly_price_in_cents')] public int $monthlyPriceInCents, public string $name, #[MapFrom('price_model')] public string $priceModel, #[MapFrom('unit_name')] public ?string $unitName, #[MapFrom('yearly_price_in_cents')] public int $yearlyPriceInCents)
+    public function __construct(public array $bullets, public string $description, #[MapFrom('has_free_trial')]
+    public bool $hasFreeTrial, public int $id, #[MapFrom('monthly_price_in_cents')]
+    public int $monthlyPriceInCents, public string $name, #[MapFrom('price_model')]
+    public string $priceModel, #[MapFrom('unit_name')]
+    public string|null $unitName, #[MapFrom('yearly_price_in_cents')]
+    public int $yearlyPriceInCents,)
     {
     }
 }

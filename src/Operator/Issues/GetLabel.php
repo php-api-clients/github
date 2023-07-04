@@ -23,9 +23,7 @@ final readonly class GetLabel
     {
     }
 
-    /**
-     * @return PromiseInterface<Label>
-     **/
+    /** @return PromiseInterface<Label> **/
     public function call(string $owner, string $repo, string $name): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\GetLabel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);

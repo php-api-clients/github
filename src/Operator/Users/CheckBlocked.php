@@ -22,9 +22,7 @@ final readonly class CheckBlocked
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(string $username): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CheckBlocked($this->responseSchemaValidator, $this->hydrator, $username);

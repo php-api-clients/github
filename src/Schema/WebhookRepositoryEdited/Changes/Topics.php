@@ -11,7 +11,7 @@ final readonly class Topics
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"from":null}';
 
-    public function __construct(public ?array $from)
+    public function __construct(public array|null $from)
     {
     }
 }

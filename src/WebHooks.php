@@ -12,13 +12,8 @@ use function strtolower;
 
 final class WebHooks implements WebHooksInterface
 {
-    private readonly SchemaValidator $requestSchemaValidator;
-    private readonly Hydrators $hydrator;
-
-    public function __construct(SchemaValidator $requestSchemaValidator, Hydrators $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly Hydrators $hydrator)
     {
-        $this->requestSchemaValidator = $requestSchemaValidator;
-        $this->hydrator               = $hydrator;
     }
 
     /**
@@ -33,17 +28,13 @@ final class WebHooks implements WebHooksInterface
         return $this->hydrator->hydrateObject($className, $data);
     }
 
-    /**
-     * @return array{className: class-string, data: mixed}
-     */
+    /** @return array{className: class-string, data: mixed} */
     public function serializeWebHook(object $object): array
     {
         return ['className' => $object::class, 'data' => $this->hydrator->serializeObject($object)];
     }
 
-    /**
-     * @return
-     */
+    /** @return */
     public function resolve(array $headers, array $data): object
     {
         $headers = (static function ($headers): array {

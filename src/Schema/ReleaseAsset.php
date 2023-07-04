@@ -18,7 +18,13 @@ final readonly class ReleaseAsset
      * name: The file name of the asset.
      * state: State of the release asset.
      */
-    public function __construct(public string $url, #[MapFrom('browser_download_url')] public string $browserDownloadUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $name, public ?string $label, public string $state, #[MapFrom('content_type')] public string $contentType, public int $size, #[MapFrom('download_count')] public int $downloadCount, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, public ?Schema\SimpleUser $uploader)
+    public function __construct(public string $url, #[MapFrom('browser_download_url')]
+    public string $browserDownloadUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $name, public string|null $label, public string $state, #[MapFrom('content_type')]
+    public string $contentType, public int $size, #[MapFrom('download_count')]
+    public int $downloadCount, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, public Schema\SimpleUser|null $uploader,)
     {
     }
 }

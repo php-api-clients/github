@@ -20,7 +20,8 @@ final readonly class ApplicationJson
      * organizationPermission: The baseline permission that all organization members have on this project
      * private: Whether or not this project can be seen by everyone.
      */
-    public function __construct(public ?string $name, public ?string $body, public ?string $state, #[MapFrom('organization_permission')] public ?string $organizationPermission, public ?bool $private)
+    public function __construct(public string|null $name, public string|null $body, public string|null $state, #[MapFrom('organization_permission')]
+    public string|null $organizationPermission, public bool|null $private,)
     {
     }
 }

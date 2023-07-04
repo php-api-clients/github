@@ -23,9 +23,7 @@ final readonly class ListPublicEventsForRepoNetwork
     {
     }
 
-    /**
-     * @return PromiseInterface<(BasicError|array)>
-     **/
+    /** @return PromiseInterface<(BasicError|array)> **/
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListPublicEventsForRepoNetwork($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

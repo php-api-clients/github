@@ -22,9 +22,7 @@ final readonly class MarkThreadAsRead
     {
     }
 
-    /**
-     * @return PromiseInterface<array>
-     **/
+    /** @return PromiseInterface<array> **/
     public function call(int $threadId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\MarkThreadAsRead($this->responseSchemaValidator, $this->hydrator, $threadId);

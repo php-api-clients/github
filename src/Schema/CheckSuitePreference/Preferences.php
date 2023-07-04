@@ -13,7 +13,8 @@ final readonly class Preferences
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"auto_trigger_checks":[{"app_id":6,"setting":false},{"app_id":6,"setting":false}]}';
 
-    public function __construct(#[MapFrom('auto_trigger_checks')] public ?array $autoTriggerChecks)
+    public function __construct(#[MapFrom('auto_trigger_checks')]
+    public array|null $autoTriggerChecks,)
     {
     }
 }

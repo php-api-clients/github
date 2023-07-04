@@ -21,7 +21,9 @@ final readonly class ApplicationJson
      * removeEvents: Determines a list of events to be removed from the list of events that the Hook triggers for.
      * active: Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    public function __construct(public ?Schema\Repos\UpdateWebhook\Request\ApplicationJson\Config $config, public ?array $events, #[MapFrom('add_events')] public ?array $addEvents, #[MapFrom('remove_events')] public ?array $removeEvents, public ?bool $active)
+    public function __construct(public Schema\Repos\UpdateWebhook\Request\ApplicationJson\Config|null $config, public array|null $events, #[MapFrom('add_events')]
+    public array|null $addEvents, #[MapFrom('remove_events')]
+    public array|null $removeEvents, public bool|null $active,)
     {
     }
 }

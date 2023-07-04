@@ -13,7 +13,9 @@ abstract readonly class TietFEE070E4
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"job_id":6,"duration_ms":11}';
 
-    public function __construct(#[MapFrom('job_id')] public int $jobId, #[MapFrom('duration_ms')] public int $durationMs)
+    public function __construct(#[MapFrom('job_id')]
+    public int $jobId, #[MapFrom('duration_ms')]
+    public int $durationMs,)
     {
     }
 }

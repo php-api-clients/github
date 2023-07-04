@@ -13,7 +13,8 @@ abstract readonly class Tiet014E1E35
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"code":"generated","message":"generated","documentation_url":"generated","errors":[{"code":"generated","message":"generated"},{"code":"generated","message":"generated"}]}';
 
-    public function __construct(public ?string $code, public ?string $message, #[MapFrom('documentation_url')] public ?string $documentationUrl, public ?array $errors)
+    public function __construct(public string|null $code, public string|null $message, #[MapFrom('documentation_url')]
+    public string|null $documentationUrl, public array|null $errors,)
     {
     }
 }

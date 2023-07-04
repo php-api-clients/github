@@ -23,9 +23,7 @@ final readonly class GetThread
     {
     }
 
-    /**
-     * @return PromiseInterface<(Thread|array)>
-     **/
+    /** @return PromiseInterface<(Thread|array)> **/
     public function call(int $threadId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetThread($this->responseSchemaValidator, $this->hydrator, $threadId);

@@ -11,7 +11,7 @@ final readonly class DockerMetadata
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"tags":["generated","generated"]}';
 
-    public function __construct(public ?array $tags)
+    public function __construct(public array|null $tags)
     {
     }
 }

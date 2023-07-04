@@ -24,6 +24,7 @@ class RegistrationToken implements ObjectMapper
     {
         return match($className) {
             'ApiClients\Client\GitHub\Schema\AuthenticationToken' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AuthenticationToken($payload),
+                'ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AuthenticationToken⚡️Permissions($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -59,8 +60,17 @@ class RegistrationToken implements ObjectMapper
             $value = $payload['permissions'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'permissions';
+                $properties['permissions'] = null;
                 goto after_permissions;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'permissions';
+                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AuthenticationToken⚡️Permissions($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
             }
 
             $properties['permissions'] = $value;
@@ -112,6 +122,27 @@ class RegistrationToken implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\AuthenticationToken(...$properties);
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AuthenticationToken', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+        
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AuthenticationToken⚡️Permissions(array $payload): \ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions
+    {
+        $properties = []; 
+        $missingFields = [];
+        try {
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions(...$properties);
+        } catch (\Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\AuthenticationToken\Permissions', $exception, stack: $this->hydrationStack);
         }
     }
     
@@ -234,6 +265,11 @@ class RegistrationToken implements ObjectMapper
 
         
         $permissions = $object->permissions;
+
+        if ($permissions === null) {
+            goto after_permissions;
+        }
+        $permissions = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️AuthenticationToken⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         

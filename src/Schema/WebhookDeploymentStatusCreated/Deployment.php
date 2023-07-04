@@ -18,7 +18,17 @@ final readonly class Deployment
     /**
      * performedViaGithubApp: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      */
-    public function __construct(#[MapFrom('created_at')] public string $createdAt, public ?Schema\WebhookDeploymentStatusCreated\Deployment\Creator $creator, public ?string $description, public string $environment, public int $id, #[MapFrom('node_id')] public string $nodeId, #[MapFrom('original_environment')] public string $originalEnvironment, #[Payload] public string|Schema\WebhookDeploymentStatusCreated\Deployment\Payload\One $payload, #[MapFrom('performed_via_github_app')] public ?Schema\WebhookDeploymentStatusCreated\Deployment\PerformedViaGithubApp $performedViaGithubApp, #[MapFrom('production_environment')] public ?bool $productionEnvironment, public string $ref, #[MapFrom('repository_url')] public string $repositoryUrl, public string $sha, #[MapFrom('statuses_url')] public string $statusesUrl, public string $task, #[MapFrom('transient_environment')] public ?bool $transientEnvironment, #[MapFrom('updated_at')] public string $updatedAt, public string $url)
+    public function __construct(#[MapFrom('created_at')]
+    public string $createdAt, public Schema\WebhookDeploymentStatusCreated\Deployment\Creator|null $creator, public string|null $description, public string $environment, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, #[MapFrom('original_environment')]
+    public string $originalEnvironment, #[Payload]
+    public string|Schema\WebhookDeploymentStatusCreated\Deployment\Payload\One $payload, #[MapFrom('performed_via_github_app')]
+    public Schema\WebhookDeploymentStatusCreated\Deployment\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('production_environment')]
+    public bool|null $productionEnvironment, public string $ref, #[MapFrom('repository_url')]
+    public string $repositoryUrl, public string $sha, #[MapFrom('statuses_url')]
+    public string $statusesUrl, public string $task, #[MapFrom('transient_environment')]
+    public bool|null $transientEnvironment, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url,)
     {
     }
 }

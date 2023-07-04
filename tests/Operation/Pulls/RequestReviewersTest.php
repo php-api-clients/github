@@ -20,9 +20,7 @@ use function React\Promise\resolve;
 
 final class RequestReviewersTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestSimple::SCHEMA_EXAMPLE_DATA);
@@ -42,9 +40,7 @@ final class RequestReviewersTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\RequestReviewers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         $response = new Response(201, ['Content-Type' => 'application/json'], Schema\PullRequestSimple::SCHEMA_EXAMPLE_DATA);
@@ -58,9 +54,7 @@ final class RequestReviewersTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->requestReviewers('generated', 'generated', 11, json_decode(Schema\Pulls\RequestReviewers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -81,9 +75,7 @@ final class RequestReviewersTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\RequestReviewers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
@@ -98,9 +90,7 @@ final class RequestReviewersTest extends AsyncTestCase
         $result = await($client->operations()->pulls()->requestReviewers('generated', 'generated', 11, json_decode(Schema\Pulls\RequestReviewers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);
@@ -120,9 +110,7 @@ final class RequestReviewersTest extends AsyncTestCase
         })(json_decode(Schema\Pulls\RequestReviewers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_422_requestContentType_application_json_empty(): void
     {
         $response = new Response(422, []);

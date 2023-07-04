@@ -13,7 +13,21 @@ abstract readonly class TietEC5CA654
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"avatar_url":"https:\\/\\/example.com\\/","events_url":"generated","followers_url":"https:\\/\\/example.com\\/","following_url":"generated","gists_url":"generated","gravatar_id":"generated","html_url":"https:\\/\\/example.com\\/","id":2,"node_id":"generated","login":"generated","organizations_url":"https:\\/\\/example.com\\/","received_events_url":"https:\\/\\/example.com\\/","repos_url":"https:\\/\\/example.com\\/","site_admin":false,"starred_url":"generated","subscriptions_url":"https:\\/\\/example.com\\/","type":"generated","url":"https:\\/\\/example.com\\/"}';
 
-    public function __construct(#[MapFrom('avatar_url')] public string $avatarUrl, #[MapFrom('events_url')] public string $eventsUrl, #[MapFrom('followers_url')] public string $followersUrl, #[MapFrom('following_url')] public string $followingUrl, #[MapFrom('gists_url')] public string $gistsUrl, #[MapFrom('gravatar_id')] public ?string $gravatarId, #[MapFrom('html_url')] public string $htmlUrl, public int $id, #[MapFrom('node_id')] public string $nodeId, public string $login, #[MapFrom('organizations_url')] public string $organizationsUrl, #[MapFrom('received_events_url')] public string $receivedEventsUrl, #[MapFrom('repos_url')] public string $reposUrl, #[MapFrom('site_admin')] public bool $siteAdmin, #[MapFrom('starred_url')] public string $starredUrl, #[MapFrom('subscriptions_url')] public string $subscriptionsUrl, public string $type, public string $url)
+    public function __construct(#[MapFrom('avatar_url')]
+    public string $avatarUrl, #[MapFrom('events_url')]
+    public string $eventsUrl, #[MapFrom('followers_url')]
+    public string $followersUrl, #[MapFrom('following_url')]
+    public string $followingUrl, #[MapFrom('gists_url')]
+    public string $gistsUrl, #[MapFrom('gravatar_id')]
+    public string|null $gravatarId, #[MapFrom('html_url')]
+    public string $htmlUrl, public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $login, #[MapFrom('organizations_url')]
+    public string $organizationsUrl, #[MapFrom('received_events_url')]
+    public string $receivedEventsUrl, #[MapFrom('repos_url')]
+    public string $reposUrl, #[MapFrom('site_admin')]
+    public bool $siteAdmin, #[MapFrom('starred_url')]
+    public string $starredUrl, #[MapFrom('subscriptions_url')]
+    public string $subscriptionsUrl, public string $type, public string $url,)
     {
     }
 }

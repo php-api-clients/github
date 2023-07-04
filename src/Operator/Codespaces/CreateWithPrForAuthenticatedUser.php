@@ -23,9 +23,7 @@ final readonly class CreateWithPrForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<Codespace>
-     **/
+    /** @return PromiseInterface<Codespace> **/
     public function call(string $owner, string $repo, int $pullNumber, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\CreateWithPrForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

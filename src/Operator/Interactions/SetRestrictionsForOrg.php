@@ -23,9 +23,7 @@ final readonly class SetRestrictionsForOrg
     {
     }
 
-    /**
-     * @return PromiseInterface<InteractionLimitResponse>
-     **/
+    /** @return PromiseInterface<InteractionLimitResponse> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\SetRestrictionsForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

@@ -24,15 +24,9 @@ final class GetConductCode
     public const OPERATION_MATCH = 'GET /codes_of_conduct/{key}';
     private const METHOD         = 'GET';
     private const PATH           = '/codes_of_conduct/{key}';
-    private string $key;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\CodesOfConduct\Key $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\CodesOfConduct\Key $hydrator, string $key)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\CodesOfConduct\Key $hydrator, private string $key)
     {
-        $this->key                     = $key;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
     }
 
     public function createRequest(): RequestInterface
@@ -40,9 +34,7 @@ final class GetConductCode
         return new Request(self::METHOD, str_replace(['{key}'], [$this->key], self::PATH));
     }
 
-    /**
-     * @return Schema\CodeOfConduct|array{code: int}
-     */
+    /** @return Schema\CodeOfConduct|array{code: int} */
     public function createResponse(ResponseInterface $response): Schema\CodeOfConduct|array
     {
         $code          = $response->getStatusCode();

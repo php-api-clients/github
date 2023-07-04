@@ -23,9 +23,7 @@ final readonly class StartForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Migration|array)>
-     **/
+    /** @return PromiseInterface<(Migration|array)> **/
     public function call(array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\StartForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

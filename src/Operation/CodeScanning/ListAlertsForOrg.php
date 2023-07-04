@@ -46,24 +46,20 @@ final class ListAlertsForOrg
     private string $direction;
     /**The property by which to sort the results. **/
     private string $sort;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Orgs\Org\CodeScanning\Alerts $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Orgs\Org\CodeScanning\Alerts $hydrator, string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\CodeScanning\Alerts $hydrator, string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
-        $this->org                     = $org;
-        $this->toolName                = $toolName;
-        $this->toolGuid                = $toolGuid;
-        $this->before                  = $before;
-        $this->after                   = $after;
-        $this->state                   = $state;
-        $this->severity                = $severity;
-        $this->page                    = $page;
-        $this->perPage                 = $perPage;
-        $this->direction               = $direction;
-        $this->sort                    = $sort;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->org       = $org;
+        $this->toolName  = $toolName;
+        $this->toolGuid  = $toolGuid;
+        $this->before    = $before;
+        $this->after     = $after;
+        $this->state     = $state;
+        $this->severity  = $severity;
+        $this->page      = $page;
+        $this->perPage   = $perPage;
+        $this->direction = $direction;
+        $this->sort      = $sort;
     }
 
     public function createRequest(): RequestInterface

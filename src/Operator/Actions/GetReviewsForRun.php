@@ -20,9 +20,7 @@ final readonly class GetReviewsForRun
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, int $runId): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetReviewsForRun($owner, $repo, $runId);

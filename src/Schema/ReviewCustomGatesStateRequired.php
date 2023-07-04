@@ -18,7 +18,8 @@ final readonly class ReviewCustomGatesStateRequired
      * state: Whether to approve or reject deployment to the specified environments.
      * comment: Optional comment to include with the review.
      */
-    public function __construct(#[MapFrom('environment_name')] public string $environmentName, public string $state, public ?string $comment)
+    public function __construct(#[MapFrom('environment_name')]
+    public string $environmentName, public string $state, public string|null $comment,)
     {
     }
 }

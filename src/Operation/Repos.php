@@ -39,13 +39,13 @@ final class Repos
         return $this->operator[Operator\Repos\CreateInOrg::class]->call($org, $params);
     }
 
-    public function getOrgRulesets(string $org): PromiseInterface
+    public function getOrgRulesets(string $org, int $perPage, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Repos\GetOrgRulesets::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetOrgRulesets::class] = new Operator\Repos\GetOrgRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets());
         }
 
-        return $this->operator[Operator\Repos\GetOrgRulesets::class]->call($org);
+        return $this->operator[Operator\Repos\GetOrgRulesets::class]->call($org, $perPage, $page);
     }
 
     public function createOrgRuleset(string $org, array $params): PromiseInterface
@@ -1362,22 +1362,22 @@ final class Repos
         return $this->operator[Operator\Repos\UploadReleaseAsset::class]->call($owner, $repo, $releaseId, $name, $label, $params);
     }
 
-    public function getBranchRules(string $owner, string $repo, string $branch): PromiseInterface
+    public function getBranchRules(string $owner, string $repo, string $branch, int $perPage, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Repos\GetBranchRules::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetBranchRules::class] = new Operator\Repos\GetBranchRules($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rules🌀Branches🌀Branch());
         }
 
-        return $this->operator[Operator\Repos\GetBranchRules::class]->call($owner, $repo, $branch);
+        return $this->operator[Operator\Repos\GetBranchRules::class]->call($owner, $repo, $branch, $perPage, $page);
     }
 
-    public function getRepoRulesets(string $owner, string $repo, bool $includesParents): PromiseInterface
+    public function getRepoRulesets(string $owner, string $repo, int $perPage, int $page, bool $includesParents): PromiseInterface
     {
         if (array_key_exists(Operator\Repos\GetRepoRulesets::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetRepoRulesets::class] = new Operator\Repos\GetRepoRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets());
         }
 
-        return $this->operator[Operator\Repos\GetRepoRulesets::class]->call($owner, $repo, $includesParents);
+        return $this->operator[Operator\Repos\GetRepoRulesets::class]->call($owner, $repo, $perPage, $page, $includesParents);
     }
 
     public function createRepoRuleset(string $owner, string $repo, array $params): PromiseInterface

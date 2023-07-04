@@ -23,9 +23,7 @@ final readonly class RepoMachinesForAuthenticatedUser
     {
     }
 
-    /**
-     * @return PromiseInterface<(Ok|array)>
-     **/
+    /** @return PromiseInterface<(Ok|array)> **/
     public function call(string $owner, string $repo, string $location, string $clientIp): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\RepoMachinesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $location, $clientIp);

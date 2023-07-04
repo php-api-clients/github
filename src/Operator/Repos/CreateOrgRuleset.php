@@ -23,9 +23,7 @@ final readonly class CreateOrgRuleset
     {
     }
 
-    /**
-     * @return PromiseInterface<RepositoryRuleset>
-     **/
+    /** @return PromiseInterface<RepositoryRuleset> **/
     public function call(string $org, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateOrgRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

@@ -23,9 +23,7 @@ final readonly class CreateDeployKey
     {
     }
 
-    /**
-     * @return PromiseInterface<DeployKey>
-     **/
+    /** @return PromiseInterface<DeployKey> **/
     public function call(string $owner, string $repo, array $params): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeployKey($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

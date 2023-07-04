@@ -13,7 +13,7 @@ final readonly class Changes
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"name":{"from":"generated"}}';
 
-    public function __construct(public ?Schema\WebhookProjectColumnEdited\Changes\Name $name)
+    public function __construct(public Schema\WebhookProjectColumnEdited\Changes\Name|null $name)
     {
     }
 }

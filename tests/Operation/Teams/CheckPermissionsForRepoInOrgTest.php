@@ -18,9 +18,7 @@ use function React\Promise\resolve;
 
 final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamRepository::SCHEMA_EXAMPLE_DATA);
@@ -41,9 +39,7 @@ final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
         $response = new Response(200, ['Content-Type' => 'application/json'], Schema\TeamRepository::SCHEMA_EXAMPLE_DATA);
@@ -57,9 +53,7 @@ final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
         $result = await($client->operations()->teams()->checkPermissionsForRepoInOrg('generated', 'generated', 'generated', 'generated'));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -80,9 +74,7 @@ final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_204_empty(): void
     {
         $response = new Response(204, []);
@@ -98,9 +90,7 @@ final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
         self::assertSame(204, $result['code']);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function call_httpCode_404_empty(): void
     {
         $response = new Response(404, []);
@@ -121,9 +111,7 @@ final class CheckPermissionsForRepoInOrgTest extends AsyncTestCase
         })([]));
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function operations_httpCode_404_empty(): void
     {
         $response = new Response(404, []);

@@ -14,7 +14,7 @@ final readonly class ApplicationJson
     /**
      * ignored: Whether to block all notifications from a thread.
      */
-    public function __construct(public ?bool $ignored)
+    public function __construct(public bool|null $ignored)
     {
     }
 }

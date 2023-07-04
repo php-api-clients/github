@@ -129,87 +129,6 @@ final class Actions
         return $this->operator[Operator\Actions\SetGithubActionsDefaultWorkflowPermissionsOrganization::class]->call($org, $params);
     }
 
-    public function listRequiredWorkflows(string $org, int $perPage, int $page): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\ListRequiredWorkflows::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\ListRequiredWorkflows::class] = new Operator\Actions\ListRequiredWorkflows($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows());
-        }
-
-        return $this->operator[Operator\Actions\ListRequiredWorkflows::class]->call($org, $perPage, $page);
-    }
-
-    public function createRequiredWorkflow(string $org, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\CreateRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\CreateRequiredWorkflow::class] = new Operator\Actions\CreateRequiredWorkflow($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows());
-        }
-
-        return $this->operator[Operator\Actions\CreateRequiredWorkflow::class]->call($org, $params);
-    }
-
-    public function getRequiredWorkflow(string $org, int $requiredWorkflowId): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\GetRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\GetRequiredWorkflow::class] = new Operator\Actions\GetRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId());
-        }
-
-        return $this->operator[Operator\Actions\GetRequiredWorkflow::class]->call($org, $requiredWorkflowId);
-    }
-
-    public function deleteRequiredWorkflow(string $org, int $requiredWorkflowId): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\DeleteRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\DeleteRequiredWorkflow::class] = new Operator\Actions\DeleteRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId());
-        }
-
-        return $this->operator[Operator\Actions\DeleteRequiredWorkflow::class]->call($org, $requiredWorkflowId);
-    }
-
-    public function updateRequiredWorkflow(string $org, int $requiredWorkflowId, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\UpdateRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\UpdateRequiredWorkflow::class] = new Operator\Actions\UpdateRequiredWorkflow($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId());
-        }
-
-        return $this->operator[Operator\Actions\UpdateRequiredWorkflow::class]->call($org, $requiredWorkflowId, $params);
-    }
-
-    public function listSelectedRepositoriesRequiredWorkflow(string $org, int $requiredWorkflowId): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\ListSelectedRepositoriesRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\ListSelectedRepositoriesRequiredWorkflow::class] = new Operator\Actions\ListSelectedRepositoriesRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Actions\ListSelectedRepositoriesRequiredWorkflow::class]->call($org, $requiredWorkflowId);
-    }
-
-    public function setSelectedReposToRequiredWorkflow(string $org, int $requiredWorkflowId, array $params): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\SetSelectedReposToRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\SetSelectedReposToRequiredWorkflow::class] = new Operator\Actions\SetSelectedReposToRequiredWorkflow($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Actions\SetSelectedReposToRequiredWorkflow::class]->call($org, $requiredWorkflowId, $params);
-    }
-
-    public function addSelectedRepoToRequiredWorkflow(string $org, int $requiredWorkflowId, int $repositoryId): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\AddSelectedRepoToRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\AddSelectedRepoToRequiredWorkflow::class] = new Operator\Actions\AddSelectedRepoToRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Actions\AddSelectedRepoToRequiredWorkflow::class]->call($org, $requiredWorkflowId, $repositoryId);
-    }
-
-    public function removeSelectedRepoFromRequiredWorkflow(string $org, int $requiredWorkflowId, int $repositoryId): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\RemoveSelectedRepoFromRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\RemoveSelectedRepoFromRequiredWorkflow::class] = new Operator\Actions\RemoveSelectedRepoFromRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowId🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Actions\RemoveSelectedRepoFromRequiredWorkflow::class]->call($org, $requiredWorkflowId, $repositoryId);
-    }
-
     public function listSelfHostedRunnersForOrg(string $org, int $perPage, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Actions\ListSelfHostedRunnersForOrg::class, $this->operator) === false) {
@@ -226,6 +145,15 @@ final class Actions
         }
 
         return $this->operator[Operator\Actions\ListRunnerApplicationsForOrg::class]->call($org);
+    }
+
+    public function generateRunnerJitconfigForOrg(string $org, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Actions\GenerateRunnerJitconfigForOrg::class, $this->operator) === false) {
+            $this->operator[Operator\Actions\GenerateRunnerJitconfigForOrg::class] = new Operator\Actions\GenerateRunnerJitconfigForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners🌀GenerateJitconfig());
+        }
+
+        return $this->operator[Operator\Actions\GenerateRunnerJitconfigForOrg::class]->call($org, $params);
     }
 
     public function createRegistrationTokenForOrg(string $org): PromiseInterface
@@ -471,33 +399,6 @@ final class Actions
         return $this->operator[Operator\Actions\RemoveSelectedRepoFromOrgVariable::class]->call($org, $name, $repositoryId);
     }
 
-    public function listRepoRequiredWorkflows(string $org, string $repo, int $perPage, int $page): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\ListRepoRequiredWorkflows::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\ListRepoRequiredWorkflows::class] = new Operator\Actions\ListRepoRequiredWorkflows($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Org🌀Repo🌀Actions🌀RequiredWorkflows());
-        }
-
-        return $this->operator[Operator\Actions\ListRepoRequiredWorkflows::class]->call($org, $repo, $perPage, $page);
-    }
-
-    public function getRepoRequiredWorkflow(string $org, string $repo, int $requiredWorkflowIdForRepo): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\GetRepoRequiredWorkflow::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\GetRepoRequiredWorkflow::class] = new Operator\Actions\GetRepoRequiredWorkflow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Org🌀Repo🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowIdForRepo());
-        }
-
-        return $this->operator[Operator\Actions\GetRepoRequiredWorkflow::class]->call($org, $repo, $requiredWorkflowIdForRepo);
-    }
-
-    public function getRepoRequiredWorkflowUsage(string $org, string $repo, int $requiredWorkflowIdForRepo): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\GetRepoRequiredWorkflowUsage::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\GetRepoRequiredWorkflowUsage::class] = new Operator\Actions\GetRepoRequiredWorkflowUsage($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Org🌀Repo🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowIdForRepo🌀Timing());
-        }
-
-        return $this->operator[Operator\Actions\GetRepoRequiredWorkflowUsage::class]->call($org, $repo, $requiredWorkflowIdForRepo);
-    }
-
     public function listArtifactsForRepo(string $owner, string $repo, string $name, int $perPage, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Actions\ListArtifactsForRepo::class, $this->operator) === false) {
@@ -723,15 +624,6 @@ final class Actions
         return $this->operator[Operator\Actions\SetGithubActionsDefaultWorkflowPermissionsRepository::class]->call($owner, $repo, $params);
     }
 
-    public function listRequiredWorkflowRuns(string $owner, string $repo, int $requiredWorkflowIdForRepo, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage, int $page, bool $excludePullRequests): PromiseInterface
-    {
-        if (array_key_exists(Operator\Actions\ListRequiredWorkflowRuns::class, $this->operator) === false) {
-            $this->operator[Operator\Actions\ListRequiredWorkflowRuns::class] = new Operator\Actions\ListRequiredWorkflowRuns($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀RequiredWorkflows🌀RequiredWorkflowIdForRepo🌀Runs());
-        }
-
-        return $this->operator[Operator\Actions\ListRequiredWorkflowRuns::class]->call($owner, $repo, $requiredWorkflowIdForRepo, $actor, $branch, $event, $status, $created, $checkSuiteId, $headSha, $perPage, $page, $excludePullRequests);
-    }
-
     public function listSelfHostedRunnersForRepo(string $owner, string $repo, int $perPage, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Actions\ListSelfHostedRunnersForRepo::class, $this->operator) === false) {
@@ -748,6 +640,15 @@ final class Actions
         }
 
         return $this->operator[Operator\Actions\ListRunnerApplicationsForRepo::class]->call($owner, $repo);
+    }
+
+    public function generateRunnerJitconfigForRepo(string $owner, string $repo, array $params): PromiseInterface
+    {
+        if (array_key_exists(Operator\Actions\GenerateRunnerJitconfigForRepo::class, $this->operator) === false) {
+            $this->operator[Operator\Actions\GenerateRunnerJitconfigForRepo::class] = new Operator\Actions\GenerateRunnerJitconfigForRepo($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runners🌀GenerateJitconfig());
+        }
+
+        return $this->operator[Operator\Actions\GenerateRunnerJitconfigForRepo::class]->call($owner, $repo, $params);
     }
 
     public function createRegistrationTokenForRepo(string $owner, string $repo): PromiseInterface

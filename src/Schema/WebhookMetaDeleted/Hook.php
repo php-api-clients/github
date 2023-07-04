@@ -14,7 +14,9 @@ final readonly class Hook
     public const SCHEMA_DESCRIPTION  = 'The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.';
     public const SCHEMA_EXAMPLE_DATA = '{"active":false,"config":{"content_type":"form","insecure_ssl":"generated","secret":"generated","url":"https:\\/\\/example.com\\/"},"created_at":"generated","events":["generated","generated"],"id":2,"name":"generated","type":"generated","updated_at":"generated"}';
 
-    public function __construct(public bool $active, public Schema\WebhookMetaDeleted\Hook\Config $config, #[MapFrom('created_at')] public string $createdAt, public array $events, public int $id, public string $name, public string $type, #[MapFrom('updated_at')] public string $updatedAt)
+    public function __construct(public bool $active, public Schema\WebhookMetaDeleted\Hook\Config $config, #[MapFrom('created_at')]
+    public string $createdAt, public array $events, public int $id, public string $name, public string $type, #[MapFrom('updated_at')]
+    public string $updatedAt,)
     {
     }
 }

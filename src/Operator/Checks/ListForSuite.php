@@ -23,9 +23,7 @@ final readonly class ListForSuite
     {
     }
 
-    /**
-     * @return PromiseInterface<Ok>
-     **/
+    /** @return PromiseInterface<Ok> **/
     public function call(string $owner, string $repo, int $checkSuiteId, string $checkName, string $status, string $filter = 'latest', int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Checks\ListForSuite($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkSuiteId, $checkName, $status, $filter, $perPage, $page);

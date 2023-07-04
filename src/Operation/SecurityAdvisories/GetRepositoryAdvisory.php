@@ -26,20 +26,16 @@ final class GetRepositoryAdvisory
     private const PATH           = '/repos/{owner}/{repo}/security-advisories/{ghsa_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
     /**The GHSA (GitHub Security Advisory) identifier of the advisory. **/
     private string $ghsaId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId $hydrator;
 
-    public function __construct(SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId $hydrator, string $owner, string $repo, string $ghsaId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId $hydrator, string $owner, string $repo, string $ghsaId)
     {
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->ghsaId                  = $ghsaId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner  = $owner;
+        $this->repo   = $repo;
+        $this->ghsaId = $ghsaId;
     }
 
     public function createRequest(): RequestInterface

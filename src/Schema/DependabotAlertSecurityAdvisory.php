@@ -29,7 +29,12 @@ final readonly class DependabotAlertSecurityAdvisory
      * updatedAt: The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * withdrawnAt: The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
-    public function __construct(#[MapFrom('ghsa_id')] public string $ghsaId, #[MapFrom('cve_id')] public ?string $cveId, public string $summary, public string $description, public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')] public string $publishedAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('withdrawn_at')] public ?string $withdrawnAt)
+    public function __construct(#[MapFrom('ghsa_id')]
+    public string $ghsaId, #[MapFrom('cve_id')]
+    public string|null $cveId, public string $summary, public string $description, public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')]
+    public string $publishedAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('withdrawn_at')]
+    public string|null $withdrawnAt,)
     {
     }
 }

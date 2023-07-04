@@ -18,7 +18,11 @@ final readonly class GistComment
      * body: The comment text.
      * authorAssociation: How the author is associated with the repository.
      */
-    public function __construct(public int $id, #[MapFrom('node_id')] public string $nodeId, public string $url, public string $body, public ?Schema\SimpleUser $user, #[MapFrom('created_at')] public string $createdAt, #[MapFrom('updated_at')] public string $updatedAt, #[MapFrom('author_association')] public string $authorAssociation)
+    public function __construct(public int $id, #[MapFrom('node_id')]
+    public string $nodeId, public string $url, public string $body, public Schema\SimpleUser|null $user, #[MapFrom('created_at')]
+    public string $createdAt, #[MapFrom('updated_at')]
+    public string $updatedAt, #[MapFrom('author_association')]
+    public string $authorAssociation,)
     {
     }
 }

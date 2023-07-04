@@ -25,23 +25,15 @@ final class MapCommitAuthor
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/import/authors/{author_id}';
     private const METHOD         = 'PATCH';
     private const PATH           = '/repos/{owner}/{repo}/import/authors/{author_id}';
-    private readonly SchemaValidator $requestSchemaValidator;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**The name of the repository. The name is not case sensitive. **/
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    private int $authorId;
-    private readonly SchemaValidator $responseSchemaValidator;
-    private readonly Hydrator\Operation\Repos\Owner\Repo\Import\Authors\AuthorId $hydrator;
 
-    public function __construct(SchemaValidator $requestSchemaValidator, SchemaValidator $responseSchemaValidator, Hydrator\Operation\Repos\Owner\Repo\Import\Authors\AuthorId $hydrator, string $owner, string $repo, int $authorId)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Import\Authors\AuthorId $hydrator, string $owner, string $repo, private int $authorId)
     {
-        $this->requestSchemaValidator  = $requestSchemaValidator;
-        $this->owner                   = $owner;
-        $this->repo                    = $repo;
-        $this->authorId                = $authorId;
-        $this->responseSchemaValidator = $responseSchemaValidator;
-        $this->hydrator                = $hydrator;
+        $this->owner = $owner;
+        $this->repo  = $repo;
     }
 
     public function createRequest(array $data): RequestInterface

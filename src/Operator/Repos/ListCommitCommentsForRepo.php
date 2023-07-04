@@ -20,9 +20,7 @@ final readonly class ListCommitCommentsForRepo
     {
     }
 
-    /**
-     * @return PromiseInterface<ResponseInterface>
-     **/
+    /** @return PromiseInterface<ResponseInterface> **/
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): PromiseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCommitCommentsForRepo($owner, $repo, $perPage, $page);
