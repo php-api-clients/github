@@ -1053,6 +1053,17 @@ class Teams implements ObjectMapper
 
             after_updatedAt:
 
+            $value = $payload['archived_at'] ?? null;
+
+            if ($value === null) {
+                $properties['archivedAt'] = null;
+                goto after_archivedAt;
+            }
+
+            $properties['archivedAt'] = $value;
+
+            after_archivedAt:
+
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TeamOrganization', $exception, stack: $this->hydrationStack);
         }
@@ -1837,6 +1848,14 @@ class Teams implements ObjectMapper
         
         $updatedAt = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        
+        $archivedAt = $object->archivedAt;
+
+        if ($archivedAt === null) {
+            goto after_archivedAt;
+        }
+        after_archivedAt:        $result['archived_at'] = $archivedAt;
 
 
         return $result;
