@@ -38,7 +38,7 @@ final class ListForRepo
     private string $mentioned;
     /**A list of comma separated label names. Example: `bug,ui,@high` **/
     private string $labels;
-    /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
+    /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**Indicates the state of the issues to return. **/
     private string $state;

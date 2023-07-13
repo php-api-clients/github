@@ -24,7 +24,7 @@ final class ListReviewComments
     private int $pullNumber;
     /**The direction to sort results. Ignored without `sort` parameter. **/
     private string $direction;
-    /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
+    /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**The property to sort the results by. **/
     private string $sort;

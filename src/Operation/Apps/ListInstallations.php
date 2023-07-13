@@ -16,7 +16,7 @@ final class ListInstallations
     public const OPERATION_MATCH = 'GET /app/installations';
     private const METHOD         = 'GET';
     private const PATH           = '/app/installations';
-    /**Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
+    /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**The number of results per page (max 100). **/
     private int $perPage;
