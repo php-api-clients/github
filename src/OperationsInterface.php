@@ -32,6 +32,8 @@ interface OperationsInterface
 
     public function orgs(): Operation\Orgs;
 
+    public function copilot(): Operation\Copilot;
+
     public function actions(): Operation\Actions;
 
     public function oidc(): Operation\Oidc;

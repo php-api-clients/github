@@ -79,6 +79,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Orgs($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
     }
 
+    public function copilot(): Operation\Copilot
+    {
+        return new Operation\Copilot($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
+    }
+
     public function actions(): Operation\Actions
     {
         return new Operation\Actions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);

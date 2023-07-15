@@ -40,6 +40,22 @@ final class Six
                         }
                     }
                 }
+            } elseif ($pathChunks[1] === 'organizations') {
+                if ($pathChunks[2] === '{org}') {
+                    if ($pathChunks[3] === 'copilot') {
+                        if ($pathChunks[4] === 'billing') {
+                            if ($pathChunks[5] === 'seats') {
+                                if ($call === 'GET /organizations/{org}/copilot/billing/seats') {
+                                    if (array_key_exists(Router\Get\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Get\Copilot::class] = new Router\Get\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Get\Copilot::class]->listCopilotSeats($params);
+                                }
+                            }
+                        }
+                    }
+                }
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
@@ -215,6 +231,14 @@ final class Six
                                     }
 
                                     return $this->router[Router\Get\Codespaces::class]->getCodespacesForUserInOrg($params);
+                                }
+                            } elseif ($pathChunks[5] === 'copilot') {
+                                if ($call === 'GET /orgs/{org}/members/{username}/copilot') {
+                                    if (array_key_exists(Router\Get\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Get\Copilot::class] = new Router\Get\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Get\Copilot::class]->getCopilotSeatAssignmentDetailsForUser($params);
                                 }
                             }
                         }

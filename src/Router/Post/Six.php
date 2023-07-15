@@ -82,6 +82,26 @@ final class Six
                                 }
                             }
                         }
+                    } elseif ($pathChunks[3] === 'copilot') {
+                        if ($pathChunks[4] === 'billing') {
+                            if ($pathChunks[5] === 'selected_teams') {
+                                if ($call === 'POST /orgs/{org}/copilot/billing/selected_teams') {
+                                    if (array_key_exists(Router\Post\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Post\Copilot::class] = new Router\Post\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Post\Copilot::class]->addCopilotForBusinessSeatsForTeams($params);
+                                }
+                            } elseif ($pathChunks[5] === 'selected_users') {
+                                if ($call === 'POST /orgs/{org}/copilot/billing/selected_users') {
+                                    if (array_key_exists(Router\Post\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Post\Copilot::class] = new Router\Post\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Post\Copilot::class]->addCopilotForBusinessSeatsForUsers($params);
+                                }
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'hooks') {
                         if ($pathChunks[4] === '{hook_id}') {
                             if ($pathChunks[5] === 'pings') {

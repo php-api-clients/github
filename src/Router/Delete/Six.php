@@ -80,6 +80,26 @@ final class Six
                                 }
                             }
                         }
+                    } elseif ($pathChunks[3] === 'copilot') {
+                        if ($pathChunks[4] === 'billing') {
+                            if ($pathChunks[5] === 'selected_teams') {
+                                if ($call === 'DELETE /orgs/{org}/copilot/billing/selected_teams') {
+                                    if (array_key_exists(Router\Delete\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Delete\Copilot::class] = new Router\Delete\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Delete\Copilot::class]->cancelCopilotSeatAssignmentForTeams($params);
+                                }
+                            } elseif ($pathChunks[5] === 'selected_users') {
+                                if ($call === 'DELETE /orgs/{org}/copilot/billing/selected_users') {
+                                    if (array_key_exists(Router\Delete\Copilot::class, $this->router) === false) {
+                                        $this->router[Router\Delete\Copilot::class] = new Router\Delete\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                    }
+
+                                    return $this->router[Router\Delete\Copilot::class]->cancelCopilotSeatAssignmentForUsers($params);
+                                }
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'dependabot') {
                         if ($pathChunks[4] === 'secrets') {
                             if ($pathChunks[5] === '{secret_name}') {

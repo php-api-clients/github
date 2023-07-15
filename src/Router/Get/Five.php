@@ -130,6 +130,20 @@ final class Five
                         }
                     }
                 }
+            } elseif ($pathChunks[1] === 'organizations') {
+                if ($pathChunks[2] === '{org}') {
+                    if ($pathChunks[3] === 'copilot') {
+                        if ($pathChunks[4] === 'billing') {
+                            if ($call === 'GET /organizations/{org}/copilot/billing') {
+                                if (array_key_exists(Router\Get\Copilot::class, $this->router) === false) {
+                                    $this->router[Router\Get\Copilot::class] = new Router\Get\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Get\Copilot::class]->getCopilotOrganizationDetails($params);
+                            }
+                        }
+                    }
+                }
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {

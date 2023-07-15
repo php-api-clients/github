@@ -329,6 +329,28 @@ class Reports implements ObjectMapper
 
             after_creditsDetailed:
 
+            $value = $payload['collaborating_users'] ?? null;
+
+            if ($value === null) {
+                $properties['collaboratingUsers'] = null;
+                goto after_collaboratingUsers;
+            }
+
+            $properties['collaboratingUsers'] = $value;
+
+            after_collaboratingUsers:
+
+            $value = $payload['collaborating_teams'] ?? null;
+
+            if ($value === null) {
+                $properties['collaboratingTeams'] = null;
+                goto after_collaboratingTeams;
+            }
+
+            $properties['collaboratingTeams'] = $value;
+
+            after_collaboratingTeams:
+
             $value = $payload['private_fork'] ?? null;
 
             if ($value === null) {
@@ -1664,6 +1686,38 @@ class Reports implements ObjectMapper
         
         $creditsDetailed = $creditsDetailedSerializer0->serialize($creditsDetailed, $this);
         after_creditsDetailed:        $result['credits_detailed'] = $creditsDetailed;
+
+        
+        $collaboratingUsers = $object->collaboratingUsers;
+
+        if ($collaboratingUsers === null) {
+            goto after_collaboratingUsers;
+        }
+        static $collaboratingUsersSerializer0;
+
+        if ($collaboratingUsersSerializer0 === null) {
+            $collaboratingUsersSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $collaboratingUsers = $collaboratingUsersSerializer0->serialize($collaboratingUsers, $this);
+        after_collaboratingUsers:        $result['collaborating_users'] = $collaboratingUsers;
+
+        
+        $collaboratingTeams = $object->collaboratingTeams;
+
+        if ($collaboratingTeams === null) {
+            goto after_collaboratingTeams;
+        }
+        static $collaboratingTeamsSerializer0;
+
+        if ($collaboratingTeamsSerializer0 === null) {
+            $collaboratingTeamsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
+        
+        $collaboratingTeams = $collaboratingTeamsSerializer0->serialize($collaboratingTeams, $this);
+        after_collaboratingTeams:        $result['collaborating_teams'] = $collaboratingTeams;
 
         
         $privateFork = $object->privateFork;

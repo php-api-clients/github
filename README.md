@@ -587,7 +587,7 @@ $client->operations()->secretScanning()->listAlertsForEnterprise(        enterpr
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).
 
 
 ### activity/list-public-events
@@ -1153,7 +1153,7 @@ $client->operations()->issues()->list(        labels: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-issues-assigned-to-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#list-issues-assigned-to-the-authenticated-user).
 
 
 ### licenses/get-all-commonly-used
@@ -1604,6 +1604,50 @@ $client->operations()->orgs()->list(        since: 5,
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/orgs#list-organizations).
+
+
+### copilot/get-copilot-organization-details
+
+Get Copilot for Business seat information and settings for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /organizations/{org}/copilot/billing', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->getCopilotOrganizationDetails(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-information-and-settings-for-an-organization).
+
+
+### copilot/list-copilot-seats
+
+List all Copilot for Business seat assignments for an orgainzation
+
+Using the `call` method:
+```php
+$client->call('GET /organizations/{org}/copilot/billing/seats', [
+        'org' => 'generated',
+        'page' => 4,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->listCopilotSeats(        org: 'generated',
+        page: 4,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-orgainzation).
 
 
 ### orgs/get
@@ -2781,7 +2825,7 @@ $client->operations()->codespaces()->listInOrganization(        org: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-in-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#list-in-organization).
 
 
 ### codespaces/set-codespaces-billing
@@ -2801,7 +2845,7 @@ $client->operations()->codespaces()->setCodespacesBilling(        org: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#set-codespaces-billing).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#set-codespaces-billing).
 
 
 ### codespaces/set-codespaces-billing-users
@@ -2821,7 +2865,7 @@ $client->operations()->codespaces()->setCodespacesBillingUsers(        org: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#set-codespaces-billing-users).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#set-codespaces-billing-users).
 
 
 ### codespaces/delete-codespaces-billing-users
@@ -2841,7 +2885,7 @@ $client->operations()->codespaces()->deleteCodespacesBillingUsers(        org: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#delete-codespaces-billing-users).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#delete-codespaces-billing-users).
 
 
 ### codespaces/list-org-secrets
@@ -2865,7 +2909,7 @@ $client->operations()->codespaces()->listOrgSecrets(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-organization-secrets).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#list-organization-secrets).
 
 
 ### codespaces/get-org-public-key
@@ -2885,7 +2929,7 @@ $client->operations()->codespaces()->getOrgPublicKey(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-an-organization-public-key).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-public-key).
 
 
 ### codespaces/get-org-secret
@@ -2907,7 +2951,7 @@ $client->operations()->codespaces()->getOrgSecret(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-secret).
 
 
 ### codespaces/create-or-update-org-secret
@@ -2929,7 +2973,7 @@ $client->operations()->codespaces()->createOrUpdateOrgSecret(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret).
 
 
 ### codespaces/delete-org-secret
@@ -2951,7 +2995,7 @@ $client->operations()->codespaces()->deleteOrgSecret(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#delete-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#delete-an-organization-secret).
 
 
 ### codespaces/list-selected-repos-for-org-secret
@@ -2977,7 +3021,7 @@ $client->operations()->codespaces()->listSelectedReposForOrgSecret(        org: 
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret).
 
 
 ### codespaces/set-selected-repos-for-org-secret
@@ -2999,7 +3043,7 @@ $client->operations()->codespaces()->setSelectedReposForOrgSecret(        org: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret).
 
 
 ### codespaces/add-selected-repo-to-org-secret
@@ -3023,7 +3067,7 @@ $client->operations()->codespaces()->addSelectedRepoToOrgSecret(        org: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#add-selected-repository-to-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#add-selected-repository-to-an-organization-secret).
 
 
 ### codespaces/remove-selected-repo-from-org-secret
@@ -3047,7 +3091,87 @@ $client->operations()->codespaces()->removeSelectedRepoFromOrgSecret(        org
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#remove-selected-repository-from-an-organization-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret).
+
+
+### copilot/add-copilot-for-business-seats-for-teams
+
+Add teams to the Copilot for Business subscription for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/copilot/billing/selected_teams', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->addCopilotForBusinessSeatsForTeams(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#add-teams-to-the-copilot-for-business-subscription-for-an-organization).
+
+
+### copilot/cancel-copilot-seat-assignment-for-teams
+
+Remove teams from the Copilot for Business subscription for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/copilot/billing/selected_teams', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->cancelCopilotSeatAssignmentForTeams(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#remove-teams-from-the-copilot-for-business-subscription-for-an-organization).
+
+
+### copilot/add-copilot-for-business-seats-for-users
+
+Add users to the Copilot for Business subscription for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/copilot/billing/selected_users', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->addCopilotForBusinessSeatsForUsers(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#add-users-to-the-copilot-for-business-subscription-for-an-organization).
+
+
+### copilot/cancel-copilot-seat-assignment-for-users
+
+Remove users from the Copilot for Business subscription for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/copilot/billing/selected_users', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->cancelCopilotSeatAssignmentForUsers(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#remove-users-from-the-copilot-for-business-subscription-for-an-organization).
 
 
 ### dependabot/list-alerts-for-org
@@ -3317,7 +3441,7 @@ $client->operations()->packages()->listDockerMigrationConflictingPackagesForOrga
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#list-docker-migration-conflicting-packages-for-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-docker-migration-conflicting-packages-for-organization).
 
 
 ### activity/list-public-org-events
@@ -3853,7 +3977,7 @@ $client->operations()->issues()->listForOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-organization-issues-assigned-to-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#list-organization-issues-assigned-to-the-authenticated-user).
 
 
 ### orgs/list-members
@@ -3951,7 +4075,7 @@ $client->operations()->codespaces()->getCodespacesForUserInOrg(        org: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-codespaces-for-user-in-org).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#get-codespaces-for-user-in-org).
 
 
 ### codespaces/delete-from-organization
@@ -3975,7 +4099,7 @@ $client->operations()->codespaces()->deleteFromOrganization(        org: 'genera
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#delete-a-codespace-from-the-organization).
 
 
 ### codespaces/stop-in-organization
@@ -3999,7 +4123,29 @@ $client->operations()->codespaces()->stopInOrganization(        org: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#stop-a-codespace-for-an-organization-user).
+
+
+### copilot/get-copilot-seat-assignment-details-for-user
+
+Get Copilot for Business seat assignment details for a user
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/members/{username}/copilot', [
+        'org' => 'generated',
+        'username' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser(        org: 'generated',
+        username: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-details-for-a-user).
 
 
 ### orgs/get-membership-for-user
@@ -4349,7 +4495,7 @@ $client->operations()->packages()->listPackagesForOrganization(        package_t
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#list-packages-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-packages-for-an-organization).
 
 
 ### packages/get-package-for-organization
@@ -4373,7 +4519,7 @@ $client->operations()->packages()->getPackageForOrganization(        package_typ
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-for-an-organization).
 
 
 ### packages/delete-package-for-org
@@ -4397,7 +4543,7 @@ $client->operations()->packages()->deletePackageForOrg(        package_type: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-for-an-organization).
 
 
 ### packages/restore-package-for-org
@@ -4423,7 +4569,7 @@ $client->operations()->packages()->restorePackageForOrg(        package_type: 'g
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-for-an-organization).
 
 
 ### packages/get-all-package-versions-for-package-owned-by-org
@@ -4453,7 +4599,7 @@ $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg(   
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-all-package-versions-for-a-package-owned-by-an-organization).
 
 
 ### packages/get-package-version-for-organization
@@ -4479,7 +4625,7 @@ $client->operations()->packages()->getPackageVersionForOrganization(        pack
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-version-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-version-for-an-organization).
 
 
 ### packages/delete-package-version-for-org
@@ -4505,7 +4651,7 @@ $client->operations()->packages()->deletePackageVersionForOrg(        package_ty
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-version-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-version-for-an-organization).
 
 
 ### packages/restore-package-version-for-org
@@ -4531,7 +4677,7 @@ $client->operations()->packages()->restorePackageVersionForOrg(        package_t
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-version-for-an-organization).
 
 
 ### orgs/list-pat-grant-requests
@@ -5077,7 +5223,7 @@ $client->operations()->secretScanning()->listAlertsForOrg(        org: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-organization).
 
 
 ### orgs/list-security-manager-teams
@@ -8486,7 +8632,7 @@ $client->operations()->issues()->listAssignees(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-assignees).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/assignees#list-assignees).
 
 
 ### issues/check-user-can-be-assigned
@@ -8510,7 +8656,7 @@ $client->operations()->issues()->checkUserCanBeAssigned(        owner: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/assignees#check-if-a-user-can-be-assigned).
 
 
 ### repos/list-autolinks
@@ -9538,7 +9684,7 @@ $client->operations()->checks()->create(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#create-a-check-run).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#create-a-check-run).
 
 
 ### checks/get
@@ -9562,7 +9708,7 @@ $client->operations()->checks()->get(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#get-a-check-run).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#get-a-check-run).
 
 
 ### checks/update
@@ -9586,7 +9732,7 @@ $client->operations()->checks()->update(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#update-a-check-run).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#update-a-check-run).
 
 
 ### checks/list-annotations
@@ -9614,7 +9760,7 @@ $client->operations()->checks()->listAnnotations(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#list-check-run-annotations).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#list-check-run-annotations).
 
 
 ### checks/rerequest-run
@@ -9638,7 +9784,7 @@ $client->operations()->checks()->rerequestRun(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#rerequest-a-check-run).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#rerequest-a-check-run).
 
 
 ### checks/create-suite
@@ -9660,7 +9806,7 @@ $client->operations()->checks()->createSuite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#create-a-check-suite).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/suites#create-a-check-suite).
 
 
 ### checks/set-suites-preferences
@@ -9682,7 +9828,7 @@ $client->operations()->checks()->setSuitesPreferences(        owner: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#update-repository-preferences-for-check-suites).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites).
 
 
 ### checks/get-suite
@@ -9706,7 +9852,7 @@ $client->operations()->checks()->getSuite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#get-a-check-suite).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 
 
 ### checks/list-for-suite
@@ -9740,7 +9886,7 @@ $client->operations()->checks()->listForSuite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#list-check-runs-in-a-check-suite).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#list-check-runs-in-a-check-suite).
 
 
 ### checks/rerequest-suite
@@ -9764,7 +9910,7 @@ $client->operations()->checks()->rerequestSuite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#rerequest-a-check-suite).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/suites#rerequest-a-check-suite).
 
 
 ### code-scanning/list-alerts-for-repo
@@ -10156,7 +10302,7 @@ $client->operations()->codespaces()->listInRepositoryForAuthenticatedUser(      
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-codespaces-in-a-repository-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#list-codespaces-in-a-repository-for-the-authenticated-user).
 
 
 ### codespaces/create-with-repo-for-authenticated-user
@@ -10178,7 +10324,7 @@ $client->operations()->codespaces()->createWithRepoForAuthenticatedUser(        
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-a-codespace-in-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-in-a-repository).
 
 
 ### codespaces/list-devcontainers-in-repository-for-authenticated-user
@@ -10204,7 +10350,7 @@ $client->operations()->codespaces()->listDevcontainersInRepositoryForAuthenticat
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-devcontainers-in-a-repository-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#list-devcontainers-in-a-repository-for-the-authenticated-user).
 
 
 ### codespaces/repo-machines-for-authenticated-user
@@ -10230,7 +10376,7 @@ $client->operations()->codespaces()->repoMachinesForAuthenticatedUser(        ow
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-available-machine-types-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/machines#list-available-machine-types-for-a-repository).
 
 
 ### codespaces/pre-flight-with-repo-for-authenticated-user
@@ -10256,7 +10402,7 @@ $client->operations()->codespaces()->preFlightWithRepoForAuthenticatedUser(     
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#preview-attributes-for-a-new-codespace).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#preview-attributes-for-a-new-codespace).
 
 
 ### codespaces/list-repo-secrets
@@ -10282,7 +10428,7 @@ $client->operations()->codespaces()->listRepoSecrets(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-repository-secrets).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/repository-secrets#list-repository-secrets).
 
 
 ### codespaces/get-repo-public-key
@@ -10304,7 +10450,7 @@ $client->operations()->codespaces()->getRepoPublicKey(        owner: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-a-repository-public-key).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/repository-secrets#get-a-repository-public-key).
 
 
 ### codespaces/get-repo-secret
@@ -10328,7 +10474,7 @@ $client->operations()->codespaces()->getRepoSecret(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-a-repository-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/repository-secrets#get-a-repository-secret).
 
 
 ### codespaces/create-or-update-repo-secret
@@ -10352,7 +10498,7 @@ $client->operations()->codespaces()->createOrUpdateRepoSecret(        owner: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-or-update-a-repository-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/repository-secrets#create-or-update-a-repository-secret).
 
 
 ### codespaces/delete-repo-secret
@@ -10376,7 +10522,7 @@ $client->operations()->codespaces()->deleteRepoSecret(        owner: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#delete-a-repository-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/repository-secrets#delete-a-repository-secret).
 
 
 ### repos/list-collaborators
@@ -10886,7 +11032,7 @@ $client->operations()->checks()->listForRef(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#list-check-runs-for-a-git-reference).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/runs#list-check-runs-for-a-git-reference).
 
 
 ### checks/list-suites-for-ref
@@ -10918,7 +11064,7 @@ $client->operations()->checks()->listSuitesForRef(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/checks#list-check-suites-for-a-git-reference).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/checks/suites#list-check-suites-for-a-git-reference).
 
 
 ### repos/get-combined-status-for-ref
@@ -13038,7 +13184,7 @@ $client->operations()->issues()->listForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-repository-issues).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#list-repository-issues).
 
 
 ### issues/create
@@ -13060,7 +13206,7 @@ $client->operations()->issues()->create(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#create-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#create-an-issue).
 
 
 ### issues/list-comments-for-repo
@@ -13092,7 +13238,7 @@ $client->operations()->issues()->listCommentsForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-issue-comments-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#list-issue-comments-for-a-repository).
 
 
 ### issues/get-comment
@@ -13116,7 +13262,7 @@ $client->operations()->issues()->getComment(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#get-an-issue-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 
 
 ### issues/delete-comment
@@ -13140,7 +13286,7 @@ $client->operations()->issues()->deleteComment(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#delete-an-issue-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#delete-an-issue-comment).
 
 
 ### issues/update-comment
@@ -13164,7 +13310,7 @@ $client->operations()->issues()->updateComment(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#update-an-issue-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#update-an-issue-comment).
 
 
 ### reactions/list-for-issue-comment
@@ -13270,7 +13416,7 @@ $client->operations()->issues()->listEventsForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-issue-events-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/events#list-issue-events-for-a-repository).
 
 
 ### issues/get-event
@@ -13294,7 +13440,7 @@ $client->operations()->issues()->getEvent(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#get-an-issue-event).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/events#get-an-issue-event).
 
 
 ### issues/get
@@ -13318,7 +13464,7 @@ $client->operations()->issues()->get(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#get-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#get-an-issue).
 
 
 ### issues/update
@@ -13342,7 +13488,7 @@ $client->operations()->issues()->update(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#update-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#update-an-issue).
 
 
 ### issues/add-assignees
@@ -13366,7 +13512,7 @@ $client->operations()->issues()->addAssignees(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/assignees#add-assignees-to-an-issue).
 
 
 ### issues/remove-assignees
@@ -13390,7 +13536,7 @@ $client->operations()->issues()->removeAssignees(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/assignees#remove-assignees-from-an-issue).
 
 
 ### issues/check-user-can-be-assigned-to-issue
@@ -13416,7 +13562,7 @@ $client->operations()->issues()->checkUserCanBeAssignedToIssue(        owner: 'g
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned-to-a-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/assignees#check-if-a-user-can-be-assigned-to-a-issue).
 
 
 ### issues/list-comments
@@ -13446,7 +13592,7 @@ $client->operations()->issues()->listComments(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-issue-comments).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#list-issue-comments).
 
 
 ### issues/create-comment
@@ -13470,7 +13616,7 @@ $client->operations()->issues()->createComment(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#create-an-issue-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/comments#create-an-issue-comment).
 
 
 ### issues/list-events
@@ -13498,7 +13644,7 @@ $client->operations()->issues()->listEvents(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-issue-events).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/events#list-issue-events).
 
 
 ### issues/list-labels-on-issue
@@ -13526,7 +13672,7 @@ $client->operations()->issues()->listLabelsOnIssue(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-labels-for-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#list-labels-for-an-issue).
 
 
 ### issues/set-labels
@@ -13550,7 +13696,7 @@ $client->operations()->issues()->setLabels(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#set-labels-for-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#set-labels-for-an-issue).
 
 
 ### issues/add-labels
@@ -13574,7 +13720,7 @@ $client->operations()->issues()->addLabels(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#add-labels-to-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#add-labels-to-an-issue).
 
 
 ### issues/remove-all-labels
@@ -13598,7 +13744,7 @@ $client->operations()->issues()->removeAllLabels(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#remove-all-labels-from-an-issue).
 
 
 ### issues/remove-label
@@ -13624,7 +13770,7 @@ $client->operations()->issues()->removeLabel(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#remove-a-label-from-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#remove-a-label-from-an-issue).
 
 
 ### issues/lock
@@ -13648,7 +13794,7 @@ $client->operations()->issues()->lock(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#lock-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#lock-an-issue).
 
 
 ### issues/unlock
@@ -13672,7 +13818,7 @@ $client->operations()->issues()->unlock(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#unlock-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#unlock-an-issue).
 
 
 ### reactions/list-for-issue
@@ -13780,7 +13926,7 @@ $client->operations()->issues()->listEventsForTimeline(        owner: 'generated
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/timeline#list-timeline-events-for-an-issue).
 
 
 ### repos/list-deploy-keys
@@ -13902,7 +14048,7 @@ $client->operations()->issues()->listLabelsForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-labels-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#list-labels-for-a-repository).
 
 
 ### issues/create-label
@@ -13924,7 +14070,7 @@ $client->operations()->issues()->createLabel(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#create-a-label).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#create-a-label).
 
 
 ### issues/get-label
@@ -13948,7 +14094,7 @@ $client->operations()->issues()->getLabel(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#get-a-label).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#get-a-label).
 
 
 ### issues/delete-label
@@ -13972,7 +14118,7 @@ $client->operations()->issues()->deleteLabel(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#delete-a-label).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#delete-a-label).
 
 
 ### issues/update-label
@@ -13996,7 +14142,7 @@ $client->operations()->issues()->updateLabel(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#update-a-label).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#update-a-label).
 
 
 ### repos/list-languages
@@ -14160,7 +14306,7 @@ $client->operations()->issues()->listMilestones(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-milestones).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/milestones#list-milestones).
 
 
 ### issues/create-milestone
@@ -14182,7 +14328,7 @@ $client->operations()->issues()->createMilestone(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#create-a-milestone).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/milestones#create-a-milestone).
 
 
 ### issues/get-milestone
@@ -14206,7 +14352,7 @@ $client->operations()->issues()->getMilestone(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#get-a-milestone).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/milestones#get-a-milestone).
 
 
 ### issues/delete-milestone
@@ -14230,7 +14376,7 @@ $client->operations()->issues()->deleteMilestone(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#delete-a-milestone).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/milestones#delete-a-milestone).
 
 
 ### issues/update-milestone
@@ -14254,7 +14400,7 @@ $client->operations()->issues()->updateMilestone(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#update-a-milestone).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/milestones#update-a-milestone).
 
 
 ### issues/list-labels-for-milestone
@@ -14282,7 +14428,7 @@ $client->operations()->issues()->listLabelsForMilestone(        owner: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-labels-for-issues-in-a-milestone).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/labels#list-labels-for-issues-in-a-milestone).
 
 
 ### activity/list-repo-notifications-for-authenticated-user
@@ -14928,7 +15074,7 @@ $client->operations()->codespaces()->createWithPrForAuthenticatedUser(        ow
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-a-codespace-from-a-pull-request).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-from-a-pull-request).
 
 
 ### pulls/list-review-comments
@@ -16062,7 +16208,7 @@ $client->operations()->secretScanning()->listAlertsForRepo(        owner: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-a-repository).
 
 
 ### secret-scanning/get-alert
@@ -16086,7 +16232,7 @@ $client->operations()->secretScanning()->getAlert(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#get-a-secret-scanning-alert).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#get-a-secret-scanning-alert).
 
 
 ### secret-scanning/update-alert
@@ -16110,7 +16256,7 @@ $client->operations()->secretScanning()->updateAlert(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#update-a-secret-scanning-alert).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#update-a-secret-scanning-alert).
 
 
 ### secret-scanning/list-locations-for-alert
@@ -16138,7 +16284,7 @@ $client->operations()->secretScanning()->listLocationsForAlert(        owner: 'g
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/secret-scanning#list-locations-for-a-secret-scanning-alert).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert).
 
 
 ### security-advisories/list-repository-advisories
@@ -18366,7 +18512,7 @@ $client->operations()->codespaces()->listForAuthenticatedUser(        repository
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-codespaces-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#list-codespaces-for-the-authenticated-user).
 
 
 ### codespaces/create-for-authenticated-user
@@ -18383,7 +18529,7 @@ Operations method:
 $client->operations()->codespaces()->createForAuthenticatedUser();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-for-the-authenticated-user).
 
 
 ### codespaces/list-secrets-for-authenticated-user
@@ -18405,7 +18551,7 @@ $client->operations()->codespaces()->listSecretsForAuthenticatedUser(        per
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-secrets-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#list-secrets-for-the-authenticated-user).
 
 
 ### codespaces/get-public-key-for-authenticated-user
@@ -18422,7 +18568,7 @@ Operations method:
 $client->operations()->codespaces()->getPublicKeyForAuthenticatedUser();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-public-key-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user).
 
 
 ### codespaces/get-secret-for-authenticated-user
@@ -18442,7 +18588,7 @@ $client->operations()->codespaces()->getSecretForAuthenticatedUser(        secre
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-a-secret-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#get-a-secret-for-the-authenticated-user).
 
 
 ### codespaces/create-or-update-secret-for-authenticated-user
@@ -18462,7 +18608,7 @@ $client->operations()->codespaces()->createOrUpdateSecretForAuthenticatedUser(  
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#create-or-update-a-secret-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#create-or-update-a-secret-for-the-authenticated-user).
 
 
 ### codespaces/delete-secret-for-authenticated-user
@@ -18482,7 +18628,7 @@ $client->operations()->codespaces()->deleteSecretForAuthenticatedUser(        se
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#delete-a-secret-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#delete-a-secret-for-the-authenticated-user).
 
 
 ### codespaces/list-repositories-for-secret-for-authenticated-user
@@ -18502,7 +18648,7 @@ $client->operations()->codespaces()->listRepositoriesForSecretForAuthenticatedUs
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret).
 
 
 ### codespaces/set-repositories-for-secret-for-authenticated-user
@@ -18522,7 +18668,7 @@ $client->operations()->codespaces()->setRepositoriesForSecretForAuthenticatedUse
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret).
 
 
 ### codespaces/add-repository-for-secret-for-authenticated-user
@@ -18544,7 +18690,7 @@ $client->operations()->codespaces()->addRepositoryForSecretForAuthenticatedUser(
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#add-a-selected-repository-to-a-user-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#add-a-selected-repository-to-a-user-secret).
 
 
 ### codespaces/remove-repository-for-secret-for-authenticated-user
@@ -18566,7 +18712,7 @@ $client->operations()->codespaces()->removeRepositoryForSecretForAuthenticatedUs
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret).
 
 
 ### codespaces/get-for-authenticated-user
@@ -18586,7 +18732,7 @@ $client->operations()->codespaces()->getForAuthenticatedUser(        codespace_n
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#get-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#get-a-codespace-for-the-authenticated-user).
 
 
 ### codespaces/delete-for-authenticated-user
@@ -18606,7 +18752,7 @@ $client->operations()->codespaces()->deleteForAuthenticatedUser(        codespac
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#delete-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#delete-a-codespace-for-the-authenticated-user).
 
 
 ### codespaces/update-for-authenticated-user
@@ -18626,7 +18772,7 @@ $client->operations()->codespaces()->updateForAuthenticatedUser(        codespac
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#update-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#update-a-codespace-for-the-authenticated-user).
 
 
 ### codespaces/export-for-authenticated-user
@@ -18688,7 +18834,7 @@ $client->operations()->codespaces()->codespaceMachinesForAuthenticatedUser(     
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#list-machine-types-for-a-codespace).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/machines#list-machine-types-for-a-codespace).
 
 
 ### codespaces/publish-for-authenticated-user
@@ -18708,7 +18854,7 @@ $client->operations()->codespaces()->publishForAuthenticatedUser(        codespa
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces/codespaces#create-a-repository-from-an-unpublished-codespace).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#create-a-repository-from-an-unpublished-codespace).
 
 
 ### codespaces/start-for-authenticated-user
@@ -18728,7 +18874,7 @@ $client->operations()->codespaces()->startForAuthenticatedUser(        codespace
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#start-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#start-a-codespace-for-the-authenticated-user).
 
 
 ### codespaces/stop-for-authenticated-user
@@ -18748,7 +18894,7 @@ $client->operations()->codespaces()->stopForAuthenticatedUser(        codespace_
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/codespaces#stop-a-codespace-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#stop-a-codespace-for-the-authenticated-user).
 
 
 ### packages/list-docker-migration-conflicting-packages-for-authenticated-user
@@ -18765,7 +18911,7 @@ Operations method:
 $client->operations()->packages()->listDockerMigrationConflictingPackagesForAuthenticatedUser();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages#list-docker-migration-conflicting-packages-for-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-docker-migration-conflicting-packages-for-authenticated-user).
 
 
 ### users/set-primary-email-visibility-for-authenticated-user
@@ -19196,7 +19342,7 @@ $client->operations()->issues()->listForAuthenticatedUser(        labels: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/issues#list-user-account-issues-assigned-to-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/issues#list-user-account-issues-assigned-to-the-authenticated-user).
 
 
 ### users/list-public-ssh-keys-for-authenticated-user
@@ -19578,7 +19724,7 @@ $client->operations()->packages()->listPackagesForAuthenticatedUser(        pack
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#list-packages-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-packages-for-the-authenticated-user).
 
 
 ### packages/get-package-for-authenticated-user
@@ -19600,7 +19746,7 @@ $client->operations()->packages()->getPackageForAuthenticatedUser(        packag
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-for-the-authenticated-user).
 
 
 ### packages/delete-package-for-authenticated-user
@@ -19622,7 +19768,7 @@ $client->operations()->packages()->deletePackageForAuthenticatedUser(        pac
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-for-the-authenticated-user).
 
 
 ### packages/restore-package-for-authenticated-user
@@ -19646,7 +19792,7 @@ $client->operations()->packages()->restorePackageForAuthenticatedUser(        pa
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-for-the-authenticated-user).
 
 
 ### packages/get-all-package-versions-for-package-owned-by-authenticated-user
@@ -19674,7 +19820,7 @@ $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByAuthent
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user).
 
 
 ### packages/get-package-version-for-authenticated-user
@@ -19698,7 +19844,7 @@ $client->operations()->packages()->getPackageVersionForAuthenticatedUser(       
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-version-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-version-for-the-authenticated-user).
 
 
 ### packages/delete-package-version-for-authenticated-user
@@ -19722,7 +19868,7 @@ $client->operations()->packages()->deletePackageVersionForAuthenticatedUser(    
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-version-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-version-for-the-authenticated-user).
 
 
 ### packages/restore-package-version-for-authenticated-user
@@ -19746,7 +19892,7 @@ $client->operations()->packages()->restorePackageVersionForAuthenticatedUser(   
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-version-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-version-for-the-authenticated-user).
 
 
 ### projects/create-for-authenticated-user
@@ -20233,7 +20379,7 @@ $client->operations()->packages()->listDockerMigrationConflictingPackagesForUser
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#list-docker-migration-conflicting-packages-for-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-docker-migration-conflicting-packages-for-user).
 
 
 ### activity/list-events-for-authenticated-user
@@ -20547,7 +20693,7 @@ $client->operations()->packages()->listPackagesForUser(        package_type: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#list-packages-for-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#list-packages-for-user).
 
 
 ### packages/get-package-for-user
@@ -20571,7 +20717,7 @@ $client->operations()->packages()->getPackageForUser(        package_type: 'gene
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-for-a-user).
 
 
 ### packages/delete-package-for-user
@@ -20595,7 +20741,7 @@ $client->operations()->packages()->deletePackageForUser(        package_type: 'g
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-for-a-user).
 
 
 ### packages/restore-package-for-user
@@ -20621,7 +20767,7 @@ $client->operations()->packages()->restorePackageForUser(        package_type: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-for-a-user).
 
 
 ### packages/get-all-package-versions-for-package-owned-by-user
@@ -20645,7 +20791,7 @@ $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByUser(  
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-all-package-versions-for-a-package-owned-by-a-user).
 
 
 ### packages/get-package-version-for-user
@@ -20671,7 +20817,7 @@ $client->operations()->packages()->getPackageVersionForUser(        package_type
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#get-a-package-version-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#get-a-package-version-for-a-user).
 
 
 ### packages/delete-package-version-for-user
@@ -20697,7 +20843,7 @@ $client->operations()->packages()->deletePackageVersionForUser(        package_t
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#delete-a-package-version-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#delete-a-package-version-for-a-user).
 
 
 ### packages/restore-package-version-for-user
@@ -20723,7 +20869,7 @@ $client->operations()->packages()->restorePackageVersionForUser(        package_
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/packages#restore-a-package-version-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/packages/packages#restore-a-package-version-for-a-user).
 
 
 ### projects/list-for-user
