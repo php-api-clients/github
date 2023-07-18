@@ -1628,7 +1628,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### copilot/list-copilot-seats
 
-List all Copilot for Business seat assignments for an orgainzation
+List all Copilot for Business seat assignments for an organization
 
 Using the `call` method:
 ```php
@@ -1647,7 +1647,7 @@ $client->operations()->copilot()->listCopilotSeats(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-orgainzation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-organization).
 
 
 ### orgs/get
