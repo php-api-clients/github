@@ -24,7 +24,7 @@ final class Copilot
     public function getCopilotOrganizationDetails(string $org): PromiseInterface
     {
         if (array_key_exists(Operator\Copilot\GetCopilotOrganizationDetails::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\GetCopilotOrganizationDetails::class] = new Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀Copilot🌀Billing());
+            $this->operator[Operator\Copilot\GetCopilotOrganizationDetails::class] = new Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing());
         }
 
         return $this->operator[Operator\Copilot\GetCopilotOrganizationDetails::class]->call($org);
@@ -33,7 +33,7 @@ final class Copilot
     public function listCopilotSeats(string $org, int $page, int $perPage): PromiseInterface
     {
         if (array_key_exists(Operator\Copilot\ListCopilotSeats::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\ListCopilotSeats::class] = new Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀Copilot🌀Billing🌀Seats());
+            $this->operator[Operator\Copilot\ListCopilotSeats::class] = new Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀Seats());
         }
 
         return $this->operator[Operator\Copilot\ListCopilotSeats::class]->call($org, $page, $perPage);

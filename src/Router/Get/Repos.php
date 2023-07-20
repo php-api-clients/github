@@ -234,6 +234,30 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['page']);
     }
 
+    public function checkAutomatedSecurityFixes(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\AutomatedSecurityFixes::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\AutomatedSecurityFixes::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀AutomatedSecurityFixes();
+        }
+
+        $operator = new Operator\Repos\CheckAutomatedSecurityFixes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\AutomatedSecurityFixes::class]);
+
+        return $operator->call($arguments['owner'], $arguments['repo']);
+    }
+
     public function listBranches(array $params)
     {
         $arguments = [];

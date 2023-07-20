@@ -21,13 +21,13 @@ use function str_replace;
 final class GetCopilotOrganizationDetails
 {
     public const OPERATION_ID    = 'copilot/get-copilot-organization-details';
-    public const OPERATION_MATCH = 'GET /organizations/{org}/copilot/billing';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing';
     private const METHOD         = 'GET';
-    private const PATH           = '/organizations/{org}/copilot/billing';
+    private const PATH           = '/orgs/{org}/copilot/billing';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Organizations\Org\Copilot\Billing $hydrator, string $org)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Copilot\Billing $hydrator, string $org)
     {
         $this->org = $org;
     }

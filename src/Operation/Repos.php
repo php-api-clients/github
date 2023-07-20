@@ -147,6 +147,15 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteAutolink::class]->call($owner, $repo, $autolinkId);
     }
 
+    public function checkAutomatedSecurityFixes(string $owner, string $repo): PromiseInterface
+    {
+        if (array_key_exists(Operator\Repos\CheckAutomatedSecurityFixes::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\CheckAutomatedSecurityFixes::class] = new Operator\Repos\CheckAutomatedSecurityFixes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀AutomatedSecurityFixes());
+        }
+
+        return $this->operator[Operator\Repos\CheckAutomatedSecurityFixes::class]->call($owner, $repo);
+    }
+
     public function enableAutomatedSecurityFixes(string $owner, string $repo): PromiseInterface
     {
         if (array_key_exists(Operator\Repos\EnableAutomatedSecurityFixes::class, $this->operator) === false) {

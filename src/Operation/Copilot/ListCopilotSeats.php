@@ -21,9 +21,9 @@ use function str_replace;
 final class ListCopilotSeats
 {
     public const OPERATION_ID    = 'copilot/list-copilot-seats';
-    public const OPERATION_MATCH = 'GET /organizations/{org}/copilot/billing/seats';
+    public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing/seats';
     private const METHOD         = 'GET';
-    private const PATH           = '/organizations/{org}/copilot/billing/seats';
+    private const PATH           = '/orgs/{org}/copilot/billing/seats';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Page number of the results to fetch. **/
@@ -31,7 +31,7 @@ final class ListCopilotSeats
     /**The number of results per page (max 100). **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Organizations\Org\Copilot\Billing\Seats $hydrator, string $org, int $page = 1, int $perPage = 50)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats $hydrator, string $org, int $page = 1, int $perPage = 50)
     {
         $this->org     = $org;
         $this->page    = $page;

@@ -24,7 +24,7 @@ final class GetThread
     public const OPERATION_MATCH = 'GET /notifications/threads/{thread_id}';
     private const METHOD         = 'GET';
     private const PATH           = '/notifications/threads/{thread_id}';
-    /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)). **/
+    /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)). **/
     private int $threadId;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Notifications\Threads\ThreadId $hydrator, int $threadId)

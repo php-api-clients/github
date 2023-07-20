@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Hydrator\Operation\Organizations\Org\Copilot;
+namespace ApiClients\Client\GitHub\Hydrator\Operation\Orgs\Org\Copilot\Billing;
 
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -10,7 +10,7 @@ use EventSauce\ObjectHydrator\UnableToHydrateObject;
 use EventSauce\ObjectHydrator\UnableToSerializeObject;
 use Generator;
 
-class Billing implements ObjectMapper
+class Seats implements ObjectMapper
 {
     private array $hydrationStack = [];
     public function __construct() {}
@@ -23,160 +23,52 @@ class Billing implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match($className) {
-            'ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotOrganizationDetails($payload),
-                'ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown($payload),
+            'ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️ListCopilotSeats⚡️Response⚡️ApplicationJson⚡️Ok($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
     
             
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotOrganizationDetails(array $payload): \ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️ListCopilotSeats⚡️Response⚡️ApplicationJson⚡️Ok(array $payload): \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
     {
         $properties = []; 
         $missingFields = [];
         try {
-            $value = $payload['seat_breakdown'] ?? null;
+            $value = $payload['total_seats'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'seat_breakdown';
-                goto after_seatBreakdown;
+                $properties['totalSeats'] = null;
+                goto after_totalSeats;
             }
 
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'seatBreakdown';
-                    $value = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
+            $properties['totalSeats'] = $value;
 
-            $properties['seatBreakdown'] = $value;
+            after_totalSeats:
 
-            after_seatBreakdown:
-
-            $value = $payload['public_code_suggestions'] ?? null;
+            $value = $payload['seats'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'public_code_suggestions';
-                goto after_publicCodeSuggestions;
+                $properties['seats'] = null;
+                goto after_seats;
             }
 
-            $properties['publicCodeSuggestions'] = $value;
+            $properties['seats'] = $value;
 
-            after_publicCodeSuggestions:
-
-            $value = $payload['seat_management_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'seat_management_setting';
-                goto after_seatManagementSetting;
-            }
-
-            $properties['seatManagementSetting'] = $value;
-
-            after_seatManagementSetting:
+            after_seats:
 
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok(...$properties);
         } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-        
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown(array $payload): \ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown
-    {
-        $properties = []; 
-        $missingFields = [];
-        try {
-            $value = $payload['total'] ?? null;
-
-            if ($value === null) {
-                $properties['total'] = null;
-                goto after_total;
-            }
-
-            $properties['total'] = $value;
-
-            after_total:
-
-            $value = $payload['added_this_cycle'] ?? null;
-
-            if ($value === null) {
-                $properties['addedThisCycle'] = null;
-                goto after_addedThisCycle;
-            }
-
-            $properties['addedThisCycle'] = $value;
-
-            after_addedThisCycle:
-
-            $value = $payload['pending_cancellation'] ?? null;
-
-            if ($value === null) {
-                $properties['pendingCancellation'] = null;
-                goto after_pendingCancellation;
-            }
-
-            $properties['pendingCancellation'] = $value;
-
-            after_pendingCancellation:
-
-            $value = $payload['pending_invitation'] ?? null;
-
-            if ($value === null) {
-                $properties['pendingInvitation'] = null;
-                goto after_pendingInvitation;
-            }
-
-            $properties['pendingInvitation'] = $value;
-
-            after_pendingInvitation:
-
-            $value = $payload['active_this_cycle'] ?? null;
-
-            if ($value === null) {
-                $properties['activeThisCycle'] = null;
-                goto after_activeThisCycle;
-            }
-
-            $properties['activeThisCycle'] = $value;
-
-            after_activeThisCycle:
-
-            $value = $payload['inactive_this_cycle'] ?? null;
-
-            if ($value === null) {
-                $properties['inactiveThisCycle'] = null;
-                goto after_inactiveThisCycle;
-            }
-
-            $properties['inactiveThisCycle'] = $value;
-
-            after_inactiveThisCycle:
-
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown(...$properties);
-        } catch (\Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -276,8 +168,7 @@ class Billing implements ObjectMapper
             'DateTime' => $this->serializeValueDateTime($object),
             'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
             'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-            'ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotOrganizationDetails($object),
-            'ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown($object),
+            'ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️ListCopilotSeats⚡️Response⚡️ApplicationJson⚡️Ok($object),
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new \LogicException('No serialization defined for $className'),
             };
@@ -352,79 +243,33 @@ class Billing implements ObjectMapper
     }
 
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotOrganizationDetails(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️ListCopilotSeats⚡️Response⚡️ApplicationJson⚡️Ok(mixed $object): mixed
     {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails);
+        \assert($object instanceof \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok);
         $result = [];
 
-        $seatBreakdown = $object->seatBreakdown;
-        $seatBreakdown = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown($seatBreakdown);
-        after_seatBreakdown:        $result['seat_breakdown'] = $seatBreakdown;
+        $totalSeats = $object->totalSeats;
 
-        
-        $publicCodeSuggestions = $object->publicCodeSuggestions;
-        after_publicCodeSuggestions:        $result['public_code_suggestions'] = $publicCodeSuggestions;
-
-        
-        $seatManagementSetting = $object->seatManagementSetting;
-        after_seatManagementSetting:        $result['seat_management_setting'] = $seatManagementSetting;
-
-
-        return $result;
-    }
-
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatBreakdown(mixed $object): mixed
-    {
-        \assert($object instanceof \ApiClients\Client\GitHub\Schema\CopilotSeatBreakdown);
-        $result = [];
-
-        $total = $object->total;
-
-        if ($total === null) {
-            goto after_total;
+        if ($totalSeats === null) {
+            goto after_totalSeats;
         }
-        after_total:        $result['total'] = $total;
+        after_totalSeats:        $result['total_seats'] = $totalSeats;
 
         
-        $addedThisCycle = $object->addedThisCycle;
+        $seats = $object->seats;
 
-        if ($addedThisCycle === null) {
-            goto after_addedThisCycle;
+        if ($seats === null) {
+            goto after_seats;
         }
-        after_addedThisCycle:        $result['added_this_cycle'] = $addedThisCycle;
+        static $seatsSerializer0;
 
+        if ($seatsSerializer0 === null) {
+            $seatsSerializer0 = new \EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems(...array (
+));
+        }
         
-        $pendingCancellation = $object->pendingCancellation;
-
-        if ($pendingCancellation === null) {
-            goto after_pendingCancellation;
-        }
-        after_pendingCancellation:        $result['pending_cancellation'] = $pendingCancellation;
-
-        
-        $pendingInvitation = $object->pendingInvitation;
-
-        if ($pendingInvitation === null) {
-            goto after_pendingInvitation;
-        }
-        after_pendingInvitation:        $result['pending_invitation'] = $pendingInvitation;
-
-        
-        $activeThisCycle = $object->activeThisCycle;
-
-        if ($activeThisCycle === null) {
-            goto after_activeThisCycle;
-        }
-        after_activeThisCycle:        $result['active_this_cycle'] = $activeThisCycle;
-
-        
-        $inactiveThisCycle = $object->inactiveThisCycle;
-
-        if ($inactiveThisCycle === null) {
-            goto after_inactiveThisCycle;
-        }
-        after_inactiveThisCycle:        $result['inactive_this_cycle'] = $inactiveThisCycle;
+        $seats = $seatsSerializer0->serialize($seats, $this);
+        after_seats:        $result['seats'] = $seats;
 
 
         return $result;

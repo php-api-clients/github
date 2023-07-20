@@ -33,11 +33,11 @@ final class Copilot
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\Copilot\Billing::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\Copilot\Billing::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀Copilot🌀Billing();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Copilot\Billing::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Copilot\Billing::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing();
         }
 
-        $operator = new Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\Copilot\Billing::class]);
+        $operator = new Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Copilot\Billing::class]);
 
         return $operator->call($arguments['org']);
     }
@@ -63,11 +63,11 @@ final class Copilot
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        if (array_key_exists(Hydrator\Operation\Organizations\Org\Copilot\Billing\Seats::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Organizations\Org\Copilot\Billing\Seats::class] = $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀Copilot🌀Billing🌀Seats();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀Seats();
         }
 
-        $operator = new Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Organizations\Org\Copilot\Billing\Seats::class]);
+        $operator = new Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats::class]);
 
         return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
     }
