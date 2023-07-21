@@ -67,7 +67,7 @@ Operations method:
 $client->operations()->apps()->getAuthenticated();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-the-authenticated-app).
 
 
 ### apps/create-from-manifest
@@ -87,7 +87,7 @@ $client->operations()->apps()->createFromManifest(        code: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#create-a-github-app-from-a-manifest).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#create-a-github-app-from-a-manifest).
 
 
 ### apps/get-webhook-config-for-app
@@ -104,7 +104,7 @@ Operations method:
 $client->operations()->apps()->getWebhookConfigForApp();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-webhook-configuration-for-an-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/webhooks#get-a-webhook-configuration-for-an-app).
 
 
 ### apps/update-webhook-config-for-app
@@ -121,7 +121,7 @@ Operations method:
 $client->operations()->apps()->updateWebhookConfigForApp();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/webhooks#update-a-webhook-configuration-for-an-app).
 
 
 ### apps/list-webhook-deliveries
@@ -145,7 +145,7 @@ $client->operations()->apps()->listWebhookDeliveries(        cursor: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/webhooks#list-deliveries-for-an-app-webhook).
 
 
 ### apps/get-webhook-delivery
@@ -165,7 +165,7 @@ $client->operations()->apps()->getWebhookDelivery(        delivery_id: 11,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-delivery-for-an-app-webhook).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/webhooks#get-a-delivery-for-an-app-webhook).
 
 
 ### apps/redeliver-webhook-delivery
@@ -185,7 +185,7 @@ $client->operations()->apps()->redeliverWebhookDelivery(        delivery_id: 11,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#redeliver-a-delivery-for-an-app-webhook).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/webhooks#redeliver-a-delivery-for-an-app-webhook).
 
 
 ### apps/list-installation-requests-for-authenticated-app
@@ -207,7 +207,7 @@ $client->operations()->apps()->listInstallationRequestsForAuthenticatedApp(     
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-installation-requests-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#list-installation-requests-for-the-authenticated-app).
 
 
 ### apps/list-installations
@@ -233,7 +233,7 @@ $client->operations()->apps()->listInstallations(        since: '1970-01-01T00:0
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#list-installations-for-the-authenticated-app).
 
 
 ### apps/get-installation
@@ -253,7 +253,7 @@ $client->operations()->apps()->getInstallation(        installation_id: 15,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-an-installation-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-an-installation-for-the-authenticated-app).
 
 
 ### apps/delete-installation
@@ -273,7 +273,7 @@ $client->operations()->apps()->deleteInstallation(        installation_id: 15,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#delete-an-installation-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#delete-an-installation-for-the-authenticated-app).
 
 
 ### apps/create-installation-access-token
@@ -293,7 +293,7 @@ $client->operations()->apps()->createInstallationAccessToken(        installatio
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps/#create-an-installation-access-token-for-an-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#create-an-installation-access-token-for-an-app).
 
 
 ### apps/suspend-installation
@@ -313,7 +313,7 @@ $client->operations()->apps()->suspendInstallation(        installation_id: 15,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#suspend-an-app-installation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#suspend-an-app-installation).
 
 
 ### apps/unsuspend-installation
@@ -333,7 +333,7 @@ $client->operations()->apps()->unsuspendInstallation(        installation_id: 15
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#unsuspend-an-app-installation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#unsuspend-an-app-installation).
 
 
 ### apps/delete-authorization
@@ -353,7 +353,7 @@ $client->operations()->apps()->deleteAuthorization(        client_id: 'generated
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#delete-an-app-authorization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/oauth-applications#delete-an-app-authorization).
 
 
 ### apps/check-token
@@ -373,7 +373,7 @@ $client->operations()->apps()->checkToken(        client_id: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#check-a-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/oauth-applications#check-a-token).
 
 
 ### apps/delete-token
@@ -393,7 +393,7 @@ $client->operations()->apps()->deleteToken(        client_id: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#delete-an-app-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/oauth-applications#delete-an-app-token).
 
 
 ### apps/reset-token
@@ -413,7 +413,7 @@ $client->operations()->apps()->resetToken(        client_id: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#reset-a-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/oauth-applications#reset-a-token).
 
 
 ### apps/scope-token
@@ -453,7 +453,7 @@ $client->operations()->apps()->getBySlug(        app_slug: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps/#get-an-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-an-app).
 
 
 ### codes-of-conduct/get-all-codes-of-conduct
@@ -1094,7 +1094,7 @@ $client->operations()->apps()->listReposAccessibleToInstallation(        per_pag
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-app-installation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#list-repositories-accessible-to-the-app-installation).
 
 
 ### apps/revoke-installation-access-token
@@ -1111,7 +1111,7 @@ Operations method:
 $client->operations()->apps()->revokeInstallationAccessToken();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#revoke-an-installation-access-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#revoke-an-installation-access-token).
 
 
 ### issues/list
@@ -1251,7 +1251,7 @@ $client->operations()->apps()->getSubscriptionPlanForAccount(        account_id:
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-subscription-plan-for-an-account).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#get-a-subscription-plan-for-an-account).
 
 
 ### apps/list-plans
@@ -1273,7 +1273,7 @@ $client->operations()->apps()->listPlans(        per_page: 8,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-plans).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-plans).
 
 
 ### apps/list-accounts-for-plan
@@ -1301,7 +1301,7 @@ $client->operations()->apps()->listAccountsForPlan(        plan_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-accounts-for-a-plan).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-accounts-for-a-plan).
 
 
 ### apps/get-subscription-plan-for-account-stubbed
@@ -1321,7 +1321,7 @@ $client->operations()->apps()->getSubscriptionPlanForAccountStubbed(        acco
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-subscription-plan-for-an-account-stubbed).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#get-a-subscription-plan-for-an-account-stubbed).
 
 
 ### apps/list-plans-stubbed
@@ -1343,7 +1343,7 @@ $client->operations()->apps()->listPlansStubbed(        per_page: 8,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-plans-stubbed).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-plans-stubbed).
 
 
 ### apps/list-accounts-for-plan-stubbed
@@ -1371,7 +1371,7 @@ $client->operations()->apps()->listAccountsForPlanStubbed(        plan_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-accounts-for-a-plan-stubbed).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-accounts-for-a-plan-stubbed).
 
 
 ### meta/get
@@ -3761,7 +3761,7 @@ $client->operations()->apps()->getOrgInstallation(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-an-organization-installation-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app).
 
 
 ### orgs/list-app-installations
@@ -5055,7 +5055,7 @@ $client->operations()->repos()->listForOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-organization-repositories).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-organization-repositories).
 
 
 ### repos/create-in-org
@@ -5075,7 +5075,7 @@ $client->operations()->repos()->createInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-an-organization-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#create-an-organization-repository).
 
 
 ### repos/get-org-rulesets
@@ -5099,7 +5099,7 @@ $client->operations()->repos()->getOrgRulesets(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#get-organization-rulesets).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#get-organization-rulesets).
 
 
 ### repos/create-org-ruleset
@@ -5119,7 +5119,7 @@ $client->operations()->repos()->createOrgRuleset(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#create-organization-repository-ruleset).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#create-organization-repository-ruleset).
 
 
 ### repos/get-org-ruleset
@@ -5141,7 +5141,7 @@ $client->operations()->repos()->getOrgRuleset(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#get-organization-ruleset).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#get-organization-ruleset).
 
 
 ### repos/update-org-ruleset
@@ -5163,7 +5163,7 @@ $client->operations()->repos()->updateOrgRuleset(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#update-organization-ruleset).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#update-organization-ruleset).
 
 
 ### repos/delete-org-ruleset
@@ -5185,7 +5185,7 @@ $client->operations()->repos()->deleteOrgRuleset(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#delete-organization-ruleset).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#delete-organization-ruleset).
 
 
 ### secret-scanning/list-alerts-for-org
@@ -5371,7 +5371,7 @@ $client->operations()->teams()->list(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-teams).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-teams).
 
 
 ### teams/create
@@ -5391,7 +5391,7 @@ $client->operations()->teams()->create(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#create-a-team).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#create-a-team).
 
 
 ### teams/get-by-name
@@ -5413,7 +5413,7 @@ $client->operations()->teams()->getByName(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-a-team-by-name).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#get-a-team-by-name).
 
 
 ### teams/delete-in-org
@@ -5435,7 +5435,7 @@ $client->operations()->teams()->deleteInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#delete-a-team).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#delete-a-team).
 
 
 ### teams/update-in-org
@@ -5457,7 +5457,7 @@ $client->operations()->teams()->updateInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#update-a-team).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#update-a-team).
 
 
 ### teams/list-discussions-in-org
@@ -5487,7 +5487,7 @@ $client->operations()->teams()->listDiscussionsInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-discussions).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#list-discussions).
 
 
 ### teams/create-discussion-in-org
@@ -5509,7 +5509,7 @@ $client->operations()->teams()->createDiscussionInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#create-a-discussion).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#create-a-discussion).
 
 
 ### teams/get-discussion-in-org
@@ -5533,7 +5533,7 @@ $client->operations()->teams()->getDiscussionInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-a-discussion).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#get-a-discussion).
 
 
 ### teams/delete-discussion-in-org
@@ -5557,7 +5557,7 @@ $client->operations()->teams()->deleteDiscussionInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#delete-a-discussion).
 
 
 ### teams/update-discussion-in-org
@@ -5581,7 +5581,7 @@ $client->operations()->teams()->updateDiscussionInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#update-a-discussion).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#update-a-discussion).
 
 
 ### teams/list-discussion-comments-in-org
@@ -5611,7 +5611,7 @@ $client->operations()->teams()->listDiscussionCommentsInOrg(        org: 'genera
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-discussion-comments).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments).
 
 
 ### teams/create-discussion-comment-in-org
@@ -5635,7 +5635,7 @@ $client->operations()->teams()->createDiscussionCommentInOrg(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#create-a-discussion-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment).
 
 
 ### teams/get-discussion-comment-in-org
@@ -5661,7 +5661,7 @@ $client->operations()->teams()->getDiscussionCommentInOrg(        org: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-a-discussion-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).
 
 
 ### teams/delete-discussion-comment-in-org
@@ -5687,7 +5687,7 @@ $client->operations()->teams()->deleteDiscussionCommentInOrg(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment).
 
 
 ### teams/update-discussion-comment-in-org
@@ -5713,7 +5713,7 @@ $client->operations()->teams()->updateDiscussionCommentInOrg(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-comment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment).
 
 
 ### reactions/list-for-team-discussion-comment-in-org
@@ -5905,7 +5905,7 @@ $client->operations()->teams()->listPendingInvitationsInOrg(        org: 'genera
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-pending-team-invitations).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#list-pending-team-invitations).
 
 
 ### teams/list-members-in-org
@@ -5933,7 +5933,7 @@ $client->operations()->teams()->listMembersInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-team-members).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#list-team-members).
 
 
 ### teams/get-membership-for-user-in-org
@@ -5957,7 +5957,7 @@ $client->operations()->teams()->getMembershipForUserInOrg(        org: 'generate
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-team-membership-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user).
 
 
 ### teams/add-or-update-membership-for-user-in-org
@@ -5981,7 +5981,7 @@ $client->operations()->teams()->addOrUpdateMembershipForUserInOrg(        org: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#add-or-update-team-membership-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user).
 
 
 ### teams/remove-membership-for-user-in-org
@@ -6005,7 +6005,7 @@ $client->operations()->teams()->removeMembershipForUserInOrg(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#remove-team-membership-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#remove-team-membership-for-a-user).
 
 
 ### teams/list-projects-in-org
@@ -6031,7 +6031,7 @@ $client->operations()->teams()->listProjectsInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-team-projects).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-team-projects).
 
 
 ### teams/check-permissions-for-project-in-org
@@ -6055,7 +6055,7 @@ $client->operations()->teams()->checkPermissionsForProjectInOrg(        org: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-project).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project).
 
 
 ### teams/add-or-update-project-permissions-in-org
@@ -6079,7 +6079,7 @@ $client->operations()->teams()->addOrUpdateProjectPermissionsInOrg(        org: 
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#add-or-update-team-project-permissions).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions).
 
 
 ### teams/remove-project-in-org
@@ -6103,7 +6103,7 @@ $client->operations()->teams()->removeProjectInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#remove-a-project-from-a-team).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team).
 
 
 ### teams/list-repos-in-org
@@ -6129,7 +6129,7 @@ $client->operations()->teams()->listReposInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-team-repositories).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-team-repositories).
 
 
 ### teams/check-permissions-for-repo-in-org
@@ -6155,7 +6155,7 @@ $client->operations()->teams()->checkPermissionsForRepoInOrg(        org: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-repository).
 
 
 ### teams/add-or-update-repo-permissions-in-org
@@ -6181,7 +6181,7 @@ $client->operations()->teams()->addOrUpdateRepoPermissionsInOrg(        org: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-repository-permissions).
 
 
 ### teams/remove-repo-in-org
@@ -6207,7 +6207,7 @@ $client->operations()->teams()->removeRepoInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team).
 
 
 ### teams/list-child-in-org
@@ -6233,7 +6233,7 @@ $client->operations()->teams()->listChildInOrg(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-child-teams).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-child-teams).
 
 
 ### orgs/enable-or-disable-security-product-on-all-org-repos
@@ -6698,7 +6698,7 @@ $client->operations()->repos()->get(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#get-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#get-a-repository).
 
 
 ### repos/delete
@@ -6720,7 +6720,7 @@ $client->operations()->repos()->delete(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#delete-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#delete-a-repository).
 
 
 ### repos/update
@@ -8794,7 +8794,7 @@ $client->operations()->repos()->enableAutomatedSecurityFixes(        owner: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#enable-automated-security-fixes).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#enable-automated-security-fixes).
 
 
 ### repos/disable-automated-security-fixes
@@ -8816,7 +8816,7 @@ $client->operations()->repos()->disableAutomatedSecurityFixes(        owner: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#disable-automated-security-fixes).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#disable-automated-security-fixes).
 
 
 ### repos/list-branches
@@ -10298,7 +10298,7 @@ $client->operations()->repos()->codeownersErrors(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-codeowners-errors).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-codeowners-errors).
 
 
 ### codespaces/list-in-repository-for-authenticated-user
@@ -11218,7 +11218,7 @@ $client->operations()->repos()->getContent(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#get-repository-content).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#get-repository-content).
 
 
 ### repos/create-or-update-file-contents
@@ -11242,7 +11242,7 @@ $client->operations()->repos()->createOrUpdateFileContents(        owner: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-or-update-file-contents).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#create-or-update-file-contents).
 
 
 ### repos/delete-file
@@ -11266,7 +11266,7 @@ $client->operations()->repos()->deleteFile(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#delete-a-file).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#delete-a-file).
 
 
 ### repos/list-contributors
@@ -11294,7 +11294,7 @@ $client->operations()->repos()->listContributors(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repository-contributors).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repository-contributors).
 
 
 ### dependabot/list-alerts-for-repo
@@ -11786,7 +11786,7 @@ $client->operations()->repos()->createDispatchEvent(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-a-repository-dispatch-event).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#create-a-repository-dispatch-event).
 
 
 ### repos/get-all-environments
@@ -12062,7 +12062,7 @@ $client->operations()->repos()->createDeploymentProtectionRule(        environme
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deployments/deployment-protection-rules#create-a-deployment-protection-rule).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deployments/protection-rules#create-a-deployment-protection-rule).
 
 
 ### repos/list-custom-deployment-rule-integrations
@@ -12196,7 +12196,7 @@ $client->operations()->repos()->listForks(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-forks).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/forks#list-forks).
 
 
 ### repos/create-fork
@@ -12218,7 +12218,7 @@ $client->operations()->repos()->createFork(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-a-fork).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/forks#create-a-fork).
 
 
 ### git/create-blob
@@ -13022,7 +13022,7 @@ $client->operations()->apps()->getRepoInstallation(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app).
 
 
 ### interactions/get-restrictions-for-repo
@@ -13974,7 +13974,7 @@ $client->operations()->repos()->listDeployKeys(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys#list-deploy-keys).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#list-deploy-keys).
 
 
 ### repos/create-deploy-key
@@ -13996,7 +13996,7 @@ $client->operations()->repos()->createDeployKey(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys#create-a-deploy-key).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#create-a-deploy-key).
 
 
 ### repos/get-deploy-key
@@ -14020,7 +14020,7 @@ $client->operations()->repos()->getDeployKey(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys#get-a-deploy-key).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key).
 
 
 ### repos/delete-deploy-key
@@ -14044,7 +14044,7 @@ $client->operations()->repos()->deleteDeployKey(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys#delete-a-deploy-key).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#delete-a-deploy-key).
 
 
 ### issues/list-labels-for-repo
@@ -14186,7 +14186,7 @@ $client->operations()->repos()->listLanguages(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repository-languages).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repository-languages).
 
 
 ### repos/enable-lfs-for-repo
@@ -14208,7 +14208,7 @@ $client->operations()->repos()->enableLfsForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#enable-git-lfs-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/lfs#enable-git-lfs-for-a-repository).
 
 
 ### repos/disable-lfs-for-repo
@@ -14230,7 +14230,7 @@ $client->operations()->repos()->disableLfsForRepo(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#disable-git-lfs-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/lfs#disable-git-lfs-for-a-repository).
 
 
 ### licenses/get-for-repo
@@ -14528,7 +14528,7 @@ $client->operations()->repos()->getPages(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#get-a-github-pages-site).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-a-github-pages-site).
 
 
 ### repos/update-information-about-pages-site
@@ -14550,7 +14550,7 @@ $client->operations()->repos()->updateInformationAboutPagesSite(        owner: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#update-information-about-a-github-pages-site).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#update-information-about-a-github-pages-site).
 
 
 ### repos/create-pages-site
@@ -14572,7 +14572,7 @@ $client->operations()->repos()->createPagesSite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#create-a-github-pages-site).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#create-a-github-pages-site).
 
 
 ### repos/delete-pages-site
@@ -14594,7 +14594,7 @@ $client->operations()->repos()->deletePagesSite(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#delete-a-github-pages-site).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#delete-a-github-pages-site).
 
 
 ### repos/list-pages-builds
@@ -14620,7 +14620,7 @@ $client->operations()->repos()->listPagesBuilds(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#list-github-pages-builds).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#list-github-pages-builds).
 
 
 ### repos/request-pages-build
@@ -14642,7 +14642,7 @@ $client->operations()->repos()->requestPagesBuild(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#request-a-github-pages-build).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#request-a-github-pages-build).
 
 
 ### repos/get-latest-pages-build
@@ -14664,7 +14664,7 @@ $client->operations()->repos()->getLatestPagesBuild(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#get-latest-pages-build).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-latest-pages-build).
 
 
 ### repos/get-pages-build
@@ -14688,7 +14688,7 @@ $client->operations()->repos()->getPagesBuild(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#get-github-pages-build).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-github-pages-build).
 
 
 ### repos/create-pages-deployment
@@ -14710,7 +14710,7 @@ $client->operations()->repos()->createPagesDeployment(        owner: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#create-a-github-pages-deployment).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment).
 
 
 ### repos/get-pages-health-check
@@ -14732,7 +14732,7 @@ $client->operations()->repos()->getPagesHealthCheck(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages#get-a-dns-health-check-for-github-pages).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-a-dns-health-check-for-github-pages).
 
 
 ### projects/list-for-repo
@@ -15616,7 +15616,7 @@ $client->operations()->repos()->getReadme(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#get-a-repository-readme).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#get-a-repository-readme).
 
 
 ### repos/get-readme-in-directory
@@ -15642,7 +15642,7 @@ $client->operations()->repos()->getReadmeInDirectory(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#get-a-repository-directory-readme).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#get-a-repository-directory-readme).
 
 
 ### repos/list-releases
@@ -16710,7 +16710,7 @@ $client->operations()->repos()->listTags(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repository-tags).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repository-tags).
 
 
 ### repos/list-tag-protection
@@ -16732,7 +16732,7 @@ $client->operations()->repos()->listTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-tag-protection-state-of-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#list-tag-protection-state-of-a-repository).
 
 
 ### repos/create-tag-protection
@@ -16754,7 +16754,7 @@ $client->operations()->repos()->createTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#create-tag-protection-state-for-a-repository).
 
 
 ### repos/delete-tag-protection
@@ -16778,7 +16778,7 @@ $client->operations()->repos()->deleteTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#delete-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#delete-tag-protection-state-for-a-repository).
 
 
 ### repos/download-tarball-archive
@@ -16802,7 +16802,7 @@ $client->operations()->repos()->downloadTarballArchive(        owner: 'generated
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#download-a-repository-archive).
 
 
 ### repos/download-tarball-archive
@@ -16826,7 +16826,7 @@ $client->operations()->repos()->downloadTarballArchiveStreaming(        owner: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#download-a-repository-archive).
 
 
 ### repos/list-teams
@@ -16852,7 +16852,7 @@ $client->operations()->repos()->listTeams(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repository-teams).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repository-teams).
 
 
 ### repos/get-all-topics
@@ -16878,7 +16878,7 @@ $client->operations()->repos()->getAllTopics(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#get-all-repository-topics).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#get-all-repository-topics).
 
 
 ### repos/replace-all-topics
@@ -16900,7 +16900,7 @@ $client->operations()->repos()->replaceAllTopics(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#replace-all-repository-topics).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#replace-all-repository-topics).
 
 
 ### repos/get-clones
@@ -17014,7 +17014,7 @@ $client->operations()->repos()->transfer(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#transfer-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#transfer-a-repository).
 
 
 ### repos/check-vulnerability-alerts
@@ -17036,7 +17036,7 @@ $client->operations()->repos()->checkVulnerabilityAlerts(        owner: 'generat
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#check-if-vulnerability-alerts-are-enabled-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#check-if-vulnerability-alerts-are-enabled-for-a-repository).
 
 
 ### repos/enable-vulnerability-alerts
@@ -17058,7 +17058,7 @@ $client->operations()->repos()->enableVulnerabilityAlerts(        owner: 'genera
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#enable-vulnerability-alerts).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#enable-vulnerability-alerts).
 
 
 ### repos/disable-vulnerability-alerts
@@ -17080,7 +17080,7 @@ $client->operations()->repos()->disableVulnerabilityAlerts(        owner: 'gener
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#disable-vulnerability-alerts).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#disable-vulnerability-alerts).
 
 
 ### repos/download-zipball-archive
@@ -17104,7 +17104,7 @@ $client->operations()->repos()->downloadZipballArchive(        owner: 'generated
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#download-a-repository-archive).
 
 
 ### repos/download-zipball-archive
@@ -17128,7 +17128,7 @@ $client->operations()->repos()->downloadZipballArchiveStreaming(        owner: '
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/contents#download-a-repository-archive).
 
 
 ### repos/create-using-template
@@ -17150,7 +17150,7 @@ $client->operations()->repos()->createUsingTemplate(        template_owner: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-a-repository-using-a-template).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#create-a-repository-using-a-template).
 
 
 ### repos/list-public
@@ -17170,7 +17170,7 @@ $client->operations()->repos()->listPublic(        since: 5,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-public-repositories).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-public-repositories).
 
 
 ### actions/list-environment-secrets
@@ -17624,7 +17624,7 @@ $client->operations()->teams()->getLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#get-a-team-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#get-a-team-legacy).
 
 
 ### teams/delete-legacy
@@ -17644,7 +17644,7 @@ $client->operations()->teams()->deleteLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#delete-a-team-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#delete-a-team-legacy).
 
 
 ### teams/update-legacy
@@ -17664,7 +17664,7 @@ $client->operations()->teams()->updateLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#update-a-team-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#update-a-team-legacy).
 
 
 ### teams/list-discussions-legacy
@@ -17690,7 +17690,7 @@ $client->operations()->teams()->listDiscussionsLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-discussions-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#list-discussions-legacy).
 
 
 ### teams/create-discussion-legacy
@@ -17710,7 +17710,7 @@ $client->operations()->teams()->createDiscussionLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#create-a-discussion-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#create-a-discussion-legacy).
 
 
 ### teams/get-discussion-legacy
@@ -17732,7 +17732,7 @@ $client->operations()->teams()->getDiscussionLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-a-discussion-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#get-a-discussion-legacy).
 
 
 ### teams/delete-discussion-legacy
@@ -17754,7 +17754,7 @@ $client->operations()->teams()->deleteDiscussionLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#delete-a-discussion-legacy).
 
 
 ### teams/update-discussion-legacy
@@ -17776,7 +17776,7 @@ $client->operations()->teams()->updateDiscussionLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussions#update-a-discussion-legacy).
 
 
 ### teams/list-discussion-comments-legacy
@@ -17804,7 +17804,7 @@ $client->operations()->teams()->listDiscussionCommentsLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-discussion-comments-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments-legacy).
 
 
 ### teams/create-discussion-comment-legacy
@@ -17826,7 +17826,7 @@ $client->operations()->teams()->createDiscussionCommentLegacy(        team_id: 7
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#create-a-discussion-comment-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment-legacy).
 
 
 ### teams/get-discussion-comment-legacy
@@ -17850,7 +17850,7 @@ $client->operations()->teams()->getDiscussionCommentLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-a-discussion-comment-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment-legacy).
 
 
 ### teams/delete-discussion-comment-legacy
@@ -17874,7 +17874,7 @@ $client->operations()->teams()->deleteDiscussionCommentLegacy(        team_id: 7
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion-comment-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment-legacy).
 
 
 ### teams/update-discussion-comment-legacy
@@ -17898,7 +17898,7 @@ $client->operations()->teams()->updateDiscussionCommentLegacy(        team_id: 7
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-comment-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment-legacy).
 
 
 ### reactions/list-for-team-discussion-comment-legacy
@@ -18026,7 +18026,7 @@ $client->operations()->teams()->listPendingInvitationsLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-pending-team-invitations-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#list-pending-team-invitations-legacy).
 
 
 ### teams/list-members-legacy
@@ -18052,7 +18052,7 @@ $client->operations()->teams()->listMembersLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-team-members-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#list-team-members-legacy).
 
 
 ### teams/get-member-legacy
@@ -18074,7 +18074,7 @@ $client->operations()->teams()->getMemberLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-team-member-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#get-team-member-legacy).
 
 
 ### teams/add-member-legacy
@@ -18096,7 +18096,7 @@ $client->operations()->teams()->addMemberLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#add-team-member-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#add-team-member-legacy).
 
 
 ### teams/remove-member-legacy
@@ -18118,7 +18118,7 @@ $client->operations()->teams()->removeMemberLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#remove-team-member-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#remove-team-member-legacy).
 
 
 ### teams/get-membership-for-user-legacy
@@ -18140,7 +18140,7 @@ $client->operations()->teams()->getMembershipForUserLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#get-team-membership-for-a-user-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user-legacy).
 
 
 ### teams/add-or-update-membership-for-user-legacy
@@ -18162,7 +18162,7 @@ $client->operations()->teams()->addOrUpdateMembershipForUserLegacy(        team_
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#add-or-update-team-membership-for-a-user-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user-legacy).
 
 
 ### teams/remove-membership-for-user-legacy
@@ -18184,7 +18184,7 @@ $client->operations()->teams()->removeMembershipForUserLegacy(        team_id: 7
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#remove-team-membership-for-a-user-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/members#remove-team-membership-for-a-user-legacy).
 
 
 ### teams/list-projects-legacy
@@ -18208,7 +18208,7 @@ $client->operations()->teams()->listProjectsLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#list-team-projects-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-team-projects-legacy).
 
 
 ### teams/check-permissions-for-project-legacy
@@ -18230,7 +18230,7 @@ $client->operations()->teams()->checkPermissionsForProjectLegacy(        team_id
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-project-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project-legacy).
 
 
 ### teams/add-or-update-project-permissions-legacy
@@ -18252,7 +18252,7 @@ $client->operations()->teams()->addOrUpdateProjectPermissionsLegacy(        team
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#add-or-update-team-project-permissions-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions-legacy).
 
 
 ### teams/remove-project-legacy
@@ -18274,7 +18274,7 @@ $client->operations()->teams()->removeProjectLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#remove-a-project-from-a-team-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team-legacy).
 
 
 ### teams/list-repos-legacy
@@ -18298,7 +18298,7 @@ $client->operations()->teams()->listReposLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#list-team-repositories-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-team-repositories-legacy).
 
 
 ### teams/check-permissions-for-repo-legacy
@@ -18322,7 +18322,7 @@ $client->operations()->teams()->checkPermissionsForRepoLegacy(        team_id: 7
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-repository-legacy).
 
 
 ### teams/add-or-update-repo-permissions-legacy
@@ -18346,7 +18346,7 @@ $client->operations()->teams()->addOrUpdateRepoPermissionsLegacy(        team_id
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#add-or-update-team-repository-permissions-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-repository-permissions-legacy).
 
 
 ### teams/remove-repo-legacy
@@ -18370,7 +18370,7 @@ $client->operations()->teams()->removeRepoLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team-legacy).
 
 
 ### teams/list-child-legacy
@@ -18394,7 +18394,7 @@ $client->operations()->teams()->listChildLegacy(        team_id: 7,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams/#list-child-teams-legacy).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-child-teams-legacy).
 
 
 ### users/get-authenticated
@@ -19211,7 +19211,7 @@ $client->operations()->apps()->listInstallationsForAuthenticatedUser(        per
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-app-installations-accessible-to-the-user-access-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token).
 
 
 ### apps/list-installation-repos-for-authenticated-user
@@ -19235,7 +19235,7 @@ $client->operations()->apps()->listInstallationReposForAuthenticatedUser(       
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-user-access-token).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#list-repositories-accessible-to-the-user-access-token).
 
 
 ### apps/add-repo-to-installation-for-authenticated-user
@@ -19257,7 +19257,7 @@ $client->operations()->apps()->addRepoToInstallationForAuthenticatedUser(       
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#add-a-repository-to-an-app-installation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#add-a-repository-to-an-app-installation).
 
 
 ### apps/remove-repo-from-installation-for-authenticated-user
@@ -19279,7 +19279,7 @@ $client->operations()->apps()->removeRepoFromInstallationForAuthenticatedUser(  
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#remove-a-repository-from-an-app-installation).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/installations#remove-a-repository-from-an-app-installation).
 
 
 ### interactions/get-restrictions-for-authenticated-user
@@ -19465,7 +19465,7 @@ $client->operations()->apps()->listSubscriptionsForAuthenticatedUser(        per
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-subscriptions-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user).
 
 
 ### apps/list-subscriptions-for-authenticated-user-stubbed
@@ -19487,7 +19487,7 @@ $client->operations()->apps()->listSubscriptionsForAuthenticatedUserStubbed(    
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#list-subscriptions-for-the-authenticated-user-stubbed).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user-stubbed).
 
 
 ### orgs/list-memberships-for-authenticated-user
@@ -19989,7 +19989,7 @@ $client->operations()->repos()->listForAuthenticatedUser(        direction: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repositories-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repositories-for-the-authenticated-user).
 
 
 ### repos/create-for-authenticated-user
@@ -20006,7 +20006,7 @@ Operations method:
 $client->operations()->repos()->createForAuthenticatedUser();
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
 
 
 ### repos/list-invitations-for-authenticated-user
@@ -20339,7 +20339,7 @@ $client->operations()->teams()->listForAuthenticatedUser(        per_page: 8,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/teams#list-teams-for-the-authenticated-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-teams-for-the-authenticated-user).
 
 
 ### users/list
@@ -20639,7 +20639,7 @@ $client->operations()->apps()->getUserInstallation(        username: 'generated'
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/apps#get-a-user-installation-for-the-authenticated-app).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-a-user-installation-for-the-authenticated-app).
 
 
 ### users/list-public-keys-for-user
@@ -20995,7 +20995,7 @@ $client->operations()->repos()->listForUser(        username: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reference/repos#list-repositories-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repositories-for-a-user).
 
 
 ### billing/get-github-actions-billing-user

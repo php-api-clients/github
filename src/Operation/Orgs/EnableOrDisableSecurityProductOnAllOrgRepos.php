@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation\Orgs;
 
+use ApiClients\Client\GitHub\Schema;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
 
+use function json_encode;
 use function str_replace;
 
 final class EnableOrDisableSecurityProductOnAllOrgRepos
@@ -27,16 +31,18 @@ final class EnableOrDisableSecurityProductOnAllOrgRepos
     `disable_all` means to disable the specified security feature for all repositories in the organization. **/
     private string $enablement;
 
-    public function __construct(string $org, string $securityProduct, string $enablement)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, string $org, string $securityProduct, string $enablement)
     {
         $this->org             = $org;
         $this->securityProduct = $securityProduct;
         $this->enablement      = $enablement;
     }
 
-    public function createRequest(): RequestInterface
+    public function createRequest(array $data): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{security_product}', '{enablement}'], [$this->org, $this->securityProduct, $this->enablement], self::PATH));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+        return new Request(self::METHOD, str_replace(['{org}', '{security_product}', '{enablement}'], [$this->org, $this->securityProduct, $this->enablement], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return array{code: int} */

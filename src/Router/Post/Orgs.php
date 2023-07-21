@@ -189,9 +189,9 @@ final class Orgs
 
         $arguments['enablement'] = $params['enablement'];
         unset($params['enablement']);
-        $operator = new Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->browser, $this->authentication);
+        $operator = new Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->browser, $this->authentication, $this->requestSchemaValidator);
 
-        return $operator->call($arguments['org'], $arguments['security_product'], $arguments['enablement']);
+        return $operator->call($arguments['org'], $arguments['security_product'], $arguments['enablement'], $params);
     }
 
     public function redeliverWebhookDelivery(array $params)

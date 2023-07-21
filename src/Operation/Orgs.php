@@ -462,13 +462,13 @@ final class Orgs
         return $this->operator[Operator\Orgs\RemoveSecurityManagerTeam::class]->call($org, $teamSlug);
     }
 
-    public function enableOrDisableSecurityProductOnAllOrgRepos(string $org, string $securityProduct, string $enablement): PromiseInterface
+    public function enableOrDisableSecurityProductOnAllOrgRepos(string $org, string $securityProduct, string $enablement, array $params): PromiseInterface
     {
         if (array_key_exists(Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos::class, $this->operator) === false) {
-            $this->operator[Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos::class] = new Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityProduct🌀Enablement());
+            $this->operator[Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos::class] = new Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityProduct🌀Enablement());
         }
 
-        return $this->operator[Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos::class]->call($org, $securityProduct, $enablement);
+        return $this->operator[Operator\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos::class]->call($org, $securityProduct, $enablement, $params);
     }
 
     public function listMembershipsForAuthenticatedUser(string $state, int $perPage, int $page): PromiseInterface
