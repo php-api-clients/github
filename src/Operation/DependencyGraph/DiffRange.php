@@ -62,7 +62,7 @@ final class DiffRange
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
-                     * Forbidden
+                     * Response if GitHub Advanced Security is not enabled for this repository
                      **/
 
                     case 403:

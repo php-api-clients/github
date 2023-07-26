@@ -208,6 +208,78 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['ruleset_id']);
     }
 
+    public function listActivities(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
+        if (array_key_exists('actor', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: actor');
+        }
+
+        $arguments['actor'] = $params['actor'];
+        unset($params['actor']);
+        if (array_key_exists('time_period', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: time_period');
+        }
+
+        $arguments['time_period'] = $params['time_period'];
+        unset($params['time_period']);
+        if (array_key_exists('activity_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: activity_type');
+        }
+
+        $arguments['activity_type'] = $params['activity_type'];
+        unset($params['activity_type']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Activity::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Activity::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Activity();
+        }
+
+        $operator = new Operator\Repos\ListActivities($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Activity::class]);
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['ref'], $arguments['actor'], $arguments['time_period'], $arguments['activity_type'], $arguments['direction'], $arguments['per_page']);
+    }
+
     public function listAutolinks(array $params)
     {
         $arguments = [];

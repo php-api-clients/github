@@ -250,6 +250,7 @@ final class Hydrators implements ObjectMapper
     private Hydrator\Operation\Repos\Owner\Repo\Actions\Workflows\WorkflowId\Enable|null $operation🌀Repos🌀Owner🌀Repo🌀Actions🌀Workflows🌀WorkflowId🌀Enable                                                                                         = null;
     private Hydrator\Operation\Repos\Owner\Repo\Actions\Workflows\WorkflowId\Runs|null $operation🌀Repos🌀Owner🌀Repo🌀Actions🌀Workflows🌀WorkflowId🌀Runs                                                                                             = null;
     private Hydrator\Operation\Repos\Owner\Repo\Actions\Workflows\WorkflowId\Timing|null $operation🌀Repos🌀Owner🌀Repo🌀Actions🌀Workflows🌀WorkflowId🌀Timing                                                                                         = null;
+    private Hydrator\Operation\Repos\Owner\Repo\Activity|null $operation🌀Repos🌀Owner🌀Repo🌀Activity                                                                                                                                               = null;
     private Hydrator\Operation\Repos\Owner\Repo\Assignees|null $operation🌀Repos🌀Owner🌀Repo🌀Assignees                                                                                                                                             = null;
     private Hydrator\Operation\Repos\Owner\Repo\Assignees\Assignee|null $operation🌀Repos🌀Owner🌀Repo🌀Assignees🌀Assignee                                                                                                                           = null;
     private Hydrator\Operation\Repos\Owner\Repo\Autolinks|null $operation🌀Repos🌀Owner🌀Repo🌀Autolinks                                                                                                                                             = null;
@@ -3264,6 +3265,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Repos🌀Owner🌀Repo🌀Actions🌀Workflows🌀WorkflowId🌀Timing;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Activity(): Hydrator\Operation\Repos\Owner\Repo\Activity
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀Activity instanceof Hydrator\Operation\Repos\Owner\Repo\Activity === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀Activity = new Hydrator\Operation\Repos\Owner\Repo\Activity();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀Activity;
     }
 
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Assignees(): Hydrator\Operation\Repos\Owner\Repo\Assignees

@@ -343,7 +343,15 @@ final class Five
             } elseif ($pathChunks[1] === 'repos') {
                 if ($pathChunks[2] === '{owner}') {
                     if ($pathChunks[3] === '{repo}') {
-                        if ($pathChunks[4] === 'assignees') {
+                        if ($pathChunks[4] === 'activity') {
+                            if ($call === 'GET /repos/{owner}/{repo}/activity') {
+                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Get\Repos::class]->listActivities($params);
+                            }
+                        } elseif ($pathChunks[4] === 'assignees') {
                             if ($call === 'GET /repos/{owner}/{repo}/assignees') {
                                 if (array_key_exists(Router\Get\Issues::class, $this->router) === false) {
                                     $this->router[Router\Get\Issues::class] = new Router\Get\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);

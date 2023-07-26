@@ -111,6 +111,15 @@ final class Repos
         return $this->operator[Operator\Repos\Update::class]->call($owner, $repo, $params);
     }
 
+    public function listActivities(string $owner, string $repo, string $before, string $after, string $ref, string $actor, string $timePeriod, string $activityType, string $direction, int $perPage): PromiseInterface
+    {
+        if (array_key_exists(Operator\Repos\ListActivities::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListActivities::class] = new Operator\Repos\ListActivities($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Activity());
+        }
+
+        return $this->operator[Operator\Repos\ListActivities::class]->call($owner, $repo, $before, $after, $ref, $actor, $timePeriod, $activityType, $direction, $perPage);
+    }
+
     public function listAutolinks(string $owner, string $repo, int $page): PromiseInterface
     {
         if (array_key_exists(Operator\Repos\ListAutolinks::class, $this->operator) === false) {
