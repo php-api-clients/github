@@ -24,6 +24,48 @@ final class Teams
     {
     }
 
+    public function getLegacy(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('team_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_id');
+        }
+
+        $arguments['team_id'] = $params['team_id'];
+        unset($params['team_id']);
+        if (array_key_exists(Hydrator\Operation\Teams\TeamId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Teams\TeamId::class] = $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId();
+        }
+
+        $operator = new Operator\Teams\GetLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId::class]);
+
+        return $operator->call($arguments['team_id']);
+    }
+
+    public function listForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Teams::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Teams::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Teams();
+        }
+
+        $operator = new Operator\Teams\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Teams::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
     public function list_(array $params)
     {
         $arguments = [];
@@ -352,48 +394,6 @@ final class Teams
         $operator = new Operator\Teams\CheckPermissionsForProjectLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId\Projects\ProjectId::class]);
 
         return $operator->call($arguments['team_id'], $arguments['project_id']);
-    }
-
-    public function getLegacy(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('team_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: team_id');
-        }
-
-        $arguments['team_id'] = $params['team_id'];
-        unset($params['team_id']);
-        if (array_key_exists(Hydrator\Operation\Teams\TeamId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Teams\TeamId::class] = $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId();
-        }
-
-        $operator = new Operator\Teams\GetLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId::class]);
-
-        return $operator->call($arguments['team_id']);
-    }
-
-    public function listForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Teams::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Teams::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Teams();
-        }
-
-        $operator = new Operator\Teams\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Teams::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function listDiscussionsInOrg(array $params)

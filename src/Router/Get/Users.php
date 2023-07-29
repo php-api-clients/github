@@ -55,6 +55,240 @@ final class Users
         return $operator->call($arguments['since'], $arguments['per_page']);
     }
 
+    public function listBlockedByAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Blocks::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Blocks::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Blocks();
+        }
+
+        $operator = new Operator\Users\ListBlockedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Blocks::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listEmailsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Emails::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Emails::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Emails();
+        }
+
+        $operator = new Operator\Users\ListEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Emails::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listFollowersForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Followers::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Followers::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Followers();
+        }
+
+        $operator = new Operator\Users\ListFollowersForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Followers::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listFollowedByAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Following::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Following::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Following();
+        }
+
+        $operator = new Operator\Users\ListFollowedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Following::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listGpgKeysForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\GpgKeys::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\GpgKeys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys();
+        }
+
+        $operator = new Operator\Users\ListGpgKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\GpgKeys::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPublicSshKeysForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Keys::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Keys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Keys();
+        }
+
+        $operator = new Operator\Users\ListPublicSshKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Keys::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPublicEmailsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\PublicEmails::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\PublicEmails::class] = $this->hydrators->getObjectMapperOperation🌀User🌀PublicEmails();
+        }
+
+        $operator = new Operator\Users\ListPublicEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\PublicEmails::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listSocialAccountsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\SocialAccounts::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\SocialAccounts::class] = $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts();
+        }
+
+        $operator = new Operator\Users\ListSocialAccountsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\SocialAccounts::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listSshSigningKeysForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\SshSigningKeys::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\SshSigningKeys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys();
+        }
+
+        $operator = new Operator\Users\ListSshSigningKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\SshSigningKeys::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function getByUsername(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('username', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: username');
+        }
+
+        $arguments['username'] = $params['username'];
+        unset($params['username']);
+        if (array_key_exists(Hydrator\Operation\Users\Username::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Users\Username::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀Username();
+        }
+
+        $operator = new Operator\Users\GetByUsername($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\Username::class]);
+
+        return $operator->call($arguments['username']);
+    }
+
     public function checkBlocked(array $params)
     {
         $arguments = [];
@@ -349,239 +583,5 @@ final class Users
         $operator = new Operator\Users\CheckFollowingForUser($this->browser, $this->authentication);
 
         return $operator->call($arguments['username'], $arguments['target_user']);
-    }
-
-    public function listBlockedByAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Blocks::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Blocks::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Blocks();
-        }
-
-        $operator = new Operator\Users\ListBlockedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Blocks::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listEmailsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Emails::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Emails::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Emails();
-        }
-
-        $operator = new Operator\Users\ListEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Emails::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listFollowersForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Followers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Followers::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Followers();
-        }
-
-        $operator = new Operator\Users\ListFollowersForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Followers::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listFollowedByAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Following::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Following::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Following();
-        }
-
-        $operator = new Operator\Users\ListFollowedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Following::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listGpgKeysForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\GpgKeys::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\GpgKeys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys();
-        }
-
-        $operator = new Operator\Users\ListGpgKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\GpgKeys::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listPublicSshKeysForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Keys::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Keys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Keys();
-        }
-
-        $operator = new Operator\Users\ListPublicSshKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Keys::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listPublicEmailsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\PublicEmails::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\PublicEmails::class] = $this->hydrators->getObjectMapperOperation🌀User🌀PublicEmails();
-        }
-
-        $operator = new Operator\Users\ListPublicEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\PublicEmails::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listSocialAccountsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\SocialAccounts::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\SocialAccounts::class] = $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts();
-        }
-
-        $operator = new Operator\Users\ListSocialAccountsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\SocialAccounts::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listSshSigningKeysForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\SshSigningKeys::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\SshSigningKeys::class] = $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys();
-        }
-
-        $operator = new Operator\Users\ListSshSigningKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\SshSigningKeys::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function getByUsername(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('username', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: username');
-        }
-
-        $arguments['username'] = $params['username'];
-        unset($params['username']);
-        if (array_key_exists(Hydrator\Operation\Users\Username::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Users\Username::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀Username();
-        }
-
-        $operator = new Operator\Users\GetByUsername($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\Username::class]);
-
-        return $operator->call($arguments['username']);
     }
 }

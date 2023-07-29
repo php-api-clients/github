@@ -35,6 +35,176 @@ final class Apps
         return $operator->call();
     }
 
+    public function listInstallationRequestsForAuthenticatedApp(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\App\InstallationRequests::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\App\InstallationRequests::class] = $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests();
+        }
+
+        $operator = new Operator\Apps\ListInstallationRequestsForAuthenticatedApp($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\InstallationRequests::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listInstallations(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('outdated', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: outdated');
+        }
+
+        $arguments['outdated'] = $params['outdated'];
+        unset($params['outdated']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Operator\Apps\ListInstallations($this->browser, $this->authentication);
+
+        return $operator->call($arguments['since'], $arguments['outdated'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function getBySlug(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('app_slug', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: app_slug');
+        }
+
+        $arguments['app_slug'] = $params['app_slug'];
+        unset($params['app_slug']);
+        if (array_key_exists(Hydrator\Operation\Apps\AppSlug::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Apps\AppSlug::class] = $this->hydrators->getObjectMapperOperation🌀Apps🌀AppSlug();
+        }
+
+        $operator = new Operator\Apps\GetBySlug($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Apps\AppSlug::class]);
+
+        return $operator->call($arguments['app_slug']);
+    }
+
+    public function listReposAccessibleToInstallation(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\Installation\Repositories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Installation\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Installation🌀Repositories();
+        }
+
+        $operator = new Operator\Apps\ListReposAccessibleToInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Installation\Repositories::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listPlans(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Plans::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans();
+        }
+
+        $operator = new Operator\Apps\ListPlans($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listInstallationsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Installations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Installations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Installations();
+        }
+
+        $operator = new Operator\Apps\ListInstallationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Installations::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
+    public function listSubscriptionsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\MarketplacePurchases::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class] = $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases();
+        }
+
+        $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
     public function getWebhookConfigForApp(array $params)
     {
         if (array_key_exists(Hydrator\Operation\App\Hook\Config::class, $this->hydrator) === false) {
@@ -326,176 +496,6 @@ final class Apps
         $operator = new Operator\Apps\ListInstallationReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Installations\InstallationId\Repositories::class]);
 
         return $operator->call($arguments['installation_id'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listInstallationRequestsForAuthenticatedApp(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\App\InstallationRequests::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\App\InstallationRequests::class] = $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests();
-        }
-
-        $operator = new Operator\Apps\ListInstallationRequestsForAuthenticatedApp($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\InstallationRequests::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listInstallations(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('outdated', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: outdated');
-        }
-
-        $arguments['outdated'] = $params['outdated'];
-        unset($params['outdated']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $operator = new Operator\Apps\ListInstallations($this->browser, $this->authentication);
-
-        return $operator->call($arguments['since'], $arguments['outdated'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function getBySlug(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('app_slug', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: app_slug');
-        }
-
-        $arguments['app_slug'] = $params['app_slug'];
-        unset($params['app_slug']);
-        if (array_key_exists(Hydrator\Operation\Apps\AppSlug::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Apps\AppSlug::class] = $this->hydrators->getObjectMapperOperation🌀Apps🌀AppSlug();
-        }
-
-        $operator = new Operator\Apps\GetBySlug($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Apps\AppSlug::class]);
-
-        return $operator->call($arguments['app_slug']);
-    }
-
-    public function listReposAccessibleToInstallation(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Installation\Repositories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Installation\Repositories::class] = $this->hydrators->getObjectMapperOperation🌀Installation🌀Repositories();
-        }
-
-        $operator = new Operator\Apps\ListReposAccessibleToInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Installation\Repositories::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listPlans(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Plans::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans();
-        }
-
-        $operator = new Operator\Apps\ListPlans($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listInstallationsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Installations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Installations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Installations();
-        }
-
-        $operator = new Operator\Apps\ListInstallationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Installations::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
-    }
-
-    public function listSubscriptionsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\MarketplacePurchases::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class] = $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases();
-        }
-
-        $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function listAccountsForPlanStubbed(array $params)

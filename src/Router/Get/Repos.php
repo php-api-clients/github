@@ -42,6 +42,96 @@ final class Repos
         return $operator->call($arguments['since']);
     }
 
+    public function listForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('visibility', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: visibility');
+        }
+
+        $arguments['visibility'] = $params['visibility'];
+        unset($params['visibility']);
+        if (array_key_exists('affiliation', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: affiliation');
+        }
+
+        $arguments['affiliation'] = $params['affiliation'];
+        unset($params['affiliation']);
+        if (array_key_exists('type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: type');
+        }
+
+        $arguments['type'] = $params['type'];
+        unset($params['type']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Repos::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Repos::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Repos();
+        }
+
+        $operator = new Operator\Repos\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Repos::class]);
+
+        return $operator->call($arguments['direction'], $arguments['since'], $arguments['before'], $arguments['visibility'], $arguments['affiliation'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listInvitationsForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\RepositoryInvitations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\RepositoryInvitations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations();
+        }
+
+        $operator = new Operator\Repos\ListInvitationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\RepositoryInvitations::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
     public function listForOrg(array $params)
     {
         $arguments = [];
@@ -1078,96 +1168,6 @@ final class Repos
         $operator = new Operator\Repos\CheckVulnerabilityAlerts($this->browser, $this->authentication);
 
         return $operator->call($arguments['owner'], $arguments['repo']);
-    }
-
-    public function listForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('before', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: before');
-        }
-
-        $arguments['before'] = $params['before'];
-        unset($params['before']);
-        if (array_key_exists('visibility', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: visibility');
-        }
-
-        $arguments['visibility'] = $params['visibility'];
-        unset($params['visibility']);
-        if (array_key_exists('affiliation', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: affiliation');
-        }
-
-        $arguments['affiliation'] = $params['affiliation'];
-        unset($params['affiliation']);
-        if (array_key_exists('type', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: type');
-        }
-
-        $arguments['type'] = $params['type'];
-        unset($params['type']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Repos::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Repos::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Repos();
-        }
-
-        $operator = new Operator\Repos\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Repos::class]);
-
-        return $operator->call($arguments['direction'], $arguments['since'], $arguments['before'], $arguments['visibility'], $arguments['affiliation'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listInvitationsForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\RepositoryInvitations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\RepositoryInvitations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations();
-        }
-
-        $operator = new Operator\Repos\ListInvitationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\RepositoryInvitations::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function getAutolink(array $params)

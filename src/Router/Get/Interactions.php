@@ -23,6 +23,13 @@ final class Interactions
     {
     }
 
+    public function getRestrictionsForAuthenticatedUser(array $params)
+    {
+        $operator = new Operator\Interactions\GetRestrictionsForAuthenticatedUser($this->browser, $this->authentication);
+
+        return $operator->call();
+    }
+
     public function getRestrictionsForOrg(array $params)
     {
         $arguments = [];
@@ -55,12 +62,5 @@ final class Interactions
         $operator = new Operator\Interactions\GetRestrictionsForRepo($this->browser, $this->authentication);
 
         return $operator->call($arguments['owner'], $arguments['repo']);
-    }
-
-    public function getRestrictionsForAuthenticatedUser(array $params)
-    {
-        $operator = new Operator\Interactions\GetRestrictionsForAuthenticatedUser($this->browser, $this->authentication);
-
-        return $operator->call();
     }
 }

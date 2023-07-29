@@ -19,6 +19,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Meta($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
     }
 
+    public function securityAdvisories(): Operation\SecurityAdvisories
+    {
+        return new Operation\SecurityAdvisories($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
+    }
+
     public function apps(): Operation\Apps
     {
         return new Operation\Apps($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
@@ -167,11 +172,6 @@ final readonly class Operations implements OperationsInterface
     public function pulls(): Operation\Pulls
     {
         return new Operation\Pulls($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
-    }
-
-    public function securityAdvisories(): Operation\SecurityAdvisories
-    {
-        return new Operation\SecurityAdvisories($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators);
     }
 
     public function search(): Operation\Search

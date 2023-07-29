@@ -24,7 +24,7 @@ final class Codespaces
     {
     }
 
-    public function setCodespacesBilling(array $params)
+    public function setCodespacesAccess(array $params)
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -33,11 +33,11 @@ final class Codespaces
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Billing::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Access::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access();
         }
 
-        $operator = new Operator\Codespaces\SetCodespacesBilling($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing::class]);
+        $operator = new Operator\Codespaces\SetCodespacesAccess($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access::class]);
 
         return $operator->call($arguments['org'], $params);
     }

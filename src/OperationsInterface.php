@@ -8,6 +8,8 @@ interface OperationsInterface
 {
     public function meta(): Operation\Meta;
 
+    public function securityAdvisories(): Operation\SecurityAdvisories;
+
     public function apps(): Operation\Apps;
 
     public function codesOfConduct(): Operation\CodesOfConduct;
@@ -67,8 +69,6 @@ interface OperationsInterface
     public function git(): Operation\Git;
 
     public function pulls(): Operation\Pulls;
-
-    public function securityAdvisories(): Operation\SecurityAdvisories;
 
     public function search(): Operation\Search;
 

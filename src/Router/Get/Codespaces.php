@@ -24,6 +24,36 @@ final class Codespaces
     {
     }
 
+    public function listForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('repository_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        }
+
+        $arguments['repository_id'] = $params['repository_id'];
+        unset($params['repository_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Codespaces::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces();
+        }
+
+        $operator = new Operator\Codespaces\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces::class]);
+
+        return $operator->call($arguments['repository_id'], $arguments['per_page'], $arguments['page']);
+    }
+
     public function listInOrganization(array $params)
     {
         $arguments = [];
@@ -207,36 +237,6 @@ final class Codespaces
         $operator = new Operator\Codespaces\CodespaceMachinesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Machines::class]);
 
         return $operator->call($arguments['codespace_name']);
-    }
-
-    public function listForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces();
-        }
-
-        $operator = new Operator\Codespaces\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces::class]);
-
-        return $operator->call($arguments['repository_id'], $arguments['per_page'], $arguments['page']);
     }
 
     public function getOrgPublicKey(array $params)

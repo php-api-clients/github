@@ -24,6 +24,30 @@ final class Migrations
     {
     }
 
+    public function listForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Migrations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Migrations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Migrations();
+        }
+
+        $operator = new Operator\Migrations\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Migrations::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
     public function listForOrg(array $params)
     {
         $arguments = [];
@@ -180,30 +204,6 @@ final class Migrations
         $operator = new Operator\Migrations\ListReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Migrations\MigrationId\Repositories::class]);
 
         return $operator->call($arguments['migration_id'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Migrations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Migrations::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Migrations();
-        }
-
-        $operator = new Operator\Migrations\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Migrations::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function downloadArchiveForOrg(array $params)

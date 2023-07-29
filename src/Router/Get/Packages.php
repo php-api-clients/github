@@ -24,6 +24,38 @@ final class Packages
     {
     }
 
+    public function listPackagesForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('package_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: package_type');
+        }
+
+        $arguments['package_type'] = $params['package_type'];
+        unset($params['package_type']);
+        if (array_key_exists('visibility', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: visibility');
+        }
+
+        $arguments['visibility'] = $params['visibility'];
+        unset($params['visibility']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $operator = new Operator\Packages\ListPackagesForAuthenticatedUser($this->browser, $this->authentication);
+
+        return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
+    }
+
     public function listPackagesForOrganization(array $params)
     {
         $arguments = [];
@@ -173,38 +205,6 @@ final class Packages
         $operator = new Operator\Packages\ListDockerMigrationConflictingPackagesForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\Username\Docker\Conflicts::class]);
 
         return $operator->call($arguments['username']);
-    }
-
-    public function listPackagesForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('package_type', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: package_type');
-        }
-
-        $arguments['package_type'] = $params['package_type'];
-        unset($params['package_type']);
-        if (array_key_exists('visibility', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: visibility');
-        }
-
-        $arguments['visibility'] = $params['visibility'];
-        unset($params['visibility']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        $operator = new Operator\Packages\ListPackagesForAuthenticatedUser($this->browser, $this->authentication);
-
-        return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
     public function getPackageForOrganization(array $params)

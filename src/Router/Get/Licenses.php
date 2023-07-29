@@ -50,6 +50,24 @@ final class Licenses
         return $operator->call($arguments['featured'], $arguments['per_page'], $arguments['page']);
     }
 
+    public function get(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('license', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: license');
+        }
+
+        $arguments['license'] = $params['license'];
+        unset($params['license']);
+        if (array_key_exists(Hydrator\Operation\Licenses\License::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Licenses\License::class] = $this->hydrators->getObjectMapperOperation🌀Licenses🌀License();
+        }
+
+        $operator = new Operator\Licenses\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Licenses\License::class]);
+
+        return $operator->call($arguments['license']);
+    }
+
     public function getForRepo(array $params)
     {
         $arguments = [];
@@ -72,23 +90,5 @@ final class Licenses
         $operator = new Operator\Licenses\GetForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\License::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo']);
-    }
-
-    public function get(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('license', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: license');
-        }
-
-        $arguments['license'] = $params['license'];
-        unset($params['license']);
-        if (array_key_exists(Hydrator\Operation\Licenses\License::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Licenses\License::class] = $this->hydrators->getObjectMapperOperation🌀Licenses🌀License();
-        }
-
-        $operator = new Operator\Licenses\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Licenses\License::class]);
-
-        return $operator->call($arguments['license']);
     }
 }

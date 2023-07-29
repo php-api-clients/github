@@ -24,6 +24,24 @@ final class Projects
     {
     }
 
+    public function get(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('project_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: project_id');
+        }
+
+        $arguments['project_id'] = $params['project_id'];
+        unset($params['project_id']);
+        if (array_key_exists(Hydrator\Operation\Projects\ProjectId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Projects\ProjectId::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId();
+        }
+
+        $operator = new Operator\Projects\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\ProjectId::class]);
+
+        return $operator->call($arguments['project_id']);
+    }
+
     public function listForOrg(array $params)
     {
         $arguments = [];
@@ -274,24 +292,6 @@ final class Projects
         $operator = new Operator\Projects\ListForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Projects::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function get(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('project_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: project_id');
-        }
-
-        $arguments['project_id'] = $params['project_id'];
-        unset($params['project_id']);
-        if (array_key_exists(Hydrator\Operation\Projects\ProjectId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Projects\ProjectId::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId();
-        }
-
-        $operator = new Operator\Projects\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\ProjectId::class]);
-
-        return $operator->call($arguments['project_id']);
     }
 
     public function getPermissionForUser(array $params)

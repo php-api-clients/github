@@ -24,7 +24,7 @@ final class Codespaces
     {
     }
 
-    public function setCodespacesBillingUsers(array $params)
+    public function setCodespacesAccessUsers(array $params)
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -33,11 +33,11 @@ final class Codespaces
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers();
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers();
         }
 
-        $operator = new Operator\Codespaces\SetCodespacesBillingUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers::class]);
+        $operator = new Operator\Codespaces\SetCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class]);
 
         return $operator->call($arguments['org'], $params);
     }

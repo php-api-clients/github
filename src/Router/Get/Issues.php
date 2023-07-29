@@ -108,6 +108,66 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['collab'], $arguments['orgs'], $arguments['owned'], $arguments['pulls'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
+    public function listForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('labels', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: labels');
+        }
+
+        $arguments['labels'] = $params['labels'];
+        unset($params['labels']);
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('filter', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: filter');
+        }
+
+        $arguments['filter'] = $params['filter'];
+        unset($params['filter']);
+        if (array_key_exists('state', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: state');
+        }
+
+        $arguments['state'] = $params['state'];
+        unset($params['state']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Issues::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Issues::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Issues();
+        }
+
+        $operator = new Operator\Issues\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Issues::class]);
+
+        return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
+    }
+
     public function listForOrg(array $params)
     {
         $arguments = [];
@@ -388,66 +448,6 @@ final class Issues
         $operator = new Operator\Issues\ListMilestones($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Milestones::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('labels', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: labels');
-        }
-
-        $arguments['labels'] = $params['labels'];
-        unset($params['labels']);
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('filter', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: filter');
-        }
-
-        $arguments['filter'] = $params['filter'];
-        unset($params['filter']);
-        if (array_key_exists('state', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: state');
-        }
-
-        $arguments['state'] = $params['state'];
-        unset($params['state']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Issues::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Issues::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Issues();
-        }
-
-        $operator = new Operator\Issues\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Issues::class]);
-
-        return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
     public function checkUserCanBeAssigned(array $params)

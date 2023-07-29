@@ -59,14 +59,14 @@ final class Six
                             }
                         }
                     } elseif ($pathChunks[3] === 'codespaces') {
-                        if ($pathChunks[4] === 'billing') {
+                        if ($pathChunks[4] === 'access') {
                             if ($pathChunks[5] === 'selected_users') {
-                                if ($call === 'DELETE /orgs/{org}/codespaces/billing/selected_users') {
+                                if ($call === 'DELETE /orgs/{org}/codespaces/access/selected_users') {
                                     if (array_key_exists(Router\Delete\Codespaces::class, $this->router) === false) {
                                         $this->router[Router\Delete\Codespaces::class] = new Router\Delete\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Delete\Codespaces::class]->deleteCodespacesBillingUsers($params);
+                                    return $this->router[Router\Delete\Codespaces::class]->deleteCodespacesAccessUsers($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'secrets') {

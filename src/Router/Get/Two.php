@@ -24,7 +24,15 @@ final class Two
     public function call(string $call, array $params, array $pathChunks)
     {
         if ($pathChunks[0] === '') {
-            if ($pathChunks[1] === 'app') {
+            if ($pathChunks[1] === 'advisories') {
+                if ($call === 'GET /advisories') {
+                    if (array_key_exists(Router\Get\SecurityAdvisories::class, $this->router) === false) {
+                        $this->router[Router\Get\SecurityAdvisories::class] = new Router\Get\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                    }
+
+                    return $this->router[Router\Get\SecurityAdvisories::class]->listGlobalAdvisories($params);
+                }
+            } elseif ($pathChunks[1] === 'app') {
                 if ($call === 'GET /app') {
                     if (array_key_exists(Router\Get\Apps::class, $this->router) === false) {
                         $this->router[Router\Get\Apps::class] = new Router\Get\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);

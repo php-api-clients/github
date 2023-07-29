@@ -75,13 +75,13 @@ final class Five
                             }
                         }
                     } elseif ($pathChunks[3] === 'codespaces') {
-                        if ($pathChunks[4] === 'billing') {
-                            if ($call === 'PUT /orgs/{org}/codespaces/billing') {
+                        if ($pathChunks[4] === 'access') {
+                            if ($call === 'PUT /orgs/{org}/codespaces/access') {
                                 if (array_key_exists(Router\Put\Codespaces::class, $this->router) === false) {
                                     $this->router[Router\Put\Codespaces::class] = new Router\Put\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Codespaces::class]->setCodespacesBilling($params);
+                                return $this->router[Router\Put\Codespaces::class]->setCodespacesAccess($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'memberships') {

@@ -21,6 +21,24 @@ final class SecurityAdvisories
     {
     }
 
+    public function listGlobalAdvisories(string $ghsaId, string $cveId, string $ecosystem, string $severity, mixed $cwes, bool $isWithdrawn, mixed $affects, string $published, string $updated, string $modified, string $before, string $after, string $type, string $direction, int $perPage, string $sort): PromiseInterface
+    {
+        if (array_key_exists(Operator\SecurityAdvisories\ListGlobalAdvisories::class, $this->operator) === false) {
+            $this->operator[Operator\SecurityAdvisories\ListGlobalAdvisories::class] = new Operator\SecurityAdvisories\ListGlobalAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories());
+        }
+
+        return $this->operator[Operator\SecurityAdvisories\ListGlobalAdvisories::class]->call($ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $before, $after, $type, $direction, $perPage, $sort);
+    }
+
+    public function getGlobalAdvisory(string $ghsaId): PromiseInterface
+    {
+        if (array_key_exists(Operator\SecurityAdvisories\GetGlobalAdvisory::class, $this->operator) === false) {
+            $this->operator[Operator\SecurityAdvisories\GetGlobalAdvisory::class] = new Operator\SecurityAdvisories\GetGlobalAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories🌀GhsaId());
+        }
+
+        return $this->operator[Operator\SecurityAdvisories\GetGlobalAdvisory::class]->call($ghsaId);
+    }
+
     public function listRepositoryAdvisories(string $owner, string $repo, string $before, string $after, string $state, string $direction, string $sort, int $perPage): PromiseInterface
     {
         if (array_key_exists(Operator\SecurityAdvisories\ListRepositoryAdvisories::class, $this->operator) === false) {

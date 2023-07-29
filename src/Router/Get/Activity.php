@@ -107,6 +107,66 @@ final class Activity
         return $operator->call($arguments['since'], $arguments['before'], $arguments['all'], $arguments['participating'], $arguments['page'], $arguments['per_page']);
     }
 
+    public function listReposStarredByAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Starred::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Starred::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Starred();
+        }
+
+        $operator = new Operator\Activity\ListReposStarredByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Starred::class]);
+
+        return $operator->call($arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listWatchedReposForAuthenticatedUser(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\User\Subscriptions::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Subscriptions::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Subscriptions();
+        }
+
+        $operator = new Operator\Activity\ListWatchedReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Subscriptions::class]);
+
+        return $operator->call($arguments['per_page'], $arguments['page']);
+    }
+
     public function getThread(array $params)
     {
         $arguments = [];
@@ -575,66 +635,6 @@ final class Activity
         $operator = new Operator\Activity\ListReceivedPublicEventsForUser($this->browser, $this->authentication);
 
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listReposStarredByAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Starred::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Starred::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Starred();
-        }
-
-        $operator = new Operator\Activity\ListReposStarredByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Starred::class]);
-
-        return $operator->call($arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listWatchedReposForAuthenticatedUser(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\Subscriptions::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Subscriptions::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Subscriptions();
-        }
-
-        $operator = new Operator\Activity\ListWatchedReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Subscriptions::class]);
-
-        return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
     public function listOrgEventsForAuthenticatedUser(array $params)

@@ -30,31 +30,31 @@ final class Codespaces
         return $this->operator[Operator\Codespaces\ListInOrganization::class]->call($org, $perPage, $page);
     }
 
-    public function setCodespacesBilling(string $org, array $params): PromiseInterface
+    public function setCodespacesAccess(string $org, array $params): PromiseInterface
     {
-        if (array_key_exists(Operator\Codespaces\SetCodespacesBilling::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetCodespacesBilling::class] = new Operator\Codespaces\SetCodespacesBilling($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing());
+        if (array_key_exists(Operator\Codespaces\SetCodespacesAccess::class, $this->operator) === false) {
+            $this->operator[Operator\Codespaces\SetCodespacesAccess::class] = new Operator\Codespaces\SetCodespacesAccess($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access());
         }
 
-        return $this->operator[Operator\Codespaces\SetCodespacesBilling::class]->call($org, $params);
+        return $this->operator[Operator\Codespaces\SetCodespacesAccess::class]->call($org, $params);
     }
 
-    public function setCodespacesBillingUsers(string $org, array $params): PromiseInterface
+    public function setCodespacesAccessUsers(string $org, array $params): PromiseInterface
     {
-        if (array_key_exists(Operator\Codespaces\SetCodespacesBillingUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetCodespacesBillingUsers::class] = new Operator\Codespaces\SetCodespacesBillingUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers());
+        if (array_key_exists(Operator\Codespaces\SetCodespacesAccessUsers::class, $this->operator) === false) {
+            $this->operator[Operator\Codespaces\SetCodespacesAccessUsers::class] = new Operator\Codespaces\SetCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
         }
 
-        return $this->operator[Operator\Codespaces\SetCodespacesBillingUsers::class]->call($org, $params);
+        return $this->operator[Operator\Codespaces\SetCodespacesAccessUsers::class]->call($org, $params);
     }
 
-    public function deleteCodespacesBillingUsers(string $org, array $params): PromiseInterface
+    public function deleteCodespacesAccessUsers(string $org, array $params): PromiseInterface
     {
-        if (array_key_exists(Operator\Codespaces\DeleteCodespacesBillingUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteCodespacesBillingUsers::class] = new Operator\Codespaces\DeleteCodespacesBillingUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers());
+        if (array_key_exists(Operator\Codespaces\DeleteCodespacesAccessUsers::class, $this->operator) === false) {
+            $this->operator[Operator\Codespaces\DeleteCodespacesAccessUsers::class] = new Operator\Codespaces\DeleteCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
         }
 
-        return $this->operator[Operator\Codespaces\DeleteCodespacesBillingUsers::class]->call($org, $params);
+        return $this->operator[Operator\Codespaces\DeleteCodespacesAccessUsers::class]->call($org, $params);
     }
 
     public function listOrgSecrets(string $org, int $perPage, int $page): PromiseInterface

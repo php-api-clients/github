@@ -24,6 +24,13 @@ final class Gitignore
     {
     }
 
+    public function getAllTemplates(array $params)
+    {
+        $operator = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication);
+
+        return $operator->call();
+    }
+
     public function getTemplate(array $params)
     {
         $arguments = [];
@@ -40,12 +47,5 @@ final class Gitignore
         $operator = new Operator\Gitignore\GetTemplate($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gitignore\Templates\Name::class]);
 
         return $operator->call($arguments['name']);
-    }
-
-    public function getAllTemplates(array $params)
-    {
-        $operator = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication);
-
-        return $operator->call();
     }
 }

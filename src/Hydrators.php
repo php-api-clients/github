@@ -11,6 +11,8 @@ use Generator;
 final class Hydrators implements ObjectMapper
 {
     private Hydrator\Operation\Root|null $operation🌀Root                                                                                                                                                                                         = null;
+    private Hydrator\Operation\Advisories|null $operation🌀Advisories                                                                                                                                                                             = null;
+    private Hydrator\Operation\Advisories\GhsaId|null $operation🌀Advisories🌀GhsaId                                                                                                                                                               = null;
     private Hydrator\Operation\App|null $operation🌀App                                                                                                                                                                                           = null;
     private Hydrator\Operation\AppManifests\Code\Conversions|null $operation🌀AppManifests🌀Code🌀Conversions                                                                                                                                       = null;
     private Hydrator\Operation\App\Hook\Config|null $operation🌀App🌀Hook🌀Config                                                                                                                                                                   = null;
@@ -95,8 +97,8 @@ final class Hydrators implements ObjectMapper
     private Hydrator\Operation\Orgs\Org\Blocks\Username|null $operation🌀Orgs🌀Org🌀Blocks🌀Username                                                                                                                                                 = null;
     private Hydrator\Operation\Orgs\Org\CodeScanning\Alerts|null $operation🌀Orgs🌀Org🌀CodeScanning🌀Alerts                                                                                                                                         = null;
     private Hydrator\Operation\Orgs\Org\Codespaces|null $operation🌀Orgs🌀Org🌀Codespaces                                                                                                                                                           = null;
-    private Hydrator\Operation\Orgs\Org\Codespaces\Billing|null $operation🌀Orgs🌀Org🌀Codespaces🌀Billing                                                                                                                                           = null;
-    private Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers|null $operation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers                                                                                                               = null;
+    private Hydrator\Operation\Orgs\Org\Codespaces\Access|null $operation🌀Orgs🌀Org🌀Codespaces🌀Access                                                                                                                                             = null;
+    private Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers|null $operation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers                                                                                                                 = null;
     private Hydrator\Operation\Orgs\Org\Codespaces\Secrets|null $operation🌀Orgs🌀Org🌀Codespaces🌀Secrets                                                                                                                                           = null;
     private Hydrator\Operation\Orgs\Org\Codespaces\Secrets\PublicKey|null $operation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀PublicKey                                                                                                                       = null;
     private Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName|null $operation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName                                                                                                                     = null;
@@ -594,8 +596,9 @@ final class Hydrators implements ObjectMapper
     {
         return match ($className) {
             '\\ApiClients\\Client\\GitHub\\Schema\\Root' => $this->getObjectMapperOperation🌀Root()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\BasicError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationErrorSimple' => $this->getObjectMapperOperation🌀Advisories()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\GlobalAdvisory', '\\ApiClients\\Client\\GitHub\\Schema\\GlobalAdvisory\\Cvss' => $this->getObjectMapperOperation🌀Advisories🌀GhsaId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Integration', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleUser', '\\ApiClients\\Client\\GitHub\\Schema\\Integration\\Permissions' => $this->getObjectMapperOperation🌀App()->hydrateObject($className, $payload),
-            '\\ApiClients\\Client\\GitHub\\Schema\\BasicError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationErrorSimple' => $this->getObjectMapperOperation🌀AppManifests🌀Code🌀Conversions()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\WebhookConfig' => $this->getObjectMapperOperation🌀App🌀Hook🌀Config()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ScimError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationError' => $this->getObjectMapperOperation🌀App🌀Hook🌀Deliveries()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request\\Headers', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request\\Payload', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Response', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Response\\Headers' => $this->getObjectMapperOperation🌀App🌀Hook🌀Deliveries🌀DeliveryId()->hydrateObject($className, $payload),
@@ -855,8 +858,9 @@ final class Hydrators implements ObjectMapper
     {
         return match ($className) {
             '\\ApiClients\\Client\\GitHub\\Schema\\Root' => $this->getObjectMapperOperation🌀Root()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\BasicError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationErrorSimple' => $this->getObjectMapperOperation🌀Advisories()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\GlobalAdvisory', '\\ApiClients\\Client\\GitHub\\Schema\\GlobalAdvisory\\Cvss' => $this->getObjectMapperOperation🌀Advisories🌀GhsaId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Integration', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleUser', '\\ApiClients\\Client\\GitHub\\Schema\\Integration\\Permissions' => $this->getObjectMapperOperation🌀App()->serializeObject($object),
-            '\\ApiClients\\Client\\GitHub\\Schema\\BasicError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationErrorSimple' => $this->getObjectMapperOperation🌀AppManifests🌀Code🌀Conversions()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\WebhookConfig' => $this->getObjectMapperOperation🌀App🌀Hook🌀Config()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ScimError', '\\ApiClients\\Client\\GitHub\\Schema\\ValidationError' => $this->getObjectMapperOperation🌀App🌀Hook🌀Deliveries()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request\\Headers', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Request\\Payload', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Response', '\\ApiClients\\Client\\GitHub\\Schema\\HookDelivery\\Response\\Headers' => $this->getObjectMapperOperation🌀App🌀Hook🌀Deliveries🌀DeliveryId()->serializeObject($object),
@@ -1114,6 +1118,24 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Root;
+    }
+
+    public function getObjectMapperOperation🌀Advisories(): Hydrator\Operation\Advisories
+    {
+        if ($this->operation🌀Advisories instanceof Hydrator\Operation\Advisories === false) {
+            $this->operation🌀Advisories = new Hydrator\Operation\Advisories();
+        }
+
+        return $this->operation🌀Advisories;
+    }
+
+    public function getObjectMapperOperation🌀Advisories🌀GhsaId(): Hydrator\Operation\Advisories\GhsaId
+    {
+        if ($this->operation🌀Advisories🌀GhsaId instanceof Hydrator\Operation\Advisories\GhsaId === false) {
+            $this->operation🌀Advisories🌀GhsaId = new Hydrator\Operation\Advisories\GhsaId();
+        }
+
+        return $this->operation🌀Advisories🌀GhsaId;
     }
 
     public function getObjectMapperOperation🌀App(): Hydrator\Operation\App
@@ -1872,22 +1894,22 @@ final class Hydrators implements ObjectMapper
         return $this->operation🌀Orgs🌀Org🌀Codespaces;
     }
 
-    public function getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing(): Hydrator\Operation\Orgs\Org\Codespaces\Billing
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access(): Hydrator\Operation\Orgs\Org\Codespaces\Access
     {
-        if ($this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing instanceof Hydrator\Operation\Orgs\Org\Codespaces\Billing === false) {
-            $this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing = new Hydrator\Operation\Orgs\Org\Codespaces\Billing();
+        if ($this->operation🌀Orgs🌀Org🌀Codespaces🌀Access instanceof Hydrator\Operation\Orgs\Org\Codespaces\Access === false) {
+            $this->operation🌀Orgs🌀Org🌀Codespaces🌀Access = new Hydrator\Operation\Orgs\Org\Codespaces\Access();
         }
 
-        return $this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing;
+        return $this->operation🌀Orgs🌀Org🌀Codespaces🌀Access;
     }
 
-    public function getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers(): Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers(): Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers
     {
-        if ($this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers instanceof Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers === false) {
-            $this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers = new Hydrator\Operation\Orgs\Org\Codespaces\Billing\SelectedUsers();
+        if ($this->operation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers instanceof Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers === false) {
+            $this->operation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers = new Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers();
         }
 
-        return $this->operation🌀Orgs🌀Org🌀Codespaces🌀Billing🌀SelectedUsers;
+        return $this->operation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets(): Hydrator\Operation\Orgs\Org\Codespaces\Secrets

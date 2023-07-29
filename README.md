@@ -53,6 +53,76 @@ $client->operations()->meta()->root();
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/meta/meta#github-api-root).
 
 
+### security-advisories/list-global-advisories
+
+List global security advisories
+
+Using the `call` method:
+```php
+$client->call('GET /advisories', [
+        'ghsa_id' => 'generated',
+        'cve_id' => 'generated',
+        'ecosystem' => 'generated',
+        'severity' => 'generated',
+        'cwes' => ,
+        'is_withdrawn' => ,
+        'affects' => ,
+        'published' => 'generated',
+        'updated' => 'generated',
+        'modified' => 'generated',
+        'before' => 'generated',
+        'after' => 'generated',
+        'type' => 'generated',
+        'direction' => 'generated',
+        'per_page' => 8,
+        'sort' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->securityAdvisories()->listGlobalAdvisories(        ghsa_id: 'generated',
+        cve_id: 'generated',
+        ecosystem: 'generated',
+        severity: 'generated',
+        cwes: ,
+        is_withdrawn: ,
+        affects: ,
+        published: 'generated',
+        updated: 'generated',
+        modified: 'generated',
+        before: 'generated',
+        after: 'generated',
+        type: 'generated',
+        direction: 'generated',
+        per_page: 8,
+        sort: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/global-advisories#list-global-security-advisories).
+
+
+### security-advisories/get-global-advisory
+
+Get a global security advisory
+
+Using the `call` method:
+```php
+$client->call('GET /advisories/{ghsa_id}', [
+        'ghsa_id' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->securityAdvisories()->getGlobalAdvisory(        ghsa_id: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/global-advisories#get-a-global-security-advisory).
+
+
 ### apps/get-authenticated
 
 Get the authenticated app
@@ -2784,64 +2854,64 @@ $client->operations()->codespaces()->listInOrganization(        org: 'generated'
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#list-codespaces-for-the-organization).
 
 
-### codespaces/set-codespaces-billing
+### codespaces/set-codespaces-access
 
 Manage access control for organization codespaces
 
 Using the `call` method:
 ```php
-$client->call('PUT /orgs/{org}/codespaces/billing', [
+$client->call('PUT /orgs/{org}/codespaces/access', [
         'org' => 'generated',
 ]);
 ```
 
 Operations method:
 ```php
-$client->operations()->codespaces()->setCodespacesBilling(        org: 'generated',
+$client->operations()->codespaces()->setCodespacesAccess(        org: 'generated',
 );
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).
 
 
-### codespaces/set-codespaces-billing-users
+### codespaces/set-codespaces-access-users
 
-Add users to Codespaces billing for an organization
+Add users to Codespaces access for an organization
 
 Using the `call` method:
 ```php
-$client->call('POST /orgs/{org}/codespaces/billing/selected_users', [
+$client->call('POST /orgs/{org}/codespaces/access/selected_users', [
         'org' => 'generated',
 ]);
 ```
 
 Operations method:
 ```php
-$client->operations()->codespaces()->setCodespacesBillingUsers(        org: 'generated',
+$client->operations()->codespaces()->setCodespacesAccessUsers(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#add-users-to-codespaces-billing-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#add-users-to-codespaces-access-for-an-organization).
 
 
-### codespaces/delete-codespaces-billing-users
+### codespaces/delete-codespaces-access-users
 
-Remove users from Codespaces billing for an organization
+Remove users from Codespaces access for an organization
 
 Using the `call` method:
 ```php
-$client->call('DELETE /orgs/{org}/codespaces/billing/selected_users', [
+$client->call('DELETE /orgs/{org}/codespaces/access/selected_users', [
         'org' => 'generated',
 ]);
 ```
 
 Operations method:
 ```php
-$client->operations()->codespaces()->deleteCodespacesBillingUsers(        org: 'generated',
+$client->operations()->codespaces()->deleteCodespacesAccessUsers(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#remove-users-from-codespaces-billing-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/organizations#remove-users-from-codespaces-access-for-an-organization).
 
 
 ### codespaces/list-org-secrets

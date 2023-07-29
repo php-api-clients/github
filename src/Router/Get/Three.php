@@ -24,7 +24,17 @@ final class Three
     public function call(string $call, array $params, array $pathChunks)
     {
         if ($pathChunks[0] === '') {
-            if ($pathChunks[1] === 'app') {
+            if ($pathChunks[1] === 'advisories') {
+                if ($pathChunks[2] === '{ghsa_id}') {
+                    if ($call === 'GET /advisories/{ghsa_id}') {
+                        if (array_key_exists(Router\Get\SecurityAdvisories::class, $this->router) === false) {
+                            $this->router[Router\Get\SecurityAdvisories::class] = new Router\Get\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                        }
+
+                        return $this->router[Router\Get\SecurityAdvisories::class]->getGlobalAdvisory($params);
+                    }
+                }
+            } elseif ($pathChunks[1] === 'app') {
                 if ($pathChunks[2] === 'installation-requests') {
                     if ($call === 'GET /app/installation-requests') {
                         if (array_key_exists(Router\Get\Apps::class, $this->router) === false) {

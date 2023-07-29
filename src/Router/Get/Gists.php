@@ -54,6 +54,84 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
+    public function listPublic(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\Gists\Public_::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\Public_::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_();
+        }
+
+        $operator = new Operator\Gists\ListPublic($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Public_::class]);
+
+        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function listStarred(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists(Hydrator\Operation\Gists\Starred::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\Starred::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred();
+        }
+
+        $operator = new Operator\Gists\ListStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Starred::class]);
+
+        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
+    }
+
+    public function get(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('gist_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: gist_id');
+        }
+
+        $arguments['gist_id'] = $params['gist_id'];
+        unset($params['gist_id']);
+        if (array_key_exists(Hydrator\Operation\Gists\GistId::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gists\GistId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId();
+        }
+
+        $operator = new Operator\Gists\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId::class]);
+
+        return $operator->call($arguments['gist_id']);
+    }
+
     public function listComments(array $params)
     {
         $arguments = [];
@@ -244,83 +322,5 @@ final class Gists
         $operator = new Operator\Gists\GetComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId\Comments\CommentId::class]);
 
         return $operator->call($arguments['gist_id'], $arguments['comment_id']);
-    }
-
-    public function listPublic(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Gists\Public_::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\Public_::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_();
-        }
-
-        $operator = new Operator\Gists\ListPublic($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Public_::class]);
-
-        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function listStarred(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Gists\Starred::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\Starred::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred();
-        }
-
-        $operator = new Operator\Gists\ListStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\Starred::class]);
-
-        return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
-    }
-
-    public function get(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('gist_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: gist_id');
-        }
-
-        $arguments['gist_id'] = $params['gist_id'];
-        unset($params['gist_id']);
-        if (array_key_exists(Hydrator\Operation\Gists\GistId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Gists\GistId::class] = $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId();
-        }
-
-        $operator = new Operator\Gists\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gists\GistId::class]);
-
-        return $operator->call($arguments['gist_id']);
     }
 }
