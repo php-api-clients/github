@@ -44,6 +44,6 @@
     }
   },
   "require-dev": {
-    "wyrihaximus/async-test-utilities": "^7.0.2"
+    "wyrihaximus/async-test-utilities": "^7.0.3"
   }
 }
