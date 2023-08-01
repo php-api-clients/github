@@ -19,6 +19,9 @@
     "react/async": "^4.1.0",
     "wyrihaximus/react-awaitable-observable": "^1.0"
   },
+  "require-dev": {
+    "wyrihaximus/async-test-utilities": "^7.0.3"
+  },
   "autoload": {
     "psr-4": {
       "ApiClients\\Client\\GitHub\\": "src/"
@@ -42,8 +45,5 @@
       "wyrihaximus/composer-update-bin-autoload-path": true,
       "infection/extension-installer": true
     }
-  },
-  "require-dev": {
-    "wyrihaximus/async-test-utilities": "^7.0.3"
   }
 }
