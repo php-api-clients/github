@@ -169,16 +169,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8"
+                "reference": "743ee4524d1a3d7b381ef9f61afcb18e0cc81cb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8",
-                "reference": "2368fbee8a7ca788f4f97d7ba1fb9a2db130a2b8",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/743ee4524d1a3d7b381ef9f61afcb18e0cc81cb0",
+                "reference": "743ee4524d1a3d7b381ef9f61afcb18e0cc81cb0",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.3.1"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.4.0"
             },
             "funding": [
                 {
@@ -229,7 +229,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-24T13:06:09+00:00"
+            "time": "2023-08-03T07:27:58+00:00"
         },
         {
             "name": "fig/http-message-util",
