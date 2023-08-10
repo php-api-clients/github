@@ -121,6 +121,11 @@ class DeploymentId implements ObjectMapper
 
             $value = $payloadCaster1->cast($value, $this);
 
+            if ($value === null) {
+                                $missingFields[] = 'payload';
+                goto after_payload;
+            }
+
             $properties['payload'] = $value;
 
             after_payload:

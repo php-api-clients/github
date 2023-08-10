@@ -22,7 +22,7 @@ abstract readonly class Tiet51ABC919
     public function __construct(#[MapFrom('commit_message')]
     public string|null $commitMessage, #[MapFrom('commit_title')]
     public string $commitTitle, #[MapFrom('enabled_by')]
-    public Schema\WebhookPullRequestReviewThreadUnresolved\PullRequest\AutoMerge\EnabledBy|null $enabledBy, #[MapFrom('merge_method')]
+    public Schema\WebhookMergeQueueEntryCreated\PullRequest\AutoMerge\EnabledBy|null $enabledBy, #[MapFrom('merge_method')]
     public string $mergeMethod,)
     {
     }

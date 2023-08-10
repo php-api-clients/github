@@ -291,6 +291,18 @@ final class Seven
                                     }
                                 }
                             }
+                        } elseif ($pathChunks[4] === 'security-advisories') {
+                            if ($pathChunks[5] === '{ghsa_id}') {
+                                if ($pathChunks[6] === 'cve') {
+                                    if ($call === 'POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve') {
+                                        if (array_key_exists(Router\Post\SecurityAdvisories::class, $this->router) === false) {
+                                            $this->router[Router\Post\SecurityAdvisories::class] = new Router\Post\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                        }
+
+                                        return $this->router[Router\Post\SecurityAdvisories::class]->createRepositoryAdvisoryCveRequest($params);
+                                    }
+                                }
+                            }
                         }
                     }
                 }

@@ -16543,6 +16543,30 @@ $client->operations()->securityAdvisories()->updateRepositoryAdvisory(        ow
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/repository-advisories#update-a-repository-security-advisory).
 
 
+### security-advisories/create-repository-advisory-cve-request
+
+Request a CVE for a repository security advisory
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ghsa_id' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->securityAdvisories()->createRepositoryAdvisoryCveRequest(        owner: 'generated',
+        repo: 'generated',
+        ghsa_id: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/repository-advisories#request-a-cve-for-a-repository-security-advisory).
+
+
 ### activity/list-stargazers-for-repo
 
 List stargazers

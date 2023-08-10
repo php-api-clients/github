@@ -75,6 +75,11 @@ class Copilot implements ObjectMapper
 
             $value = $assigningTeamCaster1->cast($value, $this);
 
+            if ($value === null) {
+                                $properties['assigningTeam'] = null;
+                goto after_assigningTeam;
+            }
+
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'assigningTeam';

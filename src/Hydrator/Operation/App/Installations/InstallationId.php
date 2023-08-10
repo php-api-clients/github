@@ -64,6 +64,11 @@ class InstallationId implements ObjectMapper
 
             $value = $accountCaster1->cast($value, $this);
 
+            if ($value === null) {
+                                $missingFields[] = 'account';
+                goto after_account;
+            }
+
             $properties['account'] = $value;
 
             after_account:

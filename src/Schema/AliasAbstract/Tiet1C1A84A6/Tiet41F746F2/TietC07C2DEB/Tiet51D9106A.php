@@ -24,7 +24,7 @@ abstract readonly class Tiet51D9106A
     public function __construct(public bool|null $deleted, public string|null $description, #[MapFrom('html_url')]
     public string|null $htmlUrl, public int $id, #[MapFrom('members_url')]
     public string|null $membersUrl, public string $name, #[MapFrom('node_id')]
-    public string|null $nodeId, public Schema\WebhookPullRequestAssigned\PullRequest\RequestedTeams\Parent_|null $parent, public string|null $permission, public string|null $privacy, #[MapFrom('repositories_url')]
+    public string|null $nodeId, public Schema\WebhookMergeQueueEntryCreated\PullRequest\RequestedReviewers\One\Parent_|null $parent, public string|null $permission, public string|null $privacy, #[MapFrom('repositories_url')]
     public string|null $repositoriesUrl, public string|null $slug, public string|null $url,)
     {
     }

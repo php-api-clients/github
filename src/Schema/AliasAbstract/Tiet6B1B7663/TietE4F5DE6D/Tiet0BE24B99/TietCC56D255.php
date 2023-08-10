@@ -14,9 +14,9 @@ abstract readonly class TietCC56D255
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{"comments":{"href":"generated"},"commits":{"href":"generated"},"html":{"href":"generated"},"issue":{"href":"generated"},"review_comment":{"href":"generated"},"review_comments":{"href":"generated"},"self":{"href":"generated"},"statuses":{"href":"generated"}}';
 
-    public function __construct(public Schema\WebhookPullRequestAssigned\PullRequest\Links\Comments $comments, public Schema\WebhookPullRequestAssigned\PullRequest\Links\Commits $commits, public Schema\WebhookPullRequestAssigned\PullRequest\Links\Html $html, public Schema\WebhookPullRequestAssigned\PullRequest\Links\Issue $issue, #[MapFrom('review_comment')]
-    public Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComment $reviewComment, #[MapFrom('review_comments')]
-    public Schema\WebhookPullRequestAssigned\PullRequest\Links\ReviewComments $reviewComments, public Schema\WebhookPullRequestAssigned\PullRequest\Links\Self_ $self, public Schema\WebhookPullRequestAssigned\PullRequest\Links\Statuses $statuses,)
+    public function __construct(public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Comments $comments, public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Commits $commits, public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Html $html, public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Issue $issue, #[MapFrom('review_comment')]
+    public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\ReviewComment $reviewComment, #[MapFrom('review_comments')]
+    public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\ReviewComments $reviewComments, public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Self_ $self, public Schema\WebhookMergeQueueEntryCreated\PullRequest\Links\Statuses $statuses,)
     {
     }
 }

@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookOrganizationRenamed\Changes;
 
-final readonly class Login
-{
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"from":{"type":"string"}}}';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"from":"generated"}';
+use ApiClients\Client\GitHub\Schema;
 
-    public function __construct(public string|null $from)
-    {
-    }
+final readonly class Login extends Schema\AliasAbstract\Tiet38F1F00B\TietF74B7C24\TietCE7CBD4F\Tiet88FCE2CD
+{
 }

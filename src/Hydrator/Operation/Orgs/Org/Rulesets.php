@@ -238,6 +238,11 @@ class Rulesets implements ObjectMapper
 
             $value = $conditionsCaster1->cast($value, $this);
 
+            if ($value === null) {
+                                $properties['conditions'] = null;
+                goto after_conditions;
+            }
+
             $properties['conditions'] = $value;
 
             after_conditions:

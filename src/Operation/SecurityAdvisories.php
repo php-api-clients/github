@@ -83,4 +83,13 @@ final class SecurityAdvisories
 
         return $this->operator[Operator\SecurityAdvisories\UpdateRepositoryAdvisory::class]->call($owner, $repo, $ghsaId, $params);
     }
+
+    public function createRepositoryAdvisoryCveRequest(string $owner, string $repo, string $ghsaId): PromiseInterface
+    {
+        if (array_key_exists(Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class, $this->operator) === false) {
+            $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class] = new Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId🌀Cve());
+        }
+
+        return $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class]->call($owner, $repo, $ghsaId);
+    }
 }
