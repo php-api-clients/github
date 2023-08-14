@@ -30,7 +30,7 @@ final class ListForRelease
     private string $repo;
     /**The unique identifier of the release. **/
     private int $releaseId;
-    /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a release. **/
+    /**Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a release. **/
     private string $content;
     /**The number of results per page (max 100). **/
     private int $perPage;

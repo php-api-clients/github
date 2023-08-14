@@ -164,6 +164,7 @@ final class Hydrators implements ObjectMapper
     private Hydrator\Operation\Orgs\Org\Rulesets|null $operation🌀Orgs🌀Org🌀Rulesets                                                                                                                                                               = null;
     private Hydrator\Operation\Orgs\Org\Rulesets\RulesetId|null $operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId                                                                                                                                           = null;
     private Hydrator\Operation\Orgs\Org\SecretScanning\Alerts|null $operation🌀Orgs🌀Org🌀SecretScanning🌀Alerts                                                                                                                                     = null;
+    private Hydrator\Operation\Orgs\Org\SecurityAdvisories|null $operation🌀Orgs🌀Org🌀SecurityAdvisories                                                                                                                                           = null;
     private Hydrator\Operation\Orgs\Org\SecurityManagers|null $operation🌀Orgs🌀Org🌀SecurityManagers                                                                                                                                               = null;
     private Hydrator\Operation\Orgs\Org\SecurityManagers\Teams\TeamSlug|null $operation🌀Orgs🌀Org🌀SecurityManagers🌀Teams🌀TeamSlug                                                                                                                 = null;
     private Hydrator\Operation\Orgs\Org\Settings\Billing\Actions|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions                                                                                                                               = null;
@@ -2498,6 +2499,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀SecretScanning🌀Alerts;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories(): Hydrator\Operation\Orgs\Org\SecurityAdvisories
+    {
+        if ($this->operation🌀Orgs🌀Org🌀SecurityAdvisories instanceof Hydrator\Operation\Orgs\Org\SecurityAdvisories === false) {
+            $this->operation🌀Orgs🌀Org🌀SecurityAdvisories = new Hydrator\Operation\Orgs\Org\SecurityAdvisories();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀SecurityAdvisories;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀SecurityManagers(): Hydrator\Operation\Orgs\Org\SecurityManagers

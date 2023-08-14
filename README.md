@@ -5296,6 +5296,38 @@ $client->operations()->secretScanning()->listAlertsForOrg(        org: 'generate
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-organization).
 
 
+### security-advisories/list-org-repository-advisories
+
+List repository security advisories for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/security-advisories', [
+        'org' => 'generated',
+        'before' => 'generated',
+        'after' => 'generated',
+        'state' => 'generated',
+        'direction' => 'generated',
+        'sort' => 'generated',
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->securityAdvisories()->listOrgRepositoryAdvisories(        org: 'generated',
+        before: 'generated',
+        after: 'generated',
+        state: 'generated',
+        direction: 'generated',
+        sort: 'generated',
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/repository-advisories#list-repository-security-advisories-for-an-organization).
+
+
 ### orgs/list-security-manager-teams
 
 List security manager teams

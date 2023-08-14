@@ -81,6 +81,17 @@ class DefaultSetup implements ObjectMapper
 
             after_updatedAt:
 
+            $value = $payload['schedule'] ?? null;
+
+            if ($value === null) {
+                $properties['schedule'] = null;
+                goto after_schedule;
+            }
+
+            $properties['schedule'] = $value;
+
+            after_schedule:
+
         } catch (\Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetup', $exception, stack: $this->hydrationStack);
         }
@@ -409,6 +420,14 @@ class DefaultSetup implements ObjectMapper
             goto after_updatedAt;
         }
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        
+        $schedule = $object->schedule;
+
+        if ($schedule === null) {
+            goto after_schedule;
+        }
+        after_schedule:        $result['schedule'] = $schedule;
 
 
         return $result;

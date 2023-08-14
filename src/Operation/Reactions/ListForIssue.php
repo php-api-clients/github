@@ -30,7 +30,7 @@ final class ListForIssue
     private string $repo;
     /**The number that identifies the issue. **/
     private int $issueNumber;
-    /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue. **/
+    /**Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to an issue. **/
     private string $content;
     /**The number of results per page (max 100). **/
     private int $perPage;

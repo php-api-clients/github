@@ -24,7 +24,7 @@ final class ListForTeamDiscussionCommentInOrg
     private int $discussionNumber;
     /**The number that identifies the comment. **/
     private int $commentNumber;
-    /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment. **/
+    /**Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a team discussion comment. **/
     private string $content;
     /**The number of results per page (max 100). **/
     private int $perPage;

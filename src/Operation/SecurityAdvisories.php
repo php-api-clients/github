@@ -39,6 +39,15 @@ final class SecurityAdvisories
         return $this->operator[Operator\SecurityAdvisories\GetGlobalAdvisory::class]->call($ghsaId);
     }
 
+    public function listOrgRepositoryAdvisories(string $org, string $before, string $after, string $state, string $direction, string $sort, int $perPage): PromiseInterface
+    {
+        if (array_key_exists(Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class, $this->operator) === false) {
+            $this->operator[Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class] = new Operator\SecurityAdvisories\ListOrgRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories());
+        }
+
+        return $this->operator[Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class]->call($org, $before, $after, $state, $direction, $sort, $perPage);
+    }
+
     public function listRepositoryAdvisories(string $owner, string $repo, string $before, string $after, string $state, string $direction, string $sort, int $perPage): PromiseInterface
     {
         if (array_key_exists(Operator\SecurityAdvisories\ListRepositoryAdvisories::class, $this->operator) === false) {

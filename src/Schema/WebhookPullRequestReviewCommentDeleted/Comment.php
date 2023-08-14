@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Comment extends Schema\AliasAbstract\Tiet5CF6C2FA\TietECD53E90\Tiet9AD379C0\Tiet7645FF3B
+final readonly class Comment extends Schema\AliasAbstract\TietF981E2A3\Tiet572D23D5\Tiet59F698B6\TietA7292F45
 {
 }

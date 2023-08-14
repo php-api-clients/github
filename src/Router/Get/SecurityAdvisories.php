@@ -150,6 +150,60 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id']);
     }
 
+    public function listOrgRepositoryAdvisories(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('state', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: state');
+        }
+
+        $arguments['state'] = $params['state'];
+        unset($params['state']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\SecurityAdvisories::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\SecurityAdvisories::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories();
+        }
+
+        $operator = new Operator\SecurityAdvisories\ListOrgRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\SecurityAdvisories::class]);
+
+        return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
+    }
+
     public function listRepositoryAdvisories(array $params)
     {
         $arguments = [];

@@ -30,7 +30,7 @@ final class ListForCommitComment
     private string $repo;
     /**The unique identifier of the comment. **/
     private int $commentId;
-    /**Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a commit comment. **/
+    /**Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a commit comment. **/
     private string $content;
     /**The number of results per page (max 100). **/
     private int $perPage;

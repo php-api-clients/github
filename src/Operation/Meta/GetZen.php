@@ -12,6 +12,7 @@ use RingCentral\Psr7\Request;
 use RuntimeException;
 
 use function explode;
+use function json_decode;
 use function str_replace;
 
 final class GetZen
@@ -35,8 +36,8 @@ final class GetZen
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
         switch ($contentType) {
-            case 'text/plain':
-                $body = $response->getBody()->getContents();
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     case 200:
                         return $body;

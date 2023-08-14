@@ -306,6 +306,14 @@ final class Four
 
                             return $this->router[Router\Get\Repos::class]->getOrgRulesets($params);
                         }
+                    } elseif ($pathChunks[3] === 'security-advisories') {
+                        if ($call === 'GET /orgs/{org}/security-advisories') {
+                            if (array_key_exists(Router\Get\SecurityAdvisories::class, $this->router) === false) {
+                                $this->router[Router\Get\SecurityAdvisories::class] = new Router\Get\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                            }
+
+                            return $this->router[Router\Get\SecurityAdvisories::class]->listOrgRepositoryAdvisories($params);
+                        }
                     } elseif ($pathChunks[3] === 'security-managers') {
                         if ($call === 'GET /orgs/{org}/security-managers') {
                             if (array_key_exists(Router\Get\Orgs::class, $this->router) === false) {
