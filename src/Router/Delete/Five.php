@@ -213,14 +213,6 @@ final class Five
 
                                 return $this->router[Router\Delete\Interactions::class]->removeRestrictionsForRepo($params);
                             }
-                        } elseif ($pathChunks[4] === 'lfs') {
-                            if ($call === 'DELETE /repos/{owner}/{repo}/lfs') {
-                                if (array_key_exists(Router\Delete\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Delete\Repos::class]->disableLfsForRepo($params);
-                            }
                         } elseif ($pathChunks[4] === 'pages') {
                             if ($call === 'DELETE /repos/{owner}/{repo}/pages') {
                                 if (array_key_exists(Router\Delete\Repos::class, $this->router) === false) {
@@ -228,6 +220,14 @@ final class Five
                                 }
 
                                 return $this->router[Router\Delete\Repos::class]->deletePagesSite($params);
+                            }
+                        } elseif ($pathChunks[4] === 'private-vulnerability-reporting') {
+                            if ($call === 'DELETE /repos/{owner}/{repo}/private-vulnerability-reporting') {
+                                if (array_key_exists(Router\Delete\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Delete\Repos::class]->disablePrivateVulnerabilityReporting($params);
                             }
                         } elseif ($pathChunks[4] === 'subscription') {
                             if ($call === 'DELETE /repos/{owner}/{repo}/subscription') {

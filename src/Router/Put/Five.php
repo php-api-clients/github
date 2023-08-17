@@ -167,14 +167,6 @@ final class Five
 
                                 return $this->router[Router\Put\Interactions::class]->setRestrictionsForRepo($params);
                             }
-                        } elseif ($pathChunks[4] === 'lfs') {
-                            if ($call === 'PUT /repos/{owner}/{repo}/lfs') {
-                                if (array_key_exists(Router\Put\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Put\Repos::class]->enableLfsForRepo($params);
-                            }
                         } elseif ($pathChunks[4] === 'notifications') {
                             if ($call === 'PUT /repos/{owner}/{repo}/notifications') {
                                 if (array_key_exists(Router\Put\Activity::class, $this->router) === false) {
@@ -190,6 +182,14 @@ final class Five
                                 }
 
                                 return $this->router[Router\Put\Repos::class]->updateInformationAboutPagesSite($params);
+                            }
+                        } elseif ($pathChunks[4] === 'private-vulnerability-reporting') {
+                            if ($call === 'PUT /repos/{owner}/{repo}/private-vulnerability-reporting') {
+                                if (array_key_exists(Router\Put\Repos::class, $this->router) === false) {
+                                    $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                }
+
+                                return $this->router[Router\Put\Repos::class]->enablePrivateVulnerabilityReporting($params);
                             }
                         } elseif ($pathChunks[4] === 'subscription') {
                             if ($call === 'PUT /repos/{owner}/{repo}/subscription') {

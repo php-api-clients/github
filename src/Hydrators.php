@@ -393,7 +393,6 @@ final class Hydrators implements ObjectMapper
     private Hydrator\Operation\Repos\Owner\Repo\Labels|null $operation🌀Repos🌀Owner🌀Repo🌀Labels                                                                                                                                                   = null;
     private Hydrator\Operation\Repos\Owner\Repo\Labels\Name|null $operation🌀Repos🌀Owner🌀Repo🌀Labels🌀Name                                                                                                                                         = null;
     private Hydrator\Operation\Repos\Owner\Repo\Languages|null $operation🌀Repos🌀Owner🌀Repo🌀Languages                                                                                                                                             = null;
-    private Hydrator\Operation\Repos\Owner\Repo\Lfs|null $operation🌀Repos🌀Owner🌀Repo🌀Lfs                                                                                                                                                         = null;
     private Hydrator\Operation\Repos\Owner\Repo\License|null $operation🌀Repos🌀Owner🌀Repo🌀License                                                                                                                                                 = null;
     private Hydrator\Operation\Repos\Owner\Repo\MergeUpstream|null $operation🌀Repos🌀Owner🌀Repo🌀MergeUpstream                                                                                                                                     = null;
     private Hydrator\Operation\Repos\Owner\Repo\Merges|null $operation🌀Repos🌀Owner🌀Repo🌀Merges                                                                                                                                                   = null;
@@ -407,6 +406,7 @@ final class Hydrators implements ObjectMapper
     private Hydrator\Operation\Repos\Owner\Repo\Pages\Builds\BuildId|null $operation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds🌀BuildId                                                                                                                       = null;
     private Hydrator\Operation\Repos\Owner\Repo\Pages\Deployment|null $operation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployment                                                                                                                               = null;
     private Hydrator\Operation\Repos\Owner\Repo\Pages\Health|null $operation🌀Repos🌀Owner🌀Repo🌀Pages🌀Health                                                                                                                                       = null;
+    private Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting|null $operation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting                                                                                                     = null;
     private Hydrator\Operation\Repos\Owner\Repo\Projects|null $operation🌀Repos🌀Owner🌀Repo🌀Projects                                                                                                                                               = null;
     private Hydrator\Operation\Repos\Owner\Repo\Pulls|null $operation🌀Repos🌀Owner🌀Repo🌀Pulls                                                                                                                                                     = null;
     private Hydrator\Operation\Repos\Owner\Repo\Pulls\Comments|null $operation🌀Repos🌀Owner🌀Repo🌀Pulls🌀Comments                                                                                                                                   = null;
@@ -779,7 +779,6 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\DeployKey' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Label' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Labels()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Language' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Languages()->hydrateObject($className, $payload),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Repos\\EnableLfsForRepo\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Lfs()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\LicenseContent', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseContent\\Links' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\MergedUpstream' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀MergeUpstream()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkRepoNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Notifications()->hydrateObject($className, $payload),
@@ -1042,7 +1041,6 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\DeployKey' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Label' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Labels()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Language' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Languages()->serializeObject($object),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Repos\\EnableLfsForRepo\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Lfs()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\LicenseContent', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseContent\\Links' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\MergedUpstream' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀MergeUpstream()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkRepoNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Notifications()->serializeObject($object),
@@ -4562,15 +4560,6 @@ final class Hydrators implements ObjectMapper
         return $this->operation🌀Repos🌀Owner🌀Repo🌀Languages;
     }
 
-    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Lfs(): Hydrator\Operation\Repos\Owner\Repo\Lfs
-    {
-        if ($this->operation🌀Repos🌀Owner🌀Repo🌀Lfs instanceof Hydrator\Operation\Repos\Owner\Repo\Lfs === false) {
-            $this->operation🌀Repos🌀Owner🌀Repo🌀Lfs = new Hydrator\Operation\Repos\Owner\Repo\Lfs();
-        }
-
-        return $this->operation🌀Repos🌀Owner🌀Repo🌀Lfs;
-    }
-
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License(): Hydrator\Operation\Repos\Owner\Repo\License
     {
         if ($this->operation🌀Repos🌀Owner🌀Repo🌀License instanceof Hydrator\Operation\Repos\Owner\Repo\License === false) {
@@ -4686,6 +4675,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Repos🌀Owner🌀Repo🌀Pages🌀Health;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting(): Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting instanceof Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting = new Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting;
     }
 
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects(): Hydrator\Operation\Repos\Owner\Repo\Projects

@@ -68,30 +68,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function enableLfsForRepo(array $params)
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Lfs::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Lfs::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Lfs();
-        }
-
-        $operator = new Operator\Repos\EnableLfsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Lfs::class]);
-
-        return $operator->call($arguments['owner'], $arguments['repo']);
-    }
-
     public function updateInformationAboutPagesSite(array $params)
     {
         $arguments = [];
@@ -114,6 +90,30 @@ final class Repos
         $operator = new Operator\Repos\UpdateInformationAboutPagesSite($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Pages::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
+    }
+
+    public function enablePrivateVulnerabilityReporting(array $params)
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting();
+        }
+
+        $operator = new Operator\Repos\EnablePrivateVulnerabilityReporting($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\PrivateVulnerabilityReporting::class]);
+
+        return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
     public function replaceAllTopics(array $params)

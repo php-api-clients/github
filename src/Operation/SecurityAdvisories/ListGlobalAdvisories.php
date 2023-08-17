@@ -32,11 +32,16 @@ final class ListGlobalAdvisories
     private string $ecosystem;
     /**If specified, only advisories with these severities will be returned. **/
     private string $severity;
-    /**If specified, only advisories with these Common Weakness Enumerations (CWEs) will be returned. **/
+    /**If specified, only advisories with these Common Weakness Enumerations (CWEs) will be returned.
+
+    Example: `cwes=79,284,22` or `cwes[]=79&cwes[]=284&cwes[]=22` **/
     private $cwes;
     /**Whether to only return advisories that have been withdrawn. **/
     private bool $isWithdrawn;
-    /**If specified, return advisories that affect any of `package` or `package@version`. A maximum of 1000 packages can be specified. If the query parameter causes the URL to exceed the maximum URL length supported by your client, you must specify fewer packages. **/
+    /**If specified, only return advisories that affect any of `package` or `package@version`. A maximum of 1000 packages can be specified.
+    If the query parameter causes the URL to exceed the maximum URL length supported by your client, you must specify fewer packages.
+
+    Example: `affects=package1,package2@1.0.0,package3@^2.0.0` or `affects[]=package1&affects[]=package2@1.0.0` **/
     private $affects;
     /**If specified, only return advisories that were published on a date or date range.
 

@@ -14329,50 +14329,6 @@ $client->operations()->repos()->listLanguages(        owner: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-repository-languages).
 
 
-### repos/enable-lfs-for-repo
-
-Enable Git LFS for a repository
-
-Using the `call` method:
-```php
-$client->call('PUT /repos/{owner}/{repo}/lfs', [
-        'owner' => 'generated',
-        'repo' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->repos()->enableLfsForRepo(        owner: 'generated',
-        repo: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/lfs#enable-git-lfs-for-a-repository).
-
-
-### repos/disable-lfs-for-repo
-
-Disable Git LFS for a repository
-
-Using the `call` method:
-```php
-$client->call('DELETE /repos/{owner}/{repo}/lfs', [
-        'owner' => 'generated',
-        'repo' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->repos()->disableLfsForRepo(        owner: 'generated',
-        repo: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/lfs#disable-git-lfs-for-a-repository).
-
-
 ### licenses/get-for-repo
 
 Get the license for a repository
@@ -14873,6 +14829,50 @@ $client->operations()->repos()->getPagesHealthCheck(        owner: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-a-dns-health-check-for-github-pages).
+
+
+### repos/enable-private-vulnerability-reporting
+
+Enable private vulnerability reporting for a repository
+
+Using the `call` method:
+```php
+$client->call('PUT /repos/{owner}/{repo}/private-vulnerability-reporting', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->enablePrivateVulnerabilityReporting(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#enable-private-vulnerability-reporting-for-a-repository).
+
+
+### repos/disable-private-vulnerability-reporting
+
+Disable private vulnerability reporting for a repository
+
+Using the `call` method:
+```php
+$client->call('DELETE /repos/{owner}/{repo}/private-vulnerability-reporting', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->disablePrivateVulnerabilityReporting(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#disable-private-vulnerability-reporting-for-a-repository).
 
 
 ### projects/list-for-repo
