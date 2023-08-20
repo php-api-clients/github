@@ -8,10 +8,34 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 abstract readonly class Tiet98EA5B1E
 {
-    public const SCHEMA_JSON         = '{"required":["alt","image_url"],"type":"object","properties":{"alt":{"type":"string","description":"The alternative text for the image."},"image_url":{"type":"string","description":"The full URL of the image."},"caption":{"type":"string","description":"A short image description."}}}';
+    public const SCHEMA_JSON         = '{
+    "required": [
+        "alt",
+        "image_url"
+    ],
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "description": "The alternative text for the image."
+        },
+        "image_url": {
+            "type": "string",
+            "description": "The full URL of the image."
+        },
+        "caption": {
+            "type": "string",
+            "description": "A short image description."
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"alt":"generated","image_url":"generated","caption":"generated"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "alt": "generated",
+    "image_url": "generated",
+    "caption": "generated"
+}';
 
     /**
      * alt: The alternative text for the image.

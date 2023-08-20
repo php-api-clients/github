@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -52,7 +55,8 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
         return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{org}', '{page}', '{per_page}', '{state}'], [$this->packageType, $this->packageName, $this->org, $this->page, $this->perPage, $this->state], self::PATH . '?page={page}&per_page={per_page}&state={state}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\PackageVersion> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -61,8 +65,26 @@ final class GetAllPackageVersionsForPackageOwnedByOrg
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\PackageVersion {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PackageVersion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\PackageVersion::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Resource not found
                      **/
+
                     case 404:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

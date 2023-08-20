@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
+use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class SecurityAdvisories
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function listGlobalAdvisories(array $params)
+    /** @return iterable<Schema\GlobalAdvisory> */
+    public function listGlobalAdvisories(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('ghsa_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: ghsa_id');
@@ -132,8 +137,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
     }
 
-    public function getGlobalAdvisory(array $params)
+    /** @return */
+    public function getGlobalAdvisory(array $params): GlobalAdvisory|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('ghsa_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: ghsa_id');
@@ -150,8 +157,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id']);
     }
 
-    public function listOrgRepositoryAdvisories(array $params)
+    /** @return iterable<Schema\RepositoryAdvisory> */
+    public function listOrgRepositoryAdvisories(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -204,8 +213,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    public function listRepositoryAdvisories(array $params)
+    /** @return iterable<Schema\RepositoryAdvisory> */
+    public function listRepositoryAdvisories(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -264,8 +275,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    public function getRepositoryAdvisory(array $params)
+    /** @return */
+    public function getRepositoryAdvisory(array $params): RepositoryAdvisory|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

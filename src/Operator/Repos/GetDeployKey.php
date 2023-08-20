@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetDeployKey
 {
@@ -23,14 +26,18 @@ final readonly class GetDeployKey
     {
     }
 
-    /** @return PromiseInterface<DeployKey> **/
-    public function call(string $owner, string $repo, int $keyId): PromiseInterface
+    /** @return */
+    public function call(string $owner, string $repo, int $keyId): DeployKey|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetDeployKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $keyId);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeployKey {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeployKey|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

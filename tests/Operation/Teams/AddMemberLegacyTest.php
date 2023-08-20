@@ -14,16 +14,18 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Teams\AddMemberLegacy */
 final class AddMemberLegacyTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -43,7 +45,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -51,7 +53,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/teams/7/members/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addMemberLegacy(7, 'generated'));
+        $result = $client->operations()->teams()->addMemberLegacy(7, 'generated');
     }
 
     /** @test */
@@ -84,7 +86,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/teams/7/members/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addMemberLegacy(7, 'generated'));
+        $result = $client->operations()->teams()->addMemberLegacy(7, 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }
@@ -119,7 +121,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/teams/7/members/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addMemberLegacy(7, 'generated'));
+        $result = $client->operations()->teams()->addMemberLegacy(7, 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(404, $result['code']);
     }
@@ -154,7 +156,7 @@ final class AddMemberLegacyTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('PUT', '/teams/7/members/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addMemberLegacy(7, 'generated'));
+        $result = $client->operations()->teams()->addMemberLegacy(7, 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(422, $result['code']);
     }

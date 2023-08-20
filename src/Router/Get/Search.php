@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Operations\Search\Code\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Search
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function code(array $params)
+    /** @return (Schema\Operations\Search\Code\Response\ApplicationJson\Ok | array{code: int}) */
+    public function code(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');
@@ -66,8 +70,10 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function commits(array $params)
+    /** @return (Schema\Operations\Search\Commits\Response\ApplicationJson\Ok | array{code: int}) */
+    public function commits(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');
@@ -108,8 +114,10 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function issuesAndPullRequests(array $params)
+    /** @return (Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok | array{code: int}) */
+    public function issuesAndPullRequests(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');
@@ -150,8 +158,10 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function labels(array $params)
+    /** @return (Schema\Operations\Search\Labels\Response\ApplicationJson\Ok | array{code: int}) */
+    public function labels(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_id');
@@ -198,8 +208,10 @@ final class Search
         return $operator->call($arguments['repository_id'], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function repos(array $params)
+    /** @return (Schema\Operations\Search\Repos\Response\ApplicationJson\Ok | array{code: int}) */
+    public function repos(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');
@@ -240,8 +252,10 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function topics(array $params)
+    /** @return (Schema\Operations\Search\Topics\Response\ApplicationJson\Ok | array{code: int}) */
+    public function topics(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');
@@ -270,8 +284,10 @@ final class Search
         return $operator->call($arguments['q'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function users(array $params)
+    /** @return (Schema\Operations\Search\Users\Response\ApplicationJson\Ok | array{code: int}) */
+    public function users(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: q');

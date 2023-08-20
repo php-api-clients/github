@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -46,8 +47,8 @@ final class GetContent
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{path}', '{ref}'], [$this->owner, $this->repo, $this->path, $this->ref], self::PATH . '?ref={ref}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    /** @return Schema\ContentDirectory|Schema\ContentFile|Schema\ContentSymlink|Schema\ContentSubmodule|array{code: int} */
+    public function createResponse(ResponseInterface $response): Schema\ContentDirectory|Schema\ContentFile|Schema\ContentSymlink|Schema\ContentSubmodule|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -55,6 +56,48 @@ final class GetContent
             case 'application/json':
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ContentDirectory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ContentDirectory::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaaa;
+                        }
+
+                        items_application_json_two_hundred_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ContentFile::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ContentFile::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaab;
+                        }
+
+                        items_application_json_two_hundred_aaaab:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ContentSymlink::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ContentSymlink::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaac;
+                        }
+
+                        items_application_json_two_hundred_aaaac:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ContentSubmodule::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ContentSubmodule::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaad;
+                        }
+
+                        items_application_json_two_hundred_aaaad:
+                        throw $error;
                     /**
                      * Resource not found
                      **/

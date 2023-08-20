@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -19,12 +21,14 @@ final class Emojis
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function get(array $params)
+    /** @return (Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function get(array $params): Json|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\Emojis::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\Emojis::class] = $this->hydrators->getObjectMapperOperation🌀Emojis();
         }

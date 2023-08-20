@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class DeleteActionsCacheByKey
 {
@@ -23,14 +26,18 @@ final readonly class DeleteActionsCacheByKey
     {
     }
 
-    /** @return PromiseInterface<ActionsCacheList> **/
-    public function call(string $owner, string $repo, string $key, string $ref): PromiseInterface
+    /** @return */
+    public function call(string $owner, string $repo, string $key, string $ref): ActionsCacheList|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteActionsCacheByKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $key, $ref);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

@@ -6,10 +6,37 @@ namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietC87B405D\Tiet9B9DED8
 
 abstract readonly class Tiet1AF85D12
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"description":{"type":["string","null"]},"color":{"type":["string","null"]}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "color": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"id":2,"name":"generated","description":"generated","color":"generated"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "id": 2,
+    "name": "generated",
+    "description": "generated",
+    "color": "generated"
+}';
 
     public function __construct(public int|null $id, public string|null $name, public string|null $description, public string|null $color)
     {

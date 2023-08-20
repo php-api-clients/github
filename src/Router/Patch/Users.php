@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\PrivateUser;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -19,12 +21,14 @@ final class Users
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params)
+    /** @return (iterable<Schema\Email> | array{code: int}) */
+    public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params): iterable
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User\Email\Visibility::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Email\Visibility::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Email🌀Visibility();
         }
@@ -34,8 +38,10 @@ final class Users
         return $operator->call($params);
     }
 
-    public function updateAuthenticated(array $params)
+    /** @return (Schema\PrivateUser | array{code: int}) */
+    public function updateAuthenticated(array $params): PrivateUser|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User::class] = $this->hydrators->getObjectMapperOperation🌀User();
         }

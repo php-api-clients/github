@@ -4,10 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operator\Interactions;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
+use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetRestrictionsForAuthenticatedUser
 {
@@ -16,18 +24,22 @@ final readonly class GetRestrictionsForAuthenticatedUser
     private const METHOD         = 'GET';
     private const PATH           = '/user/interaction-limits';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\InteractionLimits $hydrator)
     {
     }
 
-    /** @return PromiseInterface<array> **/
-    public function call(): PromiseInterface
+    /** @return (Schema\InteractionLimitResponse | Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One | array{code: int}) */
+    public function call(): InteractionLimitResponse|One|array
     {
-        $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForAuthenticatedUser();
+        $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): InteractionLimitResponse|One|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

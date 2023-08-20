@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\GistComment;
+use ApiClients\Client\GitHub\Schema\GistSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Gists
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function list_(array $params)
+    /** @return (iterable<Schema\BaseGist> | array{code: int}) */
+    public function list_(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
@@ -54,8 +59,10 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listPublic(array $params)
+    /** @return (iterable<Schema\BaseGist> | array{code: int}) */
+    public function listPublic(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
@@ -84,8 +91,10 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listStarred(array $params)
+    /** @return (iterable<Schema\BaseGist> | array{code: int}) */
+    public function listStarred(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
@@ -114,8 +123,10 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function get(array $params)
+    /** @return (Schema\GistSimple | array{code: int}) */
+    public function get(array $params): GistSimple|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -132,8 +143,10 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    public function listComments(array $params)
+    /** @return (iterable<Schema\GistComment> | array{code: int}) */
+    public function listComments(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -162,8 +175,10 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listCommits(array $params)
+    /** @return (iterable<Schema\GistCommit> | array{code: int}) */
+    public function listCommits(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -192,8 +207,10 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForks(array $params)
+    /** @return (iterable<Schema\GistSimple> | array{code: int}) */
+    public function listForks(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -222,8 +239,10 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function checkIsStarred(array $params)
+    /** @return array{code: int} */
+    public function checkIsStarred(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -240,8 +259,10 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    public function getRevision(array $params)
+    /** @return */
+    public function getRevision(array $params): GistSimple|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -264,8 +285,10 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['sha']);
     }
 
-    public function listForUser(array $params)
+    /** @return iterable<Schema\BaseGist> */
+    public function listForUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -300,8 +323,10 @@ final class Gists
         return $operator->call($arguments['username'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getComment(array $params)
+    /** @return (Schema\GistComment | array{code: int}) */
+    public function getComment(array $params): GistComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');

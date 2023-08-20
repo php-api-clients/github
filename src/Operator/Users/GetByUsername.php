@@ -5,11 +5,17 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Users;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\PrivateUser;
+use ApiClients\Client\GitHub\Schema\PublicUser;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetByUsername
 {
@@ -22,14 +28,18 @@ final readonly class GetByUsername
     {
     }
 
-    /** @return PromiseInterface<mixed> **/
-    public function call(string $username): PromiseInterface
+    /** @return (Schema\PrivateUser | Schema\PublicUser) */
+    public function call(string $username): PrivateUser|PublicUser|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetByUsername($this->responseSchemaValidator, $this->hydrator, $username);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): mixed {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PrivateUser|PublicUser|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

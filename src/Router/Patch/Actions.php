@@ -19,12 +19,14 @@ final class Actions
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function updateOrgVariable(array $params)
+    /** @return array{code: int} */
+    public function updateOrgVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -43,8 +45,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name'], $params);
     }
 
-    public function updateRepoVariable(array $params)
+    /** @return array{code: int} */
+    public function updateRepoVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -69,8 +73,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    public function updateEnvironmentVariable(array $params)
+    /** @return array{code: int} */
+    public function updateEnvironmentVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_id');

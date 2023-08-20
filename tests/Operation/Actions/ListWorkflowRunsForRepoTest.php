@@ -13,15 +13,17 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Actions\ListWorkflowRunsForRepo */
 final class ListWorkflowRunsForRepoTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -50,7 +52,7 @@ final class ListWorkflowRunsForRepoTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Actions\ListWorkflowRunsForRepo\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -58,6 +60,6 @@ final class ListWorkflowRunsForRepoTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/actions/runs?actor=generated&branch=generated&event=generated&status=generated&created=1970-01-01T00:00:00+00:00&check_suite_id=14&head_sha=generated&per_page=8&page=4&exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->listWorkflowRunsForRepo('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 14, 'generated', 8, 4, false));
+        $result = $client->operations()->actions()->listWorkflowRunsForRepo('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 14, 'generated', 8, 4, false);
     }
 }

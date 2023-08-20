@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetOrgSecret
 {
@@ -23,14 +26,18 @@ final readonly class GetOrgSecret
     {
     }
 
-    /** @return PromiseInterface<CodespacesOrgSecret> **/
-    public function call(string $org, string $secretName): PromiseInterface
+    /** @return */
+    public function call(string $org, string $secretName): CodespacesOrgSecret|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesOrgSecret {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesOrgSecret|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

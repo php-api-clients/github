@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\ActionsCacheList;
+use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Actions
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function disableSelectedRepositoryGithubActionsOrganization(array $params)
+    /** @return array{code: int} */
+    public function disableSelectedRepositoryGithubActionsOrganization(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -44,8 +49,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['repository_id']);
     }
 
-    public function removeAllCustomLabelsFromSelfHostedRunnerForOrg(array $params)
+    /** @return */
+    public function removeAllCustomLabelsFromSelfHostedRunnerForOrg(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -68,8 +75,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_id']);
     }
 
-    public function deleteArtifact(array $params)
+    /** @return array{code: int} */
+    public function deleteArtifact(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -94,8 +103,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['artifact_id']);
     }
 
-    public function deleteActionsCacheById(array $params)
+    /** @return array{code: int} */
+    public function deleteActionsCacheById(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -120,8 +131,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['cache_id']);
     }
 
-    public function deleteSelfHostedRunnerFromRepo(array $params)
+    /** @return array{code: int} */
+    public function deleteSelfHostedRunnerFromRepo(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -146,8 +159,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['runner_id']);
     }
 
-    public function deleteWorkflowRun(array $params)
+    /** @return array{code: int} */
+    public function deleteWorkflowRun(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -172,8 +187,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
     }
 
-    public function deleteRepoSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteRepoSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -198,8 +215,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
-    public function deleteRepoVariable(array $params)
+    /** @return array{code: int} */
+    public function deleteRepoVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -224,8 +243,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
-    public function deleteEnvironmentSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteEnvironmentSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_id');
@@ -250,8 +271,10 @@ final class Actions
         return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['secret_name']);
     }
 
-    public function deleteEnvironmentVariable(array $params)
+    /** @return array{code: int} */
+    public function deleteEnvironmentVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_id');
@@ -276,8 +299,10 @@ final class Actions
         return $operator->call($arguments['repository_id'], $arguments['name'], $arguments['environment_name']);
     }
 
-    public function deleteSelfHostedRunnerFromOrg(array $params)
+    /** @return array{code: int} */
+    public function deleteSelfHostedRunnerFromOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -296,8 +321,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_id']);
     }
 
-    public function deleteOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -316,8 +343,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    public function deleteOrgVariable(array $params)
+    /** @return array{code: int} */
+    public function deleteOrgVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -336,8 +365,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name']);
     }
 
-    public function deleteActionsCacheByKey(array $params)
+    /** @return */
+    public function deleteActionsCacheByKey(array $params): ActionsCacheList|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -372,8 +403,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
     }
 
-    public function removeCustomLabelFromSelfHostedRunnerForOrg(array $params)
+    /** @return */
+    public function removeCustomLabelFromSelfHostedRunnerForOrg(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -402,8 +435,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_id'], $arguments['name']);
     }
 
-    public function removeSelectedRepoFromOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function removeSelectedRepoFromOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -428,8 +463,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['secret_name'], $arguments['repository_id']);
     }
 
-    public function removeSelectedRepoFromOrgVariable(array $params)
+    /** @return array{code: int} */
+    public function removeSelectedRepoFromOrgVariable(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -454,8 +491,10 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name'], $arguments['repository_id']);
     }
 
-    public function removeAllCustomLabelsFromSelfHostedRunnerForRepo(array $params)
+    /** @return */
+    public function removeAllCustomLabelsFromSelfHostedRunnerForRepo(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -484,8 +523,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['runner_id']);
     }
 
-    public function deleteWorkflowRunLogs(array $params)
+    /** @return array{code: int} */
+    public function deleteWorkflowRunLogs(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -514,8 +555,10 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
     }
 
-    public function removeCustomLabelFromSelfHostedRunnerForRepo(array $params)
+    /** @return */
+    public function removeCustomLabelFromSelfHostedRunnerForRepo(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -49,7 +52,8 @@ final class ListEvents
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->issueNumber, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,8 +62,152 @@ final class ListEvents
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\LabeledIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\LabeledIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\UnlabeledIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\UnlabeledIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaab;
+                            }
+
+                            items_application_json_two_hundred_aaaab:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AssignedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\AssignedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaac;
+                            }
+
+                            items_application_json_two_hundred_aaaac:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\UnassignedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\UnassignedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaad;
+                            }
+
+                            items_application_json_two_hundred_aaaad:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MilestonedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\MilestonedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaae;
+                            }
+
+                            items_application_json_two_hundred_aaaae:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\DemilestonedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\DemilestonedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaf;
+                            }
+
+                            items_application_json_two_hundred_aaaaf:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RenamedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RenamedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaag;
+                            }
+
+                            items_application_json_two_hundred_aaaag:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ReviewRequestedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\ReviewRequestedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaah;
+                            }
+
+                            items_application_json_two_hundred_aaaah:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ReviewRequestRemovedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\ReviewRequestRemovedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaai;
+                            }
+
+                            items_application_json_two_hundred_aaaai:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ReviewDismissedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\ReviewDismissedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaj;
+                            }
+
+                            items_application_json_two_hundred_aaaaj:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\LockedIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\LockedIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaak;
+                            }
+
+                            items_application_json_two_hundred_aaaak:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\AddedToProjectIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\AddedToProjectIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaal;
+                            }
+
+                            items_application_json_two_hundred_aaaal:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MovedColumnInProjectIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\MovedColumnInProjectIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaam;
+                            }
+
+                            items_application_json_two_hundred_aaaam:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RemovedFromProjectIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RemovedFromProjectIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaan;
+                            }
+
+                            items_application_json_two_hundred_aaaan:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ConvertedNoteToIssueIssueEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\ConvertedNoteToIssueIssueEvent::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaao;
+                            }
+
+                            items_application_json_two_hundred_aaaao:
+                            throw $error;
+                        });
+                    /**
                      * Gone
                      **/
+
                     case 410:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

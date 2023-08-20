@@ -19,12 +19,14 @@ final class Dependabot
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteRepoSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteRepoSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -49,8 +51,10 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
-    public function deleteOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -69,8 +73,10 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    public function removeSelectedRepoFromOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function removeSelectedRepoFromOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

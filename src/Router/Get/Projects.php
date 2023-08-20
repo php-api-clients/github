@@ -7,6 +7,11 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Project;
+use ApiClients\Client\GitHub\Schema\ProjectCard;
+use ApiClients\Client\GitHub\Schema\ProjectCollaboratorPermission;
+use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +25,14 @@ final class Projects
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function get(array $params)
+    /** @return (Schema\Project | array{code: int}) */
+    public function get(array $params): Project|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -42,8 +49,10 @@ final class Projects
         return $operator->call($arguments['project_id']);
     }
 
-    public function listForOrg(array $params)
+    /** @return iterable<Schema\Project> */
+    public function listForOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -78,8 +87,10 @@ final class Projects
         return $operator->call($arguments['org'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getColumn(array $params)
+    /** @return (Schema\ProjectColumn | array{code: int}) */
+    public function getColumn(array $params): ProjectColumn|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -96,8 +107,10 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
-    public function listCollaborators(array $params)
+    /** @return (iterable<Schema\SimpleUser> | array{code: int}) */
+    public function listCollaborators(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -132,8 +145,10 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listColumns(array $params)
+    /** @return (iterable<Schema\ProjectColumn> | array{code: int}) */
+    public function listColumns(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -162,8 +177,10 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForUser(array $params)
+    /** @return iterable<Schema\Project> */
+    public function listForUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -198,8 +215,10 @@ final class Projects
         return $operator->call($arguments['username'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getCard(array $params)
+    /** @return (Schema\ProjectCard | array{code: int}) */
+    public function getCard(array $params): ProjectCard|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: card_id');
@@ -216,8 +235,10 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
-    public function listCards(array $params)
+    /** @return (iterable<Schema\ProjectCard> | array{code: int}) */
+    public function listCards(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -252,8 +273,10 @@ final class Projects
         return $operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForRepo(array $params)
+    /** @return iterable<Schema\Project> */
+    public function listForRepo(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -294,8 +317,10 @@ final class Projects
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getPermissionForUser(array $params)
+    /** @return (Schema\ProjectCollaboratorPermission | array{code: int}) */
+    public function getPermissionForUser(array $params): ProjectCollaboratorPermission|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');

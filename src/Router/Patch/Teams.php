@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\TeamDiscussion;
+use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
+use ApiClients\Client\GitHub\Schema\TeamFull;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Teams
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function updateLegacy(array $params)
+    /** @return */
+    public function updateLegacy(array $params): TeamFull|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -42,8 +47,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $params);
     }
 
-    public function updateInOrg(array $params)
+    /** @return */
+    public function updateInOrg(array $params): TeamFull|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -66,8 +73,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $params);
     }
 
-    public function updateDiscussionLegacy(array $params)
+    /** @return */
+    public function updateDiscussionLegacy(array $params): TeamDiscussion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -90,8 +99,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
-    public function updateDiscussionInOrg(array $params)
+    /** @return */
+    public function updateDiscussionInOrg(array $params): TeamDiscussion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -120,8 +131,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $params);
     }
 
-    public function updateDiscussionCommentLegacy(array $params)
+    /** @return */
+    public function updateDiscussionCommentLegacy(array $params): TeamDiscussionComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -150,8 +163,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number'], $params);
     }
 
-    public function updateDiscussionCommentInOrg(array $params)
+    /** @return */
+    public function updateDiscussionCommentInOrg(array $params): TeamDiscussionComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

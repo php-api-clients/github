@@ -8,10 +8,26 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 final readonly class RepositoryId
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"repository_ids":{"type":"array","items":{"type":"integer"},"description":"The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass."}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "repository_ids": {
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "description": "The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass."
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"repository_ids":[15,16]}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "repository_ids": [
+        15,
+        16
+    ]
+}';
 
     /**
      * repositoryIds: The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass.

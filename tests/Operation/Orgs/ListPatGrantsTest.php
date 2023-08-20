@@ -14,16 +14,18 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Orgs\ListPatGrants */
 final class ListPatGrantsTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(500, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -51,7 +53,7 @@ final class ListPatGrantsTest extends AsyncTestCase
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(500, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -59,14 +61,14 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated'));
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
     }
 
     /** @test */
     public function call_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
-        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -94,7 +96,7 @@ final class ListPatGrantsTest extends AsyncTestCase
     public function operations_httpCode_422_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
-        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -102,14 +104,14 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated'));
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
     }
 
     /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -137,7 +139,7 @@ final class ListPatGrantsTest extends AsyncTestCase
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -145,14 +147,14 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated'));
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
     }
 
     /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -180,7 +182,7 @@ final class ListPatGrantsTest extends AsyncTestCase
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -188,6 +190,6 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated'));
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
     }
 }

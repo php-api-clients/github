@@ -14,16 +14,18 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Repos\DeleteRepoRuleset */
 final class DeleteRepoRulesetTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -44,7 +46,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -52,14 +54,14 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('DELETE', '/repos/generated/generated/rulesets/10', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10));
+        $result = $client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10);
     }
 
     /** @test */
     public function call_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(500, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -80,7 +82,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
     public function operations_httpCode_500_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(500, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(500, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -88,7 +90,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('DELETE', '/repos/generated/generated/rulesets/10', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10));
+        $result = $client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10);
     }
 
     /** @test */
@@ -122,7 +124,7 @@ final class DeleteRepoRulesetTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('DELETE', '/repos/generated/generated/rulesets/10', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10));
+        $result = $client->operations()->repos()->deleteRepoRuleset('generated', 'generated', 10);
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }

@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Orgs;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class ConvertMemberToOutsideCollaborator
 {
@@ -23,14 +27,18 @@ final readonly class ConvertMemberToOutsideCollaborator
     {
     }
 
-    /** @return PromiseInterface<(Json|array)> **/
-    public function call(string $org, string $username, array $params): PromiseInterface
+    /** @return (Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    public function call(string $org, string $username, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ConvertMemberToOutsideCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $username);
         $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

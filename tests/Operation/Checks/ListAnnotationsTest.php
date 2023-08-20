@@ -6,6 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Checks;
 
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Checks\ListAnnotations */
 final class ListAnnotationsTest extends AsyncTestCase
 {
 }

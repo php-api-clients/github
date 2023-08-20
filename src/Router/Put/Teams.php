@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Put;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\TeamMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Teams
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function addMemberLegacy(array $params)
+    /** @return array{code: int} */
+    public function addMemberLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -48,8 +52,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    public function addOrUpdateMembershipForUserLegacy(array $params)
+    /** @return (Schema\TeamMembership | array{code: int}) */
+    public function addOrUpdateMembershipForUserLegacy(array $params): TeamMembership|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -72,8 +78,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username'], $params);
     }
 
-    public function addOrUpdateProjectPermissionsLegacy(array $params)
+    /** @return array{code: int} */
+    public function addOrUpdateProjectPermissionsLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -96,8 +104,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id'], $params);
     }
 
-    public function addOrUpdateMembershipForUserInOrg(array $params)
+    /** @return (Schema\TeamMembership | array{code: int}) */
+    public function addOrUpdateMembershipForUserInOrg(array $params): TeamMembership|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -126,8 +136,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username'], $params);
     }
 
-    public function addOrUpdateProjectPermissionsInOrg(array $params)
+    /** @return array{code: int} */
+    public function addOrUpdateProjectPermissionsInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -156,8 +168,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id'], $params);
     }
 
-    public function addOrUpdateRepoPermissionsLegacy(array $params)
+    /** @return array{code: int} */
+    public function addOrUpdateRepoPermissionsLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -186,8 +200,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function addOrUpdateRepoPermissionsInOrg(array $params)
+    /** @return array{code: int} */
+    public function addOrUpdateRepoPermissionsInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

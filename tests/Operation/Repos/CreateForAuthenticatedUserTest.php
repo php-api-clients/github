@@ -15,21 +15,22 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
-use function React\Async\await;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Repos\CreateForAuthenticatedUser */
 final class CreateForAuthenticatedUserTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Repository::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Repository::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -39,28 +40,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Repository::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Repository::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -71,28 +72,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_401_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -103,28 +104,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_404_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -135,28 +136,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
-        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -167,28 +168,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_422_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\ValidationError::class);
-        $response = new Response(422, ['Content-Type' => 'application/json'], Schema\ValidationError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(400, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(400, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -199,28 +200,28 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(400, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(400, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
     public function call_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
-        $response = new Response(400, ['Content-Type' => 'application/scim+json'], Schema\ScimError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(400, ['Content-Type' => 'application/scim+json'], json_encode(json_decode(Schema\ScimError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -231,15 +232,15 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
     public function operations_httpCode_400_requestContentType_application_json_responseContentType_application_scim_json_zero(): void
     {
         self::expectException(ErrorSchemas\ScimError::class);
-        $response = new Response(400, ['Content-Type' => 'application/scim+json'], Schema\ScimError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(400, ['Content-Type' => 'application/scim+json'], json_encode(json_decode(Schema\ScimError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -251,7 +252,7 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -267,9 +268,9 @@ final class CreateForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/user/repos', Argument::type('array'), Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/user/repos', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createForAuthenticatedUser(json_decode(Schema\Repos\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

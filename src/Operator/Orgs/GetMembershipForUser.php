@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetMembershipForUser
 {
@@ -23,14 +26,18 @@ final readonly class GetMembershipForUser
     {
     }
 
-    /** @return PromiseInterface<OrgMembership> **/
-    public function call(string $org, string $username): PromiseInterface
+    /** @return */
+    public function call(string $org, string $username): OrgMembership|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\GetMembershipForUser($this->responseSchemaValidator, $this->hydrator, $org, $username);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

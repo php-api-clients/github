@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operator\Repos;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class ListDeployments
 {
@@ -16,18 +22,22 @@ final readonly class ListDeployments
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/deployments';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments $hydrator)
     {
     }
 
-    /** @return PromiseInterface<ResponseInterface> **/
-    public function call(string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $perPage = 30, int $page = 1): PromiseInterface
+    /** @return iterable<Schema\Deployment> */
+    public function call(string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $perPage = 30, int $page = 1): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeployments($owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeployments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

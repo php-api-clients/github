@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Actions;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class ListSelectedReposForOrgVariable
 {
@@ -23,14 +27,18 @@ final readonly class ListSelectedReposForOrgVariable
     {
     }
 
-    /** @return PromiseInterface<(Json|array)> **/
-    public function call(string $org, string $name, int $page = 1, int $perPage = 30): PromiseInterface
+    /** @return (Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function call(string $org, string $name, int $page = 1, int $perPage = 30): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListSelectedReposForOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name, $page, $perPage);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

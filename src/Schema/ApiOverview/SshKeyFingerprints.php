@@ -8,10 +8,31 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 final readonly class SshKeyFingerprints
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"SHA256_RSA":{"type":"string"},"SHA256_DSA":{"type":"string"},"SHA256_ECDSA":{"type":"string"},"SHA256_ED25519":{"type":"string"}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "SHA256_RSA": {
+            "type": "string"
+        },
+        "SHA256_DSA": {
+            "type": "string"
+        },
+        "SHA256_ECDSA": {
+            "type": "string"
+        },
+        "SHA256_ED25519": {
+            "type": "string"
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"SHA256_RSA":"generated","SHA256_DSA":"generated","SHA256_ECDSA":"generated","SHA256_ED25519":"generated"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "SHA256_RSA": "generated",
+    "SHA256_DSA": "generated",
+    "SHA256_ECDSA": "generated",
+    "SHA256_ED25519": "generated"
+}';
 
     public function __construct(#[MapFrom('SHA256_RSA')]
     public string|null $shaTwoHundredFiftySixRsa, #[MapFrom('SHA256_DSA')]

@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetWebhookDelivery
 {
@@ -23,14 +26,18 @@ final readonly class GetWebhookDelivery
     {
     }
 
-    /** @return PromiseInterface<HookDelivery> **/
-    public function call(int $deliveryId): PromiseInterface
+    /** @return */
+    public function call(int $deliveryId): HookDelivery|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetWebhookDelivery($this->responseSchemaValidator, $this->hydrator, $deliveryId);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): HookDelivery {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): HookDelivery|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

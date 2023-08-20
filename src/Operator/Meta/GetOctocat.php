@@ -7,7 +7,10 @@ namespace ApiClients\Client\GitHub\Operator\Meta;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetOctocat
 {
@@ -20,14 +23,18 @@ final readonly class GetOctocat
     {
     }
 
-    /** @return PromiseInterface<ResponseInterface> **/
-    public function call(string $s): PromiseInterface
+    /** @return */
+    public function call(string $s): ResponseInterface|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\GetOctocat($s);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

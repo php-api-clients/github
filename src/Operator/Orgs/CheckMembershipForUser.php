@@ -7,7 +7,10 @@ namespace ApiClients\Client\GitHub\Operator\Orgs;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class CheckMembershipForUser
 {
@@ -20,14 +23,18 @@ final readonly class CheckMembershipForUser
     {
     }
 
-    /** @return PromiseInterface<array> **/
-    public function call(string $org, string $username): PromiseInterface
+    /** @return (array{code: int} | array{code: int, location: string}) */
+    public function call(string $org, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\CheckMembershipForUser($org, $username);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

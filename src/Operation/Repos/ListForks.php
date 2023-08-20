@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -49,7 +52,8 @@ final class ListForks
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->sort, $this->perPage, $this->page], self::PATH . '?sort={sort}&per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\MinimalRepository> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,8 +62,26 @@ final class ListForks
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\MinimalRepository {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Bad Request
                      **/
+
                     case 400:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

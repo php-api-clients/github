@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -94,8 +97,8 @@ final class ListAlertsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{state}', '{severity}', '{ecosystem}', '{package}', '{manifest}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{page}', '{per_page}', '{first}'], [$this->owner, $this->repo, $this->state, $this->severity, $this->ecosystem, $this->package, $this->manifest, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->page, $this->perPage, $this->first], self::PATH . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&manifest={manifest}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&first={first}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    /** @return Observable<Schema\DependabotAlert>|array{code: int} */
+    public function createResponse(ResponseInterface $response): Observable|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -104,8 +107,26 @@ final class ListAlertsForRepo
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\DependabotAlert {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\DependabotAlert::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\DependabotAlert::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Bad Request
                      **/
+
                     case 400:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

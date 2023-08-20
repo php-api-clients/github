@@ -20,12 +20,14 @@ final class Projects
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function addCollaborator(array $params)
+    /** @return array{code: int} */
+    public function addCollaborator(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');

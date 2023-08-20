@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\PullRequestReview;
+use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Pulls
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteReviewComment(array $params)
+    /** @return array{code: int} */
+    public function deleteReviewComment(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -54,8 +58,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    public function removeRequestedReviewers(array $params)
+    /** @return */
+    public function removeRequestedReviewers(array $params): PullRequestSimple|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -84,8 +90,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    public function deletePendingReview(array $params)
+    /** @return */
+    public function deletePendingReview(array $params): PullRequestReview|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

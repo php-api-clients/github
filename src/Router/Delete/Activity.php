@@ -20,12 +20,14 @@ final class Activity
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteThreadSubscription(array $params)
+    /** @return array{code: int} */
+    public function deleteThreadSubscription(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('thread_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: thread_id');
@@ -42,8 +44,10 @@ final class Activity
         return $operator->call($arguments['thread_id']);
     }
 
-    public function deleteRepoSubscription(array $params)
+    /** @return array{code: int} */
+    public function deleteRepoSubscription(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -62,8 +66,10 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function unstarRepoForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function unstarRepoForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

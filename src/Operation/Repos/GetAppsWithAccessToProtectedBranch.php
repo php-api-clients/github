@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -43,7 +46,8 @@ final class GetAppsWithAccessToProtectedBranch
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\Integration> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -52,8 +56,26 @@ final class GetAppsWithAccessToProtectedBranch
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Integration {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Integration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\Integration::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Resource not found
                      **/
+
                     case 404:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

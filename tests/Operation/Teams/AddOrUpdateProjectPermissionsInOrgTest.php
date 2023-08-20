@@ -15,22 +15,23 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
-use function React\Async\await;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateProjectPermissionsInOrg */
 final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), json_encode(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateProjectPermissionsInOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']        = 'generated';
@@ -45,15 +46,15 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
     public function operations_httpCode_403_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Teams\AddOrUpdateProjectPermissionsInOrg\Response\ApplicationJson\Forbidden\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), json_encode(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsInOrg('generated', 'generated', 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->teams()->addOrUpdateProjectPermissionsInOrg('generated', 'generated', 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -65,7 +66,7 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), json_encode(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\AddOrUpdateProjectPermissionsInOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']        = 'generated';
@@ -85,9 +86,9 @@ final class AddOrUpdateProjectPermissionsInOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('PUT', '/orgs/generated/teams/generated/projects/10', Argument::type('array'), json_encode(json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->teams()->addOrUpdateProjectPermissionsInOrg('generated', 'generated', 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->teams()->addOrUpdateProjectPermissionsInOrg('generated', 'generated', 10, json_decode(Schema\Teams\AddOrUpdateProjectPermissionsInOrg\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }

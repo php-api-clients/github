@@ -13,15 +13,17 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Actions\GetWorkflowRunAttempt */
 final class GetWorkflowRunAttemptTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -43,7 +45,7 @@ final class GetWorkflowRunAttemptTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\WorkflowRun::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -51,6 +53,6 @@ final class GetWorkflowRunAttemptTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14?exclude_pull_requests=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->actions()->getWorkflowRunAttempt('generated', 'generated', 6, 14, false));
+        $result = $client->operations()->actions()->getWorkflowRunAttempt('generated', 'generated', 6, 14, false);
     }
 }

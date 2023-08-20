@@ -7,6 +7,15 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\HookDelivery;
+use ApiClients\Client\GitHub\Schema\Installation;
+use ApiClients\Client\GitHub\Schema\Integration;
+use ApiClients\Client\GitHub\Schema\MarketplacePurchase;
+use ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +29,14 @@ final class Apps
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getAuthenticated(array $params)
+    /** @return */
+    public function getAuthenticated(array $params): Integration|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\App::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\App::class] = $this->hydrators->getObjectMapperOperation🌀App();
         }
@@ -35,8 +46,10 @@ final class Apps
         return $operator->call();
     }
 
-    public function listInstallationRequestsForAuthenticatedApp(array $params)
+    /** @return (iterable<Schema\IntegrationInstallationRequest> | array{code: int}) */
+    public function listInstallationRequestsForAuthenticatedApp(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -59,8 +72,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function listInstallations(array $params)
+    /** @return iterable<Schema\Installation> */
+    public function listInstallations(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
@@ -86,13 +101,19 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Apps\ListInstallations($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\App\Installations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\App\Installations::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations();
+        }
+
+        $operator = new Operator\Apps\ListInstallations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations::class]);
 
         return $operator->call($arguments['since'], $arguments['outdated'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getBySlug(array $params)
+    /** @return */
+    public function getBySlug(array $params): Integration|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('app_slug', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: app_slug');
@@ -109,8 +130,10 @@ final class Apps
         return $operator->call($arguments['app_slug']);
     }
 
-    public function listReposAccessibleToInstallation(array $params)
+    /** @return (Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok | array{code: int}) */
+    public function listReposAccessibleToInstallation(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -133,8 +156,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function listPlans(array $params)
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlans(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -157,8 +182,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function listInstallationsForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function listInstallationsForAuthenticatedUser(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -181,8 +208,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function listSubscriptionsForAuthenticatedUser(array $params)
+    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    public function listSubscriptionsForAuthenticatedUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -205,8 +234,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function getWebhookConfigForApp(array $params)
+    /** @return */
+    public function getWebhookConfigForApp(array $params): WebhookConfig|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\App\Hook\Config::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\App\Hook\Config::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config();
         }
@@ -216,8 +247,10 @@ final class Apps
         return $operator->call();
     }
 
-    public function listWebhookDeliveries(array $params)
+    /** @return iterable<Schema\HookDeliveryItem> */
+    public function listWebhookDeliveries(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('cursor', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: cursor');
@@ -246,8 +279,10 @@ final class Apps
         return $operator->call($arguments['cursor'], $arguments['redelivery'], $arguments['per_page']);
     }
 
-    public function getInstallation(array $params)
+    /** @return */
+    public function getInstallation(array $params): Installation|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');
@@ -264,8 +299,10 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    public function getSubscriptionPlanForAccount(array $params)
+    /** @return */
+    public function getSubscriptionPlanForAccount(array $params): MarketplacePurchase|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('account_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: account_id');
@@ -282,8 +319,10 @@ final class Apps
         return $operator->call($arguments['account_id']);
     }
 
-    public function listPlansStubbed(array $params)
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlansStubbed(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -306,8 +345,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function getOrgInstallation(array $params)
+    /** @return */
+    public function getOrgInstallation(array $params): Installation|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -324,8 +365,10 @@ final class Apps
         return $operator->call($arguments['org']);
     }
 
-    public function listSubscriptionsForAuthenticatedUserStubbed(array $params)
+    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    public function listSubscriptionsForAuthenticatedUserStubbed(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -348,8 +391,10 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function getUserInstallation(array $params)
+    /** @return */
+    public function getUserInstallation(array $params): Installation|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -366,8 +411,10 @@ final class Apps
         return $operator->call($arguments['username']);
     }
 
-    public function getWebhookDelivery(array $params)
+    /** @return */
+    public function getWebhookDelivery(array $params): HookDelivery|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('delivery_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: delivery_id');
@@ -384,8 +431,10 @@ final class Apps
         return $operator->call($arguments['delivery_id']);
     }
 
-    public function listAccountsForPlan(array $params)
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlan(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('plan_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: plan_id');
@@ -426,8 +475,10 @@ final class Apps
         return $operator->call($arguments['plan_id'], $arguments['direction'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getSubscriptionPlanForAccountStubbed(array $params)
+    /** @return (Schema\MarketplacePurchase | array{code: int}) */
+    public function getSubscriptionPlanForAccountStubbed(array $params): MarketplacePurchase|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('account_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: account_id');
@@ -444,8 +495,10 @@ final class Apps
         return $operator->call($arguments['account_id']);
     }
 
-    public function getRepoInstallation(array $params)
+    /** @return */
+    public function getRepoInstallation(array $params): Installation|BasicError|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -468,8 +521,10 @@ final class Apps
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function listInstallationReposForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok | array{code: int}) */
+    public function listInstallationReposForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');
@@ -498,8 +553,10 @@ final class Apps
         return $operator->call($arguments['installation_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listAccountsForPlanStubbed(array $params)
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlanStubbed(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('plan_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: plan_id');

@@ -6,10 +6,11 @@ namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
+use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
 
 use function array_key_exists;
 
@@ -21,7 +22,7 @@ final class Repos
     {
     }
 
-    public function listForOrg(string $org, string $direction, string $type, string $sort, int $perPage, int $page): PromiseInterface
+    public function listForOrg(string $org, string $direction, string $type, string $sort, int $perPage, int $page): Schema\MinimalRepository
     {
         if (array_key_exists(Operator\Repos\ListForOrg::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListForOrg::class] = new Operator\Repos\ListForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Repos());
@@ -30,7 +31,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListForOrg::class]->call($org, $direction, $type, $sort, $perPage, $page);
     }
 
-    public function createInOrg(string $org, array $params): PromiseInterface
+    public function createInOrg(string $org, array $params): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\CreateInOrg::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateInOrg::class] = new Operator\Repos\CreateInOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Repos());
@@ -39,7 +40,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateInOrg::class]->call($org, $params);
     }
 
-    public function getOrgRulesets(string $org, int $perPage, int $page): PromiseInterface
+    public function getOrgRulesets(string $org, int $perPage, int $page): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\GetOrgRulesets::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetOrgRulesets::class] = new Operator\Repos\GetOrgRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets());
@@ -48,7 +49,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetOrgRulesets::class]->call($org, $perPage, $page);
     }
 
-    public function createOrgRuleset(string $org, array $params): PromiseInterface
+    public function createOrgRuleset(string $org, array $params): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\CreateOrgRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateOrgRuleset::class] = new Operator\Repos\CreateOrgRuleset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets());
@@ -57,7 +58,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateOrgRuleset::class]->call($org, $params);
     }
 
-    public function getOrgRuleset(string $org, int $rulesetId): PromiseInterface
+    public function getOrgRuleset(string $org, int $rulesetId): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\GetOrgRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetOrgRuleset::class] = new Operator\Repos\GetOrgRuleset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId());
@@ -66,7 +67,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetOrgRuleset::class]->call($org, $rulesetId);
     }
 
-    public function updateOrgRuleset(string $org, int $rulesetId, array $params): PromiseInterface
+    public function updateOrgRuleset(string $org, int $rulesetId, array $params): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\UpdateOrgRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateOrgRuleset::class] = new Operator\Repos\UpdateOrgRuleset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId());
@@ -75,7 +76,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateOrgRuleset::class]->call($org, $rulesetId, $params);
     }
 
-    public function deleteOrgRuleset(string $org, int $rulesetId): PromiseInterface
+    public function deleteOrgRuleset(string $org, int $rulesetId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteOrgRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteOrgRuleset::class] = new Operator\Repos\DeleteOrgRuleset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId());
@@ -84,7 +85,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteOrgRuleset::class]->call($org, $rulesetId);
     }
 
-    public function get(string $owner, string $repo): PromiseInterface
+    public function get(string $owner, string $repo): Schema\FullRepository|Schema\BasicError
     {
         if (array_key_exists(Operator\Repos\Get::class, $this->operator) === false) {
             $this->operator[Operator\Repos\Get::class] = new Operator\Repos\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo());
@@ -93,7 +94,7 @@ final class Repos
         return $this->operator[Operator\Repos\Get::class]->call($owner, $repo);
     }
 
-    public function delete(string $owner, string $repo): PromiseInterface
+    public function delete(string $owner, string $repo): Schema\BasicError
     {
         if (array_key_exists(Operator\Repos\Delete::class, $this->operator) === false) {
             $this->operator[Operator\Repos\Delete::class] = new Operator\Repos\Delete($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo());
@@ -102,7 +103,7 @@ final class Repos
         return $this->operator[Operator\Repos\Delete::class]->call($owner, $repo);
     }
 
-    public function update(string $owner, string $repo, array $params): PromiseInterface
+    public function update(string $owner, string $repo, array $params): Schema\FullRepository|Schema\BasicError
     {
         if (array_key_exists(Operator\Repos\Update::class, $this->operator) === false) {
             $this->operator[Operator\Repos\Update::class] = new Operator\Repos\Update($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo());
@@ -111,7 +112,7 @@ final class Repos
         return $this->operator[Operator\Repos\Update::class]->call($owner, $repo, $params);
     }
 
-    public function listActivities(string $owner, string $repo, string $before, string $after, string $ref, string $actor, string $timePeriod, string $activityType, string $direction, int $perPage): PromiseInterface
+    public function listActivities(string $owner, string $repo, string $before, string $after, string $ref, string $actor, string $timePeriod, string $activityType, string $direction, int $perPage): Schema\Activity
     {
         if (array_key_exists(Operator\Repos\ListActivities::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListActivities::class] = new Operator\Repos\ListActivities($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Activity());
@@ -120,7 +121,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListActivities::class]->call($owner, $repo, $before, $after, $ref, $actor, $timePeriod, $activityType, $direction, $perPage);
     }
 
-    public function listAutolinks(string $owner, string $repo, int $page): PromiseInterface
+    public function listAutolinks(string $owner, string $repo, int $page): Schema\Autolink
     {
         if (array_key_exists(Operator\Repos\ListAutolinks::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListAutolinks::class] = new Operator\Repos\ListAutolinks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Autolinks());
@@ -129,7 +130,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListAutolinks::class]->call($owner, $repo, $page);
     }
 
-    public function createAutolink(string $owner, string $repo, array $params): PromiseInterface
+    public function createAutolink(string $owner, string $repo, array $params): Schema\Autolink
     {
         if (array_key_exists(Operator\Repos\CreateAutolink::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateAutolink::class] = new Operator\Repos\CreateAutolink($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Autolinks());
@@ -138,7 +139,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateAutolink::class]->call($owner, $repo, $params);
     }
 
-    public function getAutolink(string $owner, string $repo, int $autolinkId): PromiseInterface
+    public function getAutolink(string $owner, string $repo, int $autolinkId): Schema\Autolink
     {
         if (array_key_exists(Operator\Repos\GetAutolink::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAutolink::class] = new Operator\Repos\GetAutolink($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Autolinks🌀AutolinkId());
@@ -147,7 +148,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAutolink::class]->call($owner, $repo, $autolinkId);
     }
 
-    public function deleteAutolink(string $owner, string $repo, int $autolinkId): PromiseInterface
+    public function deleteAutolink(string $owner, string $repo, int $autolinkId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteAutolink::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteAutolink::class] = new Operator\Repos\DeleteAutolink($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Autolinks🌀AutolinkId());
@@ -156,7 +157,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteAutolink::class]->call($owner, $repo, $autolinkId);
     }
 
-    public function checkAutomatedSecurityFixes(string $owner, string $repo): PromiseInterface
+    public function checkAutomatedSecurityFixes(string $owner, string $repo): Schema\CheckAutomatedSecurityFixes
     {
         if (array_key_exists(Operator\Repos\CheckAutomatedSecurityFixes::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CheckAutomatedSecurityFixes::class] = new Operator\Repos\CheckAutomatedSecurityFixes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀AutomatedSecurityFixes());
@@ -165,7 +166,7 @@ final class Repos
         return $this->operator[Operator\Repos\CheckAutomatedSecurityFixes::class]->call($owner, $repo);
     }
 
-    public function enableAutomatedSecurityFixes(string $owner, string $repo): PromiseInterface
+    public function enableAutomatedSecurityFixes(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\EnableAutomatedSecurityFixes::class, $this->operator) === false) {
             $this->operator[Operator\Repos\EnableAutomatedSecurityFixes::class] = new Operator\Repos\EnableAutomatedSecurityFixes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀AutomatedSecurityFixes());
@@ -174,7 +175,7 @@ final class Repos
         return $this->operator[Operator\Repos\EnableAutomatedSecurityFixes::class]->call($owner, $repo);
     }
 
-    public function disableAutomatedSecurityFixes(string $owner, string $repo): PromiseInterface
+    public function disableAutomatedSecurityFixes(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DisableAutomatedSecurityFixes::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DisableAutomatedSecurityFixes::class] = new Operator\Repos\DisableAutomatedSecurityFixes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀AutomatedSecurityFixes());
@@ -183,7 +184,7 @@ final class Repos
         return $this->operator[Operator\Repos\DisableAutomatedSecurityFixes::class]->call($owner, $repo);
     }
 
-    public function listBranches(string $owner, string $repo, bool $protected, int $perPage, int $page): PromiseInterface
+    public function listBranches(string $owner, string $repo, bool $protected, int $perPage, int $page): Schema\ShortBranch
     {
         if (array_key_exists(Operator\Repos\ListBranches::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListBranches::class] = new Operator\Repos\ListBranches($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches());
@@ -192,7 +193,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListBranches::class]->call($owner, $repo, $protected, $perPage, $page);
     }
 
-    public function getBranch(string $owner, string $repo, string $branch): PromiseInterface
+    public function getBranch(string $owner, string $repo, string $branch): Schema\BranchWithProtection|Schema\BasicError
     {
         if (array_key_exists(Operator\Repos\GetBranch::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetBranch::class] = new Operator\Repos\GetBranch($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch());
@@ -201,7 +202,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetBranch::class]->call($owner, $repo, $branch);
     }
 
-    public function getBranchProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function getBranchProtection(string $owner, string $repo, string $branch): Schema\BranchProtection
     {
         if (array_key_exists(Operator\Repos\GetBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetBranchProtection::class] = new Operator\Repos\GetBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection());
@@ -210,7 +211,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetBranchProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function updateBranchProtection(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function updateBranchProtection(string $owner, string $repo, string $branch, array $params): Schema\ProtectedBranch
     {
         if (array_key_exists(Operator\Repos\UpdateBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateBranchProtection::class] = new Operator\Repos\UpdateBranchProtection($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection());
@@ -219,7 +220,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateBranchProtection::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function deleteBranchProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function deleteBranchProtection(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteBranchProtection::class] = new Operator\Repos\DeleteBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection());
@@ -228,7 +229,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteBranchProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function getAdminBranchProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function getAdminBranchProtection(string $owner, string $repo, string $branch): Schema\ProtectedBranchAdminEnforced
     {
         if (array_key_exists(Operator\Repos\GetAdminBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAdminBranchProtection::class] = new Operator\Repos\GetAdminBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀EnforceAdmins());
@@ -237,7 +238,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAdminBranchProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function setAdminBranchProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function setAdminBranchProtection(string $owner, string $repo, string $branch): Schema\ProtectedBranchAdminEnforced
     {
         if (array_key_exists(Operator\Repos\SetAdminBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\SetAdminBranchProtection::class] = new Operator\Repos\SetAdminBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀EnforceAdmins());
@@ -246,7 +247,7 @@ final class Repos
         return $this->operator[Operator\Repos\SetAdminBranchProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function deleteAdminBranchProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function deleteAdminBranchProtection(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteAdminBranchProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteAdminBranchProtection::class] = new Operator\Repos\DeleteAdminBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀EnforceAdmins());
@@ -255,7 +256,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteAdminBranchProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function getPullRequestReviewProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function getPullRequestReviewProtection(string $owner, string $repo, string $branch): Schema\ProtectedBranchPullRequestReview
     {
         if (array_key_exists(Operator\Repos\GetPullRequestReviewProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetPullRequestReviewProtection::class] = new Operator\Repos\GetPullRequestReviewProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredPullRequestReviews());
@@ -264,7 +265,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetPullRequestReviewProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function deletePullRequestReviewProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function deletePullRequestReviewProtection(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeletePullRequestReviewProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeletePullRequestReviewProtection::class] = new Operator\Repos\DeletePullRequestReviewProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredPullRequestReviews());
@@ -273,7 +274,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeletePullRequestReviewProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function updatePullRequestReviewProtection(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function updatePullRequestReviewProtection(string $owner, string $repo, string $branch, array $params): Schema\ProtectedBranchPullRequestReview
     {
         if (array_key_exists(Operator\Repos\UpdatePullRequestReviewProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdatePullRequestReviewProtection::class] = new Operator\Repos\UpdatePullRequestReviewProtection($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredPullRequestReviews());
@@ -282,7 +283,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdatePullRequestReviewProtection::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function getCommitSignatureProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function getCommitSignatureProtection(string $owner, string $repo, string $branch): Schema\ProtectedBranchAdminEnforced
     {
         if (array_key_exists(Operator\Repos\GetCommitSignatureProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCommitSignatureProtection::class] = new Operator\Repos\GetCommitSignatureProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredSignatures());
@@ -291,7 +292,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCommitSignatureProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function createCommitSignatureProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function createCommitSignatureProtection(string $owner, string $repo, string $branch): Schema\ProtectedBranchAdminEnforced
     {
         if (array_key_exists(Operator\Repos\CreateCommitSignatureProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateCommitSignatureProtection::class] = new Operator\Repos\CreateCommitSignatureProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredSignatures());
@@ -300,7 +301,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateCommitSignatureProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function deleteCommitSignatureProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function deleteCommitSignatureProtection(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteCommitSignatureProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteCommitSignatureProtection::class] = new Operator\Repos\DeleteCommitSignatureProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredSignatures());
@@ -309,7 +310,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteCommitSignatureProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function getStatusChecksProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function getStatusChecksProtection(string $owner, string $repo, string $branch): Schema\StatusCheckPolicy
     {
         if (array_key_exists(Operator\Repos\GetStatusChecksProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetStatusChecksProtection::class] = new Operator\Repos\GetStatusChecksProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks());
@@ -318,7 +319,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetStatusChecksProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function removeStatusCheckProtection(string $owner, string $repo, string $branch): PromiseInterface
+    public function removeStatusCheckProtection(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\RemoveStatusCheckProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveStatusCheckProtection::class] = new Operator\Repos\RemoveStatusCheckProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks());
@@ -327,7 +328,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveStatusCheckProtection::class]->call($owner, $repo, $branch);
     }
 
-    public function updateStatusCheckProtection(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function updateStatusCheckProtection(string $owner, string $repo, string $branch, array $params): Schema\StatusCheckPolicy
     {
         if (array_key_exists(Operator\Repos\UpdateStatusCheckProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateStatusCheckProtection::class] = new Operator\Repos\UpdateStatusCheckProtection($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks());
@@ -336,7 +337,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateStatusCheckProtection::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function getAllStatusCheckContexts(string $owner, string $repo, string $branch): PromiseInterface
+    public function getAllStatusCheckContexts(string $owner, string $repo, string $branch): Schema\Operations\Repos\GetAllStatusCheckContexts\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\GetAllStatusCheckContexts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAllStatusCheckContexts::class] = new Operator\Repos\GetAllStatusCheckContexts($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks🌀Contexts());
@@ -345,7 +346,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAllStatusCheckContexts::class]->call($owner, $repo, $branch);
     }
 
-    public function setStatusCheckContexts(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function setStatusCheckContexts(string $owner, string $repo, string $branch, array $params): Schema\Operations\Repos\SetStatusCheckContexts\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\SetStatusCheckContexts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\SetStatusCheckContexts::class] = new Operator\Repos\SetStatusCheckContexts($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks🌀Contexts());
@@ -354,7 +355,7 @@ final class Repos
         return $this->operator[Operator\Repos\SetStatusCheckContexts::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function addStatusCheckContexts(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function addStatusCheckContexts(string $owner, string $repo, string $branch, array $params): Schema\Operations\Repos\AddStatusCheckContexts\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\AddStatusCheckContexts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AddStatusCheckContexts::class] = new Operator\Repos\AddStatusCheckContexts($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks🌀Contexts());
@@ -363,7 +364,7 @@ final class Repos
         return $this->operator[Operator\Repos\AddStatusCheckContexts::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function removeStatusCheckContexts(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function removeStatusCheckContexts(string $owner, string $repo, string $branch, array $params): Schema\Operations\Repos\RemoveStatusCheckContexts\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\RemoveStatusCheckContexts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveStatusCheckContexts::class] = new Operator\Repos\RemoveStatusCheckContexts($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredStatusChecks🌀Contexts());
@@ -372,7 +373,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveStatusCheckContexts::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function getAccessRestrictions(string $owner, string $repo, string $branch): PromiseInterface
+    public function getAccessRestrictions(string $owner, string $repo, string $branch): Schema\BranchRestrictionPolicy
     {
         if (array_key_exists(Operator\Repos\GetAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAccessRestrictions::class] = new Operator\Repos\GetAccessRestrictions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions());
@@ -381,7 +382,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAccessRestrictions::class]->call($owner, $repo, $branch);
     }
 
-    public function deleteAccessRestrictions(string $owner, string $repo, string $branch): PromiseInterface
+    public function deleteAccessRestrictions(string $owner, string $repo, string $branch): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteAccessRestrictions::class] = new Operator\Repos\DeleteAccessRestrictions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions());
@@ -390,7 +391,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteAccessRestrictions::class]->call($owner, $repo, $branch);
     }
 
-    public function getAppsWithAccessToProtectedBranch(string $owner, string $repo, string $branch): PromiseInterface
+    public function getAppsWithAccessToProtectedBranch(string $owner, string $repo, string $branch): Schema\Integration
     {
         if (array_key_exists(Operator\Repos\GetAppsWithAccessToProtectedBranch::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAppsWithAccessToProtectedBranch::class] = new Operator\Repos\GetAppsWithAccessToProtectedBranch($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Apps());
@@ -399,7 +400,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAppsWithAccessToProtectedBranch::class]->call($owner, $repo, $branch);
     }
 
-    public function setAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function setAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Integration
     {
         if (array_key_exists(Operator\Repos\SetAppAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\SetAppAccessRestrictions::class] = new Operator\Repos\SetAppAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Apps());
@@ -408,7 +409,7 @@ final class Repos
         return $this->operator[Operator\Repos\SetAppAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function addAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function addAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Integration
     {
         if (array_key_exists(Operator\Repos\AddAppAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AddAppAccessRestrictions::class] = new Operator\Repos\AddAppAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Apps());
@@ -417,7 +418,7 @@ final class Repos
         return $this->operator[Operator\Repos\AddAppAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function removeAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function removeAppAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Integration
     {
         if (array_key_exists(Operator\Repos\RemoveAppAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveAppAccessRestrictions::class] = new Operator\Repos\RemoveAppAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Apps());
@@ -426,7 +427,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveAppAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function getTeamsWithAccessToProtectedBranch(string $owner, string $repo, string $branch): PromiseInterface
+    public function getTeamsWithAccessToProtectedBranch(string $owner, string $repo, string $branch): Schema\Team
     {
         if (array_key_exists(Operator\Repos\GetTeamsWithAccessToProtectedBranch::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetTeamsWithAccessToProtectedBranch::class] = new Operator\Repos\GetTeamsWithAccessToProtectedBranch($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Teams());
@@ -435,7 +436,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetTeamsWithAccessToProtectedBranch::class]->call($owner, $repo, $branch);
     }
 
-    public function setTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function setTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Team
     {
         if (array_key_exists(Operator\Repos\SetTeamAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\SetTeamAccessRestrictions::class] = new Operator\Repos\SetTeamAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Teams());
@@ -444,7 +445,7 @@ final class Repos
         return $this->operator[Operator\Repos\SetTeamAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function addTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function addTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Team
     {
         if (array_key_exists(Operator\Repos\AddTeamAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AddTeamAccessRestrictions::class] = new Operator\Repos\AddTeamAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Teams());
@@ -453,7 +454,7 @@ final class Repos
         return $this->operator[Operator\Repos\AddTeamAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function removeTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function removeTeamAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\Team
     {
         if (array_key_exists(Operator\Repos\RemoveTeamAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveTeamAccessRestrictions::class] = new Operator\Repos\RemoveTeamAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Teams());
@@ -462,7 +463,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveTeamAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function getUsersWithAccessToProtectedBranch(string $owner, string $repo, string $branch): PromiseInterface
+    public function getUsersWithAccessToProtectedBranch(string $owner, string $repo, string $branch): Schema\SimpleUser
     {
         if (array_key_exists(Operator\Repos\GetUsersWithAccessToProtectedBranch::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetUsersWithAccessToProtectedBranch::class] = new Operator\Repos\GetUsersWithAccessToProtectedBranch($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Users());
@@ -471,7 +472,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetUsersWithAccessToProtectedBranch::class]->call($owner, $repo, $branch);
     }
 
-    public function setUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function setUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\SimpleUser
     {
         if (array_key_exists(Operator\Repos\SetUserAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\SetUserAccessRestrictions::class] = new Operator\Repos\SetUserAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Users());
@@ -480,7 +481,7 @@ final class Repos
         return $this->operator[Operator\Repos\SetUserAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function addUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function addUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\SimpleUser
     {
         if (array_key_exists(Operator\Repos\AddUserAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AddUserAccessRestrictions::class] = new Operator\Repos\AddUserAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Users());
@@ -489,7 +490,7 @@ final class Repos
         return $this->operator[Operator\Repos\AddUserAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function removeUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function removeUserAccessRestrictions(string $owner, string $repo, string $branch, array $params): Schema\SimpleUser
     {
         if (array_key_exists(Operator\Repos\RemoveUserAccessRestrictions::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveUserAccessRestrictions::class] = new Operator\Repos\RemoveUserAccessRestrictions($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀Restrictions🌀Users());
@@ -498,7 +499,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveUserAccessRestrictions::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function renameBranch(string $owner, string $repo, string $branch, array $params): PromiseInterface
+    public function renameBranch(string $owner, string $repo, string $branch, array $params): Schema\BranchWithProtection
     {
         if (array_key_exists(Operator\Repos\RenameBranch::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RenameBranch::class] = new Operator\Repos\RenameBranch($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Rename());
@@ -507,7 +508,7 @@ final class Repos
         return $this->operator[Operator\Repos\RenameBranch::class]->call($owner, $repo, $branch, $params);
     }
 
-    public function codeownersErrors(string $owner, string $repo, string $ref): PromiseInterface
+    public function codeownersErrors(string $owner, string $repo, string $ref): Schema\CodeownersErrors
     {
         if (array_key_exists(Operator\Repos\CodeownersErrors::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CodeownersErrors::class] = new Operator\Repos\CodeownersErrors($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codeowners🌀Errors());
@@ -516,7 +517,7 @@ final class Repos
         return $this->operator[Operator\Repos\CodeownersErrors::class]->call($owner, $repo, $ref);
     }
 
-    public function listCollaborators(string $owner, string $repo, string $permission, string $affiliation, int $perPage, int $page): PromiseInterface
+    public function listCollaborators(string $owner, string $repo, string $permission, string $affiliation, int $perPage, int $page): Schema\Collaborator
     {
         if (array_key_exists(Operator\Repos\ListCollaborators::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCollaborators::class] = new Operator\Repos\ListCollaborators($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators());
@@ -525,7 +526,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCollaborators::class]->call($owner, $repo, $permission, $affiliation, $perPage, $page);
     }
 
-    public function checkCollaborator(string $owner, string $repo, string $username): PromiseInterface
+    public function checkCollaborator(string $owner, string $repo, string $username): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\CheckCollaborator::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CheckCollaborator::class] = new Operator\Repos\CheckCollaborator($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username());
@@ -534,7 +535,7 @@ final class Repos
         return $this->operator[Operator\Repos\CheckCollaborator::class]->call($owner, $repo, $username);
     }
 
-    public function addCollaborator(string $owner, string $repo, string $username, array $params): PromiseInterface
+    public function addCollaborator(string $owner, string $repo, string $username, array $params): Schema\RepositoryInvitation
     {
         if (array_key_exists(Operator\Repos\AddCollaborator::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AddCollaborator::class] = new Operator\Repos\AddCollaborator($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username());
@@ -543,7 +544,7 @@ final class Repos
         return $this->operator[Operator\Repos\AddCollaborator::class]->call($owner, $repo, $username, $params);
     }
 
-    public function removeCollaborator(string $owner, string $repo, string $username): PromiseInterface
+    public function removeCollaborator(string $owner, string $repo, string $username): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\RemoveCollaborator::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RemoveCollaborator::class] = new Operator\Repos\RemoveCollaborator($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username());
@@ -552,7 +553,7 @@ final class Repos
         return $this->operator[Operator\Repos\RemoveCollaborator::class]->call($owner, $repo, $username);
     }
 
-    public function getCollaboratorPermissionLevel(string $owner, string $repo, string $username): PromiseInterface
+    public function getCollaboratorPermissionLevel(string $owner, string $repo, string $username): Schema\RepositoryCollaboratorPermission
     {
         if (array_key_exists(Operator\Repos\GetCollaboratorPermissionLevel::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCollaboratorPermissionLevel::class] = new Operator\Repos\GetCollaboratorPermissionLevel($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username🌀Permission());
@@ -561,7 +562,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCollaboratorPermissionLevel::class]->call($owner, $repo, $username);
     }
 
-    public function listCommitCommentsForRepo(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listCommitCommentsForRepo(string $owner, string $repo, int $perPage, int $page): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\ListCommitCommentsForRepo::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCommitCommentsForRepo::class] = new Operator\Repos\ListCommitCommentsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments());
@@ -570,7 +571,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommitCommentsForRepo::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function getCommitComment(string $owner, string $repo, int $commentId): PromiseInterface
+    public function getCommitComment(string $owner, string $repo, int $commentId): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\GetCommitComment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCommitComment::class] = new Operator\Repos\GetCommitComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments🌀CommentId());
@@ -579,7 +580,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCommitComment::class]->call($owner, $repo, $commentId);
     }
 
-    public function deleteCommitComment(string $owner, string $repo, int $commentId): PromiseInterface
+    public function deleteCommitComment(string $owner, string $repo, int $commentId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteCommitComment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteCommitComment::class] = new Operator\Repos\DeleteCommitComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments🌀CommentId());
@@ -588,7 +589,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteCommitComment::class]->call($owner, $repo, $commentId);
     }
 
-    public function updateCommitComment(string $owner, string $repo, int $commentId, array $params): PromiseInterface
+    public function updateCommitComment(string $owner, string $repo, int $commentId, array $params): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\UpdateCommitComment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateCommitComment::class] = new Operator\Repos\UpdateCommitComment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments🌀CommentId());
@@ -597,7 +598,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateCommitComment::class]->call($owner, $repo, $commentId, $params);
     }
 
-    public function listCommits(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage, int $page): PromiseInterface
+    public function listCommits(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage, int $page): Schema\Commit
     {
         if (array_key_exists(Operator\Repos\ListCommits::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCommits::class] = new Operator\Repos\ListCommits($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits());
@@ -606,7 +607,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommits::class]->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
     }
 
-    public function listBranchesForHeadCommit(string $owner, string $repo, string $commitSha): PromiseInterface
+    public function listBranchesForHeadCommit(string $owner, string $repo, string $commitSha): Schema\BranchShort
     {
         if (array_key_exists(Operator\Repos\ListBranchesForHeadCommit::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListBranchesForHeadCommit::class] = new Operator\Repos\ListBranchesForHeadCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀BranchesWhereHead());
@@ -615,7 +616,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListBranchesForHeadCommit::class]->call($owner, $repo, $commitSha);
     }
 
-    public function listCommentsForCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): PromiseInterface
+    public function listCommentsForCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\ListCommentsForCommit::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCommentsForCommit::class] = new Operator\Repos\ListCommentsForCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀Comments());
@@ -624,7 +625,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommentsForCommit::class]->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
-    public function createCommitComment(string $owner, string $repo, string $commitSha, array $params): PromiseInterface
+    public function createCommitComment(string $owner, string $repo, string $commitSha, array $params): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\CreateCommitComment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateCommitComment::class] = new Operator\Repos\CreateCommitComment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀Comments());
@@ -633,7 +634,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateCommitComment::class]->call($owner, $repo, $commitSha, $params);
     }
 
-    public function listPullRequestsAssociatedWithCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): PromiseInterface
+    public function listPullRequestsAssociatedWithCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): Schema\PullRequestSimple
     {
         if (array_key_exists(Operator\Repos\ListPullRequestsAssociatedWithCommit::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListPullRequestsAssociatedWithCommit::class] = new Operator\Repos\ListPullRequestsAssociatedWithCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀Pulls());
@@ -642,7 +643,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListPullRequestsAssociatedWithCommit::class]->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
-    public function getCommit(string $owner, string $repo, string $ref, int $page, int $perPage): PromiseInterface
+    public function getCommit(string $owner, string $repo, string $ref, int $page, int $perPage): Schema\Commit
     {
         if (array_key_exists(Operator\Repos\GetCommit::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCommit::class] = new Operator\Repos\GetCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀Ref());
@@ -651,7 +652,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCommit::class]->call($owner, $repo, $ref, $page, $perPage);
     }
 
-    public function getCombinedStatusForRef(string $owner, string $repo, string $ref, int $perPage, int $page): PromiseInterface
+    public function getCombinedStatusForRef(string $owner, string $repo, string $ref, int $perPage, int $page): Schema\CombinedCommitStatus
     {
         if (array_key_exists(Operator\Repos\GetCombinedStatusForRef::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCombinedStatusForRef::class] = new Operator\Repos\GetCombinedStatusForRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀Ref🌀Status());
@@ -660,7 +661,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCombinedStatusForRef::class]->call($owner, $repo, $ref, $perPage, $page);
     }
 
-    public function listCommitStatusesForRef(string $owner, string $repo, string $ref, int $perPage, int $page): PromiseInterface
+    public function listCommitStatusesForRef(string $owner, string $repo, string $ref, int $perPage, int $page): Schema\Status|Schema\BasicError
     {
         if (array_key_exists(Operator\Repos\ListCommitStatusesForRef::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCommitStatusesForRef::class] = new Operator\Repos\ListCommitStatusesForRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀Ref🌀Statuses());
@@ -669,7 +670,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommitStatusesForRef::class]->call($owner, $repo, $ref, $perPage, $page);
     }
 
-    public function getCommunityProfileMetrics(string $owner, string $repo): PromiseInterface
+    public function getCommunityProfileMetrics(string $owner, string $repo): Schema\CommunityProfile
     {
         if (array_key_exists(Operator\Repos\GetCommunityProfileMetrics::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCommunityProfileMetrics::class] = new Operator\Repos\GetCommunityProfileMetrics($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Community🌀Profile());
@@ -678,7 +679,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCommunityProfileMetrics::class]->call($owner, $repo);
     }
 
-    public function compareCommits(string $owner, string $repo, string $basehead, int $page, int $perPage): PromiseInterface
+    public function compareCommits(string $owner, string $repo, string $basehead, int $page, int $perPage): Schema\CommitComparison
     {
         if (array_key_exists(Operator\Repos\CompareCommits::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CompareCommits::class] = new Operator\Repos\CompareCommits($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Compare🌀Basehead());
@@ -687,7 +688,7 @@ final class Repos
         return $this->operator[Operator\Repos\CompareCommits::class]->call($owner, $repo, $basehead, $page, $perPage);
     }
 
-    public function getContent(string $owner, string $repo, string $path, string $ref): PromiseInterface
+    public function getContent(string $owner, string $repo, string $path, string $ref): Schema\ContentTree|Schema\Operations\Repos\GetContent\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\GetContent::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetContent::class] = new Operator\Repos\GetContent($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Contents🌀Path());
@@ -696,7 +697,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetContent::class]->call($owner, $repo, $path, $ref);
     }
 
-    public function createOrUpdateFileContents(string $owner, string $repo, string $path, array $params): PromiseInterface
+    public function createOrUpdateFileContents(string $owner, string $repo, string $path, array $params): Schema\FileCommit
     {
         if (array_key_exists(Operator\Repos\CreateOrUpdateFileContents::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateOrUpdateFileContents::class] = new Operator\Repos\CreateOrUpdateFileContents($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Contents🌀Path());
@@ -705,7 +706,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateOrUpdateFileContents::class]->call($owner, $repo, $path, $params);
     }
 
-    public function deleteFile(string $owner, string $repo, string $path, array $params): PromiseInterface
+    public function deleteFile(string $owner, string $repo, string $path, array $params): Schema\FileCommit
     {
         if (array_key_exists(Operator\Repos\DeleteFile::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteFile::class] = new Operator\Repos\DeleteFile($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Contents🌀Path());
@@ -714,7 +715,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteFile::class]->call($owner, $repo, $path, $params);
     }
 
-    public function listContributors(string $owner, string $repo, string $anon, int $perPage, int $page): PromiseInterface
+    public function listContributors(string $owner, string $repo, string $anon, int $perPage, int $page): Schema\Contributor
     {
         if (array_key_exists(Operator\Repos\ListContributors::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListContributors::class] = new Operator\Repos\ListContributors($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Contributors());
@@ -723,7 +724,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListContributors::class]->call($owner, $repo, $anon, $perPage, $page);
     }
 
-    public function listDeployments(string $owner, string $repo, string $sha, string $ref, string $task, string|null $environment, int $perPage, int $page): PromiseInterface
+    public function listDeployments(string $owner, string $repo, string $sha, string $ref, string $task, string|null $environment, int $perPage, int $page): Schema\Deployment
     {
         if (array_key_exists(Operator\Repos\ListDeployments::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListDeployments::class] = new Operator\Repos\ListDeployments($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments());
@@ -732,7 +733,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListDeployments::class]->call($owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);
     }
 
-    public function createDeployment(string $owner, string $repo, array $params): PromiseInterface
+    public function createDeployment(string $owner, string $repo, array $params): Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted
     {
         if (array_key_exists(Operator\Repos\CreateDeployment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDeployment::class] = new Operator\Repos\CreateDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments());
@@ -741,7 +742,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDeployment::class]->call($owner, $repo, $params);
     }
 
-    public function getDeployment(string $owner, string $repo, int $deploymentId): PromiseInterface
+    public function getDeployment(string $owner, string $repo, int $deploymentId): Schema\Deployment
     {
         if (array_key_exists(Operator\Repos\GetDeployment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetDeployment::class] = new Operator\Repos\GetDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId());
@@ -750,7 +751,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetDeployment::class]->call($owner, $repo, $deploymentId);
     }
 
-    public function deleteDeployment(string $owner, string $repo, int $deploymentId): PromiseInterface
+    public function deleteDeployment(string $owner, string $repo, int $deploymentId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteDeployment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteDeployment::class] = new Operator\Repos\DeleteDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId());
@@ -759,7 +760,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteDeployment::class]->call($owner, $repo, $deploymentId);
     }
 
-    public function listDeploymentStatuses(string $owner, string $repo, int $deploymentId, int $perPage, int $page): PromiseInterface
+    public function listDeploymentStatuses(string $owner, string $repo, int $deploymentId, int $perPage, int $page): Schema\DeploymentStatus
     {
         if (array_key_exists(Operator\Repos\ListDeploymentStatuses::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListDeploymentStatuses::class] = new Operator\Repos\ListDeploymentStatuses($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId🌀Statuses());
@@ -768,7 +769,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListDeploymentStatuses::class]->call($owner, $repo, $deploymentId, $perPage, $page);
     }
 
-    public function createDeploymentStatus(string $owner, string $repo, int $deploymentId, array $params): PromiseInterface
+    public function createDeploymentStatus(string $owner, string $repo, int $deploymentId, array $params): Schema\DeploymentStatus
     {
         if (array_key_exists(Operator\Repos\CreateDeploymentStatus::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDeploymentStatus::class] = new Operator\Repos\CreateDeploymentStatus($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId🌀Statuses());
@@ -777,7 +778,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDeploymentStatus::class]->call($owner, $repo, $deploymentId, $params);
     }
 
-    public function getDeploymentStatus(string $owner, string $repo, int $deploymentId, int $statusId): PromiseInterface
+    public function getDeploymentStatus(string $owner, string $repo, int $deploymentId, int $statusId): Schema\DeploymentStatus
     {
         if (array_key_exists(Operator\Repos\GetDeploymentStatus::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetDeploymentStatus::class] = new Operator\Repos\GetDeploymentStatus($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId🌀Statuses🌀StatusId());
@@ -786,7 +787,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetDeploymentStatus::class]->call($owner, $repo, $deploymentId, $statusId);
     }
 
-    public function createDispatchEvent(string $owner, string $repo, array $params): PromiseInterface
+    public function createDispatchEvent(string $owner, string $repo, array $params): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\CreateDispatchEvent::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDispatchEvent::class] = new Operator\Repos\CreateDispatchEvent($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dispatches());
@@ -795,7 +796,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDispatchEvent::class]->call($owner, $repo, $params);
     }
 
-    public function getAllEnvironments(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function getAllEnvironments(string $owner, string $repo, int $perPage, int $page): Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\GetAllEnvironments::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAllEnvironments::class] = new Operator\Repos\GetAllEnvironments($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments());
@@ -804,7 +805,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAllEnvironments::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function getEnvironment(string $owner, string $repo, string $environmentName): PromiseInterface
+    public function getEnvironment(string $owner, string $repo, string $environmentName): Schema\Environment
     {
         if (array_key_exists(Operator\Repos\GetEnvironment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetEnvironment::class] = new Operator\Repos\GetEnvironment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName());
@@ -813,7 +814,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetEnvironment::class]->call($owner, $repo, $environmentName);
     }
 
-    public function createOrUpdateEnvironment(string $owner, string $repo, string $environmentName, array $params): PromiseInterface
+    public function createOrUpdateEnvironment(string $owner, string $repo, string $environmentName, array $params): Schema\Environment
     {
         if (array_key_exists(Operator\Repos\CreateOrUpdateEnvironment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateOrUpdateEnvironment::class] = new Operator\Repos\CreateOrUpdateEnvironment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName());
@@ -822,7 +823,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateOrUpdateEnvironment::class]->call($owner, $repo, $environmentName, $params);
     }
 
-    public function deleteAnEnvironment(string $owner, string $repo, string $environmentName): PromiseInterface
+    public function deleteAnEnvironment(string $owner, string $repo, string $environmentName): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteAnEnvironment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteAnEnvironment::class] = new Operator\Repos\DeleteAnEnvironment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName());
@@ -831,7 +832,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteAnEnvironment::class]->call($owner, $repo, $environmentName);
     }
 
-    public function listDeploymentBranchPolicies(string $owner, string $repo, string $environmentName, int $perPage, int $page): PromiseInterface
+    public function listDeploymentBranchPolicies(string $owner, string $repo, string $environmentName, int $perPage, int $page): Schema\Operations\Repos\ListDeploymentBranchPolicies\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\ListDeploymentBranchPolicies::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListDeploymentBranchPolicies::class] = new Operator\Repos\ListDeploymentBranchPolicies($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentBranchPolicies());
@@ -840,7 +841,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListDeploymentBranchPolicies::class]->call($owner, $repo, $environmentName, $perPage, $page);
     }
 
-    public function createDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, array $params): PromiseInterface
+    public function createDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, array $params): Schema\DeploymentBranchPolicy
     {
         if (array_key_exists(Operator\Repos\CreateDeploymentBranchPolicy::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDeploymentBranchPolicy::class] = new Operator\Repos\CreateDeploymentBranchPolicy($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentBranchPolicies());
@@ -849,7 +850,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDeploymentBranchPolicy::class]->call($owner, $repo, $environmentName, $params);
     }
 
-    public function getDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId): PromiseInterface
+    public function getDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId): Schema\DeploymentBranchPolicy
     {
         if (array_key_exists(Operator\Repos\GetDeploymentBranchPolicy::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetDeploymentBranchPolicy::class] = new Operator\Repos\GetDeploymentBranchPolicy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentBranchPolicies🌀BranchPolicyId());
@@ -858,7 +859,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetDeploymentBranchPolicy::class]->call($owner, $repo, $environmentName, $branchPolicyId);
     }
 
-    public function updateDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): PromiseInterface
+    public function updateDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): Schema\DeploymentBranchPolicy
     {
         if (array_key_exists(Operator\Repos\UpdateDeploymentBranchPolicy::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateDeploymentBranchPolicy::class] = new Operator\Repos\UpdateDeploymentBranchPolicy($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentBranchPolicies🌀BranchPolicyId());
@@ -867,7 +868,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateDeploymentBranchPolicy::class]->call($owner, $repo, $environmentName, $branchPolicyId, $params);
     }
 
-    public function deleteDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId): PromiseInterface
+    public function deleteDeploymentBranchPolicy(string $owner, string $repo, string $environmentName, int $branchPolicyId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteDeploymentBranchPolicy::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteDeploymentBranchPolicy::class] = new Operator\Repos\DeleteDeploymentBranchPolicy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentBranchPolicies🌀BranchPolicyId());
@@ -876,7 +877,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteDeploymentBranchPolicy::class]->call($owner, $repo, $environmentName, $branchPolicyId);
     }
 
-    public function getAllDeploymentProtectionRules(string $environmentName, string $repo, string $owner): PromiseInterface
+    public function getAllDeploymentProtectionRules(string $environmentName, string $repo, string $owner): Schema\Operations\Repos\GetAllDeploymentProtectionRules\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\GetAllDeploymentProtectionRules::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAllDeploymentProtectionRules::class] = new Operator\Repos\GetAllDeploymentProtectionRules($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentProtectionRules());
@@ -885,7 +886,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAllDeploymentProtectionRules::class]->call($environmentName, $repo, $owner);
     }
 
-    public function createDeploymentProtectionRule(string $environmentName, string $repo, string $owner, array $params): PromiseInterface
+    public function createDeploymentProtectionRule(string $environmentName, string $repo, string $owner, array $params): Schema\DeploymentProtectionRule
     {
         if (array_key_exists(Operator\Repos\CreateDeploymentProtectionRule::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDeploymentProtectionRule::class] = new Operator\Repos\CreateDeploymentProtectionRule($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentProtectionRules());
@@ -894,7 +895,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDeploymentProtectionRule::class]->call($environmentName, $repo, $owner, $params);
     }
 
-    public function listCustomDeploymentRuleIntegrations(string $environmentName, string $repo, string $owner, int $page, int $perPage): PromiseInterface
+    public function listCustomDeploymentRuleIntegrations(string $environmentName, string $repo, string $owner, int $page, int $perPage): Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\ListCustomDeploymentRuleIntegrations::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListCustomDeploymentRuleIntegrations::class] = new Operator\Repos\ListCustomDeploymentRuleIntegrations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentProtectionRules🌀Apps());
@@ -903,7 +904,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListCustomDeploymentRuleIntegrations::class]->call($environmentName, $repo, $owner, $page, $perPage);
     }
 
-    public function getCustomDeploymentProtectionRule(string $owner, string $repo, string $environmentName, int $protectionRuleId): PromiseInterface
+    public function getCustomDeploymentProtectionRule(string $owner, string $repo, string $environmentName, int $protectionRuleId): Schema\DeploymentProtectionRule
     {
         if (array_key_exists(Operator\Repos\GetCustomDeploymentProtectionRule::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCustomDeploymentProtectionRule::class] = new Operator\Repos\GetCustomDeploymentProtectionRule($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentProtectionRules🌀ProtectionRuleId());
@@ -912,7 +913,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCustomDeploymentProtectionRule::class]->call($owner, $repo, $environmentName, $protectionRuleId);
     }
 
-    public function disableDeploymentProtectionRule(string $environmentName, string $repo, string $owner, int $protectionRuleId): PromiseInterface
+    public function disableDeploymentProtectionRule(string $environmentName, string $repo, string $owner, int $protectionRuleId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DisableDeploymentProtectionRule::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DisableDeploymentProtectionRule::class] = new Operator\Repos\DisableDeploymentProtectionRule($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀DeploymentProtectionRules🌀ProtectionRuleId());
@@ -921,7 +922,7 @@ final class Repos
         return $this->operator[Operator\Repos\DisableDeploymentProtectionRule::class]->call($environmentName, $repo, $owner, $protectionRuleId);
     }
 
-    public function listForks(string $owner, string $repo, string $sort, int $perPage, int $page): PromiseInterface
+    public function listForks(string $owner, string $repo, string $sort, int $perPage, int $page): Schema\MinimalRepository
     {
         if (array_key_exists(Operator\Repos\ListForks::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListForks::class] = new Operator\Repos\ListForks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Forks());
@@ -930,7 +931,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListForks::class]->call($owner, $repo, $sort, $perPage, $page);
     }
 
-    public function createFork(string $owner, string $repo, array $params): PromiseInterface
+    public function createFork(string $owner, string $repo, array $params): Schema\FullRepository
     {
         if (array_key_exists(Operator\Repos\CreateFork::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateFork::class] = new Operator\Repos\CreateFork($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Forks());
@@ -939,7 +940,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateFork::class]->call($owner, $repo, $params);
     }
 
-    public function listWebhooks(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listWebhooks(string $owner, string $repo, int $perPage, int $page): Schema\Hook
     {
         if (array_key_exists(Operator\Repos\ListWebhooks::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListWebhooks::class] = new Operator\Repos\ListWebhooks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks());
@@ -948,7 +949,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListWebhooks::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function createWebhook(string $owner, string $repo, array $params): PromiseInterface
+    public function createWebhook(string $owner, string $repo, array $params): Schema\Hook
     {
         if (array_key_exists(Operator\Repos\CreateWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateWebhook::class] = new Operator\Repos\CreateWebhook($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks());
@@ -957,7 +958,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateWebhook::class]->call($owner, $repo, $params);
     }
 
-    public function getWebhook(string $owner, string $repo, int $hookId): PromiseInterface
+    public function getWebhook(string $owner, string $repo, int $hookId): Schema\Hook
     {
         if (array_key_exists(Operator\Repos\GetWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetWebhook::class] = new Operator\Repos\GetWebhook($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId());
@@ -966,7 +967,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetWebhook::class]->call($owner, $repo, $hookId);
     }
 
-    public function deleteWebhook(string $owner, string $repo, int $hookId): PromiseInterface
+    public function deleteWebhook(string $owner, string $repo, int $hookId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteWebhook::class] = new Operator\Repos\DeleteWebhook($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId());
@@ -975,7 +976,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteWebhook::class]->call($owner, $repo, $hookId);
     }
 
-    public function updateWebhook(string $owner, string $repo, int $hookId, array $params): PromiseInterface
+    public function updateWebhook(string $owner, string $repo, int $hookId, array $params): Schema\Hook
     {
         if (array_key_exists(Operator\Repos\UpdateWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateWebhook::class] = new Operator\Repos\UpdateWebhook($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId());
@@ -984,7 +985,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateWebhook::class]->call($owner, $repo, $hookId, $params);
     }
 
-    public function getWebhookConfigForRepo(string $owner, string $repo, int $hookId): PromiseInterface
+    public function getWebhookConfigForRepo(string $owner, string $repo, int $hookId): Schema\WebhookConfig
     {
         if (array_key_exists(Operator\Repos\GetWebhookConfigForRepo::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetWebhookConfigForRepo::class] = new Operator\Repos\GetWebhookConfigForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Config());
@@ -993,7 +994,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetWebhookConfigForRepo::class]->call($owner, $repo, $hookId);
     }
 
-    public function updateWebhookConfigForRepo(string $owner, string $repo, int $hookId, array $params): PromiseInterface
+    public function updateWebhookConfigForRepo(string $owner, string $repo, int $hookId, array $params): Schema\WebhookConfig
     {
         if (array_key_exists(Operator\Repos\UpdateWebhookConfigForRepo::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateWebhookConfigForRepo::class] = new Operator\Repos\UpdateWebhookConfigForRepo($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Config());
@@ -1002,7 +1003,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateWebhookConfigForRepo::class]->call($owner, $repo, $hookId, $params);
     }
 
-    public function listWebhookDeliveries(string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage): PromiseInterface
+    public function listWebhookDeliveries(string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage): Schema\HookDeliveryItem
     {
         if (array_key_exists(Operator\Repos\ListWebhookDeliveries::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListWebhookDeliveries::class] = new Operator\Repos\ListWebhookDeliveries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Deliveries());
@@ -1011,7 +1012,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListWebhookDeliveries::class]->call($owner, $repo, $hookId, $cursor, $redelivery, $perPage);
     }
 
-    public function getWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): PromiseInterface
+    public function getWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): Schema\HookDelivery
     {
         if (array_key_exists(Operator\Repos\GetWebhookDelivery::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetWebhookDelivery::class] = new Operator\Repos\GetWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Deliveries🌀DeliveryId());
@@ -1020,7 +1021,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetWebhookDelivery::class]->call($owner, $repo, $hookId, $deliveryId);
     }
 
-    public function redeliverWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): PromiseInterface
+    public function redeliverWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted
     {
         if (array_key_exists(Operator\Repos\RedeliverWebhookDelivery::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RedeliverWebhookDelivery::class] = new Operator\Repos\RedeliverWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Deliveries🌀DeliveryId🌀Attempts());
@@ -1029,7 +1030,7 @@ final class Repos
         return $this->operator[Operator\Repos\RedeliverWebhookDelivery::class]->call($owner, $repo, $hookId, $deliveryId);
     }
 
-    public function pingWebhook(string $owner, string $repo, int $hookId): PromiseInterface
+    public function pingWebhook(string $owner, string $repo, int $hookId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\PingWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\PingWebhook::class] = new Operator\Repos\PingWebhook($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Pings());
@@ -1038,7 +1039,7 @@ final class Repos
         return $this->operator[Operator\Repos\PingWebhook::class]->call($owner, $repo, $hookId);
     }
 
-    public function testPushWebhook(string $owner, string $repo, int $hookId): PromiseInterface
+    public function testPushWebhook(string $owner, string $repo, int $hookId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\TestPushWebhook::class, $this->operator) === false) {
             $this->operator[Operator\Repos\TestPushWebhook::class] = new Operator\Repos\TestPushWebhook($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Tests());
@@ -1047,7 +1048,7 @@ final class Repos
         return $this->operator[Operator\Repos\TestPushWebhook::class]->call($owner, $repo, $hookId);
     }
 
-    public function listInvitations(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listInvitations(string $owner, string $repo, int $perPage, int $page): Schema\RepositoryInvitation
     {
         if (array_key_exists(Operator\Repos\ListInvitations::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListInvitations::class] = new Operator\Repos\ListInvitations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Invitations());
@@ -1056,7 +1057,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListInvitations::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function deleteInvitation(string $owner, string $repo, int $invitationId): PromiseInterface
+    public function deleteInvitation(string $owner, string $repo, int $invitationId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteInvitation::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteInvitation::class] = new Operator\Repos\DeleteInvitation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Invitations🌀InvitationId());
@@ -1065,7 +1066,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteInvitation::class]->call($owner, $repo, $invitationId);
     }
 
-    public function updateInvitation(string $owner, string $repo, int $invitationId, array $params): PromiseInterface
+    public function updateInvitation(string $owner, string $repo, int $invitationId, array $params): Schema\RepositoryInvitation
     {
         if (array_key_exists(Operator\Repos\UpdateInvitation::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateInvitation::class] = new Operator\Repos\UpdateInvitation($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Invitations🌀InvitationId());
@@ -1074,7 +1075,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateInvitation::class]->call($owner, $repo, $invitationId, $params);
     }
 
-    public function listDeployKeys(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listDeployKeys(string $owner, string $repo, int $perPage, int $page): Schema\DeployKey
     {
         if (array_key_exists(Operator\Repos\ListDeployKeys::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListDeployKeys::class] = new Operator\Repos\ListDeployKeys($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys());
@@ -1083,7 +1084,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListDeployKeys::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function createDeployKey(string $owner, string $repo, array $params): PromiseInterface
+    public function createDeployKey(string $owner, string $repo, array $params): Schema\DeployKey
     {
         if (array_key_exists(Operator\Repos\CreateDeployKey::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateDeployKey::class] = new Operator\Repos\CreateDeployKey($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys());
@@ -1092,7 +1093,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateDeployKey::class]->call($owner, $repo, $params);
     }
 
-    public function getDeployKey(string $owner, string $repo, int $keyId): PromiseInterface
+    public function getDeployKey(string $owner, string $repo, int $keyId): Schema\DeployKey
     {
         if (array_key_exists(Operator\Repos\GetDeployKey::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetDeployKey::class] = new Operator\Repos\GetDeployKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys🌀KeyId());
@@ -1101,7 +1102,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetDeployKey::class]->call($owner, $repo, $keyId);
     }
 
-    public function deleteDeployKey(string $owner, string $repo, int $keyId): PromiseInterface
+    public function deleteDeployKey(string $owner, string $repo, int $keyId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteDeployKey::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteDeployKey::class] = new Operator\Repos\DeleteDeployKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys🌀KeyId());
@@ -1110,7 +1111,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteDeployKey::class]->call($owner, $repo, $keyId);
     }
 
-    public function listLanguages(string $owner, string $repo): PromiseInterface
+    public function listLanguages(string $owner, string $repo): Schema\Language
     {
         if (array_key_exists(Operator\Repos\ListLanguages::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListLanguages::class] = new Operator\Repos\ListLanguages($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Languages());
@@ -1119,7 +1120,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListLanguages::class]->call($owner, $repo);
     }
 
-    public function mergeUpstream(string $owner, string $repo, array $params): PromiseInterface
+    public function mergeUpstream(string $owner, string $repo, array $params): Schema\MergedUpstream
     {
         if (array_key_exists(Operator\Repos\MergeUpstream::class, $this->operator) === false) {
             $this->operator[Operator\Repos\MergeUpstream::class] = new Operator\Repos\MergeUpstream($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀MergeUpstream());
@@ -1128,7 +1129,7 @@ final class Repos
         return $this->operator[Operator\Repos\MergeUpstream::class]->call($owner, $repo, $params);
     }
 
-    public function merge(string $owner, string $repo, array $params): PromiseInterface
+    public function merge(string $owner, string $repo, array $params): Schema\Commit
     {
         if (array_key_exists(Operator\Repos\Merge::class, $this->operator) === false) {
             $this->operator[Operator\Repos\Merge::class] = new Operator\Repos\Merge($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Merges());
@@ -1137,7 +1138,7 @@ final class Repos
         return $this->operator[Operator\Repos\Merge::class]->call($owner, $repo, $params);
     }
 
-    public function getPages(string $owner, string $repo): PromiseInterface
+    public function getPages(string $owner, string $repo): Schema\Page
     {
         if (array_key_exists(Operator\Repos\GetPages::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetPages::class] = new Operator\Repos\GetPages($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages());
@@ -1146,7 +1147,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetPages::class]->call($owner, $repo);
     }
 
-    public function updateInformationAboutPagesSite(string $owner, string $repo, array $params): PromiseInterface
+    public function updateInformationAboutPagesSite(string $owner, string $repo, array $params): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\UpdateInformationAboutPagesSite::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateInformationAboutPagesSite::class] = new Operator\Repos\UpdateInformationAboutPagesSite($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages());
@@ -1155,7 +1156,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateInformationAboutPagesSite::class]->call($owner, $repo, $params);
     }
 
-    public function createPagesSite(string $owner, string $repo, array $params): PromiseInterface
+    public function createPagesSite(string $owner, string $repo, array $params): Schema\Page
     {
         if (array_key_exists(Operator\Repos\CreatePagesSite::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreatePagesSite::class] = new Operator\Repos\CreatePagesSite($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages());
@@ -1164,7 +1165,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreatePagesSite::class]->call($owner, $repo, $params);
     }
 
-    public function deletePagesSite(string $owner, string $repo): PromiseInterface
+    public function deletePagesSite(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeletePagesSite::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeletePagesSite::class] = new Operator\Repos\DeletePagesSite($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages());
@@ -1173,7 +1174,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeletePagesSite::class]->call($owner, $repo);
     }
 
-    public function listPagesBuilds(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listPagesBuilds(string $owner, string $repo, int $perPage, int $page): Schema\PageBuild
     {
         if (array_key_exists(Operator\Repos\ListPagesBuilds::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListPagesBuilds::class] = new Operator\Repos\ListPagesBuilds($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds());
@@ -1182,7 +1183,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListPagesBuilds::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function requestPagesBuild(string $owner, string $repo): PromiseInterface
+    public function requestPagesBuild(string $owner, string $repo): Schema\PageBuildStatus
     {
         if (array_key_exists(Operator\Repos\RequestPagesBuild::class, $this->operator) === false) {
             $this->operator[Operator\Repos\RequestPagesBuild::class] = new Operator\Repos\RequestPagesBuild($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds());
@@ -1191,7 +1192,7 @@ final class Repos
         return $this->operator[Operator\Repos\RequestPagesBuild::class]->call($owner, $repo);
     }
 
-    public function getLatestPagesBuild(string $owner, string $repo): PromiseInterface
+    public function getLatestPagesBuild(string $owner, string $repo): Schema\PageBuild
     {
         if (array_key_exists(Operator\Repos\GetLatestPagesBuild::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetLatestPagesBuild::class] = new Operator\Repos\GetLatestPagesBuild($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds🌀Latest());
@@ -1200,7 +1201,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetLatestPagesBuild::class]->call($owner, $repo);
     }
 
-    public function getPagesBuild(string $owner, string $repo, int $buildId): PromiseInterface
+    public function getPagesBuild(string $owner, string $repo, int $buildId): Schema\PageBuild
     {
         if (array_key_exists(Operator\Repos\GetPagesBuild::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetPagesBuild::class] = new Operator\Repos\GetPagesBuild($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds🌀BuildId());
@@ -1209,7 +1210,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetPagesBuild::class]->call($owner, $repo, $buildId);
     }
 
-    public function createPagesDeployment(string $owner, string $repo, array $params): PromiseInterface
+    public function createPagesDeployment(string $owner, string $repo, array $params): Schema\PageDeployment
     {
         if (array_key_exists(Operator\Repos\CreatePagesDeployment::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreatePagesDeployment::class] = new Operator\Repos\CreatePagesDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployment());
@@ -1218,7 +1219,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreatePagesDeployment::class]->call($owner, $repo, $params);
     }
 
-    public function getPagesHealthCheck(string $owner, string $repo): PromiseInterface
+    public function getPagesHealthCheck(string $owner, string $repo): Schema\PagesHealthCheck|Schema\EmptyObject
     {
         if (array_key_exists(Operator\Repos\GetPagesHealthCheck::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetPagesHealthCheck::class] = new Operator\Repos\GetPagesHealthCheck($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Health());
@@ -1227,7 +1228,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetPagesHealthCheck::class]->call($owner, $repo);
     }
 
-    public function enablePrivateVulnerabilityReporting(string $owner, string $repo): PromiseInterface
+    public function enablePrivateVulnerabilityReporting(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\EnablePrivateVulnerabilityReporting::class, $this->operator) === false) {
             $this->operator[Operator\Repos\EnablePrivateVulnerabilityReporting::class] = new Operator\Repos\EnablePrivateVulnerabilityReporting($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting());
@@ -1236,7 +1237,7 @@ final class Repos
         return $this->operator[Operator\Repos\EnablePrivateVulnerabilityReporting::class]->call($owner, $repo);
     }
 
-    public function disablePrivateVulnerabilityReporting(string $owner, string $repo): PromiseInterface
+    public function disablePrivateVulnerabilityReporting(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DisablePrivateVulnerabilityReporting::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DisablePrivateVulnerabilityReporting::class] = new Operator\Repos\DisablePrivateVulnerabilityReporting($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting());
@@ -1245,7 +1246,7 @@ final class Repos
         return $this->operator[Operator\Repos\DisablePrivateVulnerabilityReporting::class]->call($owner, $repo);
     }
 
-    public function getReadme(string $owner, string $repo, string $ref): PromiseInterface
+    public function getReadme(string $owner, string $repo, string $ref): Schema\ContentFile
     {
         if (array_key_exists(Operator\Repos\GetReadme::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetReadme::class] = new Operator\Repos\GetReadme($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Readme());
@@ -1254,7 +1255,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetReadme::class]->call($owner, $repo, $ref);
     }
 
-    public function getReadmeInDirectory(string $owner, string $repo, string $dir, string $ref): PromiseInterface
+    public function getReadmeInDirectory(string $owner, string $repo, string $dir, string $ref): Schema\ContentFile
     {
         if (array_key_exists(Operator\Repos\GetReadmeInDirectory::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetReadmeInDirectory::class] = new Operator\Repos\GetReadmeInDirectory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Readme🌀Dir());
@@ -1263,7 +1264,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetReadmeInDirectory::class]->call($owner, $repo, $dir, $ref);
     }
 
-    public function listReleases(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listReleases(string $owner, string $repo, int $perPage, int $page): Schema\Release
     {
         if (array_key_exists(Operator\Repos\ListReleases::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListReleases::class] = new Operator\Repos\ListReleases($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases());
@@ -1272,7 +1273,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListReleases::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function createRelease(string $owner, string $repo, array $params): PromiseInterface
+    public function createRelease(string $owner, string $repo, array $params): Schema\Release
     {
         if (array_key_exists(Operator\Repos\CreateRelease::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateRelease::class] = new Operator\Repos\CreateRelease($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases());
@@ -1281,7 +1282,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateRelease::class]->call($owner, $repo, $params);
     }
 
-    public function getReleaseAsset(string $owner, string $repo, int $assetId): PromiseInterface
+    public function getReleaseAsset(string $owner, string $repo, int $assetId): Schema\ReleaseAsset
     {
         if (array_key_exists(Operator\Repos\GetReleaseAsset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetReleaseAsset::class] = new Operator\Repos\GetReleaseAsset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀Assets🌀AssetId());
@@ -1290,7 +1291,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetReleaseAsset::class]->call($owner, $repo, $assetId);
     }
 
-    public function deleteReleaseAsset(string $owner, string $repo, int $assetId): PromiseInterface
+    public function deleteReleaseAsset(string $owner, string $repo, int $assetId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteReleaseAsset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteReleaseAsset::class] = new Operator\Repos\DeleteReleaseAsset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀Assets🌀AssetId());
@@ -1299,7 +1300,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteReleaseAsset::class]->call($owner, $repo, $assetId);
     }
 
-    public function updateReleaseAsset(string $owner, string $repo, int $assetId, array $params): PromiseInterface
+    public function updateReleaseAsset(string $owner, string $repo, int $assetId, array $params): Schema\ReleaseAsset
     {
         if (array_key_exists(Operator\Repos\UpdateReleaseAsset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateReleaseAsset::class] = new Operator\Repos\UpdateReleaseAsset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀Assets🌀AssetId());
@@ -1308,7 +1309,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateReleaseAsset::class]->call($owner, $repo, $assetId, $params);
     }
 
-    public function generateReleaseNotes(string $owner, string $repo, array $params): PromiseInterface
+    public function generateReleaseNotes(string $owner, string $repo, array $params): Schema\ReleaseNotesContent
     {
         if (array_key_exists(Operator\Repos\GenerateReleaseNotes::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GenerateReleaseNotes::class] = new Operator\Repos\GenerateReleaseNotes($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀GenerateNotes());
@@ -1317,7 +1318,7 @@ final class Repos
         return $this->operator[Operator\Repos\GenerateReleaseNotes::class]->call($owner, $repo, $params);
     }
 
-    public function getLatestRelease(string $owner, string $repo): PromiseInterface
+    public function getLatestRelease(string $owner, string $repo): Schema\Release
     {
         if (array_key_exists(Operator\Repos\GetLatestRelease::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetLatestRelease::class] = new Operator\Repos\GetLatestRelease($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀Latest());
@@ -1326,7 +1327,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetLatestRelease::class]->call($owner, $repo);
     }
 
-    public function getReleaseByTag(string $owner, string $repo, string $tag): PromiseInterface
+    public function getReleaseByTag(string $owner, string $repo, string $tag): Schema\Release
     {
         if (array_key_exists(Operator\Repos\GetReleaseByTag::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetReleaseByTag::class] = new Operator\Repos\GetReleaseByTag($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀Tags🌀Tag());
@@ -1335,7 +1336,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetReleaseByTag::class]->call($owner, $repo, $tag);
     }
 
-    public function getRelease(string $owner, string $repo, int $releaseId): PromiseInterface
+    public function getRelease(string $owner, string $repo, int $releaseId): Schema\Release
     {
         if (array_key_exists(Operator\Repos\GetRelease::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetRelease::class] = new Operator\Repos\GetRelease($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId());
@@ -1344,7 +1345,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetRelease::class]->call($owner, $repo, $releaseId);
     }
 
-    public function deleteRelease(string $owner, string $repo, int $releaseId): PromiseInterface
+    public function deleteRelease(string $owner, string $repo, int $releaseId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteRelease::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteRelease::class] = new Operator\Repos\DeleteRelease($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId());
@@ -1353,7 +1354,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteRelease::class]->call($owner, $repo, $releaseId);
     }
 
-    public function updateRelease(string $owner, string $repo, int $releaseId, array $params): PromiseInterface
+    public function updateRelease(string $owner, string $repo, int $releaseId, array $params): Schema\Release
     {
         if (array_key_exists(Operator\Repos\UpdateRelease::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateRelease::class] = new Operator\Repos\UpdateRelease($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId());
@@ -1362,7 +1363,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateRelease::class]->call($owner, $repo, $releaseId, $params);
     }
 
-    public function listReleaseAssets(string $owner, string $repo, int $releaseId, int $perPage, int $page): PromiseInterface
+    public function listReleaseAssets(string $owner, string $repo, int $releaseId, int $perPage, int $page): Schema\ReleaseAsset
     {
         if (array_key_exists(Operator\Repos\ListReleaseAssets::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListReleaseAssets::class] = new Operator\Repos\ListReleaseAssets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Assets());
@@ -1371,7 +1372,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListReleaseAssets::class]->call($owner, $repo, $releaseId, $perPage, $page);
     }
 
-    public function uploadReleaseAsset(string $owner, string $repo, int $releaseId, string $name, string $label, array $params): PromiseInterface
+    public function uploadReleaseAsset(string $owner, string $repo, int $releaseId, string $name, string $label, array $params): Schema\ReleaseAsset
     {
         if (array_key_exists(Operator\Repos\UploadReleaseAsset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UploadReleaseAsset::class] = new Operator\Repos\UploadReleaseAsset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Assets());
@@ -1380,7 +1381,7 @@ final class Repos
         return $this->operator[Operator\Repos\UploadReleaseAsset::class]->call($owner, $repo, $releaseId, $name, $label, $params);
     }
 
-    public function getBranchRules(string $owner, string $repo, string $branch, int $perPage, int $page): PromiseInterface
+    public function getBranchRules(string $owner, string $repo, string $branch, int $perPage, int $page): Schema\RepositoryRuleDetailed
     {
         if (array_key_exists(Operator\Repos\GetBranchRules::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetBranchRules::class] = new Operator\Repos\GetBranchRules($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rules🌀Branches🌀Branch());
@@ -1389,7 +1390,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetBranchRules::class]->call($owner, $repo, $branch, $perPage, $page);
     }
 
-    public function getRepoRulesets(string $owner, string $repo, int $perPage, int $page, bool $includesParents): PromiseInterface
+    public function getRepoRulesets(string $owner, string $repo, int $perPage, int $page, bool $includesParents): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\GetRepoRulesets::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetRepoRulesets::class] = new Operator\Repos\GetRepoRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets());
@@ -1398,7 +1399,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetRepoRulesets::class]->call($owner, $repo, $perPage, $page, $includesParents);
     }
 
-    public function createRepoRuleset(string $owner, string $repo, array $params): PromiseInterface
+    public function createRepoRuleset(string $owner, string $repo, array $params): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\CreateRepoRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateRepoRuleset::class] = new Operator\Repos\CreateRepoRuleset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets());
@@ -1407,7 +1408,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateRepoRuleset::class]->call($owner, $repo, $params);
     }
 
-    public function getRepoRuleset(string $owner, string $repo, int $rulesetId, bool $includesParents): PromiseInterface
+    public function getRepoRuleset(string $owner, string $repo, int $rulesetId, bool $includesParents): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\GetRepoRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetRepoRuleset::class] = new Operator\Repos\GetRepoRuleset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId());
@@ -1416,7 +1417,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetRepoRuleset::class]->call($owner, $repo, $rulesetId, $includesParents);
     }
 
-    public function updateRepoRuleset(string $owner, string $repo, int $rulesetId, array $params): PromiseInterface
+    public function updateRepoRuleset(string $owner, string $repo, int $rulesetId, array $params): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\UpdateRepoRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\UpdateRepoRuleset::class] = new Operator\Repos\UpdateRepoRuleset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId());
@@ -1425,7 +1426,7 @@ final class Repos
         return $this->operator[Operator\Repos\UpdateRepoRuleset::class]->call($owner, $repo, $rulesetId, $params);
     }
 
-    public function deleteRepoRuleset(string $owner, string $repo, int $rulesetId): PromiseInterface
+    public function deleteRepoRuleset(string $owner, string $repo, int $rulesetId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteRepoRuleset::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteRepoRuleset::class] = new Operator\Repos\DeleteRepoRuleset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId());
@@ -1434,7 +1435,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteRepoRuleset::class]->call($owner, $repo, $rulesetId);
     }
 
-    public function getCodeFrequencyStats(string $owner, string $repo): PromiseInterface
+    public function getCodeFrequencyStats(string $owner, string $repo): Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Ok|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted
     {
         if (array_key_exists(Operator\Repos\GetCodeFrequencyStats::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCodeFrequencyStats::class] = new Operator\Repos\GetCodeFrequencyStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stats🌀CodeFrequency());
@@ -1443,7 +1444,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCodeFrequencyStats::class]->call($owner, $repo);
     }
 
-    public function getCommitActivityStats(string $owner, string $repo): PromiseInterface
+    public function getCommitActivityStats(string $owner, string $repo): Schema\CommitActivity|Schema\Operations\Repos\GetCommitActivityStats\Response\ApplicationJson\Accepted
     {
         if (array_key_exists(Operator\Repos\GetCommitActivityStats::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetCommitActivityStats::class] = new Operator\Repos\GetCommitActivityStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stats🌀CommitActivity());
@@ -1452,7 +1453,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetCommitActivityStats::class]->call($owner, $repo);
     }
 
-    public function getContributorsStats(string $owner, string $repo): PromiseInterface
+    public function getContributorsStats(string $owner, string $repo): Schema\ContributorActivity|Schema\Operations\Repos\GetContributorsStats\Response\ApplicationJson\Accepted
     {
         if (array_key_exists(Operator\Repos\GetContributorsStats::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetContributorsStats::class] = new Operator\Repos\GetContributorsStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stats🌀Contributors());
@@ -1461,7 +1462,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetContributorsStats::class]->call($owner, $repo);
     }
 
-    public function getParticipationStats(string $owner, string $repo): PromiseInterface
+    public function getParticipationStats(string $owner, string $repo): Schema\ParticipationStats
     {
         if (array_key_exists(Operator\Repos\GetParticipationStats::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetParticipationStats::class] = new Operator\Repos\GetParticipationStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stats🌀Participation());
@@ -1470,7 +1471,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetParticipationStats::class]->call($owner, $repo);
     }
 
-    public function getPunchCardStats(string $owner, string $repo): PromiseInterface
+    public function getPunchCardStats(string $owner, string $repo): Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Repos\GetPunchCardStats::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetPunchCardStats::class] = new Operator\Repos\GetPunchCardStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stats🌀PunchCard());
@@ -1479,7 +1480,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetPunchCardStats::class]->call($owner, $repo);
     }
 
-    public function createCommitStatus(string $owner, string $repo, string $sha, array $params): PromiseInterface
+    public function createCommitStatus(string $owner, string $repo, string $sha, array $params): Schema\Status
     {
         if (array_key_exists(Operator\Repos\CreateCommitStatus::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateCommitStatus::class] = new Operator\Repos\CreateCommitStatus($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Statuses🌀Sha());
@@ -1488,7 +1489,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateCommitStatus::class]->call($owner, $repo, $sha, $params);
     }
 
-    public function listTags(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listTags(string $owner, string $repo, int $perPage, int $page): Schema\Tag
     {
         if (array_key_exists(Operator\Repos\ListTags::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListTags::class] = new Operator\Repos\ListTags($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags());
@@ -1497,7 +1498,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListTags::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function listTagProtection(string $owner, string $repo): PromiseInterface
+    public function listTagProtection(string $owner, string $repo): Schema\TagProtection
     {
         if (array_key_exists(Operator\Repos\ListTagProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListTagProtection::class] = new Operator\Repos\ListTagProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection());
@@ -1506,7 +1507,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListTagProtection::class]->call($owner, $repo);
     }
 
-    public function createTagProtection(string $owner, string $repo, array $params): PromiseInterface
+    public function createTagProtection(string $owner, string $repo, array $params): Schema\TagProtection
     {
         if (array_key_exists(Operator\Repos\CreateTagProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateTagProtection::class] = new Operator\Repos\CreateTagProtection($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection());
@@ -1515,7 +1516,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateTagProtection::class]->call($owner, $repo, $params);
     }
 
-    public function deleteTagProtection(string $owner, string $repo, int $tagProtectionId): PromiseInterface
+    public function deleteTagProtection(string $owner, string $repo, int $tagProtectionId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteTagProtection::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeleteTagProtection::class] = new Operator\Repos\DeleteTagProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection🌀TagProtectionId());
@@ -1524,7 +1525,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeleteTagProtection::class]->call($owner, $repo, $tagProtectionId);
     }
 
-    public function downloadTarballArchive(string $owner, string $repo, string $ref): PromiseInterface
+    public function downloadTarballArchive(string $owner, string $repo, string $ref): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DownloadTarballArchive::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DownloadTarballArchive::class] = new Operator\Repos\DownloadTarballArchive($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tarball🌀Ref());
@@ -1533,7 +1534,7 @@ final class Repos
         return $this->operator[Operator\Repos\DownloadTarballArchive::class]->call($owner, $repo, $ref);
     }
 
-    public function downloadTarballArchiveStreaming(string $owner, string $repo, string $ref): PromiseInterface
+    public function downloadTarballArchiveStreaming(string $owner, string $repo, string $ref): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DownloadTarballArchiveStreaming::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DownloadTarballArchiveStreaming::class] = new Operator\Repos\DownloadTarballArchiveStreaming($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tarball🌀Ref());
@@ -1542,7 +1543,7 @@ final class Repos
         return $this->operator[Operator\Repos\DownloadTarballArchiveStreaming::class]->call($owner, $repo, $ref);
     }
 
-    public function listTeams(string $owner, string $repo, int $perPage, int $page): PromiseInterface
+    public function listTeams(string $owner, string $repo, int $perPage, int $page): Schema\Team
     {
         if (array_key_exists(Operator\Repos\ListTeams::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListTeams::class] = new Operator\Repos\ListTeams($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Teams());
@@ -1551,7 +1552,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListTeams::class]->call($owner, $repo, $perPage, $page);
     }
 
-    public function getAllTopics(string $owner, string $repo, int $page, int $perPage): PromiseInterface
+    public function getAllTopics(string $owner, string $repo, int $page, int $perPage): Schema\Topic
     {
         if (array_key_exists(Operator\Repos\GetAllTopics::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetAllTopics::class] = new Operator\Repos\GetAllTopics($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Topics());
@@ -1560,7 +1561,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetAllTopics::class]->call($owner, $repo, $page, $perPage);
     }
 
-    public function replaceAllTopics(string $owner, string $repo, array $params): PromiseInterface
+    public function replaceAllTopics(string $owner, string $repo, array $params): Schema\Topic
     {
         if (array_key_exists(Operator\Repos\ReplaceAllTopics::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ReplaceAllTopics::class] = new Operator\Repos\ReplaceAllTopics($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Topics());
@@ -1569,7 +1570,7 @@ final class Repos
         return $this->operator[Operator\Repos\ReplaceAllTopics::class]->call($owner, $repo, $params);
     }
 
-    public function getClones(string $owner, string $repo, string $per): PromiseInterface
+    public function getClones(string $owner, string $repo, string $per): Schema\CloneTraffic
     {
         if (array_key_exists(Operator\Repos\GetClones::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetClones::class] = new Operator\Repos\GetClones($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Traffic🌀Clones());
@@ -1578,7 +1579,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetClones::class]->call($owner, $repo, $per);
     }
 
-    public function getTopPaths(string $owner, string $repo): PromiseInterface
+    public function getTopPaths(string $owner, string $repo): Schema\ContentTraffic
     {
         if (array_key_exists(Operator\Repos\GetTopPaths::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetTopPaths::class] = new Operator\Repos\GetTopPaths($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Traffic🌀Popular🌀Paths());
@@ -1587,7 +1588,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetTopPaths::class]->call($owner, $repo);
     }
 
-    public function getTopReferrers(string $owner, string $repo): PromiseInterface
+    public function getTopReferrers(string $owner, string $repo): Schema\ReferrerTraffic
     {
         if (array_key_exists(Operator\Repos\GetTopReferrers::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetTopReferrers::class] = new Operator\Repos\GetTopReferrers($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Traffic🌀Popular🌀Referrers());
@@ -1596,7 +1597,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetTopReferrers::class]->call($owner, $repo);
     }
 
-    public function getViews(string $owner, string $repo, string $per): PromiseInterface
+    public function getViews(string $owner, string $repo, string $per): Schema\ViewTraffic
     {
         if (array_key_exists(Operator\Repos\GetViews::class, $this->operator) === false) {
             $this->operator[Operator\Repos\GetViews::class] = new Operator\Repos\GetViews($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Traffic🌀Views());
@@ -1605,7 +1606,7 @@ final class Repos
         return $this->operator[Operator\Repos\GetViews::class]->call($owner, $repo, $per);
     }
 
-    public function transfer(string $owner, string $repo, array $params): PromiseInterface
+    public function transfer(string $owner, string $repo, array $params): Schema\MinimalRepository
     {
         if (array_key_exists(Operator\Repos\Transfer::class, $this->operator) === false) {
             $this->operator[Operator\Repos\Transfer::class] = new Operator\Repos\Transfer($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Transfer());
@@ -1614,7 +1615,7 @@ final class Repos
         return $this->operator[Operator\Repos\Transfer::class]->call($owner, $repo, $params);
     }
 
-    public function checkVulnerabilityAlerts(string $owner, string $repo): PromiseInterface
+    public function checkVulnerabilityAlerts(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\CheckVulnerabilityAlerts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CheckVulnerabilityAlerts::class] = new Operator\Repos\CheckVulnerabilityAlerts($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀VulnerabilityAlerts());
@@ -1623,7 +1624,7 @@ final class Repos
         return $this->operator[Operator\Repos\CheckVulnerabilityAlerts::class]->call($owner, $repo);
     }
 
-    public function enableVulnerabilityAlerts(string $owner, string $repo): PromiseInterface
+    public function enableVulnerabilityAlerts(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\EnableVulnerabilityAlerts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\EnableVulnerabilityAlerts::class] = new Operator\Repos\EnableVulnerabilityAlerts($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀VulnerabilityAlerts());
@@ -1632,7 +1633,7 @@ final class Repos
         return $this->operator[Operator\Repos\EnableVulnerabilityAlerts::class]->call($owner, $repo);
     }
 
-    public function disableVulnerabilityAlerts(string $owner, string $repo): PromiseInterface
+    public function disableVulnerabilityAlerts(string $owner, string $repo): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DisableVulnerabilityAlerts::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DisableVulnerabilityAlerts::class] = new Operator\Repos\DisableVulnerabilityAlerts($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀VulnerabilityAlerts());
@@ -1641,7 +1642,7 @@ final class Repos
         return $this->operator[Operator\Repos\DisableVulnerabilityAlerts::class]->call($owner, $repo);
     }
 
-    public function downloadZipballArchive(string $owner, string $repo, string $ref): PromiseInterface
+    public function downloadZipballArchive(string $owner, string $repo, string $ref): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DownloadZipballArchive::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DownloadZipballArchive::class] = new Operator\Repos\DownloadZipballArchive($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Zipball🌀Ref());
@@ -1650,7 +1651,7 @@ final class Repos
         return $this->operator[Operator\Repos\DownloadZipballArchive::class]->call($owner, $repo, $ref);
     }
 
-    public function downloadZipballArchiveStreaming(string $owner, string $repo, string $ref): PromiseInterface
+    public function downloadZipballArchiveStreaming(string $owner, string $repo, string $ref): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DownloadZipballArchiveStreaming::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DownloadZipballArchiveStreaming::class] = new Operator\Repos\DownloadZipballArchiveStreaming($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Zipball🌀Ref());
@@ -1659,7 +1660,7 @@ final class Repos
         return $this->operator[Operator\Repos\DownloadZipballArchiveStreaming::class]->call($owner, $repo, $ref);
     }
 
-    public function createUsingTemplate(string $templateOwner, string $templateRepo, array $params): PromiseInterface
+    public function createUsingTemplate(string $templateOwner, string $templateRepo, array $params): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\CreateUsingTemplate::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateUsingTemplate::class] = new Operator\Repos\CreateUsingTemplate($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀TemplateOwner🌀TemplateRepo🌀Generate());
@@ -1668,7 +1669,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateUsingTemplate::class]->call($templateOwner, $templateRepo, $params);
     }
 
-    public function listPublic(int $since): PromiseInterface
+    public function listPublic(int $since): Schema\MinimalRepository
     {
         if (array_key_exists(Operator\Repos\ListPublic::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListPublic::class] = new Operator\Repos\ListPublic($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories());
@@ -1677,7 +1678,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListPublic::class]->call($since);
     }
 
-    public function listForAuthenticatedUser(string $direction, string $since, string $before, string $visibility, string $affiliation, string $type, string $sort, int $perPage, int $page): PromiseInterface
+    public function listForAuthenticatedUser(string $direction, string $since, string $before, string $visibility, string $affiliation, string $type, string $sort, int $perPage, int $page): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\ListForAuthenticatedUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListForAuthenticatedUser::class] = new Operator\Repos\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Repos());
@@ -1686,7 +1687,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListForAuthenticatedUser::class]->call($direction, $since, $before, $visibility, $affiliation, $type, $sort, $perPage, $page);
     }
 
-    public function createForAuthenticatedUser(array $params): PromiseInterface
+    public function createForAuthenticatedUser(array $params): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\CreateForAuthenticatedUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\CreateForAuthenticatedUser::class] = new Operator\Repos\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Repos());
@@ -1695,7 +1696,7 @@ final class Repos
         return $this->operator[Operator\Repos\CreateForAuthenticatedUser::class]->call($params);
     }
 
-    public function listInvitationsForAuthenticatedUser(int $perPage, int $page): PromiseInterface
+    public function listInvitationsForAuthenticatedUser(int $perPage, int $page): Schema\RepositoryInvitation
     {
         if (array_key_exists(Operator\Repos\ListInvitationsForAuthenticatedUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListInvitationsForAuthenticatedUser::class] = new Operator\Repos\ListInvitationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations());
@@ -1704,7 +1705,7 @@ final class Repos
         return $this->operator[Operator\Repos\ListInvitationsForAuthenticatedUser::class]->call($perPage, $page);
     }
 
-    public function declineInvitationForAuthenticatedUser(int $invitationId): PromiseInterface
+    public function declineInvitationForAuthenticatedUser(int $invitationId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeclineInvitationForAuthenticatedUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\DeclineInvitationForAuthenticatedUser::class] = new Operator\Repos\DeclineInvitationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations🌀InvitationId());
@@ -1713,7 +1714,7 @@ final class Repos
         return $this->operator[Operator\Repos\DeclineInvitationForAuthenticatedUser::class]->call($invitationId);
     }
 
-    public function acceptInvitationForAuthenticatedUser(int $invitationId): PromiseInterface
+    public function acceptInvitationForAuthenticatedUser(int $invitationId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\AcceptInvitationForAuthenticatedUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\AcceptInvitationForAuthenticatedUser::class] = new Operator\Repos\AcceptInvitationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations🌀InvitationId());
@@ -1722,7 +1723,7 @@ final class Repos
         return $this->operator[Operator\Repos\AcceptInvitationForAuthenticatedUser::class]->call($invitationId);
     }
 
-    public function listForUser(string $username, string $direction, string $type, string $sort, int $perPage, int $page): PromiseInterface
+    public function listForUser(string $username, string $direction, string $type, string $sort, int $perPage, int $page): Schema\MinimalRepository
     {
         if (array_key_exists(Operator\Repos\ListForUser::class, $this->operator) === false) {
             $this->operator[Operator\Repos\ListForUser::class] = new Operator\Repos\ListForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Repos());

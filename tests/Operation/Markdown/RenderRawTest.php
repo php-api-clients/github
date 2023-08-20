@@ -14,9 +14,10 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
-use function React\Async\await;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Markdown\RenderRaw */
 final class RenderRawTest extends AsyncTestCase
 {
     /** @test */
@@ -28,7 +29,7 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), json_encode(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Markdown\RenderRaw::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -44,9 +45,9 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), json_encode(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextPlain::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }
@@ -60,7 +61,7 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), json_encode(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Markdown\RenderRaw::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -76,9 +77,9 @@ final class RenderRawTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown/raw', Argument::type('array'), Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown/raw', Argument::type('array'), json_encode(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->markdown()->renderRaw(json_decode(Schema\Markdown\RenderRaw\Request\TextXMarkdown::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

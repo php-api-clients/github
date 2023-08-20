@@ -7,6 +7,16 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Codespace;
+use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
+use ApiClients\Client\GitHub\Schema\CodespacesOrgSecret;
+use ApiClients\Client\GitHub\Schema\CodespacesPublicKey;
+use ApiClients\Client\GitHub\Schema\CodespacesSecret;
+use ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey;
+use ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\RepoCodespacesSecret;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +30,14 @@ final class Codespaces
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function listForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function listForAuthenticatedUser(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_id');
@@ -54,8 +66,10 @@ final class Codespaces
         return $operator->call($arguments['repository_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listInOrganization(array $params)
+    /** @return (Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok | array{code: int}) */
+    public function listInOrganization(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -84,8 +98,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listSecretsForAuthenticatedUser(array $params)
+    /** @return */
+    public function listSecretsForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -108,8 +124,10 @@ final class Codespaces
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function getForAuthenticatedUser(array $params)
+    /** @return (Schema\Codespace | array{code: int}) */
+    public function getForAuthenticatedUser(array $params): Codespace|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -126,8 +144,10 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    public function listOrgSecrets(array $params)
+    /** @return */
+    public function listOrgSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -156,8 +176,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listInRepositoryForAuthenticatedUser(array $params)
+    /** @return */
+    public function listInRepositoryForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -192,8 +214,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getPublicKeyForAuthenticatedUser(array $params)
+    /** @return */
+    public function getPublicKeyForAuthenticatedUser(array $params): CodespacesUserPublicKey|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User\Codespaces\Secrets\PublicKey::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Codespaces\Secrets\PublicKey::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀PublicKey();
         }
@@ -203,8 +227,10 @@ final class Codespaces
         return $operator->call();
     }
 
-    public function getSecretForAuthenticatedUser(array $params)
+    /** @return */
+    public function getSecretForAuthenticatedUser(array $params): CodespacesSecret|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -221,8 +247,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name']);
     }
 
-    public function codespaceMachinesForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function codespaceMachinesForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -239,8 +267,10 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    public function getOrgPublicKey(array $params)
+    /** @return */
+    public function getOrgPublicKey(array $params): CodespacesPublicKey|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -257,8 +287,10 @@ final class Codespaces
         return $operator->call($arguments['org']);
     }
 
-    public function getOrgSecret(array $params)
+    /** @return */
+    public function getOrgSecret(array $params): CodespacesOrgSecret|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -281,8 +313,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    public function getCodespacesForUserInOrg(array $params)
+    /** @return (Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    public function getCodespacesForUserInOrg(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -317,8 +351,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listDevcontainersInRepositoryForAuthenticatedUser(array $params)
+    /** @return */
+    public function listDevcontainersInRepositoryForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -353,8 +389,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function repoMachinesForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok | array{code: int}) */
+    public function repoMachinesForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -389,8 +427,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['location'], $arguments['client_ip']);
     }
 
-    public function preFlightWithRepoForAuthenticatedUser(array $params)
+    /** @return */
+    public function preFlightWithRepoForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -425,8 +465,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['client_ip']);
     }
 
-    public function listRepoSecrets(array $params)
+    /** @return */
+    public function listRepoSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -461,8 +503,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listRepositoriesForSecretForAuthenticatedUser(array $params)
+    /** @return */
+    public function listRepositoriesForSecretForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -479,8 +523,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name']);
     }
 
-    public function getExportDetailsForAuthenticatedUser(array $params)
+    /** @return */
+    public function getExportDetailsForAuthenticatedUser(array $params): CodespaceExportDetails|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -503,8 +549,10 @@ final class Codespaces
         return $operator->call($arguments['codespace_name'], $arguments['export_id']);
     }
 
-    public function listSelectedReposForOrgSecret(array $params)
+    /** @return */
+    public function listSelectedReposForOrgSecret(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -539,8 +587,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function getRepoPublicKey(array $params)
+    /** @return */
+    public function getRepoPublicKey(array $params): CodespacesPublicKey|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -563,8 +613,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function getRepoSecret(array $params)
+    /** @return */
+    public function getRepoSecret(array $params): RepoCodespacesSecret|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

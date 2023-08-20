@@ -6,10 +6,27 @@ namespace ApiClients\Client\GitHub\Schema\FileCommit\Content;
 
 final readonly class Links
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"self":{"type":"string"},"git":{"type":"string"},"html":{"type":"string"}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "self": {
+            "type": "string"
+        },
+        "git": {
+            "type": "string"
+        },
+        "html": {
+            "type": "string"
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"self":"generated","git":"generated","html":"generated"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "self": "generated",
+    "git": "generated",
+    "html": "generated"
+}';
 
     public function __construct(public string|null $self, public string|null $git, public string|null $html)
     {

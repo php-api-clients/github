@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\CodeOfConduct;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,19 +22,27 @@ final class CodesOfConduct
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getAllCodesOfConduct(array $params)
+    /** @return (iterable<Schema\CodeOfConduct> | array{code: int}) */
+    public function getAllCodesOfConduct(array $params): iterable
     {
-        $operator = new Operator\CodesOfConduct\GetAllCodesOfConduct($this->browser, $this->authentication);
+        $matched = true;
+        if (array_key_exists(Hydrator\Operation\CodesOfConduct::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\CodesOfConduct::class] = $this->hydrators->getObjectMapperOperation🌀CodesOfConduct();
+        }
+
+        $operator = new Operator\CodesOfConduct\GetAllCodesOfConduct($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\CodesOfConduct::class]);
 
         return $operator->call();
     }
 
-    public function getConductCode(array $params)
+    /** @return (Schema\CodeOfConduct | array{code: int}) */
+    public function getConductCode(array $params): CodeOfConduct|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('key', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: key');

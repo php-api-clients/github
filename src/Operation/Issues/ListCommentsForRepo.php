@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -55,7 +58,8 @@ final class ListCommentsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\IssueComment> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,8 +68,26 @@ final class ListCommentsForRepo
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\IssueComment {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\IssueComment::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Validation failed, or the endpoint has been spammed.
                      **/
+
                     case 422:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

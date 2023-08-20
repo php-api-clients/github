@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -70,7 +73,8 @@ final class ListActivities
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{before}', '{after}', '{ref}', '{actor}', '{time_period}', '{activity_type}', '{direction}', '{per_page}'], [$this->owner, $this->repo, $this->before, $this->after, $this->ref, $this->actor, $this->timePeriod, $this->activityType, $this->direction, $this->perPage], self::PATH . '?before={before}&after={after}&ref={ref}&actor={actor}&time_period={time_period}&activity_type={activity_type}&direction={direction}&per_page={per_page}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\Activity> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -79,8 +83,26 @@ final class ListActivities
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Activity {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Activity::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\Activity::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Validation failed, or the endpoint has been spammed.
                      **/
+
                     case 422:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationErrorSimple::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

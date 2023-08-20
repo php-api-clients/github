@@ -6,6 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Activity;
 
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Activity\ListReceivedPublicEventsForUser */
 final class ListReceivedPublicEventsForUserTest extends AsyncTestCase
 {
 }

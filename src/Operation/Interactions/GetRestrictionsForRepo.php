@@ -4,10 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation\Interactions;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
+use RuntimeException;
+use Throwable;
 
+use function explode;
+use function json_decode;
 use function str_replace;
 
 final class GetRestrictionsForRepo
@@ -21,7 +29,7 @@ final class GetRestrictionsForRepo
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
 
-    public function __construct(string $owner, string $repo)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\InteractionLimits $hydrator, string $owner, string $repo)
     {
         $this->owner = $owner;
         $this->repo  = $repo;
@@ -32,8 +40,43 @@ final class GetRestrictionsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): ResponseInterface
+    public function createResponse(ResponseInterface $response): Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One
     {
-        return $response;
+        $code          = $response->getStatusCode();
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\InteractionLimitResponse::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\InteractionLimitResponse::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaaa;
+                        }
+
+                        items_application_json_two_hundred_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaab;
+                        }
+
+                        items_application_json_two_hundred_aaaab:
+                        throw $error;
+                }
+
+                break;
+        }
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

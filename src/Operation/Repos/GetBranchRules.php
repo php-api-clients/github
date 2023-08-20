@@ -4,10 +4,20 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation\Repos;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
+use function explode;
+use function json_decode;
 use function str_replace;
 
 final class GetBranchRules
@@ -27,7 +37,7 @@ final class GetBranchRules
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(string $owner, string $repo, string $branch, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Rules\Branches\Branch $hydrator, string $owner, string $repo, string $branch, int $perPage = 30, int $page = 1)
     {
         $this->owner   = $owner;
         $this->repo    = $repo;
@@ -41,8 +51,154 @@ final class GetBranchRules
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->branch, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): ResponseInterface
+    /** @return Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern> */
+    public function createResponse(ResponseInterface $response): Observable
     {
-        return $response;
+        $code          = $response->getStatusCode();
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCreation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCreation::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleUpdate::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleUpdate::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaab;
+                            }
+
+                            items_application_json_two_hundred_aaaab:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleDeletion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleDeletion::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaac;
+                            }
+
+                            items_application_json_two_hundred_aaaac:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredLinearHistory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredLinearHistory::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaad;
+                            }
+
+                            items_application_json_two_hundred_aaaad:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredDeployments::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredDeployments::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaae;
+                            }
+
+                            items_application_json_two_hundred_aaaae:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredSignatures::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredSignatures::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaf;
+                            }
+
+                            items_application_json_two_hundred_aaaaf:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRulePullRequest::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRulePullRequest::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaag;
+                            }
+
+                            items_application_json_two_hundred_aaaag:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredStatusChecks::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredStatusChecks::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaah;
+                            }
+
+                            items_application_json_two_hundred_aaaah:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleNonFastForward::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleNonFastForward::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaai;
+                            }
+
+                            items_application_json_two_hundred_aaaai:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitMessagePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitMessagePattern::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaj;
+                            }
+
+                            items_application_json_two_hundred_aaaaj:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitAuthorEmailPattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitAuthorEmailPattern::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaak;
+                            }
+
+                            items_application_json_two_hundred_aaaak:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitterEmailPattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitterEmailPattern::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaal;
+                            }
+
+                            items_application_json_two_hundred_aaaal:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleBranchNamePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleBranchNamePattern::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaam;
+                            }
+
+                            items_application_json_two_hundred_aaaam:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleTagNamePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleTagNamePattern::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaan;
+                            }
+
+                            items_application_json_two_hundred_aaaan:
+                            throw $error;
+                        });
+                }
+
+                break;
+        }
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

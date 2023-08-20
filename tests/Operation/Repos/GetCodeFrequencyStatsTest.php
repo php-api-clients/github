@@ -13,15 +13,17 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Repos\GetCodeFrequencyStats */
 final class GetCodeFrequencyStatsTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_202_responseContentType_application_json_zero(): void
     {
-        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(202, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -40,7 +42,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_202_responseContentType_application_json_zero(): void
     {
-        $response = new Response(202, ['Content-Type' => 'application/json'], Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(202, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -48,7 +50,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/stats/code_frequency', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->getCodeFrequencyStats('generated', 'generated'));
+        $result = $client->operations()->repos()->getCodeFrequencyStats('generated', 'generated');
     }
 
     /** @test */
@@ -81,7 +83,7 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/stats/code_frequency', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->getCodeFrequencyStats('generated', 'generated'));
+        $result = $client->operations()->repos()->getCodeFrequencyStats('generated', 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }

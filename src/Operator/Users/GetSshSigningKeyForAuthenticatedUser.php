@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Users;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\SshSigningKey;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetSshSigningKeyForAuthenticatedUser
 {
@@ -23,14 +27,18 @@ final readonly class GetSshSigningKeyForAuthenticatedUser
     {
     }
 
-    /** @return PromiseInterface<(SshSigningKey|array)> **/
-    public function call(int $sshSigningKeyId): PromiseInterface
+    /** @return (Schema\SshSigningKey | array{code: int}) */
+    public function call(int $sshSigningKeyId): SshSigningKey|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetSshSigningKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sshSigningKeyId);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): SshSigningKey|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): SshSigningKey|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

@@ -8,10 +8,35 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 abstract readonly class TietCA3AFB31
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"end_column":{"type":"integer"},"end_line":{"type":"integer"},"path":{"type":"string"},"start_column":{"type":"integer"},"start_line":{"type":"integer"}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "end_column": {
+            "type": "integer"
+        },
+        "end_line": {
+            "type": "integer"
+        },
+        "path": {
+            "type": "string"
+        },
+        "start_column": {
+            "type": "integer"
+        },
+        "start_line": {
+            "type": "integer"
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"end_column":10,"end_line":8,"path":"generated","start_column":12,"start_line":10}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "end_column": 10,
+    "end_line": 8,
+    "path": "generated",
+    "start_column": 12,
+    "start_line": 10
+}';
 
     public function __construct(#[MapFrom('end_column')]
     public int|null $endColumn, #[MapFrom('end_line')]

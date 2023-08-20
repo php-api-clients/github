@@ -17,12 +17,14 @@ final class Ten
 {
     private array $router = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks)
+    /** @return Observable<string> */
+    public function call(string $call, array $params, array $pathChunks): iterable
     {
+        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'repos') {
                 if ($pathChunks[2] === '{owner}') {
@@ -34,6 +36,7 @@ final class Ten
                                         if ($pathChunks[8] === '{attempt_number}') {
                                             if ($pathChunks[9] === 'logs') {
                                                 if ($call === 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs') {
+                                                    $matched = true;
                                                     if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
                                                         $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
@@ -51,6 +54,8 @@ final class Ten
             }
         }
 
-        throw new InvalidArgumentException();
+        if ($matched === false) {
+            throw new InvalidArgumentException();
+        }
     }
 }

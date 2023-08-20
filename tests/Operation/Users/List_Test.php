@@ -12,9 +12,9 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Users\List_ */
 final class List_Test extends AsyncTestCase
 {
     /** @test */
@@ -47,7 +47,7 @@ final class List_Test extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/users?since=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->users()->list(5, 8));
+        $result = $client->operations()->users()->list(5, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

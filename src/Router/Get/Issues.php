@@ -7,6 +7,13 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\Issue;
+use ApiClients\Client\GitHub\Schema\IssueComment;
+use ApiClients\Client\GitHub\Schema\IssueEvent;
+use ApiClients\Client\GitHub\Schema\Label;
+use ApiClients\Client\GitHub\Schema\Milestone;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +27,14 @@ final class Issues
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function list_(array $params)
+    /** @return (iterable<Schema\Issue> | array{code: int}) */
+    public function list_(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: labels');
@@ -108,8 +117,10 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['collab'], $arguments['orgs'], $arguments['owned'], $arguments['pulls'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForAuthenticatedUser(array $params)
+    /** @return (iterable<Schema\Issue> | array{code: int}) */
+    public function listForAuthenticatedUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: labels');
@@ -168,8 +179,10 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForOrg(array $params)
+    /** @return iterable<Schema\Issue> */
+    public function listForOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -234,8 +247,10 @@ final class Issues
         return $operator->call($arguments['org'], $arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listAssignees(array $params)
+    /** @return iterable<Schema\SimpleUser> */
+    public function listAssignees(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -270,8 +285,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listForRepo(array $params)
+    /** @return (iterable<Schema\Issue> | Schema\BasicError) */
+    public function listForRepo(array $params): iterable|BasicError
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -360,8 +377,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone'], $arguments['assignee'], $arguments['creator'], $arguments['mentioned'], $arguments['labels'], $arguments['since'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listLabelsForRepo(array $params)
+    /** @return iterable<Schema\Label> */
+    public function listLabelsForRepo(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -396,8 +415,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listMilestones(array $params)
+    /** @return iterable<Schema\Milestone> */
+    public function listMilestones(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -450,8 +471,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function checkUserCanBeAssigned(array $params)
+    /** @return array{code: int} */
+    public function checkUserCanBeAssigned(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -480,8 +503,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['assignee']);
     }
 
-    public function listCommentsForRepo(array $params)
+    /** @return iterable<Schema\IssueComment> */
+    public function listCommentsForRepo(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -534,8 +559,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['direction'], $arguments['since'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listEventsForRepo(array $params)
+    /** @return iterable<Schema\IssueEvent> */
+    public function listEventsForRepo(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -570,8 +597,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function get(array $params)
+    /** @return (Schema\Issue | Schema\BasicError | array{code: int}) */
+    public function get(array $params): Issue|BasicError|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -600,8 +629,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    public function getLabel(array $params)
+    /** @return */
+    public function getLabel(array $params): Label|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -630,8 +661,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
-    public function getMilestone(array $params)
+    /** @return */
+    public function getMilestone(array $params): Milestone|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -660,8 +693,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
-    public function getComment(array $params)
+    /** @return */
+    public function getComment(array $params): IssueComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -690,8 +725,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    public function getEvent(array $params)
+    /** @return */
+    public function getEvent(array $params): IssueEvent|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -720,8 +757,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['event_id']);
     }
 
-    public function listComments(array $params)
+    /** @return iterable<Schema\IssueComment> */
+    public function listComments(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -768,8 +807,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listEvents(array $params)
+    /** @return iterable<(Schema\LabeledIssueEvent | Schema\UnlabeledIssueEvent | Schema\AssignedIssueEvent | Schema\UnassignedIssueEvent | Schema\MilestonedIssueEvent | Schema\DemilestonedIssueEvent | Schema\RenamedIssueEvent | Schema\ReviewRequestedIssueEvent | Schema\ReviewRequestRemovedIssueEvent | Schema\ReviewDismissedIssueEvent | Schema\LockedIssueEvent | Schema\AddedToProjectIssueEvent | Schema\MovedColumnInProjectIssueEvent | Schema\RemovedFromProjectIssueEvent | Schema\ConvertedNoteToIssueIssueEvent)> */
+    public function listEvents(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -810,8 +851,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listLabelsOnIssue(array $params)
+    /** @return (iterable<Schema\Label> | Schema\BasicError) */
+    public function listLabelsOnIssue(array $params): iterable|BasicError
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -852,8 +895,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listEventsForTimeline(array $params)
+    /** @return iterable<(Schema\LabeledIssueEvent | Schema\UnlabeledIssueEvent | Schema\MilestonedIssueEvent | Schema\DemilestonedIssueEvent | Schema\RenamedIssueEvent | Schema\ReviewRequestedIssueEvent | Schema\ReviewRequestRemovedIssueEvent | Schema\ReviewDismissedIssueEvent | Schema\LockedIssueEvent | Schema\AddedToProjectIssueEvent | Schema\MovedColumnInProjectIssueEvent | Schema\RemovedFromProjectIssueEvent | Schema\ConvertedNoteToIssueIssueEvent | Schema\TimelineCommentEvent | Schema\TimelineCrossReferencedEvent | Schema\TimelineCommittedEvent | Schema\TimelineReviewedEvent | Schema\TimelineLineCommentedEvent | Schema\TimelineCommitCommentedEvent | Schema\TimelineAssignedIssueEvent | Schema\TimelineUnassignedIssueEvent | Schema\StateChangeIssueEvent)> */
+    public function listEventsForTimeline(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -894,8 +939,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listLabelsForMilestone(array $params)
+    /** @return iterable<Schema\Label> */
+    public function listLabelsForMilestone(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -927,13 +974,19 @@ final class Issues
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Issues\ListLabelsForMilestone($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber\Labels::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber\Labels::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Milestones🌀MilestoneNumber🌀Labels();
+        }
+
+        $operator = new Operator\Issues\ListLabelsForMilestone($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber\Labels::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function checkUserCanBeAssignedToIssue(array $params)
+    /** @return array{code: int} */
+    public function checkUserCanBeAssignedToIssue(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

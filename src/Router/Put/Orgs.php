@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Put;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Orgs
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function blockUser(array $params)
+    /** @return array{code: int} */
+    public function blockUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -48,8 +53,10 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    public function setMembershipForUser(array $params)
+    /** @return */
+    public function setMembershipForUser(array $params): OrgMembership|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -72,8 +79,10 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $params);
     }
 
-    public function convertMemberToOutsideCollaborator(array $params)
+    /** @return (Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    public function convertMemberToOutsideCollaborator(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -96,8 +105,10 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $params);
     }
 
-    public function setPublicMembershipForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function setPublicMembershipForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -120,8 +131,10 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    public function addSecurityManagerTeam(array $params)
+    /** @return array{code: int} */
+    public function addSecurityManagerTeam(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

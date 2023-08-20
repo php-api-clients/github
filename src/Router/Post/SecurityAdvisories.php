@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class SecurityAdvisories
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function createPrivateVulnerabilityReport(array $params)
+    /** @return */
+    public function createPrivateVulnerabilityReport(array $params): RepositoryAdvisory|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -48,8 +52,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function createRepositoryAdvisory(array $params)
+    /** @return */
+    public function createRepositoryAdvisory(array $params): RepositoryAdvisory|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -72,8 +78,10 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function createRepositoryAdvisoryCveRequest(array $params)
+    /** @return */
+    public function createRepositoryAdvisoryCveRequest(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

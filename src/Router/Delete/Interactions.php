@@ -19,12 +19,14 @@ final class Interactions
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function removeRestrictionsForOrg(array $params)
+    /** @return array{code: int} */
+    public function removeRestrictionsForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -37,8 +39,10 @@ final class Interactions
         return $operator->call($arguments['org']);
     }
 
-    public function removeRestrictionsForRepo(array $params)
+    /** @return array{code: int} */
+    public function removeRestrictionsForRepo(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -57,8 +61,10 @@ final class Interactions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function removeRestrictionsForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function removeRestrictionsForAuthenticatedUser(array $params): array
     {
+        $matched  = true;
         $operator = new Operator\Interactions\RemoveRestrictionsForAuthenticatedUser($this->browser, $this->authentication);
 
         return $operator->call();

@@ -12,9 +12,9 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Licenses\GetAllCommonlyUsed */
 final class GetAllCommonlyUsedTest extends AsyncTestCase
 {
     /** @test */
@@ -48,7 +48,7 @@ final class GetAllCommonlyUsedTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/licenses?featured=&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->licenses()->getAllCommonlyUsed(false, 8, 4));
+        $result = $client->operations()->licenses()->getAllCommonlyUsed(false, 8, 4);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

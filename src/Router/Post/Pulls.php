@@ -7,6 +7,11 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\PullRequest;
+use ApiClients\Client\GitHub\Schema\PullRequestReview;
+use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
+use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +25,14 @@ final class Pulls
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function create(array $params)
+    /** @return */
+    public function create(array $params): PullRequest|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -48,8 +55,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function createReviewComment(array $params)
+    /** @return */
+    public function createReviewComment(array $params): PullRequestReviewComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -78,8 +87,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    public function requestReviewers(array $params)
+    /** @return (Schema\PullRequestSimple | array{code: int}) */
+    public function requestReviewers(array $params): PullRequestSimple|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -108,8 +119,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    public function createReview(array $params)
+    /** @return */
+    public function createReview(array $params): PullRequestReview|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -138,8 +151,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    public function createReplyForReviewComment(array $params)
+    /** @return */
+    public function createReplyForReviewComment(array $params): PullRequestReviewComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -174,8 +189,10 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['comment_id'], $params);
     }
 
-    public function submitReview(array $params)
+    /** @return */
+    public function submitReview(array $params): PullRequestReview|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

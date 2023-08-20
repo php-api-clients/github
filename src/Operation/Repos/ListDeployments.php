@@ -4,10 +4,20 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation\Repos;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
+use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
+use function explode;
+use function json_decode;
 use function str_replace;
 
 final class ListDeployments
@@ -33,7 +43,7 @@ final class ListDeployments
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Repos\Owner\Repo\Deployments $hydrator, string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $perPage = 30, int $page = 1)
     {
         $this->owner       = $owner;
         $this->repo        = $repo;
@@ -50,8 +60,37 @@ final class ListDeployments
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{sha}', '{ref}', '{task}', '{environment}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->sha, $this->ref, $this->task, $this->environment, $this->perPage, $this->page], self::PATH . '?sha={sha}&ref={ref}&task={task}&environment={environment}&per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): ResponseInterface
+    /** @return Observable<Schema\Deployment> */
+    public function createResponse(ResponseInterface $response): Observable
     {
-        return $response;
+        $code          = $response->getStatusCode();
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Deployment {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Deployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\Deployment::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                }
+
+                break;
+        }
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

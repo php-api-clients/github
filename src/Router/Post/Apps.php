@@ -7,6 +7,10 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\Authorization;
+use ApiClients\Client\GitHub\Schema\InstallationToken;
+use ApiClients\Client\GitHub\Schema\Integration;
+use ApiClients\Client\GitHub\Schema\Operations\Apps\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +24,14 @@ final class Apps
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function createFromManifest(array $params)
+    /** @return */
+    public function createFromManifest(array $params): Integration|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('code', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: code');
@@ -42,8 +48,10 @@ final class Apps
         return $operator->call($arguments['code']);
     }
 
-    public function checkToken(array $params)
+    /** @return */
+    public function checkToken(array $params): Authorization|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: client_id');
@@ -60,8 +68,10 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    public function redeliverWebhookDelivery(array $params)
+    /** @return */
+    public function redeliverWebhookDelivery(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('delivery_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: delivery_id');
@@ -78,8 +88,10 @@ final class Apps
         return $operator->call($arguments['delivery_id']);
     }
 
-    public function createInstallationAccessToken(array $params)
+    /** @return */
+    public function createInstallationAccessToken(array $params): InstallationToken|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');
@@ -96,8 +108,10 @@ final class Apps
         return $operator->call($arguments['installation_id'], $params);
     }
 
-    public function scopeToken(array $params)
+    /** @return */
+    public function scopeToken(array $params): Authorization|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: client_id');

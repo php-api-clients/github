@@ -7,6 +7,10 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\BaseGist;
+use ApiClients\Client\GitHub\Schema\GistComment;
+use ApiClients\Client\GitHub\Schema\GistSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +24,14 @@ final class Gists
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function createComment(array $params)
+    /** @return (Schema\GistComment | array{code: int}) */
+    public function createComment(array $params): GistComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -42,8 +48,10 @@ final class Gists
         return $operator->call($arguments['gist_id'], $params);
     }
 
-    public function fork(array $params)
+    /** @return (Schema\BaseGist | array{code: int}) */
+    public function fork(array $params): BaseGist|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gist_id');
@@ -60,8 +68,10 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    public function create(array $params)
+    /** @return (Schema\GistSimple | array{code: int}) */
+    public function create(array $params): GistSimple|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\Gists::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\Gists::class] = $this->hydrators->getObjectMapperOperation🌀Gists();
         }

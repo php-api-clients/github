@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Codespaces
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteForAuthenticatedUser(array $params)
+    /** @return (Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    public function deleteForAuthenticatedUser(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -42,8 +46,10 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    public function deleteSecretForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteSecretForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -56,8 +62,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name']);
     }
 
-    public function deleteFromOrganization(array $params)
+    /** @return (Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    public function deleteFromOrganization(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -86,8 +94,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['username'], $arguments['codespace_name']);
     }
 
-    public function deleteRepoSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteRepoSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -112,8 +122,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
-    public function removeRepositoryForSecretForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function removeRepositoryForSecretForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -136,8 +148,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
     }
 
-    public function deleteCodespacesAccessUsers(array $params)
+    /** @return array{code: int} */
+    public function deleteCodespacesAccessUsers(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -154,8 +168,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
-    public function deleteOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function deleteOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -178,8 +194,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    public function removeSelectedRepoFromOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function removeSelectedRepoFromOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

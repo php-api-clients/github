@@ -9,10 +9,153 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 abstract readonly class Tiet58068E3B
 {
-    public const SCHEMA_JSON         = '{"required":["comments","commits","statuses","html","issue","review_comments","review_comment","self"],"type":"object","properties":{"comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"commits":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"statuses":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"html":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"issue":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"review_comments":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"review_comment":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"},"self":{"title":"Link","required":["href"],"type":"object","properties":{"href":{"type":"string"}},"description":"Hypermedia Link"}}}';
+    public const SCHEMA_JSON         = '{
+    "required": [
+        "comments",
+        "commits",
+        "statuses",
+        "html",
+        "issue",
+        "review_comments",
+        "review_comment",
+        "self"
+    ],
+    "type": "object",
+    "properties": {
+        "comments": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "commits": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "statuses": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "html": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "issue": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "review_comments": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "review_comment": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        },
+        "self": {
+            "title": "Link",
+            "required": [
+                "href"
+            ],
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                }
+            },
+            "description": "Hypermedia Link"
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"comments":{"href":"generated"},"commits":{"href":"generated"},"statuses":{"href":"generated"},"html":{"href":"generated"},"issue":{"href":"generated"},"review_comments":{"href":"generated"},"review_comment":{"href":"generated"},"self":{"href":"generated"}}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "comments": {
+        "href": "generated"
+    },
+    "commits": {
+        "href": "generated"
+    },
+    "statuses": {
+        "href": "generated"
+    },
+    "html": {
+        "href": "generated"
+    },
+    "issue": {
+        "href": "generated"
+    },
+    "review_comments": {
+        "href": "generated"
+    },
+    "review_comment": {
+        "href": "generated"
+    },
+    "self": {
+        "href": "generated"
+    }
+}';
 
     /**
      * comments: Hypermedia Link

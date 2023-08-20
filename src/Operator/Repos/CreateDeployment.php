@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Repos;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Deployment;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class CreateDeployment
 {
@@ -24,14 +28,18 @@ final readonly class CreateDeployment
     {
     }
 
-    /** @return PromiseInterface<(Deployment|Json|array)> **/
-    public function call(string $owner, string $repo, array $params): PromiseInterface
+    /** @return (Schema\Deployment | Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    public function call(string $owner, string $repo, array $params): Deployment|Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Deployment|Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Deployment|Json|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

@@ -7,6 +7,10 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Project;
+use ApiClients\Client\GitHub\Schema\ProjectCard;
+use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +24,14 @@ final class Projects
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function updateColumn(array $params)
+    /** @return (Schema\ProjectColumn | array{code: int}) */
+    public function updateColumn(array $params): ProjectColumn|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -42,8 +48,10 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
-    public function update(array $params)
+    /** @return (Schema\Project | array{code: int}) */
+    public function update(array $params): Project|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -60,8 +68,10 @@ final class Projects
         return $operator->call($arguments['project_id'], $params);
     }
 
-    public function updateCard(array $params)
+    /** @return (Schema\ProjectCard | array{code: int}) */
+    public function updateCard(array $params): ProjectCard|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: card_id');

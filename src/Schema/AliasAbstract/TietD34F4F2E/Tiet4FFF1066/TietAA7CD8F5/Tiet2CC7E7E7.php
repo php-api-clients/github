@@ -8,10 +8,26 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 abstract readonly class Tiet2CC7E7E7
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"allowed_port_privacy_settings":{"type":["array","null"],"items":{"type":"string"},"description":"The privacy settings a user can select from when forwarding a port."}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "allowed_port_privacy_settings": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            },
+            "description": "The privacy settings a user can select from when forwarding a port."
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"allowed_port_privacy_settings":null}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "allowed_port_privacy_settings": null
+}';
 
     /**
      * allowedPortPrivacySettings: The privacy settings a user can select from when forwarding a port.

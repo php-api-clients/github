@@ -7,6 +7,11 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json;
+use ApiClients\Client\GitHub\Schema\Project;
+use ApiClients\Client\GitHub\Schema\ProjectCard;
+use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +25,14 @@ final class Projects
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function createForOrg(array $params)
+    /** @return */
+    public function createForOrg(array $params): Project|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -42,8 +49,10 @@ final class Projects
         return $operator->call($arguments['org'], $params);
     }
 
-    public function createColumn(array $params)
+    /** @return (Schema\ProjectColumn | array{code: int}) */
+    public function createColumn(array $params): ProjectColumn|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -60,8 +69,10 @@ final class Projects
         return $operator->call($arguments['project_id'], $params);
     }
 
-    public function moveCard(array $params)
+    /** @return (Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json | array{code: int}) */
+    public function moveCard(array $params): Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: card_id');
@@ -78,8 +89,10 @@ final class Projects
         return $operator->call($arguments['card_id'], $params);
     }
 
-    public function createCard(array $params)
+    /** @return (Schema\ProjectCard | array{code: int}) */
+    public function createCard(array $params): ProjectCard|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -96,8 +109,10 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
-    public function moveColumn(array $params)
+    /** @return (Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json | array{code: int}) */
+    public function moveColumn(array $params): \ApiClients\Client\GitHub\Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -114,8 +129,10 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
-    public function createForRepo(array $params)
+    /** @return */
+    public function createForRepo(array $params): Project|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -138,8 +155,10 @@ final class Projects
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function createForAuthenticatedUser(array $params)
+    /** @return (Schema\Project | array{code: int}) */
+    public function createForAuthenticatedUser(array $params): Project|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User\Projects::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Projects::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Projects();
         }

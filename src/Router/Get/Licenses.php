@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\License;
+use ApiClients\Client\GitHub\Schema\LicenseContent;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Licenses
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getAllCommonlyUsed(array $params)
+    /** @return (iterable<Schema\LicenseSimple> | array{code: int}) */
+    public function getAllCommonlyUsed(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('featured', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: featured');
@@ -45,13 +50,19 @@ final class Licenses
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Licenses\GetAllCommonlyUsed($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Licenses::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Licenses::class] = $this->hydrators->getObjectMapperOperation🌀Licenses();
+        }
+
+        $operator = new Operator\Licenses\GetAllCommonlyUsed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Licenses::class]);
 
         return $operator->call($arguments['featured'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function get(array $params)
+    /** @return (Schema\License | array{code: int}) */
+    public function get(array $params): License|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('license', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: license');
@@ -68,8 +79,10 @@ final class Licenses
         return $operator->call($arguments['license']);
     }
 
-    public function getForRepo(array $params)
+    /** @return */
+    public function getForRepo(array $params): LicenseContent|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

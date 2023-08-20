@@ -6,10 +6,10 @@ namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
 
 use function array_key_exists;
 
@@ -21,7 +21,7 @@ final class Gitignore
     {
     }
 
-    public function getAllTemplates(): PromiseInterface
+    public function getAllTemplates(): Schema\Operations\Gitignore\GetAllTemplates\Response\ApplicationJson\Ok
     {
         if (array_key_exists(Operator\Gitignore\GetAllTemplates::class, $this->operator) === false) {
             $this->operator[Operator\Gitignore\GetAllTemplates::class] = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates());
@@ -30,7 +30,7 @@ final class Gitignore
         return $this->operator[Operator\Gitignore\GetAllTemplates::class]->call();
     }
 
-    public function getTemplate(string $name): PromiseInterface
+    public function getTemplate(string $name): Schema\GitignoreTemplate
     {
         if (array_key_exists(Operator\Gitignore\GetTemplate::class, $this->operator) === false) {
             $this->operator[Operator\Gitignore\GetTemplate::class] = new Operator\Gitignore\GetTemplate($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates🌀Name());

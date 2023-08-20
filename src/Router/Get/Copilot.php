@@ -7,6 +7,10 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
+use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +24,14 @@ final class Copilot
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getCopilotOrganizationDetails(array $params)
+    /** @return */
+    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -42,8 +48,10 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
-    public function listCopilotSeats(array $params)
+    /** @return */
+    public function listCopilotSeats(array $params): Ok|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -72,8 +80,10 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function getCopilotSeatAssignmentDetailsForUser(array $params)
+    /** @return (Schema\CopilotSeatDetails | array{code: int}) */
+    public function getCopilotSeatAssignmentDetailsForUser(array $params): CopilotSeatDetails|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

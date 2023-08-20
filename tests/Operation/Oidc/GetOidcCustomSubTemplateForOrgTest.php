@@ -13,15 +13,17 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Oidc\GetOidcCustomSubTemplateForOrg */
 final class GetOidcCustomSubTemplateForOrgTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -39,7 +41,7 @@ final class GetOidcCustomSubTemplateForOrgTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\OidcCustomSub::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -47,6 +49,6 @@ final class GetOidcCustomSubTemplateForOrgTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/actions/oidc/customization/sub', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->oidc()->getOidcCustomSubTemplateForOrg('generated'));
+        $result = $client->operations()->oidc()->getOidcCustomSubTemplateForOrg('generated');
     }
 }

@@ -14,16 +14,18 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\SecretScanning\ListLocationsForAlert */
 final class ListLocationsForAlertTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
-        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(503, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -46,7 +48,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
     public function operations_httpCode_503_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::class);
-        $response = new Response(503, ['Content-Type' => 'application/json'], Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(503, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -54,7 +56,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8));
+        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8);
     }
 
     /** @test */
@@ -90,7 +92,7 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8));
+        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(404, $result['code']);
     }

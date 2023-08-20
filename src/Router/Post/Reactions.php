@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Router\Post;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\Reaction;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +21,14 @@ final class Reactions
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function createForTeamDiscussionLegacy(array $params)
+    /** @return */
+    public function createForTeamDiscussionLegacy(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -48,8 +51,10 @@ final class Reactions
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
-    public function createForCommitComment(array $params)
+    /** @return */
+    public function createForCommitComment(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -78,8 +83,10 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    public function createForIssue(array $params)
+    /** @return */
+    public function createForIssue(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -108,8 +115,10 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    public function createForRelease(array $params)
+    /** @return */
+    public function createForRelease(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -138,8 +147,10 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
-    public function createForTeamDiscussionInOrg(array $params)
+    /** @return */
+    public function createForTeamDiscussionInOrg(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -168,8 +179,10 @@ final class Reactions
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $params);
     }
 
-    public function createForIssueComment(array $params)
+    /** @return */
+    public function createForIssueComment(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -198,8 +211,10 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    public function createForPullRequestReviewComment(array $params)
+    /** @return */
+    public function createForPullRequestReviewComment(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -228,8 +243,10 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    public function createForTeamDiscussionCommentLegacy(array $params)
+    /** @return */
+    public function createForTeamDiscussionCommentLegacy(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -258,8 +275,10 @@ final class Reactions
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number'], $params);
     }
 
-    public function createForTeamDiscussionCommentInOrg(array $params)
+    /** @return */
+    public function createForTeamDiscussionCommentInOrg(array $params): Reaction|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

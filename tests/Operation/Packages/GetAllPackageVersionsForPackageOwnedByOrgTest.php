@@ -14,16 +14,18 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
+use function json_decode;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg */
 final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -47,7 +49,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     public function operations_httpCode_404_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(404, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(404, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -55,14 +57,14 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
+        $result = $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated');
     }
 
     /** @test */
     public function call_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -86,7 +88,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     public function operations_httpCode_403_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(403, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(403, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -94,14 +96,14 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
+        $result = $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated');
     }
 
     /** @test */
     public function call_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -125,7 +127,7 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
     public function operations_httpCode_401_responseContentType_application_json_zero(): void
     {
         self::expectException(ErrorSchemas\BasicError::class);
-        $response = new Response(401, ['Content-Type' => 'application/json'], Schema\BasicError::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(401, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
@@ -133,6 +135,6 @@ final class GetAllPackageVersionsForPackageOwnedByOrgTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/packages/generated/generated/versions?page=4&per_page=8&state=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated'));
+        $result = $client->operations()->packages()->getAllPackageVersionsForPackageOwnedByOrg('generated', 'generated', 'generated', 4, 8, 'generated');
     }
 }

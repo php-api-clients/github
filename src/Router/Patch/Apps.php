@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\Authorization;
+use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Apps
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function updateWebhookConfigForApp(array $params)
+    /** @return */
+    public function updateWebhookConfigForApp(array $params): WebhookConfig|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\App\Hook\Config::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\App\Hook\Config::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config();
         }
@@ -35,8 +39,10 @@ final class Apps
         return $operator->call($params);
     }
 
-    public function resetToken(array $params)
+    /** @return */
+    public function resetToken(array $params): Authorization|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: client_id');

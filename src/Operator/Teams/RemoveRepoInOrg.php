@@ -7,7 +7,10 @@ namespace ApiClients\Client\GitHub\Operator\Teams;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class RemoveRepoInOrg
 {
@@ -20,14 +23,18 @@ final readonly class RemoveRepoInOrg
     {
     }
 
-    /** @return PromiseInterface<array> **/
-    public function call(string $org, string $teamSlug, string $owner, string $repo): PromiseInterface
+    /** @return array{code: int} */
+    public function call(string $org, string $teamSlug, string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveRepoInOrg($org, $teamSlug, $owner, $repo);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

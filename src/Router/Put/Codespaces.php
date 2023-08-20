@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Put;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +22,14 @@ final class Codespaces
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function setCodespacesAccess(array $params)
+    /** @return array{code: int} */
+    public function setCodespacesAccess(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -42,8 +46,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
-    public function createOrUpdateSecretForAuthenticatedUser(array $params)
+    /** @return (Schema\EmptyObject | array{code: int}) */
+    public function createOrUpdateSecretForAuthenticatedUser(array $params): EmptyObject|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -60,8 +66,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $params);
     }
 
-    public function setSelectedReposForOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function setSelectedReposForOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -84,8 +92,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    public function createOrUpdateRepoSecret(array $params)
+    /** @return (Schema\EmptyObject | array{code: int}) */
+    public function createOrUpdateRepoSecret(array $params): EmptyObject|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -114,8 +124,10 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
-    public function addRepositoryForSecretForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function addRepositoryForSecretForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -138,8 +150,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
     }
 
-    public function createOrUpdateOrgSecret(array $params)
+    /** @return (Schema\EmptyObject | array{code: int}) */
+    public function createOrUpdateOrgSecret(array $params): EmptyObject|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -162,8 +176,10 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    public function setRepositoriesForSecretForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function setRepositoriesForSecretForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: secret_name');
@@ -180,8 +196,10 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $params);
     }
 
-    public function addSelectedRepoToOrgSecret(array $params)
+    /** @return array{code: int} */
+    public function addSelectedRepoToOrgSecret(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

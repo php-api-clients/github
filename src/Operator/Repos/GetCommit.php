@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetCommit
 {
@@ -23,14 +26,18 @@ final readonly class GetCommit
     {
     }
 
-    /** @return PromiseInterface<Commit> **/
-    public function call(string $owner, string $repo, string $ref, int $page = 1, int $perPage = 30): PromiseInterface
+    /** @return */
+    public function call(string $owner, string $repo, string $ref, int $page = 1, int $perPage = 30): Commit|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $page, $perPage);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Commit {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Commit|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

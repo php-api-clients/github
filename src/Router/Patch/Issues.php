@@ -7,6 +7,11 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\Issue;
+use ApiClients\Client\GitHub\Schema\IssueComment;
+use ApiClients\Client\GitHub\Schema\Label;
+use ApiClients\Client\GitHub\Schema\Milestone;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +25,14 @@ final class Issues
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function update(array $params)
+    /** @return */
+    public function update(array $params): Issue|BasicError|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -54,8 +61,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    public function updateLabel(array $params)
+    /** @return */
+    public function updateLabel(array $params): Label|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -84,8 +93,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    public function updateMilestone(array $params)
+    /** @return */
+    public function updateMilestone(array $params): Milestone|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -114,8 +125,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $params);
     }
 
-    public function updateComment(array $params)
+    /** @return */
+    public function updateComment(array $params): IssueComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

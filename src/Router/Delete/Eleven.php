@@ -17,12 +17,14 @@ final class Eleven
 {
     private array $router = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks)
+    /** @return array{code: int} */
+    public function call(string $call, array $params, array $pathChunks): array
     {
+        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
@@ -35,6 +37,7 @@ final class Eleven
                                             if ($pathChunks[9] === 'reactions') {
                                                 if ($pathChunks[10] === '{reaction_id}') {
                                                     if ($call === 'DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}') {
+                                                        $matched = true;
                                                         if (array_key_exists(Router\Delete\Reactions::class, $this->router) === false) {
                                                             $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                         }
@@ -53,6 +56,8 @@ final class Eleven
             }
         }
 
-        throw new InvalidArgumentException();
+        if ($matched === false) {
+            throw new InvalidArgumentException();
+        }
     }
 }

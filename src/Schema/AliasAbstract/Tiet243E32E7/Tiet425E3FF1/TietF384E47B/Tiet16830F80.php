@@ -9,10 +9,107 @@ use EventSauce\ObjectHydrator\MapFrom;
 
 abstract readonly class Tiet16830F80
 {
-    public const SCHEMA_JSON         = '{"title":"Alert Instance","required":["ref","analysis_key","environment","state"],"type":["object","null"],"properties":{"analysis_key":{"type":"string","description":"Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name."},"category":{"type":"string","description":"Identifies the configuration under which the analysis was executed."},"classifications":{"type":"array","items":{"type":"string"}},"commit_sha":{"type":"string"},"environment":{"type":"string","description":"Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed."},"location":{"type":"object","properties":{"end_column":{"type":"integer"},"end_line":{"type":"integer"},"path":{"type":"string"},"start_column":{"type":"integer"},"start_line":{"type":"integer"}}},"message":{"type":"object","properties":{"text":{"type":"string"}}},"ref":{"type":"string","description":"The full Git reference, formatted as `refs\\/heads\\/<branch name>`."},"state":{"enum":["open","dismissed","fixed"],"type":"string","description":"State of a code scanning alert."}}}';
+    public const SCHEMA_JSON         = '{
+    "title": "Alert Instance",
+    "required": [
+        "ref",
+        "analysis_key",
+        "environment",
+        "state"
+    ],
+    "type": [
+        "object",
+        "null"
+    ],
+    "properties": {
+        "analysis_key": {
+            "type": "string",
+            "description": "Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name."
+        },
+        "category": {
+            "type": "string",
+            "description": "Identifies the configuration under which the analysis was executed."
+        },
+        "classifications": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "commit_sha": {
+            "type": "string"
+        },
+        "environment": {
+            "type": "string",
+            "description": "Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed."
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "end_column": {
+                    "type": "integer"
+                },
+                "end_line": {
+                    "type": "integer"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "start_column": {
+                    "type": "integer"
+                },
+                "start_line": {
+                    "type": "integer"
+                }
+            }
+        },
+        "message": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            }
+        },
+        "ref": {
+            "type": "string",
+            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`."
+        },
+        "state": {
+            "enum": [
+                "open",
+                "dismissed",
+                "fixed"
+            ],
+            "type": "string",
+            "description": "State of a code scanning alert."
+        }
+    }
+}';
     public const SCHEMA_TITLE        = 'Alert Instance';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"analysis_key":"generated","category":"generated","classifications":["generated","generated"],"commit_sha":"generated","environment":"generated","location":{"end_column":10,"end_line":8,"path":"generated","start_column":12,"start_line":10},"message":{"text":"generated"},"ref":"generated","state":"open"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "analysis_key": "generated",
+    "category": "generated",
+    "classifications": [
+        "generated",
+        "generated"
+    ],
+    "commit_sha": "generated",
+    "environment": "generated",
+    "location": {
+        "end_column": 10,
+        "end_line": 8,
+        "path": "generated",
+        "start_column": 12,
+        "start_line": 10
+    },
+    "message": {
+        "text": "generated"
+    },
+    "ref": "generated",
+    "state": "open"
+}';
 
     /**
      * analysisKey: Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.

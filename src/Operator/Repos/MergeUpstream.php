@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Repos;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\MergedUpstream;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class MergeUpstream
 {
@@ -23,14 +27,18 @@ final readonly class MergeUpstream
     {
     }
 
-    /** @return PromiseInterface<(MergedUpstream|array)> **/
-    public function call(string $owner, string $repo, array $params): PromiseInterface
+    /** @return (Schema\MergedUpstream | array{code: int}) */
+    public function call(string $owner, string $repo, array $params): MergedUpstream|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\MergeUpstream($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): MergedUpstream|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): MergedUpstream|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

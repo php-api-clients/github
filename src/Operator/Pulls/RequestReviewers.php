@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Pulls;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class RequestReviewers
 {
@@ -23,14 +27,18 @@ final readonly class RequestReviewers
     {
     }
 
-    /** @return PromiseInterface<(PullRequestSimple|array)> **/
-    public function call(string $owner, string $repo, int $pullNumber, array $params): PromiseInterface
+    /** @return (Schema\PullRequestSimple | array{code: int}) */
+    public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestSimple|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\RequestReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);
         $request   = $operation->createRequest($params);
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestSimple|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestSimple|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

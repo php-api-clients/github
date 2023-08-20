@@ -17,12 +17,14 @@ final class Six
 {
     private array $router = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks)
+    /** @return Observable<string> */
+    public function call(string $call, array $params, array $pathChunks): iterable
     {
+        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
@@ -30,6 +32,7 @@ final class Six
                         if ($pathChunks[4] === '{migration_id}') {
                             if ($pathChunks[5] === 'archive') {
                                 if ($call === 'STREAM /orgs/{org}/migrations/{migration_id}/archive') {
+                                    $matched = true;
                                     if (array_key_exists(Router\Get\Migrations::class, $this->router) === false) {
                                         $this->router[Router\Get\Migrations::class] = new Router\Get\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
@@ -46,6 +49,7 @@ final class Six
                         if ($pathChunks[4] === 'tarball') {
                             if ($pathChunks[5] === '{ref}') {
                                 if ($call === 'STREAM /repos/{owner}/{repo}/tarball/{ref}') {
+                                    $matched = true;
                                     if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
                                         $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
@@ -56,6 +60,7 @@ final class Six
                         } elseif ($pathChunks[4] === 'zipball') {
                             if ($pathChunks[5] === '{ref}') {
                                 if ($call === 'STREAM /repos/{owner}/{repo}/zipball/{ref}') {
+                                    $matched = true;
                                     if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
                                         $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
@@ -69,6 +74,8 @@ final class Six
             }
         }
 
-        throw new InvalidArgumentException();
+        if ($matched === false) {
+            throw new InvalidArgumentException();
+        }
     }
 }

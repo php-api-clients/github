@@ -20,12 +20,14 @@ final class Packages
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function restorePackageForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function restorePackageForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -54,8 +56,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['token']);
     }
 
-    public function restorePackageForOrg(array $params)
+    /** @return array{code: int} */
+    public function restorePackageForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -90,8 +94,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['token']);
     }
 
-    public function restorePackageForUser(array $params)
+    /** @return array{code: int} */
+    public function restorePackageForUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -126,8 +132,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username'], $arguments['token']);
     }
 
-    public function restorePackageVersionForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function restorePackageVersionForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -156,8 +164,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    public function restorePackageVersionForOrg(array $params)
+    /** @return array{code: int} */
+    public function restorePackageVersionForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -192,8 +202,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
-    public function restorePackageVersionForUser(array $params)
+    /** @return array{code: int} */
+    public function restorePackageVersionForUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');

@@ -7,6 +7,12 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Blob;
+use ApiClients\Client\GitHub\Schema\GitCommit;
+use ApiClients\Client\GitHub\Schema\GitRef;
+use ApiClients\Client\GitHub\Schema\GitTag;
+use ApiClients\Client\GitHub\Schema\GitTree;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +26,14 @@ final class Git
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getBlob(array $params)
+    /** @return */
+    public function getBlob(array $params): Blob|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -54,8 +62,10 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['file_sha']);
     }
 
-    public function getCommit(array $params)
+    /** @return */
+    public function getCommit(array $params): GitCommit|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -84,8 +94,10 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha']);
     }
 
-    public function listMatchingRefs(array $params)
+    /** @return iterable<Schema\GitRef> */
+    public function listMatchingRefs(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -105,13 +117,19 @@ final class Git
 
         $arguments['ref'] = $params['ref'];
         unset($params['ref']);
-        $operator = new Operator\Git\ListMatchingRefs($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀MatchingRefs🌀Ref();
+        }
+
+        $operator = new Operator\Git\ListMatchingRefs($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class]);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    public function getRef(array $params)
+    /** @return */
+    public function getRef(array $params): GitRef|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -140,8 +158,10 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    public function getTag(array $params)
+    /** @return */
+    public function getTag(array $params): GitTag|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -170,8 +190,10 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag_sha']);
     }
 
-    public function getTree(array $params)
+    /** @return */
+    public function getTree(array $params): GitTree|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

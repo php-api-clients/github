@@ -7,6 +7,8 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\GitignoreTemplate;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,19 +22,27 @@ final class Gitignore
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getAllTemplates(array $params)
+    /** @return (iterable<string> | array{code: int}) */
+    public function getAllTemplates(array $params): iterable
     {
-        $operator = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication);
+        $matched = true;
+        if (array_key_exists(Hydrator\Operation\Gitignore\Templates::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Gitignore\Templates::class] = $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates();
+        }
+
+        $operator = new Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Gitignore\Templates::class]);
 
         return $operator->call();
     }
 
-    public function getTemplate(array $params)
+    /** @return (Schema\GitignoreTemplate | array{code: int}) */
+    public function getTemplate(array $params): GitignoreTemplate|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: name');

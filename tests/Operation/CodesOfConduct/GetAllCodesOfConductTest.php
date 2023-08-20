@@ -12,9 +12,9 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\CodesOfConduct\GetAllCodesOfConduct */
 final class GetAllCodesOfConductTest extends AsyncTestCase
 {
     /** @test */
@@ -44,7 +44,7 @@ final class GetAllCodesOfConductTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/codes_of_conduct', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->codesOfConduct()->getAllCodesOfConduct());
+        $result = $client->operations()->codesOfConduct()->getAllCodesOfConduct();
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

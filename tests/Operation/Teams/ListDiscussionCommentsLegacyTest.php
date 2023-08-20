@@ -6,6 +6,7 @@ namespace ApiClients\Tests\Client\GitHub\Operation\Teams;
 
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Teams\ListDiscussionCommentsLegacy */
 final class ListDiscussionCommentsLegacyTest extends AsyncTestCase
 {
 }

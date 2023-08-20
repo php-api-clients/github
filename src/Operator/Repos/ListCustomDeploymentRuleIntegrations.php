@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class ListCustomDeploymentRuleIntegrations
 {
@@ -23,14 +26,18 @@ final readonly class ListCustomDeploymentRuleIntegrations
     {
     }
 
-    /** @return PromiseInterface<Ok> **/
-    public function call(string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30): PromiseInterface
+    /** @return */
+    public function call(string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCustomDeploymentRuleIntegrations($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner, $page, $perPage);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

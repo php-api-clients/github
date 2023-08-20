@@ -14,9 +14,10 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
-use function React\Async\await;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Markdown\Render */
 final class RenderTest extends AsyncTestCase
 {
     /** @test */
@@ -28,7 +29,7 @@ final class RenderTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown', Argument::type('array'), Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown', Argument::type('array'), json_encode(json_decode(Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Markdown\Render::OPERATION_MATCH, (static function (array $data): array {
             return $data;
@@ -44,9 +45,9 @@ final class RenderTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/markdown', Argument::type('array'), Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/markdown', Argument::type('array'), json_encode(json_decode(Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->markdown()->render(json_decode(Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->markdown()->render(json_decode(Schema\Markdown\Render\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

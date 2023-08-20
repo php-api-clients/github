@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\Package;
+use ApiClients\Client\GitHub\Schema\PackageVersion;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Packages
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function listPackagesForAuthenticatedUser(array $params)
+    /** @return (iterable<Schema\Package> | array{code: int}) */
+    public function listPackagesForAuthenticatedUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -51,13 +56,19 @@ final class Packages
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        $operator = new Operator\Packages\ListPackagesForAuthenticatedUser($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\User\Packages::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Packages::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Packages();
+        }
+
+        $operator = new Operator\Packages\ListPackagesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Packages::class]);
 
         return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function listPackagesForOrganization(array $params)
+    /** @return (iterable<Schema\Package> | array{code: int}) */
+    public function listPackagesForOrganization(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -98,15 +109,23 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['org'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function listDockerMigrationConflictingPackagesForAuthenticatedUser(array $params)
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForAuthenticatedUser(array $params): iterable
     {
-        $operator = new Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser($this->browser, $this->authentication);
+        $matched = true;
+        if (array_key_exists(Hydrator\Operation\User\Docker\Conflicts::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\User\Docker\Conflicts::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Docker🌀Conflicts();
+        }
+
+        $operator = new Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Docker\Conflicts::class]);
 
         return $operator->call();
     }
 
-    public function listPackagesForUser(array $params)
+    /** @return (iterable<Schema\Package> | array{code: int}) */
+    public function listPackagesForUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -147,8 +166,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['username'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function listDockerMigrationConflictingPackagesForOrganization(array $params)
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForOrganization(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -165,8 +186,10 @@ final class Packages
         return $operator->call($arguments['org']);
     }
 
-    public function getPackageForAuthenticatedUser(array $params)
+    /** @return */
+    public function getPackageForAuthenticatedUser(array $params): Package|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -189,8 +212,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name']);
     }
 
-    public function listDockerMigrationConflictingPackagesForUser(array $params)
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -207,8 +232,10 @@ final class Packages
         return $operator->call($arguments['username']);
     }
 
-    public function getPackageForOrganization(array $params)
+    /** @return */
+    public function getPackageForOrganization(array $params): Package|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -237,8 +264,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(array $params)
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -279,8 +308,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['page'], $arguments['per_page'], $arguments['state']);
     }
 
-    public function getPackageForUser(array $params)
+    /** @return */
+    public function getPackageForUser(array $params): Package|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -309,8 +340,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByOrg(array $params)
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -357,8 +390,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['page'], $arguments['per_page'], $arguments['state']);
     }
 
-    public function getPackageVersionForAuthenticatedUser(array $params)
+    /** @return */
+    public function getPackageVersionForAuthenticatedUser(array $params): PackageVersion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -387,8 +422,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByUser(array $params)
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -417,8 +454,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    public function getPackageVersionForOrganization(array $params)
+    /** @return */
+    public function getPackageVersionForOrganization(array $params): PackageVersion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -453,8 +492,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
-    public function getPackageVersionForUser(array $params)
+    /** @return */
+    public function getPackageVersionForUser(array $params): PackageVersion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');

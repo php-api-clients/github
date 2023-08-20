@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetRepoVariable
 {
@@ -23,14 +26,18 @@ final readonly class GetRepoVariable
     {
     }
 
-    /** @return PromiseInterface<ActionsVariable> **/
-    public function call(string $owner, string $repo, string $name): PromiseInterface
+    /** @return */
+    public function call(string $owner, string $repo, string $name): ActionsVariable|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetRepoVariable($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

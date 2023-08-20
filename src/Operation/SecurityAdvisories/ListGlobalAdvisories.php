@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -93,7 +96,8 @@ final class ListGlobalAdvisories
         return new Request(self::METHOD, str_replace(['{ghsa_id}', '{cve_id}', '{ecosystem}', '{severity}', '{cwes}', '{is_withdrawn}', '{affects}', '{published}', '{updated}', '{modified}', '{before}', '{after}', '{type}', '{direction}', '{per_page}', '{sort}'], [$this->ghsaId, $this->cveId, $this->ecosystem, $this->severity, $this->cwes, $this->isWithdrawn, $this->affects, $this->published, $this->updated, $this->modified, $this->before, $this->after, $this->type, $this->direction, $this->perPage, $this->sort], self::PATH . '?ghsa_id={ghsa_id}&cve_id={cve_id}&ecosystem={ecosystem}&severity={severity}&cwes={cwes}&is_withdrawn={is_withdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&type={type}&direction={direction}&per_page={per_page}&sort={sort}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<Schema\GlobalAdvisory> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -102,8 +106,26 @@ final class ListGlobalAdvisories
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\GlobalAdvisory {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GlobalAdvisory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\GlobalAdvisory::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Too many requests
                      **/
+
                     case 429:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

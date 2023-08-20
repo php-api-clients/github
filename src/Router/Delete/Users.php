@@ -20,12 +20,14 @@ final class Users
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function unblock(array $params)
+    /** @return array{code: int} */
+    public function unblock(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -42,8 +44,10 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
-    public function unfollow(array $params)
+    /** @return array{code: int} */
+    public function unfollow(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -60,8 +64,10 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
-    public function deleteGpgKeyForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteGpgKeyForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('gpg_key_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: gpg_key_id');
@@ -78,8 +84,10 @@ final class Users
         return $operator->call($arguments['gpg_key_id']);
     }
 
-    public function deletePublicSshKeyForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deletePublicSshKeyForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('key_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: key_id');
@@ -96,8 +104,10 @@ final class Users
         return $operator->call($arguments['key_id']);
     }
 
-    public function deleteSshSigningKeyForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteSshSigningKeyForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('ssh_signing_key_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: ssh_signing_key_id');
@@ -114,8 +124,10 @@ final class Users
         return $operator->call($arguments['ssh_signing_key_id']);
     }
 
-    public function deleteEmailForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteEmailForAuthenticatedUser(array $params): array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User\Emails::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\Emails::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Emails();
         }
@@ -125,8 +137,10 @@ final class Users
         return $operator->call($params);
     }
 
-    public function deleteSocialAccountForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteSocialAccountForAuthenticatedUser(array $params): array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\User\SocialAccounts::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\User\SocialAccounts::class] = $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts();
         }

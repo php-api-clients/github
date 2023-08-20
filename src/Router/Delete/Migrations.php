@@ -20,12 +20,14 @@ final class Migrations
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function cancelImport(array $params)
+    /** @return array{code: int} */
+    public function cancelImport(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -48,8 +50,10 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    public function deleteArchiveForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deleteArchiveForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: migration_id');
@@ -66,8 +70,10 @@ final class Migrations
         return $operator->call($arguments['migration_id']);
     }
 
-    public function unlockRepoForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function unlockRepoForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: migration_id');
@@ -90,8 +96,10 @@ final class Migrations
         return $operator->call($arguments['migration_id'], $arguments['repo_name']);
     }
 
-    public function deleteArchiveForOrg(array $params)
+    /** @return array{code: int} */
+    public function deleteArchiveForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -114,8 +122,10 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id']);
     }
 
-    public function unlockRepoForOrg(array $params)
+    /** @return array{code: int} */
+    public function unlockRepoForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

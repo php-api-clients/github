@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -46,7 +47,7 @@ final class ListStargazersForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    public function createResponse(ResponseInterface $response): Schema\SimpleUser|Schema\Stargazer
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,6 +55,30 @@ final class ListStargazersForRepo
             case 'application/json':
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaaa;
+                        }
+
+                        items_application_json_two_hundred_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Stargazer::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\Stargazer::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaab;
+                        }
+
+                        items_application_json_two_hundred_aaaab:
+                        throw $error;
                     /**
                      * Validation failed, or the endpoint has been spammed.
                      **/

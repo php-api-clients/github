@@ -10,7 +10,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class GetPackageForAuthenticatedUser
 {
@@ -23,14 +26,18 @@ final readonly class GetPackageForAuthenticatedUser
     {
     }
 
-    /** @return PromiseInterface<Package> **/
-    public function call(string $packageType, string $packageName): PromiseInterface
+    /** @return */
+    public function call(string $packageType, string $packageName): Package|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\GetPackageForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Package {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Package|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

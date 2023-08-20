@@ -6,10 +6,21 @@ namespace ApiClients\Client\GitHub\Schema\Activity\SetThreadSubscription\Request
 
 final readonly class ApplicationJson
 {
-    public const SCHEMA_JSON         = '{"type":"object","properties":{"ignored":{"type":"boolean","description":"Whether to block all notifications from a thread.","default":false}}}';
+    public const SCHEMA_JSON         = '{
+    "type": "object",
+    "properties": {
+        "ignored": {
+            "type": "boolean",
+            "description": "Whether to block all notifications from a thread.",
+            "default": false
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"ignored":false}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "ignored": false
+}';
 
     /**
      * ignored: Whether to block all notifications from a thread.

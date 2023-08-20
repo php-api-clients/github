@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -34,8 +35,8 @@ final class GetAuthenticated
         return new Request(self::METHOD, str_replace([], [], self::PATH));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    /** @return Schema\PrivateUser|Schema\PublicUser|array{code: int} */
+    public function createResponse(ResponseInterface $response): Schema\PrivateUser|Schema\PublicUser|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -43,6 +44,30 @@ final class GetAuthenticated
             case 'application/json':
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PrivateUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\PrivateUser::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaaa;
+                        }
+
+                        items_application_json_two_hundred_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PublicUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\PublicUser::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaab;
+                        }
+
+                        items_application_json_two_hundred_aaaab:
+                        throw $error;
                     /**
                      * Forbidden
                      **/

@@ -14,21 +14,22 @@ use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
 use function json_decode;
-use function React\Async\await;
+use function json_encode;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Repos\CreateCommitStatus */
 final class CreateCommitStatusTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Status::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Status::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/statuses/generated', Argument::type('array'), Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/statuses/generated', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\CreateCommitStatus::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -42,14 +43,14 @@ final class CreateCommitStatusTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], Schema\Status::SCHEMA_EXAMPLE_DATA);
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Status::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/statuses/generated', Argument::type('array'), Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA)->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/statuses/generated', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->repos()->createCommitStatus('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        $result = $client->operations()->repos()->createCommitStatus('generated', 'generated', 'generated', json_decode(Schema\Repos\CreateCommitStatus\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 }

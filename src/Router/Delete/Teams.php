@@ -20,12 +20,14 @@ final class Teams
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteInOrg(array $params)
+    /** @return array{code: int} */
+    public function deleteInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -44,8 +46,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug']);
     }
 
-    public function deleteDiscussionLegacy(array $params)
+    /** @return array{code: int} */
+    public function deleteDiscussionLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -64,8 +68,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number']);
     }
 
-    public function removeMemberLegacy(array $params)
+    /** @return array{code: int} */
+    public function removeMemberLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -84,8 +90,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    public function removeMembershipForUserLegacy(array $params)
+    /** @return array{code: int} */
+    public function removeMembershipForUserLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -104,8 +112,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    public function removeProjectLegacy(array $params)
+    /** @return array{code: int} */
+    public function removeProjectLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -128,8 +138,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id']);
     }
 
-    public function deleteLegacy(array $params)
+    /** @return array{code: int} */
+    public function deleteLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -146,8 +158,10 @@ final class Teams
         return $operator->call($arguments['team_id']);
     }
 
-    public function deleteDiscussionInOrg(array $params)
+    /** @return array{code: int} */
+    public function deleteDiscussionInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -172,8 +186,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number']);
     }
 
-    public function removeMembershipForUserInOrg(array $params)
+    /** @return array{code: int} */
+    public function removeMembershipForUserInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -198,8 +214,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username']);
     }
 
-    public function removeProjectInOrg(array $params)
+    /** @return array{code: int} */
+    public function removeProjectInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -224,8 +242,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id']);
     }
 
-    public function deleteDiscussionCommentLegacy(array $params)
+    /** @return array{code: int} */
+    public function deleteDiscussionCommentLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -250,8 +270,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number']);
     }
 
-    public function removeRepoLegacy(array $params)
+    /** @return array{code: int} */
+    public function removeRepoLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -276,8 +298,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo']);
     }
 
-    public function removeRepoInOrg(array $params)
+    /** @return array{code: int} */
+    public function removeRepoInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -308,8 +332,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['owner'], $arguments['repo']);
     }
 
-    public function deleteDiscussionCommentInOrg(array $params)
+    /** @return array{code: int} */
+    public function deleteDiscussionCommentInOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

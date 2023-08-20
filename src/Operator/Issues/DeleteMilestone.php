@@ -9,7 +9,10 @@ use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class DeleteMilestone
 {
@@ -22,14 +25,18 @@ final readonly class DeleteMilestone
     {
     }
 
-    /** @return PromiseInterface<array> **/
-    public function call(string $owner, string $repo, int $milestoneNumber): PromiseInterface
+    /** @return array{code: int} */
+    public function call(string $owner, string $repo, int $milestoneNumber): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\DeleteMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

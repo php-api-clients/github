@@ -12,9 +12,9 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use WyriHaximus\AsyncTestUtilities\AsyncTestCase;
 
-use function React\Async\await;
 use function React\Promise\resolve;
 
+/** @covers \ApiClients\Client\GitHub\Operation\Packages\ListPackagesForAuthenticatedUser */
 final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
 {
     /** @test */
@@ -49,7 +49,7 @@ final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/user/packages?package_type=generated&visibility=generated&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = await($client->operations()->packages()->listPackagesForAuthenticatedUser('generated', 'generated', 4, 8));
+        $result = $client->operations()->packages()->listPackagesForAuthenticatedUser('generated', 'generated', 4, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(400, $result['code']);
     }

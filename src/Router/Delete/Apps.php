@@ -20,12 +20,14 @@ final class Apps
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteInstallation(array $params)
+    /** @return array{code: int} */
+    public function deleteInstallation(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');
@@ -42,8 +44,10 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    public function deleteAuthorization(array $params)
+    /** @return array{code: int} */
+    public function deleteAuthorization(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: client_id');
@@ -60,8 +64,10 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    public function deleteToken(array $params)
+    /** @return array{code: int} */
+    public function deleteToken(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: client_id');
@@ -78,8 +84,10 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    public function unsuspendInstallation(array $params)
+    /** @return array{code: int} */
+    public function unsuspendInstallation(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');
@@ -96,15 +104,19 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    public function revokeInstallationAccessToken(array $params)
+    /** @return array{code: int} */
+    public function revokeInstallationAccessToken(array $params): array
     {
+        $matched  = true;
         $operator = new Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
 
         return $operator->call();
     }
 
-    public function removeRepoFromInstallationForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function removeRepoFromInstallationForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: installation_id');

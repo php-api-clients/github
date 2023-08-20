@@ -13,8 +13,11 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
 
 use function explode;
+use function is_string;
 use function json_decode;
 use function str_replace;
 
@@ -43,7 +46,8 @@ final class GetAllStatusCheckContexts
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): mixed
+    /** @return Observable<string> */
+    public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -52,8 +56,21 @@ final class GetAllStatusCheckContexts
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(static function (array $body): string {
+                            $error = new RuntimeException();
+                            if (is_string($body)) {
+                                return $body;
+                            }
+
+                            throw $error;
+                        });
+                    /**
                      * Resource not found
                      **/
+
                     case 404:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

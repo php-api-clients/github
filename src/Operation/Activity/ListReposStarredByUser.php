@@ -4,10 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation\Activity;
 
+use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
+use cebe\openapi\Reader;
+use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
+use RuntimeException;
+use Throwable;
 
+use function explode;
+use function json_decode;
 use function str_replace;
 
 final class ListReposStarredByUser
@@ -27,7 +35,7 @@ final class ListReposStarredByUser
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrator\Operation\Users\Username\Starred $hydrator, string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
         $this->username  = $username;
         $this->sort      = $sort;
@@ -41,8 +49,43 @@ final class ListReposStarredByUser
         return new Request(self::METHOD, str_replace(['{username}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->username, $this->sort, $this->direction, $this->perPage, $this->page], self::PATH . '?sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
 
-    public function createResponse(ResponseInterface $response): ResponseInterface
+    public function createResponse(ResponseInterface $response): Schema\StarredRepository|Schema\Repository
     {
-        return $response;
+        $code          = $response->getStatusCode();
+        [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
+        switch ($contentType) {
+            case 'application/json':
+                $body = json_decode($response->getBody()->getContents(), true);
+                switch ($code) {
+                    /**
+                     * Response
+                     **/
+                    case 200:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\StarredRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\StarredRepository::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaaa;
+                        }
+
+                        items_application_json_two_hundred_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Repository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\Repository::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_two_hundred_aaaab;
+                        }
+
+                        items_application_json_two_hundred_aaaab:
+                        throw $error;
+                }
+
+                break;
+        }
+
+        throw new RuntimeException('Unable to find matching response code and content type');
     }
 }

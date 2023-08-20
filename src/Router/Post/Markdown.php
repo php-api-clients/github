@@ -19,12 +19,14 @@ final class Markdown
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function render(array $params)
+    /** @return (string | array{code: int}) */
+    public function render(array $params): string|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\Markdown::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\Markdown::class] = $this->hydrators->getObjectMapperOperation🌀Markdown();
         }
@@ -34,8 +36,10 @@ final class Markdown
         return $operator->call($params);
     }
 
-    public function renderRaw(array $params)
+    /** @return (string | array{code: int}) */
+    public function renderRaw(array $params): string|array
     {
+        $matched = true;
         if (array_key_exists(Hydrator\Operation\Markdown\Raw::class, $this->hydrator) === false) {
             $this->hydrator[Hydrator\Operation\Markdown\Raw::class] = $this->hydrators->getObjectMapperOperation🌀Markdown🌀Raw();
         }

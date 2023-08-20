@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -56,9 +57,33 @@ final class Update
 
                         return $this->hydrator->hydrateObject(Schema\OrganizationFull::class, $body);
                     /**
-                     * Conflict
+                     * Validation failed
                      **/
 
+                    case 422:
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ValidationError::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_twenty_two_aaaaa;
+                        }
+
+                        items_application_json_four_hundred_twenty_two_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationErrorSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\ValidationErrorSimple::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_twenty_two_aaaab;
+                        }
+
+                        items_application_json_four_hundred_twenty_two_aaaab:
+                        throw $error;
+                    /**
+                     * Conflict
+                     **/
                     case 409:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 

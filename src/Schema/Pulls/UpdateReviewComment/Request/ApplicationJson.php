@@ -6,10 +6,23 @@ namespace ApiClients\Client\GitHub\Schema\Pulls\UpdateReviewComment\Request;
 
 final readonly class ApplicationJson
 {
-    public const SCHEMA_JSON         = '{"required":["body"],"type":"object","properties":{"body":{"type":"string","description":"The text of the reply to the review comment."}}}';
+    public const SCHEMA_JSON         = '{
+    "required": [
+        "body"
+    ],
+    "type": "object",
+    "properties": {
+        "body": {
+            "type": "string",
+            "description": "The text of the reply to the review comment."
+        }
+    }
+}';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
-    public const SCHEMA_EXAMPLE_DATA = '{"body":"generated"}';
+    public const SCHEMA_EXAMPLE_DATA = '{
+    "body": "generated"
+}';
 
     /**
      * body: The text of the reply to the review comment.

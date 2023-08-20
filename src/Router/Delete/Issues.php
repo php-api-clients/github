@@ -7,6 +7,9 @@ namespace ApiClients\Client\GitHub\Router\Delete;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +23,14 @@ final class Issues
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deleteComment(array $params)
+    /** @return array{code: int} */
+    public function deleteComment(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -50,8 +55,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    public function removeAssignees(array $params)
+    /** @return */
+    public function removeAssignees(array $params): Issue|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -80,8 +87,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    public function removeAllLabels(array $params)
+    /** @return (Schema\BasicError | array{code: int}) */
+    public function removeAllLabels(array $params): BasicError|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -110,8 +119,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    public function unlock(array $params)
+    /** @return array{code: int} */
+    public function unlock(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -140,8 +151,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    public function deleteLabel(array $params)
+    /** @return array{code: int} */
+    public function deleteLabel(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -166,8 +179,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
-    public function deleteMilestone(array $params)
+    /** @return array{code: int} */
+    public function deleteMilestone(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -196,8 +211,10 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
-    public function removeLabel(array $params)
+    /** @return (iterable<Schema\Label> | Schema\BasicError) */
+    public function removeLabel(array $params): iterable|BasicError
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

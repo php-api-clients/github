@@ -7,6 +7,16 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\CommitComment;
+use ApiClients\Client\GitHub\Schema\FullRepository;
+use ApiClients\Client\GitHub\Schema\Hook;
+use ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview;
+use ApiClients\Client\GitHub\Schema\Release;
+use ApiClients\Client\GitHub\Schema\ReleaseAsset;
+use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
+use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
+use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +30,14 @@ final class Repos
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function update(array $params)
+    /** @return */
+    public function update(array $params): FullRepository|BasicError|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -48,8 +60,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    public function acceptInvitationForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function acceptInvitationForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('invitation_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: invitation_id');
@@ -66,8 +80,10 @@ final class Repos
         return $operator->call($arguments['invitation_id']);
     }
 
-    public function updateCommitComment(array $params)
+    /** @return */
+    public function updateCommitComment(array $params): CommitComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -96,8 +112,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    public function updateWebhook(array $params)
+    /** @return */
+    public function updateWebhook(array $params): Hook|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -126,8 +144,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    public function updateInvitation(array $params)
+    /** @return */
+    public function updateInvitation(array $params): RepositoryInvitation|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -156,8 +176,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['invitation_id'], $params);
     }
 
-    public function updateRelease(array $params)
+    /** @return */
+    public function updateRelease(array $params): Release|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -186,8 +208,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
-    public function updateWebhookConfigForRepo(array $params)
+    /** @return */
+    public function updateWebhookConfigForRepo(array $params): WebhookConfig|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -216,8 +240,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    public function updateReleaseAsset(array $params)
+    /** @return */
+    public function updateReleaseAsset(array $params): ReleaseAsset|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -246,8 +272,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id'], $params);
     }
 
-    public function updatePullRequestReviewProtection(array $params)
+    /** @return */
+    public function updatePullRequestReviewProtection(array $params): ProtectedBranchPullRequestReview|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -276,8 +304,10 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    public function updateStatusCheckProtection(array $params)
+    /** @return */
+    public function updateStatusCheckProtection(array $params): StatusCheckPolicy|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');

@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Issues;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
-use React\Promise\PromiseInterface;
+use Rx\Observable;
+
+use function React\Async\await;
+use function WyriHaximus\React\awaitObservable;
 
 final readonly class Get
 {
@@ -24,14 +28,18 @@ final readonly class Get
     {
     }
 
-    /** @return PromiseInterface<(Issue|BasicError|array)> **/
-    public function call(string $owner, string $repo, int $issueNumber): PromiseInterface
+    /** @return (Schema\Issue | Schema\BasicError | array{code: int}) */
+    public function call(string $owner, string $repo, int $issueNumber): Issue|BasicError|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);
         $request   = $operation->createRequest();
-
-        return $this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Issue|BasicError|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Issue|BasicError|array {
             return $operation->createResponse($response);
-        });
+        }));
+        if ($result instanceof Observable) {
+            $result = awaitObservable($result);
+        }
+
+        return $result;
     }
 }

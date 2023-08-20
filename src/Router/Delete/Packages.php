@@ -20,12 +20,14 @@ final class Packages
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function deletePackageForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deletePackageForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -48,8 +50,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name']);
     }
 
-    public function deletePackageVersionForAuthenticatedUser(array $params)
+    /** @return array{code: int} */
+    public function deletePackageVersionForAuthenticatedUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -78,8 +82,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    public function deletePackageForOrg(array $params)
+    /** @return array{code: int} */
+    public function deletePackageForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -108,8 +114,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
-    public function deletePackageForUser(array $params)
+    /** @return array{code: int} */
+    public function deletePackageForUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -138,8 +146,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    public function deletePackageVersionForOrg(array $params)
+    /** @return array{code: int} */
+    public function deletePackageVersionForOrg(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');
@@ -174,8 +184,10 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
-    public function deletePackageVersionForUser(array $params)
+    /** @return array{code: int} */
+    public function deletePackageVersionForUser(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: package_type');

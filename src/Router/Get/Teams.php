@@ -7,6 +7,13 @@ namespace ApiClients\Client\GitHub\Router\Get;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\TeamDiscussion;
+use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
+use ApiClients\Client\GitHub\Schema\TeamFull;
+use ApiClients\Client\GitHub\Schema\TeamMembership;
+use ApiClients\Client\GitHub\Schema\TeamProject;
+use ApiClients\Client\GitHub\Schema\TeamRepository;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
@@ -20,12 +27,14 @@ final class Teams
     /** @var array<class-string, ObjectMapper> */
     private array $hydrator = [];
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Hydrators $hydrators, private readonly Browser $browser, private readonly AuthenticationInterface $authentication)
+    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    public function getLegacy(array $params)
+    /** @return */
+    public function getLegacy(array $params): TeamFull|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -42,8 +51,10 @@ final class Teams
         return $operator->call($arguments['team_id']);
     }
 
-    public function listForAuthenticatedUser(array $params)
+    /** @return (iterable<Schema\TeamFull> | array{code: int}) */
+    public function listForAuthenticatedUser(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -66,8 +77,10 @@ final class Teams
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    public function list_(array $params)
+    /** @return iterable<Schema\Team> */
+    public function list_(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -96,8 +109,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listDiscussionsLegacy(array $params)
+    /** @return iterable<Schema\TeamDiscussion> */
+    public function listDiscussionsLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -123,13 +138,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListDiscussionsLegacy($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Teams\TeamId\Discussions::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Teams\TeamId\Discussions::class] = $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions();
+        }
+
+        $operator = new Operator\Teams\ListDiscussionsLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId\Discussions::class]);
 
         return $operator->call($arguments['team_id'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listPendingInvitationsLegacy(array $params)
+    /** @return iterable<Schema\OrganizationInvitation> */
+    public function listPendingInvitationsLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -149,13 +170,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListPendingInvitationsLegacy($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Teams\TeamId\Invitations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Teams\TeamId\Invitations::class] = $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Invitations();
+        }
+
+        $operator = new Operator\Teams\ListPendingInvitationsLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId\Invitations::class]);
 
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listMembersLegacy(array $params)
+    /** @return iterable<Schema\SimpleUser> */
+    public function listMembersLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -190,8 +217,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listProjectsLegacy(array $params)
+    /** @return iterable<Schema\TeamProject> */
+    public function listProjectsLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -220,8 +249,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listReposLegacy(array $params)
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -250,8 +281,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listChildLegacy(array $params)
+    /** @return iterable<Schema\Team> */
+    public function listChildLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -280,8 +313,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function getByName(array $params)
+    /** @return */
+    public function getByName(array $params): TeamFull|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -304,8 +339,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug']);
     }
 
-    public function getDiscussionLegacy(array $params)
+    /** @return */
+    public function getDiscussionLegacy(array $params): TeamDiscussion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -328,8 +365,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number']);
     }
 
-    public function getMemberLegacy(array $params)
+    /** @return array{code: int} */
+    public function getMemberLegacy(array $params): array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -348,8 +387,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    public function getMembershipForUserLegacy(array $params)
+    /** @return */
+    public function getMembershipForUserLegacy(array $params): TeamMembership|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -372,8 +413,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    public function checkPermissionsForProjectLegacy(array $params)
+    /** @return (Schema\TeamProject | array{code: int}) */
+    public function checkPermissionsForProjectLegacy(array $params): TeamProject|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -396,8 +439,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id']);
     }
 
-    public function listDiscussionsInOrg(array $params)
+    /** @return iterable<Schema\TeamDiscussion> */
+    public function listDiscussionsInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -435,13 +480,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListDiscussionsInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions();
+        }
+
+        $operator = new Operator\Teams\ListDiscussionsInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['pinned'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listPendingInvitationsInOrg(array $params)
+    /** @return iterable<Schema\OrganizationInvitation> */
+    public function listPendingInvitationsInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -467,13 +518,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListPendingInvitationsInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Invitations::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Invitations::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Invitations();
+        }
+
+        $operator = new Operator\Teams\ListPendingInvitationsInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Invitations::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listMembersInOrg(array $params)
+    /** @return iterable<Schema\SimpleUser> */
+    public function listMembersInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -505,13 +562,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListMembersInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Members::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Members::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Members();
+        }
+
+        $operator = new Operator\Teams\ListMembersInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Members::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listProjectsInOrg(array $params)
+    /** @return iterable<Schema\TeamProject> */
+    public function listProjectsInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -537,13 +600,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListProjectsInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Projects();
+        }
+
+        $operator = new Operator\Teams\ListProjectsInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listReposInOrg(array $params)
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -569,13 +638,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListReposInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Repos::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Repos::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Repos();
+        }
+
+        $operator = new Operator\Teams\ListReposInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Repos::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listChildInOrg(array $params)
+    /** @return iterable<Schema\Team> */
+    public function listChildInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -601,13 +676,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListChildInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Teams::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Teams::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Teams();
+        }
+
+        $operator = new Operator\Teams\ListChildInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Teams::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function listDiscussionCommentsLegacy(array $params)
+    /** @return iterable<Schema\TeamDiscussionComment> */
+    public function listDiscussionCommentsLegacy(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -639,13 +720,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListDiscussionCommentsLegacy($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments::class] = $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions🌀DiscussionNumber🌀Comments();
+        }
+
+        $operator = new Operator\Teams\ListDiscussionCommentsLegacy($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments::class]);
 
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function checkPermissionsForRepoLegacy(array $params)
+    /** @return (Schema\TeamRepository | array{code: int}) */
+    public function checkPermissionsForRepoLegacy(array $params): TeamRepository|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -674,8 +761,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo']);
     }
 
-    public function getDiscussionInOrg(array $params)
+    /** @return */
+    public function getDiscussionInOrg(array $params): TeamDiscussion|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -704,8 +793,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number']);
     }
 
-    public function getMembershipForUserInOrg(array $params)
+    /** @return (Schema\TeamMembership | array{code: int}) */
+    public function getMembershipForUserInOrg(array $params): TeamMembership|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -734,8 +825,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username']);
     }
 
-    public function checkPermissionsForProjectInOrg(array $params)
+    /** @return (Schema\TeamProject | array{code: int}) */
+    public function checkPermissionsForProjectInOrg(array $params): TeamProject|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -764,8 +857,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id']);
     }
 
-    public function getDiscussionCommentLegacy(array $params)
+    /** @return */
+    public function getDiscussionCommentLegacy(array $params): TeamDiscussionComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: team_id');
@@ -794,8 +889,10 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number']);
     }
 
-    public function listDiscussionCommentsInOrg(array $params)
+    /** @return iterable<Schema\TeamDiscussionComment> */
+    public function listDiscussionCommentsInOrg(array $params): iterable
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -833,13 +930,19 @@ final class Teams
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        $operator = new Operator\Teams\ListDiscussionCommentsInOrg($this->browser, $this->authentication);
+        if (array_key_exists(Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments::class, $this->hydrator) === false) {
+            $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions🌀DiscussionNumber🌀Comments();
+        }
+
+        $operator = new Operator\Teams\ListDiscussionCommentsInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments::class]);
 
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    public function checkPermissionsForRepoInOrg(array $params)
+    /** @return (Schema\TeamRepository | array{code: int}) */
+    public function checkPermissionsForRepoInOrg(array $params): TeamRepository|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -874,8 +977,10 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['owner'], $arguments['repo']);
     }
 
-    public function getDiscussionCommentInOrg(array $params)
+    /** @return */
+    public function getDiscussionCommentInOrg(array $params): TeamDiscussionComment|array
     {
+        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

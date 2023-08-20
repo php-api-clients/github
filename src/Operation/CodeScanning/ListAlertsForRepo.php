@@ -13,6 +13,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Rx\Observable;
+use Rx\Scheduler\ImmediateScheduler;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -67,8 +70,8 @@ final class ListAlertsForRepo
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    /** @return Observable<Schema\CodeScanningAlertItems>|array{code: int} */
+    public function createResponse(ResponseInterface $response): Observable|array
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -77,8 +80,26 @@ final class ListAlertsForRepo
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
+                     * Response
+                     **/
+                    case 200:
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\CodeScanningAlertItems {
+                            $error = new RuntimeException();
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeScanningAlertItems::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrator->hydrateObject(Schema\CodeScanningAlertItems::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaaa;
+                            }
+
+                            items_application_json_two_hundred_aaaaa:
+                            throw $error;
+                        });
+                    /**
                      * Response if GitHub Advanced Security is not enabled for this repository
                      **/
+
                     case 403:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
