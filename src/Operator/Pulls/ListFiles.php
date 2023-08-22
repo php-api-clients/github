@@ -26,7 +26,7 @@ final readonly class ListFiles
     {
     }
 
-    /** @return iterable<Schema\DiffEntry> */
+    /** @return Observable<Schema\DiffEntry> */
     public function call(string $owner, string $repo, int $pullNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\ListFiles($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $perPage, $page);

@@ -22,7 +22,7 @@ final class Nine
     {
     }
 
-    /** @return iterable<string>|iterable<Schema\Integration>|iterable<Schema\Team>|iterable<Schema\SimpleUser>| */
+    /** @return Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>| */
     public function call(string $call, array $params, array $pathChunks): iterable|PullRequestReview
     {
         $matched = false;
@@ -41,7 +41,7 @@ final class Nine
                                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Put\Repos::class]->setStatusCheckContexts($params);
+                                                return $this->router[Router\Put\Repos::class]->SetStatusCheckContexts($params);
                                             }
                                         }
                                     } elseif ($pathChunks[7] === 'restrictions') {
@@ -52,7 +52,7 @@ final class Nine
                                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Put\Repos::class]->setAppAccessRestrictions($params);
+                                                return $this->router[Router\Put\Repos::class]->SetAppAccessRestrictions($params);
                                             }
                                         } elseif ($pathChunks[8] === 'teams') {
                                             if ($call === 'PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams') {
@@ -61,7 +61,7 @@ final class Nine
                                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Put\Repos::class]->setTeamAccessRestrictions($params);
+                                                return $this->router[Router\Put\Repos::class]->SetTeamAccessRestrictions($params);
                                             }
                                         } elseif ($pathChunks[8] === 'users') {
                                             if ($call === 'PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users') {
@@ -70,7 +70,7 @@ final class Nine
                                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Put\Repos::class]->setUserAccessRestrictions($params);
+                                                return $this->router[Router\Put\Repos::class]->SetUserAccessRestrictions($params);
                                             }
                                         }
                                     }
@@ -87,7 +87,7 @@ final class Nine
                                                     $this->router[Router\Put\Pulls::class] = new Router\Put\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Put\Pulls::class]->dismissReview($params);
+                                                return $this->router[Router\Put\Pulls::class]->DismissReview($params);
                                             }
                                         }
                                     }

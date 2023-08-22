@@ -26,7 +26,7 @@ final readonly class ListReposInOrg
     {
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListReposInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $perPage, $page);

@@ -25,7 +25,7 @@ final readonly class GetAllStatusCheckContexts
     {
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAllStatusCheckContexts($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

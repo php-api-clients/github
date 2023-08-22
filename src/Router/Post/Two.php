@@ -34,7 +34,7 @@ final class Two
                         $this->router[Router\Post\Gists::class] = new Router\Post\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Post\Gists::class]->create($params);
+                    return $this->router[Router\Post\Gists::class]->Create($params);
                 }
             } elseif ($pathChunks[1] === 'markdown') {
                 if ($call === 'POST /markdown') {
@@ -43,7 +43,7 @@ final class Two
                         $this->router[Router\Post\Markdown::class] = new Router\Post\Markdown($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Post\Markdown::class]->render($params);
+                    return $this->router[Router\Post\Markdown::class]->Render($params);
                 }
             }
         }

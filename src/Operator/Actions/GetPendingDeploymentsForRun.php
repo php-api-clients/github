@@ -26,7 +26,7 @@ final readonly class GetPendingDeploymentsForRun
     {
     }
 
-    /** @return iterable<Schema\PendingDeployment> */
+    /** @return Observable<Schema\PendingDeployment> */
     public function call(string $owner, string $repo, int $runId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetPendingDeploymentsForRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

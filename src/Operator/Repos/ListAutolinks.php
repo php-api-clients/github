@@ -26,7 +26,7 @@ final readonly class ListAutolinks
     {
     }
 
-    /** @return iterable<Schema\Autolink> */
+    /** @return Observable<Schema\Autolink> */
     public function call(string $owner, string $repo, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListAutolinks($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $page);

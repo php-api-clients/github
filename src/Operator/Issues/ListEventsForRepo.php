@@ -26,7 +26,7 @@ final readonly class ListEventsForRepo
     {
     }
 
-    /** @return iterable<Schema\IssueEvent> */
+    /** @return Observable<Schema\IssueEvent> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListEventsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

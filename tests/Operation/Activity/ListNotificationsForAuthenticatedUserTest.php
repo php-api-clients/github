@@ -31,14 +31,14 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Activity\ListNotificationsForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['since']         = '1970-01-01T00:00:00+00:00';
             $data['before']        = '1970-01-01T00:00:00+00:00';
             $data['all']           = false;
             $data['participating'] = false;
-            $data['page']          = 4;
+            $data['page']          = 1;
             $data['per_page']      = 8;
 
             return $data;
@@ -55,9 +55,9 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8);
+        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 1, 8);
     }
 
     /** @test */
@@ -70,14 +70,14 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Activity\ListNotificationsForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['since']         = '1970-01-01T00:00:00+00:00';
             $data['before']        = '1970-01-01T00:00:00+00:00';
             $data['all']           = false;
             $data['participating'] = false;
-            $data['page']          = 4;
+            $data['page']          = 1;
             $data['per_page']      = 8;
 
             return $data;
@@ -94,9 +94,9 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8);
+        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 1, 8);
     }
 
     /** @test */
@@ -109,14 +109,14 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Activity\ListNotificationsForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['since']         = '1970-01-01T00:00:00+00:00';
             $data['before']        = '1970-01-01T00:00:00+00:00';
             $data['all']           = false;
             $data['participating'] = false;
-            $data['page']          = 4;
+            $data['page']          = 1;
             $data['per_page']      = 8;
 
             return $data;
@@ -133,9 +133,9 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8);
+        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 1, 8);
     }
 
     /** @test */
@@ -147,14 +147,14 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Activity\ListNotificationsForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['since']         = '1970-01-01T00:00:00+00:00';
             $data['before']        = '1970-01-01T00:00:00+00:00';
             $data['all']           = false;
             $data['participating'] = false;
-            $data['page']          = 4;
+            $data['page']          = 1;
             $data['per_page']      = 8;
 
             return $data;
@@ -170,9 +170,9 @@ final class ListNotificationsForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/notifications?since=1970-01-01T00:00:00+00:00&before=1970-01-01T00:00:00+00:00&all=&participating=&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 4, 8);
+        $result = $client->operations()->activity()->listNotificationsForAuthenticatedUser('1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', false, false, 1, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

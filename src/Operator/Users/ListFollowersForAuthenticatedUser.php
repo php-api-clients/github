@@ -26,7 +26,7 @@ final readonly class ListFollowersForAuthenticatedUser
     {
     }
 
-    /** @return (iterable<Schema\SimpleUser> | array{code: int}) */
+    /** @return (Observable<Schema\SimpleUser> | array{code: int}) */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListFollowersForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

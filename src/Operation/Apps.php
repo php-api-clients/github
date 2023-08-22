@@ -94,6 +94,15 @@ final class Apps
         return $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedApp::class]->call($perPage, $page);
     }
 
+    public function listInstallationRequestsForAuthenticatedAppListing(int $perPage, int $page): Schema\IntegrationInstallationRequest
+    {
+        if (array_key_exists(Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class] = new Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests());
+        }
+
+        return $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class]->call($perPage, $page);
+    }
+
     public function listInstallations(string $since, string $outdated, int $perPage, int $page): Schema\Installation
     {
         if (array_key_exists(Operator\Apps\ListInstallations::class, $this->operator) === false) {
@@ -101,6 +110,15 @@ final class Apps
         }
 
         return $this->operator[Operator\Apps\ListInstallations::class]->call($since, $outdated, $perPage, $page);
+    }
+
+    public function listInstallationsListing(string $since, string $outdated, int $perPage, int $page): Schema\Installation
+    {
+        if (array_key_exists(Operator\Apps\ListInstallationsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListInstallationsListing::class] = new Operator\Apps\ListInstallationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations());
+        }
+
+        return $this->operator[Operator\Apps\ListInstallationsListing::class]->call($since, $outdated, $perPage, $page);
     }
 
     public function getInstallation(int $installationId): Schema\Installation
@@ -238,6 +256,15 @@ final class Apps
         return $this->operator[Operator\Apps\ListPlans::class]->call($perPage, $page);
     }
 
+    public function listPlansListing(int $perPage, int $page): Schema\MarketplaceListingPlan
+    {
+        if (array_key_exists(Operator\Apps\ListPlansListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListPlansListing::class] = new Operator\Apps\ListPlansListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans());
+        }
+
+        return $this->operator[Operator\Apps\ListPlansListing::class]->call($perPage, $page);
+    }
+
     public function listAccountsForPlan(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
     {
         if (array_key_exists(Operator\Apps\ListAccountsForPlan::class, $this->operator) === false) {
@@ -245,6 +272,15 @@ final class Apps
         }
 
         return $this->operator[Operator\Apps\ListAccountsForPlan::class]->call($planId, $direction, $sort, $perPage, $page);
+    }
+
+    public function listAccountsForPlanListing(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    {
+        if (array_key_exists(Operator\Apps\ListAccountsForPlanListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListAccountsForPlanListing::class] = new Operator\Apps\ListAccountsForPlanListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans🌀PlanId🌀Accounts());
+        }
+
+        return $this->operator[Operator\Apps\ListAccountsForPlanListing::class]->call($planId, $direction, $sort, $perPage, $page);
     }
 
     public function getSubscriptionPlanForAccountStubbed(int $accountId): Schema\MarketplacePurchase
@@ -265,6 +301,15 @@ final class Apps
         return $this->operator[Operator\Apps\ListPlansStubbed::class]->call($perPage, $page);
     }
 
+    public function listPlansStubbedListing(int $perPage, int $page): Schema\MarketplaceListingPlan
+    {
+        if (array_key_exists(Operator\Apps\ListPlansStubbedListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListPlansStubbedListing::class] = new Operator\Apps\ListPlansStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans());
+        }
+
+        return $this->operator[Operator\Apps\ListPlansStubbedListing::class]->call($perPage, $page);
+    }
+
     public function listAccountsForPlanStubbed(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
     {
         if (array_key_exists(Operator\Apps\ListAccountsForPlanStubbed::class, $this->operator) === false) {
@@ -272,6 +317,15 @@ final class Apps
         }
 
         return $this->operator[Operator\Apps\ListAccountsForPlanStubbed::class]->call($planId, $direction, $sort, $perPage, $page);
+    }
+
+    public function listAccountsForPlanStubbedListing(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    {
+        if (array_key_exists(Operator\Apps\ListAccountsForPlanStubbedListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListAccountsForPlanStubbedListing::class] = new Operator\Apps\ListAccountsForPlanStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans🌀PlanId🌀Accounts());
+        }
+
+        return $this->operator[Operator\Apps\ListAccountsForPlanStubbedListing::class]->call($planId, $direction, $sort, $perPage, $page);
     }
 
     public function getOrgInstallation(string $org): Schema\Installation
@@ -337,6 +391,15 @@ final class Apps
         return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUser::class]->call($perPage, $page);
     }
 
+    public function listSubscriptionsForAuthenticatedUserListing(int $perPage, int $page): Schema\UserMarketplacePurchase
+    {
+        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases());
+        }
+
+        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class]->call($perPage, $page);
+    }
+
     public function listSubscriptionsForAuthenticatedUserStubbed(int $perPage, int $page): Schema\UserMarketplacePurchase
     {
         if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed::class, $this->operator) === false) {
@@ -344,6 +407,15 @@ final class Apps
         }
 
         return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed::class]->call($perPage, $page);
+    }
+
+    public function listSubscriptionsForAuthenticatedUserStubbedListing(int $perPage, int $page): Schema\UserMarketplacePurchase
+    {
+        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class, $this->operator) === false) {
+            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases🌀Stubbed());
+        }
+
+        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class]->call($perPage, $page);
     }
 
     public function getUserInstallation(string $username): Schema\Installation

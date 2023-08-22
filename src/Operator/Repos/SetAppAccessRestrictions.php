@@ -26,7 +26,7 @@ final readonly class SetAppAccessRestrictions
     {
     }
 
-    /** @return iterable<Schema\Integration> */
+    /** @return Observable<Schema\Integration> */
     public function call(string $owner, string $repo, string $branch, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\SetAppAccessRestrictions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

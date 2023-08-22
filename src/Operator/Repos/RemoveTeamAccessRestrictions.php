@@ -26,7 +26,7 @@ final readonly class RemoveTeamAccessRestrictions
     {
     }
 
-    /** @return iterable<Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function call(string $owner, string $repo, string $branch, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\RemoveTeamAccessRestrictions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

@@ -26,7 +26,7 @@ final readonly class AddEmailForAuthenticatedUser
     {
     }
 
-    /** @return (iterable<Schema\Email> | array{code: int}) */
+    /** @return (Observable<Schema\Email> | array{code: int}) */
     public function call(array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\AddEmailForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

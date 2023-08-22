@@ -26,7 +26,7 @@ final readonly class ListDeployments
     {
     }
 
-    /** @return iterable<Schema\Deployment> */
+    /** @return Observable<Schema\Deployment> */
     public function call(string $owner, string $repo, string $sha = 'none', string $ref = 'none', string $task = 'none', string|null $environment = 'none', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeployments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);

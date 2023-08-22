@@ -29,7 +29,7 @@ final class ListForSuiteTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/check-suites/14/check-runs?check_name=generated&status=generated&filter=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/check-suites/14/check-runs?check_name=generated&status=generated&filter=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Checks\ListForSuite::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']          = 'generated';
@@ -39,7 +39,7 @@ final class ListForSuiteTest extends AsyncTestCase
             $data['status']         = 'generated';
             $data['filter']         = 'generated';
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -54,8 +54,8 @@ final class ListForSuiteTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/check-suites/14/check-runs?check_name=generated&status=generated&filter=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/check-suites/14/check-runs?check_name=generated&status=generated&filter=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->checks()->listForSuite('generated', 'generated', 14, 'generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->checks()->listForSuite('generated', 'generated', 14, 'generated', 'generated', 'generated', 8, 1);
     }
 }

@@ -25,7 +25,7 @@ final class Eight
     {
     }
 
-    /** @return |array{code: int}|(iterable<Schema\Label>|Schema\BasicError) */
+    /** @return |array{code: int}|(Observable<Schema\Label>|Schema\BasicError) */
     public function call(string $call, array $params, array $pathChunks): Ok|Json|iterable|BasicError|PullRequestReview
     {
         $matched = false;
@@ -43,7 +43,7 @@ final class Eight
                                                 $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Actions::class]->removeCustomLabelFromSelfHostedRunnerForOrg($params);
+                                            return $this->router[Router\Delete\Actions::class]->RemoveCustomLabelFromSelfHostedRunnerForOrg($params);
                                         }
                                     }
                                 }
@@ -58,7 +58,7 @@ final class Eight
                                                 $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Actions::class]->removeSelectedRepoFromOrgSecret($params);
+                                            return $this->router[Router\Delete\Actions::class]->RemoveSelectedRepoFromOrgSecret($params);
                                         }
                                     }
                                 }
@@ -73,7 +73,7 @@ final class Eight
                                                 $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Actions::class]->removeSelectedRepoFromOrgVariable($params);
+                                            return $this->router[Router\Delete\Actions::class]->RemoveSelectedRepoFromOrgVariable($params);
                                         }
                                     }
                                 }
@@ -90,7 +90,7 @@ final class Eight
                                                 $this->router[Router\Delete\Codespaces::class] = new Router\Delete\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Codespaces::class]->removeSelectedRepoFromOrgSecret($params);
+                                            return $this->router[Router\Delete\Codespaces::class]->RemoveSelectedRepoFromOrgSecret($params);
                                         }
                                     }
                                 }
@@ -107,7 +107,7 @@ final class Eight
                                                 $this->router[Router\Delete\Dependabot::class] = new Router\Delete\Dependabot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Dependabot::class]->removeSelectedRepoFromOrgSecret($params);
+                                            return $this->router[Router\Delete\Dependabot::class]->RemoveSelectedRepoFromOrgSecret($params);
                                         }
                                     }
                                 }
@@ -124,7 +124,7 @@ final class Eight
                                                 $this->router[Router\Delete\Migrations::class] = new Router\Delete\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Migrations::class]->unlockRepoForOrg($params);
+                                            return $this->router[Router\Delete\Migrations::class]->UnlockRepoForOrg($params);
                                         }
                                     }
                                 }
@@ -141,7 +141,7 @@ final class Eight
                                                 $this->router[Router\Delete\Packages::class] = new Router\Delete\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Packages::class]->deletePackageVersionForOrg($params);
+                                            return $this->router[Router\Delete\Packages::class]->DeletePackageVersionForOrg($params);
                                         }
                                     }
                                 }
@@ -158,7 +158,7 @@ final class Eight
                                                 $this->router[Router\Delete\Teams::class] = new Router\Delete\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Teams::class]->removeRepoInOrg($params);
+                                            return $this->router[Router\Delete\Teams::class]->RemoveRepoInOrg($params);
                                         }
                                     }
                                 }
@@ -179,7 +179,7 @@ final class Eight
                                                 $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Actions::class]->removeAllCustomLabelsFromSelfHostedRunnerForRepo($params);
+                                            return $this->router[Router\Delete\Actions::class]->RemoveAllCustomLabelsFromSelfHostedRunnerForRepo($params);
                                         }
                                     }
                                 }
@@ -192,7 +192,7 @@ final class Eight
                                                 $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Actions::class]->deleteWorkflowRunLogs($params);
+                                            return $this->router[Router\Delete\Actions::class]->DeleteWorkflowRunLogs($params);
                                         }
                                     }
                                 }
@@ -207,7 +207,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->deleteAdminBranchProtection($params);
+                                            return $this->router[Router\Delete\Repos::class]->DeleteAdminBranchProtection($params);
                                         }
                                     } elseif ($pathChunks[7] === 'required_pull_request_reviews') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews') {
@@ -216,7 +216,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->deletePullRequestReviewProtection($params);
+                                            return $this->router[Router\Delete\Repos::class]->DeletePullRequestReviewProtection($params);
                                         }
                                     } elseif ($pathChunks[7] === 'required_signatures') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures') {
@@ -225,7 +225,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->deleteCommitSignatureProtection($params);
+                                            return $this->router[Router\Delete\Repos::class]->DeleteCommitSignatureProtection($params);
                                         }
                                     } elseif ($pathChunks[7] === 'required_status_checks') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks') {
@@ -234,7 +234,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->removeStatusCheckProtection($params);
+                                            return $this->router[Router\Delete\Repos::class]->RemoveStatusCheckProtection($params);
                                         }
                                     } elseif ($pathChunks[7] === 'restrictions') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions') {
@@ -243,7 +243,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->deleteAccessRestrictions($params);
+                                            return $this->router[Router\Delete\Repos::class]->DeleteAccessRestrictions($params);
                                         }
                                     }
                                 }
@@ -258,7 +258,7 @@ final class Eight
                                                 $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Reactions::class]->deleteForCommitComment($params);
+                                            return $this->router[Router\Delete\Reactions::class]->DeleteForCommitComment($params);
                                         }
                                     }
                                 }
@@ -273,7 +273,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->deleteDeploymentBranchPolicy($params);
+                                            return $this->router[Router\Delete\Repos::class]->DeleteDeploymentBranchPolicy($params);
                                         }
                                     }
                                 } elseif ($pathChunks[6] === 'deployment_protection_rules') {
@@ -284,7 +284,7 @@ final class Eight
                                                 $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Repos::class]->disableDeploymentProtectionRule($params);
+                                            return $this->router[Router\Delete\Repos::class]->DisableDeploymentProtectionRule($params);
                                         }
                                     }
                                 }
@@ -299,7 +299,7 @@ final class Eight
                                                 $this->router[Router\Delete\Issues::class] = new Router\Delete\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Issues::class]->removeLabel($params);
+                                            return $this->router[Router\Delete\Issues::class]->RemoveLabel($params);
                                         }
                                     }
                                 } elseif ($pathChunks[6] === 'reactions') {
@@ -310,7 +310,7 @@ final class Eight
                                                 $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Reactions::class]->deleteForIssue($params);
+                                            return $this->router[Router\Delete\Reactions::class]->DeleteForIssue($params);
                                         }
                                     }
                                 }
@@ -325,7 +325,7 @@ final class Eight
                                                 $this->router[Router\Delete\Pulls::class] = new Router\Delete\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Pulls::class]->deletePendingReview($params);
+                                            return $this->router[Router\Delete\Pulls::class]->DeletePendingReview($params);
                                         }
                                     }
                                 }
@@ -340,7 +340,7 @@ final class Eight
                                                 $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Reactions::class]->deleteForRelease($params);
+                                            return $this->router[Router\Delete\Reactions::class]->DeleteForRelease($params);
                                         }
                                     }
                                 }
@@ -361,7 +361,7 @@ final class Eight
                                                 $this->router[Router\Delete\Packages::class] = new Router\Delete\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Delete\Packages::class]->deletePackageVersionForUser($params);
+                                            return $this->router[Router\Delete\Packages::class]->DeletePackageVersionForUser($params);
                                         }
                                     }
                                 }

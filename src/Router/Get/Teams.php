@@ -51,7 +51,7 @@ final class Teams
         return $operator->call($arguments['team_id']);
     }
 
-    /** @return (iterable<Schema\TeamFull> | array{code: int}) */
+    /** @return (Observable<Schema\TeamFull> | array{code: int}) */
     public function listForAuthenticatedUser(array $params): iterable
     {
         $matched   = true;
@@ -77,8 +77,8 @@ final class Teams
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Team> */
-    public function list_(array $params): iterable
+    /** @return Observable<Schema\Team> */
+    public function list(array $params): iterable
     {
         $matched   = true;
         $arguments = [];
@@ -109,7 +109,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\TeamDiscussion> */
+    /** @return Observable<Schema\TeamDiscussion> */
     public function listDiscussionsLegacy(array $params): iterable
     {
         $matched   = true;
@@ -147,7 +147,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\OrganizationInvitation> */
+    /** @return Observable<Schema\OrganizationInvitation> */
     public function listPendingInvitationsLegacy(array $params): iterable
     {
         $matched   = true;
@@ -179,7 +179,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function listMembersLegacy(array $params): iterable
     {
         $matched   = true;
@@ -217,7 +217,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\TeamProject> */
+    /** @return Observable<Schema\TeamProject> */
     public function listProjectsLegacy(array $params): iterable
     {
         $matched   = true;
@@ -249,7 +249,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposLegacy(array $params): iterable
     {
         $matched   = true;
@@ -281,7 +281,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function listChildLegacy(array $params): iterable
     {
         $matched   = true;
@@ -439,7 +439,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id']);
     }
 
-    /** @return iterable<Schema\TeamDiscussion> */
+    /** @return Observable<Schema\TeamDiscussion> */
     public function listDiscussionsInOrg(array $params): iterable
     {
         $matched   = true;
@@ -489,7 +489,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['pinned'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\OrganizationInvitation> */
+    /** @return Observable<Schema\OrganizationInvitation> */
     public function listPendingInvitationsInOrg(array $params): iterable
     {
         $matched   = true;
@@ -527,7 +527,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function listMembersInOrg(array $params): iterable
     {
         $matched   = true;
@@ -571,7 +571,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\TeamProject> */
+    /** @return Observable<Schema\TeamProject> */
     public function listProjectsInOrg(array $params): iterable
     {
         $matched   = true;
@@ -609,7 +609,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposInOrg(array $params): iterable
     {
         $matched   = true;
@@ -647,7 +647,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function listChildInOrg(array $params): iterable
     {
         $matched   = true;
@@ -685,7 +685,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\TeamDiscussionComment> */
+    /** @return Observable<Schema\TeamDiscussionComment> */
     public function listDiscussionCommentsLegacy(array $params): iterable
     {
         $matched   = true;
@@ -889,7 +889,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number']);
     }
 
-    /** @return iterable<Schema\TeamDiscussionComment> */
+    /** @return Observable<Schema\TeamDiscussionComment> */
     public function listDiscussionCommentsInOrg(array $params): iterable
     {
         $matched   = true;

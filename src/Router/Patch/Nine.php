@@ -40,7 +40,7 @@ final class Nine
                                                     $this->router[Router\Patch\Teams::class] = new Router\Patch\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Patch\Teams::class]->updateDiscussionCommentInOrg($params);
+                                                return $this->router[Router\Patch\Teams::class]->UpdateDiscussionCommentInOrg($params);
                                             }
                                         }
                                     }

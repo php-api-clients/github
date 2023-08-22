@@ -31,6 +31,15 @@ final class Reactions
         return $this->operator[Operator\Reactions\ListForTeamDiscussionCommentInOrg::class]->call($org, $teamSlug, $discussionNumber, $commentNumber, $content, $perPage, $page);
     }
 
+    public function listForTeamDiscussionCommentInOrgListing(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForTeamDiscussionCommentInOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForTeamDiscussionCommentInOrgListing::class] = new Operator\Reactions\ListForTeamDiscussionCommentInOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions🌀DiscussionNumber🌀Comments🌀CommentNumber🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForTeamDiscussionCommentInOrgListing::class]->call($org, $teamSlug, $discussionNumber, $commentNumber, $content, $perPage, $page);
+    }
+
     public function createForTeamDiscussionCommentInOrg(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, array $params): Schema\Reaction
     {
         if (array_key_exists(Operator\Reactions\CreateForTeamDiscussionCommentInOrg::class, $this->operator) === false) {
@@ -56,6 +65,15 @@ final class Reactions
         }
 
         return $this->operator[Operator\Reactions\ListForTeamDiscussionInOrg::class]->call($org, $teamSlug, $discussionNumber, $content, $perPage, $page);
+    }
+
+    public function listForTeamDiscussionInOrgListing(string $org, string $teamSlug, int $discussionNumber, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForTeamDiscussionInOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForTeamDiscussionInOrgListing::class] = new Operator\Reactions\ListForTeamDiscussionInOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions🌀DiscussionNumber🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForTeamDiscussionInOrgListing::class]->call($org, $teamSlug, $discussionNumber, $content, $perPage, $page);
     }
 
     public function createForTeamDiscussionInOrg(string $org, string $teamSlug, int $discussionNumber, array $params): Schema\Reaction
@@ -85,6 +103,15 @@ final class Reactions
         return $this->operator[Operator\Reactions\ListForCommitComment::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
     }
 
+    public function listForCommitCommentListing(string $owner, string $repo, int $commentId, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForCommitCommentListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForCommitCommentListing::class] = new Operator\Reactions\ListForCommitCommentListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments🌀CommentId🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForCommitCommentListing::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
+    }
+
     public function createForCommitComment(string $owner, string $repo, int $commentId, array $params): Schema\Reaction
     {
         if (array_key_exists(Operator\Reactions\CreateForCommitComment::class, $this->operator) === false) {
@@ -110,6 +137,15 @@ final class Reactions
         }
 
         return $this->operator[Operator\Reactions\ListForIssueComment::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
+    }
+
+    public function listForIssueCommentListing(string $owner, string $repo, int $commentId, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForIssueCommentListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForIssueCommentListing::class] = new Operator\Reactions\ListForIssueCommentListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀Comments🌀CommentId🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForIssueCommentListing::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
     }
 
     public function createForIssueComment(string $owner, string $repo, int $commentId, array $params): Schema\Reaction
@@ -139,6 +175,15 @@ final class Reactions
         return $this->operator[Operator\Reactions\ListForIssue::class]->call($owner, $repo, $issueNumber, $content, $perPage, $page);
     }
 
+    public function listForIssueListing(string $owner, string $repo, int $issueNumber, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForIssueListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForIssueListing::class] = new Operator\Reactions\ListForIssueListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForIssueListing::class]->call($owner, $repo, $issueNumber, $content, $perPage, $page);
+    }
+
     public function createForIssue(string $owner, string $repo, int $issueNumber, array $params): Schema\Reaction
     {
         if (array_key_exists(Operator\Reactions\CreateForIssue::class, $this->operator) === false) {
@@ -164,6 +209,15 @@ final class Reactions
         }
 
         return $this->operator[Operator\Reactions\ListForPullRequestReviewComment::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
+    }
+
+    public function listForPullRequestReviewCommentListing(string $owner, string $repo, int $commentId, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForPullRequestReviewCommentListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForPullRequestReviewCommentListing::class] = new Operator\Reactions\ListForPullRequestReviewCommentListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀Comments🌀CommentId🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForPullRequestReviewCommentListing::class]->call($owner, $repo, $commentId, $content, $perPage, $page);
     }
 
     public function createForPullRequestReviewComment(string $owner, string $repo, int $commentId, array $params): Schema\Reaction
@@ -193,6 +247,15 @@ final class Reactions
         return $this->operator[Operator\Reactions\ListForRelease::class]->call($owner, $repo, $releaseId, $content, $perPage, $page);
     }
 
+    public function listForReleaseListing(string $owner, string $repo, int $releaseId, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForReleaseListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForReleaseListing::class] = new Operator\Reactions\ListForReleaseListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForReleaseListing::class]->call($owner, $repo, $releaseId, $content, $perPage, $page);
+    }
+
     public function createForRelease(string $owner, string $repo, int $releaseId, array $params): Schema\Reaction
     {
         if (array_key_exists(Operator\Reactions\CreateForRelease::class, $this->operator) === false) {
@@ -220,6 +283,15 @@ final class Reactions
         return $this->operator[Operator\Reactions\ListForTeamDiscussionCommentLegacy::class]->call($teamId, $discussionNumber, $commentNumber, $content, $perPage, $page);
     }
 
+    public function listForTeamDiscussionCommentLegacyListing(int $teamId, int $discussionNumber, int $commentNumber, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForTeamDiscussionCommentLegacyListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForTeamDiscussionCommentLegacyListing::class] = new Operator\Reactions\ListForTeamDiscussionCommentLegacyListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions🌀DiscussionNumber🌀Comments🌀CommentNumber🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForTeamDiscussionCommentLegacyListing::class]->call($teamId, $discussionNumber, $commentNumber, $content, $perPage, $page);
+    }
+
     public function createForTeamDiscussionCommentLegacy(int $teamId, int $discussionNumber, int $commentNumber, array $params): Schema\Reaction
     {
         if (array_key_exists(Operator\Reactions\CreateForTeamDiscussionCommentLegacy::class, $this->operator) === false) {
@@ -236,6 +308,15 @@ final class Reactions
         }
 
         return $this->operator[Operator\Reactions\ListForTeamDiscussionLegacy::class]->call($teamId, $discussionNumber, $content, $perPage, $page);
+    }
+
+    public function listForTeamDiscussionLegacyListing(int $teamId, int $discussionNumber, string $content, int $perPage, int $page): Schema\Reaction
+    {
+        if (array_key_exists(Operator\Reactions\ListForTeamDiscussionLegacyListing::class, $this->operator) === false) {
+            $this->operator[Operator\Reactions\ListForTeamDiscussionLegacyListing::class] = new Operator\Reactions\ListForTeamDiscussionLegacyListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions🌀DiscussionNumber🌀Reactions());
+        }
+
+        return $this->operator[Operator\Reactions\ListForTeamDiscussionLegacyListing::class]->call($teamId, $discussionNumber, $content, $perPage, $page);
     }
 
     public function createForTeamDiscussionLegacy(int $teamId, int $discussionNumber, array $params): Schema\Reaction

@@ -53,7 +53,7 @@ final class Six
                                         $this->router[Router\Patch\Actions::class] = new Router\Patch\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Actions::class]->updateOrgVariable($params);
+                                    return $this->router[Router\Patch\Actions::class]->UpdateOrgVariable($params);
                                 }
                             }
                         }
@@ -66,7 +66,7 @@ final class Six
                                         $this->router[Router\Patch\Orgs::class] = new Router\Patch\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Orgs::class]->updateWebhookConfigForOrg($params);
+                                    return $this->router[Router\Patch\Orgs::class]->UpdateWebhookConfigForOrg($params);
                                 }
                             }
                         }
@@ -83,7 +83,7 @@ final class Six
                                         $this->router[Router\Patch\Checks::class] = new Router\Patch\Checks($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Checks::class]->update($params);
+                                    return $this->router[Router\Patch\Checks::class]->Update($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'check-suites') {
@@ -94,7 +94,7 @@ final class Six
                                         $this->router[Router\Patch\Checks::class] = new Router\Patch\Checks($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Checks::class]->setSuitesPreferences($params);
+                                    return $this->router[Router\Patch\Checks::class]->SetSuitesPreferences($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'code-scanning') {
@@ -105,7 +105,7 @@ final class Six
                                         $this->router[Router\Patch\CodeScanning::class] = new Router\Patch\CodeScanning($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\CodeScanning::class]->updateDefaultSetup($params);
+                                    return $this->router[Router\Patch\CodeScanning::class]->UpdateDefaultSetup($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'comments') {
@@ -116,7 +116,7 @@ final class Six
                                         $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Repos::class]->updateCommitComment($params);
+                                    return $this->router[Router\Patch\Repos::class]->UpdateCommitComment($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'hooks') {
@@ -127,7 +127,7 @@ final class Six
                                         $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Repos::class]->updateWebhook($params);
+                                    return $this->router[Router\Patch\Repos::class]->UpdateWebhook($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'import') {
@@ -138,7 +138,7 @@ final class Six
                                         $this->router[Router\Patch\Migrations::class] = new Router\Patch\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Migrations::class]->setLfsPreference($params);
+                                    return $this->router[Router\Patch\Migrations::class]->SetLfsPreference($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'invitations') {
@@ -149,7 +149,7 @@ final class Six
                                         $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Repos::class]->updateInvitation($params);
+                                    return $this->router[Router\Patch\Repos::class]->UpdateInvitation($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'issues') {
@@ -160,7 +160,7 @@ final class Six
                                         $this->router[Router\Patch\Issues::class] = new Router\Patch\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Issues::class]->update($params);
+                                    return $this->router[Router\Patch\Issues::class]->Update($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'labels') {
@@ -171,7 +171,7 @@ final class Six
                                         $this->router[Router\Patch\Issues::class] = new Router\Patch\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Issues::class]->updateLabel($params);
+                                    return $this->router[Router\Patch\Issues::class]->UpdateLabel($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'milestones') {
@@ -182,7 +182,7 @@ final class Six
                                         $this->router[Router\Patch\Issues::class] = new Router\Patch\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Issues::class]->updateMilestone($params);
+                                    return $this->router[Router\Patch\Issues::class]->UpdateMilestone($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'pulls') {
@@ -193,7 +193,7 @@ final class Six
                                         $this->router[Router\Patch\Pulls::class] = new Router\Patch\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Pulls::class]->update($params);
+                                    return $this->router[Router\Patch\Pulls::class]->Update($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'releases') {
@@ -204,7 +204,7 @@ final class Six
                                         $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\Repos::class]->updateRelease($params);
+                                    return $this->router[Router\Patch\Repos::class]->UpdateRelease($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'security-advisories') {
@@ -215,7 +215,7 @@ final class Six
                                         $this->router[Router\Patch\SecurityAdvisories::class] = new Router\Patch\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Patch\SecurityAdvisories::class]->updateRepositoryAdvisory($params);
+                                    return $this->router[Router\Patch\SecurityAdvisories::class]->UpdateRepositoryAdvisory($params);
                                 }
                             }
                         }

@@ -26,7 +26,7 @@ final readonly class ListForks
     {
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function call(string $owner, string $repo, string $sort = 'newest', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListForks($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sort, $perPage, $page);

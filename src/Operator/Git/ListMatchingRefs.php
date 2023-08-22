@@ -26,7 +26,7 @@ final readonly class ListMatchingRefs
     {
     }
 
-    /** @return iterable<Schema\GitRef> */
+    /** @return Observable<Schema\GitRef> */
     public function call(string $owner, string $repo, string $ref): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\ListMatchingRefs($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

@@ -32,7 +32,7 @@ final class One
                     $this->router[Router\Get\Meta::class] = new Router\Get\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                 }
 
-                return $this->router[Router\Get\Meta::class]->root($params);
+                return $this->router[Router\Get\Meta::class]->Root($params);
             }
         }
 

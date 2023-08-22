@@ -27,7 +27,7 @@ final readonly class ListLabelsOnIssue
     {
     }
 
-    /** @return (iterable<Schema\Label> | Schema\BasicError) */
+    /** @return (Observable<Schema\Label> | Schema\BasicError) */
     public function call(string $owner, string $repo, int $issueNumber, int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListLabelsOnIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $perPage, $page);

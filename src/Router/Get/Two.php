@@ -29,7 +29,7 @@ final class Two
     {
     }
 
-    /** @return iterable<Schema\GlobalAdvisory>||(iterable<Schema\CodeOfConduct>|array{code: int})|(Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|(iterable<Schema\Event>|(iterable<Schema\BaseGist>|(iterable<Schema\Issue>|(iterable<Schema\LicenseSimple>|(Schema\ApiOverview|(iterable<Schema\Thread>|(iterable<Schema\OrganizationSimple>|(Schema\RateLimitOverview|(iterable<Schema\MinimalRepository>|(Schema\PrivateUser|Schema\PublicUser|(iterable<Schema\SimpleUser>|iterable<string> */
+    /** @return Observable<Schema\GlobalAdvisory>||(Observable<Schema\CodeOfConduct>|array{code: int})|(Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|(Observable<Schema\Event>|(Observable<Schema\BaseGist>|(Observable<Schema\Issue>|(Observable<Schema\LicenseSimple>|(Schema\ApiOverview|(Observable<Schema\Thread>|(Observable<Schema\OrganizationSimple>|(Schema\RateLimitOverview|(Observable<Schema\MinimalRepository>|(Schema\PrivateUser|Schema\PublicUser|(Observable<Schema\SimpleUser>|Observable<string> */
     public function call(string $call, array $params, array $pathChunks): iterable|Integration|Json|Feed|ApiOverview|ResponseInterface|RateLimitOverview|PrivateUser|PublicUser|string
     {
         $matched = false;
@@ -41,7 +41,7 @@ final class Two
                         $this->router[Router\Get\SecurityAdvisories::class] = new Router\Get\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\SecurityAdvisories::class]->listGlobalAdvisories($params);
+                    return $this->router[Router\Get\SecurityAdvisories::class]->ListGlobalAdvisories($params);
                 }
             } elseif ($pathChunks[1] === 'app') {
                 if ($call === 'GET /app') {
@@ -50,7 +50,7 @@ final class Two
                         $this->router[Router\Get\Apps::class] = new Router\Get\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Apps::class]->getAuthenticated($params);
+                    return $this->router[Router\Get\Apps::class]->GetAuthenticated($params);
                 }
             } elseif ($pathChunks[1] === 'codes_of_conduct') {
                 if ($call === 'GET /codes_of_conduct') {
@@ -59,7 +59,7 @@ final class Two
                         $this->router[Router\Get\CodesOfConduct::class] = new Router\Get\CodesOfConduct($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\CodesOfConduct::class]->getAllCodesOfConduct($params);
+                    return $this->router[Router\Get\CodesOfConduct::class]->GetAllCodesOfConduct($params);
                 }
             } elseif ($pathChunks[1] === 'emojis') {
                 if ($call === 'GET /emojis') {
@@ -68,7 +68,7 @@ final class Two
                         $this->router[Router\Get\Emojis::class] = new Router\Get\Emojis($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Emojis::class]->get($params);
+                    return $this->router[Router\Get\Emojis::class]->Get($params);
                 }
             } elseif ($pathChunks[1] === 'events') {
                 if ($call === 'GET /events') {
@@ -77,7 +77,7 @@ final class Two
                         $this->router[Router\Get\Activity::class] = new Router\Get\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Activity::class]->listPublicEvents($params);
+                    return $this->router[Router\Get\Activity::class]->ListPublicEvents($params);
                 }
             } elseif ($pathChunks[1] === 'feeds') {
                 if ($call === 'GET /feeds') {
@@ -86,7 +86,7 @@ final class Two
                         $this->router[Router\Get\Activity::class] = new Router\Get\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Activity::class]->getFeeds($params);
+                    return $this->router[Router\Get\Activity::class]->GetFeeds($params);
                 }
             } elseif ($pathChunks[1] === 'gists') {
                 if ($call === 'GET /gists') {
@@ -95,7 +95,7 @@ final class Two
                         $this->router[Router\Get\Gists::class] = new Router\Get\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Gists::class]->list_($params);
+                    return $this->router[Router\Get\Gists::class]->List($params);
                 }
             } elseif ($pathChunks[1] === 'issues') {
                 if ($call === 'GET /issues') {
@@ -104,7 +104,7 @@ final class Two
                         $this->router[Router\Get\Issues::class] = new Router\Get\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Issues::class]->list_($params);
+                    return $this->router[Router\Get\Issues::class]->List($params);
                 }
             } elseif ($pathChunks[1] === 'licenses') {
                 if ($call === 'GET /licenses') {
@@ -113,7 +113,7 @@ final class Two
                         $this->router[Router\Get\Licenses::class] = new Router\Get\Licenses($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Licenses::class]->getAllCommonlyUsed($params);
+                    return $this->router[Router\Get\Licenses::class]->GetAllCommonlyUsed($params);
                 }
             } elseif ($pathChunks[1] === 'meta') {
                 if ($call === 'GET /meta') {
@@ -122,7 +122,7 @@ final class Two
                         $this->router[Router\Get\Meta::class] = new Router\Get\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Meta::class]->get($params);
+                    return $this->router[Router\Get\Meta::class]->Get($params);
                 }
             } elseif ($pathChunks[1] === 'notifications') {
                 if ($call === 'GET /notifications') {
@@ -131,7 +131,7 @@ final class Two
                         $this->router[Router\Get\Activity::class] = new Router\Get\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Activity::class]->listNotificationsForAuthenticatedUser($params);
+                    return $this->router[Router\Get\Activity::class]->ListNotificationsForAuthenticatedUser($params);
                 }
             } elseif ($pathChunks[1] === 'octocat') {
                 if ($call === 'GET /octocat') {
@@ -140,7 +140,7 @@ final class Two
                         $this->router[Router\Get\Meta::class] = new Router\Get\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Meta::class]->getOctocat($params);
+                    return $this->router[Router\Get\Meta::class]->GetOctocat($params);
                 }
             } elseif ($pathChunks[1] === 'organizations') {
                 if ($call === 'GET /organizations') {
@@ -149,7 +149,7 @@ final class Two
                         $this->router[Router\Get\Orgs::class] = new Router\Get\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Orgs::class]->list_($params);
+                    return $this->router[Router\Get\Orgs::class]->List($params);
                 }
             } elseif ($pathChunks[1] === 'rate_limit') {
                 if ($call === 'GET /rate_limit') {
@@ -158,7 +158,7 @@ final class Two
                         $this->router[Router\Get\RateLimit::class] = new Router\Get\RateLimit($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\RateLimit::class]->get($params);
+                    return $this->router[Router\Get\RateLimit::class]->Get($params);
                 }
             } elseif ($pathChunks[1] === 'repositories') {
                 if ($call === 'GET /repositories') {
@@ -167,7 +167,7 @@ final class Two
                         $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Repos::class]->listPublic($params);
+                    return $this->router[Router\Get\Repos::class]->ListPublic($params);
                 }
             } elseif ($pathChunks[1] === 'user') {
                 if ($call === 'GET /user') {
@@ -176,7 +176,7 @@ final class Two
                         $this->router[Router\Get\Users::class] = new Router\Get\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Users::class]->getAuthenticated($params);
+                    return $this->router[Router\Get\Users::class]->GetAuthenticated($params);
                 }
             } elseif ($pathChunks[1] === 'users') {
                 if ($call === 'GET /users') {
@@ -185,7 +185,7 @@ final class Two
                         $this->router[Router\Get\Users::class] = new Router\Get\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Users::class]->list_($params);
+                    return $this->router[Router\Get\Users::class]->List($params);
                 }
             } elseif ($pathChunks[1] === 'versions') {
                 if ($call === 'GET /versions') {
@@ -194,7 +194,7 @@ final class Two
                         $this->router[Router\Get\Meta::class] = new Router\Get\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Meta::class]->getAllVersions($params);
+                    return $this->router[Router\Get\Meta::class]->GetAllVersions($params);
                 }
             } elseif ($pathChunks[1] === 'zen') {
                 if ($call === 'GET /zen') {
@@ -203,7 +203,7 @@ final class Two
                         $this->router[Router\Get\Meta::class] = new Router\Get\Meta($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Get\Meta::class]->getZen($params);
+                    return $this->router[Router\Get\Meta::class]->GetZen($params);
                 }
             }
         }

@@ -26,7 +26,7 @@ final readonly class List_
     {
     }
 
-    /** @return (iterable<Schema\OrganizationSimple> | array{code: int}) */
+    /** @return (Observable<Schema\OrganizationSimple> | array{code: int}) */
     public function call(int $since, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\List_($this->responseSchemaValidator, $this->hydrator, $since, $perPage);

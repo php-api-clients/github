@@ -30,14 +30,14 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Search\Users::OPERATION_MATCH, (static function (array $data): array {
             $data['q']        = 'generated';
             $data['sort']     = 'generated';
             $data['order']    = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -52,9 +52,9 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 1);
     }
 
     /** @test */
@@ -67,14 +67,14 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Search\Users::OPERATION_MATCH, (static function (array $data): array {
             $data['q']        = 'generated';
             $data['sort']     = 'generated';
             $data['order']    = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -90,9 +90,9 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 1);
     }
 
     /** @test */
@@ -105,14 +105,14 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Search\Users::OPERATION_MATCH, (static function (array $data): array {
             $data['q']        = 'generated';
             $data['sort']     = 'generated';
             $data['order']    = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -128,9 +128,9 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 1);
     }
 
     /** @test */
@@ -142,14 +142,14 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Search\Users::OPERATION_MATCH, (static function (array $data): array {
             $data['q']        = 'generated';
             $data['sort']     = 'generated';
             $data['order']    = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -164,9 +164,9 @@ final class UsersTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/search/users?q=generated&sort=generated&order=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->search()->users('generated', 'generated', 'generated', 8, 1);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

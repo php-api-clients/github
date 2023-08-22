@@ -26,7 +26,7 @@ final class Gitignore
     {
     }
 
-    /** @return (iterable<string> | array{code: int}) */
+    /** @return (Observable<string> | array{code: int}) */
     public function getAllTemplates(array $params): iterable
     {
         $matched = true;

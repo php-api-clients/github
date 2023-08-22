@@ -27,7 +27,7 @@ final readonly class ListForRepo
     {
     }
 
-    /** @return (iterable<Schema\Issue> | Schema\BasicError) */
+    /** @return (Observable<Schema\Issue> | Schema\BasicError) */
     public function call(string $owner, string $repo, string $milestone, string $assignee, string $creator, string $mentioned, string $labels, string $since, string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestone, $assignee, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);

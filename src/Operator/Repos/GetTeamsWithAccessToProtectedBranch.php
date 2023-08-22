@@ -26,7 +26,7 @@ final readonly class GetTeamsWithAccessToProtectedBranch
     {
     }
 
-    /** @return iterable<Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetTeamsWithAccessToProtectedBranch($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

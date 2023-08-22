@@ -26,7 +26,7 @@ final readonly class GetUsersWithAccessToProtectedBranch
     {
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetUsersWithAccessToProtectedBranch($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

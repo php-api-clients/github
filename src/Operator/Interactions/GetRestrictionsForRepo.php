@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Interactions;
 
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -28,7 +27,7 @@ final readonly class GetRestrictionsForRepo
     {
     }
 
-    /** @return (Schema\InteractionLimitResponse | Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One) */
+    /** @return */
     public function call(string $owner, string $repo): InteractionLimitResponse|One|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

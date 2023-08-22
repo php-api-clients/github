@@ -25,7 +25,7 @@ final readonly class GetAllVersions
     {
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function call(): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\GetAllVersions($this->responseSchemaValidator, $this->hydrator);

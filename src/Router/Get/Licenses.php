@@ -27,7 +27,7 @@ final class Licenses
     {
     }
 
-    /** @return (iterable<Schema\LicenseSimple> | array{code: int}) */
+    /** @return (Observable<Schema\LicenseSimple> | array{code: int}) */
     public function getAllCommonlyUsed(array $params): iterable
     {
         $matched   = true;

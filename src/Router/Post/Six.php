@@ -56,7 +56,7 @@ final class Six
                                         $this->router[Router\Post\Apps::class] = new Router\Post\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Apps::class]->redeliverWebhookDelivery($params);
+                                    return $this->router[Router\Post\Apps::class]->RedeliverWebhookDelivery($params);
                                 }
                             }
                         }
@@ -73,7 +73,7 @@ final class Six
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Actions::class]->generateRunnerJitconfigForOrg($params);
+                                    return $this->router[Router\Post\Actions::class]->GenerateRunnerJitconfigForOrg($params);
                                 }
                             } elseif ($pathChunks[5] === 'registration-token') {
                                 if ($call === 'POST /orgs/{org}/actions/runners/registration-token') {
@@ -82,7 +82,7 @@ final class Six
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Actions::class]->createRegistrationTokenForOrg($params);
+                                    return $this->router[Router\Post\Actions::class]->CreateRegistrationTokenForOrg($params);
                                 }
                             } elseif ($pathChunks[5] === 'remove-token') {
                                 if ($call === 'POST /orgs/{org}/actions/runners/remove-token') {
@@ -91,7 +91,7 @@ final class Six
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Actions::class]->createRemoveTokenForOrg($params);
+                                    return $this->router[Router\Post\Actions::class]->CreateRemoveTokenForOrg($params);
                                 }
                             }
                         }
@@ -104,7 +104,7 @@ final class Six
                                         $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Codespaces::class]->setCodespacesAccessUsers($params);
+                                    return $this->router[Router\Post\Codespaces::class]->SetCodespacesAccessUsers($params);
                                 }
                             }
                         }
@@ -117,7 +117,7 @@ final class Six
                                         $this->router[Router\Post\Copilot::class] = new Router\Post\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Copilot::class]->addCopilotForBusinessSeatsForTeams($params);
+                                    return $this->router[Router\Post\Copilot::class]->AddCopilotForBusinessSeatsForTeams($params);
                                 }
                             } elseif ($pathChunks[5] === 'selected_users') {
                                 if ($call === 'POST /orgs/{org}/copilot/billing/selected_users') {
@@ -126,7 +126,7 @@ final class Six
                                         $this->router[Router\Post\Copilot::class] = new Router\Post\Copilot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Copilot::class]->addCopilotForBusinessSeatsForUsers($params);
+                                    return $this->router[Router\Post\Copilot::class]->AddCopilotForBusinessSeatsForUsers($params);
                                 }
                             }
                         }
@@ -139,7 +139,7 @@ final class Six
                                         $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Orgs::class]->pingWebhook($params);
+                                    return $this->router[Router\Post\Orgs::class]->PingWebhook($params);
                                 }
                             }
                         }
@@ -152,7 +152,7 @@ final class Six
                                         $this->router[Router\Post\Teams::class] = new Router\Post\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Teams::class]->createDiscussionInOrg($params);
+                                    return $this->router[Router\Post\Teams::class]->CreateDiscussionInOrg($params);
                                 }
                             }
                         }
@@ -169,7 +169,7 @@ final class Six
                                         $this->router[Router\Post\Projects::class] = new Router\Post\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Projects::class]->moveCard($params);
+                                    return $this->router[Router\Post\Projects::class]->MoveCard($params);
                                 }
                             }
                         }
@@ -186,7 +186,7 @@ final class Six
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Actions::class]->createRepoVariable($params);
+                                    return $this->router[Router\Post\Actions::class]->CreateRepoVariable($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'code-scanning') {
@@ -197,7 +197,7 @@ final class Six
                                         $this->router[Router\Post\CodeScanning::class] = new Router\Post\CodeScanning($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\CodeScanning::class]->uploadSarif($params);
+                                    return $this->router[Router\Post\CodeScanning::class]->UploadSarif($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'dependency-graph') {
@@ -208,7 +208,7 @@ final class Six
                                         $this->router[Router\Post\DependencyGraph::class] = new Router\Post\DependencyGraph($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\DependencyGraph::class]->createRepositorySnapshot($params);
+                                    return $this->router[Router\Post\DependencyGraph::class]->CreateRepositorySnapshot($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'git') {
@@ -219,7 +219,7 @@ final class Six
                                         $this->router[Router\Post\Git::class] = new Router\Post\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Git::class]->createBlob($params);
+                                    return $this->router[Router\Post\Git::class]->CreateBlob($params);
                                 }
                             } elseif ($pathChunks[5] === 'commits') {
                                 if ($call === 'POST /repos/{owner}/{repo}/git/commits') {
@@ -228,7 +228,7 @@ final class Six
                                         $this->router[Router\Post\Git::class] = new Router\Post\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Git::class]->createCommit($params);
+                                    return $this->router[Router\Post\Git::class]->CreateCommit($params);
                                 }
                             } elseif ($pathChunks[5] === 'refs') {
                                 if ($call === 'POST /repos/{owner}/{repo}/git/refs') {
@@ -237,7 +237,7 @@ final class Six
                                         $this->router[Router\Post\Git::class] = new Router\Post\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Git::class]->createRef($params);
+                                    return $this->router[Router\Post\Git::class]->CreateRef($params);
                                 }
                             } elseif ($pathChunks[5] === 'tags') {
                                 if ($call === 'POST /repos/{owner}/{repo}/git/tags') {
@@ -246,7 +246,7 @@ final class Six
                                         $this->router[Router\Post\Git::class] = new Router\Post\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Git::class]->createTag($params);
+                                    return $this->router[Router\Post\Git::class]->CreateTag($params);
                                 }
                             } elseif ($pathChunks[5] === 'trees') {
                                 if ($call === 'POST /repos/{owner}/{repo}/git/trees') {
@@ -255,7 +255,7 @@ final class Six
                                         $this->router[Router\Post\Git::class] = new Router\Post\Git($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Git::class]->createTree($params);
+                                    return $this->router[Router\Post\Git::class]->CreateTree($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'pages') {
@@ -266,7 +266,7 @@ final class Six
                                         $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Repos::class]->requestPagesBuild($params);
+                                    return $this->router[Router\Post\Repos::class]->RequestPagesBuild($params);
                                 }
                             } elseif ($pathChunks[5] === 'deployment') {
                                 if ($call === 'POST /repos/{owner}/{repo}/pages/deployment') {
@@ -275,7 +275,7 @@ final class Six
                                         $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Repos::class]->createPagesDeployment($params);
+                                    return $this->router[Router\Post\Repos::class]->CreatePagesDeployment($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'releases') {
@@ -286,7 +286,7 @@ final class Six
                                         $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Repos::class]->generateReleaseNotes($params);
+                                    return $this->router[Router\Post\Repos::class]->GenerateReleaseNotes($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'security-advisories') {
@@ -297,7 +297,7 @@ final class Six
                                         $this->router[Router\Post\SecurityAdvisories::class] = new Router\Post\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\SecurityAdvisories::class]->createPrivateVulnerabilityReport($params);
+                                    return $this->router[Router\Post\SecurityAdvisories::class]->CreatePrivateVulnerabilityReport($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'statuses') {
@@ -308,7 +308,7 @@ final class Six
                                         $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Repos::class]->createCommitStatus($params);
+                                    return $this->router[Router\Post\Repos::class]->CreateCommitStatus($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'tags') {
@@ -319,7 +319,7 @@ final class Six
                                         $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Repos::class]->createTagProtection($params);
+                                    return $this->router[Router\Post\Repos::class]->CreateTagProtection($params);
                                 }
                             }
                         }
@@ -336,7 +336,7 @@ final class Six
                                         $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Actions::class]->createEnvironmentVariable($params);
+                                    return $this->router[Router\Post\Actions::class]->CreateEnvironmentVariable($params);
                                 }
                             }
                         }
@@ -353,7 +353,7 @@ final class Six
                                         $this->router[Router\Post\Teams::class] = new Router\Post\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Teams::class]->createDiscussionCommentLegacy($params);
+                                    return $this->router[Router\Post\Teams::class]->CreateDiscussionCommentLegacy($params);
                                 }
                             } elseif ($pathChunks[5] === 'reactions') {
                                 if ($call === 'POST /teams/{team_id}/discussions/{discussion_number}/reactions') {
@@ -362,7 +362,7 @@ final class Six
                                         $this->router[Router\Post\Reactions::class] = new Router\Post\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Reactions::class]->createForTeamDiscussionLegacy($params);
+                                    return $this->router[Router\Post\Reactions::class]->CreateForTeamDiscussionLegacy($params);
                                 }
                             }
                         }
@@ -379,7 +379,7 @@ final class Six
                                         $this->router[Router\Post\Packages::class] = new Router\Post\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                     }
 
-                                    return $this->router[Router\Post\Packages::class]->restorePackageForAuthenticatedUser($params);
+                                    return $this->router[Router\Post\Packages::class]->RestorePackageForAuthenticatedUser($params);
                                 }
                             }
                         }

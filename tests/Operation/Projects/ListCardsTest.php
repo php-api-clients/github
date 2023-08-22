@@ -31,13 +31,13 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\ListCards::OPERATION_MATCH, (static function (array $data): array {
             $data['column_id']      = 9;
             $data['archived_state'] = 'generated';
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -53,9 +53,9 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 4);
+        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 1);
     }
 
     /** @test */
@@ -68,13 +68,13 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\ListCards::OPERATION_MATCH, (static function (array $data): array {
             $data['column_id']      = 9;
             $data['archived_state'] = 'generated';
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -90,9 +90,9 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 4);
+        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 1);
     }
 
     /** @test */
@@ -104,13 +104,13 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Projects\ListCards::OPERATION_MATCH, (static function (array $data): array {
             $data['column_id']      = 9;
             $data['archived_state'] = 'generated';
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -125,9 +125,9 @@ final class ListCardsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/projects/columns/9/cards?archived_state=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 4);
+        $result = $client->operations()->projects()->listCards(9, 'generated', 8, 1);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

@@ -26,7 +26,7 @@ final readonly class ListGpgKeysForAuthenticatedUser
     {
     }
 
-    /** @return (iterable<Schema\GpgKey> | array{code: int}) */
+    /** @return (Observable<Schema\GpgKey> | array{code: int}) */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListGpgKeysForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

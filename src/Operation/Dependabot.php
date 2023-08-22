@@ -130,6 +130,15 @@ final class Dependabot
         return $this->operator[Operator\Dependabot\ListAlertsForRepo::class]->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
     }
 
+    public function listAlertsForRepoListing(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $page, int $perPage, int $first): Schema\DependabotAlert
+    {
+        if (array_key_exists(Operator\Dependabot\ListAlertsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Dependabot\ListAlertsForRepoListing::class] = new Operator\Dependabot\ListAlertsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dependabot🌀Alerts());
+        }
+
+        return $this->operator[Operator\Dependabot\ListAlertsForRepoListing::class]->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
+    }
+
     public function getAlert(string $owner, string $repo, int $alertNumber): Schema\DependabotAlert
     {
         if (array_key_exists(Operator\Dependabot\GetAlert::class, $this->operator) === false) {

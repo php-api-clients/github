@@ -26,7 +26,7 @@ final readonly class ListSshSigningKeysForUser
     {
     }
 
-    /** @return iterable<Schema\SshSigningKey> */
+    /** @return Observable<Schema\SshSigningKey> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListSshSigningKeysForUser($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

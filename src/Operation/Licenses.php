@@ -30,6 +30,15 @@ final class Licenses
         return $this->operator[Operator\Licenses\GetAllCommonlyUsed::class]->call($featured, $perPage, $page);
     }
 
+    public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): Schema\LicenseSimple
+    {
+        if (array_key_exists(Operator\Licenses\GetAllCommonlyUsedListing::class, $this->operator) === false) {
+            $this->operator[Operator\Licenses\GetAllCommonlyUsedListing::class] = new Operator\Licenses\GetAllCommonlyUsedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses());
+        }
+
+        return $this->operator[Operator\Licenses\GetAllCommonlyUsedListing::class]->call($featured, $perPage, $page);
+    }
+
     public function get(string $license): Schema\License
     {
         if (array_key_exists(Operator\Licenses\Get::class, $this->operator) === false) {

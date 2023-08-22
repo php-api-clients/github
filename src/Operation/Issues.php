@@ -31,6 +31,15 @@ final class Issues
         return $this->operator[Operator\Issues\List_::class]->call($labels, $since, $collab, $orgs, $owned, $pulls, $filter, $state, $sort, $direction, $perPage, $page);
     }
 
+    public function listListing(string $labels, string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue
+    {
+        if (array_key_exists(Operator\Issues\ListListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListListing::class] = new Operator\Issues\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Issues());
+        }
+
+        return $this->operator[Operator\Issues\ListListing::class]->call($labels, $since, $collab, $orgs, $owned, $pulls, $filter, $state, $sort, $direction, $perPage, $page);
+    }
+
     public function listForOrg(string $org, string $labels, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue
     {
         if (array_key_exists(Operator\Issues\ListForOrg::class, $this->operator) === false) {
@@ -40,6 +49,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListForOrg::class]->call($org, $labels, $since, $filter, $state, $sort, $direction, $perPage, $page);
     }
 
+    public function listForOrgListing(string $org, string $labels, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue
+    {
+        if (array_key_exists(Operator\Issues\ListForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListForOrgListing::class] = new Operator\Issues\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Issues());
+        }
+
+        return $this->operator[Operator\Issues\ListForOrgListing::class]->call($org, $labels, $since, $filter, $state, $sort, $direction, $perPage, $page);
+    }
+
     public function listAssignees(string $owner, string $repo, int $perPage, int $page): Schema\SimpleUser
     {
         if (array_key_exists(Operator\Issues\ListAssignees::class, $this->operator) === false) {
@@ -47,6 +65,15 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListAssignees::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listAssigneesListing(string $owner, string $repo, int $perPage, int $page): Schema\SimpleUser
+    {
+        if (array_key_exists(Operator\Issues\ListAssigneesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListAssigneesListing::class] = new Operator\Issues\ListAssigneesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Assignees());
+        }
+
+        return $this->operator[Operator\Issues\ListAssigneesListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function checkUserCanBeAssigned(string $owner, string $repo, string $assignee): ResponseInterface
@@ -67,6 +94,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListForRepo::class]->call($owner, $repo, $milestone, $assignee, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);
     }
 
+    public function listForRepoListing(string $owner, string $repo, string $milestone, string $assignee, string $creator, string $mentioned, string $labels, string $since, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue|Schema\BasicError
+    {
+        if (array_key_exists(Operator\Issues\ListForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListForRepoListing::class] = new Operator\Issues\ListForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues());
+        }
+
+        return $this->operator[Operator\Issues\ListForRepoListing::class]->call($owner, $repo, $milestone, $assignee, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);
+    }
+
     public function create(string $owner, string $repo, array $params): Schema\Issue
     {
         if (array_key_exists(Operator\Issues\Create::class, $this->operator) === false) {
@@ -83,6 +119,15 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListCommentsForRepo::class]->call($owner, $repo, $direction, $since, $sort, $perPage, $page);
+    }
+
+    public function listCommentsForRepoListing(string $owner, string $repo, string $direction, string $since, string $sort, int $perPage, int $page): Schema\IssueComment
+    {
+        if (array_key_exists(Operator\Issues\ListCommentsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListCommentsForRepoListing::class] = new Operator\Issues\ListCommentsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀Comments());
+        }
+
+        return $this->operator[Operator\Issues\ListCommentsForRepoListing::class]->call($owner, $repo, $direction, $since, $sort, $perPage, $page);
     }
 
     public function getComment(string $owner, string $repo, int $commentId): Schema\IssueComment
@@ -119,6 +164,15 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListEventsForRepo::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listEventsForRepoListing(string $owner, string $repo, int $perPage, int $page): Schema\IssueEvent
+    {
+        if (array_key_exists(Operator\Issues\ListEventsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListEventsForRepoListing::class] = new Operator\Issues\ListEventsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀Events());
+        }
+
+        return $this->operator[Operator\Issues\ListEventsForRepoListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function getEvent(string $owner, string $repo, int $eventId): Schema\IssueEvent
@@ -184,6 +238,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListComments::class]->call($owner, $repo, $issueNumber, $since, $perPage, $page);
     }
 
+    public function listCommentsListing(string $owner, string $repo, int $issueNumber, string $since, int $perPage, int $page): Schema\IssueComment
+    {
+        if (array_key_exists(Operator\Issues\ListCommentsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListCommentsListing::class] = new Operator\Issues\ListCommentsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀Comments());
+        }
+
+        return $this->operator[Operator\Issues\ListCommentsListing::class]->call($owner, $repo, $issueNumber, $since, $perPage, $page);
+    }
+
     public function createComment(string $owner, string $repo, int $issueNumber, array $params): Schema\IssueComment
     {
         if (array_key_exists(Operator\Issues\CreateComment::class, $this->operator) === false) {
@@ -202,6 +265,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListEvents::class]->call($owner, $repo, $issueNumber, $perPage, $page);
     }
 
+    public function listEventsListing(string $owner, string $repo, int $issueNumber, int $perPage, int $page): Schema\IssueEventForIssue
+    {
+        if (array_key_exists(Operator\Issues\ListEventsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListEventsListing::class] = new Operator\Issues\ListEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀Events());
+        }
+
+        return $this->operator[Operator\Issues\ListEventsListing::class]->call($owner, $repo, $issueNumber, $perPage, $page);
+    }
+
     public function listLabelsOnIssue(string $owner, string $repo, int $issueNumber, int $perPage, int $page): Schema\Label|Schema\BasicError
     {
         if (array_key_exists(Operator\Issues\ListLabelsOnIssue::class, $this->operator) === false) {
@@ -209,6 +281,15 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListLabelsOnIssue::class]->call($owner, $repo, $issueNumber, $perPage, $page);
+    }
+
+    public function listLabelsOnIssueListing(string $owner, string $repo, int $issueNumber, int $perPage, int $page): Schema\Label|Schema\BasicError
+    {
+        if (array_key_exists(Operator\Issues\ListLabelsOnIssueListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListLabelsOnIssueListing::class] = new Operator\Issues\ListLabelsOnIssueListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀Labels());
+        }
+
+        return $this->operator[Operator\Issues\ListLabelsOnIssueListing::class]->call($owner, $repo, $issueNumber, $perPage, $page);
     }
 
     public function setLabels(string $owner, string $repo, int $issueNumber, array $params): Schema\Label|Schema\BasicError
@@ -274,6 +355,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListEventsForTimeline::class]->call($owner, $repo, $issueNumber, $perPage, $page);
     }
 
+    public function listEventsForTimelineListing(string $owner, string $repo, int $issueNumber, int $perPage, int $page): Schema\TimelineIssueEvents
+    {
+        if (array_key_exists(Operator\Issues\ListEventsForTimelineListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListEventsForTimelineListing::class] = new Operator\Issues\ListEventsForTimelineListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀Timeline());
+        }
+
+        return $this->operator[Operator\Issues\ListEventsForTimelineListing::class]->call($owner, $repo, $issueNumber, $perPage, $page);
+    }
+
     public function listLabelsForRepo(string $owner, string $repo, int $perPage, int $page): Schema\Label
     {
         if (array_key_exists(Operator\Issues\ListLabelsForRepo::class, $this->operator) === false) {
@@ -281,6 +371,15 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListLabelsForRepo::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listLabelsForRepoListing(string $owner, string $repo, int $perPage, int $page): Schema\Label
+    {
+        if (array_key_exists(Operator\Issues\ListLabelsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListLabelsForRepoListing::class] = new Operator\Issues\ListLabelsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Labels());
+        }
+
+        return $this->operator[Operator\Issues\ListLabelsForRepoListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function createLabel(string $owner, string $repo, array $params): Schema\Label
@@ -328,6 +427,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListMilestones::class]->call($owner, $repo, $state, $sort, $direction, $perPage, $page);
     }
 
+    public function listMilestonesListing(string $owner, string $repo, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Milestone
+    {
+        if (array_key_exists(Operator\Issues\ListMilestonesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListMilestonesListing::class] = new Operator\Issues\ListMilestonesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Milestones());
+        }
+
+        return $this->operator[Operator\Issues\ListMilestonesListing::class]->call($owner, $repo, $state, $sort, $direction, $perPage, $page);
+    }
+
     public function createMilestone(string $owner, string $repo, array $params): Schema\Milestone
     {
         if (array_key_exists(Operator\Issues\CreateMilestone::class, $this->operator) === false) {
@@ -373,6 +481,15 @@ final class Issues
         return $this->operator[Operator\Issues\ListLabelsForMilestone::class]->call($owner, $repo, $milestoneNumber, $perPage, $page);
     }
 
+    public function listLabelsForMilestoneListing(string $owner, string $repo, int $milestoneNumber, int $perPage, int $page): Schema\Label
+    {
+        if (array_key_exists(Operator\Issues\ListLabelsForMilestoneListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListLabelsForMilestoneListing::class] = new Operator\Issues\ListLabelsForMilestoneListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Milestones🌀MilestoneNumber🌀Labels());
+        }
+
+        return $this->operator[Operator\Issues\ListLabelsForMilestoneListing::class]->call($owner, $repo, $milestoneNumber, $perPage, $page);
+    }
+
     public function listForAuthenticatedUser(string $labels, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue
     {
         if (array_key_exists(Operator\Issues\ListForAuthenticatedUser::class, $this->operator) === false) {
@@ -380,5 +497,14 @@ final class Issues
         }
 
         return $this->operator[Operator\Issues\ListForAuthenticatedUser::class]->call($labels, $since, $filter, $state, $sort, $direction, $perPage, $page);
+    }
+
+    public function listForAuthenticatedUserListing(string $labels, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): Schema\Issue
+    {
+        if (array_key_exists(Operator\Issues\ListForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Issues\ListForAuthenticatedUserListing::class] = new Operator\Issues\ListForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Issues());
+        }
+
+        return $this->operator[Operator\Issues\ListForAuthenticatedUserListing::class]->call($labels, $since, $filter, $state, $sort, $direction, $perPage, $page);
     }
 }

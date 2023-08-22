@@ -25,7 +25,7 @@ final readonly class RemoveStatusCheckContexts
     {
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function call(string $owner, string $repo, string $branch, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\RemoveStatusCheckContexts($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

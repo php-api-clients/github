@@ -29,8 +29,8 @@ final class Pulls
     {
     }
 
-    /** @return (iterable<Schema\PullRequestSimple> | array{code: int}) */
-    public function list_(array $params): iterable
+    /** @return (Observable<Schema\PullRequestSimple> | array{code: int}) */
+    public function list(array $params): iterable
     {
         $matched   = true;
         $arguments = [];
@@ -97,7 +97,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['head'], $arguments['base'], $arguments['direction'], $arguments['state'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\PullRequestReviewComment> */
+    /** @return Observable<Schema\PullRequestReviewComment> */
     public function listReviewCommentsForRepo(array $params): iterable
     {
         $matched   = true;
@@ -217,7 +217,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return iterable<Schema\PullRequestReviewComment> */
+    /** @return Observable<Schema\PullRequestReviewComment> */
     public function listReviewComments(array $params): iterable
     {
         $matched   = true;
@@ -279,7 +279,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['direction'], $arguments['since'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Commit> */
+    /** @return Observable<Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $matched   = true;
@@ -323,7 +323,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\DiffEntry> */
+    /** @return Observable<Schema\DiffEntry> */
     public function listFiles(array $params): iterable
     {
         $matched   = true;
@@ -427,7 +427,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number']);
     }
 
-    /** @return iterable<Schema\PullRequestReview> */
+    /** @return Observable<Schema\PullRequestReview> */
     public function listReviews(array $params): iterable
     {
         $matched   = true;
@@ -509,7 +509,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id']);
     }
 
-    /** @return iterable<Schema\ReviewComment> */
+    /** @return Observable<Schema\ReviewComment> */
     public function listCommentsForReview(array $params): iterable
     {
         $matched   = true;

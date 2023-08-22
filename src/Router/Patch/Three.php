@@ -25,7 +25,7 @@ final class Three
     {
     }
 
-    /** @return |Schema\OrganizationFull|(Schema\Project|array{code: int}) */
+    /** @return |(Schema\Project|array{code: int}) */
     public function call(string $call, array $params, array $pathChunks): GistSimple|OrganizationFull|Project|TeamFull|array
     {
         $matched = false;
@@ -38,7 +38,7 @@ final class Three
                             $this->router[Router\Patch\Gists::class] = new Router\Patch\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Patch\Gists::class]->update($params);
+                        return $this->router[Router\Patch\Gists::class]->Update($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'orgs') {
@@ -49,7 +49,7 @@ final class Three
                             $this->router[Router\Patch\Orgs::class] = new Router\Patch\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Patch\Orgs::class]->update($params);
+                        return $this->router[Router\Patch\Orgs::class]->Update($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'projects') {
@@ -60,7 +60,7 @@ final class Three
                             $this->router[Router\Patch\Projects::class] = new Router\Patch\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Patch\Projects::class]->update($params);
+                        return $this->router[Router\Patch\Projects::class]->Update($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'teams') {
@@ -71,7 +71,7 @@ final class Three
                             $this->router[Router\Patch\Teams::class] = new Router\Patch\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Patch\Teams::class]->updateLegacy($params);
+                        return $this->router[Router\Patch\Teams::class]->UpdateLegacy($params);
                     }
                 }
             }

@@ -22,7 +22,7 @@ final class Nine
     {
     }
 
-    /** @return array{code: int}||iterable<string>|iterable<Schema\Integration>|iterable<Schema\Team>|iterable<Schema\SimpleUser> */
+    /** @return array{code: int}||Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser> */
     public function call(string $call, array $params, array $pathChunks): Ok|iterable
     {
         $matched = false;
@@ -41,7 +41,7 @@ final class Nine
                                                     $this->router[Router\Delete\Teams::class] = new Router\Delete\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Teams::class]->deleteDiscussionCommentInOrg($params);
+                                                return $this->router[Router\Delete\Teams::class]->DeleteDiscussionCommentInOrg($params);
                                             }
                                         }
                                     } elseif ($pathChunks[7] === 'reactions') {
@@ -52,7 +52,7 @@ final class Nine
                                                     $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Reactions::class]->deleteForTeamDiscussion($params);
+                                                return $this->router[Router\Delete\Reactions::class]->DeleteForTeamDiscussion($params);
                                             }
                                         }
                                     }
@@ -75,7 +75,7 @@ final class Nine
                                                     $this->router[Router\Delete\Actions::class] = new Router\Delete\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Actions::class]->removeCustomLabelFromSelfHostedRunnerForRepo($params);
+                                                return $this->router[Router\Delete\Actions::class]->RemoveCustomLabelFromSelfHostedRunnerForRepo($params);
                                             }
                                         }
                                     }
@@ -92,7 +92,7 @@ final class Nine
                                                     $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Repos::class]->removeStatusCheckContexts($params);
+                                                return $this->router[Router\Delete\Repos::class]->RemoveStatusCheckContexts($params);
                                             }
                                         }
                                     } elseif ($pathChunks[7] === 'restrictions') {
@@ -103,7 +103,7 @@ final class Nine
                                                     $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Repos::class]->removeAppAccessRestrictions($params);
+                                                return $this->router[Router\Delete\Repos::class]->RemoveAppAccessRestrictions($params);
                                             }
                                         } elseif ($pathChunks[8] === 'teams') {
                                             if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams') {
@@ -112,7 +112,7 @@ final class Nine
                                                     $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Repos::class]->removeTeamAccessRestrictions($params);
+                                                return $this->router[Router\Delete\Repos::class]->RemoveTeamAccessRestrictions($params);
                                             }
                                         } elseif ($pathChunks[8] === 'users') {
                                             if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users') {
@@ -121,7 +121,7 @@ final class Nine
                                                     $this->router[Router\Delete\Repos::class] = new Router\Delete\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Repos::class]->removeUserAccessRestrictions($params);
+                                                return $this->router[Router\Delete\Repos::class]->RemoveUserAccessRestrictions($params);
                                             }
                                         }
                                     }
@@ -138,7 +138,7 @@ final class Nine
                                                     $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Reactions::class]->deleteForIssueComment($params);
+                                                return $this->router[Router\Delete\Reactions::class]->DeleteForIssueComment($params);
                                             }
                                         }
                                     }
@@ -155,7 +155,7 @@ final class Nine
                                                     $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                 }
 
-                                                return $this->router[Router\Delete\Reactions::class]->deleteForPullRequestComment($params);
+                                                return $this->router[Router\Delete\Reactions::class]->DeleteForPullRequestComment($params);
                                             }
                                         }
                                     }

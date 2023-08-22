@@ -26,7 +26,7 @@ final readonly class ListPendingInvitationsLegacy
     {
     }
 
-    /** @return iterable<Schema\OrganizationInvitation> */
+    /** @return Observable<Schema\OrganizationInvitation> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListPendingInvitationsLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

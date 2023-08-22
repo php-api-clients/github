@@ -57,6 +57,15 @@ final class Checks
         return $this->operator[Operator\Checks\ListAnnotations::class]->call($owner, $repo, $checkRunId, $perPage, $page);
     }
 
+    public function listAnnotationsListing(string $owner, string $repo, int $checkRunId, int $perPage, int $page): Schema\CheckAnnotation
+    {
+        if (array_key_exists(Operator\Checks\ListAnnotationsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Checks\ListAnnotationsListing::class] = new Operator\Checks\ListAnnotationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CheckRuns🌀CheckRunId🌀Annotations());
+        }
+
+        return $this->operator[Operator\Checks\ListAnnotationsListing::class]->call($owner, $repo, $checkRunId, $perPage, $page);
+    }
+
     public function rerequestRun(string $owner, string $repo, int $checkRunId): Schema\EmptyObject
     {
         if (array_key_exists(Operator\Checks\RerequestRun::class, $this->operator) === false) {

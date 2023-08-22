@@ -47,7 +47,7 @@ final class Five
                                     $this->router[Router\Put\Apps::class] = new Router\Put\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Apps::class]->suspendInstallation($params);
+                                return $this->router[Router\Put\Apps::class]->SuspendInstallation($params);
                             }
                         }
                     }
@@ -62,7 +62,7 @@ final class Five
                                     $this->router[Router\Put\Activity::class] = new Router\Put\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Activity::class]->setThreadSubscription($params);
+                                return $this->router[Router\Put\Activity::class]->SetThreadSubscription($params);
                             }
                         }
                     }
@@ -77,7 +77,7 @@ final class Five
                                     $this->router[Router\Put\Actions::class] = new Router\Put\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Actions::class]->setGithubActionsPermissionsOrganization($params);
+                                return $this->router[Router\Put\Actions::class]->SetGithubActionsPermissionsOrganization($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'blocks') {
@@ -88,7 +88,7 @@ final class Five
                                     $this->router[Router\Put\Orgs::class] = new Router\Put\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Orgs::class]->blockUser($params);
+                                return $this->router[Router\Put\Orgs::class]->BlockUser($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'codespaces') {
@@ -99,7 +99,7 @@ final class Five
                                     $this->router[Router\Put\Codespaces::class] = new Router\Put\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Codespaces::class]->setCodespacesAccess($params);
+                                return $this->router[Router\Put\Codespaces::class]->SetCodespacesAccess($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'memberships') {
@@ -110,7 +110,7 @@ final class Five
                                     $this->router[Router\Put\Orgs::class] = new Router\Put\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Orgs::class]->setMembershipForUser($params);
+                                return $this->router[Router\Put\Orgs::class]->SetMembershipForUser($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'outside_collaborators') {
@@ -121,7 +121,7 @@ final class Five
                                     $this->router[Router\Put\Orgs::class] = new Router\Put\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Orgs::class]->convertMemberToOutsideCollaborator($params);
+                                return $this->router[Router\Put\Orgs::class]->ConvertMemberToOutsideCollaborator($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'public_members') {
@@ -132,7 +132,7 @@ final class Five
                                     $this->router[Router\Put\Orgs::class] = new Router\Put\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Orgs::class]->setPublicMembershipForAuthenticatedUser($params);
+                                return $this->router[Router\Put\Orgs::class]->SetPublicMembershipForAuthenticatedUser($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'rulesets') {
@@ -143,7 +143,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->updateOrgRuleset($params);
+                                return $this->router[Router\Put\Repos::class]->UpdateOrgRuleset($params);
                             }
                         }
                     }
@@ -158,7 +158,7 @@ final class Five
                                     $this->router[Router\Put\Projects::class] = new Router\Put\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Projects::class]->addCollaborator($params);
+                                return $this->router[Router\Put\Projects::class]->AddCollaborator($params);
                             }
                         }
                     }
@@ -173,7 +173,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->enableAutomatedSecurityFixes($params);
+                                return $this->router[Router\Put\Repos::class]->EnableAutomatedSecurityFixes($params);
                             }
                         } elseif ($pathChunks[4] === 'import') {
                             if ($call === 'PUT /repos/{owner}/{repo}/import') {
@@ -182,7 +182,7 @@ final class Five
                                     $this->router[Router\Put\Migrations::class] = new Router\Put\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Migrations::class]->startImport($params);
+                                return $this->router[Router\Put\Migrations::class]->StartImport($params);
                             }
                         } elseif ($pathChunks[4] === 'interaction-limits') {
                             if ($call === 'PUT /repos/{owner}/{repo}/interaction-limits') {
@@ -191,7 +191,7 @@ final class Five
                                     $this->router[Router\Put\Interactions::class] = new Router\Put\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Interactions::class]->setRestrictionsForRepo($params);
+                                return $this->router[Router\Put\Interactions::class]->SetRestrictionsForRepo($params);
                             }
                         } elseif ($pathChunks[4] === 'notifications') {
                             if ($call === 'PUT /repos/{owner}/{repo}/notifications') {
@@ -200,7 +200,7 @@ final class Five
                                     $this->router[Router\Put\Activity::class] = new Router\Put\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Activity::class]->markRepoNotificationsAsRead($params);
+                                return $this->router[Router\Put\Activity::class]->MarkRepoNotificationsAsRead($params);
                             }
                         } elseif ($pathChunks[4] === 'pages') {
                             if ($call === 'PUT /repos/{owner}/{repo}/pages') {
@@ -209,7 +209,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->updateInformationAboutPagesSite($params);
+                                return $this->router[Router\Put\Repos::class]->UpdateInformationAboutPagesSite($params);
                             }
                         } elseif ($pathChunks[4] === 'private-vulnerability-reporting') {
                             if ($call === 'PUT /repos/{owner}/{repo}/private-vulnerability-reporting') {
@@ -218,7 +218,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->enablePrivateVulnerabilityReporting($params);
+                                return $this->router[Router\Put\Repos::class]->EnablePrivateVulnerabilityReporting($params);
                             }
                         } elseif ($pathChunks[4] === 'subscription') {
                             if ($call === 'PUT /repos/{owner}/{repo}/subscription') {
@@ -227,7 +227,7 @@ final class Five
                                     $this->router[Router\Put\Activity::class] = new Router\Put\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Activity::class]->setRepoSubscription($params);
+                                return $this->router[Router\Put\Activity::class]->SetRepoSubscription($params);
                             }
                         } elseif ($pathChunks[4] === 'topics') {
                             if ($call === 'PUT /repos/{owner}/{repo}/topics') {
@@ -236,7 +236,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->replaceAllTopics($params);
+                                return $this->router[Router\Put\Repos::class]->ReplaceAllTopics($params);
                             }
                         } elseif ($pathChunks[4] === 'vulnerability-alerts') {
                             if ($call === 'PUT /repos/{owner}/{repo}/vulnerability-alerts') {
@@ -245,7 +245,7 @@ final class Five
                                     $this->router[Router\Put\Repos::class] = new Router\Put\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Repos::class]->enableVulnerabilityAlerts($params);
+                                return $this->router[Router\Put\Repos::class]->EnableVulnerabilityAlerts($params);
                             }
                         }
                     }
@@ -260,7 +260,7 @@ final class Five
                                     $this->router[Router\Put\Teams::class] = new Router\Put\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Teams::class]->addMemberLegacy($params);
+                                return $this->router[Router\Put\Teams::class]->AddMemberLegacy($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'memberships') {
@@ -271,7 +271,7 @@ final class Five
                                     $this->router[Router\Put\Teams::class] = new Router\Put\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Teams::class]->addOrUpdateMembershipForUserLegacy($params);
+                                return $this->router[Router\Put\Teams::class]->AddOrUpdateMembershipForUserLegacy($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'projects') {
@@ -282,7 +282,7 @@ final class Five
                                     $this->router[Router\Put\Teams::class] = new Router\Put\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Teams::class]->addOrUpdateProjectPermissionsLegacy($params);
+                                return $this->router[Router\Put\Teams::class]->AddOrUpdateProjectPermissionsLegacy($params);
                             }
                         }
                     }
@@ -297,7 +297,7 @@ final class Five
                                     $this->router[Router\Put\Codespaces::class] = new Router\Put\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Codespaces::class]->createOrUpdateSecretForAuthenticatedUser($params);
+                                return $this->router[Router\Put\Codespaces::class]->CreateOrUpdateSecretForAuthenticatedUser($params);
                             }
                         }
                     }
@@ -310,7 +310,7 @@ final class Five
                                     $this->router[Router\Put\Activity::class] = new Router\Put\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                 }
 
-                                return $this->router[Router\Put\Activity::class]->starRepoForAuthenticatedUser($params);
+                                return $this->router[Router\Put\Activity::class]->StarRepoForAuthenticatedUser($params);
                             }
                         }
                     }

@@ -93,7 +93,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_suite_id']);
     }
 
-    /** @return iterable<Schema\CheckAnnotation> */
+    /** @return Observable<Schema\CheckAnnotation> */
     public function listAnnotations(array $params): iterable
     {
         $matched   = true;

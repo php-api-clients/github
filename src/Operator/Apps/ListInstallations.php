@@ -26,7 +26,7 @@ final readonly class ListInstallations
     {
     }
 
-    /** @return iterable<Schema\Installation> */
+    /** @return Observable<Schema\Installation> */
     public function call(string $since, string $outdated, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListInstallations($this->responseSchemaValidator, $this->hydrator, $since, $outdated, $perPage, $page);

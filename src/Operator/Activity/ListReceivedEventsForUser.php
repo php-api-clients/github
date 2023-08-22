@@ -26,7 +26,7 @@ final readonly class ListReceivedEventsForUser
     {
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListReceivedEventsForUser($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

@@ -31,7 +31,7 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Orgs\ListPatGrants::OPERATION_MATCH, (static function (array $data): array {
             $data['org']              = 'generated';
@@ -41,7 +41,7 @@ final class ListPatGrantsTest extends AsyncTestCase
             $data['last_used_before'] = '1970-01-01T00:00:00+00:00';
             $data['last_used_after']  = '1970-01-01T00:00:00+00:00';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['sort']             = 'generated';
             $data['direction']        = 'generated';
 
@@ -59,9 +59,9 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1, 'generated', 'generated');
     }
 
     /** @test */
@@ -74,7 +74,7 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Orgs\ListPatGrants::OPERATION_MATCH, (static function (array $data): array {
             $data['org']              = 'generated';
@@ -84,7 +84,7 @@ final class ListPatGrantsTest extends AsyncTestCase
             $data['last_used_before'] = '1970-01-01T00:00:00+00:00';
             $data['last_used_after']  = '1970-01-01T00:00:00+00:00';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['sort']             = 'generated';
             $data['direction']        = 'generated';
 
@@ -102,9 +102,9 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1, 'generated', 'generated');
     }
 
     /** @test */
@@ -117,7 +117,7 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Orgs\ListPatGrants::OPERATION_MATCH, (static function (array $data): array {
             $data['org']              = 'generated';
@@ -127,7 +127,7 @@ final class ListPatGrantsTest extends AsyncTestCase
             $data['last_used_before'] = '1970-01-01T00:00:00+00:00';
             $data['last_used_after']  = '1970-01-01T00:00:00+00:00';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['sort']             = 'generated';
             $data['direction']        = 'generated';
 
@@ -145,9 +145,9 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1, 'generated', 'generated');
     }
 
     /** @test */
@@ -160,7 +160,7 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Orgs\ListPatGrants::OPERATION_MATCH, (static function (array $data): array {
             $data['org']              = 'generated';
@@ -170,7 +170,7 @@ final class ListPatGrantsTest extends AsyncTestCase
             $data['last_used_before'] = '1970-01-01T00:00:00+00:00';
             $data['last_used_after']  = '1970-01-01T00:00:00+00:00';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['sort']             = 'generated';
             $data['direction']        = 'generated';
 
@@ -188,8 +188,8 @@ final class ListPatGrantsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=4&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/personal-access-tokens?owner=&repository=generated&permission=generated&last_used_before=1970-01-01T00:00:00+00:00&last_used_after=1970-01-01T00:00:00+00:00&per_page=8&page=1&sort=generated&direction=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4, 'generated', 'generated');
+        $result = $client->operations()->orgs()->listPatGrants('generated', null, 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1, 'generated', 'generated');
     }
 }

@@ -49,7 +49,7 @@ final class Projects
         return $operator->call($arguments['project_id']);
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForOrg(array $params): iterable
     {
         $matched   = true;
@@ -107,7 +107,7 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
-    /** @return (iterable<Schema\SimpleUser> | array{code: int}) */
+    /** @return (Observable<Schema\SimpleUser> | array{code: int}) */
     public function listCollaborators(array $params): iterable
     {
         $matched   = true;
@@ -145,7 +145,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return (iterable<Schema\ProjectColumn> | array{code: int}) */
+    /** @return (Observable<Schema\ProjectColumn> | array{code: int}) */
     public function listColumns(array $params): iterable
     {
         $matched   = true;
@@ -177,7 +177,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForUser(array $params): iterable
     {
         $matched   = true;
@@ -235,7 +235,7 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
-    /** @return (iterable<Schema\ProjectCard> | array{code: int}) */
+    /** @return (Observable<Schema\ProjectCard> | array{code: int}) */
     public function listCards(array $params): iterable
     {
         $matched   = true;
@@ -273,7 +273,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForRepo(array $params): iterable
     {
         $matched   = true;

@@ -35,11 +35,11 @@ final class Eight
                                     if ($pathChunks[7] === '{archive_format}') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}') {
                                             $matched = true;
-                                            if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
+                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Get\Actions::class]->downloadArtifactStreaming($params);
+                                            return $this->router[Router\Stream\Actions::class]->DownloadArtifactStreaming($params);
                                         }
                                     }
                                 }
@@ -48,11 +48,11 @@ final class Eight
                                     if ($pathChunks[7] === 'logs') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/jobs/{job_id}/logs') {
                                             $matched = true;
-                                            if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
+                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Get\Actions::class]->downloadJobLogsForWorkflowRunStreaming($params);
+                                            return $this->router[Router\Stream\Actions::class]->DownloadJobLogsForWorkflowRunStreaming($params);
                                         }
                                     }
                                 }
@@ -61,11 +61,11 @@ final class Eight
                                     if ($pathChunks[7] === 'logs') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/logs') {
                                             $matched = true;
-                                            if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
+                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Get\Actions::class]->downloadWorkflowRunLogsStreaming($params);
+                                            return $this->router[Router\Stream\Actions::class]->DownloadWorkflowRunLogsStreaming($params);
                                         }
                                     }
                                 }

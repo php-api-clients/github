@@ -31,13 +31,13 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=1&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetRepoRulesets::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
             $data['repo']             = 'generated';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['includes_parents'] = false;
 
             return $data;
@@ -54,9 +54,9 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=1&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 4, false);
+        $result = $client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 1, false);
     }
 
     /** @test */
@@ -69,13 +69,13 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=1&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetRepoRulesets::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
             $data['repo']             = 'generated';
             $data['per_page']         = 8;
-            $data['page']             = 4;
+            $data['page']             = 1;
             $data['includes_parents'] = false;
 
             return $data;
@@ -92,8 +92,8 @@ final class GetRepoRulesetsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=4&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/rulesets?per_page=8&page=1&includes_parents=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 4, false);
+        $result = $client->operations()->repos()->getRepoRulesets('generated', 'generated', 8, 1, false);
     }
 }

@@ -31,6 +31,15 @@ final class Projects
         return $this->operator[Operator\Projects\ListForOrg::class]->call($org, $state, $perPage, $page);
     }
 
+    public function listForOrgListing(string $org, string $state, int $perPage, int $page): Schema\Project
+    {
+        if (array_key_exists(Operator\Projects\ListForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListForOrgListing::class] = new Operator\Projects\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects());
+        }
+
+        return $this->operator[Operator\Projects\ListForOrgListing::class]->call($org, $state, $perPage, $page);
+    }
+
     public function createForOrg(string $org, array $params): Schema\Project
     {
         if (array_key_exists(Operator\Projects\CreateForOrg::class, $this->operator) === false) {
@@ -112,6 +121,15 @@ final class Projects
         return $this->operator[Operator\Projects\ListCards::class]->call($columnId, $archivedState, $perPage, $page);
     }
 
+    public function listCardsListing(int $columnId, string $archivedState, int $perPage, int $page): Schema\ProjectCard
+    {
+        if (array_key_exists(Operator\Projects\ListCardsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListCardsListing::class] = new Operator\Projects\ListCardsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards());
+        }
+
+        return $this->operator[Operator\Projects\ListCardsListing::class]->call($columnId, $archivedState, $perPage, $page);
+    }
+
     public function createCard(int $columnId, array $params): Schema\ProjectCard
     {
         if (array_key_exists(Operator\Projects\CreateCard::class, $this->operator) === false) {
@@ -166,6 +184,15 @@ final class Projects
         return $this->operator[Operator\Projects\ListCollaborators::class]->call($projectId, $affiliation, $perPage, $page);
     }
 
+    public function listCollaboratorsListing(int $projectId, string $affiliation, int $perPage, int $page): Schema\SimpleUser
+    {
+        if (array_key_exists(Operator\Projects\ListCollaboratorsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListCollaboratorsListing::class] = new Operator\Projects\ListCollaboratorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators());
+        }
+
+        return $this->operator[Operator\Projects\ListCollaboratorsListing::class]->call($projectId, $affiliation, $perPage, $page);
+    }
+
     public function addCollaborator(int $projectId, string $username, array $params): ResponseInterface
     {
         if (array_key_exists(Operator\Projects\AddCollaborator::class, $this->operator) === false) {
@@ -202,6 +229,15 @@ final class Projects
         return $this->operator[Operator\Projects\ListColumns::class]->call($projectId, $perPage, $page);
     }
 
+    public function listColumnsListing(int $projectId, int $perPage, int $page): Schema\ProjectColumn
+    {
+        if (array_key_exists(Operator\Projects\ListColumnsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListColumnsListing::class] = new Operator\Projects\ListColumnsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns());
+        }
+
+        return $this->operator[Operator\Projects\ListColumnsListing::class]->call($projectId, $perPage, $page);
+    }
+
     public function createColumn(int $projectId, array $params): Schema\ProjectColumn
     {
         if (array_key_exists(Operator\Projects\CreateColumn::class, $this->operator) === false) {
@@ -218,6 +254,15 @@ final class Projects
         }
 
         return $this->operator[Operator\Projects\ListForRepo::class]->call($owner, $repo, $state, $perPage, $page);
+    }
+
+    public function listForRepoListing(string $owner, string $repo, string $state, int $perPage, int $page): Schema\Project
+    {
+        if (array_key_exists(Operator\Projects\ListForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListForRepoListing::class] = new Operator\Projects\ListForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects());
+        }
+
+        return $this->operator[Operator\Projects\ListForRepoListing::class]->call($owner, $repo, $state, $perPage, $page);
     }
 
     public function createForRepo(string $owner, string $repo, array $params): Schema\Project
@@ -245,5 +290,14 @@ final class Projects
         }
 
         return $this->operator[Operator\Projects\ListForUser::class]->call($username, $state, $perPage, $page);
+    }
+
+    public function listForUserListing(string $username, string $state, int $perPage, int $page): Schema\Project
+    {
+        if (array_key_exists(Operator\Projects\ListForUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Projects\ListForUserListing::class] = new Operator\Projects\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Projects());
+        }
+
+        return $this->operator[Operator\Projects\ListForUserListing::class]->call($username, $state, $perPage, $page);
     }
 }

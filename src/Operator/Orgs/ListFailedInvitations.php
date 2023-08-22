@@ -26,7 +26,7 @@ final readonly class ListFailedInvitations
     {
     }
 
-    /** @return iterable<Schema\OrganizationInvitation> */
+    /** @return Observable<Schema\OrganizationInvitation> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListFailedInvitations($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

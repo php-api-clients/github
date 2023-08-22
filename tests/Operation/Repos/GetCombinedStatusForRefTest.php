@@ -30,14 +30,14 @@ final class GetCombinedStatusForRefTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetCombinedStatusForRef::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']    = 'generated';
             $data['repo']     = 'generated';
             $data['ref']      = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -52,9 +52,9 @@ final class GetCombinedStatusForRefTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getCombinedStatusForRef('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->repos()->getCombinedStatusForRef('generated', 'generated', 'generated', 8, 1);
     }
 
     /** @test */
@@ -67,14 +67,14 @@ final class GetCombinedStatusForRefTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetCombinedStatusForRef::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']    = 'generated';
             $data['repo']     = 'generated';
             $data['ref']      = 'generated';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -90,8 +90,8 @@ final class GetCombinedStatusForRefTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits/generated/status?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getCombinedStatusForRef('generated', 'generated', 'generated', 8, 4);
+        $result = $client->operations()->repos()->getCombinedStatusForRef('generated', 'generated', 'generated', 8, 1);
     }
 }

@@ -26,7 +26,7 @@ final readonly class ListForTeamDiscussionLegacy
     {
     }
 
-    /** @return iterable<Schema\Reaction> */
+    /** @return Observable<Schema\Reaction> */
     public function call(int $teamId, int $discussionNumber, string $content, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\ListForTeamDiscussionLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $discussionNumber, $content, $perPage, $page);

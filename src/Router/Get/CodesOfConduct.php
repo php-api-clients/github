@@ -26,7 +26,7 @@ final class CodesOfConduct
     {
     }
 
-    /** @return (iterable<Schema\CodeOfConduct> | array{code: int}) */
+    /** @return (Observable<Schema\CodeOfConduct> | array{code: int}) */
     public function getAllCodesOfConduct(array $params): iterable
     {
         $matched = true;

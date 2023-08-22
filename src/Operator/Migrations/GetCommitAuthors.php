@@ -26,7 +26,7 @@ final readonly class GetCommitAuthors
     {
     }
 
-    /** @return iterable<Schema\PorterAuthor> */
+    /** @return Observable<Schema\PorterAuthor> */
     public function call(string $owner, string $repo, int $since): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetCommitAuthors($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $since);

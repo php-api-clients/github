@@ -26,7 +26,7 @@ final readonly class List_
     {
     }
 
-    /** @return (iterable<Schema\PullRequestSimple> | array{code: int}) */
+    /** @return (Observable<Schema\PullRequestSimple> | array{code: int}) */
     public function call(string $owner, string $repo, string $head, string $base, string $direction, string $state = 'open', string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\List_($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);

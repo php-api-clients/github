@@ -31,7 +31,7 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
@@ -43,7 +43,7 @@ final class ListCommitsTest extends AsyncTestCase
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['until']     = '1970-01-01T00:00:00+00:00';
             $data['per_page']  = 8;
-            $data['page']      = 4;
+            $data['page']      = 1;
 
             return $data;
         })([]));
@@ -59,9 +59,9 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -74,7 +74,7 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
@@ -86,7 +86,7 @@ final class ListCommitsTest extends AsyncTestCase
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['until']     = '1970-01-01T00:00:00+00:00';
             $data['per_page']  = 8;
-            $data['page']      = 4;
+            $data['page']      = 1;
 
             return $data;
         })([]));
@@ -102,9 +102,9 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -117,7 +117,7 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
@@ -129,7 +129,7 @@ final class ListCommitsTest extends AsyncTestCase
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['until']     = '1970-01-01T00:00:00+00:00';
             $data['per_page']  = 8;
-            $data['page']      = 4;
+            $data['page']      = 1;
 
             return $data;
         })([]));
@@ -145,9 +145,9 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -160,7 +160,7 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
@@ -172,7 +172,7 @@ final class ListCommitsTest extends AsyncTestCase
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['until']     = '1970-01-01T00:00:00+00:00';
             $data['per_page']  = 8;
-            $data['page']      = 4;
+            $data['page']      = 1;
 
             return $data;
         })([]));
@@ -188,9 +188,9 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -203,7 +203,7 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\ListCommits::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
@@ -215,7 +215,7 @@ final class ListCommitsTest extends AsyncTestCase
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['until']     = '1970-01-01T00:00:00+00:00';
             $data['per_page']  = 8;
-            $data['page']      = 4;
+            $data['page']      = 1;
 
             return $data;
         })([]));
@@ -231,8 +231,8 @@ final class ListCommitsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/commits?sha=generated&path=generated&author=generated&committer=generated&since=1970-01-01T00:00:00+00:00&until=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->repos()->listCommits('generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', '1970-01-01T00:00:00+00:00', 8, 1);
     }
 }

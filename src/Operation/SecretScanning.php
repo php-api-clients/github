@@ -39,6 +39,15 @@ final class SecretScanning
         return $this->operator[Operator\SecretScanning\ListAlertsForOrg::class]->call($org, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);
     }
 
+    public function listAlertsForOrgListing(string $org, string $state, string $secretType, string $resolution, string $before, string $after, string $sort, string $direction, int $page, int $perPage): Schema\OrganizationSecretScanningAlert
+    {
+        if (array_key_exists(Operator\SecretScanning\ListAlertsForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\SecretScanning\ListAlertsForOrgListing::class] = new Operator\SecretScanning\ListAlertsForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecretScanning🌀Alerts());
+        }
+
+        return $this->operator[Operator\SecretScanning\ListAlertsForOrgListing::class]->call($org, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);
+    }
+
     public function listAlertsForRepo(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $sort, string $direction, int $page, int $perPage): Schema\SecretScanningAlert
     {
         if (array_key_exists(Operator\SecretScanning\ListAlertsForRepo::class, $this->operator) === false) {
@@ -46,6 +55,15 @@ final class SecretScanning
         }
 
         return $this->operator[Operator\SecretScanning\ListAlertsForRepo::class]->call($owner, $repo, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);
+    }
+
+    public function listAlertsForRepoListing(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $sort, string $direction, int $page, int $perPage): Schema\SecretScanningAlert
+    {
+        if (array_key_exists(Operator\SecretScanning\ListAlertsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\SecretScanning\ListAlertsForRepoListing::class] = new Operator\SecretScanning\ListAlertsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts());
+        }
+
+        return $this->operator[Operator\SecretScanning\ListAlertsForRepoListing::class]->call($owner, $repo, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);
     }
 
     public function getAlert(string $owner, string $repo, int $alertNumber): Schema\SecretScanningAlert
@@ -73,5 +91,14 @@ final class SecretScanning
         }
 
         return $this->operator[Operator\SecretScanning\ListLocationsForAlert::class]->call($owner, $repo, $alertNumber, $page, $perPage);
+    }
+
+    public function listLocationsForAlertListing(string $owner, string $repo, int $alertNumber, int $page, int $perPage): Schema\SecretScanningLocation
+    {
+        if (array_key_exists(Operator\SecretScanning\ListLocationsForAlertListing::class, $this->operator) === false) {
+            $this->operator[Operator\SecretScanning\ListLocationsForAlertListing::class] = new Operator\SecretScanning\ListLocationsForAlertListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts🌀AlertNumber🌀Locations());
+        }
+
+        return $this->operator[Operator\SecretScanning\ListLocationsForAlertListing::class]->call($owner, $repo, $alertNumber, $page, $perPage);
     }
 }

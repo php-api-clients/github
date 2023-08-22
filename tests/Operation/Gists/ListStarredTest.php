@@ -31,12 +31,12 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Gists\ListStarred::OPERATION_MATCH, (static function (array $data): array {
             $data['since']    = '1970-01-01T00:00:00+00:00';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -52,9 +52,9 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -67,12 +67,12 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Gists\ListStarred::OPERATION_MATCH, (static function (array $data): array {
             $data['since']    = '1970-01-01T00:00:00+00:00';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -88,9 +88,9 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 1);
     }
 
     /** @test */
@@ -102,12 +102,12 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Gists\ListStarred::OPERATION_MATCH, (static function (array $data): array {
             $data['since']    = '1970-01-01T00:00:00+00:00';
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -122,9 +122,9 @@ final class ListStarredTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/gists/starred?since=1970-01-01T00:00:00+00:00&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 4);
+        $result = $client->operations()->gists()->listStarred('1970-01-01T00:00:00+00:00', 8, 1);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

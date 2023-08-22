@@ -26,7 +26,7 @@ final readonly class ListWebhookDeliveries
     {
     }
 
-    /** @return iterable<Schema\HookDeliveryItem> */
+    /** @return Observable<Schema\HookDeliveryItem> */
     public function call(string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId, $cursor, $redelivery, $perPage);

@@ -36,7 +36,7 @@ final class Four
                                 $this->router[Router\Put\Gists::class] = new Router\Put\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Put\Gists::class]->star($params);
+                            return $this->router[Router\Put\Gists::class]->Star($params);
                         }
                     }
                 }
@@ -49,7 +49,7 @@ final class Four
                                 $this->router[Router\Put\Interactions::class] = new Router\Put\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Put\Interactions::class]->setRestrictionsForOrg($params);
+                            return $this->router[Router\Put\Interactions::class]->SetRestrictionsForOrg($params);
                         }
                     }
                 }
@@ -62,7 +62,7 @@ final class Four
                                 $this->router[Router\Put\Users::class] = new Router\Put\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Put\Users::class]->block($params);
+                            return $this->router[Router\Put\Users::class]->Block($params);
                         }
                     }
                 } elseif ($pathChunks[2] === 'following') {
@@ -73,7 +73,7 @@ final class Four
                                 $this->router[Router\Put\Users::class] = new Router\Put\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Put\Users::class]->follow($params);
+                            return $this->router[Router\Put\Users::class]->Follow($params);
                         }
                     }
                 }

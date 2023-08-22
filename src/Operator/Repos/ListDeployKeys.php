@@ -26,7 +26,7 @@ final readonly class ListDeployKeys
     {
     }
 
-    /** @return iterable<Schema\DeployKey> */
+    /** @return Observable<Schema\DeployKey> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeployKeys($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

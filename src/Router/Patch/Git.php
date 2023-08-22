@@ -7,7 +7,6 @@ namespace ApiClients\Client\GitHub\Router\Patch;
 use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GitRef;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -26,7 +25,7 @@ final class Git
     {
     }
 
-    /** @return Schema\GitRef */
+    /** @return */
     public function updateRef(array $params): GitRef|array
     {
         $matched   = true;

@@ -41,7 +41,7 @@ final class Ten
                                                         $this->router[Router\Post\Reactions::class] = new Router\Post\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
 
-                                                    return $this->router[Router\Post\Reactions::class]->createForTeamDiscussionCommentInOrg($params);
+                                                    return $this->router[Router\Post\Reactions::class]->CreateForTeamDiscussionCommentInOrg($params);
                                                 }
                                             }
                                         }

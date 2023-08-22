@@ -31,7 +31,7 @@ final class ListCommentsForReviewTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/pulls/11/reviews/9/comments?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/pulls/11/reviews/9/comments?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Pulls\ListCommentsForReview::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']       = 'generated';
@@ -39,7 +39,7 @@ final class ListCommentsForReviewTest extends AsyncTestCase
             $data['pull_number'] = 11;
             $data['review_id']   = 9;
             $data['per_page']    = 8;
-            $data['page']        = 4;
+            $data['page']        = 1;
 
             return $data;
         })([]));
@@ -55,8 +55,8 @@ final class ListCommentsForReviewTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/pulls/11/reviews/9/comments?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/pulls/11/reviews/9/comments?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->pulls()->listCommentsForReview('generated', 'generated', 11, 9, 8, 4);
+        $result = $client->operations()->pulls()->listCommentsForReview('generated', 'generated', 11, 9, 8, 1);
     }
 }

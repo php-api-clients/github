@@ -27,7 +27,7 @@ final readonly class AddLabels
     {
     }
 
-    /** @return (iterable<Schema\Label> | Schema\BasicError) */
+    /** @return (Observable<Schema\Label> | Schema\BasicError) */
     public function call(string $owner, string $repo, int $issueNumber, array $params): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\AddLabels($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

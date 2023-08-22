@@ -26,7 +26,7 @@ final readonly class ListPublicOrgEvents
     {
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListPublicOrgEvents($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

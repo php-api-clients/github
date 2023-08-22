@@ -27,7 +27,7 @@ final class Users
     {
     }
 
-    /** @return (iterable<Schema\Email> | array{code: int}) */
+    /** @return (Observable<Schema\Email> | array{code: int}) */
     public function addEmailForAuthenticatedUser(array $params): iterable
     {
         $matched = true;
@@ -66,7 +66,7 @@ final class Users
         return $operator->call($params);
     }
 
-    /** @return (iterable<Schema\SocialAccount> | array{code: int}) */
+    /** @return (Observable<Schema\SocialAccount> | array{code: int}) */
     public function addSocialAccountForAuthenticatedUser(array $params): iterable
     {
         $matched = true;

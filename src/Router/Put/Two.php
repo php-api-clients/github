@@ -35,7 +35,7 @@ final class Two
                         $this->router[Router\Put\Activity::class] = new Router\Put\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Put\Activity::class]->markNotificationsAsRead($params);
+                    return $this->router[Router\Put\Activity::class]->MarkNotificationsAsRead($params);
                 }
             }
         }

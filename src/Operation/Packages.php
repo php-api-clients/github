@@ -40,6 +40,15 @@ final class Packages
         return $this->operator[Operator\Packages\ListPackagesForOrganization::class]->call($packageType, $org, $visibility, $page, $perPage);
     }
 
+    public function listPackagesForOrganizationListing(string $packageType, string $org, string $visibility, int $page, int $perPage): Schema\Package
+    {
+        if (array_key_exists(Operator\Packages\ListPackagesForOrganizationListing::class, $this->operator) === false) {
+            $this->operator[Operator\Packages\ListPackagesForOrganizationListing::class] = new Operator\Packages\ListPackagesForOrganizationListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages());
+        }
+
+        return $this->operator[Operator\Packages\ListPackagesForOrganizationListing::class]->call($packageType, $org, $visibility, $page, $perPage);
+    }
+
     public function getPackageForOrganization(string $packageType, string $packageName, string $org): Schema\Package
     {
         if (array_key_exists(Operator\Packages\GetPackageForOrganization::class, $this->operator) === false) {
@@ -74,6 +83,15 @@ final class Packages
         }
 
         return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrg::class]->call($packageType, $packageName, $org, $page, $perPage, $state);
+    }
+
+    public function getAllPackageVersionsForPackageOwnedByOrgListing(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): Schema\PackageVersion
+    {
+        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions());
+        }
+
+        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class]->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
     public function getPackageVersionForOrganization(string $packageType, string $packageName, string $org, int $packageVersionId): Schema\PackageVersion
@@ -121,6 +139,15 @@ final class Packages
         return $this->operator[Operator\Packages\ListPackagesForAuthenticatedUser::class]->call($packageType, $visibility, $page, $perPage);
     }
 
+    public function listPackagesForAuthenticatedUserListing(string $packageType, string $visibility, int $page, int $perPage): Schema\Package
+    {
+        if (array_key_exists(Operator\Packages\ListPackagesForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Packages\ListPackagesForAuthenticatedUserListing::class] = new Operator\Packages\ListPackagesForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages());
+        }
+
+        return $this->operator[Operator\Packages\ListPackagesForAuthenticatedUserListing::class]->call($packageType, $visibility, $page, $perPage);
+    }
+
     public function getPackageForAuthenticatedUser(string $packageType, string $packageName): Schema\Package
     {
         if (array_key_exists(Operator\Packages\GetPackageForAuthenticatedUser::class, $this->operator) === false) {
@@ -155,6 +182,15 @@ final class Packages
         }
 
         return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser::class]->call($packageType, $packageName, $page, $perPage, $state);
+    }
+
+    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(string $packageType, string $packageName, int $page, int $perPage, string $state): Schema\PackageVersion
+    {
+        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions());
+        }
+
+        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class]->call($packageType, $packageName, $page, $perPage, $state);
     }
 
     public function getPackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): Schema\PackageVersion
@@ -200,6 +236,15 @@ final class Packages
         }
 
         return $this->operator[Operator\Packages\ListPackagesForUser::class]->call($packageType, $visibility, $username, $page, $perPage);
+    }
+
+    public function listPackagesForUserListing(string $packageType, string $visibility, string $username, int $page, int $perPage): Schema\Package
+    {
+        if (array_key_exists(Operator\Packages\ListPackagesForUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Packages\ListPackagesForUserListing::class] = new Operator\Packages\ListPackagesForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages());
+        }
+
+        return $this->operator[Operator\Packages\ListPackagesForUserListing::class]->call($packageType, $visibility, $username, $page, $perPage);
     }
 
     public function getPackageForUser(string $packageType, string $packageName, string $username): Schema\Package

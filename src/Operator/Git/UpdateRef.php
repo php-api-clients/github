@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Git;
 
 use ApiClients\Client\GitHub\Hydrator;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GitRef;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -27,7 +26,7 @@ final readonly class UpdateRef
     {
     }
 
-    /** @return Schema\GitRef */
+    /** @return */
     public function call(string $owner, string $repo, string $ref, array $params): GitRef|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\UpdateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

@@ -26,7 +26,7 @@ final readonly class ListMembersLegacy
     {
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function call(int $teamId, string $role = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListMembersLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $role, $perPage, $page);

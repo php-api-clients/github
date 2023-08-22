@@ -25,7 +25,7 @@ final readonly class GetPunchCardStats
     {
     }
 
-    /** @return (iterable<int> | array{code: int}) */
+    /** @return (Observable<int> | array{code: int}) */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetPunchCardStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

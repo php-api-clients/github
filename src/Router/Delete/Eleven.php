@@ -42,7 +42,7 @@ final class Eleven
                                                             $this->router[Router\Delete\Reactions::class] = new Router\Delete\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                         }
 
-                                                        return $this->router[Router\Delete\Reactions::class]->deleteForTeamDiscussionComment($params);
+                                                        return $this->router[Router\Delete\Reactions::class]->DeleteForTeamDiscussionComment($params);
                                                     }
                                                 }
                                             }

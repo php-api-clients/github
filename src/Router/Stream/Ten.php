@@ -37,11 +37,11 @@ final class Ten
                                             if ($pathChunks[9] === 'logs') {
                                                 if ($call === 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs') {
                                                     $matched = true;
-                                                    if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                        $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
+                                                    if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
+                                                        $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
 
-                                                    return $this->router[Router\Get\Actions::class]->downloadWorkflowRunAttemptLogsStreaming($params);
+                                                    return $this->router[Router\Stream\Actions::class]->DownloadWorkflowRunAttemptLogsStreaming($params);
                                                 }
                                             }
                                         }

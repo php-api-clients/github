@@ -172,7 +172,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return (iterable<Schema\Label> | Schema\BasicError) */
+    /** @return (Observable<Schema\Label> | Schema\BasicError) */
     public function addLabels(array $params): iterable|BasicError
     {
         $matched   = true;

@@ -31,6 +31,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListForOrg::class]->call($org, $direction, $type, $sort, $perPage, $page);
     }
 
+    public function listForOrgListing(string $org, string $direction, string $type, string $sort, int $perPage, int $page): Schema\MinimalRepository
+    {
+        if (array_key_exists(Operator\Repos\ListForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListForOrgListing::class] = new Operator\Repos\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Repos());
+        }
+
+        return $this->operator[Operator\Repos\ListForOrgListing::class]->call($org, $direction, $type, $sort, $perPage, $page);
+    }
+
     public function createInOrg(string $org, array $params): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\CreateInOrg::class, $this->operator) === false) {
@@ -47,6 +56,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\GetOrgRulesets::class]->call($org, $perPage, $page);
+    }
+
+    public function getOrgRulesetsListing(string $org, int $perPage, int $page): Schema\RepositoryRuleset
+    {
+        if (array_key_exists(Operator\Repos\GetOrgRulesetsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\GetOrgRulesetsListing::class] = new Operator\Repos\GetOrgRulesetsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets());
+        }
+
+        return $this->operator[Operator\Repos\GetOrgRulesetsListing::class]->call($org, $perPage, $page);
     }
 
     public function createOrgRuleset(string $org, array $params): Schema\RepositoryRuleset
@@ -191,6 +209,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListBranches::class]->call($owner, $repo, $protected, $perPage, $page);
+    }
+
+    public function listBranchesListing(string $owner, string $repo, bool $protected, int $perPage, int $page): Schema\ShortBranch
+    {
+        if (array_key_exists(Operator\Repos\ListBranchesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListBranchesListing::class] = new Operator\Repos\ListBranchesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches());
+        }
+
+        return $this->operator[Operator\Repos\ListBranchesListing::class]->call($owner, $repo, $protected, $perPage, $page);
     }
 
     public function getBranch(string $owner, string $repo, string $branch): Schema\BranchWithProtection|Schema\BasicError
@@ -526,6 +553,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListCollaborators::class]->call($owner, $repo, $permission, $affiliation, $perPage, $page);
     }
 
+    public function listCollaboratorsListing(string $owner, string $repo, string $permission, string $affiliation, int $perPage, int $page): Schema\Collaborator
+    {
+        if (array_key_exists(Operator\Repos\ListCollaboratorsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListCollaboratorsListing::class] = new Operator\Repos\ListCollaboratorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators());
+        }
+
+        return $this->operator[Operator\Repos\ListCollaboratorsListing::class]->call($owner, $repo, $permission, $affiliation, $perPage, $page);
+    }
+
     public function checkCollaborator(string $owner, string $repo, string $username): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\CheckCollaborator::class, $this->operator) === false) {
@@ -571,6 +607,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommitCommentsForRepo::class]->call($owner, $repo, $perPage, $page);
     }
 
+    public function listCommitCommentsForRepoListing(string $owner, string $repo, int $perPage, int $page): Schema\CommitComment
+    {
+        if (array_key_exists(Operator\Repos\ListCommitCommentsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListCommitCommentsForRepoListing::class] = new Operator\Repos\ListCommitCommentsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Comments());
+        }
+
+        return $this->operator[Operator\Repos\ListCommitCommentsForRepoListing::class]->call($owner, $repo, $perPage, $page);
+    }
+
     public function getCommitComment(string $owner, string $repo, int $commentId): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\GetCommitComment::class, $this->operator) === false) {
@@ -607,6 +652,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommits::class]->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
     }
 
+    public function listCommitsListing(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage, int $page): Schema\Commit
+    {
+        if (array_key_exists(Operator\Repos\ListCommitsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListCommitsListing::class] = new Operator\Repos\ListCommitsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits());
+        }
+
+        return $this->operator[Operator\Repos\ListCommitsListing::class]->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
+    }
+
     public function listBranchesForHeadCommit(string $owner, string $repo, string $commitSha): Schema\BranchShort
     {
         if (array_key_exists(Operator\Repos\ListBranchesForHeadCommit::class, $this->operator) === false) {
@@ -625,6 +679,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListCommentsForCommit::class]->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
+    public function listCommentsForCommitListing(string $owner, string $repo, string $commitSha, int $perPage, int $page): Schema\CommitComment
+    {
+        if (array_key_exists(Operator\Repos\ListCommentsForCommitListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListCommentsForCommitListing::class] = new Operator\Repos\ListCommentsForCommitListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀Comments());
+        }
+
+        return $this->operator[Operator\Repos\ListCommentsForCommitListing::class]->call($owner, $repo, $commitSha, $perPage, $page);
+    }
+
     public function createCommitComment(string $owner, string $repo, string $commitSha, array $params): Schema\CommitComment
     {
         if (array_key_exists(Operator\Repos\CreateCommitComment::class, $this->operator) === false) {
@@ -641,6 +704,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListPullRequestsAssociatedWithCommit::class]->call($owner, $repo, $commitSha, $perPage, $page);
+    }
+
+    public function listPullRequestsAssociatedWithCommitListing(string $owner, string $repo, string $commitSha, int $perPage, int $page): Schema\PullRequestSimple
+    {
+        if (array_key_exists(Operator\Repos\ListPullRequestsAssociatedWithCommitListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListPullRequestsAssociatedWithCommitListing::class] = new Operator\Repos\ListPullRequestsAssociatedWithCommitListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀CommitSha🌀Pulls());
+        }
+
+        return $this->operator[Operator\Repos\ListPullRequestsAssociatedWithCommitListing::class]->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
     public function getCommit(string $owner, string $repo, string $ref, int $page, int $perPage): Schema\Commit
@@ -668,6 +740,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListCommitStatusesForRef::class]->call($owner, $repo, $ref, $perPage, $page);
+    }
+
+    public function listCommitStatusesForRefListing(string $owner, string $repo, string $ref, int $perPage, int $page): Schema\Status|Schema\BasicError
+    {
+        if (array_key_exists(Operator\Repos\ListCommitStatusesForRefListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListCommitStatusesForRefListing::class] = new Operator\Repos\ListCommitStatusesForRefListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Commits🌀Ref🌀Statuses());
+        }
+
+        return $this->operator[Operator\Repos\ListCommitStatusesForRefListing::class]->call($owner, $repo, $ref, $perPage, $page);
     }
 
     public function getCommunityProfileMetrics(string $owner, string $repo): Schema\CommunityProfile
@@ -724,6 +805,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListContributors::class]->call($owner, $repo, $anon, $perPage, $page);
     }
 
+    public function listContributorsListing(string $owner, string $repo, string $anon, int $perPage, int $page): Schema\Contributor
+    {
+        if (array_key_exists(Operator\Repos\ListContributorsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListContributorsListing::class] = new Operator\Repos\ListContributorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Contributors());
+        }
+
+        return $this->operator[Operator\Repos\ListContributorsListing::class]->call($owner, $repo, $anon, $perPage, $page);
+    }
+
     public function listDeployments(string $owner, string $repo, string $sha, string $ref, string $task, string|null $environment, int $perPage, int $page): Schema\Deployment
     {
         if (array_key_exists(Operator\Repos\ListDeployments::class, $this->operator) === false) {
@@ -731,6 +821,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListDeployments::class]->call($owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);
+    }
+
+    public function listDeploymentsListing(string $owner, string $repo, string $sha, string $ref, string $task, string|null $environment, int $perPage, int $page): Schema\Deployment
+    {
+        if (array_key_exists(Operator\Repos\ListDeploymentsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListDeploymentsListing::class] = new Operator\Repos\ListDeploymentsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments());
+        }
+
+        return $this->operator[Operator\Repos\ListDeploymentsListing::class]->call($owner, $repo, $sha, $ref, $task, $environment, $perPage, $page);
     }
 
     public function createDeployment(string $owner, string $repo, array $params): Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted
@@ -767,6 +866,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListDeploymentStatuses::class]->call($owner, $repo, $deploymentId, $perPage, $page);
+    }
+
+    public function listDeploymentStatusesListing(string $owner, string $repo, int $deploymentId, int $perPage, int $page): Schema\DeploymentStatus
+    {
+        if (array_key_exists(Operator\Repos\ListDeploymentStatusesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListDeploymentStatusesListing::class] = new Operator\Repos\ListDeploymentStatusesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Deployments🌀DeploymentId🌀Statuses());
+        }
+
+        return $this->operator[Operator\Repos\ListDeploymentStatusesListing::class]->call($owner, $repo, $deploymentId, $perPage, $page);
     }
 
     public function createDeploymentStatus(string $owner, string $repo, int $deploymentId, array $params): Schema\DeploymentStatus
@@ -931,6 +1039,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListForks::class]->call($owner, $repo, $sort, $perPage, $page);
     }
 
+    public function listForksListing(string $owner, string $repo, string $sort, int $perPage, int $page): Schema\MinimalRepository
+    {
+        if (array_key_exists(Operator\Repos\ListForksListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListForksListing::class] = new Operator\Repos\ListForksListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Forks());
+        }
+
+        return $this->operator[Operator\Repos\ListForksListing::class]->call($owner, $repo, $sort, $perPage, $page);
+    }
+
     public function createFork(string $owner, string $repo, array $params): Schema\FullRepository
     {
         if (array_key_exists(Operator\Repos\CreateFork::class, $this->operator) === false) {
@@ -947,6 +1064,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListWebhooks::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listWebhooksListing(string $owner, string $repo, int $perPage, int $page): Schema\Hook
+    {
+        if (array_key_exists(Operator\Repos\ListWebhooksListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListWebhooksListing::class] = new Operator\Repos\ListWebhooksListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks());
+        }
+
+        return $this->operator[Operator\Repos\ListWebhooksListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function createWebhook(string $owner, string $repo, array $params): Schema\Hook
@@ -1057,6 +1183,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListInvitations::class]->call($owner, $repo, $perPage, $page);
     }
 
+    public function listInvitationsListing(string $owner, string $repo, int $perPage, int $page): Schema\RepositoryInvitation
+    {
+        if (array_key_exists(Operator\Repos\ListInvitationsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListInvitationsListing::class] = new Operator\Repos\ListInvitationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Invitations());
+        }
+
+        return $this->operator[Operator\Repos\ListInvitationsListing::class]->call($owner, $repo, $perPage, $page);
+    }
+
     public function deleteInvitation(string $owner, string $repo, int $invitationId): ResponseInterface
     {
         if (array_key_exists(Operator\Repos\DeleteInvitation::class, $this->operator) === false) {
@@ -1082,6 +1217,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListDeployKeys::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listDeployKeysListing(string $owner, string $repo, int $perPage, int $page): Schema\DeployKey
+    {
+        if (array_key_exists(Operator\Repos\ListDeployKeysListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListDeployKeysListing::class] = new Operator\Repos\ListDeployKeysListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Keys());
+        }
+
+        return $this->operator[Operator\Repos\ListDeployKeysListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function createDeployKey(string $owner, string $repo, array $params): Schema\DeployKey
@@ -1183,6 +1327,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListPagesBuilds::class]->call($owner, $repo, $perPage, $page);
     }
 
+    public function listPagesBuildsListing(string $owner, string $repo, int $perPage, int $page): Schema\PageBuild
+    {
+        if (array_key_exists(Operator\Repos\ListPagesBuildsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListPagesBuildsListing::class] = new Operator\Repos\ListPagesBuildsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds());
+        }
+
+        return $this->operator[Operator\Repos\ListPagesBuildsListing::class]->call($owner, $repo, $perPage, $page);
+    }
+
     public function requestPagesBuild(string $owner, string $repo): Schema\PageBuildStatus
     {
         if (array_key_exists(Operator\Repos\RequestPagesBuild::class, $this->operator) === false) {
@@ -1271,6 +1424,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListReleases::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listReleasesListing(string $owner, string $repo, int $perPage, int $page): Schema\Release
+    {
+        if (array_key_exists(Operator\Repos\ListReleasesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListReleasesListing::class] = new Operator\Repos\ListReleasesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases());
+        }
+
+        return $this->operator[Operator\Repos\ListReleasesListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function createRelease(string $owner, string $repo, array $params): Schema\Release
@@ -1372,6 +1534,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListReleaseAssets::class]->call($owner, $repo, $releaseId, $perPage, $page);
     }
 
+    public function listReleaseAssetsListing(string $owner, string $repo, int $releaseId, int $perPage, int $page): Schema\ReleaseAsset
+    {
+        if (array_key_exists(Operator\Repos\ListReleaseAssetsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListReleaseAssetsListing::class] = new Operator\Repos\ListReleaseAssetsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Assets());
+        }
+
+        return $this->operator[Operator\Repos\ListReleaseAssetsListing::class]->call($owner, $repo, $releaseId, $perPage, $page);
+    }
+
     public function uploadReleaseAsset(string $owner, string $repo, int $releaseId, string $name, string $label, array $params): Schema\ReleaseAsset
     {
         if (array_key_exists(Operator\Repos\UploadReleaseAsset::class, $this->operator) === false) {
@@ -1390,6 +1561,15 @@ final class Repos
         return $this->operator[Operator\Repos\GetBranchRules::class]->call($owner, $repo, $branch, $perPage, $page);
     }
 
+    public function getBranchRulesListing(string $owner, string $repo, string $branch, int $perPage, int $page): Schema\RepositoryRuleDetailed
+    {
+        if (array_key_exists(Operator\Repos\GetBranchRulesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\GetBranchRulesListing::class] = new Operator\Repos\GetBranchRulesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rules🌀Branches🌀Branch());
+        }
+
+        return $this->operator[Operator\Repos\GetBranchRulesListing::class]->call($owner, $repo, $branch, $perPage, $page);
+    }
+
     public function getRepoRulesets(string $owner, string $repo, int $perPage, int $page, bool $includesParents): Schema\RepositoryRuleset
     {
         if (array_key_exists(Operator\Repos\GetRepoRulesets::class, $this->operator) === false) {
@@ -1397,6 +1577,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\GetRepoRulesets::class]->call($owner, $repo, $perPage, $page, $includesParents);
+    }
+
+    public function getRepoRulesetsListing(string $owner, string $repo, int $perPage, int $page, bool $includesParents): Schema\RepositoryRuleset
+    {
+        if (array_key_exists(Operator\Repos\GetRepoRulesetsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\GetRepoRulesetsListing::class] = new Operator\Repos\GetRepoRulesetsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets());
+        }
+
+        return $this->operator[Operator\Repos\GetRepoRulesetsListing::class]->call($owner, $repo, $perPage, $page, $includesParents);
     }
 
     public function createRepoRuleset(string $owner, string $repo, array $params): Schema\RepositoryRuleset
@@ -1498,6 +1687,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListTags::class]->call($owner, $repo, $perPage, $page);
     }
 
+    public function listTagsListing(string $owner, string $repo, int $perPage, int $page): Schema\Tag
+    {
+        if (array_key_exists(Operator\Repos\ListTagsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListTagsListing::class] = new Operator\Repos\ListTagsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags());
+        }
+
+        return $this->operator[Operator\Repos\ListTagsListing::class]->call($owner, $repo, $perPage, $page);
+    }
+
     public function listTagProtection(string $owner, string $repo): Schema\TagProtection
     {
         if (array_key_exists(Operator\Repos\ListTagProtection::class, $this->operator) === false) {
@@ -1550,6 +1748,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListTeams::class]->call($owner, $repo, $perPage, $page);
+    }
+
+    public function listTeamsListing(string $owner, string $repo, int $perPage, int $page): Schema\Team
+    {
+        if (array_key_exists(Operator\Repos\ListTeamsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListTeamsListing::class] = new Operator\Repos\ListTeamsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Teams());
+        }
+
+        return $this->operator[Operator\Repos\ListTeamsListing::class]->call($owner, $repo, $perPage, $page);
     }
 
     public function getAllTopics(string $owner, string $repo, int $page, int $perPage): Schema\Topic
@@ -1687,6 +1894,15 @@ final class Repos
         return $this->operator[Operator\Repos\ListForAuthenticatedUser::class]->call($direction, $since, $before, $visibility, $affiliation, $type, $sort, $perPage, $page);
     }
 
+    public function listForAuthenticatedUserListing(string $direction, string $since, string $before, string $visibility, string $affiliation, string $type, string $sort, int $perPage, int $page): Schema\Repository
+    {
+        if (array_key_exists(Operator\Repos\ListForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListForAuthenticatedUserListing::class] = new Operator\Repos\ListForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Repos());
+        }
+
+        return $this->operator[Operator\Repos\ListForAuthenticatedUserListing::class]->call($direction, $since, $before, $visibility, $affiliation, $type, $sort, $perPage, $page);
+    }
+
     public function createForAuthenticatedUser(array $params): Schema\Repository
     {
         if (array_key_exists(Operator\Repos\CreateForAuthenticatedUser::class, $this->operator) === false) {
@@ -1703,6 +1919,15 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListInvitationsForAuthenticatedUser::class]->call($perPage, $page);
+    }
+
+    public function listInvitationsForAuthenticatedUserListing(int $perPage, int $page): Schema\RepositoryInvitation
+    {
+        if (array_key_exists(Operator\Repos\ListInvitationsForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListInvitationsForAuthenticatedUserListing::class] = new Operator\Repos\ListInvitationsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀RepositoryInvitations());
+        }
+
+        return $this->operator[Operator\Repos\ListInvitationsForAuthenticatedUserListing::class]->call($perPage, $page);
     }
 
     public function declineInvitationForAuthenticatedUser(int $invitationId): ResponseInterface
@@ -1730,5 +1955,14 @@ final class Repos
         }
 
         return $this->operator[Operator\Repos\ListForUser::class]->call($username, $direction, $type, $sort, $perPage, $page);
+    }
+
+    public function listForUserListing(string $username, string $direction, string $type, string $sort, int $perPage, int $page): Schema\MinimalRepository
+    {
+        if (array_key_exists(Operator\Repos\ListForUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Repos\ListForUserListing::class] = new Operator\Repos\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Repos());
+        }
+
+        return $this->operator[Operator\Repos\ListForUserListing::class]->call($username, $direction, $type, $sort, $perPage, $page);
     }
 }

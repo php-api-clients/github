@@ -26,7 +26,7 @@ final readonly class ListSocialAccountsForAuthenticatedUser
     {
     }
 
-    /** @return (iterable<Schema\SocialAccount> | array{code: int}) */
+    /** @return (Observable<Schema\SocialAccount> | array{code: int}) */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListSocialAccountsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

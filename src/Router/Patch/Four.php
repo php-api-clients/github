@@ -27,7 +27,7 @@ final class Four
     {
     }
 
-    /** @return |array{code: int}|(Schema\ProjectColumn|array{code: int})|(iterable<Schema\Email> */
+    /** @return |array{code: int}|(Schema\ProjectColumn|array{code: int})|(Observable<Schema\Email> */
     public function call(string $call, array $params, array $pathChunks): WebhookConfig|Authorization|ProjectColumn|FullRepository|BasicError|Codespace|iterable
     {
         $matched = false;
@@ -41,7 +41,7 @@ final class Four
                                 $this->router[Router\Patch\Apps::class] = new Router\Patch\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Apps::class]->updateWebhookConfigForApp($params);
+                            return $this->router[Router\Patch\Apps::class]->UpdateWebhookConfigForApp($params);
                         }
                     }
                 }
@@ -54,7 +54,7 @@ final class Four
                                 $this->router[Router\Patch\Apps::class] = new Router\Patch\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Apps::class]->resetToken($params);
+                            return $this->router[Router\Patch\Apps::class]->ResetToken($params);
                         }
                     }
                 }
@@ -67,7 +67,7 @@ final class Four
                                 $this->router[Router\Patch\Activity::class] = new Router\Patch\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Activity::class]->markThreadAsRead($params);
+                            return $this->router[Router\Patch\Activity::class]->MarkThreadAsRead($params);
                         }
                     }
                 }
@@ -80,7 +80,7 @@ final class Four
                                 $this->router[Router\Patch\Projects::class] = new Router\Patch\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Projects::class]->updateColumn($params);
+                            return $this->router[Router\Patch\Projects::class]->UpdateColumn($params);
                         }
                     }
                 }
@@ -93,7 +93,7 @@ final class Four
                                 $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Repos::class]->update($params);
+                            return $this->router[Router\Patch\Repos::class]->Update($params);
                         }
                     }
                 }
@@ -106,7 +106,7 @@ final class Four
                                 $this->router[Router\Patch\Codespaces::class] = new Router\Patch\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Codespaces::class]->updateForAuthenticatedUser($params);
+                            return $this->router[Router\Patch\Codespaces::class]->UpdateForAuthenticatedUser($params);
                         }
                     }
                 } elseif ($pathChunks[2] === 'email') {
@@ -117,7 +117,7 @@ final class Four
                                 $this->router[Router\Patch\Users::class] = new Router\Patch\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Users::class]->setPrimaryEmailVisibilityForAuthenticatedUser($params);
+                            return $this->router[Router\Patch\Users::class]->SetPrimaryEmailVisibilityForAuthenticatedUser($params);
                         }
                     }
                 } elseif ($pathChunks[2] === 'repository_invitations') {
@@ -128,7 +128,7 @@ final class Four
                                 $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                             }
 
-                            return $this->router[Router\Patch\Repos::class]->acceptInvitationForAuthenticatedUser($params);
+                            return $this->router[Router\Patch\Repos::class]->AcceptInvitationForAuthenticatedUser($params);
                         }
                     }
                 }

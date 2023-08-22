@@ -31,7 +31,7 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=4&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\CodeScanning\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']       = 'generated';
@@ -41,7 +41,7 @@ final class ListAlertsForOrgTest extends AsyncTestCase
             $data['after']     = 'generated';
             $data['state']     = 'generated';
             $data['severity']  = 'generated';
-            $data['page']      = 4;
+            $data['page']      = 1;
             $data['per_page']  = 8;
             $data['direction'] = 'generated';
             $data['sort']      = 'generated';
@@ -60,9 +60,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=4&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codeScanning()->listAlertsForOrg('generated', 'generated', null, 'generated', 'generated', 'generated', 'generated', 4, 8, 'generated', 'generated');
+        $result = $client->operations()->codeScanning()->listAlertsForOrg('generated', 'generated', null, 'generated', 'generated', 'generated', 'generated', 1, 8, 'generated', 'generated');
     }
 
     /** @test */
@@ -75,7 +75,7 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=4&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\CodeScanning\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']       = 'generated';
@@ -85,7 +85,7 @@ final class ListAlertsForOrgTest extends AsyncTestCase
             $data['after']     = 'generated';
             $data['state']     = 'generated';
             $data['severity']  = 'generated';
-            $data['page']      = 4;
+            $data['page']      = 1;
             $data['per_page']  = 8;
             $data['direction'] = 'generated';
             $data['sort']      = 'generated';
@@ -104,8 +104,8 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=4&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/code-scanning/alerts?tool_name=generated&tool_guid=&before=generated&after=generated&state=generated&severity=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codeScanning()->listAlertsForOrg('generated', 'generated', null, 'generated', 'generated', 'generated', 'generated', 4, 8, 'generated', 'generated');
+        $result = $client->operations()->codeScanning()->listAlertsForOrg('generated', 'generated', null, 'generated', 'generated', 'generated', 'generated', 1, 8, 'generated', 'generated');
     }
 }

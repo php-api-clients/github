@@ -46,7 +46,7 @@ final class Apps
         return $operator->call();
     }
 
-    /** @return (iterable<Schema\IntegrationInstallationRequest> | array{code: int}) */
+    /** @return (Observable<Schema\IntegrationInstallationRequest> | array{code: int}) */
     public function listInstallationRequestsForAuthenticatedApp(array $params): iterable
     {
         $matched   = true;
@@ -72,7 +72,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Installation> */
+    /** @return Observable<Schema\Installation> */
     public function listInstallations(array $params): iterable
     {
         $matched   = true;
@@ -156,7 +156,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MarketplaceListingPlan> */
+    /** @return Observable<Schema\MarketplaceListingPlan> */
     public function listPlans(array $params): iterable
     {
         $matched   = true;
@@ -208,7 +208,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    /** @return (Observable<Schema\UserMarketplacePurchase> | array{code: int}) */
     public function listSubscriptionsForAuthenticatedUser(array $params): iterable
     {
         $matched   = true;
@@ -247,7 +247,7 @@ final class Apps
         return $operator->call();
     }
 
-    /** @return iterable<Schema\HookDeliveryItem> */
+    /** @return Observable<Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $matched   = true;
@@ -319,7 +319,7 @@ final class Apps
         return $operator->call($arguments['account_id']);
     }
 
-    /** @return iterable<Schema\MarketplaceListingPlan> */
+    /** @return Observable<Schema\MarketplaceListingPlan> */
     public function listPlansStubbed(array $params): iterable
     {
         $matched   = true;
@@ -365,7 +365,7 @@ final class Apps
         return $operator->call($arguments['org']);
     }
 
-    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    /** @return (Observable<Schema\UserMarketplacePurchase> | array{code: int}) */
     public function listSubscriptionsForAuthenticatedUserStubbed(array $params): iterable
     {
         $matched   = true;
@@ -431,7 +431,7 @@ final class Apps
         return $operator->call($arguments['delivery_id']);
     }
 
-    /** @return iterable<Schema\MarketplacePurchase> */
+    /** @return Observable<Schema\MarketplacePurchase> */
     public function listAccountsForPlan(array $params): iterable
     {
         $matched   = true;
@@ -553,7 +553,7 @@ final class Apps
         return $operator->call($arguments['installation_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MarketplacePurchase> */
+    /** @return Observable<Schema\MarketplacePurchase> */
     public function listAccountsForPlanStubbed(array $params): iterable
     {
         $matched   = true;

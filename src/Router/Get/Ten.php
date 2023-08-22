@@ -22,7 +22,7 @@ final class Ten
     {
     }
 
-    /** @return iterable<Schema\Reaction>||array{code: int, location: string} */
+    /** @return Observable<Schema\Reaction>||array{code: int, location: string} */
     public function call(string $call, array $params, array $pathChunks): iterable|Ok
     {
         $matched = false;
@@ -42,7 +42,7 @@ final class Ten
                                                         $this->router[Router\Get\Reactions::class] = new Router\Get\Reactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
 
-                                                    return $this->router[Router\Get\Reactions::class]->listForTeamDiscussionCommentInOrg($params);
+                                                    return $this->router[Router\Get\Reactions::class]->ListForTeamDiscussionCommentInOrg($params);
                                                 }
                                             }
                                         }
@@ -67,7 +67,7 @@ final class Ten
                                                         $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
 
-                                                    return $this->router[Router\Get\Actions::class]->listJobsForWorkflowRunAttempt($params);
+                                                    return $this->router[Router\Get\Actions::class]->ListJobsForWorkflowRunAttempt($params);
                                                 }
                                             } elseif ($pathChunks[9] === 'logs') {
                                                 if ($call === 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs') {
@@ -76,7 +76,7 @@ final class Ten
                                                         $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                                     }
 
-                                                    return $this->router[Router\Get\Actions::class]->downloadWorkflowRunAttemptLogs($params);
+                                                    return $this->router[Router\Get\Actions::class]->DownloadWorkflowRunAttemptLogs($params);
                                                 }
                                             }
                                         }

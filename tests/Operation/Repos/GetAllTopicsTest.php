@@ -30,12 +30,12 @@ final class GetAllTopicsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/topics?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/topics?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetAllTopics::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']    = 'generated';
             $data['repo']     = 'generated';
-            $data['page']     = 4;
+            $data['page']     = 1;
             $data['per_page'] = 8;
 
             return $data;
@@ -51,9 +51,9 @@ final class GetAllTopicsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/topics?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/topics?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getAllTopics('generated', 'generated', 4, 8);
+        $result = $client->operations()->repos()->getAllTopics('generated', 'generated', 1, 8);
     }
 
     /** @test */
@@ -66,12 +66,12 @@ final class GetAllTopicsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/topics?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/topics?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Repos\GetAllTopics::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']    = 'generated';
             $data['repo']     = 'generated';
-            $data['page']     = 4;
+            $data['page']     = 1;
             $data['per_page'] = 8;
 
             return $data;
@@ -88,8 +88,8 @@ final class GetAllTopicsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/topics?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/topics?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getAllTopics('generated', 'generated', 4, 8);
+        $result = $client->operations()->repos()->getAllTopics('generated', 'generated', 1, 8);
     }
 }

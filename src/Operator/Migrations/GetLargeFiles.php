@@ -26,7 +26,7 @@ final readonly class GetLargeFiles
     {
     }
 
-    /** @return iterable<Schema\PorterLargeFile> */
+    /** @return Observable<Schema\PorterLargeFile> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetLargeFiles($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

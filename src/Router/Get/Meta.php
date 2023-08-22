@@ -70,7 +70,7 @@ final class Meta
         return $operator->call($arguments['s']);
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function getAllVersions(array $params): iterable
     {
         $matched = true;

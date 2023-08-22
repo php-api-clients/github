@@ -35,7 +35,7 @@ final class Three
                             $this->router[Router\Delete\Gists::class] = new Router\Delete\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Gists::class]->delete($params);
+                        return $this->router[Router\Delete\Gists::class]->Delete($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'installation') {
@@ -46,7 +46,7 @@ final class Three
                             $this->router[Router\Delete\Apps::class] = new Router\Delete\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Apps::class]->revokeInstallationAccessToken($params);
+                        return $this->router[Router\Delete\Apps::class]->RevokeInstallationAccessToken($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'orgs') {
@@ -57,7 +57,7 @@ final class Three
                             $this->router[Router\Delete\Orgs::class] = new Router\Delete\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Orgs::class]->delete($params);
+                        return $this->router[Router\Delete\Orgs::class]->Delete($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'projects') {
@@ -68,7 +68,7 @@ final class Three
                             $this->router[Router\Delete\Projects::class] = new Router\Delete\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Projects::class]->delete($params);
+                        return $this->router[Router\Delete\Projects::class]->Delete($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'teams') {
@@ -79,7 +79,7 @@ final class Three
                             $this->router[Router\Delete\Teams::class] = new Router\Delete\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Teams::class]->deleteLegacy($params);
+                        return $this->router[Router\Delete\Teams::class]->DeleteLegacy($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'user') {
@@ -90,7 +90,7 @@ final class Three
                             $this->router[Router\Delete\Users::class] = new Router\Delete\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Users::class]->deleteEmailForAuthenticatedUser($params);
+                        return $this->router[Router\Delete\Users::class]->DeleteEmailForAuthenticatedUser($params);
                     }
                 } elseif ($pathChunks[2] === 'interaction-limits') {
                     if ($call === 'DELETE /user/interaction-limits') {
@@ -99,7 +99,7 @@ final class Three
                             $this->router[Router\Delete\Interactions::class] = new Router\Delete\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Interactions::class]->removeRestrictionsForAuthenticatedUser($params);
+                        return $this->router[Router\Delete\Interactions::class]->RemoveRestrictionsForAuthenticatedUser($params);
                     }
                 } elseif ($pathChunks[2] === 'social_accounts') {
                     if ($call === 'DELETE /user/social_accounts') {
@@ -108,7 +108,7 @@ final class Three
                             $this->router[Router\Delete\Users::class] = new Router\Delete\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Delete\Users::class]->deleteSocialAccountForAuthenticatedUser($params);
+                        return $this->router[Router\Delete\Users::class]->DeleteSocialAccountForAuthenticatedUser($params);
                     }
                 }
             }

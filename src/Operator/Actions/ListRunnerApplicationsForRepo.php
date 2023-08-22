@@ -26,7 +26,7 @@ final readonly class ListRunnerApplicationsForRepo
     {
     }
 
-    /** @return iterable<Schema\RunnerApplication> */
+    /** @return Observable<Schema\RunnerApplication> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListRunnerApplicationsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -34,7 +34,7 @@ final class Three
                             $this->router[Router\Put\Interactions::class] = new Router\Put\Interactions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                         }
 
-                        return $this->router[Router\Put\Interactions::class]->setRestrictionsForAuthenticatedUser($params);
+                        return $this->router[Router\Put\Interactions::class]->SetRestrictionsForAuthenticatedUser($params);
                     }
                 }
             }

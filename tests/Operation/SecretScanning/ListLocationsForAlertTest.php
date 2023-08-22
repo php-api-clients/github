@@ -31,13 +31,13 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\SecretScanning\ListLocationsForAlert::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
             $data['repo']         = 'generated';
             $data['alert_number'] = 12;
-            $data['page']         = 4;
+            $data['page']         = 1;
             $data['per_page']     = 8;
 
             return $data;
@@ -54,9 +54,9 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8);
+        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 1, 8);
     }
 
     /** @test */
@@ -68,13 +68,13 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\SecretScanning\ListLocationsForAlert::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']        = 'generated';
             $data['repo']         = 'generated';
             $data['alert_number'] = 12;
-            $data['page']         = 4;
+            $data['page']         = 1;
             $data['per_page']     = 8;
 
             return $data;
@@ -90,9 +90,9 @@ final class ListLocationsForAlertTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/secret-scanning/alerts/12/locations?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 4, 8);
+        $result = $client->operations()->secretScanning()->listLocationsForAlert('generated', 'generated', 12, 1, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(404, $result['code']);
     }

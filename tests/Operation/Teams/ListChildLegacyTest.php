@@ -31,12 +31,12 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\ListChildLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -52,9 +52,9 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->teams()->listChildLegacy(7, 8, 4);
+        $result = $client->operations()->teams()->listChildLegacy(7, 8, 1);
     }
 
     /** @test */
@@ -67,12 +67,12 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\ListChildLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -88,9 +88,9 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->teams()->listChildLegacy(7, 8, 4);
+        $result = $client->operations()->teams()->listChildLegacy(7, 8, 1);
     }
 
     /** @test */
@@ -103,12 +103,12 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Teams\ListChildLegacy::OPERATION_MATCH, (static function (array $data): array {
             $data['team_id']  = 7;
             $data['per_page'] = 8;
-            $data['page']     = 4;
+            $data['page']     = 1;
 
             return $data;
         })([]));
@@ -124,8 +124,8 @@ final class ListChildLegacyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/teams/7/teams?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/teams/7/teams?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->teams()->listChildLegacy(7, 8, 4);
+        $result = $client->operations()->teams()->listChildLegacy(7, 8, 1);
     }
 }

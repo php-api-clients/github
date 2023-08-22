@@ -31,6 +31,15 @@ final class Migrations
         return $this->operator[Operator\Migrations\ListForOrg::class]->call($org, $exclude, $perPage, $page);
     }
 
+    public function listForOrgListing(string $org, array $exclude, int $perPage, int $page): Schema\Migration
+    {
+        if (array_key_exists(Operator\Migrations\ListForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Migrations\ListForOrgListing::class] = new Operator\Migrations\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations());
+        }
+
+        return $this->operator[Operator\Migrations\ListForOrgListing::class]->call($org, $exclude, $perPage, $page);
+    }
+
     public function startForOrg(string $org, array $params): Schema\Migration
     {
         if (array_key_exists(Operator\Migrations\StartForOrg::class, $this->operator) === false) {
@@ -92,6 +101,15 @@ final class Migrations
         }
 
         return $this->operator[Operator\Migrations\ListReposForOrg::class]->call($org, $migrationId, $perPage, $page);
+    }
+
+    public function listReposForOrgListing(string $org, int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    {
+        if (array_key_exists(Operator\Migrations\ListReposForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\Migrations\ListReposForOrgListing::class] = new Operator\Migrations\ListReposForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories());
+        }
+
+        return $this->operator[Operator\Migrations\ListReposForOrgListing::class]->call($org, $migrationId, $perPage, $page);
     }
 
     public function getImportStatus(string $owner, string $repo): Schema\Import
@@ -175,6 +193,15 @@ final class Migrations
         return $this->operator[Operator\Migrations\ListForAuthenticatedUser::class]->call($perPage, $page);
     }
 
+    public function listForAuthenticatedUserListing(int $perPage, int $page): Schema\Migration
+    {
+        if (array_key_exists(Operator\Migrations\ListForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Migrations\ListForAuthenticatedUserListing::class] = new Operator\Migrations\ListForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations());
+        }
+
+        return $this->operator[Operator\Migrations\ListForAuthenticatedUserListing::class]->call($perPage, $page);
+    }
+
     public function startForAuthenticatedUser(array $params): Schema\Migration
     {
         if (array_key_exists(Operator\Migrations\StartForAuthenticatedUser::class, $this->operator) === false) {
@@ -227,5 +254,14 @@ final class Migrations
         }
 
         return $this->operator[Operator\Migrations\ListReposForAuthenticatedUser::class]->call($migrationId, $perPage, $page);
+    }
+
+    public function listReposForAuthenticatedUserListing(int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    {
+        if (array_key_exists(Operator\Migrations\ListReposForAuthenticatedUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Migrations\ListReposForAuthenticatedUserListing::class] = new Operator\Migrations\ListReposForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repositories());
+        }
+
+        return $this->operator[Operator\Migrations\ListReposForAuthenticatedUserListing::class]->call($migrationId, $perPage, $page);
     }
 }

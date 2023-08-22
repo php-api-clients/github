@@ -30,7 +30,7 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\ListJobsForWorkflowRunAttempt::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']          = 'generated';
@@ -38,7 +38,7 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
             $data['run_id']         = 6;
             $data['attempt_number'] = 14;
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -53,9 +53,9 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->actions()->listJobsForWorkflowRunAttempt('generated', 'generated', 6, 14, 8, 4);
+        $result = $client->operations()->actions()->listJobsForWorkflowRunAttempt('generated', 'generated', 6, 14, 8, 1);
     }
 
     /** @test */
@@ -68,7 +68,7 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Actions\ListJobsForWorkflowRunAttempt::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']          = 'generated';
@@ -76,7 +76,7 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
             $data['run_id']         = 6;
             $data['attempt_number'] = 14;
             $data['per_page']       = 8;
-            $data['page']           = 4;
+            $data['page']           = 1;
 
             return $data;
         })([]));
@@ -92,8 +92,8 @@ final class ListJobsForWorkflowRunAttemptTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=4', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/actions/runs/6/attempts/14/jobs?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->actions()->listJobsForWorkflowRunAttempt('generated', 'generated', 6, 14, 8, 4);
+        $result = $client->operations()->actions()->listJobsForWorkflowRunAttempt('generated', 'generated', 6, 14, 8, 1);
     }
 }

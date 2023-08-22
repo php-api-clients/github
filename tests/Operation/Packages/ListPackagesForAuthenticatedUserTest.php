@@ -26,12 +26,12 @@ final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/user/packages?package_type=generated&visibility=generated&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/user/packages?package_type=generated&visibility=generated&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Operation\Packages\ListPackagesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['package_type'] = 'generated';
             $data['visibility']   = 'generated';
-            $data['page']         = 4;
+            $data['page']         = 1;
             $data['per_page']     = 8;
 
             return $data;
@@ -47,9 +47,9 @@ final class ListPackagesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/user/packages?package_type=generated&visibility=generated&page=4&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/user/packages?package_type=generated&visibility=generated&page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->packages()->listPackagesForAuthenticatedUser('generated', 'generated', 4, 8);
+        $result = $client->operations()->packages()->listPackagesForAuthenticatedUser('generated', 'generated', 1, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(400, $result['code']);
     }

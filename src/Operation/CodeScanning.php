@@ -30,6 +30,15 @@ final class CodeScanning
         return $this->operator[Operator\CodeScanning\ListAlertsForOrg::class]->call($org, $toolName, $toolGuid, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
+    public function listAlertsForOrgListing(string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): Schema\CodeScanningOrganizationAlertItems
+    {
+        if (array_key_exists(Operator\CodeScanning\ListAlertsForOrgListing::class, $this->operator) === false) {
+            $this->operator[Operator\CodeScanning\ListAlertsForOrgListing::class] = new Operator\CodeScanning\ListAlertsForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeScanning🌀Alerts());
+        }
+
+        return $this->operator[Operator\CodeScanning\ListAlertsForOrgListing::class]->call($org, $toolName, $toolGuid, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
+    }
+
     public function listAlertsForRepo(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): Schema\CodeScanningAlertItems
     {
         if (array_key_exists(Operator\CodeScanning\ListAlertsForRepo::class, $this->operator) === false) {
@@ -37,6 +46,15 @@ final class CodeScanning
         }
 
         return $this->operator[Operator\CodeScanning\ListAlertsForRepo::class]->call($owner, $repo, $toolName, $toolGuid, $ref, $state, $severity, $page, $perPage, $direction, $sort);
+    }
+
+    public function listAlertsForRepoListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): Schema\CodeScanningAlertItems
+    {
+        if (array_key_exists(Operator\CodeScanning\ListAlertsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\CodeScanning\ListAlertsForRepoListing::class] = new Operator\CodeScanning\ListAlertsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts());
+        }
+
+        return $this->operator[Operator\CodeScanning\ListAlertsForRepoListing::class]->call($owner, $repo, $toolName, $toolGuid, $ref, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
     public function getAlert(string $owner, string $repo, int $alertNumber): Schema\CodeScanningAlert
@@ -66,6 +84,15 @@ final class CodeScanning
         return $this->operator[Operator\CodeScanning\ListAlertInstances::class]->call($owner, $repo, $alertNumber, $ref, $page, $perPage);
     }
 
+    public function listAlertInstancesListing(string $owner, string $repo, int $alertNumber, string $ref, int $page, int $perPage): Schema\CodeScanningAlertInstance
+    {
+        if (array_key_exists(Operator\CodeScanning\ListAlertInstancesListing::class, $this->operator) === false) {
+            $this->operator[Operator\CodeScanning\ListAlertInstancesListing::class] = new Operator\CodeScanning\ListAlertInstancesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts🌀AlertNumber🌀Instances());
+        }
+
+        return $this->operator[Operator\CodeScanning\ListAlertInstancesListing::class]->call($owner, $repo, $alertNumber, $ref, $page, $perPage);
+    }
+
     public function listRecentAnalyses(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): Schema\CodeScanningAnalysis
     {
         if (array_key_exists(Operator\CodeScanning\ListRecentAnalyses::class, $this->operator) === false) {
@@ -73,6 +100,15 @@ final class CodeScanning
         }
 
         return $this->operator[Operator\CodeScanning\ListRecentAnalyses::class]->call($owner, $repo, $toolName, $toolGuid, $ref, $sarifId, $page, $perPage, $direction, $sort);
+    }
+
+    public function listRecentAnalysesListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): Schema\CodeScanningAnalysis
+    {
+        if (array_key_exists(Operator\CodeScanning\ListRecentAnalysesListing::class, $this->operator) === false) {
+            $this->operator[Operator\CodeScanning\ListRecentAnalysesListing::class] = new Operator\CodeScanning\ListRecentAnalysesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Analyses());
+        }
+
+        return $this->operator[Operator\CodeScanning\ListRecentAnalysesListing::class]->call($owner, $repo, $toolName, $toolGuid, $ref, $sarifId, $page, $perPage, $direction, $sort);
     }
 
     public function getAnalysis(string $owner, string $repo, int $analysisId): Schema\CodeScanningAnalysis|Schema\Operations\CodeScanning\GetAnalysis\Response\ApplicationJsonSarif\Ok

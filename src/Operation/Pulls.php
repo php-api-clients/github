@@ -31,6 +31,15 @@ final class Pulls
         return $this->operator[Operator\Pulls\List_::class]->call($owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);
     }
 
+    public function listListing(string $owner, string $repo, string $head, string $base, string $direction, string $state, string $sort, int $perPage, int $page): Schema\PullRequestSimple
+    {
+        if (array_key_exists(Operator\Pulls\ListListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListListing::class] = new Operator\Pulls\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls());
+        }
+
+        return $this->operator[Operator\Pulls\ListListing::class]->call($owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);
+    }
+
     public function create(string $owner, string $repo, array $params): Schema\PullRequest
     {
         if (array_key_exists(Operator\Pulls\Create::class, $this->operator) === false) {
@@ -47,6 +56,15 @@ final class Pulls
         }
 
         return $this->operator[Operator\Pulls\ListReviewCommentsForRepo::class]->call($owner, $repo, $sort, $direction, $since, $perPage, $page);
+    }
+
+    public function listReviewCommentsForRepoListing(string $owner, string $repo, string $sort, string $direction, string $since, int $perPage, int $page): Schema\PullRequestReviewComment
+    {
+        if (array_key_exists(Operator\Pulls\ListReviewCommentsForRepoListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListReviewCommentsForRepoListing::class] = new Operator\Pulls\ListReviewCommentsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀Comments());
+        }
+
+        return $this->operator[Operator\Pulls\ListReviewCommentsForRepoListing::class]->call($owner, $repo, $sort, $direction, $since, $perPage, $page);
     }
 
     public function getReviewComment(string $owner, string $repo, int $commentId): Schema\PullRequestReviewComment
@@ -103,6 +121,15 @@ final class Pulls
         return $this->operator[Operator\Pulls\ListReviewComments::class]->call($owner, $repo, $pullNumber, $direction, $since, $sort, $perPage, $page);
     }
 
+    public function listReviewCommentsListing(string $owner, string $repo, int $pullNumber, string $direction, string $since, string $sort, int $perPage, int $page): Schema\PullRequestReviewComment
+    {
+        if (array_key_exists(Operator\Pulls\ListReviewCommentsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListReviewCommentsListing::class] = new Operator\Pulls\ListReviewCommentsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Comments());
+        }
+
+        return $this->operator[Operator\Pulls\ListReviewCommentsListing::class]->call($owner, $repo, $pullNumber, $direction, $since, $sort, $perPage, $page);
+    }
+
     public function createReviewComment(string $owner, string $repo, int $pullNumber, array $params): Schema\PullRequestReviewComment
     {
         if (array_key_exists(Operator\Pulls\CreateReviewComment::class, $this->operator) === false) {
@@ -130,6 +157,15 @@ final class Pulls
         return $this->operator[Operator\Pulls\ListCommits::class]->call($owner, $repo, $pullNumber, $perPage, $page);
     }
 
+    public function listCommitsListing(string $owner, string $repo, int $pullNumber, int $perPage, int $page): Schema\Commit
+    {
+        if (array_key_exists(Operator\Pulls\ListCommitsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListCommitsListing::class] = new Operator\Pulls\ListCommitsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Commits());
+        }
+
+        return $this->operator[Operator\Pulls\ListCommitsListing::class]->call($owner, $repo, $pullNumber, $perPage, $page);
+    }
+
     public function listFiles(string $owner, string $repo, int $pullNumber, int $perPage, int $page): Schema\DiffEntry
     {
         if (array_key_exists(Operator\Pulls\ListFiles::class, $this->operator) === false) {
@@ -137,6 +173,15 @@ final class Pulls
         }
 
         return $this->operator[Operator\Pulls\ListFiles::class]->call($owner, $repo, $pullNumber, $perPage, $page);
+    }
+
+    public function listFilesListing(string $owner, string $repo, int $pullNumber, int $perPage, int $page): Schema\DiffEntry
+    {
+        if (array_key_exists(Operator\Pulls\ListFilesListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListFilesListing::class] = new Operator\Pulls\ListFilesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Files());
+        }
+
+        return $this->operator[Operator\Pulls\ListFilesListing::class]->call($owner, $repo, $pullNumber, $perPage, $page);
     }
 
     public function checkIfMerged(string $owner, string $repo, int $pullNumber): ResponseInterface
@@ -193,6 +238,15 @@ final class Pulls
         return $this->operator[Operator\Pulls\ListReviews::class]->call($owner, $repo, $pullNumber, $perPage, $page);
     }
 
+    public function listReviewsListing(string $owner, string $repo, int $pullNumber, int $perPage, int $page): Schema\PullRequestReview
+    {
+        if (array_key_exists(Operator\Pulls\ListReviewsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListReviewsListing::class] = new Operator\Pulls\ListReviewsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Reviews());
+        }
+
+        return $this->operator[Operator\Pulls\ListReviewsListing::class]->call($owner, $repo, $pullNumber, $perPage, $page);
+    }
+
     public function createReview(string $owner, string $repo, int $pullNumber, array $params): Schema\PullRequestReview
     {
         if (array_key_exists(Operator\Pulls\CreateReview::class, $this->operator) === false) {
@@ -236,6 +290,15 @@ final class Pulls
         }
 
         return $this->operator[Operator\Pulls\ListCommentsForReview::class]->call($owner, $repo, $pullNumber, $reviewId, $perPage, $page);
+    }
+
+    public function listCommentsForReviewListing(string $owner, string $repo, int $pullNumber, int $reviewId, int $perPage, int $page): Schema\ReviewComment
+    {
+        if (array_key_exists(Operator\Pulls\ListCommentsForReviewListing::class, $this->operator) === false) {
+            $this->operator[Operator\Pulls\ListCommentsForReviewListing::class] = new Operator\Pulls\ListCommentsForReviewListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Reviews🌀ReviewId🌀Comments());
+        }
+
+        return $this->operator[Operator\Pulls\ListCommentsForReviewListing::class]->call($owner, $repo, $pullNumber, $reviewId, $perPage, $page);
     }
 
     public function dismissReview(string $owner, string $repo, int $pullNumber, int $reviewId, array $params): Schema\PullRequestReview

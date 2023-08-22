@@ -25,7 +25,7 @@ final class Users
     {
     }
 
-    /** @return (iterable<Schema\Email> | array{code: int}) */
+    /** @return (Observable<Schema\Email> | array{code: int}) */
     public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params): iterable
     {
         $matched = true;

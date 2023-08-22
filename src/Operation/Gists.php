@@ -31,6 +31,15 @@ final class Gists
         return $this->operator[Operator\Gists\List_::class]->call($since, $perPage, $page);
     }
 
+    public function listListing(string $since, int $perPage, int $page): Schema\BaseGist
+    {
+        if (array_key_exists(Operator\Gists\ListListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListListing::class] = new Operator\Gists\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
+        }
+
+        return $this->operator[Operator\Gists\ListListing::class]->call($since, $perPage, $page);
+    }
+
     public function create(array $params): Schema\GistSimple
     {
         if (array_key_exists(Operator\Gists\Create::class, $this->operator) === false) {
@@ -49,6 +58,15 @@ final class Gists
         return $this->operator[Operator\Gists\ListPublic::class]->call($since, $perPage, $page);
     }
 
+    public function listPublicListing(string $since, int $perPage, int $page): Schema\BaseGist
+    {
+        if (array_key_exists(Operator\Gists\ListPublicListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListPublicListing::class] = new Operator\Gists\ListPublicListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_());
+        }
+
+        return $this->operator[Operator\Gists\ListPublicListing::class]->call($since, $perPage, $page);
+    }
+
     public function listStarred(string $since, int $perPage, int $page): Schema\BaseGist
     {
         if (array_key_exists(Operator\Gists\ListStarred::class, $this->operator) === false) {
@@ -56,6 +74,15 @@ final class Gists
         }
 
         return $this->operator[Operator\Gists\ListStarred::class]->call($since, $perPage, $page);
+    }
+
+    public function listStarredListing(string $since, int $perPage, int $page): Schema\BaseGist
+    {
+        if (array_key_exists(Operator\Gists\ListStarredListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListStarredListing::class] = new Operator\Gists\ListStarredListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred());
+        }
+
+        return $this->operator[Operator\Gists\ListStarredListing::class]->call($since, $perPage, $page);
     }
 
     public function get(string $gistId): Schema\GistSimple
@@ -92,6 +119,15 @@ final class Gists
         }
 
         return $this->operator[Operator\Gists\ListComments::class]->call($gistId, $perPage, $page);
+    }
+
+    public function listCommentsListing(string $gistId, int $perPage, int $page): Schema\GistComment
+    {
+        if (array_key_exists(Operator\Gists\ListCommentsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListCommentsListing::class] = new Operator\Gists\ListCommentsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments());
+        }
+
+        return $this->operator[Operator\Gists\ListCommentsListing::class]->call($gistId, $perPage, $page);
     }
 
     public function createComment(string $gistId, array $params): Schema\GistComment
@@ -139,6 +175,15 @@ final class Gists
         return $this->operator[Operator\Gists\ListCommits::class]->call($gistId, $perPage, $page);
     }
 
+    public function listCommitsListing(string $gistId, int $perPage, int $page): Schema\GistCommit
+    {
+        if (array_key_exists(Operator\Gists\ListCommitsListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListCommitsListing::class] = new Operator\Gists\ListCommitsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Commits());
+        }
+
+        return $this->operator[Operator\Gists\ListCommitsListing::class]->call($gistId, $perPage, $page);
+    }
+
     public function listForks(string $gistId, int $perPage, int $page): Schema\GistSimple
     {
         if (array_key_exists(Operator\Gists\ListForks::class, $this->operator) === false) {
@@ -146,6 +191,15 @@ final class Gists
         }
 
         return $this->operator[Operator\Gists\ListForks::class]->call($gistId, $perPage, $page);
+    }
+
+    public function listForksListing(string $gistId, int $perPage, int $page): Schema\GistSimple
+    {
+        if (array_key_exists(Operator\Gists\ListForksListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListForksListing::class] = new Operator\Gists\ListForksListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Forks());
+        }
+
+        return $this->operator[Operator\Gists\ListForksListing::class]->call($gistId, $perPage, $page);
     }
 
     public function fork(string $gistId): Schema\BaseGist
@@ -200,5 +254,14 @@ final class Gists
         }
 
         return $this->operator[Operator\Gists\ListForUser::class]->call($username, $since, $perPage, $page);
+    }
+
+    public function listForUserListing(string $username, string $since, int $perPage, int $page): Schema\BaseGist
+    {
+        if (array_key_exists(Operator\Gists\ListForUserListing::class, $this->operator) === false) {
+            $this->operator[Operator\Gists\ListForUserListing::class] = new Operator\Gists\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Gists());
+        }
+
+        return $this->operator[Operator\Gists\ListForUserListing::class]->call($username, $since, $perPage, $page);
     }
 }

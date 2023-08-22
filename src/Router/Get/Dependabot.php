@@ -31,7 +31,7 @@ final class Dependabot
     {
     }
 
-    /** @return (iterable<Schema\DependabotAlertWithRepository> | array{code: int}) */
+    /** @return (Observable<Schema\DependabotAlertWithRepository> | array{code: int}) */
     public function listAlertsForEnterprise(array $params): iterable
     {
         $matched   = true;
@@ -123,7 +123,7 @@ final class Dependabot
         return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return (iterable<Schema\DependabotAlertWithRepository> | array{code: int}) */
+    /** @return (Observable<Schema\DependabotAlertWithRepository> | array{code: int}) */
     public function listAlertsForOrg(array $params): iterable
     {
         $matched   = true;
@@ -293,7 +293,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return (iterable<Schema\DependabotAlert> | array{code: int}) */
+    /** @return (Observable<Schema\DependabotAlert> | array{code: int}) */
     public function listAlertsForRepo(array $params): iterable
     {
         $matched   = true;

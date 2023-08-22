@@ -35,7 +35,7 @@ final class Two
                         $this->router[Router\Patch\Users::class] = new Router\Patch\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                     }
 
-                    return $this->router[Router\Patch\Users::class]->updateAuthenticated($params);
+                    return $this->router[Router\Patch\Users::class]->UpdateAuthenticated($params);
                 }
             }
         }

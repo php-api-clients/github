@@ -40,7 +40,7 @@ final class Eight
                                                 $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Patch\Repos::class]->updatePullRequestReviewProtection($params);
+                                            return $this->router[Router\Patch\Repos::class]->UpdatePullRequestReviewProtection($params);
                                         }
                                     } elseif ($pathChunks[7] === 'required_status_checks') {
                                         if ($call === 'PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks') {
@@ -49,7 +49,7 @@ final class Eight
                                                 $this->router[Router\Patch\Repos::class] = new Router\Patch\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
                                             }
 
-                                            return $this->router[Router\Patch\Repos::class]->updateStatusCheckProtection($params);
+                                            return $this->router[Router\Patch\Repos::class]->UpdateStatusCheckProtection($params);
                                         }
                                     }
                                 }
