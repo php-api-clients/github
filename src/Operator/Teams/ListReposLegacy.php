@@ -19,14 +19,12 @@ final readonly class ListReposLegacy
 {
     public const OPERATION_ID    = 'teams/list-repos-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Repos $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListReposLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

@@ -19,14 +19,12 @@ final readonly class ListReviewComments
 {
     public const OPERATION_ID    = 'pulls/list-review-comments';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/{pull_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Comments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\PullRequestReviewComment> */
+    /** @return iterable<Schema\PullRequestReviewComment> */
     public function call(string $owner, string $repo, int $pullNumber, string $direction, string $since, string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\ListReviewComments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $direction, $since, $sort, $perPage, $page);

@@ -19,14 +19,12 @@ final readonly class ListSshSigningKeysForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'users/list-ssh-signing-keys-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/ssh_signing_keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/ssh_signing_keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SshSigningKeys $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\SshSigningKey> | array{code: int}) */
+    /** @return iterable<Schema\SshSigningKey>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListSshSigningKeysForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

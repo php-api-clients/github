@@ -16,14 +16,12 @@ final readonly class RevokeInstallationAccessToken
 {
     public const OPERATION_ID    = 'apps/revoke-installation-access-token';
     public const OPERATION_MATCH = 'DELETE /installation/token';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/installation/token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\RevokeInstallationAccessToken();

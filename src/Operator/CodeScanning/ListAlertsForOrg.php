@@ -19,14 +19,12 @@ final readonly class ListAlertsForOrg
 {
     public const OPERATION_ID    = 'code-scanning/list-alerts-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/code-scanning/alerts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/code-scanning/alerts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\CodeScanning\Alerts $hydrator)
     {
     }
 
-    /** @return Observable<Schema\CodeScanningOrganizationAlertItems> */
+    /** @return iterable<Schema\CodeScanningOrganizationAlertItems> */
     public function call(string $org, string $toolName, string|null $toolGuid, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\ListAlertsForOrg($this->responseSchemaValidator, $this->hydrator, $org, $toolName, $toolGuid, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);

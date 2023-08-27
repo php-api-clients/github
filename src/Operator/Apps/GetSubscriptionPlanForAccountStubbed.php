@@ -20,14 +20,12 @@ final readonly class GetSubscriptionPlanForAccountStubbed
 {
     public const OPERATION_ID    = 'apps/get-subscription-plan-for-account-stubbed';
     public const OPERATION_MATCH = 'GET /marketplace_listing/stubbed/accounts/{account_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/stubbed/accounts/{account_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\MarketplaceListing\Stubbed\Accounts\AccountId $hydrator)
     {
     }
 
-    /** @return (Schema\MarketplacePurchase | array{code: int}) */
+    /** @return Schema\MarketplacePurchase|array{code:int} */
     public function call(int $accountId): MarketplacePurchase|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\GetSubscriptionPlanForAccountStubbed($this->responseSchemaValidator, $this->hydrator, $accountId);

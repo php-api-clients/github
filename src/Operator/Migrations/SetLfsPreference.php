@@ -19,8 +19,6 @@ final readonly class SetLfsPreference
 {
     public const OPERATION_ID    = 'migrations/set-lfs-preference';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/import/lfs';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/import/lfs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Import\Lfs $hydrator)
     {

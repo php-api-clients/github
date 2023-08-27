@@ -18,14 +18,12 @@ final readonly class DownloadArchiveForOrg
 {
     public const OPERATION_ID    = 'migrations/download-archive-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}/archive';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/archive';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $migrationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\DownloadArchiveForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId);

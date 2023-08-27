@@ -19,8 +19,6 @@ final readonly class ListMembersLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-members-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/members';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/members';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Members $hydrator)
     {

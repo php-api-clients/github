@@ -19,8 +19,6 @@ final readonly class GetOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/get-org-secret';
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets/{secret_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName $hydrator)
     {

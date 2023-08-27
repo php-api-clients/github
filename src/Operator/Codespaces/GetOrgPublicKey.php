@@ -19,8 +19,6 @@ final readonly class GetOrgPublicKey
 {
     public const OPERATION_ID    = 'codespaces/get-org-public-key';
     public const OPERATION_MATCH = 'GET /orgs/{org}/codespaces/secrets/public-key';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/codespaces/secrets/public-key';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces\Secrets\PublicKey $hydrator)
     {

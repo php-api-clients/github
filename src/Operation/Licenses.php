@@ -4,56 +4,38 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\License;
+use ApiClients\Client\GitHub\Schema\LicenseContent;
 
 final class Licenses
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): Schema\LicenseSimple
+    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
+    public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Licenses\GetAllCommonlyUsed::class, $this->operator) === false) {
-            $this->operator[Operator\Licenses\GetAllCommonlyUsed::class] = new Operator\Licenses\GetAllCommonlyUsed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses());
-        }
-
-        return $this->operator[Operator\Licenses\GetAllCommonlyUsed::class]->call($featured, $perPage, $page);
+        return $this->operators->licenses👷GetAllCommonlyUsed()->call($featured, $perPage, $page);
     }
 
-    public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): Schema\LicenseSimple
+    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
+    public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Licenses\GetAllCommonlyUsedListing::class, $this->operator) === false) {
-            $this->operator[Operator\Licenses\GetAllCommonlyUsedListing::class] = new Operator\Licenses\GetAllCommonlyUsedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses());
-        }
-
-        return $this->operator[Operator\Licenses\GetAllCommonlyUsedListing::class]->call($featured, $perPage, $page);
+        return $this->operators->licenses👷GetAllCommonlyUsedListing()->call($featured, $perPage, $page);
     }
 
-    public function get(string $license): Schema\License
+    /** @return Schema\License|array{code:int} */
+    public function get(string $license): License|array
     {
-        if (array_key_exists(Operator\Licenses\Get::class, $this->operator) === false) {
-            $this->operator[Operator\Licenses\Get::class] = new Operator\Licenses\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses🌀License());
-        }
-
-        return $this->operator[Operator\Licenses\Get::class]->call($license);
+        return $this->operators->licenses👷Get()->call($license);
     }
 
-    public function getForRepo(string $owner, string $repo): Schema\LicenseContent
+    /** @return */
+    public function getForRepo(string $owner, string $repo): LicenseContent|array
     {
-        if (array_key_exists(Operator\Licenses\GetForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Licenses\GetForRepo::class] = new Operator\Licenses\GetForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License());
-        }
-
-        return $this->operator[Operator\Licenses\GetForRepo::class]->call($owner, $repo);
+        return $this->operators->licenses👷GetForRepo()->call($owner, $repo);
     }
 }

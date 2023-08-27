@@ -19,8 +19,6 @@ final readonly class ListReviewsListing
 {
     public const OPERATION_ID    = 'pulls/list-reviews';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/pulls/{pull_number}/reviews';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews $hydrator)
     {

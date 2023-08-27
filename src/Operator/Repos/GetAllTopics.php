@@ -19,8 +19,6 @@ final readonly class GetAllTopics
 {
     public const OPERATION_ID    = 'repos/get-all-topics';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/topics';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/topics';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Topics $hydrator)
     {

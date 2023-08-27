@@ -4,83 +4,59 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
+use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
 
 final class Copilot
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function getCopilotOrganizationDetails(string $org): Schema\CopilotOrganizationDetails
+    /** @return */
+    public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails|array
     {
-        if (array_key_exists(Operator\Copilot\GetCopilotOrganizationDetails::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\GetCopilotOrganizationDetails::class] = new Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing());
-        }
-
-        return $this->operator[Operator\Copilot\GetCopilotOrganizationDetails::class]->call($org);
+        return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
-    public function listCopilotSeats(string $org, int $page, int $perPage): Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
+    /** @return */
+    public function listCopilotSeats(string $org, int $page, int $perPage): Ok|array
     {
-        if (array_key_exists(Operator\Copilot\ListCopilotSeats::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\ListCopilotSeats::class] = new Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀Seats());
-        }
-
-        return $this->operator[Operator\Copilot\ListCopilotSeats::class]->call($org, $page, $perPage);
+        return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);
     }
 
-    public function addCopilotForBusinessSeatsForTeams(string $org, array $params): Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created
+    /** @return Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|array{code:int} */
+    public function addCopilotForBusinessSeatsForTeams(string $org, array $params): Created|array
     {
-        if (array_key_exists(Operator\Copilot\AddCopilotForBusinessSeatsForTeams::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\AddCopilotForBusinessSeatsForTeams::class] = new Operator\Copilot\AddCopilotForBusinessSeatsForTeams($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedTeams());
-        }
-
-        return $this->operator[Operator\Copilot\AddCopilotForBusinessSeatsForTeams::class]->call($org, $params);
+        return $this->operators->copilot👷AddCopilotForBusinessSeatsForTeams()->call($org, $params);
     }
 
-    public function cancelCopilotSeatAssignmentForTeams(string $org, array $params): Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|array{code:int} */
+    public function cancelCopilotSeatAssignmentForTeams(string $org, array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Copilot\CancelCopilotSeatAssignmentForTeams::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\CancelCopilotSeatAssignmentForTeams::class] = new Operator\Copilot\CancelCopilotSeatAssignmentForTeams($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedTeams());
-        }
-
-        return $this->operator[Operator\Copilot\CancelCopilotSeatAssignmentForTeams::class]->call($org, $params);
+        return $this->operators->copilot👷CancelCopilotSeatAssignmentForTeams()->call($org, $params);
     }
 
-    public function addCopilotForBusinessSeatsForUsers(string $org, array $params): Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created
+    /** @return Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|array{code:int} */
+    public function addCopilotForBusinessSeatsForUsers(string $org, array $params): Json|array
     {
-        if (array_key_exists(Operator\Copilot\AddCopilotForBusinessSeatsForUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\AddCopilotForBusinessSeatsForUsers::class] = new Operator\Copilot\AddCopilotForBusinessSeatsForUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers());
-        }
-
-        return $this->operator[Operator\Copilot\AddCopilotForBusinessSeatsForUsers::class]->call($org, $params);
+        return $this->operators->copilot👷AddCopilotForBusinessSeatsForUsers()->call($org, $params);
     }
 
-    public function cancelCopilotSeatAssignmentForUsers(string $org, array $params): Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
+    public function cancelCopilotSeatAssignmentForUsers(string $org, array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Copilot\CancelCopilotSeatAssignmentForUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\CancelCopilotSeatAssignmentForUsers::class] = new Operator\Copilot\CancelCopilotSeatAssignmentForUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers());
-        }
-
-        return $this->operator[Operator\Copilot\CancelCopilotSeatAssignmentForUsers::class]->call($org, $params);
+        return $this->operators->copilot👷CancelCopilotSeatAssignmentForUsers()->call($org, $params);
     }
 
-    public function getCopilotSeatAssignmentDetailsForUser(string $org, string $username): Schema\CopilotSeatDetails
+    /** @return Schema\CopilotSeatDetails|array{code:int} */
+    public function getCopilotSeatAssignmentDetailsForUser(string $org, string $username): CopilotSeatDetails|array
     {
-        if (array_key_exists(Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser::class] = new Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
-        }
-
-        return $this->operator[Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser::class]->call($org, $username);
+        return $this->operators->copilot👷GetCopilotSeatAssignmentDetailsForUser()->call($org, $username);
     }
 }

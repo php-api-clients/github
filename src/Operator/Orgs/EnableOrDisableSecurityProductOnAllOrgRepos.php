@@ -17,14 +17,12 @@ final readonly class EnableOrDisableSecurityProductOnAllOrgRepos
 {
     public const OPERATION_ID    = 'orgs/enable-or-disable-security-product-on-all-org-repos';
     public const OPERATION_MATCH = 'POST /orgs/{org}/{security_product}/{enablement}';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/{security_product}/{enablement}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $securityProduct, string $enablement, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->requestSchemaValidator, $org, $securityProduct, $enablement);

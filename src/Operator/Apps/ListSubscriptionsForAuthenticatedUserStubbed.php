@@ -19,14 +19,12 @@ final readonly class ListSubscriptionsForAuthenticatedUserStubbed
 {
     public const OPERATION_ID    = 'apps/list-subscriptions-for-authenticated-user-stubbed';
     public const OPERATION_MATCH = 'GET /user/marketplace_purchases/stubbed';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/marketplace_purchases/stubbed';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\MarketplacePurchases\Stubbed $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListSubscriptionsForAuthenticatedUserStubbed($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

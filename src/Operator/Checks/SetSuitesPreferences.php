@@ -19,8 +19,6 @@ final readonly class SetSuitesPreferences
 {
     public const OPERATION_ID    = 'checks/set-suites-preferences';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/check-suites/preferences';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/check-suites/preferences';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CheckSuites\Preferences $hydrator)
     {

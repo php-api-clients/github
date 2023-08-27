@@ -18,14 +18,12 @@ final readonly class DeleteColumn
 {
     public const OPERATION_ID    = 'projects/delete-column';
     public const OPERATION_MATCH = 'DELETE /projects/columns/{column_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/projects/columns/{column_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $columnId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\DeleteColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

@@ -18,14 +18,12 @@ final readonly class DeletePullRequestReviewProtection
 {
     public const OPERATION_ID    = 'repos/delete-pull-request-review-protection';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\RequiredPullRequestReviews $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $branch): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeletePullRequestReviewProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

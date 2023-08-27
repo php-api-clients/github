@@ -20,14 +20,12 @@ final readonly class Code
 {
     public const OPERATION_ID    = 'search/code';
     public const OPERATION_MATCH = 'GET /search/code';
-    private const METHOD         = 'GET';
-    private const PATH           = '/search/code';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Search\Code $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Search\Code\Response\ApplicationJson\Ok | array{code: int}) */
+    /** @return Schema\Operations\Search\Code\Response\ApplicationJson\Ok|array{code:int} */
     public function call(string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Search\Code($this->responseSchemaValidator, $this->hydrator, $q, $sort, $order, $perPage, $page);

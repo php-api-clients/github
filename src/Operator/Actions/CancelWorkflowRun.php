@@ -19,8 +19,6 @@ final readonly class CancelWorkflowRun
 {
     public const OPERATION_ID    = 'actions/cancel-workflow-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/cancel';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Cancel $hydrator)
     {

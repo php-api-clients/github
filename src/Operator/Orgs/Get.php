@@ -19,8 +19,6 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'orgs/get';
     public const OPERATION_MATCH = 'GET /orgs/{org}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org $hydrator)
     {

@@ -20,14 +20,12 @@ final readonly class CreateForAuthenticatedUser
 {
     public const OPERATION_ID    = 'repos/create-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/repos';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Repos $hydrator)
     {
     }
 
-    /** @return (Schema\Repository | array{code: int}) */
+    /** @return Schema\Repository|array{code:int} */
     public function call(array $params): Repository|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

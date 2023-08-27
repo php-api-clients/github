@@ -64,7 +64,7 @@ final class ListMembershipsForAuthenticatedUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgMembership::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\OrgMembership::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\OrgMembership::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -19,8 +19,6 @@ final readonly class ReRunWorkflowFailedJobs
 {
     public const OPERATION_ID    = 'actions/re-run-workflow-failed-jobs';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\RerunFailedJobs $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class ListMembersListing
 {
     public const OPERATION_ID    = 'orgs/list-members';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/members';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/members';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Members $hydrator)
     {

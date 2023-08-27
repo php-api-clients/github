@@ -19,8 +19,6 @@ final readonly class ListSecretsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/list-secrets-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/secrets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\Secrets $hydrator)
     {

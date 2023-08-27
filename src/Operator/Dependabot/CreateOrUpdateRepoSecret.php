@@ -20,14 +20,12 @@ final readonly class CreateOrUpdateRepoSecret
 {
     public const OPERATION_ID    = 'dependabot/create-or-update-repo-secret';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/dependabot/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Dependabot\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function call(string $owner, string $repo, string $secretName, array $params): EmptyObject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\CreateOrUpdateRepoSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $secretName);

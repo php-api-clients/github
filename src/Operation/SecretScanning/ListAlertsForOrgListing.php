@@ -87,7 +87,7 @@ final class ListAlertsForOrgListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationSecretScanningAlert::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\OrganizationSecretScanningAlert::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\OrganizationSecretScanningAlert::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

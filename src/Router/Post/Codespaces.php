@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Post;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
@@ -12,7 +11,6 @@ use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
 use ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,17 +19,13 @@ use function array_key_exists;
 
 final class Codespaces
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function setCodespacesAccessUsers(array $params): array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -39,11 +33,7 @@ final class Codespaces
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers();
-        }
-
-        $operator = new Operator\Codespaces\SetCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers::class]);
+        $operator = new Operator\Codespaces\SetCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
 
         return $operator->call($arguments['org'], $params);
     }
@@ -51,7 +41,6 @@ final class Codespaces
     /** @return */
     public function createWithRepoForAuthenticatedUser(array $params): Codespace|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -65,11 +54,7 @@ final class Codespaces
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces();
-        }
-
-        $operator = new Operator\Codespaces\CreateWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Codespaces::class]);
+        $operator = new Operator\Codespaces\CreateWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
@@ -77,7 +62,6 @@ final class Codespaces
     /** @return */
     public function exportForAuthenticatedUser(array $params): CodespaceExportDetails|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -85,11 +69,7 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Exports();
-        }
-
-        $operator = new Operator\Codespaces\ExportForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Exports::class]);
+        $operator = new Operator\Codespaces\ExportForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Exports());
 
         return $operator->call($arguments['codespace_name']);
     }
@@ -97,7 +77,6 @@ final class Codespaces
     /** @return */
     public function publishForAuthenticatedUser(array $params): CodespaceWithFullRepository|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -105,19 +84,14 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Publish();
-        }
-
-        $operator = new Operator\Codespaces\PublishForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Publish::class]);
+        $operator = new Operator\Codespaces\PublishForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Publish());
 
         return $operator->call($arguments['codespace_name'], $params);
     }
 
-    /** @return (Schema\Codespace | array{code: int}) */
+    /** @return Schema\Codespace|array{code:int} */
     public function startForAuthenticatedUser(array $params): Codespace|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -125,11 +99,7 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Start::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Start::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Start();
-        }
-
-        $operator = new Operator\Codespaces\StartForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Start::class]);
+        $operator = new Operator\Codespaces\StartForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Start());
 
         return $operator->call($arguments['codespace_name']);
     }
@@ -137,7 +107,6 @@ final class Codespaces
     /** @return */
     public function stopForAuthenticatedUser(array $params): Codespace|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: codespace_name');
@@ -145,11 +114,7 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Stop();
-        }
-
-        $operator = new Operator\Codespaces\StopForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces\CodespaceName\Stop::class]);
+        $operator = new Operator\Codespaces\StopForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Stop());
 
         return $operator->call($arguments['codespace_name']);
     }
@@ -157,12 +122,7 @@ final class Codespaces
     /** @return */
     public function createForAuthenticatedUser(array $params): Codespace|array
     {
-        $matched = true;
-        if (array_key_exists(Hydrator\Operation\User\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces();
-        }
-
-        $operator = new Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\Codespaces::class]);
+        $operator = new Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
 
         return $operator->call($params);
     }
@@ -170,7 +130,6 @@ final class Codespaces
     /** @return */
     public function createWithPrForAuthenticatedUser(array $params): Codespace|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -190,19 +149,14 @@ final class Codespaces
 
         $arguments['pull_number'] = $params['pull_number'];
         unset($params['pull_number']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Codespaces();
-        }
-
-        $operator = new Operator\Codespaces\CreateWithPrForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces::class]);
+        $operator = new Operator\Codespaces\CreateWithPrForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Codespaces());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return (Schema\Codespace | array{code: int}) */
+    /** @return Schema\Codespace|array{code:int} */
     public function stopInOrganization(array $params): Codespace|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -222,11 +176,7 @@ final class Codespaces
 
         $arguments['codespace_name'] = $params['codespace_name'];
         unset($params['codespace_name']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces🌀CodespaceName🌀Stop();
-        }
-
-        $operator = new Operator\Codespaces\StopInOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop::class]);
+        $operator = new Operator\Codespaces\StopInOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces🌀CodespaceName🌀Stop());
 
         return $operator->call($arguments['org'], $arguments['username'], $arguments['codespace_name']);
     }

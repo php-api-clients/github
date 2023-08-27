@@ -19,14 +19,12 @@ final readonly class ListTags
 {
     public const OPERATION_ID    = 'repos/list-tags';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/tags';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/tags';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Tags $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Tag> */
+    /** @return iterable<Schema\Tag> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListTags($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

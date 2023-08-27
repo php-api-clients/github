@@ -16,14 +16,12 @@ final readonly class RemoveSelectedRepoFromOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/remove-selected-repo-from-org-secret';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $secretName, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\RemoveSelectedRepoFromOrgSecret($org, $secretName, $repositoryId);

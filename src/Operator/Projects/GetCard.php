@@ -20,14 +20,12 @@ final readonly class GetCard
 {
     public const OPERATION_ID    = 'projects/get-card';
     public const OPERATION_MATCH = 'GET /projects/columns/cards/{card_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/columns/cards/{card_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectCard | array{code: int}) */
+    /** @return Schema\ProjectCard|array{code:int} */
     public function call(int $cardId): ProjectCard|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\GetCard($this->responseSchemaValidator, $this->hydrator, $cardId);

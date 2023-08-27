@@ -20,14 +20,12 @@ final readonly class GetTemplate
 {
     public const OPERATION_ID    = 'gitignore/get-template';
     public const OPERATION_MATCH = 'GET /gitignore/templates/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gitignore/templates/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gitignore\Templates\Name $hydrator)
     {
     }
 
-    /** @return (Schema\GitignoreTemplate | array{code: int}) */
+    /** @return Schema\GitignoreTemplate|array{code:int} */
     public function call(string $name): GitignoreTemplate|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gitignore\GetTemplate($this->responseSchemaValidator, $this->hydrator, $name);

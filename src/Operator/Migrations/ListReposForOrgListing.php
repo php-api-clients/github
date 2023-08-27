@@ -19,8 +19,6 @@ final readonly class ListReposForOrgListing
 {
     public const OPERATION_ID    = 'migrations/list-repos-for-org';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/migrations/{migration_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repositories $hydrator)
     {

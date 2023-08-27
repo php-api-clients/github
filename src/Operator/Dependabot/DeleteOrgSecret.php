@@ -16,14 +16,12 @@ final readonly class DeleteOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/delete-org-secret';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/dependabot/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $secretName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\DeleteOrgSecret($org, $secretName);

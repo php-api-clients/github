@@ -16,14 +16,12 @@ final readonly class DownloadZipballArchive
 {
     public const OPERATION_ID    = 'repos/download-zipball-archive';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/zipball/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/zipball/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int, location: string} */
+    /** @return array{code:int,location:string} */
     public function call(string $owner, string $repo, string $ref): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DownloadZipballArchive($owner, $repo, $ref);

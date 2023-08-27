@@ -18,14 +18,12 @@ final readonly class Star
 {
     public const OPERATION_ID    = 'gists/star';
     public const OPERATION_MATCH = 'PUT /gists/{gist_id}/star';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/gists/{gist_id}/star';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Star $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $gistId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Star($this->responseSchemaValidator, $this->hydrator, $gistId);

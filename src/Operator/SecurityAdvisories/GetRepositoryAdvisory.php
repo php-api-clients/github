@@ -19,8 +19,6 @@ final readonly class GetRepositoryAdvisory
 {
     public const OPERATION_ID    = 'security-advisories/get-repository-advisory';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/security-advisories/{ghsa_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class ListSelectedRepositoriesEnabledGithubActionsOrganization
 {
     public const OPERATION_ID    = 'actions/list-selected-repositories-enabled-github-actions-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/permissions/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/permissions/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Permissions\Repositories $hydrator)
     {

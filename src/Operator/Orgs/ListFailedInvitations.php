@@ -19,14 +19,12 @@ final readonly class ListFailedInvitations
 {
     public const OPERATION_ID    = 'orgs/list-failed-invitations';
     public const OPERATION_MATCH = 'GET /orgs/{org}/failed_invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/failed_invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\FailedInvitations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<Schema\OrganizationInvitation> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListFailedInvitations($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

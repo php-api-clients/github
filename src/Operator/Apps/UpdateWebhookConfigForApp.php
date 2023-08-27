@@ -19,8 +19,6 @@ final readonly class UpdateWebhookConfigForApp
 {
     public const OPERATION_ID    = 'apps/update-webhook-config-for-app';
     public const OPERATION_MATCH = 'PATCH /app/hook/config';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/app/hook/config';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Hook\Config $hydrator)
     {

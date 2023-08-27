@@ -19,8 +19,6 @@ final readonly class GetLatestPagesBuild
 {
     public const OPERATION_ID    = 'repos/get-latest-pages-build';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pages/builds/latest';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pages/builds/latest';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pages\Builds\Latest $hydrator)
     {

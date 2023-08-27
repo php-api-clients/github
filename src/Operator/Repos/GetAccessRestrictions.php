@@ -19,8 +19,6 @@ final readonly class GetAccessRestrictions
 {
     public const OPERATION_ID    = 'repos/get-access-restrictions';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\Restrictions $hydrator)
     {

@@ -19,14 +19,12 @@ final readonly class GetPendingDeploymentsForRun
 {
     public const OPERATION_ID    = 'actions/get-pending-deployments-for-run';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\PendingDeployments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\PendingDeployment> */
+    /** @return iterable<Schema\PendingDeployment> */
     public function call(string $owner, string $repo, int $runId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\GetPendingDeploymentsForRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

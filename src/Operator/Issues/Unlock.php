@@ -18,14 +18,12 @@ final readonly class Unlock
 {
     public const OPERATION_ID    = 'issues/unlock';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/lock';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Lock $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $issueNumber): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\Unlock($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

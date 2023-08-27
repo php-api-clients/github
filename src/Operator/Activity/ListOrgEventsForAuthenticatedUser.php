@@ -19,14 +19,12 @@ final readonly class ListOrgEventsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/list-org-events-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /users/{username}/events/orgs/{org}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/events/orgs/{org}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Events\Orgs\Org $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Event> */
+    /** @return iterable<Schema\Event> */
     public function call(string $username, string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListOrgEventsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $username, $org, $perPage, $page);

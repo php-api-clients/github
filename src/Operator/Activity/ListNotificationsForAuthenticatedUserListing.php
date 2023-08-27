@@ -19,14 +19,12 @@ final readonly class ListNotificationsForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'activity/list-notifications-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /notifications';
-    private const METHOD         = 'GET';
-    private const PATH           = '/notifications';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Thread> | array{code: int}) */
+    /** @return iterable<Schema\Thread>|array{code:int} */
     public function call(string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListNotificationsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $since, $before, $all, $participating, $page, $perPage);

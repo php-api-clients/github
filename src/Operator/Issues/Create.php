@@ -19,8 +19,6 @@ final readonly class Create
 {
     public const OPERATION_ID    = 'issues/create';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/issues';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/issues';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues $hydrator)
     {

@@ -19,14 +19,12 @@ final readonly class ListEmailsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/list-emails-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/emails';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/emails';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Emails $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Email> | array{code: int}) */
+    /** @return iterable<Schema\Email>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListEmailsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

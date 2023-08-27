@@ -56,7 +56,7 @@ final class GetRestrictionsForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\InteractionLimitResponse::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\InteractionLimitResponse::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\InteractionLimitResponse::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -65,7 +65,7 @@ final class GetRestrictionsForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

@@ -18,14 +18,12 @@ final readonly class DeleteThreadSubscription
 {
     public const OPERATION_ID    = 'activity/delete-thread-subscription';
     public const OPERATION_MATCH = 'DELETE /notifications/threads/{thread_id}/subscription';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/notifications/threads/{thread_id}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $threadId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\DeleteThreadSubscription($this->responseSchemaValidator, $this->hydrator, $threadId);

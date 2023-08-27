@@ -4,309 +4,206 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Package;
+use ApiClients\Client\GitHub\Schema\PackageVersion;
 
 final class Packages
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listDockerMigrationConflictingPackagesForOrganization(string $org): Schema\Package
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForOrganization(string $org): iterable
     {
-        if (array_key_exists(Operator\Packages\ListDockerMigrationConflictingPackagesForOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForOrganization::class] = new Operator\Packages\ListDockerMigrationConflictingPackagesForOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Docker🌀Conflicts());
-        }
-
-        return $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForOrganization::class]->call($org);
+        return $this->operators->packages👷ListDockerMigrationConflictingPackagesForOrganization()->call($org);
     }
 
-    public function listPackagesForOrganization(string $packageType, string $org, string $visibility, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForOrganization(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForOrganization::class] = new Operator\Packages\ListPackagesForOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForOrganization::class]->call($packageType, $org, $visibility, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForOrganization()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    public function listPackagesForOrganizationListing(string $packageType, string $org, string $visibility, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForOrganizationListing(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForOrganizationListing::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForOrganizationListing::class] = new Operator\Packages\ListPackagesForOrganizationListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForOrganizationListing::class]->call($packageType, $org, $visibility, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForOrganizationListing()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    public function getPackageForOrganization(string $packageType, string $packageName, string $org): Schema\Package
+    /** @return */
+    public function getPackageForOrganization(string $packageType, string $packageName, string $org): Package|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageForOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageForOrganization::class] = new Operator\Packages\GetPackageForOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageForOrganization::class]->call($packageType, $packageName, $org);
+        return $this->operators->packages👷GetPackageForOrganization()->call($packageType, $packageName, $org);
     }
 
-    public function deletePackageForOrg(string $packageType, string $packageName, string $org): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageForOrg(string $packageType, string $packageName, string $org): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageForOrg::class] = new Operator\Packages\DeletePackageForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageForOrg::class]->call($packageType, $packageName, $org);
+        return $this->operators->packages👷DeletePackageForOrg()->call($packageType, $packageName, $org);
     }
 
-    public function restorePackageForOrg(string $packageType, string $packageName, string $org, string $token): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageForOrg(string $packageType, string $packageName, string $org, string $token): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageForOrg::class] = new Operator\Packages\RestorePackageForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageForOrg::class]->call($packageType, $packageName, $org, $token);
+        return $this->operators->packages👷RestorePackageForOrg()->call($packageType, $packageName, $org, $token);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByOrg(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): Schema\PackageVersion
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByOrg(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
-        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrg::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions());
-        }
-
-        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrg::class]->call($packageType, $packageName, $org, $page, $perPage, $state);
+        return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrg()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByOrgListing(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): Schema\PackageVersion
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByOrgListing(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
-        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions());
-        }
-
-        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByOrgListing::class]->call($packageType, $packageName, $org, $page, $perPage, $state);
+        return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrgListing()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    public function getPackageVersionForOrganization(string $packageType, string $packageName, string $org, int $packageVersionId): Schema\PackageVersion
+    /** @return */
+    public function getPackageVersionForOrganization(string $packageType, string $packageName, string $org, int $packageVersionId): PackageVersion|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageVersionForOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageVersionForOrganization::class] = new Operator\Packages\GetPackageVersionForOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageVersionForOrganization::class]->call($packageType, $packageName, $org, $packageVersionId);
+        return $this->operators->packages👷GetPackageVersionForOrganization()->call($packageType, $packageName, $org, $packageVersionId);
     }
 
-    public function deletePackageVersionForOrg(string $packageType, string $packageName, string $org, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageVersionForOrg(string $packageType, string $packageName, string $org, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageVersionForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageVersionForOrg::class] = new Operator\Packages\DeletePackageVersionForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageVersionForOrg::class]->call($packageType, $packageName, $org, $packageVersionId);
+        return $this->operators->packages👷DeletePackageVersionForOrg()->call($packageType, $packageName, $org, $packageVersionId);
     }
 
-    public function restorePackageVersionForOrg(string $packageType, string $packageName, string $org, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageVersionForOrg(string $packageType, string $packageName, string $org, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageVersionForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageVersionForOrg::class] = new Operator\Packages\RestorePackageVersionForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageVersionForOrg::class]->call($packageType, $packageName, $org, $packageVersionId);
+        return $this->operators->packages👷RestorePackageVersionForOrg()->call($packageType, $packageName, $org, $packageVersionId);
     }
 
-    public function listDockerMigrationConflictingPackagesForAuthenticatedUser(): Schema\Package
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForAuthenticatedUser(): iterable
     {
-        if (array_key_exists(Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser::class] = new Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Docker🌀Conflicts());
-        }
-
-        return $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser::class]->call();
+        return $this->operators->packages👷ListDockerMigrationConflictingPackagesForAuthenticatedUser()->call();
     }
 
-    public function listPackagesForAuthenticatedUser(string $packageType, string $visibility, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForAuthenticatedUser(string $packageType, string $visibility, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForAuthenticatedUser::class] = new Operator\Packages\ListPackagesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForAuthenticatedUser::class]->call($packageType, $visibility, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForAuthenticatedUser()->call($packageType, $visibility, $page, $perPage);
     }
 
-    public function listPackagesForAuthenticatedUserListing(string $packageType, string $visibility, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForAuthenticatedUserListing(string $packageType, string $visibility, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForAuthenticatedUserListing::class] = new Operator\Packages\ListPackagesForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForAuthenticatedUserListing::class]->call($packageType, $visibility, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForAuthenticatedUserListing()->call($packageType, $visibility, $page, $perPage);
     }
 
-    public function getPackageForAuthenticatedUser(string $packageType, string $packageName): Schema\Package
+    /** @return */
+    public function getPackageForAuthenticatedUser(string $packageType, string $packageName): Package|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageForAuthenticatedUser::class] = new Operator\Packages\GetPackageForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageForAuthenticatedUser::class]->call($packageType, $packageName);
+        return $this->operators->packages👷GetPackageForAuthenticatedUser()->call($packageType, $packageName);
     }
 
-    public function deletePackageForAuthenticatedUser(string $packageType, string $packageName): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageForAuthenticatedUser(string $packageType, string $packageName): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageForAuthenticatedUser::class] = new Operator\Packages\DeletePackageForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageForAuthenticatedUser::class]->call($packageType, $packageName);
+        return $this->operators->packages👷DeletePackageForAuthenticatedUser()->call($packageType, $packageName);
     }
 
-    public function restorePackageForAuthenticatedUser(string $packageType, string $packageName, string $token): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageForAuthenticatedUser(string $packageType, string $packageName, string $token): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageForAuthenticatedUser::class] = new Operator\Packages\RestorePackageForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageForAuthenticatedUser::class]->call($packageType, $packageName, $token);
+        return $this->operators->packages👷RestorePackageForAuthenticatedUser()->call($packageType, $packageName, $token);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(string $packageType, string $packageName, int $page, int $perPage, string $state): Schema\PackageVersion
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
-        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions());
-        }
-
-        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUser::class]->call($packageType, $packageName, $page, $perPage, $state);
+        return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUser()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(string $packageType, string $packageName, int $page, int $perPage, string $state): Schema\PackageVersion
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
-        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions());
-        }
-
-        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing::class]->call($packageType, $packageName, $page, $perPage, $state);
+        return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    public function getPackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): Schema\PackageVersion
+    /** @return */
+    public function getPackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): PackageVersion|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageVersionForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageVersionForAuthenticatedUser::class] = new Operator\Packages\GetPackageVersionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageVersionForAuthenticatedUser::class]->call($packageType, $packageName, $packageVersionId);
+        return $this->operators->packages👷GetPackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
     }
 
-    public function deletePackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageVersionForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageVersionForAuthenticatedUser::class] = new Operator\Packages\DeletePackageVersionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageVersionForAuthenticatedUser::class]->call($packageType, $packageName, $packageVersionId);
+        return $this->operators->packages👷DeletePackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
     }
 
-    public function restorePackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageVersionForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageVersionForAuthenticatedUser::class] = new Operator\Packages\RestorePackageVersionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageVersionForAuthenticatedUser::class]->call($packageType, $packageName, $packageVersionId);
+        return $this->operators->packages👷RestorePackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
     }
 
-    public function listDockerMigrationConflictingPackagesForUser(string $username): Schema\Package
+    /** @return iterable<Schema\Package> */
+    public function listDockerMigrationConflictingPackagesForUser(string $username): iterable
     {
-        if (array_key_exists(Operator\Packages\ListDockerMigrationConflictingPackagesForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForUser::class] = new Operator\Packages\ListDockerMigrationConflictingPackagesForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Docker🌀Conflicts());
-        }
-
-        return $this->operator[Operator\Packages\ListDockerMigrationConflictingPackagesForUser::class]->call($username);
+        return $this->operators->packages👷ListDockerMigrationConflictingPackagesForUser()->call($username);
     }
 
-    public function listPackagesForUser(string $packageType, string $visibility, string $username, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForUser(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForUser::class] = new Operator\Packages\ListPackagesForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForUser::class]->call($packageType, $visibility, $username, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForUser()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    public function listPackagesForUserListing(string $packageType, string $visibility, string $username, int $page, int $perPage): Schema\Package
+    /** @return iterable<Schema\Package>|array{code:int} */
+    public function listPackagesForUserListing(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Packages\ListPackagesForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\ListPackagesForUserListing::class] = new Operator\Packages\ListPackagesForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages());
-        }
-
-        return $this->operator[Operator\Packages\ListPackagesForUserListing::class]->call($packageType, $visibility, $username, $page, $perPage);
+        return $this->operators->packages👷ListPackagesForUserListing()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    public function getPackageForUser(string $packageType, string $packageName, string $username): Schema\Package
+    /** @return */
+    public function getPackageForUser(string $packageType, string $packageName, string $username): Package|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageForUser::class] = new Operator\Packages\GetPackageForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageForUser::class]->call($packageType, $packageName, $username);
+        return $this->operators->packages👷GetPackageForUser()->call($packageType, $packageName, $username);
     }
 
-    public function deletePackageForUser(string $packageType, string $packageName, string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageForUser(string $packageType, string $packageName, string $username): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageForUser::class] = new Operator\Packages\DeletePackageForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageForUser::class]->call($packageType, $packageName, $username);
+        return $this->operators->packages👷DeletePackageForUser()->call($packageType, $packageName, $username);
     }
 
-    public function restorePackageForUser(string $packageType, string $packageName, string $username, string $token): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageForUser(string $packageType, string $packageName, string $username, string $token): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageForUser::class] = new Operator\Packages\RestorePackageForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageForUser::class]->call($packageType, $packageName, $username, $token);
+        return $this->operators->packages👷RestorePackageForUser()->call($packageType, $packageName, $username, $token);
     }
 
-    public function getAllPackageVersionsForPackageOwnedByUser(string $packageType, string $packageName, string $username): Schema\PackageVersion
+    /** @return iterable<Schema\PackageVersion> */
+    public function getAllPackageVersionsForPackageOwnedByUser(string $packageType, string $packageName, string $username): iterable
     {
-        if (array_key_exists(Operator\Packages\GetAllPackageVersionsForPackageOwnedByUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByUser::class] = new Operator\Packages\GetAllPackageVersionsForPackageOwnedByUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName🌀Versions());
-        }
-
-        return $this->operator[Operator\Packages\GetAllPackageVersionsForPackageOwnedByUser::class]->call($packageType, $packageName, $username);
+        return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByUser()->call($packageType, $packageName, $username);
     }
 
-    public function getPackageVersionForUser(string $packageType, string $packageName, int $packageVersionId, string $username): Schema\PackageVersion
+    /** @return */
+    public function getPackageVersionForUser(string $packageType, string $packageName, int $packageVersionId, string $username): PackageVersion|array
     {
-        if (array_key_exists(Operator\Packages\GetPackageVersionForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\GetPackageVersionForUser::class] = new Operator\Packages\GetPackageVersionForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\GetPackageVersionForUser::class]->call($packageType, $packageName, $packageVersionId, $username);
+        return $this->operators->packages👷GetPackageVersionForUser()->call($packageType, $packageName, $packageVersionId, $username);
     }
 
-    public function deletePackageVersionForUser(string $packageType, string $packageName, string $username, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePackageVersionForUser(string $packageType, string $packageName, string $username, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\DeletePackageVersionForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\DeletePackageVersionForUser::class] = new Operator\Packages\DeletePackageVersionForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-        }
-
-        return $this->operator[Operator\Packages\DeletePackageVersionForUser::class]->call($packageType, $packageName, $username, $packageVersionId);
+        return $this->operators->packages👷DeletePackageVersionForUser()->call($packageType, $packageName, $username, $packageVersionId);
     }
 
-    public function restorePackageVersionForUser(string $packageType, string $packageName, string $username, int $packageVersionId): ResponseInterface
+    /** @return array{code:int} */
+    public function restorePackageVersionForUser(string $packageType, string $packageName, string $username, int $packageVersionId): array
     {
-        if (array_key_exists(Operator\Packages\RestorePackageVersionForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Packages\RestorePackageVersionForUser::class] = new Operator\Packages\RestorePackageVersionForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId🌀Restore());
-        }
-
-        return $this->operator[Operator\Packages\RestorePackageVersionForUser::class]->call($packageType, $packageName, $username, $packageVersionId);
+        return $this->operators->packages👷RestorePackageVersionForUser()->call($packageType, $packageName, $username, $packageVersionId);
     }
 }

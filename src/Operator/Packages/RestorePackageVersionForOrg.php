@@ -18,14 +18,12 @@ final readonly class RestorePackageVersionForOrg
 {
     public const OPERATION_ID    = 'packages/restore-package-version-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId\Restore $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $packageType, string $packageName, string $org, int $packageVersionId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\RestorePackageVersionForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $packageVersionId);

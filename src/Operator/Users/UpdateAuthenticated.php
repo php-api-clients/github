@@ -20,14 +20,12 @@ final readonly class UpdateAuthenticated
 {
     public const OPERATION_ID    = 'users/update-authenticated';
     public const OPERATION_MATCH = 'PATCH /user';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User $hydrator)
     {
     }
 
-    /** @return (Schema\PrivateUser | array{code: int}) */
+    /** @return Schema\PrivateUser|array{code:int} */
     public function call(array $params): PrivateUser|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\UpdateAuthenticated($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

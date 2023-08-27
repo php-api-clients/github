@@ -18,14 +18,12 @@ final readonly class RemoveProjectLegacy
 {
     public const OPERATION_ID    = 'teams/remove-project-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/projects/{project_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, int $projectId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveProjectLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

@@ -19,14 +19,12 @@ final readonly class ListForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'migrations/list-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/migrations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/migrations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Migrations $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Migration> | array{code: int}) */
+    /** @return iterable<Schema\Migration>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\ListForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

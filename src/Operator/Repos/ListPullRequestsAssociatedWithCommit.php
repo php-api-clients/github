@@ -19,14 +19,12 @@ final readonly class ListPullRequestsAssociatedWithCommit
 {
     public const OPERATION_ID    = 'repos/list-pull-requests-associated-with-commit';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/pulls';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\Pulls $hydrator)
     {
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<Schema\PullRequestSimple> */
     public function call(string $owner, string $repo, string $commitSha, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListPullRequestsAssociatedWithCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha, $perPage, $page);

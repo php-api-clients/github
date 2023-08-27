@@ -19,8 +19,6 @@ final readonly class ListRequestedReviewers
 {
     public const OPERATION_ID    = 'pulls/list-requested-reviewers';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\RequestedReviewers $hydrator)
     {

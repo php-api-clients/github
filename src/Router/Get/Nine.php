@@ -4,29 +4,20 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Get;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\Routers;
 use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
 use ApiClients\Client\GitHub\Schema\WorkflowRun;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use InvalidArgumentException;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
 
 final class Nine
 {
-    private array $router = [];
-
-    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Routers $routers)
     {
     }
 
-    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Observable<Schema\ReviewComment> */
+    /** @return |Observable<string>|iterable<Schema\Integration>|iterable<Schema\Team>|iterable<Schema\SimpleUser>|iterable<Schema\ReviewComment> */
     public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment|WorkflowRun|iterable
     {
-        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
@@ -37,12 +28,7 @@ final class Nine
                                     if ($pathChunks[7] === 'comments') {
                                         if ($pathChunks[8] === '{comment_number}') {
                                             if ($call === 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Teams::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Teams::class] = new Router\Get\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Teams::class]->GetDiscussionCommentInOrg($params);
+                                                return $this->routers->router🔀Get🔀Teams()->getDiscussionCommentInOrg($params);
                                             }
                                         }
                                     }
@@ -60,12 +46,7 @@ final class Nine
                                     if ($pathChunks[7] === 'attempts') {
                                         if ($pathChunks[8] === '{attempt_number}') {
                                             if ($call === 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Actions::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Actions::class] = new Router\Get\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Actions::class]->GetWorkflowRunAttempt($params);
+                                                return $this->routers->router🔀Get🔀Actions()->getWorkflowRunAttempt($params);
                                             }
                                         }
                                     }
@@ -77,41 +58,21 @@ final class Nine
                                     if ($pathChunks[7] === 'required_status_checks') {
                                         if ($pathChunks[8] === 'contexts') {
                                             if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Repos::class]->GetAllStatusCheckContexts($params);
+                                                return $this->routers->router🔀Get🔀Repos()->getAllStatusCheckContexts($params);
                                             }
                                         }
                                     } elseif ($pathChunks[7] === 'restrictions') {
                                         if ($pathChunks[8] === 'apps') {
                                             if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Repos::class]->GetAppsWithAccessToProtectedBranch($params);
+                                                return $this->routers->router🔀Get🔀Repos()->getAppsWithAccessToProtectedBranch($params);
                                             }
                                         } elseif ($pathChunks[8] === 'teams') {
                                             if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Repos::class]->GetTeamsWithAccessToProtectedBranch($params);
+                                                return $this->routers->router🔀Get🔀Repos()->getTeamsWithAccessToProtectedBranch($params);
                                             }
                                         } elseif ($pathChunks[8] === 'users') {
                                             if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Repos::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Repos::class] = new Router\Get\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Repos::class]->GetUsersWithAccessToProtectedBranch($params);
+                                                return $this->routers->router🔀Get🔀Repos()->getUsersWithAccessToProtectedBranch($params);
                                             }
                                         }
                                     }
@@ -123,12 +84,7 @@ final class Nine
                                     if ($pathChunks[7] === '{review_id}') {
                                         if ($pathChunks[8] === 'comments') {
                                             if ($call === 'GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments') {
-                                                $matched = true;
-                                                if (array_key_exists(Router\Get\Pulls::class, $this->router) === false) {
-                                                    $this->router[Router\Get\Pulls::class] = new Router\Get\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                                }
-
-                                                return $this->router[Router\Get\Pulls::class]->ListCommentsForReview($params);
+                                                return $this->routers->router🔀Get🔀Pulls()->listCommentsForReview($params);
                                             }
                                         }
                                     }
@@ -140,8 +96,6 @@ final class Nine
             }
         }
 
-        if ($matched === false) {
-            throw new InvalidArgumentException();
-        }
+        throw new InvalidArgumentException();
     }
 }

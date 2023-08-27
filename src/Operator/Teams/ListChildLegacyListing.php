@@ -19,8 +19,6 @@ final readonly class ListChildLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-child-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Teams $hydrator)
     {

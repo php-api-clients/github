@@ -20,14 +20,12 @@ final readonly class CreateOrUpdateOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/create-or-update-org-secret';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/dependabot/secrets/{secret_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function call(string $org, string $secretName, array $params): EmptyObject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\CreateOrUpdateOrgSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $secretName);

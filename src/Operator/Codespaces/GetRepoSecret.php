@@ -19,8 +19,6 @@ final readonly class GetRepoSecret
 {
     public const OPERATION_ID    = 'codespaces/get-repo-secret';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Codespaces\Secrets\SecretName $hydrator)
     {

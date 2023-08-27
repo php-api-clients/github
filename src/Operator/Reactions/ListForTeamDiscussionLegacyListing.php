@@ -19,8 +19,6 @@ final readonly class ListForTeamDiscussionLegacyListing
 {
     public const OPERATION_ID    = 'reactions/list-for-team-discussion-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/discussions/{discussion_number}/reactions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Reactions $hydrator)
     {

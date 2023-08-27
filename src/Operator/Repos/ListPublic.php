@@ -19,14 +19,12 @@ final readonly class ListPublic
 {
     public const OPERATION_ID    = 'repos/list-public';
     public const OPERATION_MATCH = 'GET /repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repositories $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\MinimalRepository> | array{code: int}) */
+    /** @return iterable<Schema\MinimalRepository>|array{code:int} */
     public function call(int $since): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListPublic($this->responseSchemaValidator, $this->hydrator, $since);

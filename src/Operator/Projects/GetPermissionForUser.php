@@ -20,14 +20,12 @@ final readonly class GetPermissionForUser
 {
     public const OPERATION_ID    = 'projects/get-permission-for-user';
     public const OPERATION_MATCH = 'GET /projects/{project_id}/collaborators/{username}/permission';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/{project_id}/collaborators/{username}/permission';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId\Collaborators\Username\Permission $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectCollaboratorPermission | array{code: int}) */
+    /** @return Schema\ProjectCollaboratorPermission|array{code:int} */
     public function call(int $projectId, string $username): ProjectCollaboratorPermission|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\GetPermissionForUser($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

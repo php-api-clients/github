@@ -17,14 +17,12 @@ final readonly class UpdateEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/update-environment-variable';
     public const OPERATION_MATCH = 'PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $repositoryId, string $name, string $environmentName, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $repositoryId, $name, $environmentName);

@@ -18,14 +18,12 @@ final readonly class DeleteEmailForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-email-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/emails';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/emails';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Emails $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeleteEmailForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

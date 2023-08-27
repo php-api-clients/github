@@ -18,14 +18,12 @@ final readonly class Delete
 {
     public const OPERATION_ID    = 'projects/delete';
     public const OPERATION_MATCH = 'DELETE /projects/{project_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $projectId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Delete($this->responseSchemaValidator, $this->hydrator, $projectId);

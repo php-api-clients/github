@@ -18,14 +18,12 @@ final readonly class Unstar
 {
     public const OPERATION_ID    = 'gists/unstar';
     public const OPERATION_MATCH = 'DELETE /gists/{gist_id}/star';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/gists/{gist_id}/star';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Star $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $gistId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Unstar($this->responseSchemaValidator, $this->hydrator, $gistId);

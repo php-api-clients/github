@@ -16,14 +16,12 @@ final readonly class RemoveSecurityManagerTeam
 {
     public const OPERATION_ID    = 'orgs/remove-security-manager-team';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/security-managers/teams/{team_slug}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/security-managers/teams/{team_slug}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\RemoveSecurityManagerTeam($org, $teamSlug);

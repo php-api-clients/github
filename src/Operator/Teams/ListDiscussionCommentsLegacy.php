@@ -19,14 +19,12 @@ final readonly class ListDiscussionCommentsLegacy
 {
     public const OPERATION_ID    = 'teams/list-discussion-comments-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions/{discussion_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\TeamDiscussionComment> */
+    /** @return iterable<Schema\TeamDiscussionComment> */
     public function call(int $teamId, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListDiscussionCommentsLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $discussionNumber, $direction, $perPage, $page);

@@ -19,14 +19,12 @@ final readonly class GetLargeFiles
 {
     public const OPERATION_ID    = 'migrations/get-large-files';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/import/large_files';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/import/large_files';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Import\LargeFiles $hydrator)
     {
     }
 
-    /** @return Observable<Schema\PorterLargeFile> */
+    /** @return iterable<Schema\PorterLargeFile> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetLargeFiles($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

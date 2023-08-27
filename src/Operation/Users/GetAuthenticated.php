@@ -52,7 +52,7 @@ final class GetAuthenticated
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PrivateUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\PrivateUser::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\PrivateUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -61,7 +61,7 @@ final class GetAuthenticated
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PublicUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\PublicUser::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\PublicUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

@@ -78,7 +78,7 @@ final class ListDeployments
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Deployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\Deployment::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\Deployment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

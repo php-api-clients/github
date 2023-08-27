@@ -19,14 +19,12 @@ final readonly class ListSecurityManagerTeams
 {
     public const OPERATION_ID    = 'orgs/list-security-manager-teams';
     public const OPERATION_MATCH = 'GET /orgs/{org}/security-managers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/security-managers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\SecurityManagers $hydrator)
     {
     }
 
-    /** @return Observable<Schema\TeamSimple> */
+    /** @return iterable<Schema\TeamSimple> */
     public function call(string $org): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListSecurityManagerTeams($this->responseSchemaValidator, $this->hydrator, $org);

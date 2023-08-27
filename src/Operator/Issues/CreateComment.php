@@ -19,8 +19,6 @@ final readonly class CreateComment
 {
     public const OPERATION_ID    = 'issues/create-comment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/issues/{issue_number}/comments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Comments $hydrator)
     {

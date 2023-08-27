@@ -19,8 +19,6 @@ final readonly class ListReposLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-repos-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Repos $hydrator)
     {

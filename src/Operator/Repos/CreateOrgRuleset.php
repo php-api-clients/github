@@ -19,8 +19,6 @@ final readonly class CreateOrgRuleset
 {
     public const OPERATION_ID    = 'repos/create-org-ruleset';
     public const OPERATION_MATCH = 'POST /orgs/{org}/rulesets';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/rulesets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Rulesets $hydrator)
     {

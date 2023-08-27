@@ -19,14 +19,12 @@ final readonly class ListComments
 {
     public const OPERATION_ID    = 'issues/list-comments';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/{issue_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Comments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\IssueComment> */
+    /** @return iterable<Schema\IssueComment> */
     public function call(string $owner, string $repo, int $issueNumber, string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListComments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $since, $perPage, $page);

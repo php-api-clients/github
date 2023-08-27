@@ -18,14 +18,12 @@ final readonly class RemoveMember
 {
     public const OPERATION_ID    = 'orgs/remove-member';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/members/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/members/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Members\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\RemoveMember($this->responseSchemaValidator, $this->hydrator, $org, $username);

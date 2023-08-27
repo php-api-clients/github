@@ -16,14 +16,12 @@ final readonly class RemoveMembershipForUserLegacy
 {
     public const OPERATION_ID    = 'teams/remove-membership-for-user-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/memberships/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveMembershipForUserLegacy($teamId, $username);

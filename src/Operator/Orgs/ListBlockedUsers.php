@@ -19,14 +19,12 @@ final readonly class ListBlockedUsers
 {
     public const OPERATION_ID    = 'orgs/list-blocked-users';
     public const OPERATION_MATCH = 'GET /orgs/{org}/blocks';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/blocks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Blocks $hydrator)
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<Schema\SimpleUser> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListBlockedUsers($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

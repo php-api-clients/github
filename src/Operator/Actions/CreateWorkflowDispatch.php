@@ -17,14 +17,12 @@ final readonly class CreateWorkflowDispatch
 {
     public const OPERATION_ID    = 'actions/create-workflow-dispatch';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, $workflowId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateWorkflowDispatch($this->requestSchemaValidator, $owner, $repo, $workflowId);

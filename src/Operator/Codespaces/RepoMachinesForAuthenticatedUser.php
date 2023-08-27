@@ -20,14 +20,12 @@ final readonly class RepoMachinesForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/repo-machines-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/machines';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/machines';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code:int} */
     public function call(string $owner, string $repo, string $location, string $clientIp): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\RepoMachinesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $location, $clientIp);

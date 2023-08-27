@@ -20,14 +20,12 @@ final readonly class MarkRepoNotificationsAsRead
 {
     public const OPERATION_ID    = 'activity/mark-repo-notifications-as-read';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/notifications';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/notifications';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Notifications $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted | array{code: int}) */
+    /** @return Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted|array{code:int} */
     public function call(string $owner, string $repo, array $params): Accepted|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\MarkRepoNotificationsAsRead($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

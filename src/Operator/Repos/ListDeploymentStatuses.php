@@ -19,14 +19,12 @@ final readonly class ListDeploymentStatuses
 {
     public const OPERATION_ID    = 'repos/list-deployment-statuses';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments\DeploymentId\Statuses $hydrator)
     {
     }
 
-    /** @return Observable<Schema\DeploymentStatus> */
+    /** @return iterable<Schema\DeploymentStatus> */
     public function call(string $owner, string $repo, int $deploymentId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeploymentStatuses($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId, $perPage, $page);

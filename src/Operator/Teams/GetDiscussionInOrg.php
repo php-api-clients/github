@@ -19,8 +19,6 @@ final readonly class GetDiscussionInOrg
 {
     public const OPERATION_ID    = 'teams/get-discussion-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber $hydrator)
     {

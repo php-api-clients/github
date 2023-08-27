@@ -19,8 +19,6 @@ final readonly class ListAnnotationsListing
 {
     public const OPERATION_ID    = 'checks/list-annotations';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CheckRuns\CheckRunId\Annotations $hydrator)
     {

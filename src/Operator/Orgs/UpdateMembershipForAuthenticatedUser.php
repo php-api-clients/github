@@ -19,8 +19,6 @@ final readonly class UpdateMembershipForAuthenticatedUser
 {
     public const OPERATION_ID    = 'orgs/update-membership-for-authenticated-user';
     public const OPERATION_MATCH = 'PATCH /user/memberships/orgs/{org}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user/memberships/orgs/{org}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Memberships\Orgs\Org $hydrator)
     {

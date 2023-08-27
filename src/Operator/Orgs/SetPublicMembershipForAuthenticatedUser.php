@@ -18,14 +18,12 @@ final readonly class SetPublicMembershipForAuthenticatedUser
 {
     public const OPERATION_ID    = 'orgs/set-public-membership-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/public_members/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/public_members/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PublicMembers\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\SetPublicMembershipForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $org, $username);

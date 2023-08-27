@@ -19,8 +19,6 @@ final readonly class ListSelfHostedRunnersForRepo
 {
     public const OPERATION_ID    = 'actions/list-self-hosted-runners-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runners';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runners $hydrator)
     {

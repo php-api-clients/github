@@ -18,14 +18,12 @@ final readonly class SetCodespacesAccess
 {
     public const OPERATION_ID    = 'codespaces/set-codespaces-access';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/codespaces/access';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/codespaces/access';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces\Access $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\SetCodespacesAccess($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

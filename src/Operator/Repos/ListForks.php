@@ -19,14 +19,12 @@ final readonly class ListForks
 {
     public const OPERATION_ID    = 'repos/list-forks';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/forks';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/forks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Forks $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(string $owner, string $repo, string $sort = 'newest', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListForks($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sort, $perPage, $page);

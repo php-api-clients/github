@@ -19,8 +19,6 @@ final readonly class ListReleaseAssetsListing
 {
     public const OPERATION_ID    = 'repos/list-release-assets';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/releases/{release_id}/assets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/assets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\ReleaseId\Assets $hydrator)
     {

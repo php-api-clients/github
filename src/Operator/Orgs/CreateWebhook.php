@@ -19,8 +19,6 @@ final readonly class CreateWebhook
 {
     public const OPERATION_ID    = 'orgs/create-webhook';
     public const OPERATION_MATCH = 'POST /orgs/{org}/hooks';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/hooks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Hooks $hydrator)
     {

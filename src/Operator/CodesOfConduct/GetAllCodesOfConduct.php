@@ -19,14 +19,12 @@ final readonly class GetAllCodesOfConduct
 {
     public const OPERATION_ID    = 'codes-of-conduct/get-all-codes-of-conduct';
     public const OPERATION_MATCH = 'GET /codes_of_conduct';
-    private const METHOD         = 'GET';
-    private const PATH           = '/codes_of_conduct';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\CodesOfConduct $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\CodeOfConduct> | array{code: int}) */
+    /** @return iterable<Schema\CodeOfConduct>|array{code:int} */
     public function call(): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodesOfConduct\GetAllCodesOfConduct($this->responseSchemaValidator, $this->hydrator);

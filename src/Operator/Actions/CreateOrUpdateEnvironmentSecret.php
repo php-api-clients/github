@@ -20,14 +20,12 @@ final readonly class CreateOrUpdateEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/create-or-update-environment-secret';
     public const OPERATION_MATCH = 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function call(int $repositoryId, string $environmentName, string $secretName, array $params): EmptyObject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\CreateOrUpdateEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);

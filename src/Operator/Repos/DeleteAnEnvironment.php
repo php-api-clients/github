@@ -16,14 +16,12 @@ final readonly class DeleteAnEnvironment
 {
     public const OPERATION_ID    = 'repos/delete-an-environment';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/environments/{environment_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $environmentName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteAnEnvironment($owner, $repo, $environmentName);

@@ -19,8 +19,6 @@ final readonly class SetRepoSubscription
 {
     public const OPERATION_ID    = 'activity/set-repo-subscription';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/subscription';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Subscription $hydrator)
     {

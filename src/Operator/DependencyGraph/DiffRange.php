@@ -19,14 +19,12 @@ final readonly class DiffRange
 {
     public const OPERATION_ID    = 'dependency-graph/diff-range';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/dependency-graph/compare/{basehead}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\DependencyGraph\Compare\Basehead $hydrator)
     {
     }
 
-    /** @return Observable<Schema\DependencyGraphDiff> */
+    /** @return iterable<Schema\DependencyGraphDiff> */
     public function call(string $owner, string $repo, string $basehead, string $name): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\DependencyGraph\DiffRange($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $basehead, $name);

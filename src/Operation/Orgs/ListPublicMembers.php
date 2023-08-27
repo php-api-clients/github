@@ -63,7 +63,7 @@ final class ListPublicMembers
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\SimpleUser::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

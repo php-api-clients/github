@@ -19,8 +19,6 @@ final readonly class RerequestSuite
 {
     public const OPERATION_ID    = 'checks/rerequest-suite';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CheckSuites\CheckSuiteId\Rerequest $hydrator)
     {

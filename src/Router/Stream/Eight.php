@@ -4,27 +4,18 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Stream;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Client\GitHub\Routers;
 use InvalidArgumentException;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
 
 final class Eight
 {
-    private array $router = [];
-
-    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Routers $routers)
     {
     }
 
     /** @return Observable<string> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
-        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'repos') {
                 if ($pathChunks[2] === '{owner}') {
@@ -34,12 +25,7 @@ final class Eight
                                 if ($pathChunks[6] === '{artifact_id}') {
                                     if ($pathChunks[7] === '{archive_format}') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}') {
-                                            $matched = true;
-                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Stream\Actions::class]->DownloadArtifactStreaming($params);
+                                            return $this->routers->router🔀Stream🔀Actions()->downloadArtifactStreaming($params);
                                         }
                                     }
                                 }
@@ -47,12 +33,7 @@ final class Eight
                                 if ($pathChunks[6] === '{job_id}') {
                                     if ($pathChunks[7] === 'logs') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/jobs/{job_id}/logs') {
-                                            $matched = true;
-                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Stream\Actions::class]->DownloadJobLogsForWorkflowRunStreaming($params);
+                                            return $this->routers->router🔀Stream🔀Actions()->downloadJobLogsForWorkflowRunStreaming($params);
                                         }
                                     }
                                 }
@@ -60,12 +41,7 @@ final class Eight
                                 if ($pathChunks[6] === '{run_id}') {
                                     if ($pathChunks[7] === 'logs') {
                                         if ($call === 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/logs') {
-                                            $matched = true;
-                                            if (array_key_exists(Router\Stream\Actions::class, $this->router) === false) {
-                                                $this->router[Router\Stream\Actions::class] = new Router\Stream\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                            }
-
-                                            return $this->router[Router\Stream\Actions::class]->DownloadWorkflowRunLogsStreaming($params);
+                                            return $this->routers->router🔀Stream🔀Actions()->downloadWorkflowRunLogsStreaming($params);
                                         }
                                     }
                                 }
@@ -76,8 +52,6 @@ final class Eight
             }
         }
 
-        if ($matched === false) {
-            throw new InvalidArgumentException();
-        }
+        throw new InvalidArgumentException();
     }
 }

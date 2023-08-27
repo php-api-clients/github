@@ -19,8 +19,6 @@ final readonly class ListCommitsListing
 {
     public const OPERATION_ID    = 'repos/list-commits';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/commits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits $hydrator)
     {

@@ -16,14 +16,12 @@ final readonly class DeleteForIssue
 {
     public const OPERATION_ID    = 'reactions/delete-for-issue';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $issueNumber, int $reactionId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\DeleteForIssue($owner, $repo, $issueNumber, $reactionId);

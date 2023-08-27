@@ -19,14 +19,12 @@ final readonly class ListAlertsForRepo
 {
     public const OPERATION_ID    = 'secret-scanning/list-alerts-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/secret-scanning/alerts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/secret-scanning/alerts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\SecretScanningAlert> | array{code: int}) */
+    /** @return iterable<Schema\SecretScanningAlert>|array{code:int} */
     public function call(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecretScanning\ListAlertsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);

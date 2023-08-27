@@ -19,8 +19,6 @@ final readonly class GetGithubActionsBillingOrg
 {
     public const OPERATION_ID    = 'billing/get-github-actions-billing-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/settings/billing/actions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/settings/billing/actions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Settings\Billing\Actions $hydrator)
     {

@@ -20,14 +20,12 @@ final readonly class Update
 {
     public const OPERATION_ID    = 'projects/update';
     public const OPERATION_MATCH = 'PATCH /projects/{project_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return (Schema\Project | array{code: int}) */
+    /** @return Schema\Project|array{code:int} */
     public function call(int $projectId, array $params): Project|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId);

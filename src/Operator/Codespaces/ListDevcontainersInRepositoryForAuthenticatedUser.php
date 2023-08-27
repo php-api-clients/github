@@ -19,8 +19,6 @@ final readonly class ListDevcontainersInRepositoryForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/list-devcontainers-in-repository-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/devcontainers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/devcontainers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Codespaces\Devcontainers $hydrator)
     {

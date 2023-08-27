@@ -16,14 +16,12 @@ final readonly class DeleteSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/delete-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $secretName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteSecretForAuthenticatedUser($secretName);

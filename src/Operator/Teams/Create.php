@@ -19,8 +19,6 @@ final readonly class Create
 {
     public const OPERATION_ID    = 'teams/create';
     public const OPERATION_MATCH = 'POST /orgs/{org}/teams';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams $hydrator)
     {

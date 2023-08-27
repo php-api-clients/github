@@ -19,14 +19,12 @@ final readonly class ListPackagesForOrganizationListing
 {
     public const OPERATION_ID    = 'packages/list-packages-for-organization';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/packages';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/packages';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Packages $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Package> | array{code: int}) */
+    /** @return iterable<Schema\Package>|array{code:int} */
     public function call(string $packageType, string $org, string $visibility, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\ListPackagesForOrganizationListing($this->responseSchemaValidator, $this->hydrator, $packageType, $org, $visibility, $page, $perPage);

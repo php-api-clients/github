@@ -19,8 +19,6 @@ final readonly class Delete
 {
     public const OPERATION_ID    = 'orgs/delete';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class ListPullRequestsAssociatedWithCommitListing
 {
     public const OPERATION_ID    = 'repos/list-pull-requests-associated-with-commit';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/commits/{commit_sha}/pulls';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/pulls';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\Pulls $hydrator)
     {

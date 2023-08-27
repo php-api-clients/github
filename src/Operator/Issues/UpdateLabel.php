@@ -19,8 +19,6 @@ final readonly class UpdateLabel
 {
     public const OPERATION_ID    = 'issues/update-label';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/labels/{name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/labels/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Labels\Name $hydrator)
     {

@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Get;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\License;
 use ApiClients\Client\GitHub\Schema\LicenseContent;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,17 +18,13 @@ use function array_key_exists;
 
 final class Licenses
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return (Observable<Schema\LicenseSimple> | array{code: int}) */
+    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
     public function getAllCommonlyUsed(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('featured', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: featured');
@@ -50,19 +44,14 @@ final class Licenses
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Licenses::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Licenses::class] = $this->hydrators->getObjectMapperOperation🌀Licenses();
-        }
-
-        $operator = new Operator\Licenses\GetAllCommonlyUsed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Licenses::class]);
+        $operator = new Operator\Licenses\GetAllCommonlyUsed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses());
 
         return $operator->call($arguments['featured'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return (Schema\License | array{code: int}) */
+    /** @return Schema\License|array{code:int} */
     public function get(array $params): License|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('license', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: license');
@@ -70,11 +59,7 @@ final class Licenses
 
         $arguments['license'] = $params['license'];
         unset($params['license']);
-        if (array_key_exists(Hydrator\Operation\Licenses\License::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Licenses\License::class] = $this->hydrators->getObjectMapperOperation🌀Licenses🌀License();
-        }
-
-        $operator = new Operator\Licenses\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Licenses\License::class]);
+        $operator = new Operator\Licenses\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Licenses🌀License());
 
         return $operator->call($arguments['license']);
     }
@@ -82,7 +67,6 @@ final class Licenses
     /** @return */
     public function getForRepo(array $params): LicenseContent|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -96,11 +80,7 @@ final class Licenses
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\License::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\License::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License();
-        }
-
-        $operator = new Operator\Licenses\GetForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\License::class]);
+        $operator = new Operator\Licenses\GetForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License());
 
         return $operator->call($arguments['owner'], $arguments['repo']);
     }

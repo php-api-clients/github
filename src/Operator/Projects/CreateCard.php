@@ -20,14 +20,12 @@ final readonly class CreateCard
 {
     public const OPERATION_ID    = 'projects/create-card';
     public const OPERATION_MATCH = 'POST /projects/columns/{column_id}/cards';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/columns/{column_id}/cards';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId\Cards $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectCard | array{code: int}) */
+    /** @return Schema\ProjectCard|array{code:int} */
     public function call(int $columnId, array $params): ProjectCard|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\CreateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

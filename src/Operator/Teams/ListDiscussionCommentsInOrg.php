@@ -19,14 +19,12 @@ final readonly class ListDiscussionCommentsInOrg
 {
     public const OPERATION_ID    = 'teams/list-discussion-comments-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Comments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\TeamDiscussionComment> */
+    /** @return iterable<Schema\TeamDiscussionComment> */
     public function call(string $org, string $teamSlug, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListDiscussionCommentsInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber, $direction, $perPage, $page);

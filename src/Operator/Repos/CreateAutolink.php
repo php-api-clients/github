@@ -19,8 +19,6 @@ final readonly class CreateAutolink
 {
     public const OPERATION_ID    = 'repos/create-autolink';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/autolinks';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/autolinks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Autolinks $hydrator)
     {

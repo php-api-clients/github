@@ -17,14 +17,12 @@ final readonly class SetSelectedReposForOrgVariable
 {
     public const OPERATION_ID    = 'actions/set-selected-repos-for-org-variable';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/variables/{name}/repositories';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $name, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetSelectedReposForOrgVariable($this->requestSchemaValidator, $org, $name);

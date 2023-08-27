@@ -19,14 +19,12 @@ final readonly class ListPackagesForAuthenticatedUser
 {
     public const OPERATION_ID    = 'packages/list-packages-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/packages';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/packages';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Packages $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Package> | array{code: int}) */
+    /** @return iterable<Schema\Package>|array{code:int} */
     public function call(string $packageType, string $visibility, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\ListPackagesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $visibility, $page, $perPage);

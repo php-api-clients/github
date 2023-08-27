@@ -19,8 +19,6 @@ final readonly class ReRunJobForWorkflowRun
 {
     public const OPERATION_ID    = 'actions/re-run-job-for-workflow-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Jobs\JobId\Rerun $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class GetRef
 {
     public const OPERATION_ID    = 'git/get-ref';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/git/ref/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/git/ref/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Git\Ref\Ref $hydrator)
     {

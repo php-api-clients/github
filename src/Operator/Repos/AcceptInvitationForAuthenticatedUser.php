@@ -18,14 +18,12 @@ final readonly class AcceptInvitationForAuthenticatedUser
 {
     public const OPERATION_ID    = 'repos/accept-invitation-for-authenticated-user';
     public const OPERATION_MATCH = 'PATCH /user/repository_invitations/{invitation_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user/repository_invitations/{invitation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\RepositoryInvitations\InvitationId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $invitationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\AcceptInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

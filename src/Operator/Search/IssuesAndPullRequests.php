@@ -20,14 +20,12 @@ final readonly class IssuesAndPullRequests
 {
     public const OPERATION_ID    = 'search/issues-and-pull-requests';
     public const OPERATION_MATCH = 'GET /search/issues';
-    private const METHOD         = 'GET';
-    private const PATH           = '/search/issues';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Search\Issues $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok | array{code: int}) */
+    /** @return Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|array{code:int} */
     public function call(string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Search\IssuesAndPullRequests($this->responseSchemaValidator, $this->hydrator, $q, $sort, $order, $perPage, $page);

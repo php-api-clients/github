@@ -19,14 +19,12 @@ final readonly class GetTeamsWithAccessToProtectedBranch
 {
     public const OPERATION_ID    = 'repos/get-teams-with-access-to-protected-branch';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\Restrictions\Teams $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<Schema\Team> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetTeamsWithAccessToProtectedBranch($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

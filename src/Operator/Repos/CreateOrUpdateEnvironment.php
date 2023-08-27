@@ -19,8 +19,6 @@ final readonly class CreateOrUpdateEnvironment
 {
     public const OPERATION_ID    = 'repos/create-or-update-environment';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/environments/{environment_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName $hydrator)
     {

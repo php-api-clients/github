@@ -19,8 +19,6 @@ final readonly class GetLabel
 {
     public const OPERATION_ID    = 'issues/get-label';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/labels/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/labels/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Labels\Name $hydrator)
     {

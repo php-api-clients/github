@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Put;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -19,17 +17,13 @@ use function array_key_exists;
 
 final class Dependabot
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function setSelectedReposForOrgSecret(array $params): array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -48,10 +42,9 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function createOrUpdateRepoSecret(array $params): EmptyObject|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -71,19 +64,14 @@ final class Dependabot
 
         $arguments['secret_name'] = $params['secret_name'];
         unset($params['secret_name']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Dependabot\Secrets\SecretName::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Dependabot\Secrets\SecretName::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dependabot🌀Secrets🌀SecretName();
-        }
-
-        $operator = new Operator\Dependabot\CreateOrUpdateRepoSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Dependabot\Secrets\SecretName::class]);
+        $operator = new Operator\Dependabot\CreateOrUpdateRepoSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dependabot🌀Secrets🌀SecretName());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function createOrUpdateOrgSecret(array $params): EmptyObject|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -97,19 +85,14 @@ final class Dependabot
 
         $arguments['secret_name'] = $params['secret_name'];
         unset($params['secret_name']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Dependabot🌀Secrets🌀SecretName();
-        }
-
-        $operator = new Operator\Dependabot\CreateOrUpdateOrgSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName::class]);
+        $operator = new Operator\Dependabot\CreateOrUpdateOrgSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Dependabot🌀Secrets🌀SecretName());
 
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function addSelectedRepoToOrgSecret(array $params): array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');

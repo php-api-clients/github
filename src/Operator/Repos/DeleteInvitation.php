@@ -16,14 +16,12 @@ final readonly class DeleteInvitation
 {
     public const OPERATION_ID    = 'repos/delete-invitation';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/invitations/{invitation_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/invitations/{invitation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $invitationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteInvitation($owner, $repo, $invitationId);

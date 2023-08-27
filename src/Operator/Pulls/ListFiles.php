@@ -19,14 +19,12 @@ final readonly class ListFiles
 {
     public const OPERATION_ID    = 'pulls/list-files';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/{pull_number}/files';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/files';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Files $hydrator)
     {
     }
 
-    /** @return Observable<Schema\DiffEntry> */
+    /** @return iterable<Schema\DiffEntry> */
     public function call(string $owner, string $repo, int $pullNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\ListFiles($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $perPage, $page);

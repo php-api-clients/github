@@ -18,14 +18,12 @@ final readonly class CreateDispatchEvent
 {
     public const OPERATION_ID    = 'repos/create-dispatch-event';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/dispatches';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/dispatches';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Dispatches $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDispatchEvent($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

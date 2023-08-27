@@ -19,14 +19,12 @@ final readonly class CodeownersErrors
 {
     public const OPERATION_ID    = 'repos/codeowners-errors';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codeowners/errors';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codeowners/errors';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors $hydrator)
     {
     }
 
-    /** @return (Schema\CodeownersErrors | array{code: int}) */
+    /** @return Schema\CodeownersErrors|array{code:int} */
     public function call(string $owner, string $repo, string $ref): \ApiClients\Client\GitHub\Schema\CodeownersErrors|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CodeownersErrors($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

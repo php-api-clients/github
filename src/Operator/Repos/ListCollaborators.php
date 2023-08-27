@@ -19,14 +19,12 @@ final readonly class ListCollaborators
 {
     public const OPERATION_ID    = 'repos/list-collaborators';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/collaborators';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Collaborators $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Collaborator> */
+    /** @return iterable<Schema\Collaborator> */
     public function call(string $owner, string $repo, string $permission, string $affiliation = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCollaborators($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $permission, $affiliation, $perPage, $page);

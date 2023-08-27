@@ -61,7 +61,7 @@ final class ListPublicSshKeysForAuthenticatedUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Key::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\Key::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\Key::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

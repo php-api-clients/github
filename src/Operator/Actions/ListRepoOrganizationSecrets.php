@@ -19,8 +19,6 @@ final readonly class ListRepoOrganizationSecrets
 {
     public const OPERATION_ID    = 'actions/list-repo-organization-secrets';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/organization-secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/organization-secrets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\OrganizationSecrets $hydrator)
     {

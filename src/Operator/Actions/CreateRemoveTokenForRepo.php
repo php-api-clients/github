@@ -19,8 +19,6 @@ final readonly class CreateRemoveTokenForRepo
 {
     public const OPERATION_ID    = 'actions/create-remove-token-for-repo';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runners/remove-token';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/remove-token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RemoveToken $hydrator)
     {

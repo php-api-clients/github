@@ -16,14 +16,12 @@ final readonly class DownloadTarballArchive
 {
     public const OPERATION_ID    = 'repos/download-tarball-archive';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/tarball/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/tarball/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int, location: string} */
+    /** @return array{code:int,location:string} */
     public function call(string $owner, string $repo, string $ref): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DownloadTarballArchive($owner, $repo, $ref);

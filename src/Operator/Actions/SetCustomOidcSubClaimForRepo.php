@@ -19,8 +19,6 @@ final readonly class SetCustomOidcSubClaimForRepo
 {
     public const OPERATION_ID    = 'actions/set-custom-oidc-sub-claim-for-repo';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/oidc/customization/sub';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/oidc/customization/sub';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Oidc\Customization\Sub $hydrator)
     {

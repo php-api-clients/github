@@ -19,8 +19,6 @@ final readonly class ListForOrgListing
 {
     public const OPERATION_ID    = 'repos/list-for-org';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Repos $hydrator)
     {

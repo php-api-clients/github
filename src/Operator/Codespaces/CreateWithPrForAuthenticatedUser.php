@@ -19,8 +19,6 @@ final readonly class CreateWithPrForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/create-with-pr-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/codespaces';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Codespaces $hydrator)
     {

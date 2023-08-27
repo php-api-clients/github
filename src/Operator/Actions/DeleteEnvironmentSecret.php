@@ -16,14 +16,12 @@ final readonly class DeleteEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/delete-environment-secret';
     public const OPERATION_MATCH = 'DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $repositoryId, string $environmentName, string $secretName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteEnvironmentSecret($repositoryId, $environmentName, $secretName);

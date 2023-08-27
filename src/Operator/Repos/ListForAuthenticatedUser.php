@@ -19,14 +19,12 @@ final readonly class ListForAuthenticatedUser
 {
     public const OPERATION_ID    = 'repos/list-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Repos $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Repository> | array{code: int}) */
+    /** @return iterable<Schema\Repository>|array{code:int} */
     public function call(string $direction, string $since, string $before, string $visibility = 'all', string $affiliation = 'owner,collaborator,organization_member', string $type = 'all', string $sort = 'full_name', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $direction, $since, $before, $visibility, $affiliation, $type, $sort, $perPage, $page);

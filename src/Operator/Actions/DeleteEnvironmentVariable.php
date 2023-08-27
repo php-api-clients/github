@@ -16,14 +16,12 @@ final readonly class DeleteEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/delete-environment-variable';
     public const OPERATION_MATCH = 'DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $repositoryId, string $name, string $environmentName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteEnvironmentVariable($repositoryId, $name, $environmentName);

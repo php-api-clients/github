@@ -19,8 +19,6 @@ final readonly class ListCommentsForCommitListing
 {
     public const OPERATION_ID    = 'repos/list-comments-for-commit';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/commits/{commit_sha}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\Comments $hydrator)
     {

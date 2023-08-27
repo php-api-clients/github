@@ -20,14 +20,12 @@ final readonly class ConvertMemberToOutsideCollaborator
 {
     public const OPERATION_ID    = 'orgs/convert-member-to-outside-collaborator';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/outside_collaborators/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/outside_collaborators/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\OutsideCollaborators\Username $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
     public function call(string $org, string $username, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ConvertMemberToOutsideCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $username);

@@ -20,14 +20,12 @@ final readonly class GetCodeFrequencyStats
 {
     public const OPERATION_ID    = 'repos/get-code-frequency-stats';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stats/code_frequency';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stats/code_frequency';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Stats\CodeFrequency $hydrator)
     {
     }
 
-    /** @return (Observable<int> | Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    /** @return Observable<int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
     public function call(string $owner, string $repo): iterable|Json
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetCodeFrequencyStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

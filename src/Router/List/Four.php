@@ -4,56 +4,33 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\List;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Router;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Client\GitHub\Routers;
+use ApiClients\Client\GitHub\Schema;
 use InvalidArgumentException;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
 
 final class Four
 {
-    private array $router = [];
-
-    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Routers $routers)
     {
     }
 
-    /** @return (iterable<Schema\GistComment>|array{code: int})|(iterable<Schema\GistCommit>|(iterable<Schema\GistSimple>|iterable<Schema\MarketplaceListingPlan>|iterable<Schema\SimpleUser>|iterable<Schema\Event>|iterable<Schema\OrganizationInvitation>|iterable<Schema\OrgHook>|iterable<Schema\Issue>|iterable<Schema\Migration>|(iterable<Schema\Package>|iterable<Schema\OrganizationProgrammaticAccessGrantRequest>|iterable<Schema\OrganizationProgrammaticAccessGrant>|iterable<Schema\Project>|iterable<Schema\MinimalRepository>|iterable<Schema\RepositoryRuleset>|iterable<Schema\Team>|(iterable<Schema\SimpleUser>|(iterable<Schema\ProjectColumn>|iterable<Schema\TeamDiscussion>|iterable<Schema\TeamProject>|(iterable<Schema\UserMarketplacePurchase>|(iterable<Schema\OrgMembership>|iterable<Schema\BaseGist>|iterable<Schema\GpgKey>|iterable<Schema\KeySimple>|iterable<Schema\OrganizationSimple>|iterable<Schema\SocialAccount>|iterable<Schema\SshSigningKey> */
+    /** @return iterable<Schema\GistComment>|array{code:int}|iterable<Schema\GistCommit>|iterable<Schema\GistSimple>|iterable<Schema\MarketplaceListingPlan>|iterable<Schema\SimpleUser>|iterable<Schema\Event>|iterable<Schema\OrganizationInvitation>|iterable<Schema\OrgHook>|iterable<Schema\Issue>|iterable<Schema\Migration>|iterable<Schema\Package>|iterable<Schema\OrganizationProgrammaticAccessGrantRequest>|iterable<Schema\OrganizationProgrammaticAccessGrant>|iterable<Schema\Project>|iterable<Schema\MinimalRepository>|iterable<Schema\RepositoryRuleset>|iterable<Schema\Team>|iterable<Schema\ProjectColumn>|iterable<Schema\TeamDiscussion>|iterable<Schema\TeamProject>|iterable<Schema\UserMarketplacePurchase>|iterable<Schema\OrgMembership>|iterable<Schema\BaseGist>|iterable<Schema\GpgKey>|iterable<Schema\KeySimple>|iterable<Schema\OrganizationSimple>|iterable<Schema\SocialAccount>|iterable<Schema\SshSigningKey> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
-        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {
                 if ($pathChunks[2] === '{gist_id}') {
                     if ($pathChunks[3] === 'comments') {
                         if ($call === 'LIST /gists/{gist_id}/comments') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Gists::class, $this->router) === false) {
-                                $this->router[Router\List\Gists::class] = new Router\List\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Gists::class]->ListCommentsListing($params);
+                            return $this->routers->router🔀List🔀Gists()->listCommentsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'commits') {
                         if ($call === 'LIST /gists/{gist_id}/commits') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Gists::class, $this->router) === false) {
-                                $this->router[Router\List\Gists::class] = new Router\List\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Gists::class]->ListCommitsListing($params);
+                            return $this->routers->router🔀List🔀Gists()->listCommitsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'forks') {
                         if ($call === 'LIST /gists/{gist_id}/forks') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Gists::class, $this->router) === false) {
-                                $this->router[Router\List\Gists::class] = new Router\List\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Gists::class]->ListForksListing($params);
+                            return $this->routers->router🔀List🔀Gists()->listForksListing($params);
                         }
                     }
                 }
@@ -61,12 +38,7 @@ final class Four
                 if ($pathChunks[2] === 'stubbed') {
                     if ($pathChunks[3] === 'plans') {
                         if ($call === 'LIST /marketplace_listing/stubbed/plans') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Apps::class, $this->router) === false) {
-                                $this->router[Router\List\Apps::class] = new Router\List\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Apps::class]->ListPlansStubbedListing($params);
+                            return $this->routers->router🔀List🔀Apps()->listPlansStubbedListing($params);
                         }
                     }
                 }
@@ -74,156 +46,71 @@ final class Four
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'blocks') {
                         if ($call === 'LIST /orgs/{org}/blocks') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListBlockedUsersListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listBlockedUsersListing($params);
                         }
                     } elseif ($pathChunks[3] === 'events') {
                         if ($call === 'LIST /orgs/{org}/events') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Activity::class, $this->router) === false) {
-                                $this->router[Router\List\Activity::class] = new Router\List\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Activity::class]->ListPublicOrgEventsListing($params);
+                            return $this->routers->router🔀List🔀Activity()->listPublicOrgEventsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'failed_invitations') {
                         if ($call === 'LIST /orgs/{org}/failed_invitations') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListFailedInvitationsListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listFailedInvitationsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'hooks') {
                         if ($call === 'LIST /orgs/{org}/hooks') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListWebhooksListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listWebhooksListing($params);
                         }
                     } elseif ($pathChunks[3] === 'invitations') {
                         if ($call === 'LIST /orgs/{org}/invitations') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListPendingInvitationsListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listPendingInvitationsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'issues') {
                         if ($call === 'LIST /orgs/{org}/issues') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Issues::class, $this->router) === false) {
-                                $this->router[Router\List\Issues::class] = new Router\List\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Issues::class]->ListForOrgListing($params);
+                            return $this->routers->router🔀List🔀Issues()->listForOrgListing($params);
                         }
                     } elseif ($pathChunks[3] === 'members') {
                         if ($call === 'LIST /orgs/{org}/members') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListMembersListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listMembersListing($params);
                         }
                     } elseif ($pathChunks[3] === 'migrations') {
                         if ($call === 'LIST /orgs/{org}/migrations') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Migrations::class, $this->router) === false) {
-                                $this->router[Router\List\Migrations::class] = new Router\List\Migrations($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Migrations::class]->ListForOrgListing($params);
+                            return $this->routers->router🔀List🔀Migrations()->listForOrgListing($params);
                         }
                     } elseif ($pathChunks[3] === 'outside_collaborators') {
                         if ($call === 'LIST /orgs/{org}/outside_collaborators') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListOutsideCollaboratorsListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listOutsideCollaboratorsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'packages') {
                         if ($call === 'LIST /orgs/{org}/packages') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Packages::class, $this->router) === false) {
-                                $this->router[Router\List\Packages::class] = new Router\List\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Packages::class]->ListPackagesForOrganizationListing($params);
+                            return $this->routers->router🔀List🔀Packages()->listPackagesForOrganizationListing($params);
                         }
                     } elseif ($pathChunks[3] === 'personal-access-token-requests') {
                         if ($call === 'LIST /orgs/{org}/personal-access-token-requests') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListPatGrantRequestsListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listPatGrantRequestsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'personal-access-tokens') {
                         if ($call === 'LIST /orgs/{org}/personal-access-tokens') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListPatGrantsListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listPatGrantsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'projects') {
                         if ($call === 'LIST /orgs/{org}/projects') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Projects::class, $this->router) === false) {
-                                $this->router[Router\List\Projects::class] = new Router\List\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Projects::class]->ListForOrgListing($params);
+                            return $this->routers->router🔀List🔀Projects()->listForOrgListing($params);
                         }
                     } elseif ($pathChunks[3] === 'public_members') {
                         if ($call === 'LIST /orgs/{org}/public_members') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListPublicMembersListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listPublicMembersListing($params);
                         }
                     } elseif ($pathChunks[3] === 'repos') {
                         if ($call === 'LIST /orgs/{org}/repos') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Repos::class, $this->router) === false) {
-                                $this->router[Router\List\Repos::class] = new Router\List\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Repos::class]->ListForOrgListing($params);
+                            return $this->routers->router🔀List🔀Repos()->listForOrgListing($params);
                         }
                     } elseif ($pathChunks[3] === 'rulesets') {
                         if ($call === 'LIST /orgs/{org}/rulesets') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Repos::class, $this->router) === false) {
-                                $this->router[Router\List\Repos::class] = new Router\List\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Repos::class]->GetOrgRulesetsListing($params);
+                            return $this->routers->router🔀List🔀Repos()->getOrgRulesetsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'teams') {
                         if ($call === 'LIST /orgs/{org}/teams') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listListing($params);
                         }
                     }
                 }
@@ -231,21 +118,11 @@ final class Four
                 if ($pathChunks[2] === '{project_id}') {
                     if ($pathChunks[3] === 'collaborators') {
                         if ($call === 'LIST /projects/{project_id}/collaborators') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Projects::class, $this->router) === false) {
-                                $this->router[Router\List\Projects::class] = new Router\List\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Projects::class]->ListCollaboratorsListing($params);
+                            return $this->routers->router🔀List🔀Projects()->listCollaboratorsListing($params);
                         }
                     } elseif ($pathChunks[3] === 'columns') {
                         if ($call === 'LIST /projects/{project_id}/columns') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Projects::class, $this->router) === false) {
-                                $this->router[Router\List\Projects::class] = new Router\List\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Projects::class]->ListColumnsListing($params);
+                            return $this->routers->router🔀List🔀Projects()->listColumnsListing($params);
                         }
                     }
                 }
@@ -253,57 +130,27 @@ final class Four
                 if ($pathChunks[2] === '{team_id}') {
                     if ($pathChunks[3] === 'discussions') {
                         if ($call === 'LIST /teams/{team_id}/discussions') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListDiscussionsLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listDiscussionsLegacyListing($params);
                         }
                     } elseif ($pathChunks[3] === 'invitations') {
                         if ($call === 'LIST /teams/{team_id}/invitations') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListPendingInvitationsLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listPendingInvitationsLegacyListing($params);
                         }
                     } elseif ($pathChunks[3] === 'members') {
                         if ($call === 'LIST /teams/{team_id}/members') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListMembersLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listMembersLegacyListing($params);
                         }
                     } elseif ($pathChunks[3] === 'projects') {
                         if ($call === 'LIST /teams/{team_id}/projects') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListProjectsLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listProjectsLegacyListing($params);
                         }
                     } elseif ($pathChunks[3] === 'repos') {
                         if ($call === 'LIST /teams/{team_id}/repos') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListReposLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listReposLegacyListing($params);
                         }
                     } elseif ($pathChunks[3] === 'teams') {
                         if ($call === 'LIST /teams/{team_id}/teams') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Teams::class, $this->router) === false) {
-                                $this->router[Router\List\Teams::class] = new Router\List\Teams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Teams::class]->ListChildLegacyListing($params);
+                            return $this->routers->router🔀List🔀Teams()->listChildLegacyListing($params);
                         }
                     }
                 }
@@ -311,23 +158,13 @@ final class Four
                 if ($pathChunks[2] === 'marketplace_purchases') {
                     if ($pathChunks[3] === 'stubbed') {
                         if ($call === 'LIST /user/marketplace_purchases/stubbed') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Apps::class, $this->router) === false) {
-                                $this->router[Router\List\Apps::class] = new Router\List\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Apps::class]->ListSubscriptionsForAuthenticatedUserStubbedListing($params);
+                            return $this->routers->router🔀List🔀Apps()->listSubscriptionsForAuthenticatedUserStubbedListing($params);
                         }
                     }
                 } elseif ($pathChunks[2] === 'memberships') {
                     if ($pathChunks[3] === 'orgs') {
                         if ($call === 'LIST /user/memberships/orgs') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListMembershipsForAuthenticatedUserListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listMembershipsForAuthenticatedUserListing($params);
                         }
                     }
                 }
@@ -335,137 +172,65 @@ final class Four
                 if ($pathChunks[2] === '{username}') {
                     if ($pathChunks[3] === 'events') {
                         if ($call === 'LIST /users/{username}/events') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Activity::class, $this->router) === false) {
-                                $this->router[Router\List\Activity::class] = new Router\List\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Activity::class]->ListEventsForAuthenticatedUserListing($params);
+                            return $this->routers->router🔀List🔀Activity()->listEventsForAuthenticatedUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'followers') {
                         if ($call === 'LIST /users/{username}/followers') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListFollowersForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listFollowersForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'following') {
                         if ($call === 'LIST /users/{username}/following') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListFollowingForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listFollowingForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'gists') {
                         if ($call === 'LIST /users/{username}/gists') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Gists::class, $this->router) === false) {
-                                $this->router[Router\List\Gists::class] = new Router\List\Gists($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Gists::class]->ListForUserListing($params);
+                            return $this->routers->router🔀List🔀Gists()->listForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'gpg_keys') {
                         if ($call === 'LIST /users/{username}/gpg_keys') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListGpgKeysForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listGpgKeysForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'keys') {
                         if ($call === 'LIST /users/{username}/keys') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListPublicKeysForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listPublicKeysForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'orgs') {
                         if ($call === 'LIST /users/{username}/orgs') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Orgs::class, $this->router) === false) {
-                                $this->router[Router\List\Orgs::class] = new Router\List\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Orgs::class]->ListForUserListing($params);
+                            return $this->routers->router🔀List🔀Orgs()->listForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'packages') {
                         if ($call === 'LIST /users/{username}/packages') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Packages::class, $this->router) === false) {
-                                $this->router[Router\List\Packages::class] = new Router\List\Packages($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Packages::class]->ListPackagesForUserListing($params);
+                            return $this->routers->router🔀List🔀Packages()->listPackagesForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'projects') {
                         if ($call === 'LIST /users/{username}/projects') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Projects::class, $this->router) === false) {
-                                $this->router[Router\List\Projects::class] = new Router\List\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Projects::class]->ListForUserListing($params);
+                            return $this->routers->router🔀List🔀Projects()->listForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'received_events') {
                         if ($call === 'LIST /users/{username}/received_events') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Activity::class, $this->router) === false) {
-                                $this->router[Router\List\Activity::class] = new Router\List\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Activity::class]->ListReceivedEventsForUserListing($params);
+                            return $this->routers->router🔀List🔀Activity()->listReceivedEventsForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'repos') {
                         if ($call === 'LIST /users/{username}/repos') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Repos::class, $this->router) === false) {
-                                $this->router[Router\List\Repos::class] = new Router\List\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Repos::class]->ListForUserListing($params);
+                            return $this->routers->router🔀List🔀Repos()->listForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'social_accounts') {
                         if ($call === 'LIST /users/{username}/social_accounts') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListSocialAccountsForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listSocialAccountsForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'ssh_signing_keys') {
                         if ($call === 'LIST /users/{username}/ssh_signing_keys') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Users::class, $this->router) === false) {
-                                $this->router[Router\List\Users::class] = new Router\List\Users($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Users::class]->ListSshSigningKeysForUserListing($params);
+                            return $this->routers->router🔀List🔀Users()->listSshSigningKeysForUserListing($params);
                         }
                     } elseif ($pathChunks[3] === 'subscriptions') {
                         if ($call === 'LIST /users/{username}/subscriptions') {
-                            $matched = true;
-                            if (array_key_exists(Router\List\Activity::class, $this->router) === false) {
-                                $this->router[Router\List\Activity::class] = new Router\List\Activity($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                            }
-
-                            return $this->router[Router\List\Activity::class]->ListReposWatchedByUserListing($params);
+                            return $this->routers->router🔀List🔀Activity()->listReposWatchedByUserListing($params);
                         }
                     }
                 }
             }
         }
 
-        if ($matched === false) {
-            throw new InvalidArgumentException();
-        }
+        throw new InvalidArgumentException();
     }
 }

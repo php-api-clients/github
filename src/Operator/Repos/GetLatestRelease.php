@@ -19,8 +19,6 @@ final readonly class GetLatestRelease
 {
     public const OPERATION_ID    = 'repos/get-latest-release';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases/latest';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/latest';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\Latest $hydrator)
     {

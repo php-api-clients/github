@@ -18,14 +18,12 @@ final readonly class DeleteMilestone
 {
     public const OPERATION_ID    = 'issues/delete-milestone';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/milestones/{milestone_number}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/milestones/{milestone_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $milestoneNumber): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\DeleteMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber);

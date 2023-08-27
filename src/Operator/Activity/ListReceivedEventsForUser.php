@@ -19,14 +19,12 @@ final readonly class ListReceivedEventsForUser
 {
     public const OPERATION_ID    = 'activity/list-received-events-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/received_events';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/received_events';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\ReceivedEvents $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Event> */
+    /** @return iterable<Schema\Event> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListReceivedEventsForUser($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

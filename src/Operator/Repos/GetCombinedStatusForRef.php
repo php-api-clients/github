@@ -19,8 +19,6 @@ final readonly class GetCombinedStatusForRef
 {
     public const OPERATION_ID    = 'repos/get-combined-status-for-ref';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{ref}/status';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{ref}/status';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\Status $hydrator)
     {

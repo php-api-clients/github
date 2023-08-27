@@ -20,14 +20,12 @@ final readonly class CheckPermissionsForRepoInOrg
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-repo-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Repos\Owner\Repo $hydrator)
     {
     }
 
-    /** @return (Schema\TeamRepository | array{code: int}) */
+    /** @return Schema\TeamRepository|array{code:int} */
     public function call(string $org, string $teamSlug, string $owner, string $repo): TeamRepository|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForRepoInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $owner, $repo);

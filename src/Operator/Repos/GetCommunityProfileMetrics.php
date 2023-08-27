@@ -19,8 +19,6 @@ final readonly class GetCommunityProfileMetrics
 {
     public const OPERATION_ID    = 'repos/get-community-profile-metrics';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/community/profile';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/community/profile';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Community\Profile $hydrator)
     {

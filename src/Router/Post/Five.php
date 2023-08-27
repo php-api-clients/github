@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Post;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Router;
+use ApiClients\Client\GitHub\Routers;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\Autolink;
 use ApiClients\Client\GitHub\Schema\CheckRun;
@@ -34,37 +33,24 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use InvalidArgumentException;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
 
 final class Five
 {
-    private array $router = [];
-
-    public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
+    public function __construct(private Routers $routers)
     {
     }
 
-    /** @return |array{code: int}|(Schema\ProjectCard|array{code: int})|(Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|(Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|(Schema\MergedUpstream|(Schema\Commit|(Schema\Codespace */
+    /** @return |array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\MergedUpstream|Schema\Commit|Schema\Codespace */
     public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|Repository|CodespaceExportDetails|CodespaceWithFullRepository|array
     {
-        $matched = false;
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
                 if ($pathChunks[2] === 'installations') {
                     if ($pathChunks[3] === '{installation_id}') {
                         if ($pathChunks[4] === 'access_tokens') {
                             if ($call === 'POST /app/installations/{installation_id}/access_tokens') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Apps::class, $this->router) === false) {
-                                    $this->router[Router\Post\Apps::class] = new Router\Post\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Apps::class]->CreateInstallationAccessToken($params);
+                                return $this->routers->router🔀Post🔀Apps()->createInstallationAccessToken($params);
                             }
                         }
                     }
@@ -74,12 +60,7 @@ final class Five
                     if ($pathChunks[3] === 'token') {
                         if ($pathChunks[4] === 'scoped') {
                             if ($call === 'POST /applications/{client_id}/token/scoped') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Apps::class, $this->router) === false) {
-                                    $this->router[Router\Post\Apps::class] = new Router\Post\Apps($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Apps::class]->ScopeToken($params);
+                                return $this->routers->router🔀Post🔀Apps()->scopeToken($params);
                             }
                         }
                     }
@@ -89,45 +70,25 @@ final class Five
                     if ($pathChunks[3] === 'actions') {
                         if ($pathChunks[4] === 'variables') {
                             if ($call === 'POST /orgs/{org}/actions/variables') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Actions::class, $this->router) === false) {
-                                    $this->router[Router\Post\Actions::class] = new Router\Post\Actions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Actions::class]->CreateOrgVariable($params);
+                                return $this->routers->router🔀Post🔀Actions()->createOrgVariable($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'personal-access-token-requests') {
                         if ($pathChunks[4] === '{pat_request_id}') {
                             if ($call === 'POST /orgs/{org}/personal-access-token-requests/{pat_request_id}') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
-                                    $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Orgs::class]->ReviewPatGrantRequest($params);
+                                return $this->routers->router🔀Post🔀Orgs()->reviewPatGrantRequest($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'personal-access-tokens') {
                         if ($pathChunks[4] === '{pat_id}') {
                             if ($call === 'POST /orgs/{org}/personal-access-tokens/{pat_id}') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
-                                    $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Orgs::class]->UpdatePatAccess($params);
+                                return $this->routers->router🔀Post🔀Orgs()->updatePatAccess($params);
                             }
                         }
                     } elseif ($pathChunks[3] === '{security_product}') {
                         if ($pathChunks[4] === '{enablement}') {
                             if ($call === 'POST /orgs/{org}/{security_product}/{enablement}') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Orgs::class, $this->router) === false) {
-                                    $this->router[Router\Post\Orgs::class] = new Router\Post\Orgs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Orgs::class]->EnableOrDisableSecurityProductOnAllOrgRepos($params);
+                                return $this->routers->router🔀Post🔀Orgs()->enableOrDisableSecurityProductOnAllOrgRepos($params);
                             }
                         }
                     }
@@ -137,21 +98,11 @@ final class Five
                     if ($pathChunks[3] === '{column_id}') {
                         if ($pathChunks[4] === 'cards') {
                             if ($call === 'POST /projects/columns/{column_id}/cards') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Projects::class, $this->router) === false) {
-                                    $this->router[Router\Post\Projects::class] = new Router\Post\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Projects::class]->CreateCard($params);
+                                return $this->routers->router🔀Post🔀Projects()->createCard($params);
                             }
                         } elseif ($pathChunks[4] === 'moves') {
                             if ($call === 'POST /projects/columns/{column_id}/moves') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Projects::class, $this->router) === false) {
-                                    $this->router[Router\Post\Projects::class] = new Router\Post\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Projects::class]->MoveColumn($params);
+                                return $this->routers->router🔀Post🔀Projects()->moveColumn($params);
                             }
                         }
                     }
@@ -161,192 +112,87 @@ final class Five
                     if ($pathChunks[3] === '{repo}') {
                         if ($pathChunks[4] === 'autolinks') {
                             if ($call === 'POST /repos/{owner}/{repo}/autolinks') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateAutolink($params);
+                                return $this->routers->router🔀Post🔀Repos()->createAutolink($params);
                             }
                         } elseif ($pathChunks[4] === 'check-runs') {
                             if ($call === 'POST /repos/{owner}/{repo}/check-runs') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Checks::class, $this->router) === false) {
-                                    $this->router[Router\Post\Checks::class] = new Router\Post\Checks($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Checks::class]->Create($params);
+                                return $this->routers->router🔀Post🔀Checks()->create($params);
                             }
                         } elseif ($pathChunks[4] === 'check-suites') {
                             if ($call === 'POST /repos/{owner}/{repo}/check-suites') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Checks::class, $this->router) === false) {
-                                    $this->router[Router\Post\Checks::class] = new Router\Post\Checks($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Checks::class]->CreateSuite($params);
+                                return $this->routers->router🔀Post🔀Checks()->createSuite($params);
                             }
                         } elseif ($pathChunks[4] === 'codespaces') {
                             if ($call === 'POST /repos/{owner}/{repo}/codespaces') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Codespaces::class, $this->router) === false) {
-                                    $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Codespaces::class]->CreateWithRepoForAuthenticatedUser($params);
+                                return $this->routers->router🔀Post🔀Codespaces()->createWithRepoForAuthenticatedUser($params);
                             }
                         } elseif ($pathChunks[4] === 'deployments') {
                             if ($call === 'POST /repos/{owner}/{repo}/deployments') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateDeployment($params);
+                                return $this->routers->router🔀Post🔀Repos()->createDeployment($params);
                             }
                         } elseif ($pathChunks[4] === 'dispatches') {
                             if ($call === 'POST /repos/{owner}/{repo}/dispatches') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateDispatchEvent($params);
+                                return $this->routers->router🔀Post🔀Repos()->createDispatchEvent($params);
                             }
                         } elseif ($pathChunks[4] === 'forks') {
                             if ($call === 'POST /repos/{owner}/{repo}/forks') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateFork($params);
+                                return $this->routers->router🔀Post🔀Repos()->createFork($params);
                             }
                         } elseif ($pathChunks[4] === 'hooks') {
                             if ($call === 'POST /repos/{owner}/{repo}/hooks') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateWebhook($params);
+                                return $this->routers->router🔀Post🔀Repos()->createWebhook($params);
                             }
                         } elseif ($pathChunks[4] === 'issues') {
                             if ($call === 'POST /repos/{owner}/{repo}/issues') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Issues::class, $this->router) === false) {
-                                    $this->router[Router\Post\Issues::class] = new Router\Post\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Issues::class]->Create($params);
+                                return $this->routers->router🔀Post🔀Issues()->create($params);
                             }
                         } elseif ($pathChunks[4] === 'keys') {
                             if ($call === 'POST /repos/{owner}/{repo}/keys') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateDeployKey($params);
+                                return $this->routers->router🔀Post🔀Repos()->createDeployKey($params);
                             }
                         } elseif ($pathChunks[4] === 'labels') {
                             if ($call === 'POST /repos/{owner}/{repo}/labels') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Issues::class, $this->router) === false) {
-                                    $this->router[Router\Post\Issues::class] = new Router\Post\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Issues::class]->CreateLabel($params);
+                                return $this->routers->router🔀Post🔀Issues()->createLabel($params);
                             }
                         } elseif ($pathChunks[4] === 'merge-upstream') {
                             if ($call === 'POST /repos/{owner}/{repo}/merge-upstream') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->MergeUpstream($params);
+                                return $this->routers->router🔀Post🔀Repos()->mergeUpstream($params);
                             }
                         } elseif ($pathChunks[4] === 'merges') {
                             if ($call === 'POST /repos/{owner}/{repo}/merges') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->Merge($params);
+                                return $this->routers->router🔀Post🔀Repos()->merge($params);
                             }
                         } elseif ($pathChunks[4] === 'milestones') {
                             if ($call === 'POST /repos/{owner}/{repo}/milestones') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Issues::class, $this->router) === false) {
-                                    $this->router[Router\Post\Issues::class] = new Router\Post\Issues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Issues::class]->CreateMilestone($params);
+                                return $this->routers->router🔀Post🔀Issues()->createMilestone($params);
                             }
                         } elseif ($pathChunks[4] === 'pages') {
                             if ($call === 'POST /repos/{owner}/{repo}/pages') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreatePagesSite($params);
+                                return $this->routers->router🔀Post🔀Repos()->createPagesSite($params);
                             }
                         } elseif ($pathChunks[4] === 'projects') {
                             if ($call === 'POST /repos/{owner}/{repo}/projects') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Projects::class, $this->router) === false) {
-                                    $this->router[Router\Post\Projects::class] = new Router\Post\Projects($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Projects::class]->CreateForRepo($params);
+                                return $this->routers->router🔀Post🔀Projects()->createForRepo($params);
                             }
                         } elseif ($pathChunks[4] === 'pulls') {
                             if ($call === 'POST /repos/{owner}/{repo}/pulls') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Pulls::class, $this->router) === false) {
-                                    $this->router[Router\Post\Pulls::class] = new Router\Post\Pulls($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Pulls::class]->Create($params);
+                                return $this->routers->router🔀Post🔀Pulls()->create($params);
                             }
                         } elseif ($pathChunks[4] === 'releases') {
                             if ($call === 'POST /repos/{owner}/{repo}/releases') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateRelease($params);
+                                return $this->routers->router🔀Post🔀Repos()->createRelease($params);
                             }
                         } elseif ($pathChunks[4] === 'rulesets') {
                             if ($call === 'POST /repos/{owner}/{repo}/rulesets') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateRepoRuleset($params);
+                                return $this->routers->router🔀Post🔀Repos()->createRepoRuleset($params);
                             }
                         } elseif ($pathChunks[4] === 'security-advisories') {
                             if ($call === 'POST /repos/{owner}/{repo}/security-advisories') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\SecurityAdvisories::class, $this->router) === false) {
-                                    $this->router[Router\Post\SecurityAdvisories::class] = new Router\Post\SecurityAdvisories($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\SecurityAdvisories::class]->CreateRepositoryAdvisory($params);
+                                return $this->routers->router🔀Post🔀SecurityAdvisories()->createRepositoryAdvisory($params);
                             }
                         } elseif ($pathChunks[4] === 'transfer') {
                             if ($call === 'POST /repos/{owner}/{repo}/transfer') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->Transfer($params);
+                                return $this->routers->router🔀Post🔀Repos()->transfer($params);
                             }
                         }
                     }
@@ -354,12 +200,7 @@ final class Five
                     if ($pathChunks[3] === '{template_repo}') {
                         if ($pathChunks[4] === 'generate') {
                             if ($call === 'POST /repos/{template_owner}/{template_repo}/generate') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Repos::class, $this->router) === false) {
-                                    $this->router[Router\Post\Repos::class] = new Router\Post\Repos($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Repos::class]->CreateUsingTemplate($params);
+                                return $this->routers->router🔀Post🔀Repos()->createUsingTemplate($params);
                             }
                         }
                     }
@@ -369,39 +210,19 @@ final class Five
                     if ($pathChunks[3] === '{codespace_name}') {
                         if ($pathChunks[4] === 'exports') {
                             if ($call === 'POST /user/codespaces/{codespace_name}/exports') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Codespaces::class, $this->router) === false) {
-                                    $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Codespaces::class]->ExportForAuthenticatedUser($params);
+                                return $this->routers->router🔀Post🔀Codespaces()->exportForAuthenticatedUser($params);
                             }
                         } elseif ($pathChunks[4] === 'publish') {
                             if ($call === 'POST /user/codespaces/{codespace_name}/publish') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Codespaces::class, $this->router) === false) {
-                                    $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Codespaces::class]->PublishForAuthenticatedUser($params);
+                                return $this->routers->router🔀Post🔀Codespaces()->publishForAuthenticatedUser($params);
                             }
                         } elseif ($pathChunks[4] === 'start') {
                             if ($call === 'POST /user/codespaces/{codespace_name}/start') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Codespaces::class, $this->router) === false) {
-                                    $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Codespaces::class]->StartForAuthenticatedUser($params);
+                                return $this->routers->router🔀Post🔀Codespaces()->startForAuthenticatedUser($params);
                             }
                         } elseif ($pathChunks[4] === 'stop') {
                             if ($call === 'POST /user/codespaces/{codespace_name}/stop') {
-                                $matched = true;
-                                if (array_key_exists(Router\Post\Codespaces::class, $this->router) === false) {
-                                    $this->router[Router\Post\Codespaces::class] = new Router\Post\Codespaces($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators, $this->browser, $this->authentication);
-                                }
-
-                                return $this->router[Router\Post\Codespaces::class]->StopForAuthenticatedUser($params);
+                                return $this->routers->router🔀Post🔀Codespaces()->stopForAuthenticatedUser($params);
                             }
                         }
                     }
@@ -409,8 +230,6 @@ final class Five
             }
         }
 
-        if ($matched === false) {
-            throw new InvalidArgumentException();
-        }
+        throw new InvalidArgumentException();
     }
 }

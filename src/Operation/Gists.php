@@ -4,264 +4,177 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\BaseGist;
+use ApiClients\Client\GitHub\Schema\GistComment;
+use ApiClients\Client\GitHub\Schema\GistSimple;
 
 final class Gists
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function list(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function list(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\List_::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\List_::class] = new Operator\Gists\List_($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
-        }
-
-        return $this->operator[Operator\Gists\List_::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷List_()->call($since, $perPage, $page);
     }
 
-    public function listListing(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function listListing(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListListing::class] = new Operator\Gists\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
-        }
-
-        return $this->operator[Operator\Gists\ListListing::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷ListListing()->call($since, $perPage, $page);
     }
 
-    public function create(array $params): Schema\GistSimple
+    /** @return Schema\GistSimple|array{code:int} */
+    public function create(array $params): GistSimple|array
     {
-        if (array_key_exists(Operator\Gists\Create::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Create::class] = new Operator\Gists\Create($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
-        }
-
-        return $this->operator[Operator\Gists\Create::class]->call($params);
+        return $this->operators->gists👷Create()->call($params);
     }
 
-    public function listPublic(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function listPublic(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListPublic::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListPublic::class] = new Operator\Gists\ListPublic($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_());
-        }
-
-        return $this->operator[Operator\Gists\ListPublic::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷ListPublic()->call($since, $perPage, $page);
     }
 
-    public function listPublicListing(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function listPublicListing(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListPublicListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListPublicListing::class] = new Operator\Gists\ListPublicListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Public_());
-        }
-
-        return $this->operator[Operator\Gists\ListPublicListing::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷ListPublicListing()->call($since, $perPage, $page);
     }
 
-    public function listStarred(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function listStarred(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListStarred::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListStarred::class] = new Operator\Gists\ListStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred());
-        }
-
-        return $this->operator[Operator\Gists\ListStarred::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷ListStarred()->call($since, $perPage, $page);
     }
 
-    public function listStarredListing(string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    public function listStarredListing(string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListStarredListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListStarredListing::class] = new Operator\Gists\ListStarredListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀Starred());
-        }
-
-        return $this->operator[Operator\Gists\ListStarredListing::class]->call($since, $perPage, $page);
+        return $this->operators->gists👷ListStarredListing()->call($since, $perPage, $page);
     }
 
-    public function get(string $gistId): Schema\GistSimple
+    /** @return Schema\GistSimple|array{code:int} */
+    public function get(string $gistId): GistSimple|array
     {
-        if (array_key_exists(Operator\Gists\Get::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Get::class] = new Operator\Gists\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId());
-        }
-
-        return $this->operator[Operator\Gists\Get::class]->call($gistId);
+        return $this->operators->gists👷Get()->call($gistId);
     }
 
-    public function delete(string $gistId): ResponseInterface
+    /** @return array{code:int} */
+    public function delete(string $gistId): array
     {
-        if (array_key_exists(Operator\Gists\Delete::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Delete::class] = new Operator\Gists\Delete($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId());
-        }
-
-        return $this->operator[Operator\Gists\Delete::class]->call($gistId);
+        return $this->operators->gists👷Delete()->call($gistId);
     }
 
-    public function update(string $gistId, array $params): Schema\GistSimple
+    /** @return */
+    public function update(string $gistId, array $params): GistSimple|array
     {
-        if (array_key_exists(Operator\Gists\Update::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Update::class] = new Operator\Gists\Update($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId());
-        }
-
-        return $this->operator[Operator\Gists\Update::class]->call($gistId, $params);
+        return $this->operators->gists👷Update()->call($gistId, $params);
     }
 
-    public function listComments(string $gistId, int $perPage, int $page): Schema\GistComment
+    /** @return iterable<Schema\GistComment>|array{code:int} */
+    public function listComments(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListComments::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListComments::class] = new Operator\Gists\ListComments($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments());
-        }
-
-        return $this->operator[Operator\Gists\ListComments::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListComments()->call($gistId, $perPage, $page);
     }
 
-    public function listCommentsListing(string $gistId, int $perPage, int $page): Schema\GistComment
+    /** @return iterable<Schema\GistComment>|array{code:int} */
+    public function listCommentsListing(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListCommentsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListCommentsListing::class] = new Operator\Gists\ListCommentsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments());
-        }
-
-        return $this->operator[Operator\Gists\ListCommentsListing::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListCommentsListing()->call($gistId, $perPage, $page);
     }
 
-    public function createComment(string $gistId, array $params): Schema\GistComment
+    /** @return Schema\GistComment|array{code:int} */
+    public function createComment(string $gistId, array $params): GistComment|array
     {
-        if (array_key_exists(Operator\Gists\CreateComment::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\CreateComment::class] = new Operator\Gists\CreateComment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments());
-        }
-
-        return $this->operator[Operator\Gists\CreateComment::class]->call($gistId, $params);
+        return $this->operators->gists👷CreateComment()->call($gistId, $params);
     }
 
-    public function getComment(string $gistId, int $commentId): Schema\GistComment
+    /** @return Schema\GistComment|array{code:int} */
+    public function getComment(string $gistId, int $commentId): GistComment|array
     {
-        if (array_key_exists(Operator\Gists\GetComment::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\GetComment::class] = new Operator\Gists\GetComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments🌀CommentId());
-        }
-
-        return $this->operator[Operator\Gists\GetComment::class]->call($gistId, $commentId);
+        return $this->operators->gists👷GetComment()->call($gistId, $commentId);
     }
 
-    public function deleteComment(string $gistId, int $commentId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteComment(string $gistId, int $commentId): array
     {
-        if (array_key_exists(Operator\Gists\DeleteComment::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\DeleteComment::class] = new Operator\Gists\DeleteComment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments🌀CommentId());
-        }
-
-        return $this->operator[Operator\Gists\DeleteComment::class]->call($gistId, $commentId);
+        return $this->operators->gists👷DeleteComment()->call($gistId, $commentId);
     }
 
-    public function updateComment(string $gistId, int $commentId, array $params): Schema\GistComment
+    /** @return */
+    public function updateComment(string $gistId, int $commentId, array $params): GistComment|array
     {
-        if (array_key_exists(Operator\Gists\UpdateComment::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\UpdateComment::class] = new Operator\Gists\UpdateComment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Comments🌀CommentId());
-        }
-
-        return $this->operator[Operator\Gists\UpdateComment::class]->call($gistId, $commentId, $params);
+        return $this->operators->gists👷UpdateComment()->call($gistId, $commentId, $params);
     }
 
-    public function listCommits(string $gistId, int $perPage, int $page): Schema\GistCommit
+    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    public function listCommits(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListCommits::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListCommits::class] = new Operator\Gists\ListCommits($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Commits());
-        }
-
-        return $this->operator[Operator\Gists\ListCommits::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListCommits()->call($gistId, $perPage, $page);
     }
 
-    public function listCommitsListing(string $gistId, int $perPage, int $page): Schema\GistCommit
+    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    public function listCommitsListing(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListCommitsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListCommitsListing::class] = new Operator\Gists\ListCommitsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Commits());
-        }
-
-        return $this->operator[Operator\Gists\ListCommitsListing::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListCommitsListing()->call($gistId, $perPage, $page);
     }
 
-    public function listForks(string $gistId, int $perPage, int $page): Schema\GistSimple
+    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    public function listForks(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListForks::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListForks::class] = new Operator\Gists\ListForks($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Forks());
-        }
-
-        return $this->operator[Operator\Gists\ListForks::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListForks()->call($gistId, $perPage, $page);
     }
 
-    public function listForksListing(string $gistId, int $perPage, int $page): Schema\GistSimple
+    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    public function listForksListing(string $gistId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListForksListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListForksListing::class] = new Operator\Gists\ListForksListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Forks());
-        }
-
-        return $this->operator[Operator\Gists\ListForksListing::class]->call($gistId, $perPage, $page);
+        return $this->operators->gists👷ListForksListing()->call($gistId, $perPage, $page);
     }
 
-    public function fork(string $gistId): Schema\BaseGist
+    /** @return Schema\BaseGist|array{code:int} */
+    public function fork(string $gistId): BaseGist|array
     {
-        if (array_key_exists(Operator\Gists\Fork::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Fork::class] = new Operator\Gists\Fork($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Forks());
-        }
-
-        return $this->operator[Operator\Gists\Fork::class]->call($gistId);
+        return $this->operators->gists👷Fork()->call($gistId);
     }
 
-    public function checkIsStarred(string $gistId): ResponseInterface
+    /** @return array{code:int} */
+    public function checkIsStarred(string $gistId): array
     {
-        if (array_key_exists(Operator\Gists\CheckIsStarred::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\CheckIsStarred::class] = new Operator\Gists\CheckIsStarred($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Star());
-        }
-
-        return $this->operator[Operator\Gists\CheckIsStarred::class]->call($gistId);
+        return $this->operators->gists👷CheckIsStarred()->call($gistId);
     }
 
-    public function star(string $gistId): ResponseInterface
+    /** @return array{code:int} */
+    public function star(string $gistId): array
     {
-        if (array_key_exists(Operator\Gists\Star::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Star::class] = new Operator\Gists\Star($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Star());
-        }
-
-        return $this->operator[Operator\Gists\Star::class]->call($gistId);
+        return $this->operators->gists👷Star()->call($gistId);
     }
 
-    public function unstar(string $gistId): ResponseInterface
+    /** @return array{code:int} */
+    public function unstar(string $gistId): array
     {
-        if (array_key_exists(Operator\Gists\Unstar::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\Unstar::class] = new Operator\Gists\Unstar($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Star());
-        }
-
-        return $this->operator[Operator\Gists\Unstar::class]->call($gistId);
+        return $this->operators->gists👷Unstar()->call($gistId);
     }
 
-    public function getRevision(string $gistId, string $sha): Schema\GistSimple
+    /** @return */
+    public function getRevision(string $gistId, string $sha): GistSimple|array
     {
-        if (array_key_exists(Operator\Gists\GetRevision::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\GetRevision::class] = new Operator\Gists\GetRevision($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists🌀GistId🌀Sha());
-        }
-
-        return $this->operator[Operator\Gists\GetRevision::class]->call($gistId, $sha);
+        return $this->operators->gists👷GetRevision()->call($gistId, $sha);
     }
 
-    public function listForUser(string $username, string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist> */
+    public function listForUser(string $username, string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListForUser::class] = new Operator\Gists\ListForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Gists());
-        }
-
-        return $this->operator[Operator\Gists\ListForUser::class]->call($username, $since, $perPage, $page);
+        return $this->operators->gists👷ListForUser()->call($username, $since, $perPage, $page);
     }
 
-    public function listForUserListing(string $username, string $since, int $perPage, int $page): Schema\BaseGist
+    /** @return iterable<Schema\BaseGist> */
+    public function listForUserListing(string $username, string $since, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Gists\ListForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Gists\ListForUserListing::class] = new Operator\Gists\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Gists());
-        }
-
-        return $this->operator[Operator\Gists\ListForUserListing::class]->call($username, $since, $perPage, $page);
+        return $this->operators->gists👷ListForUserListing()->call($username, $since, $perPage, $page);
     }
 }

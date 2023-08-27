@@ -20,14 +20,12 @@ final readonly class GetThreadSubscriptionForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/get-thread-subscription-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /notifications/threads/{thread_id}/subscription';
-    private const METHOD         = 'GET';
-    private const PATH           = '/notifications/threads/{thread_id}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator)
     {
     }
 
-    /** @return (Schema\ThreadSubscription | array{code: int}) */
+    /** @return Schema\ThreadSubscription|array{code:int} */
     public function call(int $threadId): ThreadSubscription|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetThreadSubscriptionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $threadId);

@@ -19,8 +19,6 @@ final readonly class UpdateRef
 {
     public const OPERATION_ID    = 'git/update-ref';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/git/refs/{ref}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/git/refs/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Git\Refs\Ref $hydrator)
     {

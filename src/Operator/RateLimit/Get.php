@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'rate-limit/get';
     public const OPERATION_MATCH = 'GET /rate_limit';
-    private const METHOD         = 'GET';
-    private const PATH           = '/rate_limit';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\RateLimit $hydrator)
     {
     }
 
-    /** @return (Schema\RateLimitOverview | array{code: int}) */
+    /** @return Schema\RateLimitOverview|array{code:int} */
     public function call(): RateLimitOverview|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\RateLimit\Get($this->responseSchemaValidator, $this->hydrator);

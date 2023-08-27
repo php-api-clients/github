@@ -20,14 +20,12 @@ final readonly class StartForAuthenticatedUser
 {
     public const OPERATION_ID    = 'migrations/start-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/migrations';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/migrations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Migrations $hydrator)
     {
     }
 
-    /** @return (Schema\Migration | array{code: int}) */
+    /** @return Schema\Migration|array{code:int} */
     public function call(array $params): Migration|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\StartForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -16,14 +16,12 @@ final readonly class RemoveRepoLegacy
 {
     public const OPERATION_ID    = 'teams/remove-repo-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/repos/{owner}/{repo}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/repos/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveRepoLegacy($teamId, $owner, $repo);

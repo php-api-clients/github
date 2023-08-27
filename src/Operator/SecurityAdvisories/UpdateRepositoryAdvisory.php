@@ -19,8 +19,6 @@ final readonly class UpdateRepositoryAdvisory
 {
     public const OPERATION_ID    = 'security-advisories/update-repository-advisory';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/security-advisories/{ghsa_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId $hydrator)
     {

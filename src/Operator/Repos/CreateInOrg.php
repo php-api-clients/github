@@ -19,8 +19,6 @@ final readonly class CreateInOrg
 {
     public const OPERATION_ID    = 'repos/create-in-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/repos';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Repos $hydrator)
     {

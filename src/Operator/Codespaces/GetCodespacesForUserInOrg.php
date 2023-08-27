@@ -20,14 +20,12 @@ final readonly class GetCodespacesForUserInOrg
 {
     public const OPERATION_ID    = 'codespaces/get-codespaces-for-user-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/members/{username}/codespaces';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/members/{username}/codespaces';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Members\Username\Codespaces $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
     public function call(string $org, string $username, int $perPage = 30, int $page = 1): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\GetCodespacesForUserInOrg($this->responseSchemaValidator, $this->hydrator, $org, $username, $perPage, $page);

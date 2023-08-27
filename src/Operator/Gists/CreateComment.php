@@ -20,14 +20,12 @@ final readonly class CreateComment
 {
     public const OPERATION_ID    = 'gists/create-comment';
     public const OPERATION_MATCH = 'POST /gists/{gist_id}/comments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/gists/{gist_id}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Comments $hydrator)
     {
     }
 
-    /** @return (Schema\GistComment | array{code: int}) */
+    /** @return Schema\GistComment|array{code:int} */
     public function call(string $gistId, array $params): GistComment|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId);

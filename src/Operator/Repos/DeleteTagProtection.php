@@ -18,14 +18,12 @@ final readonly class DeleteTagProtection
 {
     public const OPERATION_ID    = 'repos/delete-tag-protection';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/tags/protection/{tag_protection_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Tags\Protection\TagProtectionId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $tagProtectionId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteTagProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tagProtectionId);

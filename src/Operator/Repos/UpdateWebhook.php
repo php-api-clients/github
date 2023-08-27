@@ -19,8 +19,6 @@ final readonly class UpdateWebhook
 {
     public const OPERATION_ID    = 'repos/update-webhook';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/hooks/{hook_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/hooks/{hook_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Hooks\HookId $hydrator)
     {

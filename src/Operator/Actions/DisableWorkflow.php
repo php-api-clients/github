@@ -16,14 +16,12 @@ final readonly class DisableWorkflow
 {
     public const OPERATION_ID    = 'actions/disable-workflow';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, $workflowId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DisableWorkflow($owner, $repo, $workflowId);

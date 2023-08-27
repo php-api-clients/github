@@ -18,14 +18,12 @@ final readonly class CheckRepoIsStarredByAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/check-repo-is-starred-by-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/starred/{owner}/{repo}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/starred/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Starred\Owner\Repo $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\CheckRepoIsStarredByAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -19,14 +19,12 @@ final readonly class ListDeployKeys
 {
     public const OPERATION_ID    = 'repos/list-deploy-keys';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Keys $hydrator)
     {
     }
 
-    /** @return Observable<Schema\DeployKey> */
+    /** @return iterable<Schema\DeployKey> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListDeployKeys($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

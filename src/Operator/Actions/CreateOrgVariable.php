@@ -19,8 +19,6 @@ final readonly class CreateOrgVariable
 {
     public const OPERATION_ID    = 'actions/create-org-variable';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/variables';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/variables';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Variables $hydrator)
     {

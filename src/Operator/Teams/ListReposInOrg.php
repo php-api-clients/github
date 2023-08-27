@@ -19,14 +19,12 @@ final readonly class ListReposInOrg
 {
     public const OPERATION_ID    = 'teams/list-repos-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/repos';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Repos $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListReposInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $perPage, $page);

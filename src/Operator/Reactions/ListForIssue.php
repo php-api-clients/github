@@ -19,14 +19,12 @@ final readonly class ListForIssue
 {
     public const OPERATION_ID    = 'reactions/list-for-issue';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/{issue_number}/reactions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Reactions $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Reaction> */
+    /** @return iterable<Schema\Reaction> */
     public function call(string $owner, string $repo, int $issueNumber, string $content, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\ListForIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $content, $perPage, $page);

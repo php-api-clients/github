@@ -16,14 +16,12 @@ final readonly class DeleteRepoVariable
 {
     public const OPERATION_ID    = 'actions/delete-repo-variable';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/variables/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $name): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteRepoVariable($owner, $repo, $name);

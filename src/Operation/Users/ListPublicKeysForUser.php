@@ -63,7 +63,7 @@ final class ListPublicKeysForUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\KeySimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\KeySimple::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\KeySimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

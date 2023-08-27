@@ -20,14 +20,12 @@ final readonly class GetSarif
 {
     public const OPERATION_ID    = 'code-scanning/get-sarif';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId $hydrator)
     {
     }
 
-    /** @return (Schema\CodeScanningSarifsStatus | array{code: int}) */
+    /** @return Schema\CodeScanningSarifsStatus|array{code:int} */
     public function call(string $owner, string $repo, string $sarifId): CodeScanningSarifsStatus|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\GetSarif($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sarifId);

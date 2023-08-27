@@ -18,14 +18,12 @@ final readonly class AddOrUpdateProjectPermissionsInOrg
 {
     public const OPERATION_ID    = 'teams/add-or-update-project-permissions-in-org';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug, int $projectId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateProjectPermissionsInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $projectId);

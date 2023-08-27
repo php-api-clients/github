@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Get;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
@@ -14,7 +13,6 @@ use ApiClients\Client\GitHub\Schema\GitRef;
 use ApiClients\Client\GitHub\Schema\GitTag;
 use ApiClients\Client\GitHub\Schema\GitTree;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -23,9 +21,6 @@ use function array_key_exists;
 
 final class Git
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
@@ -33,7 +28,6 @@ final class Git
     /** @return */
     public function getBlob(array $params): Blob|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -53,11 +47,7 @@ final class Git
 
         $arguments['file_sha'] = $params['file_sha'];
         unset($params['file_sha']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Blobs🌀FileSha();
-        }
-
-        $operator = new Operator\Git\GetBlob($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha::class]);
+        $operator = new Operator\Git\GetBlob($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Blobs🌀FileSha());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['file_sha']);
     }
@@ -65,7 +55,6 @@ final class Git
     /** @return */
     public function getCommit(array $params): GitCommit|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -85,19 +74,14 @@ final class Git
 
         $arguments['commit_sha'] = $params['commit_sha'];
         unset($params['commit_sha']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\Commits\CommitSha::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Commits\CommitSha::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Commits🌀CommitSha();
-        }
-
-        $operator = new Operator\Git\GetCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Commits\CommitSha::class]);
+        $operator = new Operator\Git\GetCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Commits🌀CommitSha());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha']);
     }
 
-    /** @return Observable<Schema\GitRef> */
+    /** @return iterable<Schema\GitRef> */
     public function listMatchingRefs(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -117,11 +101,7 @@ final class Git
 
         $arguments['ref'] = $params['ref'];
         unset($params['ref']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀MatchingRefs🌀Ref();
-        }
-
-        $operator = new Operator\Git\ListMatchingRefs($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs\Ref::class]);
+        $operator = new Operator\Git\ListMatchingRefs($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀MatchingRefs🌀Ref());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
@@ -129,7 +109,6 @@ final class Git
     /** @return */
     public function getRef(array $params): GitRef|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -149,11 +128,7 @@ final class Git
 
         $arguments['ref'] = $params['ref'];
         unset($params['ref']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\Ref\Ref::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Ref\Ref::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Ref🌀Ref();
-        }
-
-        $operator = new Operator\Git\GetRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Ref\Ref::class]);
+        $operator = new Operator\Git\GetRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Ref🌀Ref());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
@@ -161,7 +136,6 @@ final class Git
     /** @return */
     public function getTag(array $params): GitTag|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -181,11 +155,7 @@ final class Git
 
         $arguments['tag_sha'] = $params['tag_sha'];
         unset($params['tag_sha']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\Tags\TagSha::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Tags\TagSha::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Tags🌀TagSha();
-        }
-
-        $operator = new Operator\Git\GetTag($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Tags\TagSha::class]);
+        $operator = new Operator\Git\GetTag($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Tags🌀TagSha());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag_sha']);
     }
@@ -193,7 +163,6 @@ final class Git
     /** @return */
     public function getTree(array $params): GitTree|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -219,11 +188,7 @@ final class Git
 
         $arguments['recursive'] = $params['recursive'];
         unset($params['recursive']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Git\Trees\TreeSha::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Trees\TreeSha::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Trees🌀TreeSha();
-        }
-
-        $operator = new Operator\Git\GetTree($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Git\Trees\TreeSha::class]);
+        $operator = new Operator\Git\GetTree($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Trees🌀TreeSha());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tree_sha'], $arguments['recursive']);
     }

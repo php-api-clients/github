@@ -18,14 +18,12 @@ final readonly class DeclineInvitationForAuthenticatedUser
 {
     public const OPERATION_ID    = 'repos/decline-invitation-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/repository_invitations/{invitation_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/repository_invitations/{invitation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\RepositoryInvitations\InvitationId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $invitationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeclineInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

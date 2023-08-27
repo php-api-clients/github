@@ -20,14 +20,12 @@ final readonly class ListReposAccessibleToInstallation
 {
     public const OPERATION_ID    = 'apps/list-repos-accessible-to-installation';
     public const OPERATION_MATCH = 'GET /installation/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/installation/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Installation\Repositories $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok | array{code: int}) */
+    /** @return Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListReposAccessibleToInstallation($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

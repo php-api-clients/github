@@ -61,7 +61,7 @@ final class ListTagProtection
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TagProtection::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\TagProtection::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\TagProtection::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

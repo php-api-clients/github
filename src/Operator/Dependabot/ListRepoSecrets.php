@@ -19,8 +19,6 @@ final readonly class ListRepoSecrets
 {
     public const OPERATION_ID    = 'dependabot/list-repo-secrets';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependabot/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/dependabot/secrets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Dependabot\Secrets $hydrator)
     {

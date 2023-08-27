@@ -19,8 +19,6 @@ final readonly class CreateWebhook
 {
     public const OPERATION_ID    = 'repos/create-webhook';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/hooks';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/hooks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Hooks $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class GetParticipationStats
 {
     public const OPERATION_ID    = 'repos/get-participation-stats';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stats/participation';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stats/participation';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Stats\Participation $hydrator)
     {

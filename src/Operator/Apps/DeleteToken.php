@@ -18,14 +18,12 @@ final readonly class DeleteToken
 {
     public const OPERATION_ID    = 'apps/delete-token';
     public const OPERATION_MATCH = 'DELETE /applications/{client_id}/token';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/applications/{client_id}/token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Applications\ClientId\Token $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $clientId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\DeleteToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);

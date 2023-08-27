@@ -19,8 +19,6 @@ final readonly class GetPackageForUser
 {
     public const OPERATION_ID    = 'packages/get-package-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/packages/{package_type}/{package_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/packages/{package_type}/{package_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Packages\PackageType\PackageName $hydrator)
     {

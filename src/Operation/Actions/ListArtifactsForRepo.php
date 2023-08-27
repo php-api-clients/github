@@ -27,7 +27,7 @@ final class ListArtifactsForRepo
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**Filters artifacts by exact match on their name field. **/
+    /**The name field of an artifact. When specified, only artifacts with this name will be returned. **/
     private string $name;
     /**The number of results per page (max 100). **/
     private int $perPage;

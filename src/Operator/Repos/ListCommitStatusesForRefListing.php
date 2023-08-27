@@ -20,14 +20,12 @@ final readonly class ListCommitStatusesForRefListing
 {
     public const OPERATION_ID    = 'repos/list-commit-statuses-for-ref';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/commits/{ref}/statuses';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{ref}/statuses';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\Statuses $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Status> | Schema\BasicError) */
+    /** @return iterable<Schema\Status>|Schema\BasicError */
     public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCommitStatusesForRefListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);

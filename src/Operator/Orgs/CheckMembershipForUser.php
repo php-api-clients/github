@@ -16,14 +16,12 @@ final readonly class CheckMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/check-membership-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/members/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/members/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return (array{code: int} | array{code: int, location: string}) */
+    /** @return array{code:int}|array{code:int,location:string} */
     public function call(string $org, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\CheckMembershipForUser($org, $username);

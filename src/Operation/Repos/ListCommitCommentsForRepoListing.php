@@ -66,7 +66,7 @@ final class ListCommitCommentsForRepoListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CommitComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\CommitComment::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\CommitComment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -19,8 +19,6 @@ final readonly class UpdateStatusCheckProtection
 {
     public const OPERATION_ID    = 'repos/update-status-check-protection';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\RequiredStatusChecks $hydrator)
     {

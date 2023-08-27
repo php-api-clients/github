@@ -19,8 +19,6 @@ final readonly class AddCustomLabelsToSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/add-custom-labels-to-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels $hydrator)
     {

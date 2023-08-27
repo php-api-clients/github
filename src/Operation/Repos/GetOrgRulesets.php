@@ -64,7 +64,7 @@ final class GetOrgRulesets
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleset::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleset::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleset::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

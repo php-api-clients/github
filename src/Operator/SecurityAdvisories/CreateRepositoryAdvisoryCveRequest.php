@@ -19,8 +19,6 @@ final readonly class CreateRepositoryAdvisoryCveRequest
 {
     public const OPERATION_ID    = 'security-advisories/create-repository-advisory-cve-request';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId\Cve $hydrator)
     {

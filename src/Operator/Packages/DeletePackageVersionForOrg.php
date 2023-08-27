@@ -18,14 +18,12 @@ final readonly class DeletePackageVersionForOrg
 {
     public const OPERATION_ID    = 'packages/delete-package-version-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName\Versions\PackageVersionId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $packageType, string $packageName, string $org, int $packageVersionId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\DeletePackageVersionForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $packageVersionId);

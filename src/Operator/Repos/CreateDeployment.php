@@ -21,14 +21,12 @@ final readonly class CreateDeployment
 {
     public const OPERATION_ID    = 'repos/create-deployment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/deployments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/deployments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments $hydrator)
     {
     }
 
-    /** @return (Schema\Deployment | Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    /** @return Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
     public function call(string $owner, string $repo, array $params): Deployment|Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CreateDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

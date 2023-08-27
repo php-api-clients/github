@@ -19,8 +19,6 @@ final readonly class ListSelectedReposForOrgSecret
 {
     public const OPERATION_ID    = 'actions/list-selected-repos-for-org-secret';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/secrets/{secret_name}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/secrets/{secret_name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Secrets\SecretName\Repositories $hydrator)
     {

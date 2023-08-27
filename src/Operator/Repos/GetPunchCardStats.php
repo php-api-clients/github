@@ -18,14 +18,12 @@ final readonly class GetPunchCardStats
 {
     public const OPERATION_ID    = 'repos/get-punch-card-stats';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stats/punch_card';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stats/punch_card';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Stats\PunchCard $hydrator)
     {
     }
 
-    /** @return (Observable<int> | array{code: int}) */
+    /** @return Observable<int>|array{code:int} */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetPunchCardStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

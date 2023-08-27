@@ -18,14 +18,12 @@ final readonly class DeletePackageForAuthenticatedUser
 {
     public const OPERATION_ID    = 'packages/delete-package-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/packages/{package_type}/{package_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/packages/{package_type}/{package_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Packages\PackageType\PackageName $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $packageType, string $packageName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\DeletePackageForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName);

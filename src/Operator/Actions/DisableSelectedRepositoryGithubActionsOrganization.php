@@ -16,14 +16,12 @@ final readonly class DisableSelectedRepositoryGithubActionsOrganization
 {
     public const OPERATION_ID    = 'actions/disable-selected-repository-github-actions-organization';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/actions/permissions/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DisableSelectedRepositoryGithubActionsOrganization($org, $repositoryId);

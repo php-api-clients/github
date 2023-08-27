@@ -16,14 +16,12 @@ final readonly class RemoveStatusCheckProtection
 {
     public const OPERATION_ID    = 'repos/remove-status-check-protection';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $branch): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\RemoveStatusCheckProtection($owner, $repo, $branch);

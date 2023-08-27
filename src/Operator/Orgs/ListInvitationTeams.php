@@ -19,14 +19,12 @@ final readonly class ListInvitationTeams
 {
     public const OPERATION_ID    = 'orgs/list-invitation-teams';
     public const OPERATION_MATCH = 'GET /orgs/{org}/invitations/{invitation_id}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations/{invitation_id}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<Schema\Team> */
     public function call(string $org, int $invitationId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListInvitationTeams($this->responseSchemaValidator, $this->hydrator, $org, $invitationId, $perPage, $page);

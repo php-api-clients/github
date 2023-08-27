@@ -21,14 +21,12 @@ final readonly class GetRestrictionsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'interactions/get-restrictions-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/interaction-limits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\InteractionLimits $hydrator)
     {
     }
 
-    /** @return (Schema\InteractionLimitResponse | Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One | array{code: int}) */
+    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array{code:int} */
     public function call(): InteractionLimitResponse|One|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator);

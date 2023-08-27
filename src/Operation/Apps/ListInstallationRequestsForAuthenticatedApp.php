@@ -61,7 +61,7 @@ final class ListInstallationRequestsForAuthenticatedApp
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\IntegrationInstallationRequest::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\IntegrationInstallationRequest::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\IntegrationInstallationRequest::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

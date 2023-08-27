@@ -20,14 +20,12 @@ final readonly class ListSelectedReposForOrgVariable
 {
     public const OPERATION_ID    = 'actions/list-selected-repos-for-org-variable';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/variables/{name}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Variables\Name\Repositories $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
     public function call(string $org, string $name, int $page = 1, int $perPage = 30): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListSelectedReposForOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name, $page, $perPage);

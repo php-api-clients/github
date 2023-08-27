@@ -19,8 +19,6 @@ final readonly class ListGpgKeysForUserListing
 {
     public const OPERATION_ID    = 'users/list-gpg-keys-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/gpg_keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/gpg_keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\GpgKeys $hydrator)
     {

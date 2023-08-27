@@ -18,14 +18,12 @@ final readonly class RemoveRepositoryForSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/remove-repository-for-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\Secrets\SecretName\Repositories\RepositoryId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $secretName, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName, $repositoryId);

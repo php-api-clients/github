@@ -16,14 +16,12 @@ final readonly class CheckFollowingForUser
 {
     public const OPERATION_ID    = 'users/check-following-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/following/{target_user}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/following/{target_user}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $username, string $targetUser): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CheckFollowingForUser($username, $targetUser);

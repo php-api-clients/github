@@ -19,8 +19,6 @@ final readonly class ScopeToken
 {
     public const OPERATION_ID    = 'apps/scope-token';
     public const OPERATION_MATCH = 'POST /applications/{client_id}/token/scoped';
-    private const METHOD         = 'POST';
-    private const PATH           = '/applications/{client_id}/token/scoped';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Applications\ClientId\Token\Scoped $hydrator)
     {

@@ -202,7 +202,7 @@ final readonly class ApplicationJson
                     "description": "Conditions to target repositories by id and refs by name"
                 }
             ],
-            "description": "Conditions for an organization ruleset"
+            "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
         },
         "rules": {
             "type": "array",
@@ -722,7 +722,7 @@ final readonly class ApplicationJson
      * target: The target of the ruleset.
      * enforcement: The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
      * bypassActors: The actors that can bypass the rules in this ruleset
-     * conditions: Conditions for an organization ruleset
+     * conditions: Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
      * rules: An array of rules within the ruleset.
      */
     public function __construct(public string $name, public string|null $target, public string $enforcement, #[MapFrom('bypass_actors')]

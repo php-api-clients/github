@@ -20,14 +20,12 @@ final readonly class CancelCopilotSeatAssignmentForUsers
 {
     public const OPERATION_ID    = 'copilot/cancel-copilot-seat-assignment-for-users';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/copilot/billing/selected_users';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/copilot/billing/selected_users';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedUsers $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
     public function call(string $org, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Copilot\CancelCopilotSeatAssignmentForUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

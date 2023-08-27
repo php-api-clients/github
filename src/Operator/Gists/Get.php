@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'gists/get';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId $hydrator)
     {
     }
 
-    /** @return (Schema\GistSimple | array{code: int}) */
+    /** @return Schema\GistSimple|array{code:int} */
     public function call(string $gistId): GistSimple|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Get($this->responseSchemaValidator, $this->hydrator, $gistId);

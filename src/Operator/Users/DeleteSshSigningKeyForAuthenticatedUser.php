@@ -18,14 +18,12 @@ final readonly class DeleteSshSigningKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-ssh-signing-key-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/ssh_signing_keys/{ssh_signing_key_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/ssh_signing_keys/{ssh_signing_key_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $sshSigningKeyId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeleteSshSigningKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sshSigningKeyId);

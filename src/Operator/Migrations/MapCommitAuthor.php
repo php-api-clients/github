@@ -19,8 +19,6 @@ final readonly class MapCommitAuthor
 {
     public const OPERATION_ID    = 'migrations/map-commit-author';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/import/authors/{author_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/import/authors/{author_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Import\Authors\AuthorId $hydrator)
     {

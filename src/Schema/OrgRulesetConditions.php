@@ -132,10 +132,10 @@ final readonly class OrgRulesetConditions
             "description": "Conditions to target repositories by id and refs by name"
         }
     ],
-    "description": "Conditions for an organization ruleset"
+    "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
 }';
     public const SCHEMA_TITLE        = 'Organization ruleset conditions';
-    public const SCHEMA_DESCRIPTION  = 'Conditions for an organization ruleset';
+    public const SCHEMA_DESCRIPTION  = 'Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.';
     public const SCHEMA_EXAMPLE_DATA = '[]';
 
     public function __construct()

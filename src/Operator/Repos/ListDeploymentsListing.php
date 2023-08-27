@@ -19,8 +19,6 @@ final readonly class ListDeploymentsListing
 {
     public const OPERATION_ID    = 'repos/list-deployments';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/deployments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/deployments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments $hydrator)
     {

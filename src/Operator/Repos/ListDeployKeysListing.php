@@ -19,8 +19,6 @@ final readonly class ListDeployKeysListing
 {
     public const OPERATION_ID    = 'repos/list-deploy-keys';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Keys $hydrator)
     {

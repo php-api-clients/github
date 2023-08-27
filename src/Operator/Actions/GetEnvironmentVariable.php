@@ -19,8 +19,6 @@ final readonly class GetEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/get-environment-variable';
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator)
     {

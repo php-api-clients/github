@@ -19,14 +19,12 @@ final readonly class ListMembersLegacy
 {
     public const OPERATION_ID    = 'teams/list-members-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/members';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/members';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Members $hydrator)
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<Schema\SimpleUser> */
     public function call(int $teamId, string $role = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListMembersLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $role, $perPage, $page);

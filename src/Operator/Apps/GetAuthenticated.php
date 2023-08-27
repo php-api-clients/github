@@ -19,8 +19,6 @@ final readonly class GetAuthenticated
 {
     public const OPERATION_ID    = 'apps/get-authenticated';
     public const OPERATION_MATCH = 'GET /app';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App $hydrator)
     {

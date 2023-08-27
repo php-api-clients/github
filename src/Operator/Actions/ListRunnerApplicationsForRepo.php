@@ -19,14 +19,12 @@ final readonly class ListRunnerApplicationsForRepo
 {
     public const OPERATION_ID    = 'actions/list-runner-applications-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runners/downloads';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/downloads';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\Downloads $hydrator)
     {
     }
 
-    /** @return Observable<Schema\RunnerApplication> */
+    /** @return iterable<Schema\RunnerApplication> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ListRunnerApplicationsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

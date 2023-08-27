@@ -19,14 +19,12 @@ final readonly class SetPrimaryEmailVisibilityForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/set-primary-email-visibility-for-authenticated-user';
     public const OPERATION_MATCH = 'PATCH /user/email/visibility';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user/email/visibility';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Email\Visibility $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Email> | array{code: int}) */
+    /** @return iterable<Schema\Email>|array{code:int} */
     public function call(array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

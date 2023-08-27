@@ -19,8 +19,6 @@ final readonly class GetOrgRuleset
 {
     public const OPERATION_ID    = 'repos/get-org-ruleset';
     public const OPERATION_MATCH = 'GET /orgs/{org}/rulesets/{ruleset_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator)
     {

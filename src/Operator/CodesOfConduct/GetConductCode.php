@@ -20,14 +20,12 @@ final readonly class GetConductCode
 {
     public const OPERATION_ID    = 'codes-of-conduct/get-conduct-code';
     public const OPERATION_MATCH = 'GET /codes_of_conduct/{key}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/codes_of_conduct/{key}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\CodesOfConduct\Key $hydrator)
     {
     }
 
-    /** @return (Schema\CodeOfConduct | array{code: int}) */
+    /** @return Schema\CodeOfConduct|array{code:int} */
     public function call(string $key): CodeOfConduct|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodesOfConduct\GetConductCode($this->responseSchemaValidator, $this->hydrator, $key);

@@ -19,14 +19,12 @@ final readonly class ListOutsideCollaborators
 {
     public const OPERATION_ID    = 'orgs/list-outside-collaborators';
     public const OPERATION_MATCH = 'GET /orgs/{org}/outside_collaborators';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/outside_collaborators';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\OutsideCollaborators $hydrator)
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<Schema\SimpleUser> */
     public function call(string $org, string $filter = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListOutsideCollaborators($this->responseSchemaValidator, $this->hydrator, $org, $filter, $perPage, $page);

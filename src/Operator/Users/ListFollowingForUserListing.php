@@ -19,8 +19,6 @@ final readonly class ListFollowingForUserListing
 {
     public const OPERATION_ID    = 'users/list-following-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/following';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/following';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Following $hydrator)
     {

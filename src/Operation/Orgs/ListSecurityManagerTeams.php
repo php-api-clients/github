@@ -57,7 +57,7 @@ final class ListSecurityManagerTeams
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\TeamSimple::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\TeamSimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -19,14 +19,12 @@ final readonly class ListContributorsListing
 {
     public const OPERATION_ID    = 'repos/list-contributors';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/contributors';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/contributors';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Contributors $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Contributor> | array{code: int}) */
+    /** @return iterable<Schema\Contributor>|array{code:int} */
     public function call(string $owner, string $repo, string $anon, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListContributorsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $anon, $perPage, $page);

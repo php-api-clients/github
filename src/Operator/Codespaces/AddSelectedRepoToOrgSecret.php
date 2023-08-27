@@ -18,14 +18,12 @@ final readonly class AddSelectedRepoToOrgSecret
 {
     public const OPERATION_ID    = 'codespaces/add-selected-repo-to-org-secret';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName\Repositories\RepositoryId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $secretName, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\AddSelectedRepoToOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName, $repositoryId);

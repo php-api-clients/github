@@ -70,7 +70,7 @@ final class ListWebhookDeliveries
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\HookDeliveryItem::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\HookDeliveryItem::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\HookDeliveryItem::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

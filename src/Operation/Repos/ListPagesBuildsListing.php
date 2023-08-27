@@ -66,7 +66,7 @@ final class ListPagesBuildsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PageBuild::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\PageBuild::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\PageBuild::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

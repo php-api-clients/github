@@ -19,8 +19,6 @@ final readonly class ListWatchersForRepoListing
 {
     public const OPERATION_ID    = 'activity/list-watchers-for-repo';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/subscribers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/subscribers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Subscribers $hydrator)
     {

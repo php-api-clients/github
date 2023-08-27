@@ -19,8 +19,6 @@ final readonly class GetCopilotOrganizationDetails
 {
     public const OPERATION_ID    = 'copilot/get-copilot-organization-details';
     public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/copilot/billing';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Copilot\Billing $hydrator)
     {

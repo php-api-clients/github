@@ -19,8 +19,6 @@ final readonly class GetStatusForOrg
 {
     public const OPERATION_ID    = 'migrations/get-status-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId $hydrator)
     {

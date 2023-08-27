@@ -19,8 +19,6 @@ final readonly class StartForOrg
 {
     public const OPERATION_ID    = 'migrations/start-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/migrations';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/migrations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations $hydrator)
     {

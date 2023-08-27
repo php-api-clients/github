@@ -18,14 +18,12 @@ final readonly class RestorePackageForUser
 {
     public const OPERATION_ID    = 'packages/restore-package-for-user';
     public const OPERATION_MATCH = 'POST /users/{username}/packages/{package_type}/{package_name}/restore';
-    private const METHOD         = 'POST';
-    private const PATH           = '/users/{username}/packages/{package_type}/{package_name}/restore';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Packages\PackageType\PackageName\Restore $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $packageType, string $packageName, string $username, string $token): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\RestorePackageForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username, $token);

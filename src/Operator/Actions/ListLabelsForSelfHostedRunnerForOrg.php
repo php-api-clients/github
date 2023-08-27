@@ -19,8 +19,6 @@ final readonly class ListLabelsForSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/list-labels-for-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels $hydrator)
     {

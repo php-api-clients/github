@@ -16,14 +16,12 @@ final readonly class CheckCollaborator
 {
     public const OPERATION_ID    = 'repos/check-collaborator';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/collaborators/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CheckCollaborator($owner, $repo, $username);

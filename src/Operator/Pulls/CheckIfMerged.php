@@ -16,14 +16,12 @@ final readonly class CheckIfMerged
 {
     public const OPERATION_ID    = 'pulls/check-if-merged';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/{pull_number}/merge';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/merge';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $pullNumber): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\CheckIfMerged($owner, $repo, $pullNumber);

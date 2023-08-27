@@ -19,14 +19,12 @@ final readonly class ReviewPendingDeploymentsForRun
 {
     public const OPERATION_ID    = 'actions/review-pending-deployments-for-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\PendingDeployments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Deployment> */
+    /** @return iterable<Schema\Deployment> */
     public function call(string $owner, string $repo, int $runId, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\ReviewPendingDeploymentsForRun($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

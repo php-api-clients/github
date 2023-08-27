@@ -17,14 +17,12 @@ final readonly class AddOrUpdateRepoPermissionsInOrg
 {
     public const OPERATION_ID    = 'teams/add-or-update-repo-permissions-in-org';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug, string $owner, string $repo, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateRepoPermissionsInOrg($this->requestSchemaValidator, $org, $teamSlug, $owner, $repo);

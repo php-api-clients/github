@@ -16,14 +16,12 @@ final readonly class DeleteDeploymentBranchPolicy
 {
     public const OPERATION_ID    = 'repos/delete-deployment-branch-policy';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteDeploymentBranchPolicy($owner, $repo, $environmentName, $branchPolicyId);

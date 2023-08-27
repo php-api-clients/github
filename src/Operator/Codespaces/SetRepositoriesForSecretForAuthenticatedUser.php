@@ -18,14 +18,12 @@ final readonly class SetRepositoriesForSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/set-repositories-for-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/codespaces/secrets/{secret_name}/repositories';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\Secrets\SecretName\Repositories $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $secretName, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\SetRepositoriesForSecretForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $secretName);

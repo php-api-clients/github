@@ -70,7 +70,7 @@ final class ListLocationsForAlertListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SecretScanningLocation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\SecretScanningLocation::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\SecretScanningLocation::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

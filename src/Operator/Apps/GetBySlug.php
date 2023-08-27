@@ -19,8 +19,6 @@ final readonly class GetBySlug
 {
     public const OPERATION_ID    = 'apps/get-by-slug';
     public const OPERATION_MATCH = 'GET /apps/{app_slug}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/apps/{app_slug}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Apps\AppSlug $hydrator)
     {

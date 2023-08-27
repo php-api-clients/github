@@ -20,14 +20,12 @@ final readonly class AddCollaborator
 {
     public const OPERATION_ID    = 'repos/add-collaborator';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/collaborators/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Collaborators\Username $hydrator)
     {
     }
 
-    /** @return (Schema\RepositoryInvitation | array{code: int}) */
+    /** @return Schema\RepositoryInvitation|array{code:int} */
     public function call(string $owner, string $repo, string $username, array $params): RepositoryInvitation|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\AddCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);

@@ -17,14 +17,12 @@ final readonly class SetGithubActionsDefaultWorkflowPermissionsRepository
 {
     public const OPERATION_ID    = 'actions/set-github-actions-default-workflow-permissions-repository';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/permissions/workflow';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/permissions/workflow';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsRepository($this->requestSchemaValidator, $owner, $repo);

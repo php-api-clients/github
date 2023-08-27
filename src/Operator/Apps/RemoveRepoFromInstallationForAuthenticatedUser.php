@@ -18,14 +18,12 @@ final readonly class RemoveRepoFromInstallationForAuthenticatedUser
 {
     public const OPERATION_ID    = 'apps/remove-repo-from-installation-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/installations/{installation_id}/repositories/{repository_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/installations/{installation_id}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Installations\InstallationId\Repositories\RepositoryId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $installationId, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $installationId, $repositoryId);

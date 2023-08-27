@@ -18,8 +18,6 @@ final readonly class Root
 {
     public const OPERATION_ID    = 'meta/root';
     public const OPERATION_MATCH = 'GET /';
-    private const METHOD         = 'GET';
-    private const PATH           = '/';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Root $hydrator)
     {

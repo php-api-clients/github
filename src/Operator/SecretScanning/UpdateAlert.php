@@ -20,14 +20,12 @@ final readonly class UpdateAlert
 {
     public const OPERATION_ID    = 'secret-scanning/update-alert';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber $hydrator)
     {
     }
 
-    /** @return (Schema\SecretScanningAlert | array{code: int}) */
+    /** @return Schema\SecretScanningAlert|array{code:int} */
     public function call(string $owner, string $repo, int $alertNumber, array $params): SecretScanningAlert|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecretScanning\UpdateAlert($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

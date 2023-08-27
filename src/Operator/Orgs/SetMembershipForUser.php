@@ -19,8 +19,6 @@ final readonly class SetMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/set-membership-for-user';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/memberships/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Memberships\Username $hydrator)
     {

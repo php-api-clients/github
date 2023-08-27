@@ -19,8 +19,6 @@ final readonly class CreateInstallationAccessToken
 {
     public const OPERATION_ID    = 'apps/create-installation-access-token';
     public const OPERATION_MATCH = 'POST /app/installations/{installation_id}/access_tokens';
-    private const METHOD         = 'POST';
-    private const PATH           = '/app/installations/{installation_id}/access_tokens';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations\InstallationId\AccessTokens $hydrator)
     {

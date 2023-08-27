@@ -4,300 +4,203 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json;
+use ApiClients\Client\GitHub\Schema\Project;
+use ApiClients\Client\GitHub\Schema\ProjectCard;
+use ApiClients\Client\GitHub\Schema\ProjectCollaboratorPermission;
+use ApiClients\Client\GitHub\Schema\ProjectColumn;
 
 final class Projects
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listForOrg(string $org, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForOrg(string $org, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForOrg::class] = new Operator\Projects\ListForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForOrg::class]->call($org, $state, $perPage, $page);
+        return $this->operators->projects👷ListForOrg()->call($org, $state, $perPage, $page);
     }
 
-    public function listForOrgListing(string $org, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForOrgListing(string $org, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForOrgListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForOrgListing::class] = new Operator\Projects\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForOrgListing::class]->call($org, $state, $perPage, $page);
+        return $this->operators->projects👷ListForOrgListing()->call($org, $state, $perPage, $page);
     }
 
-    public function createForOrg(string $org, array $params): Schema\Project
+    /** @return */
+    public function createForOrg(string $org, array $params): Project|array
     {
-        if (array_key_exists(Operator\Projects\CreateForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\CreateForOrg::class] = new Operator\Projects\CreateForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\CreateForOrg::class]->call($org, $params);
+        return $this->operators->projects👷CreateForOrg()->call($org, $params);
     }
 
-    public function getCard(int $cardId): Schema\ProjectCard
+    /** @return Schema\ProjectCard|array{code:int} */
+    public function getCard(int $cardId): ProjectCard|array
     {
-        if (array_key_exists(Operator\Projects\GetCard::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\GetCard::class] = new Operator\Projects\GetCard($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀Cards🌀CardId());
-        }
-
-        return $this->operator[Operator\Projects\GetCard::class]->call($cardId);
+        return $this->operators->projects👷GetCard()->call($cardId);
     }
 
-    public function deleteCard(int $cardId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteCard(int $cardId): array
     {
-        if (array_key_exists(Operator\Projects\DeleteCard::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\DeleteCard::class] = new Operator\Projects\DeleteCard($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀Cards🌀CardId());
-        }
-
-        return $this->operator[Operator\Projects\DeleteCard::class]->call($cardId);
+        return $this->operators->projects👷DeleteCard()->call($cardId);
     }
 
-    public function updateCard(int $cardId, array $params): Schema\ProjectCard
+    /** @return Schema\ProjectCard|array{code:int} */
+    public function updateCard(int $cardId, array $params): ProjectCard|array
     {
-        if (array_key_exists(Operator\Projects\UpdateCard::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\UpdateCard::class] = new Operator\Projects\UpdateCard($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀Cards🌀CardId());
-        }
-
-        return $this->operator[Operator\Projects\UpdateCard::class]->call($cardId, $params);
+        return $this->operators->projects👷UpdateCard()->call($cardId, $params);
     }
 
-    public function moveCard(int $cardId, array $params): Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created
+    /** @return Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|array{code:int} */
+    public function moveCard(int $cardId, array $params): Json|array
     {
-        if (array_key_exists(Operator\Projects\MoveCard::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\MoveCard::class] = new Operator\Projects\MoveCard($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀Cards🌀CardId🌀Moves());
-        }
-
-        return $this->operator[Operator\Projects\MoveCard::class]->call($cardId, $params);
+        return $this->operators->projects👷MoveCard()->call($cardId, $params);
     }
 
-    public function getColumn(int $columnId): Schema\ProjectColumn
+    /** @return Schema\ProjectColumn|array{code:int} */
+    public function getColumn(int $columnId): ProjectColumn|array
     {
-        if (array_key_exists(Operator\Projects\GetColumn::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\GetColumn::class] = new Operator\Projects\GetColumn($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId());
-        }
-
-        return $this->operator[Operator\Projects\GetColumn::class]->call($columnId);
+        return $this->operators->projects👷GetColumn()->call($columnId);
     }
 
-    public function deleteColumn(int $columnId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteColumn(int $columnId): array
     {
-        if (array_key_exists(Operator\Projects\DeleteColumn::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\DeleteColumn::class] = new Operator\Projects\DeleteColumn($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId());
-        }
-
-        return $this->operator[Operator\Projects\DeleteColumn::class]->call($columnId);
+        return $this->operators->projects👷DeleteColumn()->call($columnId);
     }
 
-    public function updateColumn(int $columnId, array $params): Schema\ProjectColumn
+    /** @return Schema\ProjectColumn|array{code:int} */
+    public function updateColumn(int $columnId, array $params): ProjectColumn|array
     {
-        if (array_key_exists(Operator\Projects\UpdateColumn::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\UpdateColumn::class] = new Operator\Projects\UpdateColumn($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId());
-        }
-
-        return $this->operator[Operator\Projects\UpdateColumn::class]->call($columnId, $params);
+        return $this->operators->projects👷UpdateColumn()->call($columnId, $params);
     }
 
-    public function listCards(int $columnId, string $archivedState, int $perPage, int $page): Schema\ProjectCard
+    /** @return iterable<Schema\ProjectCard>|array{code:int} */
+    public function listCards(int $columnId, string $archivedState, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListCards::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListCards::class] = new Operator\Projects\ListCards($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards());
-        }
-
-        return $this->operator[Operator\Projects\ListCards::class]->call($columnId, $archivedState, $perPage, $page);
+        return $this->operators->projects👷ListCards()->call($columnId, $archivedState, $perPage, $page);
     }
 
-    public function listCardsListing(int $columnId, string $archivedState, int $perPage, int $page): Schema\ProjectCard
+    /** @return iterable<Schema\ProjectCard>|array{code:int} */
+    public function listCardsListing(int $columnId, string $archivedState, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListCardsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListCardsListing::class] = new Operator\Projects\ListCardsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards());
-        }
-
-        return $this->operator[Operator\Projects\ListCardsListing::class]->call($columnId, $archivedState, $perPage, $page);
+        return $this->operators->projects👷ListCardsListing()->call($columnId, $archivedState, $perPage, $page);
     }
 
-    public function createCard(int $columnId, array $params): Schema\ProjectCard
+    /** @return Schema\ProjectCard|array{code:int} */
+    public function createCard(int $columnId, array $params): ProjectCard|array
     {
-        if (array_key_exists(Operator\Projects\CreateCard::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\CreateCard::class] = new Operator\Projects\CreateCard($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards());
-        }
-
-        return $this->operator[Operator\Projects\CreateCard::class]->call($columnId, $params);
+        return $this->operators->projects👷CreateCard()->call($columnId, $params);
     }
 
-    public function moveColumn(int $columnId, array $params): Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created
+    /** @return Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array{code:int} */
+    public function moveColumn(int $columnId, array $params): \ApiClients\Client\GitHub\Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array
     {
-        if (array_key_exists(Operator\Projects\MoveColumn::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\MoveColumn::class] = new Operator\Projects\MoveColumn($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Moves());
-        }
-
-        return $this->operator[Operator\Projects\MoveColumn::class]->call($columnId, $params);
+        return $this->operators->projects👷MoveColumn()->call($columnId, $params);
     }
 
-    public function get(int $projectId): Schema\Project
+    /** @return Schema\Project|array{code:int} */
+    public function get(int $projectId): Project|array
     {
-        if (array_key_exists(Operator\Projects\Get::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\Get::class] = new Operator\Projects\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId());
-        }
-
-        return $this->operator[Operator\Projects\Get::class]->call($projectId);
+        return $this->operators->projects👷Get()->call($projectId);
     }
 
-    public function delete(int $projectId): ResponseInterface
+    /** @return array{code:int} */
+    public function delete(int $projectId): array
     {
-        if (array_key_exists(Operator\Projects\Delete::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\Delete::class] = new Operator\Projects\Delete($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId());
-        }
-
-        return $this->operator[Operator\Projects\Delete::class]->call($projectId);
+        return $this->operators->projects👷Delete()->call($projectId);
     }
 
-    public function update(int $projectId, array $params): Schema\Project
+    /** @return Schema\Project|array{code:int} */
+    public function update(int $projectId, array $params): Project|array
     {
-        if (array_key_exists(Operator\Projects\Update::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\Update::class] = new Operator\Projects\Update($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId());
-        }
-
-        return $this->operator[Operator\Projects\Update::class]->call($projectId, $params);
+        return $this->operators->projects👷Update()->call($projectId, $params);
     }
 
-    public function listCollaborators(int $projectId, string $affiliation, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listCollaborators(int $projectId, string $affiliation, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListCollaborators::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListCollaborators::class] = new Operator\Projects\ListCollaborators($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators());
-        }
-
-        return $this->operator[Operator\Projects\ListCollaborators::class]->call($projectId, $affiliation, $perPage, $page);
+        return $this->operators->projects👷ListCollaborators()->call($projectId, $affiliation, $perPage, $page);
     }
 
-    public function listCollaboratorsListing(int $projectId, string $affiliation, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listCollaboratorsListing(int $projectId, string $affiliation, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListCollaboratorsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListCollaboratorsListing::class] = new Operator\Projects\ListCollaboratorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators());
-        }
-
-        return $this->operator[Operator\Projects\ListCollaboratorsListing::class]->call($projectId, $affiliation, $perPage, $page);
+        return $this->operators->projects👷ListCollaboratorsListing()->call($projectId, $affiliation, $perPage, $page);
     }
 
-    public function addCollaborator(int $projectId, string $username, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function addCollaborator(int $projectId, string $username, array $params): array
     {
-        if (array_key_exists(Operator\Projects\AddCollaborator::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\AddCollaborator::class] = new Operator\Projects\AddCollaborator($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators🌀Username());
-        }
-
-        return $this->operator[Operator\Projects\AddCollaborator::class]->call($projectId, $username, $params);
+        return $this->operators->projects👷AddCollaborator()->call($projectId, $username, $params);
     }
 
-    public function removeCollaborator(int $projectId, string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function removeCollaborator(int $projectId, string $username): array
     {
-        if (array_key_exists(Operator\Projects\RemoveCollaborator::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\RemoveCollaborator::class] = new Operator\Projects\RemoveCollaborator($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators🌀Username());
-        }
-
-        return $this->operator[Operator\Projects\RemoveCollaborator::class]->call($projectId, $username);
+        return $this->operators->projects👷RemoveCollaborator()->call($projectId, $username);
     }
 
-    public function getPermissionForUser(int $projectId, string $username): Schema\ProjectCollaboratorPermission
+    /** @return Schema\ProjectCollaboratorPermission|array{code:int} */
+    public function getPermissionForUser(int $projectId, string $username): ProjectCollaboratorPermission|array
     {
-        if (array_key_exists(Operator\Projects\GetPermissionForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\GetPermissionForUser::class] = new Operator\Projects\GetPermissionForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators🌀Username🌀Permission());
-        }
-
-        return $this->operator[Operator\Projects\GetPermissionForUser::class]->call($projectId, $username);
+        return $this->operators->projects👷GetPermissionForUser()->call($projectId, $username);
     }
 
-    public function listColumns(int $projectId, int $perPage, int $page): Schema\ProjectColumn
+    /** @return iterable<Schema\ProjectColumn>|array{code:int} */
+    public function listColumns(int $projectId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListColumns::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListColumns::class] = new Operator\Projects\ListColumns($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns());
-        }
-
-        return $this->operator[Operator\Projects\ListColumns::class]->call($projectId, $perPage, $page);
+        return $this->operators->projects👷ListColumns()->call($projectId, $perPage, $page);
     }
 
-    public function listColumnsListing(int $projectId, int $perPage, int $page): Schema\ProjectColumn
+    /** @return iterable<Schema\ProjectColumn>|array{code:int} */
+    public function listColumnsListing(int $projectId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListColumnsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListColumnsListing::class] = new Operator\Projects\ListColumnsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns());
-        }
-
-        return $this->operator[Operator\Projects\ListColumnsListing::class]->call($projectId, $perPage, $page);
+        return $this->operators->projects👷ListColumnsListing()->call($projectId, $perPage, $page);
     }
 
-    public function createColumn(int $projectId, array $params): Schema\ProjectColumn
+    /** @return Schema\ProjectColumn|array{code:int} */
+    public function createColumn(int $projectId, array $params): ProjectColumn|array
     {
-        if (array_key_exists(Operator\Projects\CreateColumn::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\CreateColumn::class] = new Operator\Projects\CreateColumn($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns());
-        }
-
-        return $this->operator[Operator\Projects\CreateColumn::class]->call($projectId, $params);
+        return $this->operators->projects👷CreateColumn()->call($projectId, $params);
     }
 
-    public function listForRepo(string $owner, string $repo, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForRepo(string $owner, string $repo, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForRepo::class] = new Operator\Projects\ListForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForRepo::class]->call($owner, $repo, $state, $perPage, $page);
+        return $this->operators->projects👷ListForRepo()->call($owner, $repo, $state, $perPage, $page);
     }
 
-    public function listForRepoListing(string $owner, string $repo, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForRepoListing(string $owner, string $repo, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForRepoListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForRepoListing::class] = new Operator\Projects\ListForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForRepoListing::class]->call($owner, $repo, $state, $perPage, $page);
+        return $this->operators->projects👷ListForRepoListing()->call($owner, $repo, $state, $perPage, $page);
     }
 
-    public function createForRepo(string $owner, string $repo, array $params): Schema\Project
+    /** @return */
+    public function createForRepo(string $owner, string $repo, array $params): Project|array
     {
-        if (array_key_exists(Operator\Projects\CreateForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\CreateForRepo::class] = new Operator\Projects\CreateForRepo($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\CreateForRepo::class]->call($owner, $repo, $params);
+        return $this->operators->projects👷CreateForRepo()->call($owner, $repo, $params);
     }
 
-    public function createForAuthenticatedUser(array $params): Schema\Project
+    /** @return Schema\Project|array{code:int} */
+    public function createForAuthenticatedUser(array $params): Project|array
     {
-        if (array_key_exists(Operator\Projects\CreateForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\CreateForAuthenticatedUser::class] = new Operator\Projects\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\CreateForAuthenticatedUser::class]->call($params);
+        return $this->operators->projects👷CreateForAuthenticatedUser()->call($params);
     }
 
-    public function listForUser(string $username, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForUser(string $username, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForUser::class] = new Operator\Projects\ListForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForUser::class]->call($username, $state, $perPage, $page);
+        return $this->operators->projects👷ListForUser()->call($username, $state, $perPage, $page);
     }
 
-    public function listForUserListing(string $username, string $state, int $perPage, int $page): Schema\Project
+    /** @return iterable<Schema\Project> */
+    public function listForUserListing(string $username, string $state, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Projects\ListForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Projects\ListForUserListing::class] = new Operator\Projects\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Projects());
-        }
-
-        return $this->operator[Operator\Projects\ListForUserListing::class]->call($username, $state, $perPage, $page);
+        return $this->operators->projects👷ListForUserListing()->call($username, $state, $perPage, $page);
     }
 }

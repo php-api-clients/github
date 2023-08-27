@@ -19,8 +19,6 @@ final readonly class GetInstallation
 {
     public const OPERATION_ID    = 'apps/get-installation';
     public const OPERATION_MATCH = 'GET /app/installations/{installation_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installations/{installation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations\InstallationId $hydrator)
     {

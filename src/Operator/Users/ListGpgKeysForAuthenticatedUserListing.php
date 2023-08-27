@@ -19,14 +19,12 @@ final readonly class ListGpgKeysForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'users/list-gpg-keys-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/gpg_keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/gpg_keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\GpgKeys $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\GpgKey> | array{code: int}) */
+    /** @return iterable<Schema\GpgKey>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListGpgKeysForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

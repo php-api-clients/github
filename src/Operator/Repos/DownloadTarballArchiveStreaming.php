@@ -16,8 +16,6 @@ final readonly class DownloadTarballArchiveStreaming
 {
     public const OPERATION_ID    = 'repos/download-tarball-archive';
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/tarball/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/tarball/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {

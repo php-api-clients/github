@@ -19,14 +19,12 @@ final readonly class ListPendingInvitationsLegacy
 {
     public const OPERATION_ID    = 'teams/list-pending-invitations-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Invitations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<Schema\OrganizationInvitation> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListPendingInvitationsLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

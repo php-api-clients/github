@@ -19,8 +19,6 @@ final readonly class ListLabelsForRepoListing
 {
     public const OPERATION_ID    = 'issues/list-labels-for-repo';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Labels $hydrator)
     {

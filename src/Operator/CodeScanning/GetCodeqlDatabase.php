@@ -20,14 +20,12 @@ final readonly class GetCodeqlDatabase
 {
     public const OPERATION_ID    = 'code-scanning/get-codeql-database';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Codeql\Databases\Language $hydrator)
     {
     }
 
-    /** @return (Schema\CodeScanningCodeqlDatabase | array{code: int}) */
+    /** @return Schema\CodeScanningCodeqlDatabase|array{code:int} */
     public function call(string $owner, string $repo, string $language): CodeScanningCodeqlDatabase|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\GetCodeqlDatabase($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $language);

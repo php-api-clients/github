@@ -19,8 +19,6 @@ final readonly class ListPatGrantRequestsListing
 {
     public const OPERATION_ID    = 'orgs/list-pat-grant-requests';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/personal-access-token-requests';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/personal-access-token-requests';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator)
     {

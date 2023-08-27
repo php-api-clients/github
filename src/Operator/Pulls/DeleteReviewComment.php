@@ -18,14 +18,12 @@ final readonly class DeleteReviewComment
 {
     public const OPERATION_ID    = 'pulls/delete-review-comment';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/comments/{comment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\Comments\CommentId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $commentId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\DeleteReviewComment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

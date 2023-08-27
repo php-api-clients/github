@@ -21,14 +21,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'issues/get';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/{issue_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber $hydrator)
     {
     }
 
-    /** @return (Schema\Issue | Schema\BasicError | array{code: int}) */
+    /** @return Schema\Issue|Schema\BasicError|array{code:int} */
     public function call(string $owner, string $repo, int $issueNumber): Issue|BasicError|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

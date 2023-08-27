@@ -19,8 +19,6 @@ final readonly class UpdateLegacy
 {
     public const OPERATION_ID    = 'teams/update-legacy';
     public const OPERATION_MATCH = 'PATCH /teams/{team_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/teams/{team_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId $hydrator)
     {

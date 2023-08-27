@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'licenses/get';
     public const OPERATION_MATCH = 'GET /licenses/{license}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/licenses/{license}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Licenses\License $hydrator)
     {
     }
 
-    /** @return (Schema\License | array{code: int}) */
+    /** @return Schema\License|array{code:int} */
     public function call(string $license): License|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Licenses\Get($this->responseSchemaValidator, $this->hydrator, $license);

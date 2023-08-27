@@ -16,14 +16,12 @@ final readonly class DisableAutomatedSecurityFixes
 {
     public const OPERATION_ID    = 'repos/disable-automated-security-fixes';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/automated-security-fixes';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/automated-security-fixes';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DisableAutomatedSecurityFixes($owner, $repo);

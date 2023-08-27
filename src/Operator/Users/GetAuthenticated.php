@@ -21,14 +21,12 @@ final readonly class GetAuthenticated
 {
     public const OPERATION_ID    = 'users/get-authenticated';
     public const OPERATION_MATCH = 'GET /user';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User $hydrator)
     {
     }
 
-    /** @return (Schema\PrivateUser | Schema\PublicUser | array{code: int}) */
+    /** @return Schema\PrivateUser|Schema\PublicUser|array{code:int} */
     public function call(): PrivateUser|PublicUser|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetAuthenticated($this->responseSchemaValidator, $this->hydrator);

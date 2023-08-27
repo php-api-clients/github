@@ -20,14 +20,12 @@ final readonly class StopInOrganization
 {
     public const OPERATION_ID    = 'codespaces/stop-in-organization';
     public const OPERATION_MATCH = 'POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName\Stop $hydrator)
     {
     }
 
-    /** @return (Schema\Codespace | array{code: int}) */
+    /** @return Schema\Codespace|array{code:int} */
     public function call(string $org, string $username, string $codespaceName): Codespace|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\StopInOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

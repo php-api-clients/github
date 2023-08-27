@@ -18,8 +18,6 @@ final readonly class GetAllStatusCheckContexts
 {
     public const OPERATION_ID    = 'repos/get-all-status-check-contexts';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\RequiredStatusChecks\Contexts $hydrator)
     {

@@ -16,8 +16,6 @@ final readonly class DownloadWorkflowRunAttemptLogsStreaming
 {
     public const OPERATION_ID    = 'actions/download-workflow-run-attempt-logs';
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {

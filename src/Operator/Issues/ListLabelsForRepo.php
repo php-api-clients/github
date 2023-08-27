@@ -19,14 +19,12 @@ final readonly class ListLabelsForRepo
 {
     public const OPERATION_ID    = 'issues/list-labels-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Labels $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<Schema\Label> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListLabelsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

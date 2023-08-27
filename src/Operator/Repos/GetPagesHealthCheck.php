@@ -21,14 +21,12 @@ final readonly class GetPagesHealthCheck
 {
     public const OPERATION_ID    = 'repos/get-pages-health-check';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pages/health';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pages/health';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pages\Health $hydrator)
     {
     }
 
-    /** @return (Schema\PagesHealthCheck | Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\PagesHealthCheck|Schema\EmptyObject|array{code:int} */
     public function call(string $owner, string $repo): PagesHealthCheck|EmptyObject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetPagesHealthCheck($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -19,14 +19,12 @@ final readonly class ListCommits
 {
     public const OPERATION_ID    = 'repos/list-commits';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<Schema\Commit> */
     public function call(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListCommits($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);

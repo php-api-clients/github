@@ -19,8 +19,6 @@ final readonly class ListEnvironmentSecrets
 {
     public const OPERATION_ID    = 'actions/list-environment-secrets';
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator)
     {

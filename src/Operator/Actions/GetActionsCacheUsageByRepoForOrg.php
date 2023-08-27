@@ -19,8 +19,6 @@ final readonly class GetActionsCacheUsageByRepoForOrg
 {
     public const OPERATION_ID    = 'actions/get-actions-cache-usage-by-repo-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/cache/usage-by-repository';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/cache/usage-by-repository';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Cache\UsageByRepository $hydrator)
     {

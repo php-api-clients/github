@@ -20,14 +20,12 @@ final readonly class CreateSshSigningKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/create-ssh-signing-key-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/ssh_signing_keys';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/ssh_signing_keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SshSigningKeys $hydrator)
     {
     }
 
-    /** @return (Schema\SshSigningKey | array{code: int}) */
+    /** @return Schema\SshSigningKey|array{code:int} */
     public function call(array $params): SshSigningKey|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CreateSshSigningKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

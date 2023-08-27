@@ -19,8 +19,6 @@ final readonly class ListPublicMembersListing
 {
     public const OPERATION_ID    = 'orgs/list-public-members';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/public_members';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/public_members';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PublicMembers $hydrator)
     {

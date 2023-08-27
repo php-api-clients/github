@@ -19,8 +19,6 @@ final readonly class GetBranchProtection
 {
     public const OPERATION_ID    = 'repos/get-branch-protection';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection $hydrator)
     {

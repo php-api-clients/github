@@ -17,14 +17,12 @@ final readonly class SetAllowedActionsRepository
 {
     public const OPERATION_ID    = 'actions/set-allowed-actions-repository';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/permissions/selected-actions';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/permissions/selected-actions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetAllowedActionsRepository($this->requestSchemaValidator, $owner, $repo);

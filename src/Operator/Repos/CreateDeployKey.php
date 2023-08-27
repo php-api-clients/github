@@ -19,8 +19,6 @@ final readonly class CreateDeployKey
 {
     public const OPERATION_ID    = 'repos/create-deploy-key';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/keys';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Keys $hydrator)
     {

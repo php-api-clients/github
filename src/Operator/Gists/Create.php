@@ -20,14 +20,12 @@ final readonly class Create
 {
     public const OPERATION_ID    = 'gists/create';
     public const OPERATION_MATCH = 'POST /gists';
-    private const METHOD         = 'POST';
-    private const PATH           = '/gists';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists $hydrator)
     {
     }
 
-    /** @return (Schema\GistSimple | array{code: int}) */
+    /** @return Schema\GistSimple|array{code:int} */
     public function call(array $params): GistSimple|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

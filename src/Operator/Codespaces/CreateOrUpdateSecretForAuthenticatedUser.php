@@ -20,14 +20,12 @@ final readonly class CreateOrUpdateSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/create-or-update-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return (Schema\EmptyObject | array{code: int}) */
+    /** @return Schema\EmptyObject|array{code:int} */
     public function call(string $secretName, array $params): EmptyObject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\CreateOrUpdateSecretForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $secretName);

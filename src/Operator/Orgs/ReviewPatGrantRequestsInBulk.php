@@ -19,8 +19,6 @@ final readonly class ReviewPatGrantRequestsInBulk
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-requests-in-bulk';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-token-requests';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator)
     {

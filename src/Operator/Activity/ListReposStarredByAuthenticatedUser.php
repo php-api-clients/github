@@ -19,14 +19,12 @@ final readonly class ListReposStarredByAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/list-repos-starred-by-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/starred';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/starred';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Starred $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Repository> | array{code: int}) */
+    /** @return iterable<Schema\Repository>|array{code:int} */
     public function call(string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListReposStarredByAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sort, $direction, $perPage, $page);

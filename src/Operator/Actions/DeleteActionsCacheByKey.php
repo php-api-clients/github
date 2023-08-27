@@ -19,8 +19,6 @@ final readonly class DeleteActionsCacheByKey
 {
     public const OPERATION_ID    = 'actions/delete-actions-cache-by-key';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/caches';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/caches';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Caches $hydrator)
     {

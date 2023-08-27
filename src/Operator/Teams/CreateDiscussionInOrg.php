@@ -19,8 +19,6 @@ final readonly class CreateDiscussionInOrg
 {
     public const OPERATION_ID    = 'teams/create-discussion-in-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/teams/{team_slug}/discussions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions $hydrator)
     {

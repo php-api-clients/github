@@ -19,14 +19,12 @@ final readonly class ListActivities
 {
     public const OPERATION_ID    = 'repos/list-activities';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/activity';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/activity';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Activity $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Activity> */
+    /** @return iterable<Schema\Activity> */
     public function call(string $owner, string $repo, string $before, string $after, string $ref, string $actor, string $timePeriod, string $activityType, string $direction = 'desc', int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListActivities($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $before, $after, $ref, $actor, $timePeriod, $activityType, $direction, $perPage);

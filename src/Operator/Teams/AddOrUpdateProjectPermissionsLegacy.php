@@ -18,14 +18,12 @@ final readonly class AddOrUpdateProjectPermissionsLegacy
 {
     public const OPERATION_ID    = 'teams/add-or-update-project-permissions-legacy';
     public const OPERATION_MATCH = 'PUT /teams/{team_id}/projects/{project_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/teams/{team_id}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, int $projectId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateProjectPermissionsLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

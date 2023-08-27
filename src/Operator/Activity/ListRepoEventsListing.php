@@ -19,8 +19,6 @@ final readonly class ListRepoEventsListing
 {
     public const OPERATION_ID    = 'activity/list-repo-events';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/events';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/events';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Events $hydrator)
     {

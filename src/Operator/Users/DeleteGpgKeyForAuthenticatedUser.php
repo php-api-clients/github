@@ -18,14 +18,12 @@ final readonly class DeleteGpgKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-gpg-key-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/gpg_keys/{gpg_key_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/gpg_keys/{gpg_key_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\GpgKeys\GpgKeyId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $gpgKeyId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeleteGpgKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $gpgKeyId);

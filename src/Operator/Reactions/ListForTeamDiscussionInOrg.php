@@ -19,14 +19,12 @@ final readonly class ListForTeamDiscussionInOrg
 {
     public const OPERATION_ID    = 'reactions/list-for-team-discussion-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions\DiscussionNumber\Reactions $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Reaction> */
+    /** @return iterable<Schema\Reaction> */
     public function call(string $org, string $teamSlug, int $discussionNumber, string $content, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\ListForTeamDiscussionInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber, $content, $perPage, $page);

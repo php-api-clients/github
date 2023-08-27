@@ -18,14 +18,12 @@ final readonly class DeleteDeployment
 {
     public const OPERATION_ID    = 'repos/delete-deployment';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/deployments/{deployment_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/deployments/{deployment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments\DeploymentId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $deploymentId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId);

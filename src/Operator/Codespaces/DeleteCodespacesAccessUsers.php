@@ -18,14 +18,12 @@ final readonly class DeleteCodespacesAccessUsers
 {
     public const OPERATION_ID    = 'codespaces/delete-codespaces-access-users';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/codespaces/access/selected_users';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/codespaces/access/selected_users';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces\Access\SelectedUsers $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteCodespacesAccessUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

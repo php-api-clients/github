@@ -19,14 +19,12 @@ final readonly class List_
 {
     public const OPERATION_ID    = 'users/list';
     public const OPERATION_MATCH = 'GET /users';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\SimpleUser> | array{code: int}) */
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
     public function call(int $since, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\List_($this->responseSchemaValidator, $this->hydrator, $since, $perPage);

@@ -19,8 +19,6 @@ final readonly class UpdateImport
 {
     public const OPERATION_ID    = 'migrations/update-import';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/import';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/import';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Import $hydrator)
     {

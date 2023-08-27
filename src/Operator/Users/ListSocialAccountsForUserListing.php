@@ -19,8 +19,6 @@ final readonly class ListSocialAccountsForUserListing
 {
     public const OPERATION_ID    = 'users/list-social-accounts-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/social_accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/social_accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\SocialAccounts $hydrator)
     {

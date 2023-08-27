@@ -17,14 +17,12 @@ final readonly class SetWorkflowAccessToRepository
 {
     public const OPERATION_ID    = 'actions/set-workflow-access-to-repository';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/permissions/access';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/permissions/access';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetWorkflowAccessToRepository($this->requestSchemaValidator, $owner, $repo);

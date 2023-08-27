@@ -19,8 +19,6 @@ final readonly class GetLegacy
 {
     public const OPERATION_ID    = 'teams/get-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId $hydrator)
     {

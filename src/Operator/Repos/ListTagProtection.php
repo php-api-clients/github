@@ -19,14 +19,12 @@ final readonly class ListTagProtection
 {
     public const OPERATION_ID    = 'repos/list-tag-protection';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/tags/protection';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/tags/protection';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Tags\Protection $hydrator)
     {
     }
 
-    /** @return Observable<Schema\TagProtection> */
+    /** @return iterable<Schema\TagProtection> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListTagProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

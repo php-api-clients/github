@@ -19,14 +19,12 @@ final readonly class GetAllCommonlyUsed
 {
     public const OPERATION_ID    = 'licenses/get-all-commonly-used';
     public const OPERATION_MATCH = 'GET /licenses';
-    private const METHOD         = 'GET';
-    private const PATH           = '/licenses';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Licenses $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\LicenseSimple> | array{code: int}) */
+    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
     public function call(bool $featured, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Licenses\GetAllCommonlyUsed($this->responseSchemaValidator, $this->hydrator, $featured, $perPage, $page);

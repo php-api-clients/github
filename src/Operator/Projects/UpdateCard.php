@@ -20,14 +20,12 @@ final readonly class UpdateCard
 {
     public const OPERATION_ID    = 'projects/update-card';
     public const OPERATION_MATCH = 'PATCH /projects/columns/cards/{card_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/projects/columns/cards/{card_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectCard | array{code: int}) */
+    /** @return Schema\ProjectCard|array{code:int} */
     public function call(int $cardId, array $params): ProjectCard|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\UpdateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $cardId);

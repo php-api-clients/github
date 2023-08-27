@@ -16,14 +16,12 @@ final readonly class AddSelectedRepoToOrgVariable
 {
     public const OPERATION_ID    = 'actions/add-selected-repo-to-org-variable';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $name, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\AddSelectedRepoToOrgVariable($org, $name, $repositoryId);

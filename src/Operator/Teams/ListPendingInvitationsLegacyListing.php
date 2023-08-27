@@ -19,8 +19,6 @@ final readonly class ListPendingInvitationsLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-pending-invitations-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Invitations $hydrator)
     {

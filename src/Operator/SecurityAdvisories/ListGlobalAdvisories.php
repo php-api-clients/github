@@ -19,14 +19,12 @@ final readonly class ListGlobalAdvisories
 {
     public const OPERATION_ID    = 'security-advisories/list-global-advisories';
     public const OPERATION_MATCH = 'GET /advisories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/advisories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Advisories $hydrator)
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory> */
+    /** @return iterable<Schema\GlobalAdvisory> */
     public function call(string $ghsaId, string $cveId, string $ecosystem, string $severity, $cwes, bool $isWithdrawn, $affects, string $published, string $updated, string $modified, string $before, string $after, string $type = 'reviewed', string $direction = 'desc', int $perPage = 30, string $sort = 'published'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecurityAdvisories\ListGlobalAdvisories($this->responseSchemaValidator, $this->hydrator, $ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $before, $after, $type, $direction, $perPage, $sort);

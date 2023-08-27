@@ -19,14 +19,12 @@ final readonly class GetRepoRulesets
 {
     public const OPERATION_ID    = 'repos/get-repo-rulesets';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/rulesets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/rulesets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator)
     {
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<Schema\RepositoryRuleset> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page, $includesParents);

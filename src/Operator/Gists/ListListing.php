@@ -19,14 +19,12 @@ final readonly class ListListing
 {
     public const OPERATION_ID    = 'gists/list';
     public const OPERATION_MATCH = 'LIST /gists';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\BaseGist> | array{code: int}) */
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
     public function call(string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListListing($this->responseSchemaValidator, $this->hydrator, $since, $perPage, $page);

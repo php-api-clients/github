@@ -19,8 +19,6 @@ final readonly class GetGithubPackagesBillingUser
 {
     public const OPERATION_ID    = 'billing/get-github-packages-billing-user';
     public const OPERATION_MATCH = 'GET /users/{username}/settings/billing/packages';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/settings/billing/packages';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Settings\Billing\Packages $hydrator)
     {

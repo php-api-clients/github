@@ -20,14 +20,12 @@ final readonly class CreateForAuthenticatedUser
 {
     public const OPERATION_ID    = 'projects/create-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/projects';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/projects';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Projects $hydrator)
     {
     }
 
-    /** @return (Schema\Project | array{code: int}) */
+    /** @return Schema\Project|array{code:int} */
     public function call(array $params): Project|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

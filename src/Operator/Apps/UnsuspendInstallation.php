@@ -18,14 +18,12 @@ final readonly class UnsuspendInstallation
 {
     public const OPERATION_ID    = 'apps/unsuspend-installation';
     public const OPERATION_MATCH = 'DELETE /app/installations/{installation_id}/suspended';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/app/installations/{installation_id}/suspended';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations\InstallationId\Suspended $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $installationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\UnsuspendInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

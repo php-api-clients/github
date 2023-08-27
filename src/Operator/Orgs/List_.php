@@ -19,14 +19,12 @@ final readonly class List_
 {
     public const OPERATION_ID    = 'orgs/list';
     public const OPERATION_MATCH = 'GET /organizations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/organizations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Organizations $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\OrganizationSimple> | array{code: int}) */
+    /** @return iterable<Schema\OrganizationSimple>|array{code:int} */
     public function call(int $since, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\List_($this->responseSchemaValidator, $this->hydrator, $since, $perPage);

@@ -18,14 +18,12 @@ final readonly class DeleteRef
 {
     public const OPERATION_ID    = 'git/delete-ref';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/git/refs/{ref}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/git/refs/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Git\Refs\Ref $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $ref): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Git\DeleteRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

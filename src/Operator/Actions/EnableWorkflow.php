@@ -16,14 +16,12 @@ final readonly class EnableWorkflow
 {
     public const OPERATION_ID    = 'actions/enable-workflow';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, $workflowId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\EnableWorkflow($owner, $repo, $workflowId);

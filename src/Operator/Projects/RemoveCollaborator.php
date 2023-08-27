@@ -18,14 +18,12 @@ final readonly class RemoveCollaborator
 {
     public const OPERATION_ID    = 'projects/remove-collaborator';
     public const OPERATION_MATCH = 'DELETE /projects/{project_id}/collaborators/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/projects/{project_id}/collaborators/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId\Collaborators\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $projectId, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\RemoveCollaborator($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

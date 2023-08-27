@@ -18,14 +18,12 @@ final readonly class DeleteCommitComment
 {
     public const OPERATION_ID    = 'repos/delete-commit-comment';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/comments/{comment_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/comments/{comment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Comments\CommentId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $commentId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteCommitComment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

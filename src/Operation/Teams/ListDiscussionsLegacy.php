@@ -66,7 +66,7 @@ final class ListDiscussionsLegacy
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamDiscussion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\TeamDiscussion::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\TeamDiscussion::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

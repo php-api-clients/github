@@ -19,8 +19,6 @@ final readonly class ListWebhooksListing
 {
     public const OPERATION_ID    = 'repos/list-webhooks';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/hooks';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/hooks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Hooks $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class ListRepoNotificationsForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'activity/list-repo-notifications-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/notifications';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/notifications';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Notifications $hydrator)
     {

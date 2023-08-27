@@ -18,14 +18,12 @@ final readonly class CheckIsStarred
 {
     public const OPERATION_ID    = 'gists/check-is-starred';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/star';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/star';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Star $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $gistId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\CheckIsStarred($this->responseSchemaValidator, $this->hydrator, $gistId);

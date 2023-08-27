@@ -19,8 +19,6 @@ final readonly class CreateRegistrationTokenForOrg
 {
     public const OPERATION_ID    = 'actions/create-registration-token-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/registration-token';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/registration-token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Runners\RegistrationToken $hydrator)
     {

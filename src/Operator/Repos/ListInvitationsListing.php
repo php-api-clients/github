@@ -19,8 +19,6 @@ final readonly class ListInvitationsListing
 {
     public const OPERATION_ID    = 'repos/list-invitations';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Invitations $hydrator)
     {

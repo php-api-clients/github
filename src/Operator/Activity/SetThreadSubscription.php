@@ -20,14 +20,12 @@ final readonly class SetThreadSubscription
 {
     public const OPERATION_ID    = 'activity/set-thread-subscription';
     public const OPERATION_MATCH = 'PUT /notifications/threads/{thread_id}/subscription';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/notifications/threads/{thread_id}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications\Threads\ThreadId\Subscription $hydrator)
     {
     }
 
-    /** @return (Schema\ThreadSubscription | array{code: int}) */
+    /** @return Schema\ThreadSubscription|array{code:int} */
     public function call(int $threadId, array $params): ThreadSubscription|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\SetThreadSubscription($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $threadId);

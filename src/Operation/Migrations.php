@@ -4,264 +4,177 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Import;
+use ApiClients\Client\GitHub\Schema\Migration;
+use ApiClients\Client\GitHub\Schema\PorterAuthor;
 
 final class Migrations
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listForOrg(string $org, array $exclude, int $perPage, int $page): Schema\Migration
+    /** @return iterable<Schema\Migration> */
+    public function listForOrg(string $org, array $exclude, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListForOrg::class] = new Operator\Migrations\ListForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\ListForOrg::class]->call($org, $exclude, $perPage, $page);
+        return $this->operators->migrations👷ListForOrg()->call($org, $exclude, $perPage, $page);
     }
 
-    public function listForOrgListing(string $org, array $exclude, int $perPage, int $page): Schema\Migration
+    /** @return iterable<Schema\Migration> */
+    public function listForOrgListing(string $org, array $exclude, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListForOrgListing::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListForOrgListing::class] = new Operator\Migrations\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\ListForOrgListing::class]->call($org, $exclude, $perPage, $page);
+        return $this->operators->migrations👷ListForOrgListing()->call($org, $exclude, $perPage, $page);
     }
 
-    public function startForOrg(string $org, array $params): Schema\Migration
+    /** @return */
+    public function startForOrg(string $org, array $params): Migration|array
     {
-        if (array_key_exists(Operator\Migrations\StartForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\StartForOrg::class] = new Operator\Migrations\StartForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\StartForOrg::class]->call($org, $params);
+        return $this->operators->migrations👷StartForOrg()->call($org, $params);
     }
 
-    public function getStatusForOrg(string $org, int $migrationId, array $exclude): Schema\Migration
+    /** @return */
+    public function getStatusForOrg(string $org, int $migrationId, array $exclude): Migration|array
     {
-        if (array_key_exists(Operator\Migrations\GetStatusForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetStatusForOrg::class] = new Operator\Migrations\GetStatusForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId());
-        }
-
-        return $this->operator[Operator\Migrations\GetStatusForOrg::class]->call($org, $migrationId, $exclude);
+        return $this->operators->migrations👷GetStatusForOrg()->call($org, $migrationId, $exclude);
     }
 
-    public function downloadArchiveForOrg(string $org, int $migrationId): ResponseInterface
+    /** @return array{code:int} */
+    public function downloadArchiveForOrg(string $org, int $migrationId): array
     {
-        if (array_key_exists(Operator\Migrations\DownloadArchiveForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\DownloadArchiveForOrg::class] = new Operator\Migrations\DownloadArchiveForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive());
-        }
-
-        return $this->operator[Operator\Migrations\DownloadArchiveForOrg::class]->call($org, $migrationId);
+        return $this->operators->migrations👷DownloadArchiveForOrg()->call($org, $migrationId);
     }
 
-    public function downloadArchiveForOrgStreaming(string $org, int $migrationId): ResponseInterface
+    /** @return Observable<string> */
+    public function downloadArchiveForOrgStreaming(string $org, int $migrationId): iterable
     {
-        if (array_key_exists(Operator\Migrations\DownloadArchiveForOrgStreaming::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\DownloadArchiveForOrgStreaming::class] = new Operator\Migrations\DownloadArchiveForOrgStreaming($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive());
-        }
-
-        return $this->operator[Operator\Migrations\DownloadArchiveForOrgStreaming::class]->call($org, $migrationId);
+        return $this->operators->migrations👷DownloadArchiveForOrgStreaming()->call($org, $migrationId);
     }
 
-    public function deleteArchiveForOrg(string $org, int $migrationId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteArchiveForOrg(string $org, int $migrationId): array
     {
-        if (array_key_exists(Operator\Migrations\DeleteArchiveForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\DeleteArchiveForOrg::class] = new Operator\Migrations\DeleteArchiveForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive());
-        }
-
-        return $this->operator[Operator\Migrations\DeleteArchiveForOrg::class]->call($org, $migrationId);
+        return $this->operators->migrations👷DeleteArchiveForOrg()->call($org, $migrationId);
     }
 
-    public function unlockRepoForOrg(string $org, int $migrationId, string $repoName): ResponseInterface
+    /** @return array{code:int} */
+    public function unlockRepoForOrg(string $org, int $migrationId, string $repoName): array
     {
-        if (array_key_exists(Operator\Migrations\UnlockRepoForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\UnlockRepoForOrg::class] = new Operator\Migrations\UnlockRepoForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock());
-        }
-
-        return $this->operator[Operator\Migrations\UnlockRepoForOrg::class]->call($org, $migrationId, $repoName);
+        return $this->operators->migrations👷UnlockRepoForOrg()->call($org, $migrationId, $repoName);
     }
 
-    public function listReposForOrg(string $org, int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposForOrg(string $org, int $migrationId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListReposForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListReposForOrg::class] = new Operator\Migrations\ListReposForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Migrations\ListReposForOrg::class]->call($org, $migrationId, $perPage, $page);
+        return $this->operators->migrations👷ListReposForOrg()->call($org, $migrationId, $perPage, $page);
     }
 
-    public function listReposForOrgListing(string $org, int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposForOrgListing(string $org, int $migrationId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListReposForOrgListing::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListReposForOrgListing::class] = new Operator\Migrations\ListReposForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Migrations\ListReposForOrgListing::class]->call($org, $migrationId, $perPage, $page);
+        return $this->operators->migrations👷ListReposForOrgListing()->call($org, $migrationId, $perPage, $page);
     }
 
-    public function getImportStatus(string $owner, string $repo): Schema\Import
+    /** @return */
+    public function getImportStatus(string $owner, string $repo): Import|array
     {
-        if (array_key_exists(Operator\Migrations\GetImportStatus::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetImportStatus::class] = new Operator\Migrations\GetImportStatus($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
-        }
-
-        return $this->operator[Operator\Migrations\GetImportStatus::class]->call($owner, $repo);
+        return $this->operators->migrations👷GetImportStatus()->call($owner, $repo);
     }
 
-    public function startImport(string $owner, string $repo, array $params): Schema\Import
+    /** @return */
+    public function startImport(string $owner, string $repo, array $params): Import|array
     {
-        if (array_key_exists(Operator\Migrations\StartImport::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\StartImport::class] = new Operator\Migrations\StartImport($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
-        }
-
-        return $this->operator[Operator\Migrations\StartImport::class]->call($owner, $repo, $params);
+        return $this->operators->migrations👷StartImport()->call($owner, $repo, $params);
     }
 
-    public function cancelImport(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function cancelImport(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Migrations\CancelImport::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\CancelImport::class] = new Operator\Migrations\CancelImport($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
-        }
-
-        return $this->operator[Operator\Migrations\CancelImport::class]->call($owner, $repo);
+        return $this->operators->migrations👷CancelImport()->call($owner, $repo);
     }
 
-    public function updateImport(string $owner, string $repo, array $params): Schema\Import
+    /** @return */
+    public function updateImport(string $owner, string $repo, array $params): Import|array
     {
-        if (array_key_exists(Operator\Migrations\UpdateImport::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\UpdateImport::class] = new Operator\Migrations\UpdateImport($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
-        }
-
-        return $this->operator[Operator\Migrations\UpdateImport::class]->call($owner, $repo, $params);
+        return $this->operators->migrations👷UpdateImport()->call($owner, $repo, $params);
     }
 
-    public function getCommitAuthors(string $owner, string $repo, int $since): Schema\PorterAuthor
+    /** @return iterable<Schema\PorterAuthor> */
+    public function getCommitAuthors(string $owner, string $repo, int $since): iterable
     {
-        if (array_key_exists(Operator\Migrations\GetCommitAuthors::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetCommitAuthors::class] = new Operator\Migrations\GetCommitAuthors($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import🌀Authors());
-        }
-
-        return $this->operator[Operator\Migrations\GetCommitAuthors::class]->call($owner, $repo, $since);
+        return $this->operators->migrations👷GetCommitAuthors()->call($owner, $repo, $since);
     }
 
-    public function mapCommitAuthor(string $owner, string $repo, int $authorId, array $params): Schema\PorterAuthor
+    /** @return */
+    public function mapCommitAuthor(string $owner, string $repo, int $authorId, array $params): PorterAuthor|array
     {
-        if (array_key_exists(Operator\Migrations\MapCommitAuthor::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\MapCommitAuthor::class] = new Operator\Migrations\MapCommitAuthor($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import🌀Authors🌀AuthorId());
-        }
-
-        return $this->operator[Operator\Migrations\MapCommitAuthor::class]->call($owner, $repo, $authorId, $params);
+        return $this->operators->migrations👷MapCommitAuthor()->call($owner, $repo, $authorId, $params);
     }
 
-    public function getLargeFiles(string $owner, string $repo): Schema\PorterLargeFile
+    /** @return iterable<Schema\PorterLargeFile> */
+    public function getLargeFiles(string $owner, string $repo): iterable
     {
-        if (array_key_exists(Operator\Migrations\GetLargeFiles::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetLargeFiles::class] = new Operator\Migrations\GetLargeFiles($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import🌀LargeFiles());
-        }
-
-        return $this->operator[Operator\Migrations\GetLargeFiles::class]->call($owner, $repo);
+        return $this->operators->migrations👷GetLargeFiles()->call($owner, $repo);
     }
 
-    public function setLfsPreference(string $owner, string $repo, array $params): Schema\Import
+    /** @return */
+    public function setLfsPreference(string $owner, string $repo, array $params): Import|array
     {
-        if (array_key_exists(Operator\Migrations\SetLfsPreference::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\SetLfsPreference::class] = new Operator\Migrations\SetLfsPreference($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import🌀Lfs());
-        }
-
-        return $this->operator[Operator\Migrations\SetLfsPreference::class]->call($owner, $repo, $params);
+        return $this->operators->migrations👷SetLfsPreference()->call($owner, $repo, $params);
     }
 
-    public function listForAuthenticatedUser(int $perPage, int $page): Schema\Migration
+    /** @return iterable<Schema\Migration>|array{code:int} */
+    public function listForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListForAuthenticatedUser::class] = new Operator\Migrations\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\ListForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->migrations👷ListForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listForAuthenticatedUserListing(int $perPage, int $page): Schema\Migration
+    /** @return iterable<Schema\Migration>|array{code:int} */
+    public function listForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListForAuthenticatedUserListing::class] = new Operator\Migrations\ListForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\ListForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->migrations👷ListForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function startForAuthenticatedUser(array $params): Schema\Migration
+    /** @return Schema\Migration|array{code:int} */
+    public function startForAuthenticatedUser(array $params): Migration|array
     {
-        if (array_key_exists(Operator\Migrations\StartForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\StartForAuthenticatedUser::class] = new Operator\Migrations\StartForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations());
-        }
-
-        return $this->operator[Operator\Migrations\StartForAuthenticatedUser::class]->call($params);
+        return $this->operators->migrations👷StartForAuthenticatedUser()->call($params);
     }
 
-    public function getStatusForAuthenticatedUser(int $migrationId, array $exclude): Schema\Migration
+    /** @return Schema\Migration|array{code:int} */
+    public function getStatusForAuthenticatedUser(int $migrationId, array $exclude): Migration|array
     {
-        if (array_key_exists(Operator\Migrations\GetStatusForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetStatusForAuthenticatedUser::class] = new Operator\Migrations\GetStatusForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId());
-        }
-
-        return $this->operator[Operator\Migrations\GetStatusForAuthenticatedUser::class]->call($migrationId, $exclude);
+        return $this->operators->migrations👷GetStatusForAuthenticatedUser()->call($migrationId, $exclude);
     }
 
-    public function getArchiveForAuthenticatedUser(int $migrationId): ResponseInterface
+    /** @return array{code:int} */
+    public function getArchiveForAuthenticatedUser(int $migrationId): array
     {
-        if (array_key_exists(Operator\Migrations\GetArchiveForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\GetArchiveForAuthenticatedUser::class] = new Operator\Migrations\GetArchiveForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Archive());
-        }
-
-        return $this->operator[Operator\Migrations\GetArchiveForAuthenticatedUser::class]->call($migrationId);
+        return $this->operators->migrations👷GetArchiveForAuthenticatedUser()->call($migrationId);
     }
 
-    public function deleteArchiveForAuthenticatedUser(int $migrationId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteArchiveForAuthenticatedUser(int $migrationId): array
     {
-        if (array_key_exists(Operator\Migrations\DeleteArchiveForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\DeleteArchiveForAuthenticatedUser::class] = new Operator\Migrations\DeleteArchiveForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Archive());
-        }
-
-        return $this->operator[Operator\Migrations\DeleteArchiveForAuthenticatedUser::class]->call($migrationId);
+        return $this->operators->migrations👷DeleteArchiveForAuthenticatedUser()->call($migrationId);
     }
 
-    public function unlockRepoForAuthenticatedUser(int $migrationId, string $repoName): ResponseInterface
+    /** @return array{code:int} */
+    public function unlockRepoForAuthenticatedUser(int $migrationId, string $repoName): array
     {
-        if (array_key_exists(Operator\Migrations\UnlockRepoForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\UnlockRepoForAuthenticatedUser::class] = new Operator\Migrations\UnlockRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock());
-        }
-
-        return $this->operator[Operator\Migrations\UnlockRepoForAuthenticatedUser::class]->call($migrationId, $repoName);
+        return $this->operators->migrations👷UnlockRepoForAuthenticatedUser()->call($migrationId, $repoName);
     }
 
-    public function listReposForAuthenticatedUser(int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposForAuthenticatedUser(int $migrationId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListReposForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListReposForAuthenticatedUser::class] = new Operator\Migrations\ListReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Migrations\ListReposForAuthenticatedUser::class]->call($migrationId, $perPage, $page);
+        return $this->operators->migrations👷ListReposForAuthenticatedUser()->call($migrationId, $perPage, $page);
     }
 
-    public function listReposForAuthenticatedUserListing(int $migrationId, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposForAuthenticatedUserListing(int $migrationId, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Migrations\ListReposForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Migrations\ListReposForAuthenticatedUserListing::class] = new Operator\Migrations\ListReposForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Migrations\ListReposForAuthenticatedUserListing::class]->call($migrationId, $perPage, $page);
+        return $this->operators->migrations👷ListReposForAuthenticatedUserListing()->call($migrationId, $perPage, $page);
     }
 }

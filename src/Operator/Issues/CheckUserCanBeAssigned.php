@@ -18,14 +18,12 @@ final readonly class CheckUserCanBeAssigned
 {
     public const OPERATION_ID    = 'issues/check-user-can-be-assigned';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/assignees/{assignee}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/assignees/{assignee}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Assignees\Assignee $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $assignee): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\CheckUserCanBeAssigned($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $assignee);

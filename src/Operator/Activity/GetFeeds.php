@@ -19,8 +19,6 @@ final readonly class GetFeeds
 {
     public const OPERATION_ID    = 'activity/get-feeds';
     public const OPERATION_MATCH = 'GET /feeds';
-    private const METHOD         = 'GET';
-    private const PATH           = '/feeds';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Feeds $hydrator)
     {

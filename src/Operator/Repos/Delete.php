@@ -20,14 +20,12 @@ final readonly class Delete
 {
     public const OPERATION_ID    = 'repos/delete';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo $hydrator)
     {
     }
 
-    /** @return (Schema\BasicError | array{code: int}) */
+    /** @return Schema\BasicError|array{code:int} */
     public function call(string $owner, string $repo): BasicError|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Delete($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -4,525 +4,354 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\GpgKey;
+use ApiClients\Client\GitHub\Schema\Hovercard;
+use ApiClients\Client\GitHub\Schema\Key;
+use ApiClients\Client\GitHub\Schema\PrivateUser;
+use ApiClients\Client\GitHub\Schema\PublicUser;
+use ApiClients\Client\GitHub\Schema\SshSigningKey;
 
 final class Users
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function getAuthenticated(): Schema\Operations\Users\GetAuthenticated\Response\ApplicationJson\Ok
+    /** @return Schema\PrivateUser|Schema\PublicUser|array{code:int} */
+    public function getAuthenticated(): PrivateUser|PublicUser|array
     {
-        if (array_key_exists(Operator\Users\GetAuthenticated::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetAuthenticated::class] = new Operator\Users\GetAuthenticated($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User());
-        }
-
-        return $this->operator[Operator\Users\GetAuthenticated::class]->call();
+        return $this->operators->users👷GetAuthenticated()->call();
     }
 
-    public function updateAuthenticated(array $params): Schema\PrivateUser
+    /** @return Schema\PrivateUser|array{code:int} */
+    public function updateAuthenticated(array $params): PrivateUser|array
     {
-        if (array_key_exists(Operator\Users\UpdateAuthenticated::class, $this->operator) === false) {
-            $this->operator[Operator\Users\UpdateAuthenticated::class] = new Operator\Users\UpdateAuthenticated($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User());
-        }
-
-        return $this->operator[Operator\Users\UpdateAuthenticated::class]->call($params);
+        return $this->operators->users👷UpdateAuthenticated()->call($params);
     }
 
-    public function listBlockedByAuthenticatedUser(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listBlockedByAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListBlockedByAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListBlockedByAuthenticatedUser::class] = new Operator\Users\ListBlockedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Blocks());
-        }
-
-        return $this->operator[Operator\Users\ListBlockedByAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListBlockedByAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listBlockedByAuthenticatedUserListing(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listBlockedByAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListBlockedByAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListBlockedByAuthenticatedUserListing::class] = new Operator\Users\ListBlockedByAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Blocks());
-        }
-
-        return $this->operator[Operator\Users\ListBlockedByAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListBlockedByAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function checkBlocked(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function checkBlocked(string $username): array
     {
-        if (array_key_exists(Operator\Users\CheckBlocked::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CheckBlocked::class] = new Operator\Users\CheckBlocked($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Blocks🌀Username());
-        }
-
-        return $this->operator[Operator\Users\CheckBlocked::class]->call($username);
+        return $this->operators->users👷CheckBlocked()->call($username);
     }
 
-    public function block(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function block(string $username): array
     {
-        if (array_key_exists(Operator\Users\Block::class, $this->operator) === false) {
-            $this->operator[Operator\Users\Block::class] = new Operator\Users\Block($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Blocks🌀Username());
-        }
-
-        return $this->operator[Operator\Users\Block::class]->call($username);
+        return $this->operators->users👷Block()->call($username);
     }
 
-    public function unblock(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function unblock(string $username): array
     {
-        if (array_key_exists(Operator\Users\Unblock::class, $this->operator) === false) {
-            $this->operator[Operator\Users\Unblock::class] = new Operator\Users\Unblock($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Blocks🌀Username());
-        }
-
-        return $this->operator[Operator\Users\Unblock::class]->call($username);
+        return $this->operators->users👷Unblock()->call($username);
     }
 
-    public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params): iterable
     {
-        if (array_key_exists(Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser::class] = new Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Email🌀Visibility());
-        }
-
-        return $this->operator[Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷SetPrimaryEmailVisibilityForAuthenticatedUser()->call($params);
     }
 
-    public function listEmailsForAuthenticatedUser(int $perPage, int $page): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function listEmailsForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListEmailsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListEmailsForAuthenticatedUser::class] = new Operator\Users\ListEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
-        }
-
-        return $this->operator[Operator\Users\ListEmailsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListEmailsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listEmailsForAuthenticatedUserListing(int $perPage, int $page): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function listEmailsForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListEmailsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListEmailsForAuthenticatedUserListing::class] = new Operator\Users\ListEmailsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
-        }
-
-        return $this->operator[Operator\Users\ListEmailsForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListEmailsForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function addEmailForAuthenticatedUser(array $params): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function addEmailForAuthenticatedUser(array $params): iterable
     {
-        if (array_key_exists(Operator\Users\AddEmailForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\AddEmailForAuthenticatedUser::class] = new Operator\Users\AddEmailForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
-        }
-
-        return $this->operator[Operator\Users\AddEmailForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷AddEmailForAuthenticatedUser()->call($params);
     }
 
-    public function deleteEmailForAuthenticatedUser(array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteEmailForAuthenticatedUser(array $params): array
     {
-        if (array_key_exists(Operator\Users\DeleteEmailForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\DeleteEmailForAuthenticatedUser::class] = new Operator\Users\DeleteEmailForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
-        }
-
-        return $this->operator[Operator\Users\DeleteEmailForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷DeleteEmailForAuthenticatedUser()->call($params);
     }
 
-    public function listFollowersForAuthenticatedUser(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listFollowersForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowersForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowersForAuthenticatedUser::class] = new Operator\Users\ListFollowersForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Followers());
-        }
-
-        return $this->operator[Operator\Users\ListFollowersForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListFollowersForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listFollowersForAuthenticatedUserListing(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listFollowersForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowersForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowersForAuthenticatedUserListing::class] = new Operator\Users\ListFollowersForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Followers());
-        }
-
-        return $this->operator[Operator\Users\ListFollowersForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListFollowersForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function listFollowedByAuthenticatedUser(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listFollowedByAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowedByAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowedByAuthenticatedUser::class] = new Operator\Users\ListFollowedByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Following());
-        }
-
-        return $this->operator[Operator\Users\ListFollowedByAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListFollowedByAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listFollowedByAuthenticatedUserListing(int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function listFollowedByAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowedByAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowedByAuthenticatedUserListing::class] = new Operator\Users\ListFollowedByAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Following());
-        }
-
-        return $this->operator[Operator\Users\ListFollowedByAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListFollowedByAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function checkPersonIsFollowedByAuthenticated(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function checkPersonIsFollowedByAuthenticated(string $username): array
     {
-        if (array_key_exists(Operator\Users\CheckPersonIsFollowedByAuthenticated::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CheckPersonIsFollowedByAuthenticated::class] = new Operator\Users\CheckPersonIsFollowedByAuthenticated($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Following🌀Username());
-        }
-
-        return $this->operator[Operator\Users\CheckPersonIsFollowedByAuthenticated::class]->call($username);
+        return $this->operators->users👷CheckPersonIsFollowedByAuthenticated()->call($username);
     }
 
-    public function follow(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function follow(string $username): array
     {
-        if (array_key_exists(Operator\Users\Follow::class, $this->operator) === false) {
-            $this->operator[Operator\Users\Follow::class] = new Operator\Users\Follow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Following🌀Username());
-        }
-
-        return $this->operator[Operator\Users\Follow::class]->call($username);
+        return $this->operators->users👷Follow()->call($username);
     }
 
-    public function unfollow(string $username): ResponseInterface
+    /** @return array{code:int} */
+    public function unfollow(string $username): array
     {
-        if (array_key_exists(Operator\Users\Unfollow::class, $this->operator) === false) {
-            $this->operator[Operator\Users\Unfollow::class] = new Operator\Users\Unfollow($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Following🌀Username());
-        }
-
-        return $this->operator[Operator\Users\Unfollow::class]->call($username);
+        return $this->operators->users👷Unfollow()->call($username);
     }
 
-    public function listGpgKeysForAuthenticatedUser(int $perPage, int $page): Schema\GpgKey
+    /** @return iterable<Schema\GpgKey>|array{code:int} */
+    public function listGpgKeysForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListGpgKeysForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListGpgKeysForAuthenticatedUser::class] = new Operator\Users\ListGpgKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys());
-        }
-
-        return $this->operator[Operator\Users\ListGpgKeysForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListGpgKeysForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listGpgKeysForAuthenticatedUserListing(int $perPage, int $page): Schema\GpgKey
+    /** @return iterable<Schema\GpgKey>|array{code:int} */
+    public function listGpgKeysForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListGpgKeysForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListGpgKeysForAuthenticatedUserListing::class] = new Operator\Users\ListGpgKeysForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys());
-        }
-
-        return $this->operator[Operator\Users\ListGpgKeysForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListGpgKeysForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function createGpgKeyForAuthenticatedUser(array $params): Schema\GpgKey
+    /** @return Schema\GpgKey|array{code:int} */
+    public function createGpgKeyForAuthenticatedUser(array $params): GpgKey|array
     {
-        if (array_key_exists(Operator\Users\CreateGpgKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CreateGpgKeyForAuthenticatedUser::class] = new Operator\Users\CreateGpgKeyForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys());
-        }
-
-        return $this->operator[Operator\Users\CreateGpgKeyForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷CreateGpgKeyForAuthenticatedUser()->call($params);
     }
 
-    public function getGpgKeyForAuthenticatedUser(int $gpgKeyId): Schema\GpgKey
+    /** @return Schema\GpgKey|array{code:int} */
+    public function getGpgKeyForAuthenticatedUser(int $gpgKeyId): GpgKey|array
     {
-        if (array_key_exists(Operator\Users\GetGpgKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetGpgKeyForAuthenticatedUser::class] = new Operator\Users\GetGpgKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys🌀GpgKeyId());
-        }
-
-        return $this->operator[Operator\Users\GetGpgKeyForAuthenticatedUser::class]->call($gpgKeyId);
+        return $this->operators->users👷GetGpgKeyForAuthenticatedUser()->call($gpgKeyId);
     }
 
-    public function deleteGpgKeyForAuthenticatedUser(int $gpgKeyId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteGpgKeyForAuthenticatedUser(int $gpgKeyId): array
     {
-        if (array_key_exists(Operator\Users\DeleteGpgKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\DeleteGpgKeyForAuthenticatedUser::class] = new Operator\Users\DeleteGpgKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀GpgKeys🌀GpgKeyId());
-        }
-
-        return $this->operator[Operator\Users\DeleteGpgKeyForAuthenticatedUser::class]->call($gpgKeyId);
+        return $this->operators->users👷DeleteGpgKeyForAuthenticatedUser()->call($gpgKeyId);
     }
 
-    public function listPublicSshKeysForAuthenticatedUser(int $perPage, int $page): Schema\Key
+    /** @return iterable<Schema\Key>|array{code:int} */
+    public function listPublicSshKeysForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicSshKeysForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicSshKeysForAuthenticatedUser::class] = new Operator\Users\ListPublicSshKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Keys());
-        }
-
-        return $this->operator[Operator\Users\ListPublicSshKeysForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListPublicSshKeysForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listPublicSshKeysForAuthenticatedUserListing(int $perPage, int $page): Schema\Key
+    /** @return iterable<Schema\Key>|array{code:int} */
+    public function listPublicSshKeysForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicSshKeysForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicSshKeysForAuthenticatedUserListing::class] = new Operator\Users\ListPublicSshKeysForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Keys());
-        }
-
-        return $this->operator[Operator\Users\ListPublicSshKeysForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListPublicSshKeysForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function createPublicSshKeyForAuthenticatedUser(array $params): Schema\Key
+    /** @return Schema\Key|array{code:int} */
+    public function createPublicSshKeyForAuthenticatedUser(array $params): Key|array
     {
-        if (array_key_exists(Operator\Users\CreatePublicSshKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CreatePublicSshKeyForAuthenticatedUser::class] = new Operator\Users\CreatePublicSshKeyForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Keys());
-        }
-
-        return $this->operator[Operator\Users\CreatePublicSshKeyForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷CreatePublicSshKeyForAuthenticatedUser()->call($params);
     }
 
-    public function getPublicSshKeyForAuthenticatedUser(int $keyId): Schema\Key
+    /** @return Schema\Key|array{code:int} */
+    public function getPublicSshKeyForAuthenticatedUser(int $keyId): Key|array
     {
-        if (array_key_exists(Operator\Users\GetPublicSshKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetPublicSshKeyForAuthenticatedUser::class] = new Operator\Users\GetPublicSshKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Keys🌀KeyId());
-        }
-
-        return $this->operator[Operator\Users\GetPublicSshKeyForAuthenticatedUser::class]->call($keyId);
+        return $this->operators->users👷GetPublicSshKeyForAuthenticatedUser()->call($keyId);
     }
 
-    public function deletePublicSshKeyForAuthenticatedUser(int $keyId): ResponseInterface
+    /** @return array{code:int} */
+    public function deletePublicSshKeyForAuthenticatedUser(int $keyId): array
     {
-        if (array_key_exists(Operator\Users\DeletePublicSshKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\DeletePublicSshKeyForAuthenticatedUser::class] = new Operator\Users\DeletePublicSshKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Keys🌀KeyId());
-        }
-
-        return $this->operator[Operator\Users\DeletePublicSshKeyForAuthenticatedUser::class]->call($keyId);
+        return $this->operators->users👷DeletePublicSshKeyForAuthenticatedUser()->call($keyId);
     }
 
-    public function listPublicEmailsForAuthenticatedUser(int $perPage, int $page): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function listPublicEmailsForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicEmailsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicEmailsForAuthenticatedUser::class] = new Operator\Users\ListPublicEmailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀PublicEmails());
-        }
-
-        return $this->operator[Operator\Users\ListPublicEmailsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListPublicEmailsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listPublicEmailsForAuthenticatedUserListing(int $perPage, int $page): Schema\Email
+    /** @return iterable<Schema\Email>|array{code:int} */
+    public function listPublicEmailsForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicEmailsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicEmailsForAuthenticatedUserListing::class] = new Operator\Users\ListPublicEmailsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀PublicEmails());
-        }
-
-        return $this->operator[Operator\Users\ListPublicEmailsForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListPublicEmailsForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function listSocialAccountsForAuthenticatedUser(int $perPage, int $page): Schema\SocialAccount
+    /** @return iterable<Schema\SocialAccount>|array{code:int} */
+    public function listSocialAccountsForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSocialAccountsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSocialAccountsForAuthenticatedUser::class] = new Operator\Users\ListSocialAccountsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\ListSocialAccountsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListSocialAccountsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listSocialAccountsForAuthenticatedUserListing(int $perPage, int $page): Schema\SocialAccount
+    /** @return iterable<Schema\SocialAccount>|array{code:int} */
+    public function listSocialAccountsForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSocialAccountsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSocialAccountsForAuthenticatedUserListing::class] = new Operator\Users\ListSocialAccountsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\ListSocialAccountsForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListSocialAccountsForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function addSocialAccountForAuthenticatedUser(array $params): Schema\SocialAccount
+    /** @return iterable<Schema\SocialAccount>|array{code:int} */
+    public function addSocialAccountForAuthenticatedUser(array $params): iterable
     {
-        if (array_key_exists(Operator\Users\AddSocialAccountForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\AddSocialAccountForAuthenticatedUser::class] = new Operator\Users\AddSocialAccountForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\AddSocialAccountForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷AddSocialAccountForAuthenticatedUser()->call($params);
     }
 
-    public function deleteSocialAccountForAuthenticatedUser(array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteSocialAccountForAuthenticatedUser(array $params): array
     {
-        if (array_key_exists(Operator\Users\DeleteSocialAccountForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\DeleteSocialAccountForAuthenticatedUser::class] = new Operator\Users\DeleteSocialAccountForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\DeleteSocialAccountForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷DeleteSocialAccountForAuthenticatedUser()->call($params);
     }
 
-    public function listSshSigningKeysForAuthenticatedUser(int $perPage, int $page): Schema\SshSigningKey
+    /** @return iterable<Schema\SshSigningKey>|array{code:int} */
+    public function listSshSigningKeysForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSshSigningKeysForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSshSigningKeysForAuthenticatedUser::class] = new Operator\Users\ListSshSigningKeysForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys());
-        }
-
-        return $this->operator[Operator\Users\ListSshSigningKeysForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->users👷ListSshSigningKeysForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listSshSigningKeysForAuthenticatedUserListing(int $perPage, int $page): Schema\SshSigningKey
+    /** @return iterable<Schema\SshSigningKey>|array{code:int} */
+    public function listSshSigningKeysForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSshSigningKeysForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSshSigningKeysForAuthenticatedUserListing::class] = new Operator\Users\ListSshSigningKeysForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys());
-        }
-
-        return $this->operator[Operator\Users\ListSshSigningKeysForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->users👷ListSshSigningKeysForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function createSshSigningKeyForAuthenticatedUser(array $params): Schema\SshSigningKey
+    /** @return Schema\SshSigningKey|array{code:int} */
+    public function createSshSigningKeyForAuthenticatedUser(array $params): SshSigningKey|array
     {
-        if (array_key_exists(Operator\Users\CreateSshSigningKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CreateSshSigningKeyForAuthenticatedUser::class] = new Operator\Users\CreateSshSigningKeyForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys());
-        }
-
-        return $this->operator[Operator\Users\CreateSshSigningKeyForAuthenticatedUser::class]->call($params);
+        return $this->operators->users👷CreateSshSigningKeyForAuthenticatedUser()->call($params);
     }
 
-    public function getSshSigningKeyForAuthenticatedUser(int $sshSigningKeyId): Schema\SshSigningKey
+    /** @return Schema\SshSigningKey|array{code:int} */
+    public function getSshSigningKeyForAuthenticatedUser(int $sshSigningKeyId): SshSigningKey|array
     {
-        if (array_key_exists(Operator\Users\GetSshSigningKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetSshSigningKeyForAuthenticatedUser::class] = new Operator\Users\GetSshSigningKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys🌀SshSigningKeyId());
-        }
-
-        return $this->operator[Operator\Users\GetSshSigningKeyForAuthenticatedUser::class]->call($sshSigningKeyId);
+        return $this->operators->users👷GetSshSigningKeyForAuthenticatedUser()->call($sshSigningKeyId);
     }
 
-    public function deleteSshSigningKeyForAuthenticatedUser(int $sshSigningKeyId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteSshSigningKeyForAuthenticatedUser(int $sshSigningKeyId): array
     {
-        if (array_key_exists(Operator\Users\DeleteSshSigningKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\DeleteSshSigningKeyForAuthenticatedUser::class] = new Operator\Users\DeleteSshSigningKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SshSigningKeys🌀SshSigningKeyId());
-        }
-
-        return $this->operator[Operator\Users\DeleteSshSigningKeyForAuthenticatedUser::class]->call($sshSigningKeyId);
+        return $this->operators->users👷DeleteSshSigningKeyForAuthenticatedUser()->call($sshSigningKeyId);
     }
 
-    public function list(int $since, int $perPage): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    public function list(int $since, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Users\List_::class, $this->operator) === false) {
-            $this->operator[Operator\Users\List_::class] = new Operator\Users\List_($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users());
-        }
-
-        return $this->operator[Operator\Users\List_::class]->call($since, $perPage);
+        return $this->operators->users👷List_()->call($since, $perPage);
     }
 
-    public function getByUsername(string $username): Schema\Operations\Users\GetByUsername\Response\ApplicationJson\Ok
+    /** @return Schema\PrivateUser|Schema\PublicUser */
+    public function getByUsername(string $username): PrivateUser|PublicUser|array
     {
-        if (array_key_exists(Operator\Users\GetByUsername::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetByUsername::class] = new Operator\Users\GetByUsername($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username());
-        }
-
-        return $this->operator[Operator\Users\GetByUsername::class]->call($username);
+        return $this->operators->users👷GetByUsername()->call($username);
     }
 
-    public function listFollowersForUser(string $username, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listFollowersForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowersForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowersForUser::class] = new Operator\Users\ListFollowersForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Followers());
-        }
-
-        return $this->operator[Operator\Users\ListFollowersForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListFollowersForUser()->call($username, $perPage, $page);
     }
 
-    public function listFollowersForUserListing(string $username, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listFollowersForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowersForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowersForUserListing::class] = new Operator\Users\ListFollowersForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Followers());
-        }
-
-        return $this->operator[Operator\Users\ListFollowersForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListFollowersForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listFollowingForUser(string $username, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listFollowingForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowingForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowingForUser::class] = new Operator\Users\ListFollowingForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Following());
-        }
-
-        return $this->operator[Operator\Users\ListFollowingForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListFollowingForUser()->call($username, $perPage, $page);
     }
 
-    public function listFollowingForUserListing(string $username, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listFollowingForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListFollowingForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListFollowingForUserListing::class] = new Operator\Users\ListFollowingForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Following());
-        }
-
-        return $this->operator[Operator\Users\ListFollowingForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListFollowingForUserListing()->call($username, $perPage, $page);
     }
 
-    public function checkFollowingForUser(string $username, string $targetUser): ResponseInterface
+    /** @return array{code:int} */
+    public function checkFollowingForUser(string $username, string $targetUser): array
     {
-        if (array_key_exists(Operator\Users\CheckFollowingForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\CheckFollowingForUser::class] = new Operator\Users\CheckFollowingForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Following🌀TargetUser());
-        }
-
-        return $this->operator[Operator\Users\CheckFollowingForUser::class]->call($username, $targetUser);
+        return $this->operators->users👷CheckFollowingForUser()->call($username, $targetUser);
     }
 
-    public function listGpgKeysForUser(string $username, int $perPage, int $page): Schema\GpgKey
+    /** @return iterable<Schema\GpgKey> */
+    public function listGpgKeysForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListGpgKeysForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListGpgKeysForUser::class] = new Operator\Users\ListGpgKeysForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀GpgKeys());
-        }
-
-        return $this->operator[Operator\Users\ListGpgKeysForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListGpgKeysForUser()->call($username, $perPage, $page);
     }
 
-    public function listGpgKeysForUserListing(string $username, int $perPage, int $page): Schema\GpgKey
+    /** @return iterable<Schema\GpgKey> */
+    public function listGpgKeysForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListGpgKeysForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListGpgKeysForUserListing::class] = new Operator\Users\ListGpgKeysForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀GpgKeys());
-        }
-
-        return $this->operator[Operator\Users\ListGpgKeysForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListGpgKeysForUserListing()->call($username, $perPage, $page);
     }
 
-    public function getContextForUser(string $username, string $subjectType, string $subjectId): Schema\Hovercard
+    /** @return */
+    public function getContextForUser(string $username, string $subjectType, string $subjectId): Hovercard|array
     {
-        if (array_key_exists(Operator\Users\GetContextForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\GetContextForUser::class] = new Operator\Users\GetContextForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Hovercard());
-        }
-
-        return $this->operator[Operator\Users\GetContextForUser::class]->call($username, $subjectType, $subjectId);
+        return $this->operators->users👷GetContextForUser()->call($username, $subjectType, $subjectId);
     }
 
-    public function listPublicKeysForUser(string $username, int $perPage, int $page): Schema\KeySimple
+    /** @return iterable<Schema\KeySimple> */
+    public function listPublicKeysForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicKeysForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicKeysForUser::class] = new Operator\Users\ListPublicKeysForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Keys());
-        }
-
-        return $this->operator[Operator\Users\ListPublicKeysForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListPublicKeysForUser()->call($username, $perPage, $page);
     }
 
-    public function listPublicKeysForUserListing(string $username, int $perPage, int $page): Schema\KeySimple
+    /** @return iterable<Schema\KeySimple> */
+    public function listPublicKeysForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListPublicKeysForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListPublicKeysForUserListing::class] = new Operator\Users\ListPublicKeysForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Keys());
-        }
-
-        return $this->operator[Operator\Users\ListPublicKeysForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListPublicKeysForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listSocialAccountsForUser(string $username, int $perPage, int $page): Schema\SocialAccount
+    /** @return iterable<Schema\SocialAccount> */
+    public function listSocialAccountsForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSocialAccountsForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSocialAccountsForUser::class] = new Operator\Users\ListSocialAccountsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\ListSocialAccountsForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListSocialAccountsForUser()->call($username, $perPage, $page);
     }
 
-    public function listSocialAccountsForUserListing(string $username, int $perPage, int $page): Schema\SocialAccount
+    /** @return iterable<Schema\SocialAccount> */
+    public function listSocialAccountsForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSocialAccountsForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSocialAccountsForUserListing::class] = new Operator\Users\ListSocialAccountsForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀SocialAccounts());
-        }
-
-        return $this->operator[Operator\Users\ListSocialAccountsForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListSocialAccountsForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listSshSigningKeysForUser(string $username, int $perPage, int $page): Schema\SshSigningKey
+    /** @return iterable<Schema\SshSigningKey> */
+    public function listSshSigningKeysForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSshSigningKeysForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSshSigningKeysForUser::class] = new Operator\Users\ListSshSigningKeysForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀SshSigningKeys());
-        }
-
-        return $this->operator[Operator\Users\ListSshSigningKeysForUser::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListSshSigningKeysForUser()->call($username, $perPage, $page);
     }
 
-    public function listSshSigningKeysForUserListing(string $username, int $perPage, int $page): Schema\SshSigningKey
+    /** @return iterable<Schema\SshSigningKey> */
+    public function listSshSigningKeysForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Users\ListSshSigningKeysForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Users\ListSshSigningKeysForUserListing::class] = new Operator\Users\ListSshSigningKeysForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀SshSigningKeys());
-        }
-
-        return $this->operator[Operator\Users\ListSshSigningKeysForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->users👷ListSshSigningKeysForUserListing()->call($username, $perPage, $page);
     }
 }

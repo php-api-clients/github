@@ -19,8 +19,6 @@ final readonly class GetContextForUser
 {
     public const OPERATION_ID    = 'users/get-context-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/hovercard';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/hovercard';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Hovercard $hydrator)
     {

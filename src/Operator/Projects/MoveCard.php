@@ -20,14 +20,12 @@ final readonly class MoveCard
 {
     public const OPERATION_ID    = 'projects/move-card';
     public const OPERATION_MATCH = 'POST /projects/columns/cards/{card_id}/moves';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/columns/cards/{card_id}/moves';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\Cards\CardId\Moves $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|array{code:int} */
     public function call(int $cardId, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\MoveCard($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $cardId);

@@ -19,14 +19,12 @@ final readonly class ListPendingInvitations
 {
     public const OPERATION_ID    = 'orgs/list-pending-invitations';
     public const OPERATION_MATCH = 'GET /orgs/{org}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<Schema\OrganizationInvitation> */
     public function call(string $org, int $perPage = 30, int $page = 1, string $role = 'all', string $invitationSource = 'all'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListPendingInvitations($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page, $role, $invitationSource);

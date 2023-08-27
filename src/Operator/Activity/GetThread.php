@@ -20,14 +20,12 @@ final readonly class GetThread
 {
     public const OPERATION_ID    = 'activity/get-thread';
     public const OPERATION_MATCH = 'GET /notifications/threads/{thread_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/notifications/threads/{thread_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications\Threads\ThreadId $hydrator)
     {
     }
 
-    /** @return (Schema\Thread | array{code: int}) */
+    /** @return Schema\Thread|array{code:int} */
     public function call(int $threadId): Thread|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetThread($this->responseSchemaValidator, $this->hydrator, $threadId);

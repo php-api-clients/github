@@ -20,14 +20,12 @@ final readonly class GetRelease
 {
     public const OPERATION_ID    = 'repos/get-release';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases/{release_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\ReleaseId $hydrator)
     {
     }
 
-    /** @return (Schema\Release | array{code: int}) */
+    /** @return Schema\Release|array{code:int} */
     public function call(string $owner, string $repo, int $releaseId): Release|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetRelease($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId);

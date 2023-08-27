@@ -19,8 +19,6 @@ final readonly class UpdateWebhookConfigForOrg
 {
     public const OPERATION_ID    = 'orgs/update-webhook-config-for-org';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/hooks/{hook_id}/config';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/config';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator)
     {

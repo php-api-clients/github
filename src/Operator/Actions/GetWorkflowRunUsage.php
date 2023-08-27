@@ -19,8 +19,6 @@ final readonly class GetWorkflowRunUsage
 {
     public const OPERATION_ID    = 'actions/get-workflow-run-usage';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/timing';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Timing $hydrator)
     {

@@ -19,14 +19,12 @@ final readonly class ListBranchesForHeadCommit
 {
     public const OPERATION_ID    = 'repos/list-branches-for-head-commit';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha\BranchesWhereHead $hydrator)
     {
     }
 
-    /** @return Observable<Schema\BranchShort> */
+    /** @return iterable<Schema\BranchShort> */
     public function call(string $owner, string $repo, string $commitSha): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListBranchesForHeadCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);

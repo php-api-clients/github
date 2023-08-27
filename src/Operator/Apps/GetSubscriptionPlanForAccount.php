@@ -19,8 +19,6 @@ final readonly class GetSubscriptionPlanForAccount
 {
     public const OPERATION_ID    = 'apps/get-subscription-plan-for-account';
     public const OPERATION_MATCH = 'GET /marketplace_listing/accounts/{account_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/accounts/{account_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\MarketplaceListing\Accounts\AccountId $hydrator)
     {

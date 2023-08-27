@@ -65,7 +65,7 @@ final class ListReposStarredByUser
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\StarredRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\StarredRepository::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\StarredRepository::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -74,7 +74,7 @@ final class ListReposStarredByUser
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Repository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\Repository::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\Repository::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

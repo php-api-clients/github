@@ -19,8 +19,6 @@ final readonly class ListFailedInvitationsListing
 {
     public const OPERATION_ID    = 'orgs/list-failed-invitations';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/failed_invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/failed_invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\FailedInvitations $hydrator)
     {

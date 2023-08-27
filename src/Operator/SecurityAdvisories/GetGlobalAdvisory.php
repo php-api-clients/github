@@ -19,8 +19,6 @@ final readonly class GetGlobalAdvisory
 {
     public const OPERATION_ID    = 'security-advisories/get-global-advisory';
     public const OPERATION_MATCH = 'GET /advisories/{ghsa_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/advisories/{ghsa_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Advisories\GhsaId $hydrator)
     {

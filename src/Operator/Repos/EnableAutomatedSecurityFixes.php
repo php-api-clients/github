@@ -16,14 +16,12 @@ final readonly class EnableAutomatedSecurityFixes
 {
     public const OPERATION_ID    = 'repos/enable-automated-security-fixes';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/automated-security-fixes';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/automated-security-fixes';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\EnableAutomatedSecurityFixes($owner, $repo);

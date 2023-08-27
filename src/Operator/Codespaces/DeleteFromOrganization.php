@@ -20,14 +20,12 @@ final readonly class DeleteFromOrganization
 {
     public const OPERATION_ID    = 'codespaces/delete-from-organization';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/members/{username}/codespaces/{codespace_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Members\Username\Codespaces\CodespaceName $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
     public function call(string $org, string $username, string $codespaceName): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteFromOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

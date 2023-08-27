@@ -19,14 +19,12 @@ final readonly class GetOrgRulesets
 {
     public const OPERATION_ID    = 'repos/get-org-rulesets';
     public const OPERATION_MATCH = 'GET /orgs/{org}/rulesets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/rulesets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Rulesets $hydrator)
     {
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<Schema\RepositoryRuleset> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

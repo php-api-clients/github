@@ -19,14 +19,12 @@ final readonly class ListRepoNotificationsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/list-repo-notifications-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/notifications';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/notifications';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Notifications $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Thread> */
+    /** @return iterable<Schema\Thread> */
     public function call(string $owner, string $repo, string $since, string $before, bool $all = false, bool $participating = false, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListRepoNotificationsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $since, $before, $all, $participating, $perPage, $page);

@@ -19,8 +19,6 @@ final readonly class UpdateRepoRuleset
 {
     public const OPERATION_ID    = 'repos/update-repo-ruleset';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/rulesets/{ruleset_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId $hydrator)
     {

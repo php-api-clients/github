@@ -18,14 +18,12 @@ final readonly class CheckUserCanBeAssignedToIssue
 {
     public const OPERATION_ID    = 'issues/check-user-can-be-assigned-to-issue';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Assignees\Assignee $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $issueNumber, string $assignee): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\CheckUserCanBeAssignedToIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $assignee);

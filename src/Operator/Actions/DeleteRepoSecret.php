@@ -16,14 +16,12 @@ final readonly class DeleteRepoSecret
 {
     public const OPERATION_ID    = 'actions/delete-repo-secret';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $secretName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteRepoSecret($owner, $repo, $secretName);

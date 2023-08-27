@@ -19,8 +19,6 @@ final readonly class ListPublicEventsForUserListing
 {
     public const OPERATION_ID    = 'activity/list-public-events-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/events/public';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/events/public';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Events\Public_ $hydrator)
     {

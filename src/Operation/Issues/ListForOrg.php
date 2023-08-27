@@ -82,7 +82,7 @@ final class ListForOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Issue::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\Issue::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\Issue::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

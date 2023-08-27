@@ -69,7 +69,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCreation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCreation::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleCreation::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -78,7 +78,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleUpdate::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleUpdate::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleUpdate::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaab;
                             }
@@ -87,7 +87,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleDeletion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleDeletion::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleDeletion::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaac;
                             }
@@ -96,7 +96,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredLinearHistory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredLinearHistory::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleRequiredLinearHistory::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaad;
                             }
@@ -105,7 +105,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredDeployments::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredDeployments::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleRequiredDeployments::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaae;
                             }
@@ -114,7 +114,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredSignatures::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredSignatures::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleRequiredSignatures::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaf;
                             }
@@ -123,7 +123,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRulePullRequest::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRulePullRequest::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRulePullRequest::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaag;
                             }
@@ -132,7 +132,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleRequiredStatusChecks::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleRequiredStatusChecks::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleRequiredStatusChecks::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaah;
                             }
@@ -141,7 +141,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleNonFastForward::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleNonFastForward::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleNonFastForward::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaai;
                             }
@@ -150,7 +150,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitMessagePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitMessagePattern::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleCommitMessagePattern::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaj;
                             }
@@ -159,7 +159,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitAuthorEmailPattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitAuthorEmailPattern::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleCommitAuthorEmailPattern::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaak;
                             }
@@ -168,7 +168,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCommitterEmailPattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleCommitterEmailPattern::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleCommitterEmailPattern::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaal;
                             }
@@ -177,7 +177,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleBranchNamePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleBranchNamePattern::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleBranchNamePattern::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaam;
                             }
@@ -186,7 +186,7 @@ final class GetBranchRules
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleTagNamePattern::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleTagNamePattern::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleTagNamePattern::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaan;
                             }

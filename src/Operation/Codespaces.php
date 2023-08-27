@@ -4,444 +4,305 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Codespace;
+use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
+use ApiClients\Client\GitHub\Schema\CodespacesOrgSecret;
+use ApiClients\Client\GitHub\Schema\CodespacesPublicKey;
+use ApiClients\Client\GitHub\Schema\CodespacesSecret;
+use ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey;
+use ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository;
+use ApiClients\Client\GitHub\Schema\EmptyObject;
+use ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Client\GitHub\Schema\RepoCodespacesSecret;
 
 final class Codespaces
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listInOrganization(string $org, int $perPage, int $page): Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|array{code:int} */
+    public function listInOrganization(string $org, int $perPage, int $page): Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\ListInOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListInOrganization::class] = new Operator\Codespaces\ListInOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\ListInOrganization::class]->call($org, $perPage, $page);
+        return $this->operators->codespaces👷ListInOrganization()->call($org, $perPage, $page);
     }
 
-    public function setCodespacesAccess(string $org, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function setCodespacesAccess(string $org, array $params): array
     {
-        if (array_key_exists(Operator\Codespaces\SetCodespacesAccess::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetCodespacesAccess::class] = new Operator\Codespaces\SetCodespacesAccess($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access());
-        }
-
-        return $this->operator[Operator\Codespaces\SetCodespacesAccess::class]->call($org, $params);
+        return $this->operators->codespaces👷SetCodespacesAccess()->call($org, $params);
     }
 
-    public function setCodespacesAccessUsers(string $org, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function setCodespacesAccessUsers(string $org, array $params): array
     {
-        if (array_key_exists(Operator\Codespaces\SetCodespacesAccessUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetCodespacesAccessUsers::class] = new Operator\Codespaces\SetCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
-        }
-
-        return $this->operator[Operator\Codespaces\SetCodespacesAccessUsers::class]->call($org, $params);
+        return $this->operators->codespaces👷SetCodespacesAccessUsers()->call($org, $params);
     }
 
-    public function deleteCodespacesAccessUsers(string $org, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteCodespacesAccessUsers(string $org, array $params): array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteCodespacesAccessUsers::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteCodespacesAccessUsers::class] = new Operator\Codespaces\DeleteCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteCodespacesAccessUsers::class]->call($org, $params);
+        return $this->operators->codespaces👷DeleteCodespacesAccessUsers()->call($org, $params);
     }
 
-    public function listOrgSecrets(string $org, int $perPage, int $page): Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok
+    /** @return */
+    public function listOrgSecrets(string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\ListOrgSecrets::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListOrgSecrets::class] = new Operator\Codespaces\ListOrgSecrets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets());
-        }
-
-        return $this->operator[Operator\Codespaces\ListOrgSecrets::class]->call($org, $perPage, $page);
+        return $this->operators->codespaces👷ListOrgSecrets()->call($org, $perPage, $page);
     }
 
-    public function getOrgPublicKey(string $org): Schema\CodespacesPublicKey
+    /** @return */
+    public function getOrgPublicKey(string $org): CodespacesPublicKey|array
     {
-        if (array_key_exists(Operator\Codespaces\GetOrgPublicKey::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetOrgPublicKey::class] = new Operator\Codespaces\GetOrgPublicKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀PublicKey());
-        }
-
-        return $this->operator[Operator\Codespaces\GetOrgPublicKey::class]->call($org);
+        return $this->operators->codespaces👷GetOrgPublicKey()->call($org);
     }
 
-    public function getOrgSecret(string $org, string $secretName): Schema\CodespacesOrgSecret
+    /** @return */
+    public function getOrgSecret(string $org, string $secretName): CodespacesOrgSecret|array
     {
-        if (array_key_exists(Operator\Codespaces\GetOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetOrgSecret::class] = new Operator\Codespaces\GetOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\GetOrgSecret::class]->call($org, $secretName);
+        return $this->operators->codespaces👷GetOrgSecret()->call($org, $secretName);
     }
 
-    public function createOrUpdateOrgSecret(string $org, string $secretName, array $params): Schema\EmptyObject
+    /** @return Schema\EmptyObject|array{code:int} */
+    public function createOrUpdateOrgSecret(string $org, string $secretName, array $params): EmptyObject|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateOrUpdateOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateOrUpdateOrgSecret::class] = new Operator\Codespaces\CreateOrUpdateOrgSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateOrUpdateOrgSecret::class]->call($org, $secretName, $params);
+        return $this->operators->codespaces👷CreateOrUpdateOrgSecret()->call($org, $secretName, $params);
     }
 
-    public function deleteOrgSecret(string $org, string $secretName): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteOrgSecret(string $org, string $secretName): array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteOrgSecret::class] = new Operator\Codespaces\DeleteOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteOrgSecret::class]->call($org, $secretName);
+        return $this->operators->codespaces👷DeleteOrgSecret()->call($org, $secretName);
     }
 
-    public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Schema\Operations\Codespaces\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok
+    /** @return */
+    public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Json|array
     {
-        if (array_key_exists(Operator\Codespaces\ListSelectedReposForOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListSelectedReposForOrgSecret::class] = new Operator\Codespaces\ListSelectedReposForOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName🌀Repositories());
-        }
-
-        return $this->operator[Operator\Codespaces\ListSelectedReposForOrgSecret::class]->call($org, $secretName, $page, $perPage);
+        return $this->operators->codespaces👷ListSelectedReposForOrgSecret()->call($org, $secretName, $page, $perPage);
     }
 
-    public function setSelectedReposForOrgSecret(string $org, string $secretName, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function setSelectedReposForOrgSecret(string $org, string $secretName, array $params): array
     {
-        if (array_key_exists(Operator\Codespaces\SetSelectedReposForOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetSelectedReposForOrgSecret::class] = new Operator\Codespaces\SetSelectedReposForOrgSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName🌀Repositories());
-        }
-
-        return $this->operator[Operator\Codespaces\SetSelectedReposForOrgSecret::class]->call($org, $secretName, $params);
+        return $this->operators->codespaces👷SetSelectedReposForOrgSecret()->call($org, $secretName, $params);
     }
 
-    public function addSelectedRepoToOrgSecret(string $org, string $secretName, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function addSelectedRepoToOrgSecret(string $org, string $secretName, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Codespaces\AddSelectedRepoToOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\AddSelectedRepoToOrgSecret::class] = new Operator\Codespaces\AddSelectedRepoToOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Codespaces\AddSelectedRepoToOrgSecret::class]->call($org, $secretName, $repositoryId);
+        return $this->operators->codespaces👷AddSelectedRepoToOrgSecret()->call($org, $secretName, $repositoryId);
     }
 
-    public function removeSelectedRepoFromOrgSecret(string $org, string $secretName, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function removeSelectedRepoFromOrgSecret(string $org, string $secretName, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Codespaces\RemoveSelectedRepoFromOrgSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\RemoveSelectedRepoFromOrgSecret::class] = new Operator\Codespaces\RemoveSelectedRepoFromOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Codespaces\RemoveSelectedRepoFromOrgSecret::class]->call($org, $secretName, $repositoryId);
+        return $this->operators->codespaces👷RemoveSelectedRepoFromOrgSecret()->call($org, $secretName, $repositoryId);
     }
 
-    public function getCodespacesForUserInOrg(string $org, string $username, int $perPage, int $page): Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
+    public function getCodespacesForUserInOrg(string $org, string $username, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\GetCodespacesForUserInOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetCodespacesForUserInOrg::class] = new Operator\Codespaces\GetCodespacesForUserInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\GetCodespacesForUserInOrg::class]->call($org, $username, $perPage, $page);
+        return $this->operators->codespaces👷GetCodespacesForUserInOrg()->call($org, $username, $perPage, $page);
     }
 
-    public function deleteFromOrganization(string $org, string $username, string $codespaceName): Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted
+    /** @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
+    public function deleteFromOrganization(string $org, string $username, string $codespaceName): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteFromOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteFromOrganization::class] = new Operator\Codespaces\DeleteFromOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces🌀CodespaceName());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteFromOrganization::class]->call($org, $username, $codespaceName);
+        return $this->operators->codespaces👷DeleteFromOrganization()->call($org, $username, $codespaceName);
     }
 
-    public function stopInOrganization(string $org, string $username, string $codespaceName): Schema\Codespace
+    /** @return Schema\Codespace|array{code:int} */
+    public function stopInOrganization(string $org, string $username, string $codespaceName): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\StopInOrganization::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\StopInOrganization::class] = new Operator\Codespaces\StopInOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Codespaces🌀CodespaceName🌀Stop());
-        }
-
-        return $this->operator[Operator\Codespaces\StopInOrganization::class]->call($org, $username, $codespaceName);
+        return $this->operators->codespaces👷StopInOrganization()->call($org, $username, $codespaceName);
     }
 
-    public function listInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return */
+    public function listInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\ListInRepositoryForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListInRepositoryForAuthenticatedUser::class] = new Operator\Codespaces\ListInRepositoryForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\ListInRepositoryForAuthenticatedUser::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->codespaces👷ListInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
     }
 
-    public function createWithRepoForAuthenticatedUser(string $owner, string $repo, array $params): Schema\Codespace
+    /** @return */
+    public function createWithRepoForAuthenticatedUser(string $owner, string $repo, array $params): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateWithRepoForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateWithRepoForAuthenticatedUser::class] = new Operator\Codespaces\CreateWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateWithRepoForAuthenticatedUser::class]->call($owner, $repo, $params);
+        return $this->operators->codespaces👷CreateWithRepoForAuthenticatedUser()->call($owner, $repo, $params);
     }
 
-    public function listDevcontainersInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return */
+    public function listDevcontainersInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser::class] = new Operator\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers());
-        }
-
-        return $this->operator[Operator\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->codespaces👷ListDevcontainersInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
     }
 
-    public function repoMachinesForAuthenticatedUser(string $owner, string $repo, string $location, string $clientIp): Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code:int} */
+    public function repoMachinesForAuthenticatedUser(string $owner, string $repo, string $location, string $clientIp): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\RepoMachinesForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\RepoMachinesForAuthenticatedUser::class] = new Operator\Codespaces\RepoMachinesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Machines());
-        }
-
-        return $this->operator[Operator\Codespaces\RepoMachinesForAuthenticatedUser::class]->call($owner, $repo, $location, $clientIp);
+        return $this->operators->codespaces👷RepoMachinesForAuthenticatedUser()->call($owner, $repo, $location, $clientIp);
     }
 
-    public function preFlightWithRepoForAuthenticatedUser(string $owner, string $repo, string $ref, string $clientIp): Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return */
+    public function preFlightWithRepoForAuthenticatedUser(string $owner, string $repo, string $ref, string $clientIp): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser::class] = new Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_());
-        }
-
-        return $this->operator[Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser::class]->call($owner, $repo, $ref, $clientIp);
+        return $this->operators->codespaces👷PreFlightWithRepoForAuthenticatedUser()->call($owner, $repo, $ref, $clientIp);
     }
 
-    public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok
+    /** @return */
+    public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\ListRepoSecrets::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListRepoSecrets::class] = new Operator\Codespaces\ListRepoSecrets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets());
-        }
-
-        return $this->operator[Operator\Codespaces\ListRepoSecrets::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->codespaces👷ListRepoSecrets()->call($owner, $repo, $perPage, $page);
     }
 
-    public function getRepoPublicKey(string $owner, string $repo): Schema\CodespacesPublicKey
+    /** @return */
+    public function getRepoPublicKey(string $owner, string $repo): CodespacesPublicKey|array
     {
-        if (array_key_exists(Operator\Codespaces\GetRepoPublicKey::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetRepoPublicKey::class] = new Operator\Codespaces\GetRepoPublicKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀PublicKey());
-        }
-
-        return $this->operator[Operator\Codespaces\GetRepoPublicKey::class]->call($owner, $repo);
+        return $this->operators->codespaces👷GetRepoPublicKey()->call($owner, $repo);
     }
 
-    public function getRepoSecret(string $owner, string $repo, string $secretName): Schema\RepoCodespacesSecret
+    /** @return */
+    public function getRepoSecret(string $owner, string $repo, string $secretName): RepoCodespacesSecret|array
     {
-        if (array_key_exists(Operator\Codespaces\GetRepoSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetRepoSecret::class] = new Operator\Codespaces\GetRepoSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\GetRepoSecret::class]->call($owner, $repo, $secretName);
+        return $this->operators->codespaces👷GetRepoSecret()->call($owner, $repo, $secretName);
     }
 
-    public function createOrUpdateRepoSecret(string $owner, string $repo, string $secretName, array $params): Schema\EmptyObject
+    /** @return Schema\EmptyObject|array{code:int} */
+    public function createOrUpdateRepoSecret(string $owner, string $repo, string $secretName, array $params): EmptyObject|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateOrUpdateRepoSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateOrUpdateRepoSecret::class] = new Operator\Codespaces\CreateOrUpdateRepoSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateOrUpdateRepoSecret::class]->call($owner, $repo, $secretName, $params);
+        return $this->operators->codespaces👷CreateOrUpdateRepoSecret()->call($owner, $repo, $secretName, $params);
     }
 
-    public function deleteRepoSecret(string $owner, string $repo, string $secretName): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteRepoSecret(string $owner, string $repo, string $secretName): array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteRepoSecret::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteRepoSecret::class] = new Operator\Codespaces\DeleteRepoSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteRepoSecret::class]->call($owner, $repo, $secretName);
+        return $this->operators->codespaces👷DeleteRepoSecret()->call($owner, $repo, $secretName);
     }
 
-    public function createWithPrForAuthenticatedUser(string $owner, string $repo, int $pullNumber, array $params): Schema\Codespace
+    /** @return */
+    public function createWithPrForAuthenticatedUser(string $owner, string $repo, int $pullNumber, array $params): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateWithPrForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateWithPrForAuthenticatedUser::class] = new Operator\Codespaces\CreateWithPrForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateWithPrForAuthenticatedUser::class]->call($owner, $repo, $pullNumber, $params);
+        return $this->operators->codespaces👷CreateWithPrForAuthenticatedUser()->call($owner, $repo, $pullNumber, $params);
     }
 
-    public function listForAuthenticatedUser(int $repositoryId, int $perPage, int $page): Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
+    public function listForAuthenticatedUser(int $repositoryId, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\ListForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListForAuthenticatedUser::class] = new Operator\Codespaces\ListForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\ListForAuthenticatedUser::class]->call($repositoryId, $perPage, $page);
+        return $this->operators->codespaces👷ListForAuthenticatedUser()->call($repositoryId, $perPage, $page);
     }
 
-    public function createForAuthenticatedUser(array $params): Schema\Codespace
+    /** @return */
+    public function createForAuthenticatedUser(array $params): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateForAuthenticatedUser::class] = new Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateForAuthenticatedUser::class]->call($params);
+        return $this->operators->codespaces👷CreateForAuthenticatedUser()->call($params);
     }
 
-    public function listSecretsForAuthenticatedUser(int $perPage, int $page): Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return */
+    public function listSecretsForAuthenticatedUser(int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Codespaces\ListSecretsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListSecretsForAuthenticatedUser::class] = new Operator\Codespaces\ListSecretsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets());
-        }
-
-        return $this->operator[Operator\Codespaces\ListSecretsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->codespaces👷ListSecretsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function getPublicKeyForAuthenticatedUser(): Schema\CodespacesUserPublicKey
+    /** @return */
+    public function getPublicKeyForAuthenticatedUser(): CodespacesUserPublicKey|array
     {
-        if (array_key_exists(Operator\Codespaces\GetPublicKeyForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetPublicKeyForAuthenticatedUser::class] = new Operator\Codespaces\GetPublicKeyForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀PublicKey());
-        }
-
-        return $this->operator[Operator\Codespaces\GetPublicKeyForAuthenticatedUser::class]->call();
+        return $this->operators->codespaces👷GetPublicKeyForAuthenticatedUser()->call();
     }
 
-    public function getSecretForAuthenticatedUser(string $secretName): Schema\CodespacesSecret
+    /** @return */
+    public function getSecretForAuthenticatedUser(string $secretName): CodespacesSecret|array
     {
-        if (array_key_exists(Operator\Codespaces\GetSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetSecretForAuthenticatedUser::class] = new Operator\Codespaces\GetSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\GetSecretForAuthenticatedUser::class]->call($secretName);
+        return $this->operators->codespaces👷GetSecretForAuthenticatedUser()->call($secretName);
     }
 
-    public function createOrUpdateSecretForAuthenticatedUser(string $secretName, array $params): Schema\EmptyObject
+    /** @return Schema\EmptyObject|array{code:int} */
+    public function createOrUpdateSecretForAuthenticatedUser(string $secretName, array $params): EmptyObject|array
     {
-        if (array_key_exists(Operator\Codespaces\CreateOrUpdateSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CreateOrUpdateSecretForAuthenticatedUser::class] = new Operator\Codespaces\CreateOrUpdateSecretForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\CreateOrUpdateSecretForAuthenticatedUser::class]->call($secretName, $params);
+        return $this->operators->codespaces👷CreateOrUpdateSecretForAuthenticatedUser()->call($secretName, $params);
     }
 
-    public function deleteSecretForAuthenticatedUser(string $secretName): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteSecretForAuthenticatedUser(string $secretName): array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteSecretForAuthenticatedUser::class] = new Operator\Codespaces\DeleteSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteSecretForAuthenticatedUser::class]->call($secretName);
+        return $this->operators->codespaces👷DeleteSecretForAuthenticatedUser()->call($secretName);
     }
 
-    public function listRepositoriesForSecretForAuthenticatedUser(string $secretName): Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return */
+    public function listRepositoriesForSecretForAuthenticatedUser(string $secretName): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\ListRepositoriesForSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ListRepositoriesForSecretForAuthenticatedUser::class] = new Operator\Codespaces\ListRepositoriesForSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName🌀Repositories());
-        }
-
-        return $this->operator[Operator\Codespaces\ListRepositoriesForSecretForAuthenticatedUser::class]->call($secretName);
+        return $this->operators->codespaces👷ListRepositoriesForSecretForAuthenticatedUser()->call($secretName);
     }
 
-    public function setRepositoriesForSecretForAuthenticatedUser(string $secretName, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function setRepositoriesForSecretForAuthenticatedUser(string $secretName, array $params): array
     {
-        if (array_key_exists(Operator\Codespaces\SetRepositoriesForSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\SetRepositoriesForSecretForAuthenticatedUser::class] = new Operator\Codespaces\SetRepositoriesForSecretForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName🌀Repositories());
-        }
-
-        return $this->operator[Operator\Codespaces\SetRepositoriesForSecretForAuthenticatedUser::class]->call($secretName, $params);
+        return $this->operators->codespaces👷SetRepositoriesForSecretForAuthenticatedUser()->call($secretName, $params);
     }
 
-    public function addRepositoryForSecretForAuthenticatedUser(string $secretName, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function addRepositoryForSecretForAuthenticatedUser(string $secretName, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Codespaces\AddRepositoryForSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\AddRepositoryForSecretForAuthenticatedUser::class] = new Operator\Codespaces\AddRepositoryForSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Codespaces\AddRepositoryForSecretForAuthenticatedUser::class]->call($secretName, $repositoryId);
+        return $this->operators->codespaces👷AddRepositoryForSecretForAuthenticatedUser()->call($secretName, $repositoryId);
     }
 
-    public function removeRepositoryForSecretForAuthenticatedUser(string $secretName, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function removeRepositoryForSecretForAuthenticatedUser(string $secretName, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser::class] = new Operator\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser::class]->call($secretName, $repositoryId);
+        return $this->operators->codespaces👷RemoveRepositoryForSecretForAuthenticatedUser()->call($secretName, $repositoryId);
     }
 
-    public function getForAuthenticatedUser(string $codespaceName): Schema\Codespace
+    /** @return Schema\Codespace|array{code:int} */
+    public function getForAuthenticatedUser(string $codespaceName): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\GetForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetForAuthenticatedUser::class] = new Operator\Codespaces\GetForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName());
-        }
-
-        return $this->operator[Operator\Codespaces\GetForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷GetForAuthenticatedUser()->call($codespaceName);
     }
 
-    public function deleteForAuthenticatedUser(string $codespaceName): Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted
+    /** @return Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
+    public function deleteForAuthenticatedUser(string $codespaceName): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\DeleteForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\DeleteForAuthenticatedUser::class] = new Operator\Codespaces\DeleteForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName());
-        }
-
-        return $this->operator[Operator\Codespaces\DeleteForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷DeleteForAuthenticatedUser()->call($codespaceName);
     }
 
-    public function updateForAuthenticatedUser(string $codespaceName, array $params): Schema\Codespace
+    /** @return */
+    public function updateForAuthenticatedUser(string $codespaceName, array $params): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\UpdateForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\UpdateForAuthenticatedUser::class] = new Operator\Codespaces\UpdateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName());
-        }
-
-        return $this->operator[Operator\Codespaces\UpdateForAuthenticatedUser::class]->call($codespaceName, $params);
+        return $this->operators->codespaces👷UpdateForAuthenticatedUser()->call($codespaceName, $params);
     }
 
-    public function exportForAuthenticatedUser(string $codespaceName): Schema\CodespaceExportDetails
+    /** @return */
+    public function exportForAuthenticatedUser(string $codespaceName): CodespaceExportDetails|array
     {
-        if (array_key_exists(Operator\Codespaces\ExportForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\ExportForAuthenticatedUser::class] = new Operator\Codespaces\ExportForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Exports());
-        }
-
-        return $this->operator[Operator\Codespaces\ExportForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷ExportForAuthenticatedUser()->call($codespaceName);
     }
 
-    public function getExportDetailsForAuthenticatedUser(string $codespaceName, string $exportId): Schema\CodespaceExportDetails
+    /** @return */
+    public function getExportDetailsForAuthenticatedUser(string $codespaceName, string $exportId): CodespaceExportDetails|array
     {
-        if (array_key_exists(Operator\Codespaces\GetExportDetailsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\GetExportDetailsForAuthenticatedUser::class] = new Operator\Codespaces\GetExportDetailsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Exports🌀ExportId());
-        }
-
-        return $this->operator[Operator\Codespaces\GetExportDetailsForAuthenticatedUser::class]->call($codespaceName, $exportId);
+        return $this->operators->codespaces👷GetExportDetailsForAuthenticatedUser()->call($codespaceName, $exportId);
     }
 
-    public function codespaceMachinesForAuthenticatedUser(string $codespaceName): Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
+    public function codespaceMachinesForAuthenticatedUser(string $codespaceName): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Codespaces\CodespaceMachinesForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\CodespaceMachinesForAuthenticatedUser::class] = new Operator\Codespaces\CodespaceMachinesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Machines());
-        }
-
-        return $this->operator[Operator\Codespaces\CodespaceMachinesForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷CodespaceMachinesForAuthenticatedUser()->call($codespaceName);
     }
 
-    public function publishForAuthenticatedUser(string $codespaceName, array $params): Schema\CodespaceWithFullRepository
+    /** @return */
+    public function publishForAuthenticatedUser(string $codespaceName, array $params): CodespaceWithFullRepository|array
     {
-        if (array_key_exists(Operator\Codespaces\PublishForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\PublishForAuthenticatedUser::class] = new Operator\Codespaces\PublishForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Publish());
-        }
-
-        return $this->operator[Operator\Codespaces\PublishForAuthenticatedUser::class]->call($codespaceName, $params);
+        return $this->operators->codespaces👷PublishForAuthenticatedUser()->call($codespaceName, $params);
     }
 
-    public function startForAuthenticatedUser(string $codespaceName): Schema\Codespace
+    /** @return Schema\Codespace|array{code:int} */
+    public function startForAuthenticatedUser(string $codespaceName): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\StartForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\StartForAuthenticatedUser::class] = new Operator\Codespaces\StartForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Start());
-        }
-
-        return $this->operator[Operator\Codespaces\StartForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷StartForAuthenticatedUser()->call($codespaceName);
     }
 
-    public function stopForAuthenticatedUser(string $codespaceName): Schema\Codespace
+    /** @return */
+    public function stopForAuthenticatedUser(string $codespaceName): Codespace|array
     {
-        if (array_key_exists(Operator\Codespaces\StopForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Codespaces\StopForAuthenticatedUser::class] = new Operator\Codespaces\StopForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀CodespaceName🌀Stop());
-        }
-
-        return $this->operator[Operator\Codespaces\StopForAuthenticatedUser::class]->call($codespaceName);
+        return $this->operators->codespaces👷StopForAuthenticatedUser()->call($codespaceName);
     }
 }

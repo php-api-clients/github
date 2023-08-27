@@ -16,14 +16,12 @@ final readonly class DeleteActionsCacheById
 {
     public const OPERATION_ID    = 'actions/delete-actions-cache-by-id';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/caches/{cache_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $cacheId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteActionsCacheById($owner, $repo, $cacheId);

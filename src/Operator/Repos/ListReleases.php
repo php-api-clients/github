@@ -19,14 +19,12 @@ final readonly class ListReleases
 {
     public const OPERATION_ID    = 'repos/list-releases';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Release> */
+    /** @return iterable<Schema\Release> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListReleases($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

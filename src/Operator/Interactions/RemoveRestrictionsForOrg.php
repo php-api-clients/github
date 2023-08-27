@@ -16,14 +16,12 @@ final readonly class RemoveRestrictionsForOrg
 {
     public const OPERATION_ID    = 'interactions/remove-restrictions-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/interaction-limits';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\RemoveRestrictionsForOrg($org);

@@ -18,14 +18,12 @@ final readonly class DeleteArchiveForOrg
 {
     public const OPERATION_ID    = 'migrations/delete-archive-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/migrations/{migration_id}/archive';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/archive';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $migrationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\DeleteArchiveForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId);

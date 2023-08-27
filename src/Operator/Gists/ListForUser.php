@@ -19,14 +19,12 @@ final readonly class ListForUser
 {
     public const OPERATION_ID    = 'gists/list-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/gists';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/gists';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Gists $hydrator)
     {
     }
 
-    /** @return Observable<Schema\BaseGist> */
+    /** @return iterable<Schema\BaseGist> */
     public function call(string $username, string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListForUser($this->responseSchemaValidator, $this->hydrator, $username, $since, $perPage, $page);

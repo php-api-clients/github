@@ -17,14 +17,12 @@ final readonly class SetSelectedReposForOrgSecret
 {
     public const OPERATION_ID    = 'actions/set-selected-repos-for-org-secret';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/secrets/{secret_name}/repositories';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/secrets/{secret_name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $secretName, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\SetSelectedReposForOrgSecret($this->requestSchemaValidator, $org, $secretName);

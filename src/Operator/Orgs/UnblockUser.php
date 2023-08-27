@@ -16,14 +16,12 @@ final readonly class UnblockUser
 {
     public const OPERATION_ID    = 'orgs/unblock-user';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/blocks/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/blocks/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\UnblockUser($org, $username);

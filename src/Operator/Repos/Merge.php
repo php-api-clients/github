@@ -20,14 +20,12 @@ final readonly class Merge
 {
     public const OPERATION_ID    = 'repos/merge';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/merges';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/merges';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Merges $hydrator)
     {
     }
 
-    /** @return (Schema\Commit | array{code: int}) */
+    /** @return Schema\Commit|array{code:int} */
     public function call(string $owner, string $repo, array $params): Commit|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\Merge($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

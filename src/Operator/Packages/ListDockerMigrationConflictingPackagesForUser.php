@@ -19,14 +19,12 @@ final readonly class ListDockerMigrationConflictingPackagesForUser
 {
     public const OPERATION_ID    = 'packages/list-docker-migration-conflicting-packages-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/docker/conflicts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/docker/conflicts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Docker\Conflicts $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Package> */
+    /** @return iterable<Schema\Package> */
     public function call(string $username): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Packages\ListDockerMigrationConflictingPackagesForUser($this->responseSchemaValidator, $this->hydrator, $username);

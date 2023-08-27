@@ -19,8 +19,6 @@ final readonly class SubmitReview
 {
     public const OPERATION_ID    = 'pulls/submit-review';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId\Events $hydrator)
     {

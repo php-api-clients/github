@@ -18,14 +18,12 @@ final readonly class Render
 {
     public const OPERATION_ID    = 'markdown/render';
     public const OPERATION_MATCH = 'POST /markdown';
-    private const METHOD         = 'POST';
-    private const PATH           = '/markdown';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Markdown $hydrator)
     {
     }
 
-    /** @return (string | array{code: int}) */
+    /** @return string|array{code:int} */
     public function call(array $params): string|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Markdown\Render($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -69,7 +69,7 @@ final class ListReviewsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PullRequestReview::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\PullRequestReview::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\PullRequestReview::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

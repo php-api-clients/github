@@ -19,14 +19,12 @@ final readonly class GetTopPaths
 {
     public const OPERATION_ID    = 'repos/get-top-paths';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/traffic/popular/paths';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/traffic/popular/paths';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Traffic\Popular\Paths $hydrator)
     {
     }
 
-    /** @return Observable<Schema\ContentTraffic> */
+    /** @return iterable<Schema\ContentTraffic> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetTopPaths($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

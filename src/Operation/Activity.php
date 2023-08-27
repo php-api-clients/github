@@ -4,435 +4,298 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\Feed;
+use ApiClients\Client\GitHub\Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted;
+use ApiClients\Client\GitHub\Schema\Repository;
+use ApiClients\Client\GitHub\Schema\RepositorySubscription;
+use ApiClients\Client\GitHub\Schema\SimpleUser;
+use ApiClients\Client\GitHub\Schema\Stargazer;
+use ApiClients\Client\GitHub\Schema\StarredRepository;
+use ApiClients\Client\GitHub\Schema\Thread;
+use ApiClients\Client\GitHub\Schema\ThreadSubscription;
 
 final class Activity
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listPublicEvents(int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event>|array{code:int} */
+    public function listPublicEvents(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicEvents::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEvents::class] = new Operator\Activity\ListPublicEvents($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEvents::class]->call($perPage, $page);
+        return $this->operators->activity👷ListPublicEvents()->call($perPage, $page);
     }
 
-    public function listPublicEventsListing(int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event>|array{code:int} */
+    public function listPublicEventsListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicEventsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEventsListing::class] = new Operator\Activity\ListPublicEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEventsListing::class]->call($perPage, $page);
+        return $this->operators->activity👷ListPublicEventsListing()->call($perPage, $page);
     }
 
-    public function getFeeds(): Schema\Feed
+    /** @return */
+    public function getFeeds(): Feed|array
     {
-        if (array_key_exists(Operator\Activity\GetFeeds::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\GetFeeds::class] = new Operator\Activity\GetFeeds($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Feeds());
-        }
-
-        return $this->operator[Operator\Activity\GetFeeds::class]->call();
+        return $this->operators->activity👷GetFeeds()->call();
     }
 
-    public function listPublicEventsForRepoNetwork(string $owner, string $repo, int $perPage, int $page): Schema\Event|Schema\BasicError
+    /** @return iterable<Schema\Event>|Schema\BasicError|array{code:int} */
+    public function listPublicEventsForRepoNetwork(string $owner, string $repo, int $perPage, int $page): Traversable|BasicError|array
     {
-        if (array_key_exists(Operator\Activity\ListPublicEventsForRepoNetwork::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEventsForRepoNetwork::class] = new Operator\Activity\ListPublicEventsForRepoNetwork($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Networks🌀Owner🌀Repo🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEventsForRepoNetwork::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListPublicEventsForRepoNetwork()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listPublicEventsForRepoNetworkListing(string $owner, string $repo, int $perPage, int $page): Schema\Event|Schema\BasicError
+    /** @return iterable<Schema\Event>|Schema\BasicError|array{code:int} */
+    public function listPublicEventsForRepoNetworkListing(string $owner, string $repo, int $perPage, int $page): Traversable|BasicError|array
     {
-        if (array_key_exists(Operator\Activity\ListPublicEventsForRepoNetworkListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEventsForRepoNetworkListing::class] = new Operator\Activity\ListPublicEventsForRepoNetworkListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Networks🌀Owner🌀Repo🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEventsForRepoNetworkListing::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListPublicEventsForRepoNetworkListing()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listNotificationsForAuthenticatedUser(string $since, string $before, bool $all, bool $participating, int $page, int $perPage): Schema\Thread
+    /** @return iterable<Schema\Thread>|array{code:int} */
+    public function listNotificationsForAuthenticatedUser(string $since, string $before, bool $all, bool $participating, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Activity\ListNotificationsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListNotificationsForAuthenticatedUser::class] = new Operator\Activity\ListNotificationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\ListNotificationsForAuthenticatedUser::class]->call($since, $before, $all, $participating, $page, $perPage);
+        return $this->operators->activity👷ListNotificationsForAuthenticatedUser()->call($since, $before, $all, $participating, $page, $perPage);
     }
 
-    public function listNotificationsForAuthenticatedUserListing(string $since, string $before, bool $all, bool $participating, int $page, int $perPage): Schema\Thread
+    /** @return iterable<Schema\Thread>|array{code:int} */
+    public function listNotificationsForAuthenticatedUserListing(string $since, string $before, bool $all, bool $participating, int $page, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Activity\ListNotificationsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListNotificationsForAuthenticatedUserListing::class] = new Operator\Activity\ListNotificationsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\ListNotificationsForAuthenticatedUserListing::class]->call($since, $before, $all, $participating, $page, $perPage);
+        return $this->operators->activity👷ListNotificationsForAuthenticatedUserListing()->call($since, $before, $all, $participating, $page, $perPage);
     }
 
-    public function markNotificationsAsRead(array $params): Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted
+    /** @return Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array{code:int} */
+    public function markNotificationsAsRead(array $params): Accepted|array
     {
-        if (array_key_exists(Operator\Activity\MarkNotificationsAsRead::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\MarkNotificationsAsRead::class] = new Operator\Activity\MarkNotificationsAsRead($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\MarkNotificationsAsRead::class]->call($params);
+        return $this->operators->activity👷MarkNotificationsAsRead()->call($params);
     }
 
-    public function getThread(int $threadId): Schema\Thread
+    /** @return Schema\Thread|array{code:int} */
+    public function getThread(int $threadId): Thread|array
     {
-        if (array_key_exists(Operator\Activity\GetThread::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\GetThread::class] = new Operator\Activity\GetThread($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId());
-        }
-
-        return $this->operator[Operator\Activity\GetThread::class]->call($threadId);
+        return $this->operators->activity👷GetThread()->call($threadId);
     }
 
-    public function markThreadAsRead(int $threadId): ResponseInterface
+    /** @return array{code:int} */
+    public function markThreadAsRead(int $threadId): array
     {
-        if (array_key_exists(Operator\Activity\MarkThreadAsRead::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\MarkThreadAsRead::class] = new Operator\Activity\MarkThreadAsRead($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId());
-        }
-
-        return $this->operator[Operator\Activity\MarkThreadAsRead::class]->call($threadId);
+        return $this->operators->activity👷MarkThreadAsRead()->call($threadId);
     }
 
-    public function getThreadSubscriptionForAuthenticatedUser(int $threadId): Schema\ThreadSubscription
+    /** @return Schema\ThreadSubscription|array{code:int} */
+    public function getThreadSubscriptionForAuthenticatedUser(int $threadId): ThreadSubscription|array
     {
-        if (array_key_exists(Operator\Activity\GetThreadSubscriptionForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\GetThreadSubscriptionForAuthenticatedUser::class] = new Operator\Activity\GetThreadSubscriptionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\GetThreadSubscriptionForAuthenticatedUser::class]->call($threadId);
+        return $this->operators->activity👷GetThreadSubscriptionForAuthenticatedUser()->call($threadId);
     }
 
-    public function setThreadSubscription(int $threadId, array $params): Schema\ThreadSubscription
+    /** @return Schema\ThreadSubscription|array{code:int} */
+    public function setThreadSubscription(int $threadId, array $params): ThreadSubscription|array
     {
-        if (array_key_exists(Operator\Activity\SetThreadSubscription::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\SetThreadSubscription::class] = new Operator\Activity\SetThreadSubscription($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\SetThreadSubscription::class]->call($threadId, $params);
+        return $this->operators->activity👷SetThreadSubscription()->call($threadId, $params);
     }
 
-    public function deleteThreadSubscription(int $threadId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteThreadSubscription(int $threadId): array
     {
-        if (array_key_exists(Operator\Activity\DeleteThreadSubscription::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\DeleteThreadSubscription::class] = new Operator\Activity\DeleteThreadSubscription($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\DeleteThreadSubscription::class]->call($threadId);
+        return $this->operators->activity👷DeleteThreadSubscription()->call($threadId);
     }
 
-    public function listPublicOrgEvents(string $org, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listPublicOrgEvents(string $org, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicOrgEvents::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicOrgEvents::class] = new Operator\Activity\ListPublicOrgEvents($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicOrgEvents::class]->call($org, $perPage, $page);
+        return $this->operators->activity👷ListPublicOrgEvents()->call($org, $perPage, $page);
     }
 
-    public function listPublicOrgEventsListing(string $org, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listPublicOrgEventsListing(string $org, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicOrgEventsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicOrgEventsListing::class] = new Operator\Activity\ListPublicOrgEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicOrgEventsListing::class]->call($org, $perPage, $page);
+        return $this->operators->activity👷ListPublicOrgEventsListing()->call($org, $perPage, $page);
     }
 
-    public function listRepoEvents(string $owner, string $repo, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listRepoEvents(string $owner, string $repo, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListRepoEvents::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListRepoEvents::class] = new Operator\Activity\ListRepoEvents($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListRepoEvents::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListRepoEvents()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listRepoEventsListing(string $owner, string $repo, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listRepoEventsListing(string $owner, string $repo, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListRepoEventsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListRepoEventsListing::class] = new Operator\Activity\ListRepoEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListRepoEventsListing::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListRepoEventsListing()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listRepoNotificationsForAuthenticatedUser(string $owner, string $repo, string $since, string $before, bool $all, bool $participating, int $perPage, int $page): Schema\Thread
+    /** @return iterable<Schema\Thread> */
+    public function listRepoNotificationsForAuthenticatedUser(string $owner, string $repo, string $since, string $before, bool $all, bool $participating, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListRepoNotificationsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListRepoNotificationsForAuthenticatedUser::class] = new Operator\Activity\ListRepoNotificationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\ListRepoNotificationsForAuthenticatedUser::class]->call($owner, $repo, $since, $before, $all, $participating, $perPage, $page);
+        return $this->operators->activity👷ListRepoNotificationsForAuthenticatedUser()->call($owner, $repo, $since, $before, $all, $participating, $perPage, $page);
     }
 
-    public function listRepoNotificationsForAuthenticatedUserListing(string $owner, string $repo, string $since, string $before, bool $all, bool $participating, int $perPage, int $page): Schema\Thread
+    /** @return iterable<Schema\Thread> */
+    public function listRepoNotificationsForAuthenticatedUserListing(string $owner, string $repo, string $since, string $before, bool $all, bool $participating, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListRepoNotificationsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListRepoNotificationsForAuthenticatedUserListing::class] = new Operator\Activity\ListRepoNotificationsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\ListRepoNotificationsForAuthenticatedUserListing::class]->call($owner, $repo, $since, $before, $all, $participating, $perPage, $page);
+        return $this->operators->activity👷ListRepoNotificationsForAuthenticatedUserListing()->call($owner, $repo, $since, $before, $all, $participating, $perPage, $page);
     }
 
-    public function markRepoNotificationsAsRead(string $owner, string $repo, array $params): Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted
+    /** @return Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted|array{code:int} */
+    public function markRepoNotificationsAsRead(string $owner, string $repo, array $params): \ApiClients\Client\GitHub\Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted|array
     {
-        if (array_key_exists(Operator\Activity\MarkRepoNotificationsAsRead::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\MarkRepoNotificationsAsRead::class] = new Operator\Activity\MarkRepoNotificationsAsRead($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Notifications());
-        }
-
-        return $this->operator[Operator\Activity\MarkRepoNotificationsAsRead::class]->call($owner, $repo, $params);
+        return $this->operators->activity👷MarkRepoNotificationsAsRead()->call($owner, $repo, $params);
     }
 
-    public function listStargazersForRepo(string $owner, string $repo, int $perPage, int $page): Schema\Operations\Activity\ListStargazersForRepo\Response\ApplicationJson\Ok
+    /** @return Schema\SimpleUser|Schema\Stargazer */
+    public function listStargazersForRepo(string $owner, string $repo, int $perPage, int $page): SimpleUser|Stargazer|array
     {
-        if (array_key_exists(Operator\Activity\ListStargazersForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListStargazersForRepo::class] = new Operator\Activity\ListStargazersForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Stargazers());
-        }
-
-        return $this->operator[Operator\Activity\ListStargazersForRepo::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListStargazersForRepo()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listWatchersForRepo(string $owner, string $repo, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listWatchersForRepo(string $owner, string $repo, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListWatchersForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListWatchersForRepo::class] = new Operator\Activity\ListWatchersForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Subscribers());
-        }
-
-        return $this->operator[Operator\Activity\ListWatchersForRepo::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListWatchersForRepo()->call($owner, $repo, $perPage, $page);
     }
 
-    public function listWatchersForRepoListing(string $owner, string $repo, int $perPage, int $page): Schema\SimpleUser
+    /** @return iterable<Schema\SimpleUser> */
+    public function listWatchersForRepoListing(string $owner, string $repo, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListWatchersForRepoListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListWatchersForRepoListing::class] = new Operator\Activity\ListWatchersForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Subscribers());
-        }
-
-        return $this->operator[Operator\Activity\ListWatchersForRepoListing::class]->call($owner, $repo, $perPage, $page);
+        return $this->operators->activity👷ListWatchersForRepoListing()->call($owner, $repo, $perPage, $page);
     }
 
-    public function getRepoSubscription(string $owner, string $repo): Schema\RepositorySubscription
+    /** @return Schema\RepositorySubscription|array{code:int} */
+    public function getRepoSubscription(string $owner, string $repo): RepositorySubscription|array
     {
-        if (array_key_exists(Operator\Activity\GetRepoSubscription::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\GetRepoSubscription::class] = new Operator\Activity\GetRepoSubscription($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\GetRepoSubscription::class]->call($owner, $repo);
+        return $this->operators->activity👷GetRepoSubscription()->call($owner, $repo);
     }
 
-    public function setRepoSubscription(string $owner, string $repo, array $params): Schema\RepositorySubscription
+    /** @return */
+    public function setRepoSubscription(string $owner, string $repo, array $params): RepositorySubscription|array
     {
-        if (array_key_exists(Operator\Activity\SetRepoSubscription::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\SetRepoSubscription::class] = new Operator\Activity\SetRepoSubscription($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\SetRepoSubscription::class]->call($owner, $repo, $params);
+        return $this->operators->activity👷SetRepoSubscription()->call($owner, $repo, $params);
     }
 
-    public function deleteRepoSubscription(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteRepoSubscription(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Activity\DeleteRepoSubscription::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\DeleteRepoSubscription::class] = new Operator\Activity\DeleteRepoSubscription($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Subscription());
-        }
-
-        return $this->operator[Operator\Activity\DeleteRepoSubscription::class]->call($owner, $repo);
+        return $this->operators->activity👷DeleteRepoSubscription()->call($owner, $repo);
     }
 
-    public function listReposStarredByAuthenticatedUser(string $sort, string $direction, int $perPage, int $page): Schema\Repository|Schema\StarredRepository
+    /** @return iterable<Schema\Repository>|array{code:int} */
+    public function listReposStarredByAuthenticatedUser(string $sort, string $direction, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReposStarredByAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReposStarredByAuthenticatedUser::class] = new Operator\Activity\ListReposStarredByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Starred());
-        }
-
-        return $this->operator[Operator\Activity\ListReposStarredByAuthenticatedUser::class]->call($sort, $direction, $perPage, $page);
+        return $this->operators->activity👷ListReposStarredByAuthenticatedUser()->call($sort, $direction, $perPage, $page);
     }
 
-    public function listReposStarredByAuthenticatedUserListing(string $sort, string $direction, int $perPage, int $page): Schema\Repository|Schema\StarredRepository
+    /** @return iterable<Schema\Repository>|array{code:int} */
+    public function listReposStarredByAuthenticatedUserListing(string $sort, string $direction, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReposStarredByAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReposStarredByAuthenticatedUserListing::class] = new Operator\Activity\ListReposStarredByAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Starred());
-        }
-
-        return $this->operator[Operator\Activity\ListReposStarredByAuthenticatedUserListing::class]->call($sort, $direction, $perPage, $page);
+        return $this->operators->activity👷ListReposStarredByAuthenticatedUserListing()->call($sort, $direction, $perPage, $page);
     }
 
-    public function checkRepoIsStarredByAuthenticatedUser(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function checkRepoIsStarredByAuthenticatedUser(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Activity\CheckRepoIsStarredByAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\CheckRepoIsStarredByAuthenticatedUser::class] = new Operator\Activity\CheckRepoIsStarredByAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Starred🌀Owner🌀Repo());
-        }
-
-        return $this->operator[Operator\Activity\CheckRepoIsStarredByAuthenticatedUser::class]->call($owner, $repo);
+        return $this->operators->activity👷CheckRepoIsStarredByAuthenticatedUser()->call($owner, $repo);
     }
 
-    public function starRepoForAuthenticatedUser(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function starRepoForAuthenticatedUser(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Activity\StarRepoForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\StarRepoForAuthenticatedUser::class] = new Operator\Activity\StarRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Starred🌀Owner🌀Repo());
-        }
-
-        return $this->operator[Operator\Activity\StarRepoForAuthenticatedUser::class]->call($owner, $repo);
+        return $this->operators->activity👷StarRepoForAuthenticatedUser()->call($owner, $repo);
     }
 
-    public function unstarRepoForAuthenticatedUser(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function unstarRepoForAuthenticatedUser(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Activity\UnstarRepoForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\UnstarRepoForAuthenticatedUser::class] = new Operator\Activity\UnstarRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Starred🌀Owner🌀Repo());
-        }
-
-        return $this->operator[Operator\Activity\UnstarRepoForAuthenticatedUser::class]->call($owner, $repo);
+        return $this->operators->activity👷UnstarRepoForAuthenticatedUser()->call($owner, $repo);
     }
 
-    public function listWatchedReposForAuthenticatedUser(int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository>|array{code:int} */
+    public function listWatchedReposForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListWatchedReposForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListWatchedReposForAuthenticatedUser::class] = new Operator\Activity\ListWatchedReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Subscriptions());
-        }
-
-        return $this->operator[Operator\Activity\ListWatchedReposForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->activity👷ListWatchedReposForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listWatchedReposForAuthenticatedUserListing(int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository>|array{code:int} */
+    public function listWatchedReposForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListWatchedReposForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListWatchedReposForAuthenticatedUserListing::class] = new Operator\Activity\ListWatchedReposForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Subscriptions());
-        }
-
-        return $this->operator[Operator\Activity\ListWatchedReposForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->activity👷ListWatchedReposForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function listEventsForAuthenticatedUser(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listEventsForAuthenticatedUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListEventsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListEventsForAuthenticatedUser::class] = new Operator\Activity\ListEventsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListEventsForAuthenticatedUser::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListEventsForAuthenticatedUser()->call($username, $perPage, $page);
     }
 
-    public function listEventsForAuthenticatedUserListing(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listEventsForAuthenticatedUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListEventsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListEventsForAuthenticatedUserListing::class] = new Operator\Activity\ListEventsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events());
-        }
-
-        return $this->operator[Operator\Activity\ListEventsForAuthenticatedUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListEventsForAuthenticatedUserListing()->call($username, $perPage, $page);
     }
 
-    public function listOrgEventsForAuthenticatedUser(string $username, string $org, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listOrgEventsForAuthenticatedUser(string $username, string $org, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListOrgEventsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListOrgEventsForAuthenticatedUser::class] = new Operator\Activity\ListOrgEventsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events🌀Orgs🌀Org());
-        }
-
-        return $this->operator[Operator\Activity\ListOrgEventsForAuthenticatedUser::class]->call($username, $org, $perPage, $page);
+        return $this->operators->activity👷ListOrgEventsForAuthenticatedUser()->call($username, $org, $perPage, $page);
     }
 
-    public function listOrgEventsForAuthenticatedUserListing(string $username, string $org, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listOrgEventsForAuthenticatedUserListing(string $username, string $org, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListOrgEventsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListOrgEventsForAuthenticatedUserListing::class] = new Operator\Activity\ListOrgEventsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events🌀Orgs🌀Org());
-        }
-
-        return $this->operator[Operator\Activity\ListOrgEventsForAuthenticatedUserListing::class]->call($username, $org, $perPage, $page);
+        return $this->operators->activity👷ListOrgEventsForAuthenticatedUserListing()->call($username, $org, $perPage, $page);
     }
 
-    public function listPublicEventsForUser(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listPublicEventsForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicEventsForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEventsForUser::class] = new Operator\Activity\ListPublicEventsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events🌀Public_());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEventsForUser::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListPublicEventsForUser()->call($username, $perPage, $page);
     }
 
-    public function listPublicEventsForUserListing(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listPublicEventsForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListPublicEventsForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListPublicEventsForUserListing::class] = new Operator\Activity\ListPublicEventsForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Events🌀Public_());
-        }
-
-        return $this->operator[Operator\Activity\ListPublicEventsForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListPublicEventsForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listReceivedEventsForUser(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listReceivedEventsForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReceivedEventsForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReceivedEventsForUser::class] = new Operator\Activity\ListReceivedEventsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀ReceivedEvents());
-        }
-
-        return $this->operator[Operator\Activity\ListReceivedEventsForUser::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReceivedEventsForUser()->call($username, $perPage, $page);
     }
 
-    public function listReceivedEventsForUserListing(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listReceivedEventsForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReceivedEventsForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReceivedEventsForUserListing::class] = new Operator\Activity\ListReceivedEventsForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀ReceivedEvents());
-        }
-
-        return $this->operator[Operator\Activity\ListReceivedEventsForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReceivedEventsForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listReceivedPublicEventsForUser(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listReceivedPublicEventsForUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReceivedPublicEventsForUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReceivedPublicEventsForUser::class] = new Operator\Activity\ListReceivedPublicEventsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀ReceivedEvents🌀Public_());
-        }
-
-        return $this->operator[Operator\Activity\ListReceivedPublicEventsForUser::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReceivedPublicEventsForUser()->call($username, $perPage, $page);
     }
 
-    public function listReceivedPublicEventsForUserListing(string $username, int $perPage, int $page): Schema\Event
+    /** @return iterable<Schema\Event> */
+    public function listReceivedPublicEventsForUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReceivedPublicEventsForUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReceivedPublicEventsForUserListing::class] = new Operator\Activity\ListReceivedPublicEventsForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀ReceivedEvents🌀Public_());
-        }
-
-        return $this->operator[Operator\Activity\ListReceivedPublicEventsForUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReceivedPublicEventsForUserListing()->call($username, $perPage, $page);
     }
 
-    public function listReposStarredByUser(string $username, string $sort, string $direction, int $perPage, int $page): Schema\Operations\Activity\ListReposStarredByUser\Response\ApplicationJson\Ok
+    /** @return Schema\StarredRepository|Schema\Repository */
+    public function listReposStarredByUser(string $username, string $sort, string $direction, int $perPage, int $page): StarredRepository|Repository|array
     {
-        if (array_key_exists(Operator\Activity\ListReposStarredByUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReposStarredByUser::class] = new Operator\Activity\ListReposStarredByUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Starred());
-        }
-
-        return $this->operator[Operator\Activity\ListReposStarredByUser::class]->call($username, $sort, $direction, $perPage, $page);
+        return $this->operators->activity👷ListReposStarredByUser()->call($username, $sort, $direction, $perPage, $page);
     }
 
-    public function listReposWatchedByUser(string $username, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposWatchedByUser(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReposWatchedByUser::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReposWatchedByUser::class] = new Operator\Activity\ListReposWatchedByUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Subscriptions());
-        }
-
-        return $this->operator[Operator\Activity\ListReposWatchedByUser::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReposWatchedByUser()->call($username, $perPage, $page);
     }
 
-    public function listReposWatchedByUserListing(string $username, int $perPage, int $page): Schema\MinimalRepository
+    /** @return iterable<Schema\MinimalRepository> */
+    public function listReposWatchedByUserListing(string $username, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Activity\ListReposWatchedByUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Activity\ListReposWatchedByUserListing::class] = new Operator\Activity\ListReposWatchedByUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Subscriptions());
-        }
-
-        return $this->operator[Operator\Activity\ListReposWatchedByUserListing::class]->call($username, $perPage, $page);
+        return $this->operators->activity👷ListReposWatchedByUserListing()->call($username, $perPage, $page);
     }
 }

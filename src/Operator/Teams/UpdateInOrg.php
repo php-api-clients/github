@@ -19,8 +19,6 @@ final readonly class UpdateInOrg
 {
     public const OPERATION_ID    = 'teams/update-in-org';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/teams/{team_slug}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug $hydrator)
     {

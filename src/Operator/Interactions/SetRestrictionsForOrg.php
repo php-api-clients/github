@@ -19,8 +19,6 @@ final readonly class SetRestrictionsForOrg
 {
     public const OPERATION_ID    = 'interactions/set-restrictions-for-org';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/interaction-limits';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\InteractionLimits $hydrator)
     {

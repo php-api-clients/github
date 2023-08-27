@@ -19,14 +19,12 @@ final readonly class GetBranchRules
 {
     public const OPERATION_ID    = 'repos/get-branch-rules';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/rules/branches/{branch}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/rules/branches/{branch}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Rules\Branches\Branch $hydrator)
     {
     }
 
-    /** @return Observable<(Schema\RepositoryRuleCreation | Schema\RepositoryRuleUpdate | Schema\RepositoryRuleDeletion | Schema\RepositoryRuleRequiredLinearHistory | Schema\RepositoryRuleRequiredDeployments | Schema\RepositoryRuleRequiredSignatures | Schema\RepositoryRulePullRequest | Schema\RepositoryRuleRequiredStatusChecks | Schema\RepositoryRuleNonFastForward | Schema\RepositoryRuleCommitMessagePattern | Schema\RepositoryRuleCommitAuthorEmailPattern | Schema\RepositoryRuleCommitterEmailPattern | Schema\RepositoryRuleBranchNamePattern | Schema\RepositoryRuleTagNamePattern)> */
+    /** @return iterable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern> */
     public function call(string $owner, string $repo, string $branch, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetBranchRules($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch, $perPage, $page);

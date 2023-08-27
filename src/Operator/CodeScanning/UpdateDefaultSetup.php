@@ -20,8 +20,6 @@ final readonly class UpdateDefaultSetup
 {
     public const OPERATION_ID    = 'code-scanning/update-default-setup';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/code-scanning/default-setup';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/default-setup';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\DefaultSetup $hydrator)
     {

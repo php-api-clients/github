@@ -19,8 +19,6 @@ final readonly class UpdateForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/update-for-authenticated-user';
     public const OPERATION_MATCH = 'PATCH /user/codespaces/{codespace_name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user/codespaces/{codespace_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\CodespaceName $hydrator)
     {

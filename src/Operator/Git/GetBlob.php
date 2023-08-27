@@ -19,8 +19,6 @@ final readonly class GetBlob
 {
     public const OPERATION_ID    = 'git/get-blob';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/git/blobs/{file_sha}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/git/blobs/{file_sha}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Git\Blobs\FileSha $hydrator)
     {

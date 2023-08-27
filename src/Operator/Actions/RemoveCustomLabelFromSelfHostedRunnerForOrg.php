@@ -19,8 +19,6 @@ final readonly class RemoveCustomLabelFromSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/remove-custom-label-from-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Runners\RunnerId\Labels\Name $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class ListForUserListing
 {
     public const OPERATION_ID    = 'projects/list-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/projects';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/projects';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Projects $hydrator)
     {

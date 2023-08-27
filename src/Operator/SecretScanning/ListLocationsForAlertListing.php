@@ -19,14 +19,12 @@ final readonly class ListLocationsForAlertListing
 {
     public const OPERATION_ID    = 'secret-scanning/list-locations-for-alert';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber\Locations $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\SecretScanningLocation> | array{code: int}) */
+    /** @return iterable<Schema\SecretScanningLocation>|array{code:int} */
     public function call(string $owner, string $repo, int $alertNumber, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecretScanning\ListLocationsForAlertListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber, $page, $perPage);

@@ -19,8 +19,6 @@ final readonly class ListInstallationsListing
 {
     public const OPERATION_ID    = 'apps/list-installations';
     public const OPERATION_MATCH = 'LIST /app/installations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations $hydrator)
     {

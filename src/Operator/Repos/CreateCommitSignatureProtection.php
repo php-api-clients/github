@@ -19,8 +19,6 @@ final readonly class CreateCommitSignatureProtection
 {
     public const OPERATION_ID    = 'repos/create-commit-signature-protection';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\RequiredSignatures $hydrator)
     {

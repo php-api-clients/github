@@ -19,8 +19,6 @@ final readonly class GetCommit
 {
     public const OPERATION_ID    = 'repos/get-commit';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\Ref $hydrator)
     {

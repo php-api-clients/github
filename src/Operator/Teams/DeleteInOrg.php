@@ -16,14 +16,12 @@ final readonly class DeleteInOrg
 {
     public const OPERATION_ID    = 'teams/delete-in-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/teams/{team_slug}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\DeleteInOrg($org, $teamSlug);

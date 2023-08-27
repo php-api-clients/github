@@ -20,14 +20,12 @@ final readonly class CheckPermissionsForProjectInOrg
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-project-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/projects/{project_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return (Schema\TeamProject | array{code: int}) */
+    /** @return Schema\TeamProject|array{code:int} */
     public function call(string $org, string $teamSlug, int $projectId): TeamProject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForProjectInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $projectId);

@@ -19,8 +19,6 @@ final readonly class Update
 {
     public const OPERATION_ID    = 'gists/update';
     public const OPERATION_MATCH = 'PATCH /gists/{gist_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/gists/{gist_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId $hydrator)
     {

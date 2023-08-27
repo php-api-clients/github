@@ -20,14 +20,12 @@ final readonly class RequestReviewers
 {
     public const OPERATION_ID    = 'pulls/request-reviewers';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\RequestedReviewers $hydrator)
     {
     }
 
-    /** @return (Schema\PullRequestSimple | array{code: int}) */
+    /** @return Schema\PullRequestSimple|array{code:int} */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestSimple|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\RequestReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

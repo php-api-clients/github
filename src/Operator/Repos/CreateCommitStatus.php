@@ -19,8 +19,6 @@ final readonly class CreateCommitStatus
 {
     public const OPERATION_ID    = 'repos/create-commit-status';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/statuses/{sha}';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/statuses/{sha}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Statuses\Sha $hydrator)
     {

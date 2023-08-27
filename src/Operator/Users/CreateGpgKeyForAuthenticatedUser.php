@@ -20,14 +20,12 @@ final readonly class CreateGpgKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/create-gpg-key-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/gpg_keys';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/gpg_keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\GpgKeys $hydrator)
     {
     }
 
-    /** @return (Schema\GpgKey | array{code: int}) */
+    /** @return Schema\GpgKey|array{code:int} */
     public function call(array $params): GpgKey|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CreateGpgKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

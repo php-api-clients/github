@@ -19,8 +19,6 @@ final readonly class CreateDeploymentProtectionRule
 {
     public const OPERATION_ID    = 'repos/create-deployment-protection-rule';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules $hydrator)
     {

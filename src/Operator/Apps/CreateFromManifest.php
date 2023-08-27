@@ -19,8 +19,6 @@ final readonly class CreateFromManifest
 {
     public const OPERATION_ID    = 'apps/create-from-manifest';
     public const OPERATION_MATCH = 'POST /app-manifests/{code}/conversions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/app-manifests/{code}/conversions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\AppManifests\Code\Conversions $hydrator)
     {

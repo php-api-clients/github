@@ -19,8 +19,6 @@ final readonly class CreateForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/create-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/codespaces';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/codespaces';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces $hydrator)
     {

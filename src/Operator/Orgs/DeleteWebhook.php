@@ -18,14 +18,12 @@ final readonly class DeleteWebhook
 {
     public const OPERATION_ID    = 'orgs/delete-webhook';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/hooks/{hook_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Hooks\HookId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $hookId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\DeleteWebhook($this->responseSchemaValidator, $this->hydrator, $org, $hookId);

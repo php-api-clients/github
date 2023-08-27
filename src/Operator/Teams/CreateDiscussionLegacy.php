@@ -19,8 +19,6 @@ final readonly class CreateDiscussionLegacy
 {
     public const OPERATION_ID    = 'teams/create-discussion-legacy';
     public const OPERATION_MATCH = 'POST /teams/{team_id}/discussions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/teams/{team_id}/discussions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions $hydrator)
     {

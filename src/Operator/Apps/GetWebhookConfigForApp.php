@@ -19,8 +19,6 @@ final readonly class GetWebhookConfigForApp
 {
     public const OPERATION_ID    = 'apps/get-webhook-config-for-app';
     public const OPERATION_MATCH = 'GET /app/hook/config';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/hook/config';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Hook\Config $hydrator)
     {

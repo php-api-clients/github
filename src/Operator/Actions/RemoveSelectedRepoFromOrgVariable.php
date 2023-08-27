@@ -16,14 +16,12 @@ final readonly class RemoveSelectedRepoFromOrgVariable
 {
     public const OPERATION_ID    = 'actions/remove-selected-repo-from-org-variable';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories/{repository_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $name, int $repositoryId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\RemoveSelectedRepoFromOrgVariable($org, $name, $repositoryId);

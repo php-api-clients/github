@@ -16,14 +16,12 @@ final readonly class RemoveProjectInOrg
 {
     public const OPERATION_ID    = 'teams/remove-project-in-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug, int $projectId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveProjectInOrg($org, $teamSlug, $projectId);

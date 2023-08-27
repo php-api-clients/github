@@ -19,14 +19,12 @@ final readonly class ListChildLegacy
 {
     public const OPERATION_ID    = 'teams/list-child-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Teams $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<Schema\Team> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListChildLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

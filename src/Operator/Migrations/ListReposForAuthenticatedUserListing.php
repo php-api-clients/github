@@ -19,8 +19,6 @@ final readonly class ListReposForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'migrations/list-repos-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/migrations/{migration_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/migrations/{migration_id}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Migrations\MigrationId\Repositories $hydrator)
     {

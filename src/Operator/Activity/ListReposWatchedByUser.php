@@ -19,14 +19,12 @@ final readonly class ListReposWatchedByUser
 {
     public const OPERATION_ID    = 'activity/list-repos-watched-by-user';
     public const OPERATION_MATCH = 'GET /users/{username}/subscriptions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/subscriptions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Subscriptions $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListReposWatchedByUser($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

@@ -20,14 +20,12 @@ final readonly class GetComment
 {
     public const OPERATION_ID    = 'gists/get-comment';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/comments/{comment_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/comments/{comment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Comments\CommentId $hydrator)
     {
     }
 
-    /** @return (Schema\GistComment | array{code: int}) */
+    /** @return Schema\GistComment|array{code:int} */
     public function call(string $gistId, int $commentId): GistComment|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\GetComment($this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);

@@ -18,14 +18,12 @@ final readonly class DeletePublicSshKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-public-ssh-key-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/keys/{key_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/keys/{key_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Keys\KeyId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $keyId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeletePublicSshKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $keyId);

@@ -19,8 +19,6 @@ final readonly class GetOrgVariable
 {
     public const OPERATION_ID    = 'actions/get-org-variable';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/variables/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Variables\Name $hydrator)
     {

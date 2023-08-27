@@ -19,14 +19,12 @@ final readonly class ListReposForAuthenticatedUser
 {
     public const OPERATION_ID    = 'migrations/list-repos-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/migrations/{migration_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/migrations/{migration_id}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Migrations\MigrationId\Repositories $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(int $migrationId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\ListReposForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $perPage, $page);

@@ -19,8 +19,6 @@ final readonly class ResetToken
 {
     public const OPERATION_ID    = 'apps/reset-token';
     public const OPERATION_MATCH = 'PATCH /applications/{client_id}/token';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/applications/{client_id}/token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Applications\ClientId\Token $hydrator)
     {

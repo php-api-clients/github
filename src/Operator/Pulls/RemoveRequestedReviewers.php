@@ -19,8 +19,6 @@ final readonly class RemoveRequestedReviewers
 {
     public const OPERATION_ID    = 'pulls/remove-requested-reviewers';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\RequestedReviewers $hydrator)
     {

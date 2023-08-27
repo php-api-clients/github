@@ -19,8 +19,6 @@ final readonly class GetGithubActionsPermissionsOrganization
 {
     public const OPERATION_ID    = 'actions/get-github-actions-permissions-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/permissions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/permissions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Permissions $hydrator)
     {

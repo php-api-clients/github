@@ -16,8 +16,6 @@ final readonly class GetOctocat
 {
     public const OPERATION_ID    = 'meta/get-octocat';
     public const OPERATION_MATCH = 'GET /octocat';
-    private const METHOD         = 'GET';
-    private const PATH           = '/octocat';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {

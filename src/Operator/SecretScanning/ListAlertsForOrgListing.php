@@ -19,8 +19,6 @@ final readonly class ListAlertsForOrgListing
 {
     public const OPERATION_ID    = 'secret-scanning/list-alerts-for-org';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/secret-scanning/alerts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/secret-scanning/alerts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\SecretScanning\Alerts $hydrator)
     {

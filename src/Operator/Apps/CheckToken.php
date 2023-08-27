@@ -19,8 +19,6 @@ final readonly class CheckToken
 {
     public const OPERATION_ID    = 'apps/check-token';
     public const OPERATION_MATCH = 'POST /applications/{client_id}/token';
-    private const METHOD         = 'POST';
-    private const PATH           = '/applications/{client_id}/token';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Applications\ClientId\Token $hydrator)
     {

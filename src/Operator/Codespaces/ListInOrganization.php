@@ -20,14 +20,12 @@ final readonly class ListInOrganization
 {
     public const OPERATION_ID    = 'codespaces/list-in-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/codespaces';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/codespaces';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|array{code:int} */
     public function call(string $org, int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\ListInOrganization($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

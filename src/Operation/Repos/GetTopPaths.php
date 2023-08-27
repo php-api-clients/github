@@ -61,7 +61,7 @@ final class GetTopPaths
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ContentTraffic::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\ContentTraffic::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\ContentTraffic::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

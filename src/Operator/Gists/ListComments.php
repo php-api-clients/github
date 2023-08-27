@@ -19,14 +19,12 @@ final readonly class ListComments
 {
     public const OPERATION_ID    = 'gists/list-comments';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Comments $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\GistComment> | array{code: int}) */
+    /** @return iterable<Schema\GistComment>|array{code:int} */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListComments($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

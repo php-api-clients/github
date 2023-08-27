@@ -117,7 +117,7 @@ final class ListPatGrants
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationProgrammaticAccessGrant::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\OrganizationProgrammaticAccessGrant::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\OrganizationProgrammaticAccessGrant::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

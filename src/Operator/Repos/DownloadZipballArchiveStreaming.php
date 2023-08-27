@@ -16,8 +16,6 @@ final readonly class DownloadZipballArchiveStreaming
 {
     public const OPERATION_ID    = 'repos/download-zipball-archive';
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/zipball/{ref}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/zipball/{ref}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {

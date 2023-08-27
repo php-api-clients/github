@@ -20,14 +20,12 @@ final readonly class CreatePublicSshKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/create-public-ssh-key-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/keys';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Keys $hydrator)
     {
     }
 
-    /** @return (Schema\Key | array{code: int}) */
+    /** @return Schema\Key|array{code:int} */
     public function call(array $params): Key|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CreatePublicSshKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -20,8 +20,6 @@ final readonly class GetRepoInstallation
 {
     public const OPERATION_ID    = 'apps/get-repo-installation';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/installation';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/installation';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Installation $hydrator)
     {

@@ -18,14 +18,12 @@ final readonly class DeleteOrgRuleset
 {
     public const OPERATION_ID    = 'repos/delete-org-ruleset';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/rulesets/{ruleset_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Rulesets\RulesetId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $rulesetId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteOrgRuleset($this->responseSchemaValidator, $this->hydrator, $org, $rulesetId);

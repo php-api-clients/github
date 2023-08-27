@@ -18,14 +18,12 @@ final readonly class DeleteSocialAccountForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-social-account-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/social_accounts';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/social_accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SocialAccounts $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\DeleteSocialAccountForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

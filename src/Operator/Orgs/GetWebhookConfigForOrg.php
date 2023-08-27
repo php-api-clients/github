@@ -19,8 +19,6 @@ final readonly class GetWebhookConfigForOrg
 {
     public const OPERATION_ID    = 'orgs/get-webhook-config-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/hooks/{hook_id}/config';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/config';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Hooks\HookId\Config $hydrator)
     {

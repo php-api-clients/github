@@ -19,8 +19,6 @@ final readonly class ListAccountsForPlanListing
 {
     public const OPERATION_ID    = 'apps/list-accounts-for-plan';
     public const OPERATION_MATCH = 'LIST /marketplace_listing/plans/{plan_id}/accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/plans/{plan_id}/accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\MarketplaceListing\Plans\PlanId\Accounts $hydrator)
     {

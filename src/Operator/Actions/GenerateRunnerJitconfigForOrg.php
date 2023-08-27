@@ -19,8 +19,6 @@ final readonly class GenerateRunnerJitconfigForOrg
 {
     public const OPERATION_ID    = 'actions/generate-runner-jitconfig-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/generate-jitconfig';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/generate-jitconfig';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Runners\GenerateJitconfig $hydrator)
     {

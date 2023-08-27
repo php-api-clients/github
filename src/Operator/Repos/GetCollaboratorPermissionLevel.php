@@ -19,8 +19,6 @@ final readonly class GetCollaboratorPermissionLevel
 {
     public const OPERATION_ID    = 'repos/get-collaborator-permission-level';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/collaborators/{username}/permission';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators/{username}/permission';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Collaborators\Username\Permission $hydrator)
     {

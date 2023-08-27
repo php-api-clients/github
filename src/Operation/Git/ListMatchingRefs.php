@@ -63,7 +63,7 @@ final class ListMatchingRefs
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GitRef::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\GitRef::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\GitRef::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -19,8 +19,6 @@ final readonly class GetRepoPublicKey
 {
     public const OPERATION_ID    = 'actions/get-repo-public-key';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/secrets/public-key';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/secrets/public-key';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Secrets\PublicKey $hydrator)
     {

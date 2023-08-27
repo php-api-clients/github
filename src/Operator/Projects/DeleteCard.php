@@ -18,14 +18,12 @@ final readonly class DeleteCard
 {
     public const OPERATION_ID    = 'projects/delete-card';
     public const OPERATION_MATCH = 'DELETE /projects/columns/cards/{card_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/projects/columns/cards/{card_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\Cards\CardId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $cardId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\DeleteCard($this->responseSchemaValidator, $this->hydrator, $cardId);

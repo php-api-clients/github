@@ -19,8 +19,6 @@ final readonly class CreateForPullRequestReviewComment
 {
     public const OPERATION_ID    = 'reactions/create-for-pull-request-review-comment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\Comments\CommentId\Reactions $hydrator)
     {

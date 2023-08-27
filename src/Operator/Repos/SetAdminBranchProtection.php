@@ -19,8 +19,6 @@ final readonly class SetAdminBranchProtection
 {
     public const OPERATION_ID    = 'repos/set-admin-branch-protection';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\EnforceAdmins $hydrator)
     {

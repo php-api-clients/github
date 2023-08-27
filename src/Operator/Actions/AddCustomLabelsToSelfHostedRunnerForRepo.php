@@ -19,8 +19,6 @@ final readonly class AddCustomLabelsToSelfHostedRunnerForRepo
 {
     public const OPERATION_ID    = 'actions/add-custom-labels-to-self-hosted-runner-for-repo';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runners\RunnerId\Labels $hydrator)
     {

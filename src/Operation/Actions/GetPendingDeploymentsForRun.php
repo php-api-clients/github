@@ -63,7 +63,7 @@ final class GetPendingDeploymentsForRun
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PendingDeployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\PendingDeployment::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\PendingDeployment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

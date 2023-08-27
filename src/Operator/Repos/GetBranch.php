@@ -20,8 +20,6 @@ final readonly class GetBranch
 {
     public const OPERATION_ID    = 'repos/get-branch';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch $hydrator)
     {

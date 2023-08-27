@@ -19,8 +19,6 @@ final readonly class CompareCommits
 {
     public const OPERATION_ID    = 'repos/compare-commits';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/compare/{basehead}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/compare/{basehead}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Compare\Basehead $hydrator)
     {

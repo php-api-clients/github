@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Put;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -17,17 +15,13 @@ use function array_key_exists;
 
 final class Projects
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function addCollaborator(array $params): array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -41,11 +35,7 @@ final class Projects
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        if (array_key_exists(Hydrator\Operation\Projects\ProjectId\Collaborators\Username::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Projects\ProjectId\Collaborators\Username::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators🌀Username();
-        }
-
-        $operator = new Operator\Projects\AddCollaborator($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\ProjectId\Collaborators\Username::class]);
+        $operator = new Operator\Projects\AddCollaborator($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators🌀Username());
 
         return $operator->call($arguments['project_id'], $arguments['username'], $params);
     }

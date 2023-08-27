@@ -20,14 +20,12 @@ final readonly class GetColumn
 {
     public const OPERATION_ID    = 'projects/get-column';
     public const OPERATION_MATCH = 'GET /projects/columns/{column_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/columns/{column_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectColumn | array{code: int}) */
+    /** @return Schema\ProjectColumn|array{code:int} */
     public function call(int $columnId): ProjectColumn|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\GetColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

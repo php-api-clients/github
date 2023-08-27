@@ -18,14 +18,12 @@ final readonly class AddCollaborator
 {
     public const OPERATION_ID    = 'projects/add-collaborator';
     public const OPERATION_MATCH = 'PUT /projects/{project_id}/collaborators/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/projects/{project_id}/collaborators/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId\Collaborators\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $projectId, string $username, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\AddCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId, $username);

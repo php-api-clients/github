@@ -19,8 +19,6 @@ final readonly class GetPackageForOrganization
 {
     public const OPERATION_ID    = 'packages/get-package-for-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/packages/{package_type}/{package_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/packages/{package_type}/{package_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Packages\PackageType\PackageName $hydrator)
     {

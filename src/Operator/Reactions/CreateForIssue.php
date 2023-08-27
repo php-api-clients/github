@@ -19,8 +19,6 @@ final readonly class CreateForIssue
 {
     public const OPERATION_ID    = 'reactions/create-for-issue';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/issues/{issue_number}/reactions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Reactions $hydrator)
     {

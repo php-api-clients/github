@@ -16,14 +16,12 @@ final readonly class RemoveMembershipForUserInOrg
 {
     public const OPERATION_ID    = 'teams/remove-membership-for-user-in-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\RemoveMembershipForUserInOrg($org, $teamSlug, $username);

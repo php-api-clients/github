@@ -19,14 +19,12 @@ final readonly class ListStarred
 {
     public const OPERATION_ID    = 'gists/list-starred';
     public const OPERATION_MATCH = 'GET /gists/starred';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/starred';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\Starred $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\BaseGist> | array{code: int}) */
+    /** @return iterable<Schema\BaseGist>|array{code:int} */
     public function call(string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListStarred($this->responseSchemaValidator, $this->hydrator, $since, $perPage, $page);

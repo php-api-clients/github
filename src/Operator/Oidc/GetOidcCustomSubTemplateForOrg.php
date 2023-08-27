@@ -19,8 +19,6 @@ final readonly class GetOidcCustomSubTemplateForOrg
 {
     public const OPERATION_ID    = 'oidc/get-oidc-custom-sub-template-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/oidc/customization/sub';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/oidc/customization/sub';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Oidc\Customization\Sub $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class UpdateReview
 {
     public const OPERATION_ID    = 'pulls/update-review';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId $hydrator)
     {

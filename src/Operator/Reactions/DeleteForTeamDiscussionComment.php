@@ -16,14 +16,12 @@ final readonly class DeleteForTeamDiscussionComment
 {
     public const OPERATION_ID    = 'reactions/delete-for-team-discussion-comment';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, int $reactionId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Reactions\DeleteForTeamDiscussionComment($org, $teamSlug, $discussionNumber, $commentNumber, $reactionId);

@@ -19,8 +19,6 @@ final readonly class ListCollaboratorsListing
 {
     public const OPERATION_ID    = 'repos/list-collaborators';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/collaborators';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Collaborators $hydrator)
     {

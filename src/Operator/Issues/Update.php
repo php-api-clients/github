@@ -20,8 +20,6 @@ final readonly class Update
 {
     public const OPERATION_ID    = 'issues/update';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/issues/{issue_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber $hydrator)
     {

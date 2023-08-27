@@ -19,8 +19,6 @@ final readonly class GetReadmeInDirectory
 {
     public const OPERATION_ID    = 'repos/get-readme-in-directory';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/readme/{dir}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/readme/{dir}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Readme\Dir $hydrator)
     {

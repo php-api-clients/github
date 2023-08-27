@@ -16,14 +16,12 @@ final readonly class RemoveRestrictionsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'interactions/remove-restrictions-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/interaction-limits';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\RemoveRestrictionsForAuthenticatedUser();

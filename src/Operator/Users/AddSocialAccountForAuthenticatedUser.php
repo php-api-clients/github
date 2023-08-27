@@ -19,14 +19,12 @@ final readonly class AddSocialAccountForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/add-social-account-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/social_accounts';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/social_accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SocialAccounts $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\SocialAccount> | array{code: int}) */
+    /** @return iterable<Schema\SocialAccount>|array{code:int} */
     public function call(array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\AddSocialAccountForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -19,14 +19,12 @@ final readonly class ListRepoEvents
 {
     public const OPERATION_ID    = 'activity/list-repo-events';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/events';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/events';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Events $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Event> */
+    /** @return iterable<Schema\Event> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\ListRepoEvents($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

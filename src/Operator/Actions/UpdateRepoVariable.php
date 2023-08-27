@@ -17,14 +17,12 @@ final readonly class UpdateRepoVariable
 {
     public const OPERATION_ID    = 'actions/update-repo-variable';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/actions/variables/{name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/actions/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, string $name, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateRepoVariable($this->requestSchemaValidator, $owner, $repo, $name);

@@ -20,14 +20,12 @@ final readonly class SetRestrictionsForRepo
 {
     public const OPERATION_ID    = 'interactions/set-restrictions-for-repo';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/interaction-limits';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\InteractionLimits $hydrator)
     {
     }
 
-    /** @return (Schema\InteractionLimitResponse | array{code: int}) */
+    /** @return Schema\InteractionLimitResponse|array{code:int} */
     public function call(string $owner, string $repo, array $params): InteractionLimitResponse|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\SetRestrictionsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

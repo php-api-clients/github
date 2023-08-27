@@ -19,8 +19,6 @@ final readonly class ListOrgSecrets
 {
     public const OPERATION_ID    = 'actions/list-org-secrets';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/secrets';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Secrets $hydrator)
     {

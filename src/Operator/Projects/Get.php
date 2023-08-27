@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'projects/get';
     public const OPERATION_MATCH = 'GET /projects/{project_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return (Schema\Project | array{code: int}) */
+    /** @return Schema\Project|array{code:int} */
     public function call(int $projectId): Project|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\Get($this->responseSchemaValidator, $this->hydrator, $projectId);

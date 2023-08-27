@@ -63,7 +63,7 @@ final class ListStargazersForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\SimpleUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -72,7 +72,7 @@ final class ListStargazersForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Stargazer::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrator->hydrateObject(Schema\Stargazer::class, $body);
+                            return $this->hydrators->hydrateObject(Schema\Stargazer::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\Get;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,17 +18,13 @@ use function array_key_exists;
 
 final class SecurityAdvisories
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory> */
+    /** @return iterable<Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('ghsa_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: ghsa_id');
@@ -128,11 +122,7 @@ final class SecurityAdvisories
 
         $arguments['sort'] = $params['sort'];
         unset($params['sort']);
-        if (array_key_exists(Hydrator\Operation\Advisories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Advisories::class] = $this->hydrators->getObjectMapperOperation🌀Advisories();
-        }
-
-        $operator = new Operator\SecurityAdvisories\ListGlobalAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Advisories::class]);
+        $operator = new Operator\SecurityAdvisories\ListGlobalAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories());
 
         return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
     }
@@ -140,7 +130,6 @@ final class SecurityAdvisories
     /** @return */
     public function getGlobalAdvisory(array $params): GlobalAdvisory|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('ghsa_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: ghsa_id');
@@ -148,19 +137,14 @@ final class SecurityAdvisories
 
         $arguments['ghsa_id'] = $params['ghsa_id'];
         unset($params['ghsa_id']);
-        if (array_key_exists(Hydrator\Operation\Advisories\GhsaId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Advisories\GhsaId::class] = $this->hydrators->getObjectMapperOperation🌀Advisories🌀GhsaId();
-        }
-
-        $operator = new Operator\SecurityAdvisories\GetGlobalAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Advisories\GhsaId::class]);
+        $operator = new Operator\SecurityAdvisories\GetGlobalAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories🌀GhsaId());
 
         return $operator->call($arguments['ghsa_id']);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<Schema\RepositoryAdvisory> */
     public function listOrgRepositoryAdvisories(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -204,19 +188,14 @@ final class SecurityAdvisories
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\SecurityAdvisories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\SecurityAdvisories::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories();
-        }
-
-        $operator = new Operator\SecurityAdvisories\ListOrgRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\SecurityAdvisories::class]);
+        $operator = new Operator\SecurityAdvisories\ListOrgRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories());
 
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<Schema\RepositoryAdvisory> */
     public function listRepositoryAdvisories(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -266,11 +245,7 @@ final class SecurityAdvisories
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories();
-        }
-
-        $operator = new Operator\SecurityAdvisories\ListRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories::class]);
+        $operator = new Operator\SecurityAdvisories\ListRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
@@ -278,7 +253,6 @@ final class SecurityAdvisories
     /** @return */
     public function getRepositoryAdvisory(array $params): RepositoryAdvisory|array
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -298,11 +272,7 @@ final class SecurityAdvisories
 
         $arguments['ghsa_id'] = $params['ghsa_id'];
         unset($params['ghsa_id']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId();
-        }
-
-        $operator = new Operator\SecurityAdvisories\GetRepositoryAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories\GhsaId::class]);
+        $operator = new Operator\SecurityAdvisories\GetRepositoryAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ghsa_id']);
     }

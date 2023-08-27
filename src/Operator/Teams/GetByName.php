@@ -19,8 +19,6 @@ final readonly class GetByName
 {
     public const OPERATION_ID    = 'teams/get-by-name';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug $hydrator)
     {

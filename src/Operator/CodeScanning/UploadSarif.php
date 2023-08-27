@@ -20,14 +20,12 @@ final readonly class UploadSarif
 {
     public const OPERATION_ID    = 'code-scanning/upload-sarif';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/code-scanning/sarifs';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/sarifs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs $hydrator)
     {
     }
 
-    /** @return (Schema\CodeScanningSarifsReceipt | array{code: int}) */
+    /** @return Schema\CodeScanningSarifsReceipt|array{code:int} */
     public function call(string $owner, string $repo, array $params): CodeScanningSarifsReceipt|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\UploadSarif($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

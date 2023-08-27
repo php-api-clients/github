@@ -16,14 +16,12 @@ final readonly class DownloadWorkflowRunLogs
 {
     public const OPERATION_ID    = 'actions/download-workflow-run-logs';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/logs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int, location: string} */
+    /** @return array{code:int,location:string} */
     public function call(string $owner, string $repo, int $runId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DownloadWorkflowRunLogs($owner, $repo, $runId);

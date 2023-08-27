@@ -19,8 +19,6 @@ final readonly class GetRevision
 {
     public const OPERATION_ID    = 'gists/get-revision';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/{sha}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/{sha}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Sha $hydrator)
     {

@@ -17,14 +17,12 @@ final readonly class UpdateOrgVariable
 {
     public const OPERATION_ID    = 'actions/update-org-variable';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/actions/variables/{name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $name, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\UpdateOrgVariable($this->requestSchemaValidator, $org, $name);

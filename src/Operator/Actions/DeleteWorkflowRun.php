@@ -16,14 +16,12 @@ final readonly class DeleteWorkflowRun
 {
     public const OPERATION_ID    = 'actions/delete-workflow-run';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/runs/{run_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $runId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Actions\DeleteWorkflowRun($owner, $repo, $runId);

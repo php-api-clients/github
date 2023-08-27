@@ -19,8 +19,6 @@ final readonly class GetPublicKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/get-public-key-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/secrets/public-key';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/secrets/public-key';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\Secrets\PublicKey $hydrator)
     {

@@ -20,14 +20,12 @@ final readonly class GetStatusForAuthenticatedUser
 {
     public const OPERATION_ID    = 'migrations/get-status-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/migrations/{migration_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/migrations/{migration_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Migrations\MigrationId $hydrator)
     {
     }
 
-    /** @return (Schema\Migration | array{code: int}) */
+    /** @return Schema\Migration|array{code:int} */
     public function call(int $migrationId, array $exclude): Migration|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\GetStatusForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $exclude);

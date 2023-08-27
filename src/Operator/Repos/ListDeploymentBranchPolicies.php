@@ -19,8 +19,6 @@ final readonly class ListDeploymentBranchPolicies
 {
     public const OPERATION_ID    = 'repos/list-deployment-branch-policies';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentBranchPolicies $hydrator)
     {

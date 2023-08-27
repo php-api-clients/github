@@ -19,8 +19,6 @@ final readonly class CreateTagProtection
 {
     public const OPERATION_ID    = 'repos/create-tag-protection';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/tags/protection';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/tags/protection';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Tags\Protection $hydrator)
     {

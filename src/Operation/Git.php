@@ -4,138 +4,96 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Blob;
+use ApiClients\Client\GitHub\Schema\GitCommit;
+use ApiClients\Client\GitHub\Schema\GitRef;
+use ApiClients\Client\GitHub\Schema\GitTag;
+use ApiClients\Client\GitHub\Schema\GitTree;
+use ApiClients\Client\GitHub\Schema\ShortBlob;
 
 final class Git
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function createBlob(string $owner, string $repo, array $params): Schema\ShortBlob
+    /** @return */
+    public function createBlob(string $owner, string $repo, array $params): ShortBlob|array
     {
-        if (array_key_exists(Operator\Git\CreateBlob::class, $this->operator) === false) {
-            $this->operator[Operator\Git\CreateBlob::class] = new Operator\Git\CreateBlob($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Blobs());
-        }
-
-        return $this->operator[Operator\Git\CreateBlob::class]->call($owner, $repo, $params);
+        return $this->operators->git👷CreateBlob()->call($owner, $repo, $params);
     }
 
-    public function getBlob(string $owner, string $repo, string $fileSha): Schema\Blob
+    /** @return */
+    public function getBlob(string $owner, string $repo, string $fileSha): Blob|array
     {
-        if (array_key_exists(Operator\Git\GetBlob::class, $this->operator) === false) {
-            $this->operator[Operator\Git\GetBlob::class] = new Operator\Git\GetBlob($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Blobs🌀FileSha());
-        }
-
-        return $this->operator[Operator\Git\GetBlob::class]->call($owner, $repo, $fileSha);
+        return $this->operators->git👷GetBlob()->call($owner, $repo, $fileSha);
     }
 
-    public function createCommit(string $owner, string $repo, array $params): Schema\GitCommit
+    /** @return */
+    public function createCommit(string $owner, string $repo, array $params): GitCommit|array
     {
-        if (array_key_exists(Operator\Git\CreateCommit::class, $this->operator) === false) {
-            $this->operator[Operator\Git\CreateCommit::class] = new Operator\Git\CreateCommit($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Commits());
-        }
-
-        return $this->operator[Operator\Git\CreateCommit::class]->call($owner, $repo, $params);
+        return $this->operators->git👷CreateCommit()->call($owner, $repo, $params);
     }
 
-    public function getCommit(string $owner, string $repo, string $commitSha): Schema\GitCommit
+    /** @return */
+    public function getCommit(string $owner, string $repo, string $commitSha): GitCommit|array
     {
-        if (array_key_exists(Operator\Git\GetCommit::class, $this->operator) === false) {
-            $this->operator[Operator\Git\GetCommit::class] = new Operator\Git\GetCommit($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Commits🌀CommitSha());
-        }
-
-        return $this->operator[Operator\Git\GetCommit::class]->call($owner, $repo, $commitSha);
+        return $this->operators->git👷GetCommit()->call($owner, $repo, $commitSha);
     }
 
-    public function listMatchingRefs(string $owner, string $repo, string $ref): Schema\GitRef
+    /** @return iterable<Schema\GitRef> */
+    public function listMatchingRefs(string $owner, string $repo, string $ref): iterable
     {
-        if (array_key_exists(Operator\Git\ListMatchingRefs::class, $this->operator) === false) {
-            $this->operator[Operator\Git\ListMatchingRefs::class] = new Operator\Git\ListMatchingRefs($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀MatchingRefs🌀Ref());
-        }
-
-        return $this->operator[Operator\Git\ListMatchingRefs::class]->call($owner, $repo, $ref);
+        return $this->operators->git👷ListMatchingRefs()->call($owner, $repo, $ref);
     }
 
-    public function getRef(string $owner, string $repo, string $ref): Schema\GitRef
+    /** @return */
+    public function getRef(string $owner, string $repo, string $ref): GitRef|array
     {
-        if (array_key_exists(Operator\Git\GetRef::class, $this->operator) === false) {
-            $this->operator[Operator\Git\GetRef::class] = new Operator\Git\GetRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Ref🌀Ref());
-        }
-
-        return $this->operator[Operator\Git\GetRef::class]->call($owner, $repo, $ref);
+        return $this->operators->git👷GetRef()->call($owner, $repo, $ref);
     }
 
-    public function createRef(string $owner, string $repo, array $params): Schema\GitRef
+    /** @return */
+    public function createRef(string $owner, string $repo, array $params): GitRef|array
     {
-        if (array_key_exists(Operator\Git\CreateRef::class, $this->operator) === false) {
-            $this->operator[Operator\Git\CreateRef::class] = new Operator\Git\CreateRef($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Refs());
-        }
-
-        return $this->operator[Operator\Git\CreateRef::class]->call($owner, $repo, $params);
+        return $this->operators->git👷CreateRef()->call($owner, $repo, $params);
     }
 
-    public function deleteRef(string $owner, string $repo, string $ref): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteRef(string $owner, string $repo, string $ref): array
     {
-        if (array_key_exists(Operator\Git\DeleteRef::class, $this->operator) === false) {
-            $this->operator[Operator\Git\DeleteRef::class] = new Operator\Git\DeleteRef($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Refs🌀Ref());
-        }
-
-        return $this->operator[Operator\Git\DeleteRef::class]->call($owner, $repo, $ref);
+        return $this->operators->git👷DeleteRef()->call($owner, $repo, $ref);
     }
 
-    public function updateRef(string $owner, string $repo, string $ref, array $params): Schema\GitRef
+    /** @return */
+    public function updateRef(string $owner, string $repo, string $ref, array $params): GitRef|array
     {
-        if (array_key_exists(Operator\Git\UpdateRef::class, $this->operator) === false) {
-            $this->operator[Operator\Git\UpdateRef::class] = new Operator\Git\UpdateRef($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Refs🌀Ref());
-        }
-
-        return $this->operator[Operator\Git\UpdateRef::class]->call($owner, $repo, $ref, $params);
+        return $this->operators->git👷UpdateRef()->call($owner, $repo, $ref, $params);
     }
 
-    public function createTag(string $owner, string $repo, array $params): Schema\GitTag
+    /** @return */
+    public function createTag(string $owner, string $repo, array $params): GitTag|array
     {
-        if (array_key_exists(Operator\Git\CreateTag::class, $this->operator) === false) {
-            $this->operator[Operator\Git\CreateTag::class] = new Operator\Git\CreateTag($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Tags());
-        }
-
-        return $this->operator[Operator\Git\CreateTag::class]->call($owner, $repo, $params);
+        return $this->operators->git👷CreateTag()->call($owner, $repo, $params);
     }
 
-    public function getTag(string $owner, string $repo, string $tagSha): Schema\GitTag
+    /** @return */
+    public function getTag(string $owner, string $repo, string $tagSha): GitTag|array
     {
-        if (array_key_exists(Operator\Git\GetTag::class, $this->operator) === false) {
-            $this->operator[Operator\Git\GetTag::class] = new Operator\Git\GetTag($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Tags🌀TagSha());
-        }
-
-        return $this->operator[Operator\Git\GetTag::class]->call($owner, $repo, $tagSha);
+        return $this->operators->git👷GetTag()->call($owner, $repo, $tagSha);
     }
 
-    public function createTree(string $owner, string $repo, array $params): Schema\GitTree
+    /** @return */
+    public function createTree(string $owner, string $repo, array $params): GitTree|array
     {
-        if (array_key_exists(Operator\Git\CreateTree::class, $this->operator) === false) {
-            $this->operator[Operator\Git\CreateTree::class] = new Operator\Git\CreateTree($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Trees());
-        }
-
-        return $this->operator[Operator\Git\CreateTree::class]->call($owner, $repo, $params);
+        return $this->operators->git👷CreateTree()->call($owner, $repo, $params);
     }
 
-    public function getTree(string $owner, string $repo, string $treeSha, string $recursive): Schema\GitTree
+    /** @return */
+    public function getTree(string $owner, string $repo, string $treeSha, string $recursive): GitTree|array
     {
-        if (array_key_exists(Operator\Git\GetTree::class, $this->operator) === false) {
-            $this->operator[Operator\Git\GetTree::class] = new Operator\Git\GetTree($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Git🌀Trees🌀TreeSha());
-        }
-
-        return $this->operator[Operator\Git\GetTree::class]->call($owner, $repo, $treeSha, $recursive);
+        return $this->operators->git👷GetTree()->call($owner, $repo, $treeSha, $recursive);
     }
 }

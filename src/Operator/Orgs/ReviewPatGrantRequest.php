@@ -18,14 +18,12 @@ final readonly class ReviewPatGrantRequest
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-request';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests/{pat_request_id}';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-token-requests/{pat_request_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests\PatRequestId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $patRequestId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ReviewPatGrantRequest($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patRequestId);

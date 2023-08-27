@@ -19,14 +19,12 @@ final readonly class ListPatGrantRepositories
 {
     public const OPERATION_ID    = 'orgs/list-pat-grant-repositories';
     public const OPERATION_MATCH = 'GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/personal-access-tokens/{pat_id}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<Schema\MinimalRepository> */
     public function call(string $org, int $patId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListPatGrantRepositories($this->responseSchemaValidator, $this->hydrator, $org, $patId, $perPage, $page);

@@ -19,14 +19,12 @@ final readonly class List_
 {
     public const OPERATION_ID    = 'pulls/list';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\PullRequestSimple> | array{code: int}) */
+    /** @return iterable<Schema\PullRequestSimple>|array{code:int} */
     public function call(string $owner, string $repo, string $head, string $base, string $direction, string $state = 'open', string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Pulls\List_($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);

@@ -19,8 +19,6 @@ final readonly class GetDefaultSetup
 {
     public const OPERATION_ID    = 'code-scanning/get-default-setup';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/default-setup';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/default-setup';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\DefaultSetup $hydrator)
     {

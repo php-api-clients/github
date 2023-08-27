@@ -19,14 +19,12 @@ final readonly class ListDiscussionsLegacy
 {
     public const OPERATION_ID    = 'teams/list-discussions-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions $hydrator)
     {
     }
 
-    /** @return Observable<Schema\TeamDiscussion> */
+    /** @return iterable<Schema\TeamDiscussion> */
     public function call(int $teamId, string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\ListDiscussionsLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $direction, $perPage, $page);

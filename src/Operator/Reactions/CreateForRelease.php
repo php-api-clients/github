@@ -19,8 +19,6 @@ final readonly class CreateForRelease
 {
     public const OPERATION_ID    = 'reactions/create-for-release';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/releases/{release_id}/reactions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\ReleaseId\Reactions $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class Merge
 {
     public const OPERATION_ID    = 'pulls/merge';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/merge';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Merge $hydrator)
     {

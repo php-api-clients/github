@@ -19,8 +19,6 @@ final readonly class GetMilestone
 {
     public const OPERATION_ID    = 'issues/get-milestone';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/milestones/{milestone_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/milestones/{milestone_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber $hydrator)
     {

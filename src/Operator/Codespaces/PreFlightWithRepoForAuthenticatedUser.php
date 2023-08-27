@@ -19,8 +19,6 @@ final readonly class PreFlightWithRepoForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/pre-flight-with-repo-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/new';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/new';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Codespaces\New_ $hydrator)
     {

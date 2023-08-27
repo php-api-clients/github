@@ -20,14 +20,12 @@ final readonly class AddOrUpdateMembershipForUserLegacy
 {
     public const OPERATION_ID    = 'teams/add-or-update-membership-for-user-legacy';
     public const OPERATION_MATCH = 'PUT /teams/{team_id}/memberships/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/teams/{team_id}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Memberships\Username $hydrator)
     {
     }
 
-    /** @return (Schema\TeamMembership | array{code: int}) */
+    /** @return Schema\TeamMembership|array{code:int} */
     public function call(int $teamId, string $username, array $params): TeamMembership|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddOrUpdateMembershipForUserLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId, $username);

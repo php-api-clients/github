@@ -4,101 +4,69 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
+use ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 
 final class SecurityAdvisories
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function listGlobalAdvisories(string $ghsaId, string $cveId, string $ecosystem, string $severity, mixed $cwes, bool $isWithdrawn, mixed $affects, string $published, string $updated, string $modified, string $before, string $after, string $type, string $direction, int $perPage, string $sort): Schema\GlobalAdvisory
+    /** @return iterable<Schema\GlobalAdvisory> */
+    public function listGlobalAdvisories(string $ghsaId, string $cveId, string $ecosystem, string $severity, mixed $cwes, bool $isWithdrawn, mixed $affects, string $published, string $updated, string $modified, string $before, string $after, string $type, string $direction, int $perPage, string $sort): iterable
     {
-        if (array_key_exists(Operator\SecurityAdvisories\ListGlobalAdvisories::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\ListGlobalAdvisories::class] = new Operator\SecurityAdvisories\ListGlobalAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\ListGlobalAdvisories::class]->call($ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $before, $after, $type, $direction, $perPage, $sort);
+        return $this->operators->securityAdvisories👷ListGlobalAdvisories()->call($ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $before, $after, $type, $direction, $perPage, $sort);
     }
 
-    public function getGlobalAdvisory(string $ghsaId): Schema\GlobalAdvisory
+    /** @return */
+    public function getGlobalAdvisory(string $ghsaId): GlobalAdvisory|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\GetGlobalAdvisory::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\GetGlobalAdvisory::class] = new Operator\SecurityAdvisories\GetGlobalAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories🌀GhsaId());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\GetGlobalAdvisory::class]->call($ghsaId);
+        return $this->operators->securityAdvisories👷GetGlobalAdvisory()->call($ghsaId);
     }
 
-    public function listOrgRepositoryAdvisories(string $org, string $before, string $after, string $state, string $direction, string $sort, int $perPage): Schema\RepositoryAdvisory
+    /** @return iterable<Schema\RepositoryAdvisory> */
+    public function listOrgRepositoryAdvisories(string $org, string $before, string $after, string $state, string $direction, string $sort, int $perPage): iterable
     {
-        if (array_key_exists(Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class] = new Operator\SecurityAdvisories\ListOrgRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecurityAdvisories());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\ListOrgRepositoryAdvisories::class]->call($org, $before, $after, $state, $direction, $sort, $perPage);
+        return $this->operators->securityAdvisories👷ListOrgRepositoryAdvisories()->call($org, $before, $after, $state, $direction, $sort, $perPage);
     }
 
-    public function listRepositoryAdvisories(string $owner, string $repo, string $before, string $after, string $state, string $direction, string $sort, int $perPage): Schema\RepositoryAdvisory
+    /** @return iterable<Schema\RepositoryAdvisory> */
+    public function listRepositoryAdvisories(string $owner, string $repo, string $before, string $after, string $state, string $direction, string $sort, int $perPage): iterable
     {
-        if (array_key_exists(Operator\SecurityAdvisories\ListRepositoryAdvisories::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\ListRepositoryAdvisories::class] = new Operator\SecurityAdvisories\ListRepositoryAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\ListRepositoryAdvisories::class]->call($owner, $repo, $before, $after, $state, $direction, $sort, $perPage);
+        return $this->operators->securityAdvisories👷ListRepositoryAdvisories()->call($owner, $repo, $before, $after, $state, $direction, $sort, $perPage);
     }
 
-    public function createRepositoryAdvisory(string $owner, string $repo, array $params): Schema\RepositoryAdvisory
+    /** @return */
+    public function createRepositoryAdvisory(string $owner, string $repo, array $params): RepositoryAdvisory|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\CreateRepositoryAdvisory::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisory::class] = new Operator\SecurityAdvisories\CreateRepositoryAdvisory($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisory::class]->call($owner, $repo, $params);
+        return $this->operators->securityAdvisories👷CreateRepositoryAdvisory()->call($owner, $repo, $params);
     }
 
-    public function createPrivateVulnerabilityReport(string $owner, string $repo, array $params): Schema\RepositoryAdvisory
+    /** @return */
+    public function createPrivateVulnerabilityReport(string $owner, string $repo, array $params): RepositoryAdvisory|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport::class] = new Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀Reports());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport::class]->call($owner, $repo, $params);
+        return $this->operators->securityAdvisories👷CreatePrivateVulnerabilityReport()->call($owner, $repo, $params);
     }
 
-    public function getRepositoryAdvisory(string $owner, string $repo, string $ghsaId): Schema\RepositoryAdvisory
+    /** @return */
+    public function getRepositoryAdvisory(string $owner, string $repo, string $ghsaId): RepositoryAdvisory|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\GetRepositoryAdvisory::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\GetRepositoryAdvisory::class] = new Operator\SecurityAdvisories\GetRepositoryAdvisory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\GetRepositoryAdvisory::class]->call($owner, $repo, $ghsaId);
+        return $this->operators->securityAdvisories👷GetRepositoryAdvisory()->call($owner, $repo, $ghsaId);
     }
 
-    public function updateRepositoryAdvisory(string $owner, string $repo, string $ghsaId, array $params): Schema\RepositoryAdvisory
+    /** @return */
+    public function updateRepositoryAdvisory(string $owner, string $repo, string $ghsaId, array $params): RepositoryAdvisory|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\UpdateRepositoryAdvisory::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\UpdateRepositoryAdvisory::class] = new Operator\SecurityAdvisories\UpdateRepositoryAdvisory($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\UpdateRepositoryAdvisory::class]->call($owner, $repo, $ghsaId, $params);
+        return $this->operators->securityAdvisories👷UpdateRepositoryAdvisory()->call($owner, $repo, $ghsaId, $params);
     }
 
-    public function createRepositoryAdvisoryCveRequest(string $owner, string $repo, string $ghsaId): Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted
+    /** @return */
+    public function createRepositoryAdvisoryCveRequest(string $owner, string $repo, string $ghsaId): Json|array
     {
-        if (array_key_exists(Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class, $this->operator) === false) {
-            $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class] = new Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId🌀Cve());
-        }
-
-        return $this->operator[Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest::class]->call($owner, $repo, $ghsaId);
+        return $this->operators->securityAdvisories👷CreateRepositoryAdvisoryCveRequest()->call($owner, $repo, $ghsaId);
     }
 }

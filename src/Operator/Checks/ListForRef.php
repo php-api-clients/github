@@ -19,8 +19,6 @@ final readonly class ListForRef
 {
     public const OPERATION_ID    = 'checks/list-for-ref';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{ref}/check-runs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{ref}/check-runs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Commits\Ref\CheckRuns $hydrator)
     {

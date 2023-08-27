@@ -18,14 +18,12 @@ final readonly class CancelInvitation
 {
     public const OPERATION_ID    = 'orgs/cancel-invitation';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/invitations/{invitation_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/invitations/{invitation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations\InvitationId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $invitationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\CancelInvitation($this->responseSchemaValidator, $this->hydrator, $org, $invitationId);

@@ -19,8 +19,6 @@ final readonly class DeletePendingReview
 {
     public const OPERATION_ID    = 'pulls/delete-pending-review';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\PullNumber\Reviews\ReviewId $hydrator)
     {

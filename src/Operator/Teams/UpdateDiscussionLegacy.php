@@ -19,8 +19,6 @@ final readonly class UpdateDiscussionLegacy
 {
     public const OPERATION_ID    = 'teams/update-discussion-legacy';
     public const OPERATION_MATCH = 'PATCH /teams/{team_id}/discussions/{discussion_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber $hydrator)
     {

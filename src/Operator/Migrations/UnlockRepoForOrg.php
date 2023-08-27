@@ -18,14 +18,12 @@ final readonly class UnlockRepoForOrg
 {
     public const OPERATION_ID    = 'migrations/unlock-repo-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $migrationId, string $repoName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\UnlockRepoForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId, $repoName);

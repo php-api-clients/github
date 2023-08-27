@@ -19,8 +19,6 @@ final readonly class CreateUsingTemplate
 {
     public const OPERATION_ID    = 'repos/create-using-template';
     public const OPERATION_MATCH = 'POST /repos/{template_owner}/{template_repo}/generate';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{template_owner}/{template_repo}/generate';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\TemplateOwner\TemplateRepo\Generate $hydrator)
     {

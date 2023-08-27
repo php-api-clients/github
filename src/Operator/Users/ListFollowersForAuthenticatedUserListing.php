@@ -19,14 +19,12 @@ final readonly class ListFollowersForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'users/list-followers-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/followers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/followers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Followers $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\SimpleUser> | array{code: int}) */
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListFollowersForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

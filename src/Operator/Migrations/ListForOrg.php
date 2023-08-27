@@ -19,14 +19,12 @@ final readonly class ListForOrg
 {
     public const OPERATION_ID    = 'migrations/list-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Migration> */
+    /** @return iterable<Schema\Migration> */
     public function call(string $org, array $exclude, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Migrations\ListForOrg($this->responseSchemaValidator, $this->hydrator, $org, $exclude, $perPage, $page);

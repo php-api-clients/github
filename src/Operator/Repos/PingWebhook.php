@@ -18,14 +18,12 @@ final readonly class PingWebhook
 {
     public const OPERATION_ID    = 'repos/ping-webhook';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/hooks/{hook_id}/pings';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/hooks/{hook_id}/pings';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Hooks\HookId\Pings $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $hookId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\PingWebhook($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId);

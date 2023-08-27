@@ -18,8 +18,6 @@ final readonly class DownloadArchiveForOrgStreaming
 {
     public const OPERATION_ID    = 'migrations/download-archive-for-org';
     public const OPERATION_MATCH = 'STREAM /orgs/{org}/migrations/{migration_id}/archive';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/archive';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive $hydrator)
     {

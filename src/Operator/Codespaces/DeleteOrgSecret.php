@@ -18,14 +18,12 @@ final readonly class DeleteOrgSecret
 {
     public const OPERATION_ID    = 'codespaces/delete-org-secret';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/codespaces/secrets/{secret_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Codespaces\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, string $secretName): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

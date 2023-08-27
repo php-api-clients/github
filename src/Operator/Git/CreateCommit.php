@@ -19,8 +19,6 @@ final readonly class CreateCommit
 {
     public const OPERATION_ID    = 'git/create-commit';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/git/commits';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/git/commits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Git\Commits $hydrator)
     {

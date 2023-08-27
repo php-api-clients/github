@@ -19,8 +19,6 @@ final readonly class ListInvitationTeamsListing
 {
     public const OPERATION_ID    = 'orgs/list-invitation-teams';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/invitations/{invitation_id}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations/{invitation_id}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations\InvitationId\Teams $hydrator)
     {

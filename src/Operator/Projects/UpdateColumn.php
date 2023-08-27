@@ -20,14 +20,12 @@ final readonly class UpdateColumn
 {
     public const OPERATION_ID    = 'projects/update-column';
     public const OPERATION_MATCH = 'PATCH /projects/columns/{column_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/projects/columns/{column_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId $hydrator)
     {
     }
 
-    /** @return (Schema\ProjectColumn | array{code: int}) */
+    /** @return Schema\ProjectColumn|array{code:int} */
     public function call(int $columnId, array $params): ProjectColumn|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\UpdateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

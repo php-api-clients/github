@@ -19,8 +19,6 @@ final readonly class ListCommentsForRepoListing
 {
     public const OPERATION_ID    = 'issues/list-comments-for-repo';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/issues/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\Comments $hydrator)
     {

@@ -18,14 +18,12 @@ final readonly class AddMemberLegacy
 {
     public const OPERATION_ID    = 'teams/add-member-legacy';
     public const OPERATION_MATCH = 'PUT /teams/{team_id}/members/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/teams/{team_id}/members/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Members\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\AddMemberLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $username);

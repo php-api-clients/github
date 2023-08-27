@@ -18,14 +18,12 @@ final readonly class CheckBlocked
 {
     public const OPERATION_ID    = 'users/check-blocked';
     public const OPERATION_MATCH = 'GET /user/blocks/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/blocks/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Blocks\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\CheckBlocked($this->responseSchemaValidator, $this->hydrator, $username);

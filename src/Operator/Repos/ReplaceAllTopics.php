@@ -19,8 +19,6 @@ final readonly class ReplaceAllTopics
 {
     public const OPERATION_ID    = 'repos/replace-all-topics';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/topics';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/topics';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Topics $hydrator)
     {

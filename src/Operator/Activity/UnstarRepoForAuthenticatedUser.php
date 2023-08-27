@@ -18,14 +18,12 @@ final readonly class UnstarRepoForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/unstar-repo-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/starred/{owner}/{repo}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/starred/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Starred\Owner\Repo $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\UnstarRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

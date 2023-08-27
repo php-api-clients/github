@@ -19,14 +19,12 @@ final readonly class ListMembershipsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'orgs/list-memberships-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/memberships/orgs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/memberships/orgs';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Memberships\Orgs $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\OrgMembership> | array{code: int}) */
+    /** @return iterable<Schema\OrgMembership>|array{code:int} */
     public function call(string $state, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\ListMembershipsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $state, $perPage, $page);

@@ -19,14 +19,12 @@ final readonly class ListSocialAccountsForUser
 {
     public const OPERATION_ID    = 'users/list-social-accounts-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/social_accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/social_accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\SocialAccounts $hydrator)
     {
     }
 
-    /** @return Observable<Schema\SocialAccount> */
+    /** @return iterable<Schema\SocialAccount> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListSocialAccountsForUser($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

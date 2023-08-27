@@ -19,8 +19,6 @@ final readonly class GetReleaseByTag
 {
     public const OPERATION_ID    = 'repos/get-release-by-tag';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases/tags/{tag}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/tags/{tag}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\Tags\Tag $hydrator)
     {

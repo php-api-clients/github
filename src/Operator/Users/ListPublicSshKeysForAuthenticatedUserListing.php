@@ -19,14 +19,12 @@ final readonly class ListPublicSshKeysForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'users/list-public-ssh-keys-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Keys $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\Key> | array{code: int}) */
+    /** @return iterable<Schema\Key>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\ListPublicSshKeysForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

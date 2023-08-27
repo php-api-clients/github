@@ -20,14 +20,12 @@ final readonly class CheckPermissionsForRepoLegacy
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-repo-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/repos/{owner}/{repo}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/repos/{owner}/{repo}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Repos\Owner\Repo $hydrator)
     {
     }
 
-    /** @return (Schema\TeamRepository | array{code: int}) */
+    /** @return Schema\TeamRepository|array{code:int} */
     public function call(int $teamId, string $owner, string $repo): TeamRepository|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForRepoLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $owner, $repo);

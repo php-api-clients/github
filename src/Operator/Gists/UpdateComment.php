@@ -19,8 +19,6 @@ final readonly class UpdateComment
 {
     public const OPERATION_ID    = 'gists/update-comment';
     public const OPERATION_MATCH = 'PATCH /gists/{gist_id}/comments/{comment_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/gists/{gist_id}/comments/{comment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Comments\CommentId $hydrator)
     {

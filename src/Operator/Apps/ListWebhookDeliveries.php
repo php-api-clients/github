@@ -19,14 +19,12 @@ final readonly class ListWebhookDeliveries
 {
     public const OPERATION_ID    = 'apps/list-webhook-deliveries';
     public const OPERATION_MATCH = 'GET /app/hook/deliveries';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/hook/deliveries';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Hook\Deliveries $hydrator)
     {
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<Schema\HookDeliveryItem> */
     public function call(string $cursor, bool $redelivery, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator, $cursor, $redelivery, $perPage);

@@ -19,8 +19,6 @@ final readonly class RequestPagesBuild
 {
     public const OPERATION_ID    = 'repos/request-pages-build';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pages/builds';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pages/builds';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pages\Builds $hydrator)
     {

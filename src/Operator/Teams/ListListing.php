@@ -19,8 +19,6 @@ final readonly class ListListing
 {
     public const OPERATION_ID    = 'teams/list';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams $hydrator)
     {

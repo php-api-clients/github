@@ -19,14 +19,12 @@ final readonly class GetAppsWithAccessToProtectedBranch
 {
     public const OPERATION_ID    = 'repos/get-apps-with-access-to-protected-branch';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\Restrictions\Apps $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Integration> */
+    /** @return iterable<Schema\Integration> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetAppsWithAccessToProtectedBranch($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

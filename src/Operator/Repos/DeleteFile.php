@@ -19,8 +19,6 @@ final readonly class DeleteFile
 {
     public const OPERATION_ID    = 'repos/delete-file';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/contents/{path}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/contents/{path}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Contents\Path $hydrator)
     {

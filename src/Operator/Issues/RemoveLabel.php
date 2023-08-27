@@ -20,14 +20,12 @@ final readonly class RemoveLabel
 {
     public const OPERATION_ID    = 'issues/remove-label';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Labels\Name $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Label> | Schema\BasicError) */
+    /** @return iterable<Schema\Label>|Schema\BasicError */
     public function call(string $owner, string $repo, int $issueNumber, string $name): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\RemoveLabel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $name);

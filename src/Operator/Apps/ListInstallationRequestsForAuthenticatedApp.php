@@ -19,14 +19,12 @@ final readonly class ListInstallationRequestsForAuthenticatedApp
 {
     public const OPERATION_ID    = 'apps/list-installation-requests-for-authenticated-app';
     public const OPERATION_MATCH = 'GET /app/installation-requests';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installation-requests';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\InstallationRequests $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\IntegrationInstallationRequest> | array{code: int}) */
+    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListInstallationRequestsForAuthenticatedApp($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

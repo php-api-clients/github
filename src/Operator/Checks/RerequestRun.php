@@ -19,8 +19,6 @@ final readonly class RerequestRun
 {
     public const OPERATION_ID    = 'checks/rerequest-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CheckRuns\CheckRunId\Rerequest $hydrator)
     {

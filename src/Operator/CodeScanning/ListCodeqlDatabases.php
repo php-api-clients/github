@@ -19,14 +19,12 @@ final readonly class ListCodeqlDatabases
 {
     public const OPERATION_ID    = 'code-scanning/list-codeql-databases';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/codeql/databases';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Codeql\Databases $hydrator)
     {
     }
 
-    /** @return Observable<Schema\CodeScanningCodeqlDatabase> */
+    /** @return iterable<Schema\CodeScanningCodeqlDatabase> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\CodeScanning\ListCodeqlDatabases($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -18,14 +18,12 @@ final readonly class Unfollow
 {
     public const OPERATION_ID    = 'users/unfollow';
     public const OPERATION_MATCH = 'DELETE /user/following/{username}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/following/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Following\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\Unfollow($this->responseSchemaValidator, $this->hydrator, $username);

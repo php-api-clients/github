@@ -20,14 +20,12 @@ final readonly class GetRepoSubscription
 {
     public const OPERATION_ID    = 'activity/get-repo-subscription';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/subscription';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Subscription $hydrator)
     {
     }
 
-    /** @return (Schema\RepositorySubscription | array{code: int}) */
+    /** @return Schema\RepositorySubscription|array{code:int} */
     public function call(string $owner, string $repo): RepositorySubscription|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\GetRepoSubscription($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

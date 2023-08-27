@@ -18,14 +18,12 @@ final readonly class MarkThreadAsRead
 {
     public const OPERATION_ID    = 'activity/mark-thread-as-read';
     public const OPERATION_MATCH = 'PATCH /notifications/threads/{thread_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/notifications/threads/{thread_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Notifications\Threads\ThreadId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $threadId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\MarkThreadAsRead($this->responseSchemaValidator, $this->hydrator, $threadId);

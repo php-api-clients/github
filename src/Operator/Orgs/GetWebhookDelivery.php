@@ -19,8 +19,6 @@ final readonly class GetWebhookDelivery
 {
     public const OPERATION_ID    = 'orgs/get-webhook-delivery';
     public const OPERATION_MATCH = 'GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries\DeliveryId $hydrator)
     {

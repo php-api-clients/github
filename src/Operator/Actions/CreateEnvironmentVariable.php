@@ -19,8 +19,6 @@ final readonly class CreateEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/create-environment-variable';
     public const OPERATION_MATCH = 'POST /repositories/{repository_id}/environments/{environment_name}/variables';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator)
     {

@@ -19,14 +19,12 @@ final readonly class ListForksListing
 {
     public const OPERATION_ID    = 'gists/list-forks';
     public const OPERATION_MATCH = 'LIST /gists/{gist_id}/forks';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/forks';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Forks $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\GistSimple> | array{code: int}) */
+    /** @return iterable<Schema\GistSimple>|array{code:int} */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListForksListing($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

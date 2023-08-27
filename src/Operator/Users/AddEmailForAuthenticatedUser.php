@@ -19,14 +19,12 @@ final readonly class AddEmailForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/add-email-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/emails';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/emails';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Emails $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\Email> | array{code: int}) */
+    /** @return iterable<Schema\Email>|array{code:int} */
     public function call(array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\AddEmailForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

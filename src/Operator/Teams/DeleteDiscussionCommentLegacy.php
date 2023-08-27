@@ -16,14 +16,12 @@ final readonly class DeleteDiscussionCommentLegacy
 {
     public const OPERATION_ID    = 'teams/delete-discussion-comment-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $teamId, int $discussionNumber, int $commentNumber): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\DeleteDiscussionCommentLegacy($teamId, $discussionNumber, $commentNumber);

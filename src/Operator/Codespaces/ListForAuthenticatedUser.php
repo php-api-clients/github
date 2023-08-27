@@ -20,14 +20,12 @@ final readonly class ListForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/list-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
     public function call(int $repositoryId, int $perPage = 30, int $page = 1): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $repositoryId, $perPage, $page);

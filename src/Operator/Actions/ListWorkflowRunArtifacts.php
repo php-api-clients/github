@@ -19,8 +19,6 @@ final readonly class ListWorkflowRunArtifacts
 {
     public const OPERATION_ID    = 'actions/list-workflow-run-artifacts';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Artifacts $hydrator)
     {

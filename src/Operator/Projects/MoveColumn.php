@@ -20,14 +20,12 @@ final readonly class MoveColumn
 {
     public const OPERATION_ID    = 'projects/move-column';
     public const OPERATION_MATCH = 'POST /projects/columns/{column_id}/moves';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/columns/{column_id}/moves';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId\Moves $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array{code:int} */
     public function call(int $columnId, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\MoveColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

@@ -19,14 +19,12 @@ final readonly class ListLabelsForMilestone
 {
     public const OPERATION_ID    = 'issues/list-labels-for-milestone';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/milestones/{milestone_number}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber\Labels $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<Schema\Label> */
     public function call(string $owner, string $repo, int $milestoneNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\ListLabelsForMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber, $perPage, $page);

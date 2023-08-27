@@ -20,14 +20,12 @@ final readonly class GetAlert
 {
     public const OPERATION_ID    = 'dependabot/get-alert';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts\AlertNumber $hydrator)
     {
     }
 
-    /** @return (Schema\DependabotAlert | array{code: int}) */
+    /** @return Schema\DependabotAlert|array{code:int} */
     public function call(string $owner, string $repo, int $alertNumber): DependabotAlert|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Dependabot\GetAlert($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

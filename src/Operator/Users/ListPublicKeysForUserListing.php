@@ -19,8 +19,6 @@ final readonly class ListPublicKeysForUserListing
 {
     public const OPERATION_ID    = 'users/list-public-keys-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/keys';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Keys $hydrator)
     {

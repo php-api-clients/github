@@ -19,8 +19,6 @@ final readonly class ListCopilotSeats
 {
     public const OPERATION_ID    = 'copilot/list-copilot-seats';
     public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing/seats';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/copilot/billing/seats';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats $hydrator)
     {

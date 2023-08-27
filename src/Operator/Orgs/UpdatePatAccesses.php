@@ -19,8 +19,6 @@ final readonly class UpdatePatAccesses
 {
     public const OPERATION_ID    = 'orgs/update-pat-accesses';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-tokens';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-tokens';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokens $hydrator)
     {

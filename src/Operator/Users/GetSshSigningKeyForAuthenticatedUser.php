@@ -20,14 +20,12 @@ final readonly class GetSshSigningKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/get-ssh-signing-key-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/ssh_signing_keys/{ssh_signing_key_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/ssh_signing_keys/{ssh_signing_key_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\SshSigningKeys\SshSigningKeyId $hydrator)
     {
     }
 
-    /** @return (Schema\SshSigningKey | array{code: int}) */
+    /** @return Schema\SshSigningKey|array{code:int} */
     public function call(int $sshSigningKeyId): SshSigningKey|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\GetSshSigningKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sshSigningKeyId);

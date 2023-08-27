@@ -19,8 +19,6 @@ final readonly class ListSelectedReposForOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/list-selected-repos-for-org-secret';
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}/repositories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Dependabot\Secrets\SecretName\Repositories $hydrator)
     {

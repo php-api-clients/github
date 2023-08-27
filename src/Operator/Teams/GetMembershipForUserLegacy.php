@@ -19,8 +19,6 @@ final readonly class GetMembershipForUserLegacy
 {
     public const OPERATION_ID    = 'teams/get-membership-for-user-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/memberships/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Memberships\Username $hydrator)
     {

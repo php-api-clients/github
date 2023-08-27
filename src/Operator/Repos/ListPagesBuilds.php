@@ -19,14 +19,12 @@ final readonly class ListPagesBuilds
 {
     public const OPERATION_ID    = 'repos/list-pages-builds';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pages/builds';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pages/builds';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pages\Builds $hydrator)
     {
     }
 
-    /** @return Observable<Schema\PageBuild> */
+    /** @return iterable<Schema\PageBuild> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListPagesBuilds($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

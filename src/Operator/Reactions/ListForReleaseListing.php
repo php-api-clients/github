@@ -19,8 +19,6 @@ final readonly class ListForReleaseListing
 {
     public const OPERATION_ID    = 'reactions/list-for-release';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/releases/{release_id}/reactions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/reactions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Releases\ReleaseId\Reactions $hydrator)
     {

@@ -19,14 +19,12 @@ final readonly class GetTopReferrers
 {
     public const OPERATION_ID    = 'repos/get-top-referrers';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/traffic/popular/referrers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/traffic/popular/referrers';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Traffic\Popular\Referrers $hydrator)
     {
     }
 
-    /** @return Observable<Schema\ReferrerTraffic> */
+    /** @return iterable<Schema\ReferrerTraffic> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\GetTopReferrers($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

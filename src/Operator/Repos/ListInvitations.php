@@ -19,14 +19,12 @@ final readonly class ListInvitations
 {
     public const OPERATION_ID    = 'repos/list-invitations';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Invitations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\RepositoryInvitation> */
+    /** @return iterable<Schema\RepositoryInvitation> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListInvitations($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

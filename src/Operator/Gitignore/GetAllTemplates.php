@@ -18,14 +18,12 @@ final readonly class GetAllTemplates
 {
     public const OPERATION_ID    = 'gitignore/get-all-templates';
     public const OPERATION_MATCH = 'GET /gitignore/templates';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gitignore/templates';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gitignore\Templates $hydrator)
     {
     }
 
-    /** @return (Observable<string> | array{code: int}) */
+    /** @return Observable<string>|array{code:int} */
     public function call(): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gitignore\GetAllTemplates($this->responseSchemaValidator, $this->hydrator);

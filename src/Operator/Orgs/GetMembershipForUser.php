@@ -19,8 +19,6 @@ final readonly class GetMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/get-membership-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/memberships/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/memberships/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Memberships\Username $hydrator)
     {

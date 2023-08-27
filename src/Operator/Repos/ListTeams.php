@@ -19,14 +19,12 @@ final readonly class ListTeams
 {
     public const OPERATION_ID    = 'repos/list-teams';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/teams';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Teams $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<Schema\Team> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\ListTeams($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

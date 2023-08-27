@@ -20,14 +20,12 @@ final readonly class CheckPermissionsForProjectLegacy
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-project-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/projects/{project_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/projects/{project_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Projects\ProjectId $hydrator)
     {
     }
 
-    /** @return (Schema\TeamProject | array{code: int}) */
+    /** @return Schema\TeamProject|array{code:int} */
     public function call(int $teamId, int $projectId): TeamProject|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Teams\CheckPermissionsForProjectLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

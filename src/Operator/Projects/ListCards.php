@@ -19,14 +19,12 @@ final readonly class ListCards
 {
     public const OPERATION_ID    = 'projects/list-cards';
     public const OPERATION_MATCH = 'GET /projects/columns/{column_id}/cards';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/columns/{column_id}/cards';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Projects\Columns\ColumnId\Cards $hydrator)
     {
     }
 
-    /** @return (Observable<Schema\ProjectCard> | array{code: int}) */
+    /** @return iterable<Schema\ProjectCard>|array{code:int} */
     public function call(int $columnId, string $archivedState = 'not_archived', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Projects\ListCards($this->responseSchemaValidator, $this->hydrator, $columnId, $archivedState, $perPage, $page);

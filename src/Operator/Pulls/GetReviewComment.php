@@ -19,8 +19,6 @@ final readonly class GetReviewComment
 {
     public const OPERATION_ID    = 'pulls/get-review-comment';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/comments/{comment_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/comments/{comment_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Pulls\Comments\CommentId $hydrator)
     {

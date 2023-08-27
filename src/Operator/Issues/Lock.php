@@ -18,14 +18,12 @@ final readonly class Lock
 {
     public const OPERATION_ID    = 'issues/lock';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/issues/{issue_number}/lock';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/lock';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Issues\IssueNumber\Lock $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $issueNumber, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Issues\Lock($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

@@ -19,8 +19,6 @@ final readonly class GetGithubActionsDefaultWorkflowPermissionsRepository
 {
     public const OPERATION_ID    = 'actions/get-github-actions-default-workflow-permissions-repository';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/permissions/workflow';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/permissions/workflow';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Actions\Permissions\Workflow $hydrator)
     {

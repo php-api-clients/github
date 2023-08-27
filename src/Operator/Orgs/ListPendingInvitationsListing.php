@@ -19,8 +19,6 @@ final readonly class ListPendingInvitationsListing
 {
     public const OPERATION_ID    = 'orgs/list-pending-invitations';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations $hydrator)
     {

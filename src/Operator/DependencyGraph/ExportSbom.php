@@ -19,8 +19,6 @@ final readonly class ExportSbom
 {
     public const OPERATION_ID    = 'dependency-graph/export-sbom';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/dependency-graph/sbom';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/dependency-graph/sbom';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\DependencyGraph\Sbom $hydrator)
     {

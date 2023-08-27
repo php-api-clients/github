@@ -19,8 +19,6 @@ final readonly class RedeliverWebhookDelivery
 {
     public const OPERATION_ID    = 'apps/redeliver-webhook-delivery';
     public const OPERATION_MATCH = 'POST /app/hook/deliveries/{delivery_id}/attempts';
-    private const METHOD         = 'POST';
-    private const PATH           = '/app/hook/deliveries/{delivery_id}/attempts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Hook\Deliveries\DeliveryId\Attempts $hydrator)
     {

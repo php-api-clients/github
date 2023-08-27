@@ -19,8 +19,6 @@ final readonly class ListAccountsForPlanStubbedListing
 {
     public const OPERATION_ID    = 'apps/list-accounts-for-plan-stubbed';
     public const OPERATION_MATCH = 'LIST /marketplace_listing/stubbed/plans/{plan_id}/accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/stubbed/plans/{plan_id}/accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\MarketplaceListing\Stubbed\Plans\PlanId\Accounts $hydrator)
     {

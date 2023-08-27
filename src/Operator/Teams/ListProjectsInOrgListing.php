@@ -19,8 +19,6 @@ final readonly class ListProjectsInOrgListing
 {
     public const OPERATION_ID    = 'teams/list-projects-in-org';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/teams/{team_slug}/projects';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/projects';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Projects $hydrator)
     {

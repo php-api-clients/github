@@ -16,14 +16,12 @@ final readonly class DeleteRelease
 {
     public const OPERATION_ID    = 'repos/delete-release';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/releases/{release_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo, int $releaseId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\DeleteRelease($owner, $repo, $releaseId);

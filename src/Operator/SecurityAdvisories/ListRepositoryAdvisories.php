@@ -19,14 +19,12 @@ final readonly class ListRepositoryAdvisories
 {
     public const OPERATION_ID    = 'security-advisories/list-repository-advisories';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/security-advisories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/security-advisories';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\SecurityAdvisories $hydrator)
     {
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<Schema\RepositoryAdvisory> */
     public function call(string $owner, string $repo, string $before, string $after, string $state, string $direction = 'desc', string $sort = 'created', int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\SecurityAdvisories\ListRepositoryAdvisories($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $before, $after, $state, $direction, $sort, $perPage);

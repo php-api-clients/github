@@ -19,8 +19,6 @@ final readonly class SetRestrictionsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'interactions/set-restrictions-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/interaction-limits';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\InteractionLimits $hydrator)
     {

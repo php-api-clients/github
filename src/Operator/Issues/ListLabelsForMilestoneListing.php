@@ -19,8 +19,6 @@ final readonly class ListLabelsForMilestoneListing
 {
     public const OPERATION_ID    = 'issues/list-labels-for-milestone';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/milestones/{milestone_number}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/milestones/{milestone_number}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Milestones\MilestoneNumber\Labels $hydrator)
     {

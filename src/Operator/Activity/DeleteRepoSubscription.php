@@ -16,14 +16,12 @@ final readonly class DeleteRepoSubscription
 {
     public const OPERATION_ID    = 'activity/delete-repo-subscription';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/subscription';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/subscription';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $owner, string $repo): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Activity\DeleteRepoSubscription($owner, $repo);

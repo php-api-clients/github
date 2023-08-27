@@ -19,14 +19,12 @@ final readonly class SetAppAccessRestrictions
 {
     public const OPERATION_ID    = 'repos/set-app-access-restrictions';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Branches\Branch\Protection\Restrictions\Apps $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Integration> */
+    /** @return iterable<Schema\Integration> */
     public function call(string $owner, string $repo, string $branch, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\SetAppAccessRestrictions($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

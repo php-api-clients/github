@@ -19,8 +19,6 @@ final readonly class UpdateOidcCustomSubTemplateForOrg
 {
     public const OPERATION_ID    = 'oidc/update-oidc-custom-sub-template-for-org';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/oidc/customization/sub';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/oidc/customization/sub';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Actions\Oidc\Customization\Sub $hydrator)
     {

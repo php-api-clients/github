@@ -18,8 +18,6 @@ final readonly class GetZen
 {
     public const OPERATION_ID    = 'meta/get-zen';
     public const OPERATION_MATCH = 'GET /zen';
-    private const METHOD         = 'GET';
-    private const PATH           = '/zen';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Zen $hydrator)
     {

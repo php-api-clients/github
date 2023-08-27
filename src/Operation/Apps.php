@@ -4,426 +4,292 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\Authorization;
+use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\HookDelivery;
+use ApiClients\Client\GitHub\Schema\Installation;
+use ApiClients\Client\GitHub\Schema\InstallationToken;
+use ApiClients\Client\GitHub\Schema\Integration;
+use ApiClients\Client\GitHub\Schema\MarketplacePurchase;
+use ApiClients\Client\GitHub\Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Apps\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\WebhookConfig;
 
 final class Apps
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function getAuthenticated(): Schema\Integration
+    /** @return */
+    public function getAuthenticated(): Integration|array
     {
-        if (array_key_exists(Operator\Apps\GetAuthenticated::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetAuthenticated::class] = new Operator\Apps\GetAuthenticated($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App());
-        }
-
-        return $this->operator[Operator\Apps\GetAuthenticated::class]->call();
+        return $this->operators->apps👷GetAuthenticated()->call();
     }
 
-    public function createFromManifest(string $code): Schema\Operations\Apps\CreateFromManifest\Response\ApplicationJson\Created
+    /** @return */
+    public function createFromManifest(string $code): Integration|array
     {
-        if (array_key_exists(Operator\Apps\CreateFromManifest::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\CreateFromManifest::class] = new Operator\Apps\CreateFromManifest($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀AppManifests🌀Code🌀Conversions());
-        }
-
-        return $this->operator[Operator\Apps\CreateFromManifest::class]->call($code);
+        return $this->operators->apps👷CreateFromManifest()->call($code);
     }
 
-    public function getWebhookConfigForApp(): Schema\WebhookConfig
+    /** @return */
+    public function getWebhookConfigForApp(): WebhookConfig|array
     {
-        if (array_key_exists(Operator\Apps\GetWebhookConfigForApp::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetWebhookConfigForApp::class] = new Operator\Apps\GetWebhookConfigForApp($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config());
-        }
-
-        return $this->operator[Operator\Apps\GetWebhookConfigForApp::class]->call();
+        return $this->operators->apps👷GetWebhookConfigForApp()->call();
     }
 
-    public function updateWebhookConfigForApp(array $params): Schema\WebhookConfig
+    /** @return */
+    public function updateWebhookConfigForApp(array $params): WebhookConfig|array
     {
-        if (array_key_exists(Operator\Apps\UpdateWebhookConfigForApp::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\UpdateWebhookConfigForApp::class] = new Operator\Apps\UpdateWebhookConfigForApp($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config());
-        }
-
-        return $this->operator[Operator\Apps\UpdateWebhookConfigForApp::class]->call($params);
+        return $this->operators->apps👷UpdateWebhookConfigForApp()->call($params);
     }
 
-    public function listWebhookDeliveries(string $cursor, bool $redelivery, int $perPage): Schema\HookDeliveryItem
+    /** @return iterable<Schema\HookDeliveryItem> */
+    public function listWebhookDeliveries(string $cursor, bool $redelivery, int $perPage): iterable
     {
-        if (array_key_exists(Operator\Apps\ListWebhookDeliveries::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListWebhookDeliveries::class] = new Operator\Apps\ListWebhookDeliveries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Deliveries());
-        }
-
-        return $this->operator[Operator\Apps\ListWebhookDeliveries::class]->call($cursor, $redelivery, $perPage);
+        return $this->operators->apps👷ListWebhookDeliveries()->call($cursor, $redelivery, $perPage);
     }
 
-    public function getWebhookDelivery(int $deliveryId): Schema\HookDelivery
+    /** @return */
+    public function getWebhookDelivery(int $deliveryId): HookDelivery|array
     {
-        if (array_key_exists(Operator\Apps\GetWebhookDelivery::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetWebhookDelivery::class] = new Operator\Apps\GetWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Deliveries🌀DeliveryId());
-        }
-
-        return $this->operator[Operator\Apps\GetWebhookDelivery::class]->call($deliveryId);
+        return $this->operators->apps👷GetWebhookDelivery()->call($deliveryId);
     }
 
-    public function redeliverWebhookDelivery(int $deliveryId): Schema\Operations\Apps\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted
+    /** @return */
+    public function redeliverWebhookDelivery(int $deliveryId): Json|array
     {
-        if (array_key_exists(Operator\Apps\RedeliverWebhookDelivery::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\RedeliverWebhookDelivery::class] = new Operator\Apps\RedeliverWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Deliveries🌀DeliveryId🌀Attempts());
-        }
-
-        return $this->operator[Operator\Apps\RedeliverWebhookDelivery::class]->call($deliveryId);
+        return $this->operators->apps👷RedeliverWebhookDelivery()->call($deliveryId);
     }
 
-    public function listInstallationRequestsForAuthenticatedApp(int $perPage, int $page): Schema\IntegrationInstallationRequest
+    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int} */
+    public function listInstallationRequestsForAuthenticatedApp(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListInstallationRequestsForAuthenticatedApp::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedApp::class] = new Operator\Apps\ListInstallationRequestsForAuthenticatedApp($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedApp::class]->call($perPage, $page);
+        return $this->operators->apps👷ListInstallationRequestsForAuthenticatedApp()->call($perPage, $page);
     }
 
-    public function listInstallationRequestsForAuthenticatedAppListing(int $perPage, int $page): Schema\IntegrationInstallationRequest
+    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int} */
+    public function listInstallationRequestsForAuthenticatedAppListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class] = new Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing::class]->call($perPage, $page);
+        return $this->operators->apps👷ListInstallationRequestsForAuthenticatedAppListing()->call($perPage, $page);
     }
 
-    public function listInstallations(string $since, string $outdated, int $perPage, int $page): Schema\Installation
+    /** @return iterable<Schema\Installation> */
+    public function listInstallations(string $since, string $outdated, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListInstallations::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallations::class] = new Operator\Apps\ListInstallations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallations::class]->call($since, $outdated, $perPage, $page);
+        return $this->operators->apps👷ListInstallations()->call($since, $outdated, $perPage, $page);
     }
 
-    public function listInstallationsListing(string $since, string $outdated, int $perPage, int $page): Schema\Installation
+    /** @return iterable<Schema\Installation> */
+    public function listInstallationsListing(string $since, string $outdated, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListInstallationsListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallationsListing::class] = new Operator\Apps\ListInstallationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallationsListing::class]->call($since, $outdated, $perPage, $page);
+        return $this->operators->apps👷ListInstallationsListing()->call($since, $outdated, $perPage, $page);
     }
 
-    public function getInstallation(int $installationId): Schema\Installation
+    /** @return */
+    public function getInstallation(int $installationId): Installation|array
     {
-        if (array_key_exists(Operator\Apps\GetInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetInstallation::class] = new Operator\Apps\GetInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId());
-        }
-
-        return $this->operator[Operator\Apps\GetInstallation::class]->call($installationId);
+        return $this->operators->apps👷GetInstallation()->call($installationId);
     }
 
-    public function deleteInstallation(int $installationId): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteInstallation(int $installationId): array
     {
-        if (array_key_exists(Operator\Apps\DeleteInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\DeleteInstallation::class] = new Operator\Apps\DeleteInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId());
-        }
-
-        return $this->operator[Operator\Apps\DeleteInstallation::class]->call($installationId);
+        return $this->operators->apps👷DeleteInstallation()->call($installationId);
     }
 
-    public function createInstallationAccessToken(int $installationId, array $params): Schema\InstallationToken
+    /** @return */
+    public function createInstallationAccessToken(int $installationId, array $params): InstallationToken|array
     {
-        if (array_key_exists(Operator\Apps\CreateInstallationAccessToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\CreateInstallationAccessToken::class] = new Operator\Apps\CreateInstallationAccessToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀AccessTokens());
-        }
-
-        return $this->operator[Operator\Apps\CreateInstallationAccessToken::class]->call($installationId, $params);
+        return $this->operators->apps👷CreateInstallationAccessToken()->call($installationId, $params);
     }
 
-    public function suspendInstallation(int $installationId): ResponseInterface
+    /** @return array{code:int} */
+    public function suspendInstallation(int $installationId): array
     {
-        if (array_key_exists(Operator\Apps\SuspendInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\SuspendInstallation::class] = new Operator\Apps\SuspendInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀Suspended());
-        }
-
-        return $this->operator[Operator\Apps\SuspendInstallation::class]->call($installationId);
+        return $this->operators->apps👷SuspendInstallation()->call($installationId);
     }
 
-    public function unsuspendInstallation(int $installationId): ResponseInterface
+    /** @return array{code:int} */
+    public function unsuspendInstallation(int $installationId): array
     {
-        if (array_key_exists(Operator\Apps\UnsuspendInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\UnsuspendInstallation::class] = new Operator\Apps\UnsuspendInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀Suspended());
-        }
-
-        return $this->operator[Operator\Apps\UnsuspendInstallation::class]->call($installationId);
+        return $this->operators->apps👷UnsuspendInstallation()->call($installationId);
     }
 
-    public function deleteAuthorization(string $clientId, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteAuthorization(string $clientId, array $params): array
     {
-        if (array_key_exists(Operator\Apps\DeleteAuthorization::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\DeleteAuthorization::class] = new Operator\Apps\DeleteAuthorization($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Grant());
-        }
-
-        return $this->operator[Operator\Apps\DeleteAuthorization::class]->call($clientId, $params);
+        return $this->operators->apps👷DeleteAuthorization()->call($clientId, $params);
     }
 
-    public function checkToken(string $clientId, array $params): Schema\Authorization
+    /** @return */
+    public function checkToken(string $clientId, array $params): Authorization|array
     {
-        if (array_key_exists(Operator\Apps\CheckToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\CheckToken::class] = new Operator\Apps\CheckToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Token());
-        }
-
-        return $this->operator[Operator\Apps\CheckToken::class]->call($clientId, $params);
+        return $this->operators->apps👷CheckToken()->call($clientId, $params);
     }
 
-    public function deleteToken(string $clientId, array $params): ResponseInterface
+    /** @return array{code:int} */
+    public function deleteToken(string $clientId, array $params): array
     {
-        if (array_key_exists(Operator\Apps\DeleteToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\DeleteToken::class] = new Operator\Apps\DeleteToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Token());
-        }
-
-        return $this->operator[Operator\Apps\DeleteToken::class]->call($clientId, $params);
+        return $this->operators->apps👷DeleteToken()->call($clientId, $params);
     }
 
-    public function resetToken(string $clientId, array $params): Schema\Authorization
+    /** @return */
+    public function resetToken(string $clientId, array $params): Authorization|array
     {
-        if (array_key_exists(Operator\Apps\ResetToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ResetToken::class] = new Operator\Apps\ResetToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Token());
-        }
-
-        return $this->operator[Operator\Apps\ResetToken::class]->call($clientId, $params);
+        return $this->operators->apps👷ResetToken()->call($clientId, $params);
     }
 
-    public function scopeToken(string $clientId, array $params): Schema\Authorization
+    /** @return */
+    public function scopeToken(string $clientId, array $params): Authorization|array
     {
-        if (array_key_exists(Operator\Apps\ScopeToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ScopeToken::class] = new Operator\Apps\ScopeToken($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Applications🌀ClientId🌀Token🌀Scoped());
-        }
-
-        return $this->operator[Operator\Apps\ScopeToken::class]->call($clientId, $params);
+        return $this->operators->apps👷ScopeToken()->call($clientId, $params);
     }
 
-    public function getBySlug(string $appSlug): Schema\Integration
+    /** @return */
+    public function getBySlug(string $appSlug): Integration|array
     {
-        if (array_key_exists(Operator\Apps\GetBySlug::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetBySlug::class] = new Operator\Apps\GetBySlug($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Apps🌀AppSlug());
-        }
-
-        return $this->operator[Operator\Apps\GetBySlug::class]->call($appSlug);
+        return $this->operators->apps👷GetBySlug()->call($appSlug);
     }
 
-    public function listReposAccessibleToInstallation(int $perPage, int $page): Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|array{code:int} */
+    public function listReposAccessibleToInstallation(int $perPage, int $page): Ok|array
     {
-        if (array_key_exists(Operator\Apps\ListReposAccessibleToInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListReposAccessibleToInstallation::class] = new Operator\Apps\ListReposAccessibleToInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Installation🌀Repositories());
-        }
-
-        return $this->operator[Operator\Apps\ListReposAccessibleToInstallation::class]->call($perPage, $page);
+        return $this->operators->apps👷ListReposAccessibleToInstallation()->call($perPage, $page);
     }
 
-    public function revokeInstallationAccessToken(): ResponseInterface
+    /** @return array{code:int} */
+    public function revokeInstallationAccessToken(): array
     {
-        if (array_key_exists(Operator\Apps\RevokeInstallationAccessToken::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\RevokeInstallationAccessToken::class] = new Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Installation🌀Token());
-        }
-
-        return $this->operator[Operator\Apps\RevokeInstallationAccessToken::class]->call();
+        return $this->operators->apps👷RevokeInstallationAccessToken()->call();
     }
 
-    public function getSubscriptionPlanForAccount(int $accountId): Schema\MarketplacePurchase
+    /** @return */
+    public function getSubscriptionPlanForAccount(int $accountId): MarketplacePurchase|array
     {
-        if (array_key_exists(Operator\Apps\GetSubscriptionPlanForAccount::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetSubscriptionPlanForAccount::class] = new Operator\Apps\GetSubscriptionPlanForAccount($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Accounts🌀AccountId());
-        }
-
-        return $this->operator[Operator\Apps\GetSubscriptionPlanForAccount::class]->call($accountId);
+        return $this->operators->apps👷GetSubscriptionPlanForAccount()->call($accountId);
     }
 
-    public function listPlans(int $perPage, int $page): Schema\MarketplaceListingPlan
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlans(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListPlans::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListPlans::class] = new Operator\Apps\ListPlans($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans());
-        }
-
-        return $this->operator[Operator\Apps\ListPlans::class]->call($perPage, $page);
+        return $this->operators->apps👷ListPlans()->call($perPage, $page);
     }
 
-    public function listPlansListing(int $perPage, int $page): Schema\MarketplaceListingPlan
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlansListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListPlansListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListPlansListing::class] = new Operator\Apps\ListPlansListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans());
-        }
-
-        return $this->operator[Operator\Apps\ListPlansListing::class]->call($perPage, $page);
+        return $this->operators->apps👷ListPlansListing()->call($perPage, $page);
     }
 
-    public function listAccountsForPlan(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlan(int $planId, string $direction, string $sort, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListAccountsForPlan::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListAccountsForPlan::class] = new Operator\Apps\ListAccountsForPlan($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans🌀PlanId🌀Accounts());
-        }
-
-        return $this->operator[Operator\Apps\ListAccountsForPlan::class]->call($planId, $direction, $sort, $perPage, $page);
+        return $this->operators->apps👷ListAccountsForPlan()->call($planId, $direction, $sort, $perPage, $page);
     }
 
-    public function listAccountsForPlanListing(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlanListing(int $planId, string $direction, string $sort, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListAccountsForPlanListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListAccountsForPlanListing::class] = new Operator\Apps\ListAccountsForPlanListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans🌀PlanId🌀Accounts());
-        }
-
-        return $this->operator[Operator\Apps\ListAccountsForPlanListing::class]->call($planId, $direction, $sort, $perPage, $page);
+        return $this->operators->apps👷ListAccountsForPlanListing()->call($planId, $direction, $sort, $perPage, $page);
     }
 
-    public function getSubscriptionPlanForAccountStubbed(int $accountId): Schema\MarketplacePurchase
+    /** @return Schema\MarketplacePurchase|array{code:int} */
+    public function getSubscriptionPlanForAccountStubbed(int $accountId): MarketplacePurchase|array
     {
-        if (array_key_exists(Operator\Apps\GetSubscriptionPlanForAccountStubbed::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetSubscriptionPlanForAccountStubbed::class] = new Operator\Apps\GetSubscriptionPlanForAccountStubbed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Accounts🌀AccountId());
-        }
-
-        return $this->operator[Operator\Apps\GetSubscriptionPlanForAccountStubbed::class]->call($accountId);
+        return $this->operators->apps👷GetSubscriptionPlanForAccountStubbed()->call($accountId);
     }
 
-    public function listPlansStubbed(int $perPage, int $page): Schema\MarketplaceListingPlan
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlansStubbed(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListPlansStubbed::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListPlansStubbed::class] = new Operator\Apps\ListPlansStubbed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans());
-        }
-
-        return $this->operator[Operator\Apps\ListPlansStubbed::class]->call($perPage, $page);
+        return $this->operators->apps👷ListPlansStubbed()->call($perPage, $page);
     }
 
-    public function listPlansStubbedListing(int $perPage, int $page): Schema\MarketplaceListingPlan
+    /** @return iterable<Schema\MarketplaceListingPlan> */
+    public function listPlansStubbedListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListPlansStubbedListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListPlansStubbedListing::class] = new Operator\Apps\ListPlansStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans());
-        }
-
-        return $this->operator[Operator\Apps\ListPlansStubbedListing::class]->call($perPage, $page);
+        return $this->operators->apps👷ListPlansStubbedListing()->call($perPage, $page);
     }
 
-    public function listAccountsForPlanStubbed(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlanStubbed(int $planId, string $direction, string $sort, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListAccountsForPlanStubbed::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListAccountsForPlanStubbed::class] = new Operator\Apps\ListAccountsForPlanStubbed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans🌀PlanId🌀Accounts());
-        }
-
-        return $this->operator[Operator\Apps\ListAccountsForPlanStubbed::class]->call($planId, $direction, $sort, $perPage, $page);
+        return $this->operators->apps👷ListAccountsForPlanStubbed()->call($planId, $direction, $sort, $perPage, $page);
     }
 
-    public function listAccountsForPlanStubbedListing(int $planId, string $direction, string $sort, int $perPage, int $page): Schema\MarketplacePurchase
+    /** @return iterable<Schema\MarketplacePurchase> */
+    public function listAccountsForPlanStubbedListing(int $planId, string $direction, string $sort, int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListAccountsForPlanStubbedListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListAccountsForPlanStubbedListing::class] = new Operator\Apps\ListAccountsForPlanStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans🌀PlanId🌀Accounts());
-        }
-
-        return $this->operator[Operator\Apps\ListAccountsForPlanStubbedListing::class]->call($planId, $direction, $sort, $perPage, $page);
+        return $this->operators->apps👷ListAccountsForPlanStubbedListing()->call($planId, $direction, $sort, $perPage, $page);
     }
 
-    public function getOrgInstallation(string $org): Schema\Installation
+    /** @return */
+    public function getOrgInstallation(string $org): Installation|array
     {
-        if (array_key_exists(Operator\Apps\GetOrgInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetOrgInstallation::class] = new Operator\Apps\GetOrgInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Installation());
-        }
-
-        return $this->operator[Operator\Apps\GetOrgInstallation::class]->call($org);
+        return $this->operators->apps👷GetOrgInstallation()->call($org);
     }
 
-    public function getRepoInstallation(string $owner, string $repo): Schema\Installation|Schema\BasicError
+    /** @return */
+    public function getRepoInstallation(string $owner, string $repo): Installation|BasicError|array
     {
-        if (array_key_exists(Operator\Apps\GetRepoInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetRepoInstallation::class] = new Operator\Apps\GetRepoInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Installation());
-        }
-
-        return $this->operator[Operator\Apps\GetRepoInstallation::class]->call($owner, $repo);
+        return $this->operators->apps👷GetRepoInstallation()->call($owner, $repo);
     }
 
-    public function listInstallationsForAuthenticatedUser(int $perPage, int $page): Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
+    public function listInstallationsForAuthenticatedUser(int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
-        if (array_key_exists(Operator\Apps\ListInstallationsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallationsForAuthenticatedUser::class] = new Operator\Apps\ListInstallationsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Installations());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallationsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->apps👷ListInstallationsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listInstallationReposForAuthenticatedUser(int $installationId, int $perPage, int $page): Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|array{code:int} */
+    public function listInstallationReposForAuthenticatedUser(int $installationId, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        if (array_key_exists(Operator\Apps\ListInstallationReposForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListInstallationReposForAuthenticatedUser::class] = new Operator\Apps\ListInstallationReposForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀InstallationId🌀Repositories());
-        }
-
-        return $this->operator[Operator\Apps\ListInstallationReposForAuthenticatedUser::class]->call($installationId, $perPage, $page);
+        return $this->operators->apps👷ListInstallationReposForAuthenticatedUser()->call($installationId, $perPage, $page);
     }
 
-    public function addRepoToInstallationForAuthenticatedUser(int $installationId, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function addRepoToInstallationForAuthenticatedUser(int $installationId, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Apps\AddRepoToInstallationForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\AddRepoToInstallationForAuthenticatedUser::class] = new Operator\Apps\AddRepoToInstallationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀InstallationId🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Apps\AddRepoToInstallationForAuthenticatedUser::class]->call($installationId, $repositoryId);
+        return $this->operators->apps👷AddRepoToInstallationForAuthenticatedUser()->call($installationId, $repositoryId);
     }
 
-    public function removeRepoFromInstallationForAuthenticatedUser(int $installationId, int $repositoryId): ResponseInterface
+    /** @return array{code:int} */
+    public function removeRepoFromInstallationForAuthenticatedUser(int $installationId, int $repositoryId): array
     {
-        if (array_key_exists(Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser::class] = new Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀InstallationId🌀Repositories🌀RepositoryId());
-        }
-
-        return $this->operator[Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser::class]->call($installationId, $repositoryId);
+        return $this->operators->apps👷RemoveRepoFromInstallationForAuthenticatedUser()->call($installationId, $repositoryId);
     }
 
-    public function listSubscriptionsForAuthenticatedUser(int $perPage, int $page): Schema\UserMarketplacePurchase
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    public function listSubscriptionsForAuthenticatedUser(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUser::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases());
-        }
-
-        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUser::class]->call($perPage, $page);
+        return $this->operators->apps👷ListSubscriptionsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    public function listSubscriptionsForAuthenticatedUserListing(int $perPage, int $page): Schema\UserMarketplacePurchase
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    public function listSubscriptionsForAuthenticatedUserListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases());
-        }
-
-        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserListing::class]->call($perPage, $page);
+        return $this->operators->apps👷ListSubscriptionsForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    public function listSubscriptionsForAuthenticatedUserStubbed(int $perPage, int $page): Schema\UserMarketplacePurchase
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    public function listSubscriptionsForAuthenticatedUserStubbed(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases🌀Stubbed());
-        }
-
-        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbed::class]->call($perPage, $page);
+        return $this->operators->apps👷ListSubscriptionsForAuthenticatedUserStubbed()->call($perPage, $page);
     }
 
-    public function listSubscriptionsForAuthenticatedUserStubbedListing(int $perPage, int $page): Schema\UserMarketplacePurchase
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    public function listSubscriptionsForAuthenticatedUserStubbedListing(int $perPage, int $page): iterable
     {
-        if (array_key_exists(Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class] = new Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases🌀Stubbed());
-        }
-
-        return $this->operator[Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing::class]->call($perPage, $page);
+        return $this->operators->apps👷ListSubscriptionsForAuthenticatedUserStubbedListing()->call($perPage, $page);
     }
 
-    public function getUserInstallation(string $username): Schema\Installation
+    /** @return */
+    public function getUserInstallation(string $username): Installation|array
     {
-        if (array_key_exists(Operator\Apps\GetUserInstallation::class, $this->operator) === false) {
-            $this->operator[Operator\Apps\GetUserInstallation::class] = new Operator\Apps\GetUserInstallation($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Installation());
-        }
-
-        return $this->operator[Operator\Apps\GetUserInstallation::class]->call($username);
+        return $this->operators->apps👷GetUserInstallation()->call($username);
     }
 }

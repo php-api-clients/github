@@ -19,14 +19,12 @@ final readonly class ListInstallations
 {
     public const OPERATION_ID    = 'apps/list-installations';
     public const OPERATION_MATCH = 'GET /app/installations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations $hydrator)
     {
     }
 
-    /** @return Observable<Schema\Installation> */
+    /** @return iterable<Schema\Installation> */
     public function call(string $since, string $outdated, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListInstallations($this->responseSchemaValidator, $this->hydrator, $since, $outdated, $perPage, $page);

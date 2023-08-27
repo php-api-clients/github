@@ -18,14 +18,12 @@ final readonly class DeleteInstallation
 {
     public const OPERATION_ID    = 'apps/delete-installation';
     public const OPERATION_MATCH = 'DELETE /app/installations/{installation_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/app/installations/{installation_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\App\Installations\InstallationId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(int $installationId): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\DeleteInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

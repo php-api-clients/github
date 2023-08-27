@@ -19,8 +19,6 @@ final readonly class CreateDeploymentStatus
 {
     public const OPERATION_ID    = 'repos/create-deployment-status';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Deployments\DeploymentId\Statuses $hydrator)
     {

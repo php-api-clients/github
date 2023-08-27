@@ -19,14 +19,12 @@ final readonly class CheckAutomatedSecurityFixes
 {
     public const OPERATION_ID    = 'repos/check-automated-security-fixes';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/automated-security-fixes';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/automated-security-fixes';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\AutomatedSecurityFixes $hydrator)
     {
     }
 
-    /** @return (Schema\CheckAutomatedSecurityFixes | array{code: int}) */
+    /** @return Schema\CheckAutomatedSecurityFixes|array{code:int} */
     public function call(string $owner, string $repo): \ApiClients\Client\GitHub\Schema\CheckAutomatedSecurityFixes|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Repos\CheckAutomatedSecurityFixes($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

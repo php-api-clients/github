@@ -4,102 +4,68 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Hydrators;
-use ApiClients\Client\GitHub\Operator;
+use ApiClients\Client\GitHub\Operators;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use League\OpenAPIValidation\Schema\SchemaValidator;
-use Psr\Http\Message\ResponseInterface;
-use React\Http\Browser;
-
-use function array_key_exists;
+use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
+use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One;
 
 final class Interactions
 {
-    private array $operator = [];
-
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators)
+    public function __construct(private Operators $operators)
     {
     }
 
-    public function getRestrictionsForOrg(string $org): Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok
+    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One */
+    public function getRestrictionsForOrg(string $org): InteractionLimitResponse|One|array
     {
-        if (array_key_exists(Operator\Interactions\GetRestrictionsForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\GetRestrictionsForOrg::class] = new Operator\Interactions\GetRestrictionsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\GetRestrictionsForOrg::class]->call($org);
+        return $this->operators->interactions👷GetRestrictionsForOrg()->call($org);
     }
 
-    public function setRestrictionsForOrg(string $org, array $params): Schema\InteractionLimitResponse
+    /** @return */
+    public function setRestrictionsForOrg(string $org, array $params): InteractionLimitResponse|array
     {
-        if (array_key_exists(Operator\Interactions\SetRestrictionsForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\SetRestrictionsForOrg::class] = new Operator\Interactions\SetRestrictionsForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\SetRestrictionsForOrg::class]->call($org, $params);
+        return $this->operators->interactions👷SetRestrictionsForOrg()->call($org, $params);
     }
 
-    public function removeRestrictionsForOrg(string $org): ResponseInterface
+    /** @return array{code:int} */
+    public function removeRestrictionsForOrg(string $org): array
     {
-        if (array_key_exists(Operator\Interactions\RemoveRestrictionsForOrg::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\RemoveRestrictionsForOrg::class] = new Operator\Interactions\RemoveRestrictionsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\RemoveRestrictionsForOrg::class]->call($org);
+        return $this->operators->interactions👷RemoveRestrictionsForOrg()->call($org);
     }
 
-    public function getRestrictionsForRepo(string $owner, string $repo): Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok
+    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One */
+    public function getRestrictionsForRepo(string $owner, string $repo): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One|array
     {
-        if (array_key_exists(Operator\Interactions\GetRestrictionsForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\GetRestrictionsForRepo::class] = new Operator\Interactions\GetRestrictionsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\GetRestrictionsForRepo::class]->call($owner, $repo);
+        return $this->operators->interactions👷GetRestrictionsForRepo()->call($owner, $repo);
     }
 
-    public function setRestrictionsForRepo(string $owner, string $repo, array $params): Schema\InteractionLimitResponse
+    /** @return Schema\InteractionLimitResponse|array{code:int} */
+    public function setRestrictionsForRepo(string $owner, string $repo, array $params): InteractionLimitResponse|array
     {
-        if (array_key_exists(Operator\Interactions\SetRestrictionsForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\SetRestrictionsForRepo::class] = new Operator\Interactions\SetRestrictionsForRepo($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\SetRestrictionsForRepo::class]->call($owner, $repo, $params);
+        return $this->operators->interactions👷SetRestrictionsForRepo()->call($owner, $repo, $params);
     }
 
-    public function removeRestrictionsForRepo(string $owner, string $repo): ResponseInterface
+    /** @return array{code:int} */
+    public function removeRestrictionsForRepo(string $owner, string $repo): array
     {
-        if (array_key_exists(Operator\Interactions\RemoveRestrictionsForRepo::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\RemoveRestrictionsForRepo::class] = new Operator\Interactions\RemoveRestrictionsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\RemoveRestrictionsForRepo::class]->call($owner, $repo);
+        return $this->operators->interactions👷RemoveRestrictionsForRepo()->call($owner, $repo);
     }
 
-    public function getRestrictionsForAuthenticatedUser(): Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok
+    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array{code:int} */
+    public function getRestrictionsForAuthenticatedUser(): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array
     {
-        if (array_key_exists(Operator\Interactions\GetRestrictionsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\GetRestrictionsForAuthenticatedUser::class] = new Operator\Interactions\GetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\GetRestrictionsForAuthenticatedUser::class]->call();
+        return $this->operators->interactions👷GetRestrictionsForAuthenticatedUser()->call();
     }
 
-    public function setRestrictionsForAuthenticatedUser(array $params): Schema\InteractionLimitResponse
+    /** @return */
+    public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
     {
-        if (array_key_exists(Operator\Interactions\SetRestrictionsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\SetRestrictionsForAuthenticatedUser::class] = new Operator\Interactions\SetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\SetRestrictionsForAuthenticatedUser::class]->call($params);
+        return $this->operators->interactions👷SetRestrictionsForAuthenticatedUser()->call($params);
     }
 
-    public function removeRestrictionsForAuthenticatedUser(): ResponseInterface
+    /** @return array{code:int} */
+    public function removeRestrictionsForAuthenticatedUser(): array
     {
-        if (array_key_exists(Operator\Interactions\RemoveRestrictionsForAuthenticatedUser::class, $this->operator) === false) {
-            $this->operator[Operator\Interactions\RemoveRestrictionsForAuthenticatedUser::class] = new Operator\Interactions\RemoveRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
-        }
-
-        return $this->operator[Operator\Interactions\RemoveRestrictionsForAuthenticatedUser::class]->call();
+        return $this->operators->interactions👷RemoveRestrictionsForAuthenticatedUser()->call();
     }
 }

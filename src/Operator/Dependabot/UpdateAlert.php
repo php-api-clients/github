@@ -19,8 +19,6 @@ final readonly class UpdateAlert
 {
     public const OPERATION_ID    = 'dependabot/update-alert';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/dependabot/alerts/{alert_number}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts\AlertNumber $hydrator)
     {

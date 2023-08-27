@@ -20,14 +20,12 @@ final readonly class AddCopilotForBusinessSeatsForUsers
 {
     public const OPERATION_ID    = 'copilot/add-copilot-for-business-seats-for-users';
     public const OPERATION_MATCH = 'POST /orgs/{org}/copilot/billing/selected_users';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/copilot/billing/selected_users';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedUsers $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|array{code:int} */
     public function call(string $org, array $params): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Copilot\AddCopilotForBusinessSeatsForUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

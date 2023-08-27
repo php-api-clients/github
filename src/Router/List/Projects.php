@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\List;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -19,9 +17,6 @@ use function count;
 
 final class Projects
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
@@ -29,7 +24,6 @@ final class Projects
     /** @return iterable<Schema\Project> */
     public function listForOrgListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
@@ -55,14 +49,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Orgs\Org\Projects::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Orgs\Org\Projects::class] = $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Orgs\Org\Projects::class]);
-            $items    = $operator->call($arguments['org'], $arguments['state'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Projects());
+            $items    = [...$operator->call($arguments['org'], $arguments['state'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -70,10 +60,9 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return (iterable<Schema\SimpleUser> | array{code: int}) */
+    /** @return iterable<Schema\SimpleUser>|array{code:int} */
     public function listCollaboratorsListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -99,14 +88,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Projects\ProjectId\Collaborators::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Projects\ProjectId\Collaborators::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListCollaboratorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\ProjectId\Collaborators::class]);
-            $items    = $operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListCollaboratorsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Collaborators());
+            $items    = [...$operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -114,10 +99,9 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return (iterable<Schema\ProjectColumn> | array{code: int}) */
+    /** @return iterable<Schema\ProjectColumn>|array{code:int} */
     public function listColumnsListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: project_id');
@@ -137,14 +121,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Projects\ProjectId\Columns::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Projects\ProjectId\Columns::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListColumnsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\ProjectId\Columns::class]);
-            $items    = $operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListColumnsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀ProjectId🌀Columns());
+            $items    = [...$operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -155,7 +135,6 @@ final class Projects
     /** @return iterable<Schema\Project> */
     public function listForUserListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: username');
@@ -181,14 +160,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Users\Username\Projects::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Users\Username\Projects::class] = $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Projects();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Users\Username\Projects::class]);
-            $items    = $operator->call($arguments['username'], $arguments['state'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Projects());
+            $items    = [...$operator->call($arguments['username'], $arguments['state'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -196,10 +171,9 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return (iterable<Schema\ProjectCard> | array{code: int}) */
+    /** @return iterable<Schema\ProjectCard>|array{code:int} */
     public function listCardsListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: column_id');
@@ -225,14 +199,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Projects\Columns\ColumnId\Cards::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Projects\Columns\ColumnId\Cards::class] = $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListCardsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Projects\Columns\ColumnId\Cards::class]);
-            $items    = $operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListCardsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Projects🌀Columns🌀ColumnId🌀Cards());
+            $items    = [...$operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -243,7 +213,6 @@ final class Projects
     /** @return iterable<Schema\Project> */
     public function listForRepoListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
@@ -275,14 +244,10 @@ final class Projects
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\Repos\Owner\Repo\Projects::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Projects::class] = $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Projects\ListForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\Repos\Owner\Repo\Projects::class]);
-            $items    = $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Projects\ListForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Projects());
+            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

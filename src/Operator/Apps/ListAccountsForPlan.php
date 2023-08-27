@@ -19,14 +19,12 @@ final readonly class ListAccountsForPlan
 {
     public const OPERATION_ID    = 'apps/list-accounts-for-plan';
     public const OPERATION_MATCH = 'GET /marketplace_listing/plans/{plan_id}/accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/plans/{plan_id}/accounts';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\MarketplaceListing\Plans\PlanId\Accounts $hydrator)
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<Schema\MarketplacePurchase> */
     public function call(int $planId, string $direction, string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Apps\ListAccountsForPlan($this->responseSchemaValidator, $this->hydrator, $planId, $direction, $sort, $perPage, $page);

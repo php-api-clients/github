@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operator\Interactions;
 
 use ApiClients\Client\GitHub\Hydrator;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -20,14 +21,12 @@ final readonly class GetRestrictionsForOrg
 {
     public const OPERATION_ID    = 'interactions/get-restrictions-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/interaction-limits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/interaction-limits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\InteractionLimits $hydrator)
     {
     }
 
-    /** @return */
+    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One */
     public function call(string $org): InteractionLimitResponse|One|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Interactions\GetRestrictionsForOrg($this->responseSchemaValidator, $this->hydrator, $org);

@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'meta/get';
     public const OPERATION_MATCH = 'GET /meta';
-    private const METHOD         = 'GET';
-    private const PATH           = '/meta';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Meta $hydrator)
     {
     }
 
-    /** @return (Schema\ApiOverview | array{code: int}) */
+    /** @return Schema\ApiOverview|array{code:int} */
     public function call(): ApiOverview|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Meta\Get($this->responseSchemaValidator, $this->hydrator);

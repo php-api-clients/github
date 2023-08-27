@@ -20,14 +20,12 @@ final readonly class Get
 {
     public const OPERATION_ID    = 'emojis/get';
     public const OPERATION_MATCH = 'GET /emojis';
-    private const METHOD         = 'GET';
-    private const PATH           = '/emojis';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Emojis $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
     public function call(): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Emojis\Get($this->responseSchemaValidator, $this->hydrator);

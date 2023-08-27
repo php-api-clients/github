@@ -64,7 +64,7 @@ final class ListBranchesForHeadCommit
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BranchShort::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\BranchShort::class, $body);
+                                return $this->hydrators->hydrateObject(Schema\BranchShort::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

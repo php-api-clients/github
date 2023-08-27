@@ -18,14 +18,12 @@ final readonly class Follow
 {
     public const OPERATION_ID    = 'users/follow';
     public const OPERATION_MATCH = 'PUT /user/following/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/following/{username}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Following\Username $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $username): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Users\Follow($this->responseSchemaValidator, $this->hydrator, $username);

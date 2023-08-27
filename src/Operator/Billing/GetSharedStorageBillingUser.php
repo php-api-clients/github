@@ -19,8 +19,6 @@ final readonly class GetSharedStorageBillingUser
 {
     public const OPERATION_ID    = 'billing/get-shared-storage-billing-user';
     public const OPERATION_MATCH = 'GET /users/{username}/settings/billing/shared-storage';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/settings/billing/shared-storage';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\Settings\Billing\SharedStorage $hydrator)
     {

@@ -19,8 +19,6 @@ final readonly class CreateLabel
 {
     public const OPERATION_ID    = 'issues/create-label';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/labels';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Repos\Owner\Repo\Labels $hydrator)
     {

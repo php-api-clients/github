@@ -20,14 +20,12 @@ final readonly class DeleteForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/delete-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/codespaces/{codespace_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/codespaces/{codespace_name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\User\Codespaces\CodespaceName $hydrator)
     {
     }
 
-    /** @return (Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json | array{code: int}) */
+    /** @return Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
     public function call(string $codespaceName): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Codespaces\DeleteForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

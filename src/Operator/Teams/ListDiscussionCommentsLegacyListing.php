@@ -19,8 +19,6 @@ final readonly class ListDiscussionCommentsLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-discussion-comments-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/discussions/{discussion_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Teams\TeamId\Discussions\DiscussionNumber\Comments $hydrator)
     {

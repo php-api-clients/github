@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Router\List;
 
-use ApiClients\Client\GitHub\Hydrator;
 use ApiClients\Client\GitHub\Hydrators;
 use ApiClients\Client\GitHub\Operator;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use EventSauce\ObjectHydrator\ObjectMapper;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -19,17 +17,13 @@ use function count;
 
 final class Apps
 {
-    /** @var array<class-string, ObjectMapper> */
-    private array $hydrator = [];
-
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return (iterable<Schema\IntegrationInstallationRequest> | array{code: int}) */
+    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int} */
     public function listInstallationRequestsForAuthenticatedAppListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -43,14 +37,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\App\InstallationRequests::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\App\InstallationRequests::class] = $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\InstallationRequests::class]);
-            $items    = $operator->call($arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListInstallationRequestsForAuthenticatedAppListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀InstallationRequests());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -61,7 +51,6 @@ final class Apps
     /** @return iterable<Schema\Installation> */
     public function listInstallationsListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
@@ -87,14 +76,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\App\Installations::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\App\Installations::class] = $this->hydrators->getObjectMapperOperation🌀App🌀Installations();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListInstallationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\App\Installations::class]);
-            $items    = $operator->call($arguments['since'], $arguments['outdated'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListInstallationsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Installations());
+            $items    = [...$operator->call($arguments['since'], $arguments['outdated'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -105,7 +90,6 @@ final class Apps
     /** @return iterable<Schema\MarketplaceListingPlan> */
     public function listPlansListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -119,14 +103,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Plans::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListPlansListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans::class]);
-            $items    = $operator->call($arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListPlansListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -134,10 +114,9 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function listSubscriptionsForAuthenticatedUserListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -151,14 +130,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\MarketplacePurchases::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class] = $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\MarketplacePurchases::class]);
-            $items    = $operator->call($arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -169,7 +144,6 @@ final class Apps
     /** @return iterable<Schema\MarketplaceListingPlan> */
     public function listPlansStubbedListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -183,14 +157,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Stubbed\Plans::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\MarketplaceListing\Stubbed\Plans::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListPlansStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Stubbed\Plans::class]);
-            $items    = $operator->call($arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListPlansStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -198,10 +168,9 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return (iterable<Schema\UserMarketplacePurchase> | array{code: int}) */
+    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function listSubscriptionsForAuthenticatedUserStubbedListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
@@ -215,14 +184,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\User\MarketplacePurchases\Stubbed::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\User\MarketplacePurchases\Stubbed::class] = $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases🌀Stubbed();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\User\MarketplacePurchases\Stubbed::class]);
-            $items    = $operator->call($arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListSubscriptionsForAuthenticatedUserStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀MarketplacePurchases🌀Stubbed());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -233,7 +198,6 @@ final class Apps
     /** @return iterable<Schema\MarketplacePurchase> */
     public function listAccountsForPlanListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('plan_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: plan_id');
@@ -265,14 +229,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Plans\PlanId\Accounts::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans\PlanId\Accounts::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans🌀PlanId🌀Accounts();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListAccountsForPlanListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Plans\PlanId\Accounts::class]);
-            $items    = $operator->call($arguments['plan_id'], $arguments['direction'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListAccountsForPlanListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Plans🌀PlanId🌀Accounts());
+            $items    = [...$operator->call($arguments['plan_id'], $arguments['direction'], $arguments['sort'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -283,7 +243,6 @@ final class Apps
     /** @return iterable<Schema\MarketplacePurchase> */
     public function listAccountsForPlanStubbedListing(array $params): iterable
     {
-        $matched   = true;
         $arguments = [];
         if (array_key_exists('plan_id', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: plan_id');
@@ -315,14 +274,10 @@ final class Apps
 
         $arguments['page'] = $params['page'];
         unset($params['page']);
-        if (array_key_exists(Hydrator\Operation\MarketplaceListing\Stubbed\Plans\PlanId\Accounts::class, $this->hydrator) === false) {
-            $this->hydrator[Hydrator\Operation\MarketplaceListing\Stubbed\Plans\PlanId\Accounts::class] = $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans🌀PlanId🌀Accounts();
-        }
-
         $arguments['page'] = 1;
         do {
-            $operator = new Operator\Apps\ListAccountsForPlanStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrator[Hydrator\Operation\MarketplaceListing\Stubbed\Plans\PlanId\Accounts::class]);
-            $items    = $operator->call($arguments['plan_id'], $arguments['direction'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
+            $operator = new Operator\Apps\ListAccountsForPlanStubbedListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀MarketplaceListing🌀Stubbed🌀Plans🌀PlanId🌀Accounts());
+            $items    = [...$operator->call($arguments['plan_id'], $arguments['direction'], $arguments['sort'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

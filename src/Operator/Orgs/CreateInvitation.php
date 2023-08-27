@@ -19,8 +19,6 @@ final readonly class CreateInvitation
 {
     public const OPERATION_ID    = 'orgs/create-invitation';
     public const OPERATION_MATCH = 'POST /orgs/{org}/invitations';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/invitations';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\Invitations $hydrator)
     {

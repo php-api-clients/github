@@ -19,14 +19,12 @@ final readonly class ListCommitsListing
 {
     public const OPERATION_ID    = 'gists/list-commits';
     public const OPERATION_MATCH = 'LIST /gists/{gist_id}/commits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/commits';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Gists\GistId\Commits $hydrator)
     {
     }
 
-    /** @return (iterable<Schema\GistCommit> | array{code: int}) */
+    /** @return iterable<Schema\GistCommit>|array{code:int} */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Gists\ListCommitsListing($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

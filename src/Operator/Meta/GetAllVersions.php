@@ -18,8 +18,6 @@ final readonly class GetAllVersions
 {
     public const OPERATION_ID    = 'meta/get-all-versions';
     public const OPERATION_MATCH = 'GET /versions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/versions';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Versions $hydrator)
     {

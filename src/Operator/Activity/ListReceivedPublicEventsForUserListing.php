@@ -19,8 +19,6 @@ final readonly class ListReceivedPublicEventsForUserListing
 {
     public const OPERATION_ID    = 'activity/list-received-public-events-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/received_events/public';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/received_events/public';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Users\Username\ReceivedEvents\Public_ $hydrator)
     {

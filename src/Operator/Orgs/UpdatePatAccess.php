@@ -18,14 +18,12 @@ final readonly class UpdatePatAccess
 {
     public const OPERATION_ID    = 'orgs/update-pat-access';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-tokens/{pat_id}';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-tokens/{pat_id}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId $hydrator)
     {
     }
 
-    /** @return array{code: int} */
+    /** @return array{code:int} */
     public function call(string $org, int $patId, array $params): array
     {
         $operation = new \ApiClients\Client\GitHub\Operation\Orgs\UpdatePatAccess($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patId);
