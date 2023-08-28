@@ -12,7 +12,7 @@ use function strtolower;
 
 final class WebHooks implements WebHooksInterface
 {
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly Hydrators $hydrator)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly Internal\Hydrators $hydrator)
     {
     }
 

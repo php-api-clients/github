@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repos\UpdateInformationAboutPagesSite\Request;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Repos\UpdateInformationAboutPagesSite\Request\ApplicationJson\Source;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\Repos\UpdateInformationAboutPagesSite\Request\ApplicationJson\Source;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 

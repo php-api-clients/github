@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequest;
@@ -16,7 +16,7 @@ use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 
 final class Pulls
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -32,7 +32,7 @@ final class Pulls
         return $this->operators->pulls👷ListListing()->call($owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\PullRequest */
     public function create(string $owner, string $repo, array $params): PullRequest|array
     {
         return $this->operators->pulls👷Create()->call($owner, $repo, $params);
@@ -50,7 +50,7 @@ final class Pulls
         return $this->operators->pulls👷ListReviewCommentsForRepoListing()->call($owner, $repo, $sort, $direction, $since, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReviewComment */
     public function getReviewComment(string $owner, string $repo, int $commentId): PullRequestReviewComment|array
     {
         return $this->operators->pulls👷GetReviewComment()->call($owner, $repo, $commentId);
@@ -62,7 +62,7 @@ final class Pulls
         return $this->operators->pulls👷DeleteReviewComment()->call($owner, $repo, $commentId);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReviewComment */
     public function updateReviewComment(string $owner, string $repo, int $commentId, array $params): PullRequestReviewComment|array
     {
         return $this->operators->pulls👷UpdateReviewComment()->call($owner, $repo, $commentId, $params);
@@ -74,7 +74,7 @@ final class Pulls
         return $this->operators->pulls👷Get()->call($owner, $repo, $pullNumber);
     }
 
-    /** @return */
+    /** @return Schema\PullRequest */
     public function update(string $owner, string $repo, int $pullNumber, array $params): PullRequest|array
     {
         return $this->operators->pulls👷Update()->call($owner, $repo, $pullNumber, $params);
@@ -92,13 +92,13 @@ final class Pulls
         return $this->operators->pulls👷ListReviewCommentsListing()->call($owner, $repo, $pullNumber, $direction, $since, $sort, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReviewComment */
     public function createReviewComment(string $owner, string $repo, int $pullNumber, array $params): PullRequestReviewComment|array
     {
         return $this->operators->pulls👷CreateReviewComment()->call($owner, $repo, $pullNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReviewComment */
     public function createReplyForReviewComment(string $owner, string $repo, int $pullNumber, int $commentId, array $params): PullRequestReviewComment|array
     {
         return $this->operators->pulls👷CreateReplyForReviewComment()->call($owner, $repo, $pullNumber, $commentId, $params);
@@ -134,13 +134,13 @@ final class Pulls
         return $this->operators->pulls👷CheckIfMerged()->call($owner, $repo, $pullNumber);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestMergeResult */
     public function merge(string $owner, string $repo, int $pullNumber, array $params): PullRequestMergeResult|array
     {
         return $this->operators->pulls👷Merge()->call($owner, $repo, $pullNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReviewRequest */
     public function listRequestedReviewers(string $owner, string $repo, int $pullNumber): PullRequestReviewRequest|array
     {
         return $this->operators->pulls👷ListRequestedReviewers()->call($owner, $repo, $pullNumber);
@@ -152,7 +152,7 @@ final class Pulls
         return $this->operators->pulls👷RequestReviewers()->call($owner, $repo, $pullNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestSimple */
     public function removeRequestedReviewers(string $owner, string $repo, int $pullNumber, array $params): PullRequestSimple|array
     {
         return $this->operators->pulls👷RemoveRequestedReviewers()->call($owner, $repo, $pullNumber, $params);
@@ -170,25 +170,25 @@ final class Pulls
         return $this->operators->pulls👷ListReviewsListing()->call($owner, $repo, $pullNumber, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function createReview(string $owner, string $repo, int $pullNumber, array $params): PullRequestReview|array
     {
         return $this->operators->pulls👷CreateReview()->call($owner, $repo, $pullNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function getReview(string $owner, string $repo, int $pullNumber, int $reviewId): PullRequestReview|array
     {
         return $this->operators->pulls👷GetReview()->call($owner, $repo, $pullNumber, $reviewId);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function updateReview(string $owner, string $repo, int $pullNumber, int $reviewId, array $params): PullRequestReview|array
     {
         return $this->operators->pulls👷UpdateReview()->call($owner, $repo, $pullNumber, $reviewId, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function deletePendingReview(string $owner, string $repo, int $pullNumber, int $reviewId): PullRequestReview|array
     {
         return $this->operators->pulls👷DeletePendingReview()->call($owner, $repo, $pullNumber, $reviewId);
@@ -206,19 +206,19 @@ final class Pulls
         return $this->operators->pulls👷ListCommentsForReviewListing()->call($owner, $repo, $pullNumber, $reviewId, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function dismissReview(string $owner, string $repo, int $pullNumber, int $reviewId, array $params): PullRequestReview|array
     {
         return $this->operators->pulls👷DismissReview()->call($owner, $repo, $pullNumber, $reviewId, $params);
     }
 
-    /** @return */
+    /** @return Schema\PullRequestReview */
     public function submitReview(string $owner, string $repo, int $pullNumber, int $reviewId, array $params): PullRequestReview|array
     {
         return $this->operators->pulls👷SubmitReview()->call($owner, $repo, $pullNumber, $reviewId, $params);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json */
     public function updateBranch(string $owner, string $repo, int $pullNumber, array $params): Json|array
     {
         return $this->operators->pulls👷UpdateBranch()->call($owner, $repo, $pullNumber, $params);

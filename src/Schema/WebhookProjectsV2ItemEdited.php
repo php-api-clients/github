@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookProjectsV2ItemEdited\Changes;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\WebhookProjectsV2ItemEdited\Changes;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 

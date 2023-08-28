@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One;
 
 final class Interactions
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -21,7 +21,7 @@ final class Interactions
         return $this->operators->interactions👷GetRestrictionsForOrg()->call($org);
     }
 
-    /** @return */
+    /** @return Schema\InteractionLimitResponse */
     public function setRestrictionsForOrg(string $org, array $params): InteractionLimitResponse|array
     {
         return $this->operators->interactions👷SetRestrictionsForOrg()->call($org, $params);
@@ -57,7 +57,7 @@ final class Interactions
         return $this->operators->interactions👷GetRestrictionsForAuthenticatedUser()->call();
     }
 
-    /** @return */
+    /** @return Schema\InteractionLimitResponse */
     public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
     {
         return $this->operators->interactions👷SetRestrictionsForAuthenticatedUser()->call($params);

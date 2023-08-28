@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Import;
 use ApiClients\Client\GitHub\Schema\Migration;
@@ -12,7 +12,7 @@ use ApiClients\Client\GitHub\Schema\PorterAuthor;
 
 final class Migrations
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -28,13 +28,13 @@ final class Migrations
         return $this->operators->migrations👷ListForOrgListing()->call($org, $exclude, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Migration */
     public function startForOrg(string $org, array $params): Migration|array
     {
         return $this->operators->migrations👷StartForOrg()->call($org, $params);
     }
 
-    /** @return */
+    /** @return Schema\Migration */
     public function getStatusForOrg(string $org, int $migrationId, array $exclude): Migration|array
     {
         return $this->operators->migrations👷GetStatusForOrg()->call($org, $migrationId, $exclude);
@@ -46,7 +46,7 @@ final class Migrations
         return $this->operators->migrations👷DownloadArchiveForOrg()->call($org, $migrationId);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<string> */
     public function downloadArchiveForOrgStreaming(string $org, int $migrationId): iterable
     {
         return $this->operators->migrations👷DownloadArchiveForOrgStreaming()->call($org, $migrationId);
@@ -76,13 +76,13 @@ final class Migrations
         return $this->operators->migrations👷ListReposForOrgListing()->call($org, $migrationId, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Import */
     public function getImportStatus(string $owner, string $repo): Import|array
     {
         return $this->operators->migrations👷GetImportStatus()->call($owner, $repo);
     }
 
-    /** @return */
+    /** @return Schema\Import */
     public function startImport(string $owner, string $repo, array $params): Import|array
     {
         return $this->operators->migrations👷StartImport()->call($owner, $repo, $params);
@@ -94,7 +94,7 @@ final class Migrations
         return $this->operators->migrations👷CancelImport()->call($owner, $repo);
     }
 
-    /** @return */
+    /** @return Schema\Import */
     public function updateImport(string $owner, string $repo, array $params): Import|array
     {
         return $this->operators->migrations👷UpdateImport()->call($owner, $repo, $params);
@@ -106,7 +106,7 @@ final class Migrations
         return $this->operators->migrations👷GetCommitAuthors()->call($owner, $repo, $since);
     }
 
-    /** @return */
+    /** @return Schema\PorterAuthor */
     public function mapCommitAuthor(string $owner, string $repo, int $authorId, array $params): PorterAuthor|array
     {
         return $this->operators->migrations👷MapCommitAuthor()->call($owner, $repo, $authorId, $params);
@@ -118,7 +118,7 @@ final class Migrations
         return $this->operators->migrations👷GetLargeFiles()->call($owner, $repo);
     }
 
-    /** @return */
+    /** @return Schema\Import */
     public function setLfsPreference(string $owner, string $repo, array $params): Import|array
     {
         return $this->operators->migrations👷SetLfsPreference()->call($owner, $repo, $params);

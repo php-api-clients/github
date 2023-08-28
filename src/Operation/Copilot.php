@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
@@ -14,17 +14,17 @@ use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response
 
 final class Copilot
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
-    /** @return */
+    /** @return Schema\CopilotOrganizationDetails */
     public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails|array
     {
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok */
     public function listCopilotSeats(string $org, int $page, int $perPage): Ok|array
     {
         return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);

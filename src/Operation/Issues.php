@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Issue;
@@ -15,7 +15,7 @@ use ApiClients\Client\GitHub\Schema\Milestone;
 
 final class Issues
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -73,7 +73,7 @@ final class Issues
         return $this->operators->issues👷ListForRepoListing()->call($owner, $repo, $milestone, $assignee, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Issue */
     public function create(string $owner, string $repo, array $params): Issue|array
     {
         return $this->operators->issues👷Create()->call($owner, $repo, $params);
@@ -91,7 +91,7 @@ final class Issues
         return $this->operators->issues👷ListCommentsForRepoListing()->call($owner, $repo, $direction, $since, $sort, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\IssueComment */
     public function getComment(string $owner, string $repo, int $commentId): IssueComment|array
     {
         return $this->operators->issues👷GetComment()->call($owner, $repo, $commentId);
@@ -103,7 +103,7 @@ final class Issues
         return $this->operators->issues👷DeleteComment()->call($owner, $repo, $commentId);
     }
 
-    /** @return */
+    /** @return Schema\IssueComment */
     public function updateComment(string $owner, string $repo, int $commentId, array $params): IssueComment|array
     {
         return $this->operators->issues👷UpdateComment()->call($owner, $repo, $commentId, $params);
@@ -121,7 +121,7 @@ final class Issues
         return $this->operators->issues👷ListEventsForRepoListing()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\IssueEvent */
     public function getEvent(string $owner, string $repo, int $eventId): IssueEvent|array
     {
         return $this->operators->issues👷GetEvent()->call($owner, $repo, $eventId);
@@ -133,19 +133,19 @@ final class Issues
         return $this->operators->issues👷Get()->call($owner, $repo, $issueNumber);
     }
 
-    /** @return */
+    /** @return Schema\Issue|Schema\BasicError */
     public function update(string $owner, string $repo, int $issueNumber, array $params): Issue|BasicError|array
     {
         return $this->operators->issues👷Update()->call($owner, $repo, $issueNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\Issue */
     public function addAssignees(string $owner, string $repo, int $issueNumber, array $params): Issue|array
     {
         return $this->operators->issues👷AddAssignees()->call($owner, $repo, $issueNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\Issue */
     public function removeAssignees(string $owner, string $repo, int $issueNumber, array $params): Issue|array
     {
         return $this->operators->issues👷RemoveAssignees()->call($owner, $repo, $issueNumber, $params);
@@ -169,7 +169,7 @@ final class Issues
         return $this->operators->issues👷ListCommentsListing()->call($owner, $repo, $issueNumber, $since, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\IssueComment */
     public function createComment(string $owner, string $repo, int $issueNumber, array $params): IssueComment|array
     {
         return $this->operators->issues👷CreateComment()->call($owner, $repo, $issueNumber, $params);
@@ -259,13 +259,13 @@ final class Issues
         return $this->operators->issues👷ListLabelsForRepoListing()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Label */
     public function createLabel(string $owner, string $repo, array $params): Label|array
     {
         return $this->operators->issues👷CreateLabel()->call($owner, $repo, $params);
     }
 
-    /** @return */
+    /** @return Schema\Label */
     public function getLabel(string $owner, string $repo, string $name): Label|array
     {
         return $this->operators->issues👷GetLabel()->call($owner, $repo, $name);
@@ -277,7 +277,7 @@ final class Issues
         return $this->operators->issues👷DeleteLabel()->call($owner, $repo, $name);
     }
 
-    /** @return */
+    /** @return Schema\Label */
     public function updateLabel(string $owner, string $repo, string $name, array $params): Label|array
     {
         return $this->operators->issues👷UpdateLabel()->call($owner, $repo, $name, $params);
@@ -295,13 +295,13 @@ final class Issues
         return $this->operators->issues👷ListMilestonesListing()->call($owner, $repo, $state, $sort, $direction, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Milestone */
     public function createMilestone(string $owner, string $repo, array $params): Milestone|array
     {
         return $this->operators->issues👷CreateMilestone()->call($owner, $repo, $params);
     }
 
-    /** @return */
+    /** @return Schema\Milestone */
     public function getMilestone(string $owner, string $repo, int $milestoneNumber): Milestone|array
     {
         return $this->operators->issues👷GetMilestone()->call($owner, $repo, $milestoneNumber);
@@ -313,7 +313,7 @@ final class Issues
         return $this->operators->issues👷DeleteMilestone()->call($owner, $repo, $milestoneNumber);
     }
 
-    /** @return */
+    /** @return Schema\Milestone */
     public function updateMilestone(string $owner, string $repo, int $milestoneNumber, array $params): Milestone|array
     {
         return $this->operators->issues👷UpdateMilestone()->call($owner, $repo, $milestoneNumber, $params);

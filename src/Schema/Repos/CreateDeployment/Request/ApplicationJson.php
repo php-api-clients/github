@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repos\CreateDeployment\Request;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\Repos\CreateDeployment\Request\ApplicationJson\Payload;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 

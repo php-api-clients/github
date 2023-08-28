@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet4464FF28\Tiet6C0A72F8\Tiet0B27A7A8;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\PendingDeployment\Reviewers\Reviewer;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\PendingDeployment\Reviewers\Reviewer;
 use ApiClients\Client\GitHub\Schema;
 
 abstract readonly class Tiet10B71D36

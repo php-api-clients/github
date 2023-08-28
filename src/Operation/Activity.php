@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Feed;
@@ -19,7 +19,7 @@ use ApiClients\Client\GitHub\Schema\ThreadSubscription;
 
 final class Activity
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -35,7 +35,7 @@ final class Activity
         return $this->operators->activity👷ListPublicEventsListing()->call($perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\Feed */
     public function getFeeds(): Feed|array
     {
         return $this->operators->activity👷GetFeeds()->call();
@@ -167,7 +167,7 @@ final class Activity
         return $this->operators->activity👷GetRepoSubscription()->call($owner, $repo);
     }
 
-    /** @return */
+    /** @return Schema\RepositorySubscription */
     public function setRepoSubscription(string $owner, string $repo, array $params): RepositorySubscription|array
     {
         return $this->operators->activity👷SetRepoSubscription()->call($owner, $repo, $params);

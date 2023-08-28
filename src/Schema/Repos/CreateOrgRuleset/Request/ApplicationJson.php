@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repos\CreateOrgRuleset\Request;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\Repos\CreateOrgRuleset\Request\ApplicationJson\Conditions;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\Repos\CreateOrgRuleset\Request\ApplicationJson\Conditions;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 

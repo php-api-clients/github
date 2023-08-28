@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Package;
 use ApiClients\Client\GitHub\Schema\PackageVersion;
 
 final class Packages
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -33,7 +33,7 @@ final class Packages
         return $this->operators->packages👷ListPackagesForOrganizationListing()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    /** @return */
+    /** @return Schema\Package */
     public function getPackageForOrganization(string $packageType, string $packageName, string $org): Package|array
     {
         return $this->operators->packages👷GetPackageForOrganization()->call($packageType, $packageName, $org);
@@ -63,7 +63,7 @@ final class Packages
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrgListing()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    /** @return */
+    /** @return Schema\PackageVersion */
     public function getPackageVersionForOrganization(string $packageType, string $packageName, string $org, int $packageVersionId): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForOrganization()->call($packageType, $packageName, $org, $packageVersionId);
@@ -99,7 +99,7 @@ final class Packages
         return $this->operators->packages👷ListPackagesForAuthenticatedUserListing()->call($packageType, $visibility, $page, $perPage);
     }
 
-    /** @return */
+    /** @return Schema\Package */
     public function getPackageForAuthenticatedUser(string $packageType, string $packageName): Package|array
     {
         return $this->operators->packages👷GetPackageForAuthenticatedUser()->call($packageType, $packageName);
@@ -129,7 +129,7 @@ final class Packages
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    /** @return */
+    /** @return Schema\PackageVersion */
     public function getPackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
@@ -165,7 +165,7 @@ final class Packages
         return $this->operators->packages👷ListPackagesForUserListing()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    /** @return */
+    /** @return Schema\Package */
     public function getPackageForUser(string $packageType, string $packageName, string $username): Package|array
     {
         return $this->operators->packages👷GetPackageForUser()->call($packageType, $packageName, $username);
@@ -189,7 +189,7 @@ final class Packages
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByUser()->call($packageType, $packageName, $username);
     }
 
-    /** @return */
+    /** @return Schema\PackageVersion */
     public function getPackageVersionForUser(string $packageType, string $packageName, int $packageVersionId, string $username): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForUser()->call($packageType, $packageName, $packageVersionId, $username);

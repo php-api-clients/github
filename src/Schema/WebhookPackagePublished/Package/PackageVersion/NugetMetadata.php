@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookPackagePublished\Package\PackageVersion;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value;
 use ApiClients\Client\GitHub\Schema;
 
 final readonly class NugetMetadata

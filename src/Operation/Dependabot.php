@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Operation;
 
-use ApiClients\Client\GitHub\Operators;
+use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\DependabotAlert;
 use ApiClients\Client\GitHub\Schema\DependabotPublicKey;
@@ -16,7 +16,7 @@ use ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret;
 
 final class Dependabot
 {
-    public function __construct(private Operators $operators)
+    public function __construct(private Internal\Operators $operators)
     {
     }
 
@@ -32,19 +32,19 @@ final class Dependabot
         return $this->operators->dependabot👷ListAlertsForOrg()->call($org, $state, $severity, $ecosystem, $package, $scope, $before, $after, $last, $sort, $direction, $first, $perPage);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Dependabot\ListOrgSecrets\Response\ApplicationJson\Ok */
     public function listOrgSecrets(string $org, int $perPage, int $page): Ok|array
     {
         return $this->operators->dependabot👷ListOrgSecrets()->call($org, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\DependabotPublicKey */
     public function getOrgPublicKey(string $org): DependabotPublicKey|array
     {
         return $this->operators->dependabot👷GetOrgPublicKey()->call($org);
     }
 
-    /** @return */
+    /** @return Schema\OrganizationDependabotSecret */
     public function getOrgSecret(string $org, string $secretName): OrganizationDependabotSecret|array
     {
         return $this->operators->dependabot👷GetOrgSecret()->call($org, $secretName);
@@ -62,7 +62,7 @@ final class Dependabot
         return $this->operators->dependabot👷DeleteOrgSecret()->call($org, $secretName);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Dependabot\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json */
     public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Json|array
     {
         return $this->operators->dependabot👷ListSelectedReposForOrgSecret()->call($org, $secretName, $page, $perPage);
@@ -104,25 +104,25 @@ final class Dependabot
         return $this->operators->dependabot👷GetAlert()->call($owner, $repo, $alertNumber);
     }
 
-    /** @return */
+    /** @return Schema\DependabotAlert */
     public function updateAlert(string $owner, string $repo, int $alertNumber, array $params): DependabotAlert|array
     {
         return $this->operators->dependabot👷UpdateAlert()->call($owner, $repo, $alertNumber, $params);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok */
     public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok|array
     {
         return $this->operators->dependabot👷ListRepoSecrets()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return */
+    /** @return Schema\DependabotPublicKey */
     public function getRepoPublicKey(string $owner, string $repo): DependabotPublicKey|array
     {
         return $this->operators->dependabot👷GetRepoPublicKey()->call($owner, $repo);
     }
 
-    /** @return */
+    /** @return Schema\DependabotSecret */
     public function getRepoSecret(string $owner, string $repo, string $secretName): DependabotSecret|array
     {
         return $this->operators->dependabot👷GetRepoSecret()->call($owner, $repo, $secretName);

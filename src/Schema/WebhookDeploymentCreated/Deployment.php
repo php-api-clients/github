@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookDeploymentCreated;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookDeploymentCreated\Deployment\Payload;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\WebhookDeploymentCreated\Deployment\Payload;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 

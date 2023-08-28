@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookRepositoryRulesetEdited\Changes\Rules;
 
-use ApiClients\Client\GitHub\Attribute\CastUnionToType\Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Rule;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Rule;
 use ApiClients\Client\GitHub\Schema;
 
 final readonly class Updated
