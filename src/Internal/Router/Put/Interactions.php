@@ -41,7 +41,7 @@ final class Interactions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\InteractionLimitResponse */
+    /** @return */
     public function setRestrictionsForOrg(array $params): InteractionLimitResponse|array
     {
         $arguments = [];
@@ -56,7 +56,7 @@ final class Interactions
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\InteractionLimitResponse */
+    /** @return */
     public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
     {
         $operator = new Internal\Operator\Interactions\SetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());

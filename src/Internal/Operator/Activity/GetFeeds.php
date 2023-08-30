@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Activity;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Feed;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetFeeds
     {
     }
 
-    /** @return Schema\Feed */
+    /** @return */
     public function call(): Feed|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\GetFeeds($this->responseSchemaValidator, $this->hydrator);

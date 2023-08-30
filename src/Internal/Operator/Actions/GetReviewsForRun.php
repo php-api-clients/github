@@ -24,7 +24,7 @@ final readonly class GetReviewsForRun
     {
     }
 
-    /** @return iterable<Schema\EnvironmentApprovals> */
+    /** @return Observable<Schema\EnvironmentApprovals> */
     public function call(string $owner, string $repo, int $runId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetReviewsForRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

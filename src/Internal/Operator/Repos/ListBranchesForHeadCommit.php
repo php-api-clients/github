@@ -24,7 +24,7 @@ final readonly class ListBranchesForHeadCommit
     {
     }
 
-    /** @return iterable<Schema\BranchShort> */
+    /** @return Observable<Schema\BranchShort> */
     public function call(string $owner, string $repo, string $commitSha): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListBranchesForHeadCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);

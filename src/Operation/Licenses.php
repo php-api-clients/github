@@ -15,13 +15,13 @@ final class Licenses
     {
     }
 
-    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
+    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
     public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): iterable
     {
         return $this->operators->licenses👷GetAllCommonlyUsed()->call($featured, $perPage, $page);
     }
 
-    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
+    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
     public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): iterable
     {
         return $this->operators->licenses👷GetAllCommonlyUsedListing()->call($featured, $perPage, $page);
@@ -33,7 +33,7 @@ final class Licenses
         return $this->operators->licenses👷Get()->call($license);
     }
 
-    /** @return Schema\LicenseContent */
+    /** @return */
     public function getForRepo(string $owner, string $repo): LicenseContent|array
     {
         return $this->operators->licenses👷GetForRepo()->call($owner, $repo);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\CodeScanning;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeScanningAnalysisDeletion;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class DeleteAnalysis
     {
     }
 
-    /** @return Schema\CodeScanningAnalysisDeletion */
+    /** @return */
     public function call(string $owner, string $repo, int $analysisId, string|null $confirmDelete): CodeScanningAnalysisDeletion|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\DeleteAnalysis($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $analysisId, $confirmDelete);

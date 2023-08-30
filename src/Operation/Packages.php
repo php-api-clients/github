@@ -15,25 +15,25 @@ final class Packages
     {
     }
 
-    /** @return iterable<Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForOrganization(string $org): iterable
     {
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForOrganization()->call($org);
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForOrganization(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForOrganization()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForOrganizationListing(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForOrganizationListing()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    /** @return Schema\Package */
+    /** @return */
     public function getPackageForOrganization(string $packageType, string $packageName, string $org): Package|array
     {
         return $this->operators->packages👷GetPackageForOrganization()->call($packageType, $packageName, $org);
@@ -51,19 +51,19 @@ final class Packages
         return $this->operators->packages👷RestorePackageForOrg()->call($packageType, $packageName, $org, $token);
     }
 
-    /** @return iterable<Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrg(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrg()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    /** @return iterable<Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrgListing(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrgListing()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    /** @return Schema\PackageVersion */
+    /** @return */
     public function getPackageVersionForOrganization(string $packageType, string $packageName, string $org, int $packageVersionId): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForOrganization()->call($packageType, $packageName, $org, $packageVersionId);
@@ -81,25 +81,25 @@ final class Packages
         return $this->operators->packages👷RestorePackageVersionForOrg()->call($packageType, $packageName, $org, $packageVersionId);
     }
 
-    /** @return iterable<Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForAuthenticatedUser(): iterable
     {
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForAuthenticatedUser()->call();
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForAuthenticatedUser(string $packageType, string $visibility, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForAuthenticatedUser()->call($packageType, $visibility, $page, $perPage);
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForAuthenticatedUserListing(string $packageType, string $visibility, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForAuthenticatedUserListing()->call($packageType, $visibility, $page, $perPage);
     }
 
-    /** @return Schema\Package */
+    /** @return */
     public function getPackageForAuthenticatedUser(string $packageType, string $packageName): Package|array
     {
         return $this->operators->packages👷GetPackageForAuthenticatedUser()->call($packageType, $packageName);
@@ -117,19 +117,19 @@ final class Packages
         return $this->operators->packages👷RestorePackageForAuthenticatedUser()->call($packageType, $packageName, $token);
     }
 
-    /** @return iterable<Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUser()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    /** @return iterable<Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    /** @return Schema\PackageVersion */
+    /** @return */
     public function getPackageVersionForAuthenticatedUser(string $packageType, string $packageName, int $packageVersionId): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
@@ -147,25 +147,25 @@ final class Packages
         return $this->operators->packages👷RestorePackageVersionForAuthenticatedUser()->call($packageType, $packageName, $packageVersionId);
     }
 
-    /** @return iterable<Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForUser(string $username): iterable
     {
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForUser()->call($username);
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForUser(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForUser()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function listPackagesForUserListing(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable
     {
         return $this->operators->packages👷ListPackagesForUserListing()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    /** @return Schema\Package */
+    /** @return */
     public function getPackageForUser(string $packageType, string $packageName, string $username): Package|array
     {
         return $this->operators->packages👷GetPackageForUser()->call($packageType, $packageName, $username);
@@ -183,13 +183,13 @@ final class Packages
         return $this->operators->packages👷RestorePackageForUser()->call($packageType, $packageName, $username, $token);
     }
 
-    /** @return iterable<Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByUser(string $packageType, string $packageName, string $username): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByUser()->call($packageType, $packageName, $username);
     }
 
-    /** @return Schema\PackageVersion */
+    /** @return */
     public function getPackageVersionForUser(string $packageType, string $packageName, int $packageVersionId, string $username): PackageVersion|array
     {
         return $this->operators->packages👷GetPackageVersionForUser()->call($packageType, $packageName, $packageVersionId, $username);

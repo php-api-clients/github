@@ -24,7 +24,7 @@ final readonly class ListListing
     {
     }
 
-    /** @return iterable<Schema\Issue>|array{code:int} */
+    /** @return Observable<Schema\Issue>|array{code:int} */
     public function call(string $labels, string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListListing($this->responseSchemaValidator, $this->hydrator, $labels, $since, $collab, $orgs, $owned, $pulls, $filter, $state, $sort, $direction, $perPage, $page);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\PageBuildStatus;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class RequestPagesBuild
     {
     }
 
-    /** @return Schema\PageBuildStatus */
+    /** @return */
     public function call(string $owner, string $repo): PageBuildStatus|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\RequestPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

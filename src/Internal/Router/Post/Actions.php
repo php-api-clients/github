@@ -23,7 +23,7 @@ final class Actions
     {
     }
 
-    /** @return Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created */
+    /** @return */
     public function generateRunnerJitconfigForOrg(array $params): Created|array
     {
         $arguments = [];
@@ -38,7 +38,7 @@ final class Actions
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\AuthenticationToken */
+    /** @return */
     public function createRegistrationTokenForOrg(array $params): AuthenticationToken|array
     {
         $arguments = [];
@@ -53,7 +53,7 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\AuthenticationToken */
+    /** @return */
     public function createRemoveTokenForOrg(array $params): AuthenticationToken|array
     {
         $arguments = [];
@@ -68,7 +68,7 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function createRepoVariable(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -89,7 +89,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function createEnvironmentVariable(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -110,7 +110,7 @@ final class Actions
         return $operator->call($arguments['repository_id'], $arguments['environment_name'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function createOrgVariable(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -125,7 +125,7 @@ final class Actions
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function addCustomLabelsToSelfHostedRunnerForOrg(array $params): Ok|array
     {
         $arguments = [];
@@ -146,7 +146,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_id'], $params);
     }
 
-    /** @return Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created */
+    /** @return */
     public function generateRunnerJitconfigForRepo(array $params): Created|array
     {
         $arguments = [];
@@ -167,7 +167,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\AuthenticationToken */
+    /** @return */
     public function createRegistrationTokenForRepo(array $params): AuthenticationToken|array
     {
         $arguments = [];
@@ -188,7 +188,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Schema\AuthenticationToken */
+    /** @return */
     public function createRemoveTokenForRepo(array $params): AuthenticationToken|array
     {
         $arguments = [];
@@ -209,7 +209,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function reRunJobForWorkflowRun(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -236,7 +236,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['job_id'], $params);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function addCustomLabelsToSelfHostedRunnerForRepo(array $params): Ok|array
     {
         $arguments = [];
@@ -263,7 +263,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['runner_id'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function approveWorkflowRun(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -290,7 +290,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function cancelWorkflowRun(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -344,7 +344,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id'], $params);
     }
 
-    /** @return iterable<Schema\Deployment> */
+    /** @return Observable<Schema\Deployment> */
     public function reviewPendingDeploymentsForRun(array $params): iterable
     {
         $arguments = [];
@@ -371,7 +371,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function reRunWorkflow(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -398,7 +398,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function reRunWorkflowFailedJobs(array $params): EmptyObject|array
     {
         $arguments = [];

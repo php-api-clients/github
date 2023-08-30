@@ -21,7 +21,7 @@ final class Migrations
     {
     }
 
-    /** @return iterable<Schema\Migration>|array{code:int} */
+    /** @return Observable<Schema\Migration>|array{code:int} */
     public function listForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -42,7 +42,7 @@ final class Migrations
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Migration> */
+    /** @return Observable<Schema\Migration> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -96,7 +96,7 @@ final class Migrations
         return $operator->call($arguments['migration_id'], $arguments['exclude']);
     }
 
-    /** @return Schema\Migration */
+    /** @return */
     public function getStatusForOrg(array $params): Migration|array
     {
         $arguments = [];
@@ -123,7 +123,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id'], $arguments['exclude']);
     }
 
-    /** @return Schema\Import */
+    /** @return */
     public function getImportStatus(array $params): Import|array
     {
         $arguments = [];
@@ -159,7 +159,7 @@ final class Migrations
         return $operator->call($arguments['migration_id']);
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -207,7 +207,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id']);
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposForOrg(array $params): iterable
     {
         $arguments = [];
@@ -240,7 +240,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\PorterAuthor> */
+    /** @return Observable<Schema\PorterAuthor> */
     public function getCommitAuthors(array $params): iterable
     {
         $arguments = [];
@@ -267,7 +267,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['since']);
     }
 
-    /** @return iterable<Schema\PorterLargeFile> */
+    /** @return Observable<Schema\PorterLargeFile> */
     public function getLargeFiles(array $params): iterable
     {
         $arguments = [];

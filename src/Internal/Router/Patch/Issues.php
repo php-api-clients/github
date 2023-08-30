@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Client\GitHub\Schema\IssueComment;
@@ -24,7 +23,7 @@ final class Issues
     {
     }
 
-    /** @return Schema\Issue|Schema\BasicError */
+    /** @return */
     public function update(array $params): Issue|BasicError|array
     {
         $arguments = [];
@@ -51,7 +50,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return Schema\Label */
+    /** @return */
     public function updateLabel(array $params): Label|array
     {
         $arguments = [];
@@ -78,7 +77,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    /** @return Schema\Milestone */
+    /** @return */
     public function updateMilestone(array $params): Milestone|array
     {
         $arguments = [];
@@ -105,7 +104,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $params);
     }
 
-    /** @return Schema\IssueComment */
+    /** @return */
     public function updateComment(array $params): IssueComment|array
     {
         $arguments = [];

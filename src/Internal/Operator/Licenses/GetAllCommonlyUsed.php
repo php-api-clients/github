@@ -24,7 +24,7 @@ final readonly class GetAllCommonlyUsed
     {
     }
 
-    /** @return iterable<Schema\LicenseSimple>|array{code:int} */
+    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
     public function call(bool $featured, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\GetAllCommonlyUsed($this->responseSchemaValidator, $this->hydrator, $featured, $perPage, $page);

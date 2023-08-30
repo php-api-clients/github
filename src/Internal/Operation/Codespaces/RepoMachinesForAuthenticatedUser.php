@@ -32,18 +32,21 @@ final class RepoMachinesForAuthenticatedUser
     private string $location;
     /**IP for location auto-detection when proxying a request **/
     private string $clientIp;
+    /**The branch or commit to check for prebuild availability and devcontainer restrictions. **/
+    private string $ref;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $clientIp)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines $hydrator, string $owner, string $repo, string $location, string $clientIp, string $ref)
     {
         $this->owner    = $owner;
         $this->repo     = $repo;
         $this->location = $location;
         $this->clientIp = $clientIp;
+        $this->ref      = $ref;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{location}', '{client_ip}'], [$this->owner, $this->repo, $this->location, $this->clientIp], self::PATH . '?location={location}&client_ip={client_ip}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{location}', '{client_ip}', '{ref}'], [$this->owner, $this->repo, $this->location, $this->clientIp, $this->ref], self::PATH . '?location={location}&client_ip={client_ip}&ref={ref}'));
     }
 
     /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code: int} */

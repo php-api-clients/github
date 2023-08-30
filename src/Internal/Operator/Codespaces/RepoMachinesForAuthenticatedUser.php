@@ -26,9 +26,9 @@ final readonly class RepoMachinesForAuthenticatedUser
     }
 
     /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code:int} */
-    public function call(string $owner, string $repo, string $location, string $clientIp): Ok|array
+    public function call(string $owner, string $repo, string $location, string $clientIp, string $ref): Ok|array
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $location, $clientIp);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $location, $clientIp, $ref);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
             return $operation->createResponse($response);

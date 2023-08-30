@@ -24,7 +24,7 @@ final readonly class ListProjectsLegacy
     {
     }
 
-    /** @return iterable<Schema\TeamProject> */
+    /** @return Observable<Schema\TeamProject> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListProjectsLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

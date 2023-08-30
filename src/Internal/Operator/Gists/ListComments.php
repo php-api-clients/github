@@ -24,7 +24,7 @@ final readonly class ListComments
     {
     }
 
-    /** @return iterable<Schema\GistComment>|array{code:int} */
+    /** @return Observable<Schema\GistComment>|array{code:int} */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\ListComments($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

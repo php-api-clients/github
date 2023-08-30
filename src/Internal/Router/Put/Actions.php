@@ -57,7 +57,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['repository_id']);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function setCustomLabelsForSelfHostedRunnerForOrg(array $params): Ok|array
     {
         $arguments = [];
@@ -378,7 +378,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name'], $arguments['repository_id']);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function setCustomOidcSubClaimForRepo(array $params): EmptyObject|array
     {
         $arguments = [];
@@ -399,7 +399,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function setCustomLabelsForSelfHostedRunnerForRepo(array $params): Ok|array
     {
         $arguments = [];

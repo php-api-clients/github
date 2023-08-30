@@ -42,7 +42,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return Schema\OrgMembership */
+    /** @return */
     public function setMembershipForUser(array $params): OrgMembership|array
     {
         $arguments = [];

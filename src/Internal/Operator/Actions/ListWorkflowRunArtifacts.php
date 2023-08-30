@@ -26,9 +26,9 @@ final readonly class ListWorkflowRunArtifacts
     }
 
     /** @return Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json */
-    public function call(string $owner, string $repo, int $runId, int $perPage = 30, int $page = 1): Json|array
+    public function call(string $owner, string $repo, int $runId, string $name, int $perPage = 30, int $page = 1): Json|array
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListWorkflowRunArtifacts($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListWorkflowRunArtifacts($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $name, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
             return $operation->createResponse($response);

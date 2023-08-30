@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Import;
 use ApiClients\Client\GitHub\Schema\PorterAuthor;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -21,7 +20,7 @@ final class Migrations
     {
     }
 
-    /** @return Schema\Import */
+    /** @return */
     public function updateImport(array $params): Import|array
     {
         $arguments = [];
@@ -42,7 +41,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Import */
+    /** @return */
     public function setLfsPreference(array $params): Import|array
     {
         $arguments = [];
@@ -63,7 +62,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\PorterAuthor */
+    /** @return */
     public function mapCommitAuthor(array $params): PorterAuthor|array
     {
         $arguments = [];

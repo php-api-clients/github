@@ -24,7 +24,7 @@ final class CodeScanning
     {
     }
 
-    /** @return iterable<Schema\CodeScanningOrganizationAlertItems> */
+    /** @return Observable<Schema\CodeScanningOrganizationAlertItems> */
     public function listAlertsForOrg(array $params): iterable
     {
         $arguments = [];
@@ -99,7 +99,7 @@ final class CodeScanning
         return $operator->call($arguments['org'], $arguments['tool_name'], $arguments['tool_guid'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['severity'], $arguments['page'], $arguments['per_page'], $arguments['direction'], $arguments['sort']);
     }
 
-    /** @return iterable<Schema\CodeScanningAlertItems>|array{code:int} */
+    /** @return Observable<Schema\CodeScanningAlertItems>|array{code:int} */
     public function listAlertsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -174,7 +174,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tool_name'], $arguments['tool_guid'], $arguments['ref'], $arguments['state'], $arguments['severity'], $arguments['page'], $arguments['per_page'], $arguments['direction'], $arguments['sort']);
     }
 
-    /** @return iterable<Schema\CodeScanningAnalysis> */
+    /** @return Observable<Schema\CodeScanningAnalysis> */
     public function listRecentAnalyses(array $params): iterable
     {
         $arguments = [];
@@ -243,7 +243,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tool_name'], $arguments['tool_guid'], $arguments['ref'], $arguments['sarif_id'], $arguments['page'], $arguments['per_page'], $arguments['direction'], $arguments['sort']);
     }
 
-    /** @return Schema\CodeScanningDefaultSetup */
+    /** @return */
     public function getDefaultSetup(array $params): CodeScanningDefaultSetup|array
     {
         $arguments = [];
@@ -291,7 +291,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['alert_number']);
     }
 
-    /** @return Schema\CodeScanningAnalysis */
+    /** @return */
     public function getAnalysis(array $params): CodeScanningAnalysis|array
     {
         $arguments = [];
@@ -318,7 +318,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['analysis_id']);
     }
 
-    /** @return iterable<Schema\CodeScanningCodeqlDatabase> */
+    /** @return Observable<Schema\CodeScanningCodeqlDatabase> */
     public function listCodeqlDatabases(array $params): iterable
     {
         $arguments = [];
@@ -366,7 +366,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sarif_id']);
     }
 
-    /** @return iterable<Schema\CodeScanningAlertInstance> */
+    /** @return Observable<Schema\CodeScanningAlertInstance> */
     public function listAlertInstances(array $params): iterable
     {
         $arguments = [];

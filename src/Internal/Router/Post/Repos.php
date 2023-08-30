@@ -44,7 +44,7 @@ final class Repos
     {
     }
 
-    /** @return Schema\Repository */
+    /** @return */
     public function createInOrg(array $params): Repository|array
     {
         $arguments = [];
@@ -59,7 +59,7 @@ final class Repos
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\RepositoryRuleset */
+    /** @return */
     public function createOrgRuleset(array $params): RepositoryRuleset|array
     {
         $arguments = [];
@@ -74,7 +74,7 @@ final class Repos
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\PageBuildStatus */
+    /** @return */
     public function requestPagesBuild(array $params): PageBuildStatus|array
     {
         $arguments = [];
@@ -95,7 +95,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Schema\PageDeployment */
+    /** @return */
     public function createPagesDeployment(array $params): PageDeployment|array
     {
         $arguments = [];
@@ -116,7 +116,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\ReleaseNotesContent */
+    /** @return */
     public function generateReleaseNotes(array $params): ReleaseNotesContent|array
     {
         $arguments = [];
@@ -137,7 +137,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Status */
+    /** @return */
     public function createCommitStatus(array $params): Status|array
     {
         $arguments = [];
@@ -164,7 +164,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sha'], $params);
     }
 
-    /** @return Schema\TagProtection */
+    /** @return */
     public function createTagProtection(array $params): TagProtection|array
     {
         $arguments = [];
@@ -185,7 +185,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Autolink */
+    /** @return */
     public function createAutolink(array $params): Autolink|array
     {
         $arguments = [];
@@ -248,7 +248,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\FullRepository */
+    /** @return */
     public function createFork(array $params): FullRepository|array
     {
         $arguments = [];
@@ -269,7 +269,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Hook */
+    /** @return */
     public function createWebhook(array $params): Hook|array
     {
         $arguments = [];
@@ -290,7 +290,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\DeployKey */
+    /** @return */
     public function createDeployKey(array $params): DeployKey|array
     {
         $arguments = [];
@@ -353,7 +353,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Page */
+    /** @return */
     public function createPagesSite(array $params): Page|array
     {
         $arguments = [];
@@ -374,7 +374,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Release */
+    /** @return */
     public function createRelease(array $params): Release|array
     {
         $arguments = [];
@@ -395,7 +395,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\RepositoryRuleset */
+    /** @return */
     public function createRepoRuleset(array $params): RepositoryRuleset|array
     {
         $arguments = [];
@@ -416,7 +416,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\MinimalRepository */
+    /** @return */
     public function transfer(array $params): MinimalRepository|array
     {
         $arguments = [];
@@ -466,7 +466,7 @@ final class Repos
         return $operator->call($params);
     }
 
-    /** @return Schema\BranchWithProtection */
+    /** @return */
     public function renameBranch(array $params): BranchWithProtection|array
     {
         $arguments = [];
@@ -493,7 +493,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return Schema\CommitComment */
+    /** @return */
     public function createCommitComment(array $params): CommitComment|array
     {
         $arguments = [];
@@ -520,7 +520,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha'], $params);
     }
 
-    /** @return Schema\DeploymentStatus */
+    /** @return */
     public function createDeploymentStatus(array $params): DeploymentStatus|array
     {
         $arguments = [];
@@ -574,7 +574,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $params);
     }
 
-    /** @return Schema\DeploymentProtectionRule */
+    /** @return */
     public function createDeploymentProtectionRule(array $params): DeploymentProtectionRule|array
     {
         $arguments = [];
@@ -694,7 +694,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['name'], $arguments['label'], $params);
     }
 
-    /** @return Schema\ProtectedBranchAdminEnforced */
+    /** @return */
     public function setAdminBranchProtection(array $params): ProtectedBranchAdminEnforced|array
     {
         $arguments = [];
@@ -721,7 +721,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
     }
 
-    /** @return Schema\ProtectedBranchAdminEnforced */
+    /** @return */
     public function createCommitSignatureProtection(array $params): ProtectedBranchAdminEnforced|array
     {
         $arguments = [];
@@ -748,7 +748,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function addStatusCheckContexts(array $params): iterable
     {
         $arguments = [];
@@ -775,7 +775,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return iterable<Schema\Integration> */
+    /** @return Observable<Schema\Integration> */
     public function addAppAccessRestrictions(array $params): iterable
     {
         $arguments = [];
@@ -802,7 +802,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return iterable<Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function addTeamAccessRestrictions(array $params): iterable
     {
         $arguments = [];
@@ -829,7 +829,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function addUserAccessRestrictions(array $params): iterable
     {
         $arguments = [];
@@ -856,7 +856,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json */
+    /** @return */
     public function redeliverWebhookDelivery(array $params): \ApiClients\Client\GitHub\Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|array
     {
         $arguments = [];

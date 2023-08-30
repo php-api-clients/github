@@ -21,7 +21,7 @@ final class Gists
     {
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function list(array $params): iterable
     {
         $arguments = [];
@@ -48,7 +48,7 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listPublic(array $params): iterable
     {
         $arguments = [];
@@ -75,7 +75,7 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listStarred(array $params): iterable
     {
         $arguments = [];
@@ -117,7 +117,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return iterable<Schema\GistComment>|array{code:int} */
+    /** @return Observable<Schema\GistComment>|array{code:int} */
     public function listComments(array $params): iterable
     {
         $arguments = [];
@@ -144,7 +144,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    /** @return Observable<Schema\GistCommit>|array{code:int} */
     public function listCommits(array $params): iterable
     {
         $arguments = [];
@@ -171,7 +171,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    /** @return Observable<Schema\GistSimple>|array{code:int} */
     public function listForks(array $params): iterable
     {
         $arguments = [];
@@ -213,7 +213,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return Schema\GistSimple */
+    /** @return */
     public function getRevision(array $params): GistSimple|array
     {
         $arguments = [];
@@ -234,7 +234,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['sha']);
     }
 
-    /** @return iterable<Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];

@@ -24,7 +24,7 @@ final readonly class ListReposStarredByAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<Schema\Repository>|array{code:int} */
+    /** @return Observable<Schema\Repository>|array{code:int} */
     public function call(string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListReposStarredByAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $sort, $direction, $perPage, $page);

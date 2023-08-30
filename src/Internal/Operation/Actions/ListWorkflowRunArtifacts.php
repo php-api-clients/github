@@ -29,23 +29,26 @@ final class ListWorkflowRunArtifacts
     private string $repo;
     /**The unique identifier of the workflow run. **/
     private int $runId;
+    /**The name field of an artifact. When specified, only artifacts with this name will be returned. **/
+    private string $name;
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Artifacts $hydrator, string $owner, string $repo, int $runId, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Artifacts $hydrator, string $owner, string $repo, int $runId, string $name, int $perPage = 30, int $page = 1)
     {
         $this->owner   = $owner;
         $this->repo    = $repo;
         $this->runId   = $runId;
+        $this->name    = $name;
         $this->perPage = $perPage;
         $this->page    = $page;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->runId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}', '{name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->runId, $this->name, $this->perPage, $this->page], self::PATH . '?name={name}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json

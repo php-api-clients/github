@@ -20,7 +20,7 @@ final class Projects
     {
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -59,7 +59,7 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\SimpleUser>|array{code:int} */
+    /** @return Observable<Schema\SimpleUser>|array{code:int} */
     public function listCollaboratorsListing(array $params): iterable
     {
         $arguments = [];
@@ -98,7 +98,7 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\ProjectColumn>|array{code:int} */
+    /** @return Observable<Schema\ProjectColumn>|array{code:int} */
     public function listColumnsListing(array $params): iterable
     {
         $arguments = [];
@@ -131,7 +131,7 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -170,7 +170,7 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\ProjectCard>|array{code:int} */
+    /** @return Observable<Schema\ProjectCard>|array{code:int} */
     public function listCardsListing(array $params): iterable
     {
         $arguments = [];
@@ -209,7 +209,7 @@ final class Projects
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForRepoListing(array $params): iterable
     {
         $arguments = [];

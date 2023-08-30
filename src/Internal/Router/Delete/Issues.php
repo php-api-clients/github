@@ -48,7 +48,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return Schema\Issue */
+    /** @return */
     public function removeAssignees(array $params): Issue|array
     {
         $arguments = [];
@@ -183,7 +183,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
-    /** @return iterable<Schema\Label>|Schema\BasicError */
+    /** @return Observable<Schema\Label>|Schema\BasicError */
     public function removeLabel(array $params): iterable|BasicError
     {
         $arguments = [];

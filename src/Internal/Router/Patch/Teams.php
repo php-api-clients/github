@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamDiscussion;
 use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
 use ApiClients\Client\GitHub\Schema\TeamFull;
@@ -22,7 +21,7 @@ final class Teams
     {
     }
 
-    /** @return Schema\TeamFull */
+    /** @return */
     public function updateLegacy(array $params): TeamFull|array
     {
         $arguments = [];
@@ -37,7 +36,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $params);
     }
 
-    /** @return Schema\TeamFull */
+    /** @return */
     public function updateInOrg(array $params): TeamFull|array
     {
         $arguments = [];
@@ -58,7 +57,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $params);
     }
 
-    /** @return Schema\TeamDiscussion */
+    /** @return */
     public function updateDiscussionLegacy(array $params): TeamDiscussion|array
     {
         $arguments = [];
@@ -79,7 +78,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
-    /** @return Schema\TeamDiscussion */
+    /** @return */
     public function updateDiscussionInOrg(array $params): TeamDiscussion|array
     {
         $arguments = [];
@@ -106,7 +105,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $params);
     }
 
-    /** @return Schema\TeamDiscussionComment */
+    /** @return */
     public function updateDiscussionCommentLegacy(array $params): TeamDiscussionComment|array
     {
         $arguments = [];
@@ -133,7 +132,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number'], $params);
     }
 
-    /** @return Schema\TeamDiscussionComment */
+    /** @return */
     public function updateDiscussionCommentInOrg(array $params): TeamDiscussionComment|array
     {
         $arguments = [];

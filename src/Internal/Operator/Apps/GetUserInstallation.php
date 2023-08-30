@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Apps;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Installation;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetUserInstallation
     {
     }
 
-    /** @return Schema\Installation */
+    /** @return */
     public function call(string $username): Installation|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetUserInstallation($this->responseSchemaValidator, $this->hydrator, $username);

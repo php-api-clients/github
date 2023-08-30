@@ -30,13 +30,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -51,9 +52,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
     }
 
     /** @test */
@@ -66,13 +67,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -88,9 +90,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
     }
 
     /** @test */
@@ -103,13 +105,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -125,9 +128,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
     }
 
     /** @test */
@@ -140,13 +143,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -162,9 +166,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
     }
 
     /** @test */
@@ -177,13 +181,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -199,9 +204,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
     }
 
     /** @test */
@@ -213,13 +218,14 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['location']  = 'generated';
             $data['client_ip'] = 'generated';
+            $data['ref']       = 'generated';
 
             return $data;
         })([]));
@@ -234,9 +240,9 @@ final class RepoMachinesForAuthenticatedUserTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/codespaces/machines?location=generated&client_ip=generated&ref=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated');
+        $result = $client->operations()->codespaces()->repoMachinesForAuthenticatedUser('generated', 'generated', 'generated', 'generated', 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

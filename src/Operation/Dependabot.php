@@ -20,31 +20,31 @@ final class Dependabot
     {
     }
 
-    /** @return iterable<Schema\DependabotAlertWithRepository>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlertWithRepository>|array{code:int} */
     public function listAlertsForEnterprise(string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $first, int $perPage): iterable
     {
         return $this->operators->dependabot👷ListAlertsForEnterprise()->call($enterprise, $state, $severity, $ecosystem, $package, $scope, $before, $after, $last, $sort, $direction, $first, $perPage);
     }
 
-    /** @return iterable<Schema\DependabotAlertWithRepository>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlertWithRepository>|array{code:int} */
     public function listAlertsForOrg(string $org, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $first, int $perPage): iterable
     {
         return $this->operators->dependabot👷ListAlertsForOrg()->call($org, $state, $severity, $ecosystem, $package, $scope, $before, $after, $last, $sort, $direction, $first, $perPage);
     }
 
-    /** @return Schema\Operations\Dependabot\ListOrgSecrets\Response\ApplicationJson\Ok */
+    /** @return */
     public function listOrgSecrets(string $org, int $perPage, int $page): Ok|array
     {
         return $this->operators->dependabot👷ListOrgSecrets()->call($org, $perPage, $page);
     }
 
-    /** @return Schema\DependabotPublicKey */
+    /** @return */
     public function getOrgPublicKey(string $org): DependabotPublicKey|array
     {
         return $this->operators->dependabot👷GetOrgPublicKey()->call($org);
     }
 
-    /** @return Schema\OrganizationDependabotSecret */
+    /** @return */
     public function getOrgSecret(string $org, string $secretName): OrganizationDependabotSecret|array
     {
         return $this->operators->dependabot👷GetOrgSecret()->call($org, $secretName);
@@ -62,7 +62,7 @@ final class Dependabot
         return $this->operators->dependabot👷DeleteOrgSecret()->call($org, $secretName);
     }
 
-    /** @return Schema\Operations\Dependabot\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Json|array
     {
         return $this->operators->dependabot👷ListSelectedReposForOrgSecret()->call($org, $secretName, $page, $perPage);
@@ -86,13 +86,13 @@ final class Dependabot
         return $this->operators->dependabot👷RemoveSelectedRepoFromOrgSecret()->call($org, $secretName, $repositoryId);
     }
 
-    /** @return iterable<Schema\DependabotAlert>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlert>|array{code:int} */
     public function listAlertsForRepo(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $page, int $perPage, int $first): iterable
     {
         return $this->operators->dependabot👷ListAlertsForRepo()->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
     }
 
-    /** @return iterable<Schema\DependabotAlert>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlert>|array{code:int} */
     public function listAlertsForRepoListing(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $page, int $perPage, int $first): iterable
     {
         return $this->operators->dependabot👷ListAlertsForRepoListing()->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
@@ -104,25 +104,25 @@ final class Dependabot
         return $this->operators->dependabot👷GetAlert()->call($owner, $repo, $alertNumber);
     }
 
-    /** @return Schema\DependabotAlert */
+    /** @return */
     public function updateAlert(string $owner, string $repo, int $alertNumber, array $params): DependabotAlert|array
     {
         return $this->operators->dependabot👷UpdateAlert()->call($owner, $repo, $alertNumber, $params);
     }
 
-    /** @return Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok */
+    /** @return */
     public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok|array
     {
         return $this->operators->dependabot👷ListRepoSecrets()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return Schema\DependabotPublicKey */
+    /** @return */
     public function getRepoPublicKey(string $owner, string $repo): DependabotPublicKey|array
     {
         return $this->operators->dependabot👷GetRepoPublicKey()->call($owner, $repo);
     }
 
-    /** @return Schema\DependabotSecret */
+    /** @return */
     public function getRepoSecret(string $owner, string $repo, string $secretName): DependabotSecret|array
     {
         return $this->operators->dependabot👷GetRepoSecret()->call($owner, $repo, $secretName);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
 use InvalidArgumentException;
 
@@ -15,7 +14,6 @@ final class Nine
     {
     }
 
-    /** @return Schema\TeamDiscussionComment */
     public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment|array
     {
         if ($pathChunks[0] === '') {

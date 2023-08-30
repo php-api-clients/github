@@ -15,13 +15,13 @@ final class Interactions
     {
     }
 
-    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One */
+    /** @return */
     public function getRestrictionsForOrg(string $org): InteractionLimitResponse|One|array
     {
         return $this->operators->interactions👷GetRestrictionsForOrg()->call($org);
     }
 
-    /** @return Schema\InteractionLimitResponse */
+    /** @return */
     public function setRestrictionsForOrg(string $org, array $params): InteractionLimitResponse|array
     {
         return $this->operators->interactions👷SetRestrictionsForOrg()->call($org, $params);
@@ -33,7 +33,7 @@ final class Interactions
         return $this->operators->interactions👷RemoveRestrictionsForOrg()->call($org);
     }
 
-    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One */
+    /** @return */
     public function getRestrictionsForRepo(string $owner, string $repo): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One|array
     {
         return $this->operators->interactions👷GetRestrictionsForRepo()->call($owner, $repo);
@@ -57,7 +57,7 @@ final class Interactions
         return $this->operators->interactions👷GetRestrictionsForAuthenticatedUser()->call();
     }
 
-    /** @return Schema\InteractionLimitResponse */
+    /** @return */
     public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
     {
         return $this->operators->interactions👷SetRestrictionsForAuthenticatedUser()->call($params);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -21,7 +20,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return Schema\RepositoryAdvisory */
+    /** @return */
     public function createPrivateVulnerabilityReport(array $params): RepositoryAdvisory|array
     {
         $arguments = [];
@@ -42,7 +41,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\RepositoryAdvisory */
+    /** @return */
     public function createRepositoryAdvisory(array $params): RepositoryAdvisory|array
     {
         $arguments = [];
@@ -63,7 +62,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json */
+    /** @return */
     public function createRepositoryAdvisoryCveRequest(array $params): Json|array
     {
         $arguments = [];

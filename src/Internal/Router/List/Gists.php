@@ -20,7 +20,7 @@ final class Gists
     {
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listPublicListing(array $params): iterable
     {
         $arguments = [];
@@ -53,7 +53,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listStarredListing(array $params): iterable
     {
         $arguments = [];
@@ -86,7 +86,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listListing(array $params): iterable
     {
         $arguments = [];
@@ -119,7 +119,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\GistComment>|array{code:int} */
+    /** @return Observable<Schema\GistComment>|array{code:int} */
     public function listCommentsListing(array $params): iterable
     {
         $arguments = [];
@@ -152,7 +152,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    /** @return Observable<Schema\GistCommit>|array{code:int} */
     public function listCommitsListing(array $params): iterable
     {
         $arguments = [];
@@ -185,7 +185,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    /** @return Observable<Schema\GistSimple>|array{code:int} */
     public function listForksListing(array $params): iterable
     {
         $arguments = [];
@@ -218,7 +218,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUserListing(array $params): iterable
     {
         $arguments = [];

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Actions;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GenerateRunnerJitconfigForRepo
     {
     }
 
-    /** @return Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created */
+    /** @return */
     public function call(string $owner, string $repo, array $params): Created|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GenerateRunnerJitconfigForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

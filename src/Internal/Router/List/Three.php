@@ -14,7 +14,7 @@ final class Three
     {
     }
 
-    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int}|iterable<Schema\Installation>|iterable<Schema\BaseGist>|iterable<Schema\MarketplaceListingPlan>|iterable<Schema\SimpleUser>|iterable<Schema\Email>|iterable<Schema\GpgKey>|iterable<Schema\Issue>|iterable<Schema\Key>|iterable<Schema\UserMarketplacePurchase>|iterable<Schema\Migration>|iterable<Schema\OrganizationSimple>|iterable<Schema\Package>|iterable<Schema\Repository>|iterable<Schema\RepositoryInvitation>|iterable<Schema\SocialAccount>|iterable<Schema\SshSigningKey>|iterable<Schema\MinimalRepository>|iterable<Schema\TeamFull> */
+    /** @return Observable<Schema\IntegrationInstallationRequest>|array{code:int}|Observable<Schema\Installation>|Observable<Schema\BaseGist>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Email>|Observable<Schema\GpgKey>|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {

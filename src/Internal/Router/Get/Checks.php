@@ -23,7 +23,7 @@ final class Checks
     {
     }
 
-    /** @return Schema\CheckRun */
+    /** @return */
     public function get(array $params): CheckRun|array
     {
         $arguments = [];
@@ -50,7 +50,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id']);
     }
 
-    /** @return Schema\CheckSuite */
+    /** @return */
     public function getSuite(array $params): CheckSuite|array
     {
         $arguments = [];
@@ -77,7 +77,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_suite_id']);
     }
 
-    /** @return iterable<Schema\CheckAnnotation> */
+    /** @return Observable<Schema\CheckAnnotation> */
     public function listAnnotations(array $params): iterable
     {
         $arguments = [];
@@ -116,7 +116,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok */
+    /** @return */
     public function listForSuite(array $params): Ok|array
     {
         $arguments = [];
@@ -173,7 +173,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_suite_id'], $arguments['check_name'], $arguments['status'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Checks\ListForRef\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listForRef(array $params): Json|array
     {
         $arguments = [];
@@ -236,7 +236,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['check_name'], $arguments['status'], $arguments['app_id'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Checks\ListSuitesForRef\Response\ApplicationJson\Ok */
+    /** @return */
     public function listSuitesForRef(array $params): \ApiClients\Client\GitHub\Schema\Operations\Checks\ListSuitesForRef\Response\ApplicationJson\Ok|array
     {
         $arguments = [];

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Codespaces;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class ExportForAuthenticatedUser
     {
     }
 
-    /** @return Schema\CodespaceExportDetails */
+    /** @return */
     public function call(string $codespaceName): CodespaceExportDetails|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ExportForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

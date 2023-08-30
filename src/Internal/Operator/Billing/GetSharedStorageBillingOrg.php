@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Billing;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CombinedBillingUsage;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetSharedStorageBillingOrg
     {
     }
 
-    /** @return Schema\CombinedBillingUsage */
+    /** @return */
     public function call(string $org): CombinedBillingUsage|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetSharedStorageBillingOrg($this->responseSchemaValidator, $this->hydrator, $org);

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Apps;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\MarketplacePurchase;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetSubscriptionPlanForAccount
     {
     }
 
-    /** @return Schema\MarketplacePurchase */
+    /** @return */
     public function call(int $accountId): MarketplacePurchase|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetSubscriptionPlanForAccount($this->responseSchemaValidator, $this->hydrator, $accountId);

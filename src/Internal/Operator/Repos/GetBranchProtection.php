@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BranchProtection;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetBranchProtection
     {
     }
 
-    /** @return Schema\BranchProtection */
+    /** @return */
     public function call(string $owner, string $repo, string $branch): BranchProtection|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

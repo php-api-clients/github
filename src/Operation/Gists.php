@@ -16,13 +16,13 @@ final class Gists
     {
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function list(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷List_()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listListing(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListListing()->call($since, $perPage, $page);
@@ -34,25 +34,25 @@ final class Gists
         return $this->operators->gists👷Create()->call($params);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listPublic(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListPublic()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listPublicListing(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListPublicListing()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listStarred(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListStarred()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function listStarredListing(string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListStarredListing()->call($since, $perPage, $page);
@@ -70,19 +70,19 @@ final class Gists
         return $this->operators->gists👷Delete()->call($gistId);
     }
 
-    /** @return Schema\GistSimple */
+    /** @return */
     public function update(string $gistId, array $params): GistSimple|array
     {
         return $this->operators->gists👷Update()->call($gistId, $params);
     }
 
-    /** @return iterable<Schema\GistComment>|array{code:int} */
+    /** @return Observable<Schema\GistComment>|array{code:int} */
     public function listComments(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListComments()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<Schema\GistComment>|array{code:int} */
+    /** @return Observable<Schema\GistComment>|array{code:int} */
     public function listCommentsListing(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListCommentsListing()->call($gistId, $perPage, $page);
@@ -106,31 +106,31 @@ final class Gists
         return $this->operators->gists👷DeleteComment()->call($gistId, $commentId);
     }
 
-    /** @return Schema\GistComment */
+    /** @return */
     public function updateComment(string $gistId, int $commentId, array $params): GistComment|array
     {
         return $this->operators->gists👷UpdateComment()->call($gistId, $commentId, $params);
     }
 
-    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    /** @return Observable<Schema\GistCommit>|array{code:int} */
     public function listCommits(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListCommits()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<Schema\GistCommit>|array{code:int} */
+    /** @return Observable<Schema\GistCommit>|array{code:int} */
     public function listCommitsListing(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListCommitsListing()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    /** @return Observable<Schema\GistSimple>|array{code:int} */
     public function listForks(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForks()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<Schema\GistSimple>|array{code:int} */
+    /** @return Observable<Schema\GistSimple>|array{code:int} */
     public function listForksListing(string $gistId, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForksListing()->call($gistId, $perPage, $page);
@@ -160,19 +160,19 @@ final class Gists
         return $this->operators->gists👷Unstar()->call($gistId);
     }
 
-    /** @return Schema\GistSimple */
+    /** @return */
     public function getRevision(string $gistId, string $sha): GistSimple|array
     {
         return $this->operators->gists👷GetRevision()->call($gistId, $sha);
     }
 
-    /** @return iterable<Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUser(string $username, string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForUser()->call($username, $since, $perPage, $page);
     }
 
-    /** @return iterable<Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUserListing(string $username, string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForUserListing()->call($username, $since, $perPage, $page);

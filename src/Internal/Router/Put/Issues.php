@@ -20,7 +20,7 @@ final class Issues
     {
     }
 
-    /** @return iterable<Schema\Label>|Schema\BasicError */
+    /** @return Observable<Schema\Label>|Schema\BasicError */
     public function setLabels(array $params): iterable|BasicError
     {
         $arguments = [];

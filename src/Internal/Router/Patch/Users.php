@@ -17,7 +17,7 @@ final class Users
     {
     }
 
-    /** @return iterable<Schema\Email>|array{code:int} */
+    /** @return Observable<Schema\Email>|array{code:int} */
     public function setPrimaryEmailVisibilityForAuthenticatedUser(array $params): iterable
     {
         $operator = new Internal\Operator\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Email🌀Visibility());

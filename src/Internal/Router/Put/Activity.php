@@ -58,7 +58,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\RepositorySubscription */
+    /** @return */
     public function setRepoSubscription(array $params): RepositorySubscription|array
     {
         $arguments = [];

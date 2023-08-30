@@ -24,7 +24,7 @@ final readonly class ListReposWatchedByUserListing
     {
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListReposWatchedByUserListing($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

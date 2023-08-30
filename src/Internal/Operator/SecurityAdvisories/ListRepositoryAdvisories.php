@@ -24,7 +24,7 @@ final readonly class ListRepositoryAdvisories
     {
     }
 
-    /** @return iterable<Schema\RepositoryAdvisory> */
+    /** @return Observable<Schema\RepositoryAdvisory> */
     public function call(string $owner, string $repo, string $before, string $after, string $state, string $direction = 'desc', string $sort = 'created', int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\ListRepositoryAdvisories($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $before, $after, $state, $direction, $sort, $perPage);

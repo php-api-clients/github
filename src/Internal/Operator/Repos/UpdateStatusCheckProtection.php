@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class UpdateStatusCheckProtection
     {
     }
 
-    /** @return Schema\StatusCheckPolicy */
+    /** @return */
     public function call(string $owner, string $repo, string $branch, array $params): StatusCheckPolicy|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateStatusCheckProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

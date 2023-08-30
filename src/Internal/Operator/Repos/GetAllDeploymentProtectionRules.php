@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllDeploymentProtectionRules\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetAllDeploymentProtectionRules
     {
     }
 
-    /** @return Schema\Operations\Repos\GetAllDeploymentProtectionRules\Response\ApplicationJson\Ok */
+    /** @return */
     public function call(string $environmentName, string $repo, string $owner): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllDeploymentProtectionRules($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner);

@@ -20,7 +20,7 @@ final class Migrations
     {
     }
 
-    /** @return Schema\Migration */
+    /** @return */
     public function startForOrg(array $params): Migration|array
     {
         $arguments = [];

@@ -25,7 +25,7 @@ final readonly class ListPublicEventsForRepoNetworkListing
     {
     }
 
-    /** @return iterable<Schema\Event>|Schema\BasicError|array{code:int} */
+    /** @return Observable<Schema\Event>|Schema\BasicError|array{code:int} */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListPublicEventsForRepoNetworkListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

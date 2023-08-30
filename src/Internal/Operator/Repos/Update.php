@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\FullRepository;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -26,7 +25,7 @@ final readonly class Update
     {
     }
 
-    /** @return Schema\FullRepository|Schema\BasicError */
+    /** @return */
     public function call(string $owner, string $repo, array $params): FullRepository|BasicError|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

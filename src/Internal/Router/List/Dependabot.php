@@ -20,7 +20,7 @@ final class Dependabot
     {
     }
 
-    /** @return iterable<Schema\DependabotAlert>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlert>|array{code:int} */
     public function listAlertsForRepoListing(array $params): iterable
     {
         $arguments = [];

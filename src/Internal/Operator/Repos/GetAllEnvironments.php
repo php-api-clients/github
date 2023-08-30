@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetAllEnvironments
     {
     }
 
-    /** @return Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok */
+    /** @return */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllEnvironments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

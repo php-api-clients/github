@@ -24,7 +24,7 @@ final readonly class ListAlertsForRepoListing
     {
     }
 
-    /** @return iterable<Schema\DependabotAlert>|array{code:int} */
+    /** @return Observable<Schema\DependabotAlert>|array{code:int} */
     public function call(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\ListAlertsForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);

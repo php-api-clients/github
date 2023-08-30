@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ActionsCacheList;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json;
@@ -43,7 +42,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['repository_id']);
     }
 
-    /** @return Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function removeAllCustomLabelsFromSelfHostedRunnerForOrg(array $params): Json|array
     {
         $arguments = [];
@@ -343,7 +342,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name']);
     }
 
-    /** @return Schema\ActionsCacheList */
+    /** @return */
     public function deleteActionsCacheByKey(array $params): ActionsCacheList|array
     {
         $arguments = [];
@@ -376,7 +375,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function removeCustomLabelFromSelfHostedRunnerForOrg(array $params): Ok|array
     {
         $arguments = [];
@@ -457,7 +456,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name'], $arguments['repository_id']);
     }
 
-    /** @return Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function removeAllCustomLabelsFromSelfHostedRunnerForRepo(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json|array
     {
         $arguments = [];
@@ -511,7 +510,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
     }
 
-    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function removeCustomLabelFromSelfHostedRunnerForRepo(array $params): Ok|array
     {
         $arguments = [];

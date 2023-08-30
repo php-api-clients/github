@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Dependabot;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\DependabotAlert;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class UpdateAlert
     {
     }
 
-    /** @return Schema\DependabotAlert */
+    /** @return */
     public function call(string $owner, string $repo, int $alertNumber, array $params): DependabotAlert|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\UpdateAlert($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

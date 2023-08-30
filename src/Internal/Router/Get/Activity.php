@@ -28,7 +28,7 @@ final class Activity
     {
     }
 
-    /** @return iterable<Schema\Event>|array{code:int} */
+    /** @return Observable<Schema\Event>|array{code:int} */
     public function listPublicEvents(array $params): iterable
     {
         $arguments = [];
@@ -49,7 +49,7 @@ final class Activity
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Feed */
+    /** @return */
     public function getFeeds(array $params): Feed|array
     {
         $operator = new Internal\Operator\Activity\GetFeeds($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Feeds());
@@ -57,7 +57,7 @@ final class Activity
         return $operator->call();
     }
 
-    /** @return iterable<Schema\Thread>|array{code:int} */
+    /** @return Observable<Schema\Thread>|array{code:int} */
     public function listNotificationsForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -102,7 +102,7 @@ final class Activity
         return $operator->call($arguments['since'], $arguments['before'], $arguments['all'], $arguments['participating'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return iterable<Schema\Repository>|array{code:int} */
+    /** @return Observable<Schema\Repository>|array{code:int} */
     public function listReposStarredByAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -135,7 +135,7 @@ final class Activity
         return $operator->call($arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MinimalRepository>|array{code:int} */
+    /** @return Observable<Schema\MinimalRepository>|array{code:int} */
     public function listWatchedReposForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -171,7 +171,7 @@ final class Activity
         return $operator->call($arguments['thread_id']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listPublicOrgEvents(array $params): iterable
     {
         $arguments = [];
@@ -198,7 +198,7 @@ final class Activity
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listEventsForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -225,7 +225,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listReceivedEventsForUser(array $params): iterable
     {
         $arguments = [];
@@ -252,7 +252,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\StarredRepository|Schema\Repository */
+    /** @return */
     public function listReposStarredByUser(array $params): StarredRepository|Repository|array
     {
         $arguments = [];
@@ -291,7 +291,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposWatchedByUser(array $params): iterable
     {
         $arguments = [];
@@ -318,7 +318,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Event>|Schema\BasicError|array{code:int} */
+    /** @return Observable<Schema\Event>|Schema\BasicError|array{code:int} */
     public function listPublicEventsForRepoNetwork(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -366,7 +366,7 @@ final class Activity
         return $operator->call($arguments['thread_id']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listRepoEvents(array $params): iterable
     {
         $arguments = [];
@@ -399,7 +399,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Thread> */
+    /** @return Observable<Schema\Thread> */
     public function listRepoNotificationsForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -456,7 +456,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['since'], $arguments['before'], $arguments['all'], $arguments['participating'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\SimpleUser|Schema\Stargazer */
+    /** @return */
     public function listStargazersForRepo(array $params): SimpleUser|Stargazer|array
     {
         $arguments = [];
@@ -489,7 +489,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function listWatchersForRepo(array $params): iterable
     {
         $arguments = [];
@@ -564,7 +564,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listPublicEventsForUser(array $params): iterable
     {
         $arguments = [];
@@ -591,7 +591,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listReceivedPublicEventsForUser(array $params): iterable
     {
         $arguments = [];
@@ -618,7 +618,7 @@ final class Activity
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listOrgEventsForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];

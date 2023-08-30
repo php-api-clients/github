@@ -22,7 +22,7 @@ final class Meta
     {
     }
 
-    /** @return Schema\Root */
+    /** @return */
     public function root(array $params): Root|array
     {
         $operator = new Internal\Operator\Meta\Root($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Root());
@@ -38,7 +38,7 @@ final class Meta
         return $operator->call();
     }
 
-    /** @return ResponseInterface */
+    /** @return */
     public function getOctocat(array $params): ResponseInterface|array
     {
         $arguments = [];
@@ -53,7 +53,7 @@ final class Meta
         return $operator->call($arguments['s']);
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function getAllVersions(array $params): iterable
     {
         $operator = new Internal\Operator\Meta\GetAllVersions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Versions());
@@ -61,7 +61,7 @@ final class Meta
         return $operator->call();
     }
 
-    /** @return string */
+    /** @return */
     public function getZen(array $params): string|array
     {
         $operator = new Internal\Operator\Meta\GetZen($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Zen());

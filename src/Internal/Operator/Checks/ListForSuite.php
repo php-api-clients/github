@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Checks;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class ListForSuite
     {
     }
 
-    /** @return Schema\Operations\Checks\ListForSuite\Response\ApplicationJson\Ok */
+    /** @return */
     public function call(string $owner, string $repo, int $checkSuiteId, string $checkName, string $status, string $filter = 'latest', int $perPage = 30, int $page = 1): Ok|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\ListForSuite($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkSuiteId, $checkName, $status, $filter, $perPage, $page);

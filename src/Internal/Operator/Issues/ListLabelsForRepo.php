@@ -24,7 +24,7 @@ final readonly class ListLabelsForRepo
     {
     }
 
-    /** @return iterable<Schema\Label> */
+    /** @return Observable<Schema\Label> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListLabelsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

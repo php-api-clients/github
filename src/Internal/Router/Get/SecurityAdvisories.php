@@ -21,7 +21,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return iterable<Schema\GlobalAdvisory> */
+    /** @return Observable<Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -126,7 +126,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
     }
 
-    /** @return Schema\GlobalAdvisory */
+    /** @return */
     public function getGlobalAdvisory(array $params): GlobalAdvisory|array
     {
         $arguments = [];
@@ -141,7 +141,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id']);
     }
 
-    /** @return iterable<Schema\RepositoryAdvisory> */
+    /** @return Observable<Schema\RepositoryAdvisory> */
     public function listOrgRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -192,7 +192,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return iterable<Schema\RepositoryAdvisory> */
+    /** @return Observable<Schema\RepositoryAdvisory> */
     public function listRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -249,7 +249,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return Schema\RepositoryAdvisory */
+    /** @return */
     public function getRepositoryAdvisory(array $params): RepositoryAdvisory|array
     {
         $arguments = [];

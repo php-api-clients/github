@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use InvalidArgumentException;
@@ -20,7 +19,7 @@ final class Oidc
     {
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function updateOidcCustomSubTemplateForOrg(array $params): EmptyObject|array
     {
         $arguments = [];

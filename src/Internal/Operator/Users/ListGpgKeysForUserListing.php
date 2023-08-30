@@ -24,7 +24,7 @@ final readonly class ListGpgKeysForUserListing
     {
     }
 
-    /** @return iterable<Schema\GpgKey> */
+    /** @return Observable<Schema\GpgKey> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListGpgKeysForUserListing($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

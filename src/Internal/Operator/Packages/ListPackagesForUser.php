@@ -24,7 +24,7 @@ final readonly class ListPackagesForUser
     {
     }
 
-    /** @return iterable<Schema\Package>|array{code:int} */
+    /** @return Observable<Schema\Package>|array{code:int} */
     public function call(string $packageType, string $visibility, string $username, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\ListPackagesForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $visibility, $username, $page, $perPage);

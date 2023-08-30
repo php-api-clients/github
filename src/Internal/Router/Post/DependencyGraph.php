@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use InvalidArgumentException;
@@ -20,7 +19,7 @@ final class DependencyGraph
     {
     }
 
-    /** @return Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created */
+    /** @return */
     public function createRepositorySnapshot(array $params): Created|array
     {
         $arguments = [];

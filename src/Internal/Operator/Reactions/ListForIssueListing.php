@@ -24,7 +24,7 @@ final readonly class ListForIssueListing
     {
     }
 
-    /** @return iterable<Schema\Reaction> */
+    /** @return Observable<Schema\Reaction> */
     public function call(string $owner, string $repo, int $issueNumber, string $content, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\ListForIssueListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $content, $perPage, $page);

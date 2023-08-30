@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Actions;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\WorkflowRun;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetWorkflowRun
     {
     }
 
-    /** @return Schema\WorkflowRun */
+    /** @return */
     public function call(string $owner, string $repo, int $runId, bool $excludePullRequests = false): WorkflowRun|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $excludePullRequests);

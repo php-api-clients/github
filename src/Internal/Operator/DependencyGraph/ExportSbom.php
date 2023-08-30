@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\DependencyGraph;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class ExportSbom
     {
     }
 
-    /** @return Schema\DependencyGraphSpdxSbom */
+    /** @return */
     public function call(string $owner, string $repo): DependencyGraphSpdxSbom|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\DependencyGraph\ExportSbom($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

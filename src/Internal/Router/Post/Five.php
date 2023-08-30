@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\Autolink;
 use ApiClients\Client\GitHub\Schema\CheckRun;
@@ -42,7 +41,7 @@ final class Five
     {
     }
 
-    /** @return Schema\InstallationToken|Schema\Authorization|Schema\EmptyObject|array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Autolink|Schema\CheckRun|Schema\CheckSuite|Schema\Codespace|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\FullRepository|Schema\Hook|Schema\Issue|Schema\DeployKey|Schema\Label|Schema\MergedUpstream|Schema\Commit|Schema\Milestone|Schema\Page|Schema\Project|Schema\PullRequest|Schema\Release|Schema\RepositoryRuleset|Schema\RepositoryAdvisory|Schema\MinimalRepository|Schema\Repository|Schema\CodespaceExportDetails|Schema\CodespaceWithFullRepository */
+    /** @return |array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\MergedUpstream|Schema\Commit|Schema\Repository|Schema\Codespace */
     public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|Repository|CodespaceExportDetails|CodespaceWithFullRepository|array
     {
         if ($pathChunks[0] === '') {

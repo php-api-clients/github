@@ -24,7 +24,7 @@ final readonly class ListSubscriptionsForAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    /** @return Observable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListSubscriptionsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

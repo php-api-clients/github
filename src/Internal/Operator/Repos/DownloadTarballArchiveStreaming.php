@@ -21,7 +21,7 @@ final readonly class DownloadTarballArchiveStreaming
     {
     }
 
-    /** @return iterable<string> */
+    /** @return Observable<string> */
     public function call(string $owner, string $repo, string $ref): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DownloadTarballArchiveStreaming($this->browser, $owner, $repo, $ref);

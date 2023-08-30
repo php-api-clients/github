@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json;
 use InvalidArgumentException;
 
@@ -15,7 +14,7 @@ final class Three
     {
     }
 
-    /** @return array{code:int}|Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json */
+    /** @return array{code:int}| */
     public function call(string $call, array $params, array $pathChunks): Json|array
     {
         if ($pathChunks[0] === '') {

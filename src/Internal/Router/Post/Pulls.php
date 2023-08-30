@@ -23,7 +23,7 @@ final class Pulls
     {
     }
 
-    /** @return Schema\PullRequest */
+    /** @return */
     public function create(array $params): PullRequest|array
     {
         $arguments = [];
@@ -44,7 +44,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\PullRequestReviewComment */
+    /** @return */
     public function createReviewComment(array $params): PullRequestReviewComment|array
     {
         $arguments = [];
@@ -98,7 +98,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\PullRequestReview */
+    /** @return */
     public function createReview(array $params): PullRequestReview|array
     {
         $arguments = [];
@@ -125,7 +125,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\PullRequestReviewComment */
+    /** @return */
     public function createReplyForReviewComment(array $params): PullRequestReviewComment|array
     {
         $arguments = [];
@@ -158,7 +158,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['comment_id'], $params);
     }
 
-    /** @return Schema\PullRequestReview */
+    /** @return */
     public function submitReview(array $params): PullRequestReview|array
     {
         $arguments = [];

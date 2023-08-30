@@ -24,7 +24,7 @@ final readonly class ListPublicEmailsForAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<Schema\Email>|array{code:int} */
+    /** @return Observable<Schema\Email>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListPublicEmailsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

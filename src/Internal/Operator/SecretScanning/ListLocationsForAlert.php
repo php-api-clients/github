@@ -24,7 +24,7 @@ final readonly class ListLocationsForAlert
     {
     }
 
-    /** @return iterable<Schema\SecretScanningLocation>|array{code:int} */
+    /** @return Observable<Schema\SecretScanningLocation>|array{code:int} */
     public function call(string $owner, string $repo, int $alertNumber, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListLocationsForAlert($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber, $page, $perPage);

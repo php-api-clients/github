@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GistComment;
 use ApiClients\Client\GitHub\Schema\Import;
 use ApiClients\Client\GitHub\Schema\OrgHook;
@@ -21,7 +20,7 @@ final class Five
     {
     }
 
-    /** @return Schema\GistComment|Schema\OrgHook|Schema\TeamFull|Schema\ProjectCard|array{code:int}|Schema\Import|Schema\TeamDiscussion|Schema\OrgMembership */
+    /** @return |Schema\ProjectCard|array{code:int} */
     public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership|array
     {
         if ($pathChunks[0] === '') {

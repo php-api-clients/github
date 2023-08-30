@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CheckRun;
 use ApiClients\Client\GitHub\Schema\CheckSuitePreference;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -21,7 +20,7 @@ final class Checks
     {
     }
 
-    /** @return Schema\CheckRun */
+    /** @return */
     public function update(array $params): CheckRun|array
     {
         $arguments = [];
@@ -48,7 +47,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id'], $params);
     }
 
-    /** @return Schema\CheckSuitePreference */
+    /** @return */
     public function setSuitesPreferences(array $params): CheckSuitePreference|array
     {
         $arguments = [];

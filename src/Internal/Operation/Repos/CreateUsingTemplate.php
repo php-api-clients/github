@@ -24,9 +24,15 @@ final class CreateUsingTemplate
     public const OPERATION_MATCH = 'POST /repos/{template_owner}/{template_repo}/generate';
     private const METHOD         = 'POST';
     private const PATH           = '/repos/{template_owner}/{template_repo}/generate';
+    /**The account owner of the template repository. The name is not case sensitive. **/
+    private string $templateOwner;
+    /**The name of the template repository without the `.git` extension. The name is not case sensitive. **/
+    private string $templateRepo;
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\TemplateOwner\TemplateRepo\Generate $hydrator, private string $templateOwner, private string $templateRepo)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\TemplateOwner\TemplateRepo\Generate $hydrator, string $templateOwner, string $templateRepo)
     {
+        $this->templateOwner = $templateOwner;
+        $this->templateRepo  = $templateRepo;
     }
 
     public function createRequest(array $data): RequestInterface

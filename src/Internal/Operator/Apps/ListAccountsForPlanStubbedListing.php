@@ -24,7 +24,7 @@ final readonly class ListAccountsForPlanStubbedListing
     {
     }
 
-    /** @return iterable<Schema\MarketplacePurchase> */
+    /** @return Observable<Schema\MarketplacePurchase> */
     public function call(int $planId, string $direction, string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListAccountsForPlanStubbedListing($this->responseSchemaValidator, $this->hydrator, $planId, $direction, $sort, $perPage, $page);

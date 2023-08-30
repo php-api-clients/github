@@ -24,7 +24,7 @@ final readonly class GetTopPaths
     {
     }
 
-    /** @return iterable<Schema\ContentTraffic> */
+    /** @return Observable<Schema\ContentTraffic> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetTopPaths($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

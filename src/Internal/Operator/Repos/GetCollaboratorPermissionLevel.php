@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\RepositoryCollaboratorPermission;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetCollaboratorPermissionLevel
     {
     }
 
-    /** @return Schema\RepositoryCollaboratorPermission */
+    /** @return */
     public function call(string $owner, string $repo, string $username): RepositoryCollaboratorPermission|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCollaboratorPermissionLevel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);

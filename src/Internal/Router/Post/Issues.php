@@ -24,7 +24,7 @@ final class Issues
     {
     }
 
-    /** @return Schema\Issue */
+    /** @return */
     public function create(array $params): Issue|array
     {
         $arguments = [];
@@ -45,7 +45,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Label */
+    /** @return */
     public function createLabel(array $params): Label|array
     {
         $arguments = [];
@@ -66,7 +66,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Milestone */
+    /** @return */
     public function createMilestone(array $params): Milestone|array
     {
         $arguments = [];
@@ -87,7 +87,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\Issue */
+    /** @return */
     public function addAssignees(array $params): Issue|array
     {
         $arguments = [];
@@ -114,7 +114,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return Schema\IssueComment */
+    /** @return */
     public function createComment(array $params): IssueComment|array
     {
         $arguments = [];
@@ -141,7 +141,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return iterable<Schema\Label>|Schema\BasicError */
+    /** @return Observable<Schema\Label>|Schema\BasicError */
     public function addLabels(array $params): iterable|BasicError
     {
         $arguments = [];

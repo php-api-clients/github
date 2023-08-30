@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamDiscussion;
 use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
 use ApiClients\Client\GitHub\Schema\TeamFull;
@@ -22,7 +21,7 @@ final class Teams
     {
     }
 
-    /** @return Schema\TeamFull */
+    /** @return */
     public function create(array $params): TeamFull|array
     {
         $arguments = [];
@@ -37,7 +36,7 @@ final class Teams
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\TeamDiscussion */
+    /** @return */
     public function createDiscussionLegacy(array $params): TeamDiscussion|array
     {
         $arguments = [];
@@ -52,7 +51,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $params);
     }
 
-    /** @return Schema\TeamDiscussion */
+    /** @return */
     public function createDiscussionInOrg(array $params): TeamDiscussion|array
     {
         $arguments = [];
@@ -73,7 +72,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $params);
     }
 
-    /** @return Schema\TeamDiscussionComment */
+    /** @return */
     public function createDiscussionCommentLegacy(array $params): TeamDiscussionComment|array
     {
         $arguments = [];
@@ -94,7 +93,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
-    /** @return Schema\TeamDiscussionComment */
+    /** @return */
     public function createDiscussionCommentInOrg(array $params): TeamDiscussionComment|array
     {
         $arguments = [];

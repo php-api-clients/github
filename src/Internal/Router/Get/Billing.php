@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ActionsBillingUsage;
 use ApiClients\Client\GitHub\Schema\CombinedBillingUsage;
 use ApiClients\Client\GitHub\Schema\PackagesBillingUsage;
@@ -22,7 +21,7 @@ final class Billing
     {
     }
 
-    /** @return Schema\ActionsBillingUsage */
+    /** @return */
     public function getGithubActionsBillingOrg(array $params): ActionsBillingUsage|array
     {
         $arguments = [];
@@ -37,7 +36,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\PackagesBillingUsage */
+    /** @return */
     public function getGithubPackagesBillingOrg(array $params): PackagesBillingUsage|array
     {
         $arguments = [];
@@ -52,7 +51,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\CombinedBillingUsage */
+    /** @return */
     public function getSharedStorageBillingOrg(array $params): CombinedBillingUsage|array
     {
         $arguments = [];
@@ -67,7 +66,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\ActionsBillingUsage */
+    /** @return */
     public function getGithubActionsBillingUser(array $params): ActionsBillingUsage|array
     {
         $arguments = [];
@@ -82,7 +81,7 @@ final class Billing
         return $operator->call($arguments['username']);
     }
 
-    /** @return Schema\PackagesBillingUsage */
+    /** @return */
     public function getGithubPackagesBillingUser(array $params): PackagesBillingUsage|array
     {
         $arguments = [];
@@ -97,7 +96,7 @@ final class Billing
         return $operator->call($arguments['username']);
     }
 
-    /** @return Schema\CombinedBillingUsage */
+    /** @return */
     public function getSharedStorageBillingUser(array $params): CombinedBillingUsage|array
     {
         $arguments = [];

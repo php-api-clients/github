@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CommitComment;
 use ApiClients\Client\GitHub\Schema\FullRepository;
@@ -29,7 +28,7 @@ final class Repos
     {
     }
 
-    /** @return Schema\FullRepository|Schema\BasicError */
+    /** @return */
     public function update(array $params): FullRepository|BasicError|array
     {
         $arguments = [];
@@ -65,7 +64,7 @@ final class Repos
         return $operator->call($arguments['invitation_id']);
     }
 
-    /** @return Schema\CommitComment */
+    /** @return */
     public function updateCommitComment(array $params): CommitComment|array
     {
         $arguments = [];
@@ -92,7 +91,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    /** @return Schema\Hook */
+    /** @return */
     public function updateWebhook(array $params): Hook|array
     {
         $arguments = [];
@@ -119,7 +118,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    /** @return Schema\RepositoryInvitation */
+    /** @return */
     public function updateInvitation(array $params): RepositoryInvitation|array
     {
         $arguments = [];
@@ -146,7 +145,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['invitation_id'], $params);
     }
 
-    /** @return Schema\Release */
+    /** @return */
     public function updateRelease(array $params): Release|array
     {
         $arguments = [];
@@ -173,7 +172,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
-    /** @return Schema\WebhookConfig */
+    /** @return */
     public function updateWebhookConfigForRepo(array $params): WebhookConfig|array
     {
         $arguments = [];
@@ -200,7 +199,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    /** @return Schema\ReleaseAsset */
+    /** @return */
     public function updateReleaseAsset(array $params): ReleaseAsset|array
     {
         $arguments = [];
@@ -227,7 +226,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id'], $params);
     }
 
-    /** @return Schema\ProtectedBranchPullRequestReview */
+    /** @return */
     public function updatePullRequestReviewProtection(array $params): ProtectedBranchPullRequestReview|array
     {
         $arguments = [];
@@ -254,7 +253,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return Schema\StatusCheckPolicy */
+    /** @return */
     public function updateStatusCheckProtection(array $params): StatusCheckPolicy|array
     {
         $arguments = [];

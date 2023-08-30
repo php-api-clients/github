@@ -37,7 +37,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createWithRepoForAuthenticatedUser(array $params): Codespace|array
     {
         $arguments = [];
@@ -58,7 +58,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return Schema\CodespaceExportDetails */
+    /** @return */
     public function exportForAuthenticatedUser(array $params): CodespaceExportDetails|array
     {
         $arguments = [];
@@ -73,7 +73,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return Schema\CodespaceWithFullRepository */
+    /** @return */
     public function publishForAuthenticatedUser(array $params): CodespaceWithFullRepository|array
     {
         $arguments = [];
@@ -103,7 +103,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function stopForAuthenticatedUser(array $params): Codespace|array
     {
         $arguments = [];
@@ -118,7 +118,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createForAuthenticatedUser(array $params): Codespace|array
     {
         $operator = new Internal\Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
@@ -126,7 +126,7 @@ final class Codespaces
         return $operator->call($params);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createWithPrForAuthenticatedUser(array $params): Codespace|array
     {
         $arguments = [];

@@ -24,7 +24,7 @@ final readonly class ListStarred
     {
     }
 
-    /** @return iterable<Schema\BaseGist>|array{code:int} */
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
     public function call(string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\ListStarred($this->responseSchemaValidator, $this->hydrator, $since, $perPage, $page);

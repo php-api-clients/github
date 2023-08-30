@@ -24,7 +24,7 @@ final readonly class ListCardsListing
     {
     }
 
-    /** @return iterable<Schema\ProjectCard>|array{code:int} */
+    /** @return Observable<Schema\ProjectCard>|array{code:int} */
     public function call(int $columnId, string $archivedState = 'not_archived', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\ListCardsListing($this->responseSchemaValidator, $this->hydrator, $columnId, $archivedState, $perPage, $page);

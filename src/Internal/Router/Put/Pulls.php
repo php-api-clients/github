@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequestMergeResult;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
@@ -22,7 +21,7 @@ final class Pulls
     {
     }
 
-    /** @return Schema\PullRequestMergeResult */
+    /** @return */
     public function merge(array $params): PullRequestMergeResult|array
     {
         $arguments = [];
@@ -49,7 +48,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json */
+    /** @return */
     public function updateBranch(array $params): Json|array
     {
         $arguments = [];
@@ -76,7 +75,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\PullRequestReview */
+    /** @return */
     public function updateReview(array $params): PullRequestReview|array
     {
         $arguments = [];
@@ -109,7 +108,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id'], $params);
     }
 
-    /** @return Schema\PullRequestReview */
+    /** @return */
     public function dismissReview(array $params): PullRequestReview|array
     {
         $arguments = [];

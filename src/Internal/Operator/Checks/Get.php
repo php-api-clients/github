@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Checks;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CheckRun;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class Get
     {
     }
 
-    /** @return Schema\CheckRun */
+    /** @return */
     public function call(string $owner, string $repo, int $checkRunId): CheckRun|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

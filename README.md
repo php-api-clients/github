@@ -9333,6 +9333,7 @@ $client->call('GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts', [
         'owner' => 'generated',
         'repo' => 'generated',
         'run_id' => 6,
+        'name' => 'generated',
         'per_page' => 8,
         'page' => 1,
 ]);
@@ -9343,6 +9344,7 @@ Operations method:
 $client->operations()->actions()->listWorkflowRunArtifacts(        owner: 'generated',
         repo: 'generated',
         run_id: 6,
+        name: 'generated',
         per_page: 8,
         page: 1,
 );
@@ -12166,6 +12168,7 @@ $client->call('GET /repos/{owner}/{repo}/codespaces/machines', [
         'repo' => 'generated',
         'location' => 'generated',
         'client_ip' => 'generated',
+        'ref' => 'generated',
 ]);
 ```
 
@@ -12175,6 +12178,7 @@ $client->operations()->codespaces()->repoMachinesForAuthenticatedUser(        ow
         repo: 'generated',
         location: 'generated',
         client_ip: 'generated',
+        ref: 'generated',
 );
 ```
 

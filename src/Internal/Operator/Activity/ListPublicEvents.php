@@ -24,7 +24,7 @@ final readonly class ListPublicEvents
     {
     }
 
-    /** @return iterable<Schema\Event>|array{code:int} */
+    /** @return Observable<Schema\Event>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListPublicEvents($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

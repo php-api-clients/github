@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\AuthenticationToken;
 use ApiClients\Client\GitHub\Schema\CodeScanningSarifsReceipt;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
@@ -33,7 +32,7 @@ final class Six
     {
     }
 
-    /** @return Schema\Operations\Apps\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created|Schema\AuthenticationToken|array{code:int}|Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|Schema\TeamDiscussion|Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|Schema\EmptyObject|Schema\CodeScanningSarifsReceipt|Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|Schema\ShortBlob|Schema\GitCommit|Schema\GitRef|Schema\GitTag|Schema\GitTree|Schema\PageBuildStatus|Schema\PageDeployment|Schema\ReleaseNotesContent|Schema\RepositoryAdvisory|Schema\Status|Schema\TagProtection|Schema\TeamDiscussionComment|Schema\Reaction */
+    /** @return |array{code:int}|Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|Schema\CodeScanningSarifsReceipt */
     public function call(string $call, array $params, array $pathChunks): Json|Created|AuthenticationToken|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|TeamDiscussion|\ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|EmptyObject|CodeScanningSarifsReceipt|\ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|ShortBlob|GitCommit|GitRef|GitTag|GitTree|PageBuildStatus|PageDeployment|ReleaseNotesContent|RepositoryAdvisory|Status|TagProtection|TeamDiscussionComment|Reaction|array
     {
         if ($pathChunks[0] === '') {

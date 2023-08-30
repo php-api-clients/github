@@ -24,7 +24,7 @@ final readonly class ListForAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<Schema\Issue>|array{code:int} */
+    /** @return Observable<Schema\Issue>|array{code:int} */
     public function call(string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $labels, $since, $filter, $state, $sort, $direction, $perPage, $page);

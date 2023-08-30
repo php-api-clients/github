@@ -22,7 +22,7 @@ final class Copilot
     {
     }
 
-    /** @return Schema\CopilotOrganizationDetails */
+    /** @return */
     public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|array
     {
         $arguments = [];
@@ -37,7 +37,7 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok */
+    /** @return */
     public function listCopilotSeats(array $params): Ok|array
     {
         $arguments = [];

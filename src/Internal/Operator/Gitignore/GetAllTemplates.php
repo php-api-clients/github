@@ -23,7 +23,7 @@ final readonly class GetAllTemplates
     {
     }
 
-    /** @return iterable<string>|array{code:int} */
+    /** @return Observable<string>|array{code:int} */
     public function call(): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gitignore\GetAllTemplates($this->responseSchemaValidator, $this->hydrator);

@@ -24,7 +24,7 @@ final readonly class ReviewPendingDeploymentsForRun
     {
     }
 
-    /** @return iterable<Schema\Deployment> */
+    /** @return Observable<Schema\Deployment> */
     public function call(string $owner, string $repo, int $runId, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ReviewPendingDeploymentsForRun($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

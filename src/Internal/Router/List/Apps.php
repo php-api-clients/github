@@ -20,7 +20,7 @@ final class Apps
     {
     }
 
-    /** @return iterable<Schema\IntegrationInstallationRequest>|array{code:int} */
+    /** @return Observable<Schema\IntegrationInstallationRequest>|array{code:int} */
     public function listInstallationRequestsForAuthenticatedAppListing(array $params): iterable
     {
         $arguments = [];
@@ -47,7 +47,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\Installation> */
+    /** @return Observable<Schema\Installation> */
     public function listInstallationsListing(array $params): iterable
     {
         $arguments = [];
@@ -86,7 +86,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\MarketplaceListingPlan> */
+    /** @return Observable<Schema\MarketplaceListingPlan> */
     public function listPlansListing(array $params): iterable
     {
         $arguments = [];
@@ -113,7 +113,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    /** @return Observable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function listSubscriptionsForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -140,7 +140,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\MarketplaceListingPlan> */
+    /** @return Observable<Schema\MarketplaceListingPlan> */
     public function listPlansStubbedListing(array $params): iterable
     {
         $arguments = [];
@@ -167,7 +167,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\UserMarketplacePurchase>|array{code:int} */
+    /** @return Observable<Schema\UserMarketplacePurchase>|array{code:int} */
     public function listSubscriptionsForAuthenticatedUserStubbedListing(array $params): iterable
     {
         $arguments = [];
@@ -194,7 +194,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\MarketplacePurchase> */
+    /** @return Observable<Schema\MarketplacePurchase> */
     public function listAccountsForPlanListing(array $params): iterable
     {
         $arguments = [];
@@ -239,7 +239,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\MarketplacePurchase> */
+    /** @return Observable<Schema\MarketplacePurchase> */
     public function listAccountsForPlanStubbedListing(array $params): iterable
     {
         $arguments = [];

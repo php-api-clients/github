@@ -48,19 +48,19 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteCodespacesAccessUsers()->call($org, $params);
     }
 
-    /** @return Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok */
+    /** @return */
     public function listOrgSecrets(string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok|array
     {
         return $this->operators->codespaces👷ListOrgSecrets()->call($org, $perPage, $page);
     }
 
-    /** @return Schema\CodespacesPublicKey */
+    /** @return */
     public function getOrgPublicKey(string $org): CodespacesPublicKey|array
     {
         return $this->operators->codespaces👷GetOrgPublicKey()->call($org);
     }
 
-    /** @return Schema\CodespacesOrgSecret */
+    /** @return */
     public function getOrgSecret(string $org, string $secretName): CodespacesOrgSecret|array
     {
         return $this->operators->codespaces👷GetOrgSecret()->call($org, $secretName);
@@ -78,7 +78,7 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteOrgSecret()->call($org, $secretName);
     }
 
-    /** @return Schema\Operations\Codespaces\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Json|array
     {
         return $this->operators->codespaces👷ListSelectedReposForOrgSecret()->call($org, $secretName, $page, $perPage);
@@ -120,49 +120,49 @@ final class Codespaces
         return $this->operators->codespaces👷StopInOrganization()->call($org, $username, $codespaceName);
     }
 
-    /** @return Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
         return $this->operators->codespaces👷ListInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createWithRepoForAuthenticatedUser(string $owner, string $repo, array $params): Codespace|array
     {
         return $this->operators->codespaces👷CreateWithRepoForAuthenticatedUser()->call($owner, $repo, $params);
     }
 
-    /** @return Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok */
+    /** @return */
     public function listDevcontainersInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
         return $this->operators->codespaces👷ListDevcontainersInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
     }
 
     /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code:int} */
-    public function repoMachinesForAuthenticatedUser(string $owner, string $repo, string $location, string $clientIp): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
+    public function repoMachinesForAuthenticatedUser(string $owner, string $repo, string $location, string $clientIp, string $ref): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
-        return $this->operators->codespaces👷RepoMachinesForAuthenticatedUser()->call($owner, $repo, $location, $clientIp);
+        return $this->operators->codespaces👷RepoMachinesForAuthenticatedUser()->call($owner, $repo, $location, $clientIp, $ref);
     }
 
-    /** @return Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok */
+    /** @return */
     public function preFlightWithRepoForAuthenticatedUser(string $owner, string $repo, string $ref, string $clientIp): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\PreFlightWithRepoForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
         return $this->operators->codespaces👷PreFlightWithRepoForAuthenticatedUser()->call($owner, $repo, $ref, $clientIp);
     }
 
-    /** @return Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok */
+    /** @return */
     public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok|array
     {
         return $this->operators->codespaces👷ListRepoSecrets()->call($owner, $repo, $perPage, $page);
     }
 
-    /** @return Schema\CodespacesPublicKey */
+    /** @return */
     public function getRepoPublicKey(string $owner, string $repo): CodespacesPublicKey|array
     {
         return $this->operators->codespaces👷GetRepoPublicKey()->call($owner, $repo);
     }
 
-    /** @return Schema\RepoCodespacesSecret */
+    /** @return */
     public function getRepoSecret(string $owner, string $repo, string $secretName): RepoCodespacesSecret|array
     {
         return $this->operators->codespaces👷GetRepoSecret()->call($owner, $repo, $secretName);
@@ -180,7 +180,7 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteRepoSecret()->call($owner, $repo, $secretName);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createWithPrForAuthenticatedUser(string $owner, string $repo, int $pullNumber, array $params): Codespace|array
     {
         return $this->operators->codespaces👷CreateWithPrForAuthenticatedUser()->call($owner, $repo, $pullNumber, $params);
@@ -192,25 +192,25 @@ final class Codespaces
         return $this->operators->codespaces👷ListForAuthenticatedUser()->call($repositoryId, $perPage, $page);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function createForAuthenticatedUser(array $params): Codespace|array
     {
         return $this->operators->codespaces👷CreateForAuthenticatedUser()->call($params);
     }
 
-    /** @return Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok */
+    /** @return */
     public function listSecretsForAuthenticatedUser(int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|array
     {
         return $this->operators->codespaces👷ListSecretsForAuthenticatedUser()->call($perPage, $page);
     }
 
-    /** @return Schema\CodespacesUserPublicKey */
+    /** @return */
     public function getPublicKeyForAuthenticatedUser(): CodespacesUserPublicKey|array
     {
         return $this->operators->codespaces👷GetPublicKeyForAuthenticatedUser()->call();
     }
 
-    /** @return Schema\CodespacesSecret */
+    /** @return */
     public function getSecretForAuthenticatedUser(string $secretName): CodespacesSecret|array
     {
         return $this->operators->codespaces👷GetSecretForAuthenticatedUser()->call($secretName);
@@ -228,7 +228,7 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteSecretForAuthenticatedUser()->call($secretName);
     }
 
-    /** @return Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listRepositoriesForSecretForAuthenticatedUser(string $secretName): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepositoriesForSecretForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
     {
         return $this->operators->codespaces👷ListRepositoriesForSecretForAuthenticatedUser()->call($secretName);
@@ -264,19 +264,19 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteForAuthenticatedUser()->call($codespaceName);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function updateForAuthenticatedUser(string $codespaceName, array $params): Codespace|array
     {
         return $this->operators->codespaces👷UpdateForAuthenticatedUser()->call($codespaceName, $params);
     }
 
-    /** @return Schema\CodespaceExportDetails */
+    /** @return */
     public function exportForAuthenticatedUser(string $codespaceName): CodespaceExportDetails|array
     {
         return $this->operators->codespaces👷ExportForAuthenticatedUser()->call($codespaceName);
     }
 
-    /** @return Schema\CodespaceExportDetails */
+    /** @return */
     public function getExportDetailsForAuthenticatedUser(string $codespaceName, string $exportId): CodespaceExportDetails|array
     {
         return $this->operators->codespaces👷GetExportDetailsForAuthenticatedUser()->call($codespaceName, $exportId);
@@ -288,7 +288,7 @@ final class Codespaces
         return $this->operators->codespaces👷CodespaceMachinesForAuthenticatedUser()->call($codespaceName);
     }
 
-    /** @return Schema\CodespaceWithFullRepository */
+    /** @return */
     public function publishForAuthenticatedUser(string $codespaceName, array $params): CodespaceWithFullRepository|array
     {
         return $this->operators->codespaces👷PublishForAuthenticatedUser()->call($codespaceName, $params);
@@ -300,7 +300,7 @@ final class Codespaces
         return $this->operators->codespaces👷StartForAuthenticatedUser()->call($codespaceName);
     }
 
-    /** @return Schema\Codespace */
+    /** @return */
     public function stopForAuthenticatedUser(string $codespaceName): Codespace|array
     {
         return $this->operators->codespaces👷StopForAuthenticatedUser()->call($codespaceName);

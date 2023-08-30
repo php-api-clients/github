@@ -63,7 +63,8 @@ final readonly class CopilotOrganizationDetails
             "enum": [
                 "assign_all",
                 "assign_selected",
-                "disabled"
+                "disabled",
+                "unconfigured"
             ],
             "type": "string",
             "description": "The mode of assigning new seats."

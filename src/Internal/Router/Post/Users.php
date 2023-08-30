@@ -19,7 +19,7 @@ final class Users
     {
     }
 
-    /** @return iterable<Schema\Email>|array{code:int} */
+    /** @return Observable<Schema\Email>|array{code:int} */
     public function addEmailForAuthenticatedUser(array $params): iterable
     {
         $operator = new Internal\Operator\Users\AddEmailForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
@@ -43,7 +43,7 @@ final class Users
         return $operator->call($params);
     }
 
-    /** @return iterable<Schema\SocialAccount>|array{code:int} */
+    /** @return Observable<Schema\SocialAccount>|array{code:int} */
     public function addSocialAccountForAuthenticatedUser(array $params): iterable
     {
         $operator = new Internal\Operator\Users\AddSocialAccountForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());

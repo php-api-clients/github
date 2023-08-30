@@ -18,13 +18,13 @@ final class Copilot
     {
     }
 
-    /** @return Schema\CopilotOrganizationDetails */
+    /** @return */
     public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails|array
     {
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
-    /** @return Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok */
+    /** @return */
     public function listCopilotSeats(string $org, int $page, int $perPage): Ok|array
     {
         return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);

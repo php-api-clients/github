@@ -62,7 +62,7 @@ final class ListContributors
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * if repository contains content
+                     * If repository contains content
                      **/
                     case 200:
                         return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Contributor {

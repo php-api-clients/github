@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Actions;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ActionsCacheList;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class DeleteActionsCacheByKey
     {
     }
 
-    /** @return Schema\ActionsCacheList */
+    /** @return */
     public function call(string $owner, string $repo, string $key, string $ref): ActionsCacheList|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteActionsCacheByKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $key, $ref);

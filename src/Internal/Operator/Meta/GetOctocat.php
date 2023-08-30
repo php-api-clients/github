@@ -21,7 +21,7 @@ final readonly class GetOctocat
     {
     }
 
-    /** @return ResponseInterface */
+    /** @return */
     public function call(string $s): ResponseInterface|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Meta\GetOctocat($s);

@@ -15,19 +15,19 @@ final class DependencyGraph
     {
     }
 
-    /** @return iterable<Schema\DependencyGraphDiff> */
+    /** @return Observable<Schema\DependencyGraphDiff> */
     public function diffRange(string $owner, string $repo, string $basehead, string $name): iterable
     {
         return $this->operators->dependencyGraph👷DiffRange()->call($owner, $repo, $basehead, $name);
     }
 
-    /** @return Schema\DependencyGraphSpdxSbom */
+    /** @return */
     public function exportSbom(string $owner, string $repo): DependencyGraphSpdxSbom|array
     {
         return $this->operators->dependencyGraph👷ExportSbom()->call($owner, $repo);
     }
 
-    /** @return Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created */
+    /** @return */
     public function createRepositorySnapshot(string $owner, string $repo, array $params): Created|array
     {
         return $this->operators->dependencyGraph👷CreateRepositorySnapshot()->call($owner, $repo, $params);

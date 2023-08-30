@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Teams;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamFull;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetByName
     {
     }
 
-    /** @return Schema\TeamFull */
+    /** @return */
     public function call(string $org, string $teamSlug): TeamFull|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetByName($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug);

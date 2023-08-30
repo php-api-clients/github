@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\BaseGist;
 use ApiClients\Client\GitHub\Schema\GistComment;
@@ -28,7 +27,7 @@ final class Four
     {
     }
 
-    /** @return Schema\Integration|Schema\Authorization|Schema\GistComment|array{code:int}|Schema\BaseGist|Schema\OrgHook|Schema\OrganizationInvitation|Schema\Migration|Schema\Operations\Orgs\ReviewPatGrantRequestsInBulk\Response\ApplicationJson\Accepted\Application\Json|Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Schema\Project|Schema\Repository|Schema\RepositoryRuleset|Schema\TeamFull|Schema\ProjectColumn|Schema\TeamDiscussion */
+    /** @return |Schema\GistComment|array{code:int}|Schema\BaseGist|Schema\ProjectColumn */
     public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|BaseGist|OrgHook|OrganizationInvitation|Migration|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Project|Repository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion|array
     {
         if ($pathChunks[0] === '') {

@@ -24,7 +24,7 @@ final readonly class ListPublicSshKeysForAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<Schema\Key>|array{code:int} */
+    /** @return Observable<Schema\Key>|array{code:int} */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListPublicSshKeysForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);
