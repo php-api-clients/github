@@ -24,7 +24,7 @@ final readonly class ListContributorsListing
     {
     }
 
-    /** @return iterable<Schema\Contributor>|array{code:int} */
+    /** @return Observable<Schema\Contributor>|array{code:int} */
     public function call(string $owner, string $repo, string $anon, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListContributorsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $anon, $perPage, $page);

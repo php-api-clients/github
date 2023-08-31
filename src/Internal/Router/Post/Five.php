@@ -41,7 +41,7 @@ final class Five
     {
     }
 
-    /** @return |array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\MergedUpstream|Schema\Commit|Schema\Repository|Schema\Codespace */
+    /** @return |array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\MergedUpstream|Schema\Commit|Schema\Codespace */
     public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|Repository|CodespaceExportDetails|CodespaceWithFullRepository|array
     {
         if ($pathChunks[0] === '') {

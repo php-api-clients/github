@@ -462,7 +462,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\Contributor>|array{code:int} */
+    /** @return Observable<Schema\Contributor>|array{code:int} */
     public function listContributorsListing(array $params): iterable
     {
         $arguments = [];

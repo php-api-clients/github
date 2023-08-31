@@ -30,7 +30,7 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Schema\TeamRepository|array{code:int}|array{code:int,location:string}|Observable<Schema\EnvironmentApprovals>|Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\CodeScanningCodeqlDatabase|Observable<Schema\SecretScanningLocation> */
+    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Schema\TeamRepository|array{code:int}|array{code:int,location:string}|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\CodeScanningCodeqlDatabase|Observable<Schema\SecretScanningLocation> */
     public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {

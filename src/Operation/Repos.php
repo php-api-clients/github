@@ -584,13 +584,13 @@ final class Repos
         return $this->operators->repos👷DeleteFile()->call($owner, $repo, $path, $params);
     }
 
-    /** @return iterable<Schema\Contributor>|array{code:int} */
+    /** @return Observable<Schema\Contributor>|array{code:int} */
     public function listContributors(string $owner, string $repo, string $anon, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListContributors()->call($owner, $repo, $anon, $perPage, $page);
     }
 
-    /** @return iterable<Schema\Contributor>|array{code:int} */
+    /** @return Observable<Schema\Contributor>|array{code:int} */
     public function listContributorsListing(string $owner, string $repo, string $anon, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListContributorsListing()->call($owner, $repo, $anon, $perPage, $page);
@@ -1298,7 +1298,7 @@ final class Repos
         return $this->operators->repos👷DownloadZipballArchiveStreaming()->call($owner, $repo, $ref);
     }
 
-    /** @return Schema\Repository */
+    /** @return */
     public function createUsingTemplate(string $templateOwner, string $templateRepo, array $params): Repository|array
     {
         return $this->operators->repos👷CreateUsingTemplate()->call($templateOwner, $templateRepo, $params);

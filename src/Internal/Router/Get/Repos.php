@@ -624,7 +624,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sha'], $arguments['path'], $arguments['author'], $arguments['committer'], $arguments['since'], $arguments['until'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<Schema\Contributor>|array{code:int} */
+    /** @return Observable<Schema\Contributor>|array{code:int} */
     public function listContributors(array $params): iterable
     {
         $arguments = [];
