@@ -142,7 +142,7 @@ final readonly class WebhookCreate
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "master_branch": {
             "type": "string",
@@ -245,7 +245,7 @@ final readonly class WebhookCreate
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "pusher_type": {
             "type": "string",
@@ -1730,7 +1730,7 @@ final readonly class WebhookCreate
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "sender": {
             "title": "Simple User",
@@ -1891,7 +1891,7 @@ final readonly class WebhookCreate
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -2238,19 +2238,23 @@ final readonly class WebhookCreate
     /**
      * description: The repository's current description.
      * enterprise: An enterprise on GitHub.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      * masterBranch: The name of the repository's default branch (usually `main`).
-     * organization: A GitHub organization.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
      * pusherType: The pusher type for the event. Can be either `user` or a deploy key.
      * ref: The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
      * refType: The type of Git ref object created in the repository.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string|null $description, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, #[MapFrom('master_branch')]
-    public string $masterBranch, public Schema\OrganizationSimple|null $organization, #[MapFrom('pusher_type')]
+    public string $masterBranch, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pusher_type')]
     public string $pusherType, public string $ref, #[MapFrom('ref_type')]
-    public string $refType, public Schema\Repository $repository, public Schema\SimpleUser $sender,)
+    public string $refType, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender,)
     {
     }
 }

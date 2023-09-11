@@ -97,7 +97,39 @@ final readonly class Ok
             }
         }
     },
-    "example": "..\\/..\\/components\\/examples\\/deployment_protection_rules.yaml"
+    "example": {
+        "value": [
+            {
+                "total_count": 2
+            },
+            {
+                "custom_deployment_protection_rules": [
+                    {
+                        "id": 3,
+                        "node_id": "IEH37kRlcGxveW1lbnRTdGF0ddiv",
+                        "enabled": true,
+                        "app": {
+                            "id": 1,
+                            "node_id": "GHT58kRlcGxveW1lbnRTdTY!bbcy",
+                            "slug": "a-custom-app",
+                            "integration_url": "https:\\/\\/api.github.com\\/apps\\/a-custom-app"
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "node_id": "MDE2OkRlcGxveW1lbnRTdHJ41128",
+                        "enabled": true,
+                        "app": {
+                            "id": 1,
+                            "node_id": "UHVE67RlcGxveW1lbnRTdTY!jfeuy",
+                            "slug": "another-custom-app",
+                            "integration_url": "https:\\/\\/api.github.com\\/apps\\/another-custom-app"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';

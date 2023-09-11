@@ -1899,7 +1899,7 @@ final readonly class Changes
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         }
     }
 }';
@@ -2277,11 +2277,12 @@ final readonly class Changes
 
     /**
      * newDiscussion: A Discussion in a repository.
-     * newRepository: A repository on GitHub.
+     * newRepository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
      */
     public function __construct(#[MapFrom('new_discussion')]
     public Schema\Discussion $newDiscussion, #[MapFrom('new_repository')]
-    public Schema\Repository $newRepository,)
+    public Schema\RepositoryWebhooks $newRepository,)
     {
     }
 }

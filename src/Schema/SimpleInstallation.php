@@ -31,10 +31,12 @@ final readonly class SimpleInstallation
             ]
         }
     },
-    "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+    "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
 }';
     public const SCHEMA_TITLE        = 'Simple Installation';
-    public const SCHEMA_DESCRIPTION  = 'The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.';
+    public const SCHEMA_DESCRIPTION  = 'The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+for and sent to a GitHub App. For more information,
+see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."';
     public const SCHEMA_EXAMPLE_DATA = '{
     "id": 1,
     "node_id": "MDQ6VXNlcjU4MzIzMQ=="

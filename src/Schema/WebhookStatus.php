@@ -635,7 +635,7 @@ final readonly class WebhookStatus
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "name": {
             "type": "string"
@@ -737,7 +737,7 @@ final readonly class WebhookStatus
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repository": {
             "title": "Repository",
@@ -2206,7 +2206,7 @@ final readonly class WebhookStatus
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "sender": {
             "title": "Simple User",
@@ -2367,7 +2367,7 @@ final readonly class WebhookStatus
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         },
         "sha": {
             "type": "string",
@@ -2855,17 +2855,21 @@ final readonly class WebhookStatus
      * description: The optional human-readable description added to the status.
      * enterprise: An enterprise on GitHub.
      * id: The unique identifier of the status.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * organization: A GitHub organization.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      * sha: The Commit SHA.
      * state: The new state. Can be `pending`, `success`, `failure`, or `error`.
      * targetUrl: The optional link added to the status.
      */
     public function __construct(#[MapFrom('avatar_url')]
     public string|null $avatarUrl, public array $branches, public Schema\WebhookStatus\Commit $commit, public string $context, #[MapFrom('created_at')]
-    public string $createdAt, public string|null $description, public Schema\Enterprise|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender, public string $sha, public string $state, #[MapFrom('target_url')]
+    public string $createdAt, public string|null $description, public Schema\Enterprise|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public string $sha, public string $state, #[MapFrom('target_url')]
     public string|null $targetUrl, #[MapFrom('updated_at')]
     public string $updatedAt,)
     {

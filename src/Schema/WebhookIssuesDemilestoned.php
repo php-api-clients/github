@@ -137,7 +137,7 @@ final readonly class WebhookIssuesDemilestoned
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "issue": {
             "allOf": [
@@ -2052,7 +2052,7 @@ final readonly class WebhookIssuesDemilestoned
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repository": {
             "title": "Repository",
@@ -3521,7 +3521,7 @@ final readonly class WebhookIssuesDemilestoned
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "sender": {
             "title": "Simple User",
@@ -3682,7 +3682,7 @@ final readonly class WebhookIssuesDemilestoned
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -4336,13 +4336,17 @@ final readonly class WebhookIssuesDemilestoned
 
     /**
      * enterprise: An enterprise on GitHub.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      * milestone: A collection of related issues and pull requests.
-     * organization: A GitHub organization.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookIssuesDemilestoned\Issue $issue, public Schema\WebhookIssuesDemilestoned\Milestone|null $milestone, public Schema\OrganizationSimple|null $organization, public Schema\Repository $repository, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookIssuesDemilestoned\Issue $issue, public Schema\WebhookIssuesDemilestoned\Milestone|null $milestone, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }

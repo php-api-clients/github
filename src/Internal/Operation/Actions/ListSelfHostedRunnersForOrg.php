@@ -23,6 +23,8 @@ final class ListSelfHostedRunnersForOrg
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/runners';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/actions/runners';
+    /**The name of a self-hosted runner. **/
+    private string $name;
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -30,8 +32,9 @@ final class ListSelfHostedRunnersForOrg
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Actions\Runners $hydrator, string $org, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Actions\Runners $hydrator, string $name, string $org, int $perPage = 30, int $page = 1)
     {
+        $this->name    = $name;
         $this->org     = $org;
         $this->perPage = $perPage;
         $this->page    = $page;
@@ -39,7 +42,7 @@ final class ListSelfHostedRunnersForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{name}', '{org}', '{per_page}', '{page}'], [$this->name, $this->org, $this->perPage, $this->page], self::PATH . '?name={name}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok

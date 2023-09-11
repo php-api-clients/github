@@ -100,8 +100,6 @@ final readonly class Sbom
                 "versionInfo",
                 "downloadLocation",
                 "filesAnalyzed",
-                "licenseConcluded",
-                "licenseDeclared",
                 "supplier"
             ],
             "type": "array",

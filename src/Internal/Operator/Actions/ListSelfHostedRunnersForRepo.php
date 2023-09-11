@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Actions;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -24,10 +25,10 @@ final readonly class ListSelfHostedRunnersForRepo
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Json|array
+    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json */
+    public function call(string $name, string $owner, string $repo, int $perPage = 30, int $page = 1): Json|array
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelfHostedRunnersForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelfHostedRunnersForRepo($this->responseSchemaValidator, $this->hydrator, $name, $owner, $repo, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
             return $operation->createResponse($response);

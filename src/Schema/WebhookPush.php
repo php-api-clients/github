@@ -415,7 +415,7 @@ final readonly class WebhookPush
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "organization": {
             "title": "Organization Simple",
@@ -514,7 +514,7 @@ final readonly class WebhookPush
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "pusher": {
             "title": "Committer",
@@ -1327,7 +1327,7 @@ final readonly class WebhookPush
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -1640,16 +1640,19 @@ final readonly class WebhookPush
      * deleted: Whether this push deleted the `ref`.
      * enterprise: An enterprise on GitHub.
      * forced: Whether this push was a force push of the `ref`.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * organization: A GitHub organization.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
      * pusher: Metaproperties for Git author/committer information.
      * ref: The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
      * repository: A git repository
-     * sender: A GitHub user.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $after, #[MapFrom('base_ref')]
     public string|null $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public Schema\Enterprise|null $enterprise, public bool $forced, #[MapFrom('head_commit')]
-    public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUser|null $sender,)
+    public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

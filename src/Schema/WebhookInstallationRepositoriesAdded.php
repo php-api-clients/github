@@ -419,7 +419,7 @@ final readonly class WebhookInstallationRepositoriesAdded
                     "type": "string",
                     "format": "uri",
                     "examples": [
-                        "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens"
+                        "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens"
                     ]
                 },
                 "repositories_url": {
@@ -1066,7 +1066,7 @@ final readonly class WebhookInstallationRepositoriesAdded
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repositories_added": {
             "type": "array",
@@ -2596,7 +2596,7 @@ final readonly class WebhookInstallationRepositoriesAdded
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "repository_selection": {
             "enum": [
@@ -2861,7 +2861,7 @@ final readonly class WebhookInstallationRepositoriesAdded
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -2885,7 +2885,7 @@ final readonly class WebhookInstallationRepositoriesAdded
         "id": 1,
         "account": null,
         "repository_selection": "selected",
-        "access_tokens_url": "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens",
+        "access_tokens_url": "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens",
         "repositories_url": "https:\\/\\/api.github.com\\/installation\\/repositories",
         "html_url": "https:\\/\\/github.com\\/organizations\\/github\\/settings\\/installations\\/1",
         "app_id": 1,
@@ -3341,17 +3341,19 @@ final readonly class WebhookInstallationRepositoriesAdded
     /**
      * enterprise: An enterprise on GitHub.
      * installation: Installation
-     * organization: A GitHub organization.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
      * repositoriesAdded: An array of repository objects, which were added to the installation.
      * repositoriesRemoved: An array of repository objects, which were removed from the installation.
-     * repository: A repository on GitHub.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
      * repositorySelection: Describe whether all repositories have been selected or there's a selection involved
-     * sender: A GitHub user.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimple|null $organization, #[MapFrom('repositories_added')]
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('repositories_added')]
     public array $repositoriesAdded, #[MapFrom('repositories_removed')]
-    public array $repositoriesRemoved, public Schema\Repository|null $repository, #[MapFrom('repository_selection')]
-    public string $repositorySelection, public Schema\WebhookInstallationRepositoriesAdded\Requester|null $requester, public Schema\SimpleUser $sender,)
+    public array $repositoriesRemoved, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('repository_selection')]
+    public string $repositorySelection, public Schema\WebhookInstallationRepositoriesAdded\Requester|null $requester, public Schema\SimpleUserWebhooks $sender,)
     {
     }
 }

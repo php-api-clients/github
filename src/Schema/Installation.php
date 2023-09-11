@@ -311,7 +311,7 @@ final readonly class Installation
             "type": "string",
             "format": "uri",
             "examples": [
-                "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens"
+                "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens"
             ]
         },
         "repositories_url": {
@@ -867,7 +867,7 @@ final readonly class Installation
     "id": 1,
     "account": null,
     "repository_selection": "selected",
-    "access_tokens_url": "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens",
+    "access_tokens_url": "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens",
     "repositories_url": "https:\\/\\/api.github.com\\/installation\\/repositories",
     "html_url": "https:\\/\\/github.com\\/organizations\\/github\\/settings\\/installations\\/1",
     "app_id": 1,

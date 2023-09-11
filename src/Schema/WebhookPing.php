@@ -253,7 +253,7 @@ final readonly class WebhookPing
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repository": {
             "title": "Repository",
@@ -1722,7 +1722,7 @@ final readonly class WebhookPing
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "sender": {
             "title": "Simple User",
@@ -1883,7 +1883,7 @@ final readonly class WebhookPing
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         },
         "zen": {
             "type": "string",
@@ -2243,13 +2243,15 @@ final readonly class WebhookPing
     /**
      * hook: The webhook that is being pinged
      * hookId: The ID of the webhook that triggered the ping.
-     * organization: A GitHub organization.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      * zen: Random string of GitHub zen.
      */
     public function __construct(public Schema\WebhookPing\Hook|null $hook, #[MapFrom('hook_id')]
-    public int|null $hookId, public Schema\OrganizationSimple|null $organization, public Schema\Repository|null $repository, public Schema\SimpleUser|null $sender, public string|null $zen,)
+    public int|null $hookId, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender, public string|null $zen,)
     {
     }
 }

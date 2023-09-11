@@ -2393,6 +2393,7 @@ final readonly class IssueEvent
                                     "type": "boolean",
                                     "description": "Whether downloads are enabled.",
                                     "default": true,
+                                    "deprecated": true,
                                     "examples": [
                                         true
                                     ]

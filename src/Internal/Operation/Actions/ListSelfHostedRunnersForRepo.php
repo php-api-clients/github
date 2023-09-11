@@ -23,6 +23,8 @@ final class ListSelfHostedRunnersForRepo
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runners';
     private const METHOD         = 'GET';
     private const PATH           = '/repos/{owner}/{repo}/actions/runners';
+    /**The name of a self-hosted runner. **/
+    private string $name;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -32,8 +34,9 @@ final class ListSelfHostedRunnersForRepo
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runners $hydrator, string $owner, string $repo, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runners $hydrator, string $name, string $owner, string $repo, int $perPage = 30, int $page = 1)
     {
+        $this->name    = $name;
         $this->owner   = $owner;
         $this->repo    = $repo;
         $this->perPage = $perPage;
@@ -42,7 +45,7 @@ final class ListSelfHostedRunnersForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request(self::METHOD, str_replace(['{name}', '{owner}', '{repo}', '{per_page}', '{page}'], [$this->name, $this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?name={name}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json

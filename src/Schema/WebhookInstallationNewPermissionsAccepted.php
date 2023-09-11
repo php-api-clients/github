@@ -414,7 +414,7 @@ final readonly class WebhookInstallationNewPermissionsAccepted
                     "type": "string",
                     "format": "uri",
                     "examples": [
-                        "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens"
+                        "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens"
                     ]
                 },
                 "repositories_url": {
@@ -1061,7 +1061,7 @@ final readonly class WebhookInstallationNewPermissionsAccepted
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repositories": {
             "type": "array",
@@ -2564,7 +2564,7 @@ final readonly class WebhookInstallationNewPermissionsAccepted
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "requester": {
             "type": [
@@ -2730,7 +2730,7 @@ final readonly class WebhookInstallationNewPermissionsAccepted
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -2754,7 +2754,7 @@ final readonly class WebhookInstallationNewPermissionsAccepted
         "id": 1,
         "account": null,
         "repository_selection": "selected",
-        "access_tokens_url": "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens",
+        "access_tokens_url": "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens",
         "repositories_url": "https:\\/\\/api.github.com\\/installation\\/repositories",
         "html_url": "https:\\/\\/github.com\\/organizations\\/github\\/settings\\/installations\\/1",
         "app_id": 1,
@@ -3171,12 +3171,14 @@ final readonly class WebhookInstallationNewPermissionsAccepted
     /**
      * enterprise: An enterprise on GitHub.
      * installation: Installation
-     * organization: A GitHub organization.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
      * repositories: An array of repository objects that the installation can access.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimple|null $organization, public array|null $repositories, public Schema\Repository|null $repository, public string $requester, public Schema\SimpleUser $sender)
+    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public array|null $repositories, public Schema\RepositoryWebhooks|null $repository, public string $requester, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }

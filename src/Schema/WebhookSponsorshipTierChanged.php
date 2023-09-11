@@ -196,7 +196,7 @@ final readonly class WebhookSponsorshipTierChanged
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "organization": {
             "title": "Organization Simple",
@@ -295,7 +295,7 @@ final readonly class WebhookSponsorshipTierChanged
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "repository": {
             "title": "Repository",
@@ -1764,7 +1764,7 @@ final readonly class WebhookSponsorshipTierChanged
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "sender": {
             "title": "Simple User",
@@ -1925,7 +1925,7 @@ final readonly class WebhookSponsorshipTierChanged
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         },
         "sponsorship": {
             "required": [
@@ -2680,12 +2680,16 @@ final readonly class WebhookSponsorshipTierChanged
 
     /**
      * enterprise: An enterprise on GitHub.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * organization: A GitHub organization.
-     * repository: A repository on GitHub.
-     * sender: A GitHub user.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookSponsorshipTierChanged\Changes $changes, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple|null $organization, public Schema\Repository|null $repository, public Schema\SimpleUser $sender, public Schema\WebhookSponsorshipTierChanged\Sponsorship $sponsorship)
+    public function __construct(public string $action, public Schema\WebhookSponsorshipTierChanged\Changes $changes, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookSponsorshipTierChanged\Sponsorship $sponsorship)
     {
     }
 }

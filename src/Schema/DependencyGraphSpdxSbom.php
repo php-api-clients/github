@@ -106,8 +106,6 @@ final readonly class DependencyGraphSpdxSbom
                         "versionInfo",
                         "downloadLocation",
                         "filesAnalyzed",
-                        "licenseConcluded",
-                        "licenseDeclared",
                         "supplier"
                     ],
                     "type": "array",

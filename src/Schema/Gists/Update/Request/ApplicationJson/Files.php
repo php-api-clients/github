@@ -8,27 +8,11 @@ final readonly class Files
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
-    "description": "The gist files to be updated, renamed, or deleted. Each `key` must match the current filename\\n(including extension) of the targeted gist file. For example: `hello.py`.\\n\\nTo delete a file, set the whole file to null. For example: `hello.py : null`.",
+    "description": "The gist files to be updated, renamed, or deleted. Each `key` must match the current filename\\n(including extension) of the targeted gist file. For example: `hello.py`.\\n\\nTo delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be\\ndeleted if the specified object does not contain at least one of `content` or `filename`.",
     "additionalProperties": {
         "type": [
             "object",
             "null"
-        ],
-        "anyOf": [
-            {
-                "required": [
-                    "content"
-                ]
-            },
-            {
-                "required": [
-                    "filename"
-                ]
-            },
-            {
-                "maxProperties": 0,
-                "type": "object"
-            }
         ],
         "properties": {
             "content": {
@@ -57,7 +41,8 @@ final readonly class Files
     public const SCHEMA_DESCRIPTION  = 'The gist files to be updated, renamed, or deleted. Each `key` must match the current filename
 (including extension) of the targeted gist file. For example: `hello.py`.
 
-To delete a file, set the whole file to null. For example: `hello.py : null`.';
+To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be
+deleted if the specified object does not contain at least one of `content` or `filename`.';
     public const SCHEMA_EXAMPLE_DATA = '[]';
 
     public function __construct()

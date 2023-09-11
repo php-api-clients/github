@@ -57,10 +57,16 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok */
     public function listSelfHostedRunnersForOrg(array $params): Ok|array
     {
         $arguments = [];
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
         if (array_key_exists('org', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: org');
         }
@@ -81,7 +87,7 @@ final class Actions
         unset($params['page']);
         $operator = new Internal\Operator\Actions\ListSelfHostedRunnersForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners());
 
-        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['name'], $arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */
@@ -513,10 +519,16 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json */
     public function listSelfHostedRunnersForRepo(array $params): Json|array
     {
         $arguments = [];
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
         if (array_key_exists('owner', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: owner');
         }
@@ -543,7 +555,7 @@ final class Actions
         unset($params['page']);
         $operator = new Internal\Operator\Actions\ListSelfHostedRunnersForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runners());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['name'], $arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */

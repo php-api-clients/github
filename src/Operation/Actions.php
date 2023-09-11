@@ -111,10 +111,10 @@ final class Actions
         return $this->operators->actions👷SetGithubActionsDefaultWorkflowPermissionsOrganization()->call($org, $params);
     }
 
-    /** @return */
-    public function listSelfHostedRunnersForOrg(string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok|array
+    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok */
+    public function listSelfHostedRunnersForOrg(string $name, string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok|array
     {
-        return $this->operators->actions👷ListSelfHostedRunnersForOrg()->call($org, $perPage, $page);
+        return $this->operators->actions👷ListSelfHostedRunnersForOrg()->call($name, $org, $perPage, $page);
     }
 
     /** @return Observable<Schema\RunnerApplication> */
@@ -441,10 +441,10 @@ final class Actions
         return $this->operators->actions👷SetGithubActionsDefaultWorkflowPermissionsRepository()->call($owner, $repo, $params);
     }
 
-    /** @return */
-    public function listSelfHostedRunnersForRepo(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json|array
+    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json */
+    public function listSelfHostedRunnersForRepo(string $name, string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json|array
     {
-        return $this->operators->actions👷ListSelfHostedRunnersForRepo()->call($owner, $repo, $perPage, $page);
+        return $this->operators->actions👷ListSelfHostedRunnersForRepo()->call($name, $owner, $repo, $perPage, $page);
     }
 
     /** @return Observable<Schema\RunnerApplication> */

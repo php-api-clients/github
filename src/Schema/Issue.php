@@ -2155,6 +2155,7 @@ final readonly class Issue
                     "type": "boolean",
                     "description": "Whether downloads are enabled.",
                     "default": true,
+                    "deprecated": true,
                     "examples": [
                         true
                     ]

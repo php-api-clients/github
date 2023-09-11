@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE391F5B5\Tiet55EDF86B\Tiet9741ED42;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet82CBDBE3\Tiet3E9EEAC7\Tiet5E1C1050;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietA29AD1E7
+abstract readonly class TietF8F26223
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -321,7 +321,7 @@ abstract readonly class TietA29AD1E7
                         "type": "string",
                         "format": "uri",
                         "examples": [
-                            "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens"
+                            "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens"
                         ]
                     },
                     "repositories_url": {
@@ -883,7 +883,7 @@ abstract readonly class TietA29AD1E7
             "id": 1,
             "account": null,
             "repository_selection": "selected",
-            "access_tokens_url": "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens",
+            "access_tokens_url": "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens",
             "repositories_url": "https:\\/\\/api.github.com\\/installation\\/repositories",
             "html_url": "https:\\/\\/github.com\\/organizations\\/github\\/settings\\/installations\\/1",
             "app_id": 1,
@@ -968,7 +968,7 @@ abstract readonly class TietA29AD1E7
             "id": 1,
             "account": null,
             "repository_selection": "selected",
-            "access_tokens_url": "https:\\/\\/api.github.com\\/installations\\/1\\/access_tokens",
+            "access_tokens_url": "https:\\/\\/api.github.com\\/app\\/installations\\/1\\/access_tokens",
             "repositories_url": "https:\\/\\/api.github.com\\/installation\\/repositories",
             "html_url": "https:\\/\\/github.com\\/organizations\\/github\\/settings\\/installations\\/1",
             "app_id": 1,

@@ -73,7 +73,7 @@ final readonly class WebhookProjectsV2ItemArchived
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "organization": {
             "title": "Organization Simple",
@@ -172,7 +172,7 @@ final readonly class WebhookProjectsV2ItemArchived
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "projects_v2_item": {
             "title": "Projects v2 Item",
@@ -555,7 +555,7 @@ final readonly class WebhookProjectsV2ItemArchived
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -646,13 +646,16 @@ final readonly class WebhookProjectsV2ItemArchived
 }';
 
     /**
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * organization: A GitHub organization.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
      * projectsVTwoItem: An item belonging to a project
-     * sender: A GitHub user.
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemArchived\Changes $changes, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimple $organization, #[MapFrom('projects_v2_item')]
-    public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUser $sender,)
+    public function __construct(public string $action, public Schema\WebhookProjectsV2ItemArchived\Changes $changes, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, #[MapFrom('projects_v2_item')]
+    public Schema\ProjectsV2Item $projectsVTwoItem, public Schema\SimpleUserWebhooks $sender,)
     {
     }
 }

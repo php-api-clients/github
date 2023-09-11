@@ -513,6 +513,7 @@ final readonly class GlobalAdvisory
                     }
                 }
             },
+            "description": "The users who contributed to the advisory.",
             "readOnly": true
         }
     },
@@ -566,6 +567,7 @@ final readonly class GlobalAdvisory
     This field is only populated when the advisory is imported from the National Vulnerability Database.
      * withdrawnAt: The date and time of when the advisory was withdrawn, in ISO 8601 format.
      * vulnerabilities: The products and respective version ranges affected by the advisory.
+     * credits: The users who contributed to the advisory.
      */
     public function __construct(#[MapFrom('ghsa_id')]
     public string $ghsaId, #[MapFrom('cve_id')]

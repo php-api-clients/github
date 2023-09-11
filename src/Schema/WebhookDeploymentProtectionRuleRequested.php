@@ -5358,7 +5358,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     "description": "Whether anonymous git access is enabled for this repository"
                 }
             },
-            "description": "A repository on GitHub."
+            "description": "The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property\\nwhen the event occurs from activity in a repository."
         },
         "organization": {
             "title": "Organization Simple",
@@ -5457,7 +5457,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     ]
                 }
             },
-            "description": "A GitHub organization."
+            "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "installation": {
             "title": "Simple Installation",
@@ -5482,7 +5482,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     ]
                 }
             },
-            "description": "The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App."
+            "description": "The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured\\nfor and sent to a GitHub App. For more information,\\nsee \\"[Using webhooks with GitHub Apps](https:\\/\\/docs.github.com\\/apps\\/creating-github-apps\\/registering-a-github-app\\/using-webhooks-with-github-apps).\\""
         },
         "sender": {
             "title": "Simple User",
@@ -5643,7 +5643,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     ]
                 }
             },
-            "description": "A GitHub user."
+            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
         }
     }
 }';
@@ -7106,14 +7106,18 @@ final readonly class WebhookDeploymentProtectionRuleRequested
      * event: The event that triggered the deployment protection rule.
      * deploymentCallbackUrl: The URL to review the deployment protection rule.
      * deployment: A request for a specific ref(branch,sha,tag) to be deployed
-     * repository: A repository on GitHub.
-     * organization: A GitHub organization.
-     * installation: The GitHub App installation. This property is included when the event is configured for and sent to a GitHub App.
-     * sender: A GitHub user.
+     * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+    when the event occurs from activity in a repository.
+     * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+    organization, or when the event occurs from activity in a repository owned by an organization.
+     * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    for and sent to a GitHub App. For more information,
+    see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string|null $action, public string|null $environment, public string|null $event, #[MapFrom('deployment_callback_url')]
     public string|null $deploymentCallbackUrl, public Schema\Deployment|null $deployment, #[MapFrom('pull_requests')]
-    public array|null $pullRequests, public Schema\Repository|null $repository, public Schema\OrganizationSimple|null $organization, public Schema\SimpleInstallation|null $installation, public Schema\SimpleUser|null $sender,)
+    public array|null $pullRequests, public Schema\RepositoryWebhooks|null $repository, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleInstallation|null $installation, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

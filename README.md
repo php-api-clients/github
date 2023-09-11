@@ -2471,6 +2471,7 @@ List self-hosted runners for an organization
 Using the `call` method:
 ```php
 $client->call('GET /orgs/{org}/actions/runners', [
+        'name' => 'generated',
         'org' => 'generated',
         'per_page' => 8,
         'page' => 1,
@@ -2479,7 +2480,8 @@ $client->call('GET /orgs/{org}/actions/runners', [
 
 Operations method:
 ```php
-$client->operations()->actions()->listSelfHostedRunnersForOrg(        org: 'generated',
+$client->operations()->actions()->listSelfHostedRunnersForOrg(        name: 'generated',
+        org: 'generated',
         per_page: 8,
         page: 1,
 );
@@ -8906,6 +8908,7 @@ List self-hosted runners for a repository
 Using the `call` method:
 ```php
 $client->call('GET /repos/{owner}/{repo}/actions/runners', [
+        'name' => 'generated',
         'owner' => 'generated',
         'repo' => 'generated',
         'per_page' => 8,
@@ -8915,7 +8918,8 @@ $client->call('GET /repos/{owner}/{repo}/actions/runners', [
 
 Operations method:
 ```php
-$client->operations()->actions()->listSelfHostedRunnersForRepo(        owner: 'generated',
+$client->operations()->actions()->listSelfHostedRunnersForRepo(        name: 'generated',
+        owner: 'generated',
         repo: 'generated',
         per_page: 8,
         page: 1,
