@@ -87,84 +87,6 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Event>|array{code:int} */
-    public function listPublicEventsListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Activity\ListPublicEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Events());
-            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
-    /** @return Observable<Schema\Thread>|array{code:int} */
-    public function listNotificationsForAuthenticatedUserListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('before', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: before');
-        }
-
-        $arguments['before'] = $params['before'];
-        unset($params['before']);
-        if (array_key_exists('all', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: all');
-        }
-
-        $arguments['all'] = $params['all'];
-        unset($params['all']);
-        if (array_key_exists('participating', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: participating');
-        }
-
-        $arguments['participating'] = $params['participating'];
-        unset($params['participating']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Activity\ListNotificationsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
-            $items    = [...$operator->call($arguments['since'], $arguments['before'], $arguments['all'], $arguments['participating'], $arguments['page'], $arguments['per_page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
     /** @return Observable<Schema\Event> */
     public function listPublicOrgEventsListing(array $params): iterable
     {
@@ -290,6 +212,84 @@ final class Activity
         do {
             $operator = new Internal\Operator\Activity\ListReposWatchedByUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Subscriptions());
             $items    = [...$operator->call($arguments['username'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return Observable<Schema\Event>|array{code:int} */
+    public function listPublicEventsListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Activity\ListPublicEventsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Events());
+            $items    = [...$operator->call($arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return Observable<Schema\Thread>|array{code:int} */
+    public function listNotificationsForAuthenticatedUserListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('all', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: all');
+        }
+
+        $arguments['all'] = $params['all'];
+        unset($params['all']);
+        if (array_key_exists('participating', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: participating');
+        }
+
+        $arguments['participating'] = $params['participating'];
+        unset($params['participating']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Activity\ListNotificationsForAuthenticatedUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
+            $items    = [...$operator->call($arguments['since'], $arguments['before'], $arguments['all'], $arguments['participating'], $arguments['page'], $arguments['per_page'])];
 
             yield from $items;
 

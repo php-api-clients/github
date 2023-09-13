@@ -21,7 +21,7 @@ final class Two
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory>||Observable<Schema\CodeOfConduct>|array{code:int}|Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\Event>|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Schema\ApiOverview|Observable<Schema\Thread>|Observable<Schema\OrganizationSimple>|Schema\RateLimitOverview|Observable<Schema\MinimalRepository>|Schema\PrivateUser|Schema\PublicUser|Observable<Schema\SimpleUser>|Observable<string> */
+    /** @return Observable<Schema\GlobalAdvisory>||iterable<Schema\SimpleClassroom>|Observable<Schema\CodeOfConduct>|array{code:int}|Schema\Operations\Emojis\Get\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\Event>|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Schema\ApiOverview|Observable<Schema\Thread>|Observable<Schema\OrganizationSimple>|Schema\RateLimitOverview|Observable<Schema\MinimalRepository>|Schema\PrivateUser|Schema\PublicUser|Observable<Schema\SimpleUser>|Observable<string> */
     public function call(string $call, array $params, array $pathChunks): iterable|Integration|Json|Feed|ApiOverview|ResponseInterface|RateLimitOverview|PrivateUser|PublicUser|string
     {
         if ($pathChunks[0] === '') {
@@ -32,6 +32,10 @@ final class Two
             } elseif ($pathChunks[1] === 'app') {
                 if ($call === 'GET /app') {
                     return $this->routers->internal🔀Router🔀Get🔀Apps()->getAuthenticated($params);
+                }
+            } elseif ($pathChunks[1] === 'classrooms') {
+                if ($call === 'GET /classrooms') {
+                    return $this->routers->internal🔀Router🔀Get🔀Classroom()->listClassrooms($params);
                 }
             } elseif ($pathChunks[1] === 'codes_of_conduct') {
                 if ($call === 'GET /codes_of_conduct') {

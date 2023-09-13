@@ -12,6 +12,8 @@ interface OperationsInterface
 
     public function apps(): Operation\Apps;
 
+    public function classroom(): Operation\Classroom;
+
     public function codesOfConduct(): Operation\CodesOfConduct;
 
     public function emojis(): Operation\Emojis;

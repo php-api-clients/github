@@ -14,11 +14,15 @@ final class Two
     {
     }
 
-    /** @return Observable<Schema\Event>|array{code:int}|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Observable<Schema\Thread> */
+    /** @return iterable<Schema\SimpleClassroom>|Observable<Schema\Event>|array{code:int}|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Observable<Schema\Thread> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {
-            if ($pathChunks[1] === 'events') {
+            if ($pathChunks[1] === 'classrooms') {
+                if ($call === 'LIST /classrooms') {
+                    return $this->routers->internal🔀Router🔀List🔀Classroom()->listClassroomsListing($params);
+                }
+            } elseif ($pathChunks[1] === 'events') {
                 if ($call === 'LIST /events') {
                     return $this->routers->internal🔀Router🔀List🔀Activity()->listPublicEventsListing($params);
                 }

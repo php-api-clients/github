@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\Classroom;
+use ApiClients\Client\GitHub\Schema\ClassroomAssignment;
 use ApiClients\Client\GitHub\Schema\CodeOfConduct;
 use ApiClients\Client\GitHub\Schema\GistSimple;
 use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
@@ -27,8 +29,8 @@ final class Three
     {
     }
 
-    /** @return |Observable<Schema\IntegrationInstallationRequest>|array{code:int}|Observable<Schema\Installation>|Schema\CodeOfConduct|Observable<Schema\BaseGist>|Schema\GistSimple|Observable<string>|Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|Schema\License|Observable<Schema\MarketplaceListingPlan>|Schema\Project|Schema\Operations\Search\Code\Response\ApplicationJson\Ok|Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|Schema\Operations\Search\Users\Response\ApplicationJson\Ok|Observable<Schema\SimpleUser>|Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\Email>|Observable<Schema\GpgKey>|Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull> */
-    public function call(string $call, array $params, array $pathChunks): GlobalAdvisory|iterable|Integration|CodeOfConduct|GistSimple|Ok|License|OrganizationFull|Project|\ApiClients\Client\GitHub\Schema\Operations\Search\Code\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|TeamFull|Json|\ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|InteractionLimitResponse|One|PrivateUser|PublicUser
+    /** @return |Observable<Schema\IntegrationInstallationRequest>|array{code:int}|Observable<Schema\Installation>|Schema\ClassroomAssignment|Schema\Classroom|Schema\CodeOfConduct|Observable<Schema\BaseGist>|Schema\GistSimple|Observable<string>|Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|Schema\License|Observable<Schema\MarketplaceListingPlan>|Schema\Project|Schema\Operations\Search\Code\Response\ApplicationJson\Ok|Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|Schema\Operations\Search\Users\Response\ApplicationJson\Ok|Observable<Schema\SimpleUser>|Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\Email>|Observable<Schema\GpgKey>|Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull> */
+    public function call(string $call, array $params, array $pathChunks): GlobalAdvisory|iterable|Integration|ClassroomAssignment|Classroom|CodeOfConduct|GistSimple|Ok|License|OrganizationFull|Project|\ApiClients\Client\GitHub\Schema\Operations\Search\Code\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|TeamFull|Json|\ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|InteractionLimitResponse|One|PrivateUser|PublicUser
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'advisories') {
@@ -51,6 +53,18 @@ final class Three
                 if ($pathChunks[2] === '{app_slug}') {
                     if ($call === 'GET /apps/{app_slug}') {
                         return $this->routers->internal🔀Router🔀Get🔀Apps()->getBySlug($params);
+                    }
+                }
+            } elseif ($pathChunks[1] === 'assignments') {
+                if ($pathChunks[2] === '{assignment_id}') {
+                    if ($call === 'GET /assignments/{assignment_id}') {
+                        return $this->routers->internal🔀Router🔀Get🔀Classroom()->getAnAssignment($params);
+                    }
+                }
+            } elseif ($pathChunks[1] === 'classrooms') {
+                if ($pathChunks[2] === '{classroom_id}') {
+                    if ($call === 'GET /classrooms/{classroom_id}') {
+                        return $this->routers->internal🔀Router🔀Get🔀Classroom()->getAClassroom($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'codes_of_conduct') {

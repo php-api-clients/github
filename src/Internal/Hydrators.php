@@ -29,6 +29,12 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Applications\ClientId\Token|null $operation🌀Applications🌀ClientId🌀Token                                                                                                                                           = null;
     private Internal\Hydrator\Operation\Applications\ClientId\Token\Scoped|null $operation🌀Applications🌀ClientId🌀Token🌀Scoped                                                                                                                             = null;
     private Internal\Hydrator\Operation\Apps\AppSlug|null $operation🌀Apps🌀AppSlug                                                                                                                                                                         = null;
+    private Internal\Hydrator\Operation\Assignments\AssignmentId|null $operation🌀Assignments🌀AssignmentId                                                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Assignments\AssignmentId\AcceptedAssignments|null $operation🌀Assignments🌀AssignmentId🌀AcceptedAssignments                                                                                                         = null;
+    private Internal\Hydrator\Operation\Assignments\AssignmentId\Grades|null $operation🌀Assignments🌀AssignmentId🌀Grades                                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Classrooms|null $operation🌀Classrooms                                                                                                                                                                             = null;
+    private Internal\Hydrator\Operation\Classrooms\ClassroomId|null $operation🌀Classrooms🌀ClassroomId                                                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Classrooms\ClassroomId\Assignments|null $operation🌀Classrooms🌀ClassroomId🌀Assignments                                                                                                                             = null;
     private Internal\Hydrator\Operation\CodesOfConduct|null $operation🌀CodesOfConduct                                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\CodesOfConduct\Key|null $operation🌀CodesOfConduct🌀Key                                                                                                                                                             = null;
     private Internal\Hydrator\Operation\Emojis|null $operation🌀Emojis                                                                                                                                                                                     = null;
@@ -609,6 +615,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Installation', '\\ApiClients\\Client\\GitHub\\Schema\\AppPermissions' => $this->getObjectMapperOperation🌀App🌀Installations🌀InstallationId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\InstallationToken' => $this->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀AccessTokens()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Authorization', '\\ApiClients\\Client\\GitHub\\Schema\\Authorization\\App', '\\ApiClients\\Client\\GitHub\\Schema\\ScopedInstallation' => $this->getObjectMapperOperation🌀Applications🌀ClientId🌀Token()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\ClassroomAssignment', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomRepository', '\\ApiClients\\Client\\GitHub\\Schema\\Classroom', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomOrganization' => $this->getObjectMapperOperation🌀Assignments🌀AssignmentId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConduct' => $this->getObjectMapperOperation🌀CodesOfConduct🌀Key()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Emojis\\Get\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Emojis()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\SecretScanning\\ListAlertsForEnterprise\\Response\\ApplicationJson\\ServiceUnavailable' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts()->hydrateObject($className, $payload),
@@ -871,6 +878,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Installation', '\\ApiClients\\Client\\GitHub\\Schema\\AppPermissions' => $this->getObjectMapperOperation🌀App🌀Installations🌀InstallationId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\InstallationToken' => $this->getObjectMapperOperation🌀App🌀Installations🌀InstallationId🌀AccessTokens()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Authorization', '\\ApiClients\\Client\\GitHub\\Schema\\Authorization\\App', '\\ApiClients\\Client\\GitHub\\Schema\\ScopedInstallation' => $this->getObjectMapperOperation🌀Applications🌀ClientId🌀Token()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\ClassroomAssignment', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomRepository', '\\ApiClients\\Client\\GitHub\\Schema\\Classroom', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomOrganization' => $this->getObjectMapperOperation🌀Assignments🌀AssignmentId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConduct' => $this->getObjectMapperOperation🌀CodesOfConduct🌀Key()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Emojis\\Get\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Emojis()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\SecretScanning\\ListAlertsForEnterprise\\Response\\ApplicationJson\\ServiceUnavailable' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts()->serializeObject($object),
@@ -1274,6 +1282,60 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Apps🌀AppSlug;
+    }
+
+    public function getObjectMapperOperation🌀Assignments🌀AssignmentId(): Internal\Hydrator\Operation\Assignments\AssignmentId
+    {
+        if ($this->operation🌀Assignments🌀AssignmentId instanceof Internal\Hydrator\Operation\Assignments\AssignmentId === false) {
+            $this->operation🌀Assignments🌀AssignmentId = new Internal\Hydrator\Operation\Assignments\AssignmentId();
+        }
+
+        return $this->operation🌀Assignments🌀AssignmentId;
+    }
+
+    public function getObjectMapperOperation🌀Assignments🌀AssignmentId🌀AcceptedAssignments(): Internal\Hydrator\Operation\Assignments\AssignmentId\AcceptedAssignments
+    {
+        if ($this->operation🌀Assignments🌀AssignmentId🌀AcceptedAssignments instanceof Internal\Hydrator\Operation\Assignments\AssignmentId\AcceptedAssignments === false) {
+            $this->operation🌀Assignments🌀AssignmentId🌀AcceptedAssignments = new Internal\Hydrator\Operation\Assignments\AssignmentId\AcceptedAssignments();
+        }
+
+        return $this->operation🌀Assignments🌀AssignmentId🌀AcceptedAssignments;
+    }
+
+    public function getObjectMapperOperation🌀Assignments🌀AssignmentId🌀Grades(): Internal\Hydrator\Operation\Assignments\AssignmentId\Grades
+    {
+        if ($this->operation🌀Assignments🌀AssignmentId🌀Grades instanceof Internal\Hydrator\Operation\Assignments\AssignmentId\Grades === false) {
+            $this->operation🌀Assignments🌀AssignmentId🌀Grades = new Internal\Hydrator\Operation\Assignments\AssignmentId\Grades();
+        }
+
+        return $this->operation🌀Assignments🌀AssignmentId🌀Grades;
+    }
+
+    public function getObjectMapperOperation🌀Classrooms(): Internal\Hydrator\Operation\Classrooms
+    {
+        if ($this->operation🌀Classrooms instanceof Internal\Hydrator\Operation\Classrooms === false) {
+            $this->operation🌀Classrooms = new Internal\Hydrator\Operation\Classrooms();
+        }
+
+        return $this->operation🌀Classrooms;
+    }
+
+    public function getObjectMapperOperation🌀Classrooms🌀ClassroomId(): Internal\Hydrator\Operation\Classrooms\ClassroomId
+    {
+        if ($this->operation🌀Classrooms🌀ClassroomId instanceof Internal\Hydrator\Operation\Classrooms\ClassroomId === false) {
+            $this->operation🌀Classrooms🌀ClassroomId = new Internal\Hydrator\Operation\Classrooms\ClassroomId();
+        }
+
+        return $this->operation🌀Classrooms🌀ClassroomId;
+    }
+
+    public function getObjectMapperOperation🌀Classrooms🌀ClassroomId🌀Assignments(): Internal\Hydrator\Operation\Classrooms\ClassroomId\Assignments
+    {
+        if ($this->operation🌀Classrooms🌀ClassroomId🌀Assignments instanceof Internal\Hydrator\Operation\Classrooms\ClassroomId\Assignments === false) {
+            $this->operation🌀Classrooms🌀ClassroomId🌀Assignments = new Internal\Hydrator\Operation\Classrooms\ClassroomId\Assignments();
+        }
+
+        return $this->operation🌀Classrooms🌀ClassroomId🌀Assignments;
     }
 
     public function getObjectMapperOperation🌀CodesOfConduct(): Internal\Hydrator\Operation\CodesOfConduct

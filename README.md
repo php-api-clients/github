@@ -574,6 +574,206 @@ $client->operations()->apps()->getBySlug(        app_slug: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/apps/apps#get-an-app).
 
 
+### classroom/get-an-assignment
+
+Get an assignment
+
+Using the `call` method:
+```php
+$client->call('GET /assignments/{assignment_id}', [
+        'assignment_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->getAnAssignment(        assignment_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#get-an-assignment).
+
+
+### classroom/list-accepted-assigments-for-an-assignment
+
+List accepted assignments for an assignment
+
+Using the `call` method:
+```php
+$client->call('GET /assignments/{assignment_id}/accepted_assignments', [
+        'assignment_id' => 13,
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listAcceptedAssigmentsForAnAssignment(        assignment_id: 13,
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-accepted-assignments-for-an-assignment).
+
+
+### classroom/list-accepted-assigments-for-an-assignment
+
+List accepted assignments for an assignment
+
+Using the `call` method:
+```php
+$client->call('LIST /assignments/{assignment_id}/accepted_assignments', [
+        'assignment_id' => 13,
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listAcceptedAssigmentsForAnAssignmentListing(        assignment_id: 13,
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-accepted-assignments-for-an-assignment).
+
+
+### classroom/get-assignment-grades
+
+Get assignment grades
+
+Using the `call` method:
+```php
+$client->call('GET /assignments/{assignment_id}/grades', [
+        'assignment_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->getAssignmentGrades(        assignment_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#get-assignment-grades).
+
+
+### classroom/list-classrooms
+
+List classrooms
+
+Using the `call` method:
+```php
+$client->call('GET /classrooms', [
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listClassrooms(        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-classrooms).
+
+
+### classroom/list-classrooms
+
+List classrooms
+
+Using the `call` method:
+```php
+$client->call('LIST /classrooms', [
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listClassroomsListing(        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-classrooms).
+
+
+### classroom/get-a-classroom
+
+Get a classroom
+
+Using the `call` method:
+```php
+$client->call('GET /classrooms/{classroom_id}', [
+        'classroom_id' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->getAClassroom(        classroom_id: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#get-a-classroom).
+
+
+### classroom/list-assignments-for-a-classroom
+
+List assignments for a classroom
+
+Using the `call` method:
+```php
+$client->call('GET /classrooms/{classroom_id}/assignments', [
+        'classroom_id' => 12,
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listAssignmentsForAClassroom(        classroom_id: 12,
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-assignments-for-a-classroom).
+
+
+### classroom/list-assignments-for-a-classroom
+
+List assignments for a classroom
+
+Using the `call` method:
+```php
+$client->call('LIST /classrooms/{classroom_id}/assignments', [
+        'classroom_id' => 12,
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->classroom()->listAssignmentsForAClassroomListing(        classroom_id: 12,
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-assignments-for-a-classroom).
+
+
 ### codes-of-conduct/get-all-codes-of-conduct
 
 Get all codes of conduct

@@ -36,6 +36,15 @@ final class Operators
     private Internal\Operator\Apps\ResetToken|null $apps👷ResetToken                                                                                                                 = null;
     private Internal\Operator\Apps\ScopeToken|null $apps👷ScopeToken                                                                                                                 = null;
     private Internal\Operator\Apps\GetBySlug|null $apps👷GetBySlug                                                                                                                   = null;
+    private Internal\Operator\Classroom\GetAnAssignment|null $classroom👷GetAnAssignment                                                                                             = null;
+    private Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignment|null $classroom👷ListAcceptedAssigmentsForAnAssignment                                                 = null;
+    private Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignmentListing|null $classroom👷ListAcceptedAssigmentsForAnAssignmentListing                                   = null;
+    private Internal\Operator\Classroom\GetAssignmentGrades|null $classroom👷GetAssignmentGrades                                                                                     = null;
+    private Internal\Operator\Classroom\ListClassrooms|null $classroom👷ListClassrooms                                                                                               = null;
+    private Internal\Operator\Classroom\ListClassroomsListing|null $classroom👷ListClassroomsListing                                                                                 = null;
+    private Internal\Operator\Classroom\GetAClassroom|null $classroom👷GetAClassroom                                                                                                 = null;
+    private Internal\Operator\Classroom\ListAssignmentsForAClassroom|null $classroom👷ListAssignmentsForAClassroom                                                                   = null;
+    private Internal\Operator\Classroom\ListAssignmentsForAClassroomListing|null $classroom👷ListAssignmentsForAClassroomListing                                                     = null;
     private Internal\Operator\CodesOfConduct\GetAllCodesOfConduct|null $codesOfConduct👷GetAllCodesOfConduct                                                                         = null;
     private Internal\Operator\CodesOfConduct\GetConductCode|null $codesOfConduct👷GetConductCode                                                                                     = null;
     private Internal\Operator\Emojis\Get|null $emojis👷Get                                                                                                                           = null;
@@ -1294,6 +1303,87 @@ final class Operators
         }
 
         return $this->apps👷GetBySlug;
+    }
+
+    public function classroom👷GetAnAssignment(): Internal\Operator\Classroom\GetAnAssignment
+    {
+        if ($this->classroom👷GetAnAssignment instanceof Internal\Operator\Classroom\GetAnAssignment === false) {
+            $this->classroom👷GetAnAssignment = new Internal\Operator\Classroom\GetAnAssignment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId());
+        }
+
+        return $this->classroom👷GetAnAssignment;
+    }
+
+    public function classroom👷ListAcceptedAssigmentsForAnAssignment(): Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignment
+    {
+        if ($this->classroom👷ListAcceptedAssigmentsForAnAssignment instanceof Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignment === false) {
+            $this->classroom👷ListAcceptedAssigmentsForAnAssignment = new Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId🌀AcceptedAssignments());
+        }
+
+        return $this->classroom👷ListAcceptedAssigmentsForAnAssignment;
+    }
+
+    public function classroom👷ListAcceptedAssigmentsForAnAssignmentListing(): Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignmentListing
+    {
+        if ($this->classroom👷ListAcceptedAssigmentsForAnAssignmentListing instanceof Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignmentListing === false) {
+            $this->classroom👷ListAcceptedAssigmentsForAnAssignmentListing = new Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignmentListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId🌀AcceptedAssignments());
+        }
+
+        return $this->classroom👷ListAcceptedAssigmentsForAnAssignmentListing;
+    }
+
+    public function classroom👷GetAssignmentGrades(): Internal\Operator\Classroom\GetAssignmentGrades
+    {
+        if ($this->classroom👷GetAssignmentGrades instanceof Internal\Operator\Classroom\GetAssignmentGrades === false) {
+            $this->classroom👷GetAssignmentGrades = new Internal\Operator\Classroom\GetAssignmentGrades($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId🌀Grades());
+        }
+
+        return $this->classroom👷GetAssignmentGrades;
+    }
+
+    public function classroom👷ListClassrooms(): Internal\Operator\Classroom\ListClassrooms
+    {
+        if ($this->classroom👷ListClassrooms instanceof Internal\Operator\Classroom\ListClassrooms === false) {
+            $this->classroom👷ListClassrooms = new Internal\Operator\Classroom\ListClassrooms($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Classrooms());
+        }
+
+        return $this->classroom👷ListClassrooms;
+    }
+
+    public function classroom👷ListClassroomsListing(): Internal\Operator\Classroom\ListClassroomsListing
+    {
+        if ($this->classroom👷ListClassroomsListing instanceof Internal\Operator\Classroom\ListClassroomsListing === false) {
+            $this->classroom👷ListClassroomsListing = new Internal\Operator\Classroom\ListClassroomsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Classrooms());
+        }
+
+        return $this->classroom👷ListClassroomsListing;
+    }
+
+    public function classroom👷GetAClassroom(): Internal\Operator\Classroom\GetAClassroom
+    {
+        if ($this->classroom👷GetAClassroom instanceof Internal\Operator\Classroom\GetAClassroom === false) {
+            $this->classroom👷GetAClassroom = new Internal\Operator\Classroom\GetAClassroom($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Classrooms🌀ClassroomId());
+        }
+
+        return $this->classroom👷GetAClassroom;
+    }
+
+    public function classroom👷ListAssignmentsForAClassroom(): Internal\Operator\Classroom\ListAssignmentsForAClassroom
+    {
+        if ($this->classroom👷ListAssignmentsForAClassroom instanceof Internal\Operator\Classroom\ListAssignmentsForAClassroom === false) {
+            $this->classroom👷ListAssignmentsForAClassroom = new Internal\Operator\Classroom\ListAssignmentsForAClassroom($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Classrooms🌀ClassroomId🌀Assignments());
+        }
+
+        return $this->classroom👷ListAssignmentsForAClassroom;
+    }
+
+    public function classroom👷ListAssignmentsForAClassroomListing(): Internal\Operator\Classroom\ListAssignmentsForAClassroomListing
+    {
+        if ($this->classroom👷ListAssignmentsForAClassroomListing instanceof Internal\Operator\Classroom\ListAssignmentsForAClassroomListing === false) {
+            $this->classroom👷ListAssignmentsForAClassroomListing = new Internal\Operator\Classroom\ListAssignmentsForAClassroomListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Classrooms🌀ClassroomId🌀Assignments());
+        }
+
+        return $this->classroom👷ListAssignmentsForAClassroomListing;
     }
 
     public function codesOfConduct👷GetAllCodesOfConduct(): Internal\Operator\CodesOfConduct\GetAllCodesOfConduct

@@ -84,6 +84,75 @@ final class Issues
         } while (count($items) > 0);
     }
 
+    /** @return Observable<Schema\Issue> */
+    public function listForOrgListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('labels', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: labels');
+        }
+
+        $arguments['labels'] = $params['labels'];
+        unset($params['labels']);
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('filter', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: filter');
+        }
+
+        $arguments['filter'] = $params['filter'];
+        unset($params['filter']);
+        if (array_key_exists('state', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: state');
+        }
+
+        $arguments['state'] = $params['state'];
+        unset($params['state']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Issues\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Issues());
+            $items    = [...$operator->call($arguments['org'], $arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
     /** @return Observable<Schema\Issue>|array{code:int} */
     public function listListing(array $params): iterable
     {
@@ -164,75 +233,6 @@ final class Issues
         do {
             $operator = new Internal\Operator\Issues\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Issues());
             $items    = [...$operator->call($arguments['labels'], $arguments['since'], $arguments['collab'], $arguments['orgs'], $arguments['owned'], $arguments['pulls'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
-    /** @return Observable<Schema\Issue> */
-    public function listForOrgListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('labels', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: labels');
-        }
-
-        $arguments['labels'] = $params['labels'];
-        unset($params['labels']);
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('filter', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: filter');
-        }
-
-        $arguments['filter'] = $params['filter'];
-        unset($params['filter']);
-        if (array_key_exists('state', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: state');
-        }
-
-        $arguments['state'] = $params['state'];
-        unset($params['state']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Issues\ListForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Issues());
-            $items    = [...$operator->call($arguments['org'], $arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

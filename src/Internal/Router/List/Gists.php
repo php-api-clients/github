@@ -86,39 +86,6 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Gists\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
-            $items    = [...$operator->call($arguments['since'], $arguments['per_page'], $arguments['page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
     /** @return Observable<Schema\GistComment>|array{code:int} */
     public function listCommentsListing(array $params): iterable
     {
@@ -250,6 +217,39 @@ final class Gists
         do {
             $operator = new Internal\Operator\Gists\ListForUserListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Gists());
             $items    = [...$operator->call($arguments['username'], $arguments['since'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return Observable<Schema\BaseGist>|array{code:int} */
+    public function listListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Gists\ListListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());
+            $items    = [...$operator->call($arguments['since'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

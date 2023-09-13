@@ -25,6 +25,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Apps($this->operators);
     }
 
+    public function classroom(): Operation\Classroom
+    {
+        return new Operation\Classroom($this->operators);
+    }
+
     public function codesOfConduct(): Operation\CodesOfConduct
     {
         return new Operation\CodesOfConduct($this->operators);

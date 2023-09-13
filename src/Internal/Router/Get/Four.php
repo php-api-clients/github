@@ -33,7 +33,7 @@ final class Four
     {
     }
 
-    /** @return |Observable<Schema\HookDeliveryItem>|Observable<Schema\GistComment>|array{code:int}|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Schema\GitignoreTemplate|Observable<Schema\MarketplaceListingPlan>|Schema\Thread|Observable<Schema\SimpleUser>|Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\TeamSimple>|Observable<Schema\Team>|Schema\ProjectColumn|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Schema\Codespace|Schema\GpgKey|Schema\Key|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Schema\Migration|Schema\SshSigningKey|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
+    /** @return |Observable<Schema\HookDeliveryItem>|iterable<Schema\ClassroomAcceptedAssignment>|iterable<Schema\ClassroomAssignmentGrade>|iterable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|array{code:int}|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Schema\GitignoreTemplate|Observable<Schema\MarketplaceListingPlan>|Schema\Thread|Observable<Schema\SimpleUser>|Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\TeamSimple>|Observable<Schema\Team>|Schema\ProjectColumn|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Schema\Codespace|Schema\GpgKey|Schema\Key|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Schema\Migration|Schema\SshSigningKey|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
     public function call(string $call, array $params, array $pathChunks): WebhookConfig|iterable|Installation|GistSimple|GitignoreTemplate|MarketplacePurchase|Thread|Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|InteractionLimitResponse|One|ProjectColumn|FullRepository|BasicError|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Codespace|GpgKey|Key|Migration|SshSigningKey|Hovercard|StarredRepository|Repository
     {
         if ($pathChunks[0] === '') {
@@ -52,6 +52,26 @@ final class Four
                     if ($pathChunks[3] === '{installation_id}') {
                         if ($call === 'GET /app/installations/{installation_id}') {
                             return $this->routers->internal🔀Router🔀Get🔀Apps()->getInstallation($params);
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'assignments') {
+                if ($pathChunks[2] === '{assignment_id}') {
+                    if ($pathChunks[3] === 'accepted_assignments') {
+                        if ($call === 'GET /assignments/{assignment_id}/accepted_assignments') {
+                            return $this->routers->internal🔀Router🔀Get🔀Classroom()->listAcceptedAssigmentsForAnAssignment($params);
+                        }
+                    } elseif ($pathChunks[3] === 'grades') {
+                        if ($call === 'GET /assignments/{assignment_id}/grades') {
+                            return $this->routers->internal🔀Router🔀Get🔀Classroom()->getAssignmentGrades($params);
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'classrooms') {
+                if ($pathChunks[2] === '{classroom_id}') {
+                    if ($pathChunks[3] === 'assignments') {
+                        if ($call === 'GET /classrooms/{classroom_id}/assignments') {
+                            return $this->routers->internal🔀Router🔀Get🔀Classroom()->listAssignmentsForAClassroom($params);
                         }
                     }
                 }

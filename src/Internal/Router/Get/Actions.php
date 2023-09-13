@@ -57,7 +57,7 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForOrg\Response\ApplicationJson\Ok */
+    /** @return */
     public function listSelfHostedRunnersForOrg(array $params): Ok|array
     {
         $arguments = [];
@@ -519,7 +519,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json */
+    /** @return */
     public function listSelfHostedRunnersForRepo(array $params): Json|array
     {
         $arguments = [];

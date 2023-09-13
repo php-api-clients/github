@@ -1,5 +1,5 @@
 {
-    "specHash": "93d36581e52a49dc3fc52d41683a5cea",
+    "specHash": "7bd2a5b87d5d43361c018f6491b61658",
     "generatedFiles": {
         "files": [
             {
@@ -5724,15 +5724,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/ClientInterface.php",
-                "hash": "38cf86c47e14f79b01b90a965838bd05"
+                "hash": "462bf3171c11bd3a69c0f0542f7b3eb5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Client.php",
-                "hash": "58ad314ee1336297e7fc6c7736f7924e"
+                "hash": "061691bbaaa87fcc1f16e4d1b668a601"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/OperationsInterface.php",
-                "hash": "d48a6e232929b1dc160273142b1e81c9"
+                "hash": "6fbf6dcac7086ba196dd7ef77c1e90a4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Meta.php",
@@ -5788,7 +5788,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
-                "hash": "ca0079a37775f7799ab90700ddd62441"
+                "hash": "0436185c5ad83c5c8c5a0a1acb4f136e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Oidc.php",
@@ -5868,7 +5868,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operations.php",
-                "hash": "ea9d18a7363999aa5d6a43531483e2f5"
+                "hash": "74a86f59dd332844b0637cdf3d9b2183"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/WebHooks.php",
@@ -15348,7 +15348,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Actions\/ListSelfHostedRunnersForOrg.php",
-                "hash": "f7e5b67f7ce184001f632e219c6023ec"
+                "hash": "e50f9fc18efcb78174a4246f3d48e3cc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Actions\/ListSelfHostedRunnersForOrgTest.php",
@@ -18384,7 +18384,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Actions\/ListSelfHostedRunnersForRepo.php",
-                "hash": "95714528434454b0d5bf19b193dce225"
+                "hash": "fb5a303834c79b6a8d9fd8e1b65594ff"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Actions\/ListSelfHostedRunnersForRepoTest.php",
@@ -26508,7 +26508,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Actions.php",
-                "hash": "0c9c46ad4727b7fbd896103d774d8412"
+                "hash": "5bdb375667a17052ee2197e8cd1b79e4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/CodeScanning.php",
@@ -26712,7 +26712,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Gists.php",
-                "hash": "8640f50389b4387a42c16a31db3d304a"
+                "hash": "edc82bf950b02c070aaa50b5109f779a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Users.php",
@@ -26720,7 +26720,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Issues.php",
-                "hash": "93634abf731fa3945a3a5f2dd319380c"
+                "hash": "3247b509c4c768a95aebb167d02d7df7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Migrations.php",
@@ -26740,7 +26740,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Activity.php",
-                "hash": "8b0aa4a1a30b08efdaa49b1cb5b9527a"
+                "hash": "6fe7c46c5085cce6b70a17eaf4fac5d9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Teams.php",
@@ -26940,23 +26940,23 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Two.php",
-                "hash": "43a80bcba1c554665f02a54dac27ce3d"
+                "hash": "d1902747e94fe07ff76e6150640390c3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Three.php",
-                "hash": "4f9792d9932a1f856968aca4cf9a696c"
+                "hash": "0a8290fdb0a20689a17770b6555d28e7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Four.php",
-                "hash": "ed2aaa53a19ca1b9183435ca93481a16"
+                "hash": "84e13aef26faac2838c1a9a7d97026db"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "b649062f2d1d054101c74e14c1e5835e"
+                "hash": "f3bb9e1d90f946e3448b0f85d8d87a06"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "e109671193beda179ac0d829070a7169"
+                "hash": "bd6650e3f05e5b0dc3a7c11bfa8577dd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -27048,11 +27048,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Two.php",
-                "hash": "f212eb0217e3401c05215552a79e262e"
+                "hash": "c272508638083b43c2bb396db73b81a6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Four.php",
-                "hash": "deb159ea4f0d03a7af22acce7d8aac18"
+                "hash": "bc83005a0c5d4cba91d036d95080d924"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
@@ -27156,11 +27156,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Routers.php",
-                "hash": "7c5703d100eb3f303dd36d806f2e7d60"
+                "hash": "a402d7f5164236048b6e63c33aeb8829"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operators.php",
-                "hash": "c2af4501554daa019f7bb2921dc9df4c"
+                "hash": "cf08118300598add31ee3823993465d4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Root.php",
@@ -29176,7 +29176,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "ec4d1e410b40deedbb801f4ded418eba"
+                "hash": "2e753918094c6364b1537ed9078b263d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -29217,6 +29217,174 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet82CBDBE3\/Tiet3E9EEAC7\/Tiet5E1C1050\/TietF8F26223.php",
                 "hash": "b4d63fc44baeb0ffaae6f33e86285fbe"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/GetAnAssignment.php",
+                "hash": "c902e9a400b87abd02cafc2e0922c462"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/GetAnAssignment.php",
+                "hash": "8bc13c064593e5123c421d7a240da7f6"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/GetAnAssignmentTest.php",
+                "hash": "427c8f092f8975a6ffdb2a455153c093"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListAcceptedAssigmentsForAnAssignment.php",
+                "hash": "c254b74b1d469f2566b9ee5a8de32267"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListAcceptedAssigmentsForAnAssignment.php",
+                "hash": "abb3ae16cbd08104abe028f6e94b6158"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListAcceptedAssigmentsForAnAssignmentTest.php",
+                "hash": "f51319bbc9dfe3d52eedf83d1c4c4b55"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListAcceptedAssigmentsForAnAssignmentListing.php",
+                "hash": "02347be7d98af695b235274b6f154ff0"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListAcceptedAssigmentsForAnAssignmentListing.php",
+                "hash": "c3cdc86dc76984d612b8a9a5a65d3295"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListAcceptedAssigmentsForAnAssignmentListingTest.php",
+                "hash": "6921831dd561f63e30fa8859f95d8498"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/GetAssignmentGrades.php",
+                "hash": "b1e1e3b7bab3426eff9891c94fe61bc1"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/GetAssignmentGrades.php",
+                "hash": "7d18a573837f7481bb8e4ff5fbd8107a"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/GetAssignmentGradesTest.php",
+                "hash": "978c09c7c62b8951daa8524c60f2d907"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListClassrooms.php",
+                "hash": "a2bd00dfe085ebc406f0c388a03ce3c3"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListClassrooms.php",
+                "hash": "0413d6b7a0f6d7e18cce46ac9d1b6bbb"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListClassroomsTest.php",
+                "hash": "2da3365beb895b6aacc7863b5f48504a"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListClassroomsListing.php",
+                "hash": "84d4037b3a8d3293f5e3c98b6756f9d2"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListClassroomsListing.php",
+                "hash": "3966f980c25308fee2657677ca3589a7"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListClassroomsListingTest.php",
+                "hash": "9bf33aa4695ab1d6161eb30a3eaaa0bd"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/GetAClassroom.php",
+                "hash": "f47c738d22e3a177f063023d01028f18"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/GetAClassroom.php",
+                "hash": "d65fc2ffe87efa64929af34b9380a180"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/GetAClassroomTest.php",
+                "hash": "35fb724abac8665a507f6ada8e5bf581"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListAssignmentsForAClassroom.php",
+                "hash": "9a7a1c1943bc8a2bee076535922e7eb8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListAssignmentsForAClassroom.php",
+                "hash": "da092bba44e4b010836bc4b4fb64cde8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListAssignmentsForAClassroomTest.php",
+                "hash": "00d3243e5481dfc47df89163afa8f8e1"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Classroom\/ListAssignmentsForAClassroomListing.php",
+                "hash": "5dcb43653b533c1fea2bcb769f83961f"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Classroom\/ListAssignmentsForAClassroomListing.php",
+                "hash": "1ed870d44d35091416cb1ccff83ecb4b"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Classroom\/ListAssignmentsForAClassroomListingTest.php",
+                "hash": "e3eb9d897a6b2c5a68a92ac5bdcc1361"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleClassroomRepository.php",
+                "hash": "6183a8ddf38a43d18e760891ad6de14a"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleClassroomOrganization.php",
+                "hash": "35a184d131d78e919b2237edd63f5477"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Classroom.php",
+                "hash": "3099e5905379ba0cf951183251b41e01"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ClassroomAssignment.php",
+                "hash": "3b15e5fd6e3689927359e7d721151c30"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleClassroomUser.php",
+                "hash": "a1419c13def358aaee57d91b7617636e"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleClassroom.php",
+                "hash": "da9804286d64ccbe4418a4b8c943f3c0"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleClassroomAssignment.php",
+                "hash": "e3ac2f9009a52002f159f3b7351c10e9"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ClassroomAcceptedAssignment.php",
+                "hash": "acf3c249c4b9f37c35d68d9cebc8855b"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ClassroomAssignmentGrade.php",
+                "hash": "08d6aab156ee516ba05ba035cd03fcd9"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Classroom.php",
+                "hash": "d38a759e1bf1db2dd5b47db9d4523336"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Classroom.php",
+                "hash": "1550c7803074f9a7a5350430c3d553f8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Classroom.php",
+                "hash": "ef5da165a773a592e948bb677e9a350c"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Assignments\/AssignmentId.php",
+                "hash": "e4cd392e29ef794f394107d6b0fe4756"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Assignments\/AssignmentId\/Grades.php",
+                "hash": "2c9a5f58ae3a5bc298710e6b1126f3f8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Classrooms\/ClassroomId.php",
+                "hash": "313159326cf110b5cc91005d756d47df"
             }
         ]
     },

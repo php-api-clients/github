@@ -14,6 +14,7 @@ final class Routers
     private Internal\Router\Get\Meta|null $internal🔀Router🔀Get🔀Meta                                 = null;
     private Internal\Router\Get\SecurityAdvisories|null $internal🔀Router🔀Get🔀SecurityAdvisories     = null;
     private Internal\Router\Get\Apps|null $internal🔀Router🔀Get🔀Apps                                 = null;
+    private Internal\Router\Get\Classroom|null $internal🔀Router🔀Get🔀Classroom                       = null;
     private Internal\Router\Get\CodesOfConduct|null $internal🔀Router🔀Get🔀CodesOfConduct             = null;
     private Internal\Router\Get\Emojis|null $internal🔀Router🔀Get🔀Emojis                             = null;
     private Internal\Router\Get\Activity|null $internal🔀Router🔀Get🔀Activity                         = null;
@@ -94,8 +95,9 @@ final class Routers
     private Internal\Router\List\Repos|null $internal🔀Router🔀List🔀Repos                             = null;
     private Internal\Router\List\Activity|null $internal🔀Router🔀List🔀Activity                       = null;
     private Internal\Router\List\Teams|null $internal🔀Router🔀List🔀Teams                             = null;
-    private Internal\Router\List\Licenses|null $internal🔀Router🔀List🔀Licenses                       = null;
+    private Internal\Router\List\Classroom|null $internal🔀Router🔀List🔀Classroom                     = null;
     private Internal\Router\List\Projects|null $internal🔀Router🔀List🔀Projects                       = null;
+    private Internal\Router\List\Licenses|null $internal🔀Router🔀List🔀Licenses                       = null;
     private Internal\Router\List\CodeScanning|null $internal🔀Router🔀List🔀CodeScanning               = null;
     private Internal\Router\List\SecretScanning|null $internal🔀Router🔀List🔀SecretScanning           = null;
     private Internal\Router\List\Pulls|null $internal🔀Router🔀List🔀Pulls                             = null;
@@ -171,6 +173,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Get🔀Apps;
+    }
+
+    public function internal🔀Router🔀Get🔀Classroom(): Internal\Router\Get\Classroom
+    {
+        if ($this->internal🔀Router🔀Get🔀Classroom instanceof Internal\Router\Get\Classroom === false) {
+            $this->internal🔀Router🔀Get🔀Classroom = new Internal\Router\Get\Classroom(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Get🔀Classroom;
     }
 
     public function internal🔀Router🔀Get🔀CodesOfConduct(): Internal\Router\Get\CodesOfConduct
@@ -893,13 +904,13 @@ final class Routers
         return $this->internal🔀Router🔀List🔀Teams;
     }
 
-    public function internal🔀Router🔀List🔀Licenses(): Internal\Router\List\Licenses
+    public function internal🔀Router🔀List🔀Classroom(): Internal\Router\List\Classroom
     {
-        if ($this->internal🔀Router🔀List🔀Licenses instanceof Internal\Router\List\Licenses === false) {
-            $this->internal🔀Router🔀List🔀Licenses = new Internal\Router\List\Licenses(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        if ($this->internal🔀Router🔀List🔀Classroom instanceof Internal\Router\List\Classroom === false) {
+            $this->internal🔀Router🔀List🔀Classroom = new Internal\Router\List\Classroom(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
         }
 
-        return $this->internal🔀Router🔀List🔀Licenses;
+        return $this->internal🔀Router🔀List🔀Classroom;
     }
 
     public function internal🔀Router🔀List🔀Projects(): Internal\Router\List\Projects
@@ -909,6 +920,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀List🔀Projects;
+    }
+
+    public function internal🔀Router🔀List🔀Licenses(): Internal\Router\List\Licenses
+    {
+        if ($this->internal🔀Router🔀List🔀Licenses instanceof Internal\Router\List\Licenses === false) {
+            $this->internal🔀Router🔀List🔀Licenses = new Internal\Router\List\Licenses(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀List🔀Licenses;
     }
 
     public function internal🔀Router🔀List🔀CodeScanning(): Internal\Router\List\CodeScanning
