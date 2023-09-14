@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Classroom;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ClassroomAssignment;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetAnAssignment
     {
     }
 
-    /** @return Schema\ClassroomAssignment */
+    /** @return */
     public function call(int $assignmentId): ClassroomAssignment|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAnAssignment($this->responseSchemaValidator, $this->hydrator, $assignmentId);

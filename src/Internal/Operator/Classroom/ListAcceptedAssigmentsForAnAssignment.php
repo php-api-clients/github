@@ -24,7 +24,7 @@ final readonly class ListAcceptedAssigmentsForAnAssignment
     {
     }
 
-    /** @return iterable<Schema\ClassroomAcceptedAssignment> */
+    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
     public function call(int $assignmentId, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\ListAcceptedAssigmentsForAnAssignment($this->responseSchemaValidator, $this->hydrator, $assignmentId, $page, $perPage);

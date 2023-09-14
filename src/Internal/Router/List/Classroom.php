@@ -20,7 +20,7 @@ final class Classroom
     {
     }
 
-    /** @return iterable<Schema\ClassroomAcceptedAssignment> */
+    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssigmentsForAnAssignmentListing(array $params): iterable
     {
         $arguments = [];
@@ -53,7 +53,7 @@ final class Classroom
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\SimpleClassroomAssignment> */
+    /** @return Observable<Schema\SimpleClassroomAssignment> */
     public function listAssignmentsForAClassroomListing(array $params): iterable
     {
         $arguments = [];
@@ -86,7 +86,7 @@ final class Classroom
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\SimpleClassroom> */
+    /** @return Observable<Schema\SimpleClassroom> */
     public function listClassroomsListing(array $params): iterable
     {
         $arguments = [];

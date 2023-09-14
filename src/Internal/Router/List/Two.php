@@ -14,7 +14,7 @@ final class Two
     {
     }
 
-    /** @return iterable<Schema\SimpleClassroom>|Observable<Schema\Event>|array{code:int}|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Observable<Schema\Thread> */
+    /** @return Observable<Schema\SimpleClassroom>|Observable<Schema\Event>|array{code:int}|Observable<Schema\BaseGist>|Observable<Schema\Issue>|Observable<Schema\LicenseSimple>|Observable<Schema\Thread> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {

@@ -24,7 +24,7 @@ final readonly class ListClassroomsListing
     {
     }
 
-    /** @return iterable<Schema\SimpleClassroom> */
+    /** @return Observable<Schema\SimpleClassroom> */
     public function call(int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\ListClassroomsListing($this->responseSchemaValidator, $this->hydrator, $page, $perPage);
