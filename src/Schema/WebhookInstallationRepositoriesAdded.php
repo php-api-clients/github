@@ -116,7 +116,7 @@ final readonly class WebhookInstallationRepositoriesAdded
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "installation": {
             "title": "Installation",
@@ -3339,7 +3339,10 @@ final readonly class WebhookInstallationRepositoriesAdded
 }';
 
     /**
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * installation: Installation
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
@@ -3350,7 +3353,7 @@ final readonly class WebhookInstallationRepositoriesAdded
      * repositorySelection: Describe whether all repositories have been selected or there's a selection involved
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('repositories_added')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('repositories_added')]
     public array $repositoriesAdded, #[MapFrom('repositories_removed')]
     public array $repositoriesRemoved, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('repository_selection')]
     public string $repositorySelection, public Schema\WebhookInstallationRepositoriesAdded\Requester|null $requester, public Schema\SimpleUserWebhooks $sender,)

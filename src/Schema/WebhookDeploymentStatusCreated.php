@@ -1507,7 +1507,7 @@ final readonly class WebhookDeploymentStatusCreated
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "installation": {
             "title": "Simple Installation",
@@ -5045,7 +5045,10 @@ final readonly class WebhookDeploymentStatusCreated
     /**
      * deployment: The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
      * deploymentStatus: The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
@@ -5057,7 +5060,7 @@ final readonly class WebhookDeploymentStatusCreated
      */
     public function __construct(public string $action, #[MapFrom('check_run')]
     public Schema\WebhookDeploymentStatusCreated\CheckRun|null $checkRun, public Schema\WebhookDeploymentStatusCreated\Deployment $deployment, #[MapFrom('deployment_status')]
-    public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookDeploymentStatusCreated\Workflow|null $workflow, #[MapFrom('workflow_run')]
+    public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookDeploymentStatusCreated\Workflow|null $workflow, #[MapFrom('workflow_run')]
     public Schema\WebhookDeploymentStatusCreated\WorkflowRun|null $workflowRun,)
     {
     }

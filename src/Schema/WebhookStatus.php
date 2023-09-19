@@ -606,7 +606,7 @@ final readonly class WebhookStatus
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "id": {
             "type": "integer",
@@ -2853,7 +2853,10 @@ final readonly class WebhookStatus
     /**
      * branches: An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
      * description: The optional human-readable description added to the status.
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * id: The unique identifier of the status.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
@@ -2869,7 +2872,7 @@ final readonly class WebhookStatus
      */
     public function __construct(#[MapFrom('avatar_url')]
     public string|null $avatarUrl, public array $branches, public Schema\WebhookStatus\Commit $commit, public string $context, #[MapFrom('created_at')]
-    public string $createdAt, public string|null $description, public Schema\Enterprise|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public string $sha, public string $state, #[MapFrom('target_url')]
+    public string $createdAt, public string|null $description, public Schema\EnterpriseWebhooks|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public string $sha, public string $state, #[MapFrom('target_url')]
     public string|null $targetUrl, #[MapFrom('updated_at')]
     public string $updatedAt,)
     {

@@ -345,7 +345,7 @@ final readonly class WebhookCommitCommentCreated
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "installation": {
             "title": "Simple Installation",
@@ -2491,7 +2491,10 @@ final readonly class WebhookCommitCommentCreated
     /**
      * action: The action performed. Can be `created`.
      * comment: The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
@@ -2501,7 +2504,7 @@ final readonly class WebhookCommitCommentCreated
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookCommitCommentCreated\Comment $comment, public Schema\Enterprise|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\WebhookCommitCommentCreated\Comment $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }

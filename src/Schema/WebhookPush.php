@@ -264,7 +264,7 @@ final readonly class WebhookPush
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "forced": {
             "type": "boolean",
@@ -1638,7 +1638,10 @@ final readonly class WebhookPush
      * compare: URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
      * created: Whether this push created the `ref`.
      * deleted: Whether this push deleted the `ref`.
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * forced: Whether this push was a force push of the `ref`.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
@@ -1651,7 +1654,7 @@ final readonly class WebhookPush
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $after, #[MapFrom('base_ref')]
-    public string|null $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public Schema\Enterprise|null $enterprise, public bool $forced, #[MapFrom('head_commit')]
+    public string|null $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public Schema\EnterpriseWebhooks|null $enterprise, public bool $forced, #[MapFrom('head_commit')]
     public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }

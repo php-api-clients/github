@@ -114,7 +114,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                             "format": "uri"
                         }
                     },
-                    "description": "An enterprise on GitHub."
+                    "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
                 },
                 "installation": {
                     "title": "Simple Installation",
@@ -5120,7 +5120,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                             "format": "uri"
                         }
                     },
-                    "description": "An enterprise on GitHub."
+                    "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
                 },
                 "installation": {
                     "title": "Simple Installation",

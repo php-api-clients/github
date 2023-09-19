@@ -112,7 +112,7 @@ final readonly class WebhookMetaDeleted
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "hook": {
             "required": [
@@ -2359,7 +2359,10 @@ final readonly class WebhookMetaDeleted
 }';
 
     /**
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * hook: The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
      * hookId: The id of the modified webhook.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
@@ -2369,7 +2372,7 @@ final readonly class WebhookMetaDeleted
     organization, or when the event occurs from activity in a repository owned by an organization.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\Enterprise|null $enterprise, public Schema\WebhookMetaDeleted\Hook $hook, #[MapFrom('hook_id')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\WebhookMetaDeleted\Hook $hook, #[MapFrom('hook_id')]
     public int $hookId, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }

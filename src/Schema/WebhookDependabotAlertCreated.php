@@ -897,7 +897,7 @@ final readonly class WebhookDependabotAlertCreated
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub."
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
         },
         "repository": {
             "title": "Repository",
@@ -2995,12 +2995,15 @@ final readonly class WebhookDependabotAlertCreated
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
-     * enterprise: An enterprise on GitHub.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\DependabotAlert $alert, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\Enterprise|null $enterprise, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\DependabotAlert $alert, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }
