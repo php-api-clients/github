@@ -129,6 +129,13 @@ final readonly class Environment
                                     "MDQ6R2F0ZTM3NTU="
                                 ]
                             },
+                            "prevent_self_review": {
+                                "type": "boolean",
+                                "description": "Whether deployments to this environment can be approved by the user who created the deployment.",
+                                "examples": [
+                                    false
+                                ]
+                            },
                             "type": {
                                 "type": "string",
                                 "examples": [

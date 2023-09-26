@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -24,7 +25,7 @@ final readonly class RedeliverWebhookDelivery
     {
     }
 
-    /** @return */
+    /** @return Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json */
     public function call(string $owner, string $repo, int $hookId, int $deliveryId): Json|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\RedeliverWebhookDelivery($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId, $deliveryId);

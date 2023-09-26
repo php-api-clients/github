@@ -585,6 +585,12 @@ final class Actions
         return $this->operators->actions👷ReviewCustomGatesForRun()->call($owner, $repo, $runId, $params);
     }
 
+    /** @return Schema\EmptyObject */
+    public function forceCancelWorkflowRun(string $owner, string $repo, int $runId): EmptyObject|array
+    {
+        return $this->operators->actions👷ForceCancelWorkflowRun()->call($owner, $repo, $runId);
+    }
+
     /** @return */
     public function listJobsForWorkflowRun(string $owner, string $repo, int $runId, string $filter, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|array
     {

@@ -344,6 +344,33 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id'], $params);
     }
 
+    /** @return Schema\EmptyObject */
+    public function forceCancelWorkflowRun(array $params): EmptyObject|array
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('run_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: run_id');
+        }
+
+        $arguments['run_id'] = $params['run_id'];
+        unset($params['run_id']);
+        $operator = new Internal\Operator\Actions\ForceCancelWorkflowRun($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runs🌀RunId🌀ForceCancel());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
+    }
+
     /** @return Observable<Schema\Deployment> */
     public function reviewPendingDeploymentsForRun(array $params): iterable
     {

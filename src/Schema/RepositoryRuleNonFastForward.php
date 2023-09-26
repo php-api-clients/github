@@ -20,10 +20,10 @@ final readonly class RepositoryRuleNonFastForward
             "type": "string"
         }
     },
-    "description": "Prevent users with push access from force pushing to branches."
+    "description": "Prevent users with push access from force pushing to refs."
 }';
     public const SCHEMA_TITLE        = 'non_fast_forward';
-    public const SCHEMA_DESCRIPTION  = 'Prevent users with push access from force pushing to branches.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent users with push access from force pushing to refs.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "non_fast_forward"
 }';

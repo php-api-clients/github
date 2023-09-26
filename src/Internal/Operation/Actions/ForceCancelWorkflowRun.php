@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
+namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
@@ -18,32 +18,32 @@ use function explode;
 use function json_decode;
 use function str_replace;
 
-final class GetWebhook
+final class ForceCancelWorkflowRun
 {
-    public const OPERATION_ID    = 'repos/get-webhook';
-    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/hooks/{hook_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/hooks/{hook_id}';
+    public const OPERATION_ID    = 'actions/force-cancel-workflow-run';
+    public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel';
+    private const METHOD         = 'POST';
+    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
-    private int $hookId;
+    /**The unique identifier of the workflow run. **/
+    private int $runId;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Hooks\HookId $hydrator, string $owner, string $repo, int $hookId)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\ForceCancel $hydrator, string $owner, string $repo, int $runId)
     {
-        $this->owner  = $owner;
-        $this->repo   = $repo;
-        $this->hookId = $hookId;
+        $this->owner = $owner;
+        $this->repo  = $repo;
+        $this->runId = $runId;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{hook_id}'], [$this->owner, $this->repo, $this->hookId], self::PATH));
+        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Hook
+    public function createResponse(ResponseInterface $response): Schema\EmptyObject
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,18 +54,18 @@ final class GetWebhook
                     /**
                      * Response
                      **/
-                    case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Hook::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                    case 202:
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\EmptyObject::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Hook::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\EmptyObject::class, $body);
                     /**
-                     * Resource not found
+                     * Conflict
                      **/
 
-                    case 404:
+                    case 409:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                        throw new ErrorSchemas\BasicError(409, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                 }
 
                 break;

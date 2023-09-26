@@ -28,7 +28,7 @@ final class GetWebhookDelivery
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the hook. **/
+    /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
     private int $hookId;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Hooks\HookId\Deliveries\DeliveryId $hydrator, string $owner, string $repo, int $hookId, private int $deliveryId)

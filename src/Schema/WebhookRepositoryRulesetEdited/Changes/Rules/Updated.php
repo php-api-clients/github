@@ -90,7 +90,7 @@ final readonly class Updated
                             "type": "string"
                         }
                     },
-                    "description": "Prevent merge commits from being pushed to matching branches."
+                    "description": "Prevent merge commits from being pushed to matching refs."
                 },
                 {
                     "title": "required_deployments",
@@ -121,7 +121,7 @@ final readonly class Updated
                             }
                         }
                     },
-                    "description": "Choose which environments must be successfully deployed to before branches can be merged into a branch that matches this rule."
+                    "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
                 },
                 {
                     "title": "required_signatures",
@@ -137,7 +137,7 @@ final readonly class Updated
                             "type": "string"
                         }
                     },
-                    "description": "Commits pushed to matching branches must have verified signatures."
+                    "description": "Commits pushed to matching refs must have verified signatures."
                 },
                 {
                     "title": "pull_request",
@@ -238,7 +238,7 @@ final readonly class Updated
                             }
                         }
                     },
-                    "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed."
+                    "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
                 },
                 {
                     "title": "non_fast_forward",
@@ -254,7 +254,7 @@ final readonly class Updated
                             "type": "string"
                         }
                     },
-                    "description": "Prevent users with push access from force pushing to branches."
+                    "description": "Prevent users with push access from force pushing to refs."
                 },
                 {
                     "title": "commit_message_pattern",

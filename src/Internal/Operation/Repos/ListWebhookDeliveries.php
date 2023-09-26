@@ -31,7 +31,7 @@ final class ListWebhookDeliveries
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The unique identifier of the hook. **/
+    /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
     private int $hookId;
     /**Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors. **/
     private string $cursor;

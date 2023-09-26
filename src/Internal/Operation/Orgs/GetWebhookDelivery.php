@@ -26,7 +26,7 @@ final class GetWebhookDelivery
     private const PATH           = '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The unique identifier of the hook. **/
+    /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
     private int $hookId;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries\DeliveryId $hydrator, string $org, int $hookId, private int $deliveryId)

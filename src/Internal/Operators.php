@@ -419,6 +419,7 @@ final class Operators
     private Internal\Operator\Actions\DownloadWorkflowRunAttemptLogsStreaming|null $actions👷DownloadWorkflowRunAttemptLogsStreaming                                                 = null;
     private Internal\Operator\Actions\CancelWorkflowRun|null $actions👷CancelWorkflowRun                                                                                             = null;
     private Internal\Operator\Actions\ReviewCustomGatesForRun|null $actions👷ReviewCustomGatesForRun                                                                                 = null;
+    private Internal\Operator\Actions\ForceCancelWorkflowRun|null $actions👷ForceCancelWorkflowRun                                                                                   = null;
     private Internal\Operator\Actions\ListJobsForWorkflowRun|null $actions👷ListJobsForWorkflowRun                                                                                   = null;
     private Internal\Operator\Actions\DownloadWorkflowRunLogs|null $actions👷DownloadWorkflowRunLogs                                                                                 = null;
     private Internal\Operator\Actions\DownloadWorkflowRunLogsStreaming|null $actions👷DownloadWorkflowRunLogsStreaming                                                               = null;
@@ -4750,6 +4751,15 @@ final class Operators
         }
 
         return $this->actions👷ReviewCustomGatesForRun;
+    }
+
+    public function actions👷ForceCancelWorkflowRun(): Internal\Operator\Actions\ForceCancelWorkflowRun
+    {
+        if ($this->actions👷ForceCancelWorkflowRun instanceof Internal\Operator\Actions\ForceCancelWorkflowRun === false) {
+            $this->actions👷ForceCancelWorkflowRun = new Internal\Operator\Actions\ForceCancelWorkflowRun($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runs🌀RunId🌀ForceCancel());
+        }
+
+        return $this->actions👷ForceCancelWorkflowRun;
     }
 
     public function actions👷ListJobsForWorkflowRun(): Internal\Operator\Actions\ListJobsForWorkflowRun

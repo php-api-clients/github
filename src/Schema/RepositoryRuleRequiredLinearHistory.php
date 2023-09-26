@@ -20,10 +20,10 @@ final readonly class RepositoryRuleRequiredLinearHistory
             "type": "string"
         }
     },
-    "description": "Prevent merge commits from being pushed to matching branches."
+    "description": "Prevent merge commits from being pushed to matching refs."
 }';
     public const SCHEMA_TITLE        = 'required_linear_history';
-    public const SCHEMA_DESCRIPTION  = 'Prevent merge commits from being pushed to matching branches.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent merge commits from being pushed to matching refs.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "required_linear_history"
 }';

@@ -105,7 +105,7 @@ final class Orgs
         return $this->operators->orgs👷CreateWebhook()->call($org, $params);
     }
 
-    /** @return */
+    /** @return Schema\OrgHook */
     public function getWebhook(string $org, int $hookId): OrgHook|array
     {
         return $this->operators->orgs👷GetWebhook()->call($org, $hookId);
@@ -117,37 +117,37 @@ final class Orgs
         return $this->operators->orgs👷DeleteWebhook()->call($org, $hookId);
     }
 
-    /** @return */
+    /** @return Schema\OrgHook */
     public function updateWebhook(string $org, int $hookId, array $params): OrgHook|array
     {
         return $this->operators->orgs👷UpdateWebhook()->call($org, $hookId, $params);
     }
 
-    /** @return */
+    /** @return Schema\WebhookConfig */
     public function getWebhookConfigForOrg(string $org, int $hookId): WebhookConfig|array
     {
         return $this->operators->orgs👷GetWebhookConfigForOrg()->call($org, $hookId);
     }
 
-    /** @return */
+    /** @return Schema\WebhookConfig */
     public function updateWebhookConfigForOrg(string $org, int $hookId, array $params): WebhookConfig|array
     {
         return $this->operators->orgs👷UpdateWebhookConfigForOrg()->call($org, $hookId, $params);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(string $org, int $hookId, string $cursor, bool $redelivery, int $perPage): iterable
     {
         return $this->operators->orgs👷ListWebhookDeliveries()->call($org, $hookId, $cursor, $redelivery, $perPage);
     }
 
-    /** @return */
+    /** @return Schema\HookDelivery */
     public function getWebhookDelivery(string $org, int $hookId, int $deliveryId): HookDelivery|array
     {
         return $this->operators->orgs👷GetWebhookDelivery()->call($org, $hookId, $deliveryId);
     }
 
-    /** @return */
+    /** @return Schema\Operations\Orgs\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json */
     public function redeliverWebhookDelivery(string $org, int $hookId, int $deliveryId): \ApiClients\Client\GitHub\Schema\Operations\Orgs\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|array
     {
         return $this->operators->orgs👷RedeliverWebhookDelivery()->call($org, $hookId, $deliveryId);

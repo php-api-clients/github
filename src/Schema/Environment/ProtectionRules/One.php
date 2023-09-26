@@ -28,6 +28,13 @@ final readonly class One
                 "MDQ6R2F0ZTM3NTU="
             ]
         },
+        "prevent_self_review": {
+            "type": "boolean",
+            "description": "Whether deployments to this environment can be approved by the user who created the deployment.",
+            "examples": [
+                false
+            ]
+        },
         "type": {
             "type": "string",
             "examples": [
@@ -436,6 +443,7 @@ final readonly class One
     public const SCHEMA_EXAMPLE_DATA = '{
     "id": 3755,
     "node_id": "MDQ6R2F0ZTM3NTU=",
+    "prevent_self_review": false,
     "type": "required_reviewers",
     "reviewers": [
         {
@@ -450,10 +458,12 @@ final readonly class One
 }';
 
     /**
+     * preventSelfReview: Whether deployments to this environment can be approved by the user who created the deployment.
      * reviewers: The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      */
     public function __construct(public int $id, #[MapFrom('node_id')]
-    public string $nodeId, public string $type, public array|null $reviewers,)
+    public string $nodeId, #[MapFrom('prevent_self_review')]
+    public bool|null $preventSelfReview, public string $type, public array|null $reviewers,)
     {
     }
 }

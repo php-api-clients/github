@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Hook;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -24,7 +25,7 @@ final readonly class GetWebhook
     {
     }
 
-    /** @return */
+    /** @return Schema\Hook */
     public function call(string $owner, string $repo, int $hookId): Hook|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetWebhook($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId);

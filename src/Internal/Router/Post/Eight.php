@@ -20,7 +20,7 @@ final class Eight
     {
     }
 
-    /** @return |Schema\Codespace|array{code:int}|Observable<Schema\Deployment> */
+    /** @return Schema\Operations\Orgs\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|Schema\Codespace|array{code:int}||Schema\EmptyObject|Observable<Schema\Deployment> */
     public function call(string $call, array $params, array $pathChunks): Json|Codespace|TeamDiscussionComment|Reaction|EmptyObject|Ok|iterable|ProtectedBranchAdminEnforced
     {
         if ($pathChunks[0] === '') {
@@ -101,6 +101,10 @@ final class Eight
                                     } elseif ($pathChunks[7] === 'deployment_protection_rule') {
                                         if ($call === 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule') {
                                             return $this->routers->internal🔀Router🔀Post🔀Actions()->reviewCustomGatesForRun($params);
+                                        }
+                                    } elseif ($pathChunks[7] === 'force-cancel') {
+                                        if ($call === 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel') {
+                                            return $this->routers->internal🔀Router🔀Post🔀Actions()->forceCancelWorkflowRun($params);
                                         }
                                     } elseif ($pathChunks[7] === 'pending_deployments') {
                                         if ($call === 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments') {
