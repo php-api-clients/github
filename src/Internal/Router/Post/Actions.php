@@ -344,7 +344,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id'], $params);
     }
 
-    /** @return Schema\EmptyObject */
+    /** @return */
     public function forceCancelWorkflowRun(array $params): EmptyObject|array
     {
         $arguments = [];

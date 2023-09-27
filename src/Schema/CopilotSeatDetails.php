@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Assignee;
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\AssigningTeam;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
@@ -19,7 +20,8 @@ final readonly class CopilotSeatDetails
     "type": "object",
     "properties": {
         "assignee": {
-            "enum": [
+            "type": "object",
+            "oneOf": [
                 {
                     "title": "Simple User",
                     "required": [
@@ -568,7 +570,6 @@ final readonly class CopilotSeatDetails
                     "description": "GitHub account for managing multiple users, teams, and repositories"
                 }
             ],
-            "type": "object",
             "description": "The assignee that has been granted access to GitHub Copilot.",
             "additionalProperties": true
         },
@@ -831,7 +832,7 @@ final readonly class CopilotSeatDetails
     public const SCHEMA_TITLE        = 'Copilot for Business Seat Detail';
     public const SCHEMA_DESCRIPTION  = 'Information about a Copilot for Business seat assignment for a user, team, or organization.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "assignee": [],
+    "assignee": null,
     "assigning_team": null,
     "pending_cancellation_date": "generated",
     "last_activity_at": "1970-01-01T00:00:00+00:00",
@@ -849,7 +850,8 @@ final readonly class CopilotSeatDetails
      * createdAt: Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
      * updatedAt: Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
      */
-    public function __construct(public Schema\CopilotSeatDetails\Assignee $assignee, #[MapFrom('assigning_team')]
+    public function __construct(#[Assignee]
+    public Schema\SimpleUser|Schema\Team|Schema\Organization $assignee, #[MapFrom('assigning_team')]
     #[AssigningTeam]
     public Schema\Team|null $assigningTeam, #[MapFrom('pending_cancellation_date')]
     public string|null $pendingCancellationDate, #[MapFrom('last_activity_at')]

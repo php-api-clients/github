@@ -556,7 +556,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return Schema\OrgHook */
+    /** @return */
     public function getWebhook(array $params): OrgHook|array
     {
         $arguments = [];
@@ -655,7 +655,7 @@ final class Orgs
         return $operator->call($arguments['org']);
     }
 
-    /** @return Schema\WebhookConfig */
+    /** @return */
     public function getWebhookConfigForOrg(array $params): WebhookConfig|array
     {
         $arguments = [];
@@ -676,7 +676,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id']);
     }
 
-    /** @return iterable<Schema\HookDeliveryItem> */
+    /** @return Observable<Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $arguments = [];
@@ -814,7 +814,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\HookDelivery */
+    /** @return */
     public function getWebhookDelivery(array $params): HookDelivery|array
     {
         $arguments = [];

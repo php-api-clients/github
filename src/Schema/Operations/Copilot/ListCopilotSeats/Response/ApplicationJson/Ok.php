@@ -26,7 +26,8 @@ final readonly class Ok
                 "type": "object",
                 "properties": {
                     "assignee": {
-                        "enum": [
+                        "type": "object",
+                        "oneOf": [
                             {
                                 "title": "Simple User",
                                 "required": [
@@ -575,7 +576,6 @@ final readonly class Ok
                                 "description": "GitHub account for managing multiple users, teams, and repositories"
                             }
                         ],
-                        "type": "object",
                         "description": "The assignee that has been granted access to GitHub Copilot.",
                         "additionalProperties": true
                     },
@@ -844,7 +844,7 @@ final readonly class Ok
     "total_seats": 11,
     "seats": [
         {
-            "assignee": [],
+            "assignee": null,
             "assigning_team": null,
             "pending_cancellation_date": "generated",
             "last_activity_at": "1970-01-01T00:00:00+00:00",
@@ -853,7 +853,7 @@ final readonly class Ok
             "updated_at": "1970-01-01T00:00:00+00:00"
         },
         {
-            "assignee": [],
+            "assignee": null,
             "assigning_team": null,
             "pending_cancellation_date": "generated",
             "last_activity_at": "1970-01-01T00:00:00+00:00",

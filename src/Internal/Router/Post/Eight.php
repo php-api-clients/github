@@ -20,7 +20,7 @@ final class Eight
     {
     }
 
-    /** @return Schema\Operations\Orgs\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|Schema\Codespace|array{code:int}||Schema\EmptyObject|Observable<Schema\Deployment> */
+    /** @return |Schema\Codespace|array{code:int}|Observable<Schema\Deployment> */
     public function call(string $call, array $params, array $pathChunks): Json|Codespace|TeamDiscussionComment|Reaction|EmptyObject|Ok|iterable|ProtectedBranchAdminEnforced
     {
         if ($pathChunks[0] === '') {

@@ -16,7 +16,7 @@ final class Nine
     {
     }
 
-    /** @return array{code:int}|Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json| */
+    /** @return array{code:int}|Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>| */
     public function call(string $call, array $params, array $pathChunks): iterable|Json|PullRequestReviewComment|PullRequestReview
     {
         if ($pathChunks[0] === '') {

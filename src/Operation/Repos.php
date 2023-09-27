@@ -776,7 +776,7 @@ final class Repos
         return $this->operators->repos👷CreateWebhook()->call($owner, $repo, $params);
     }
 
-    /** @return Schema\Hook */
+    /** @return */
     public function getWebhook(string $owner, string $repo, int $hookId): Hook|array
     {
         return $this->operators->repos👷GetWebhook()->call($owner, $repo, $hookId);
@@ -788,37 +788,37 @@ final class Repos
         return $this->operators->repos👷DeleteWebhook()->call($owner, $repo, $hookId);
     }
 
-    /** @return Schema\Hook */
+    /** @return */
     public function updateWebhook(string $owner, string $repo, int $hookId, array $params): Hook|array
     {
         return $this->operators->repos👷UpdateWebhook()->call($owner, $repo, $hookId, $params);
     }
 
-    /** @return Schema\WebhookConfig */
+    /** @return */
     public function getWebhookConfigForRepo(string $owner, string $repo, int $hookId): WebhookConfig|array
     {
         return $this->operators->repos👷GetWebhookConfigForRepo()->call($owner, $repo, $hookId);
     }
 
-    /** @return Schema\WebhookConfig */
+    /** @return */
     public function updateWebhookConfigForRepo(string $owner, string $repo, int $hookId, array $params): WebhookConfig|array
     {
         return $this->operators->repos👷UpdateWebhookConfigForRepo()->call($owner, $repo, $hookId, $params);
     }
 
-    /** @return iterable<Schema\HookDeliveryItem> */
+    /** @return Observable<Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage): iterable
     {
         return $this->operators->repos👷ListWebhookDeliveries()->call($owner, $repo, $hookId, $cursor, $redelivery, $perPage);
     }
 
-    /** @return Schema\HookDelivery */
+    /** @return */
     public function getWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): HookDelivery|array
     {
         return $this->operators->repos👷GetWebhookDelivery()->call($owner, $repo, $hookId, $deliveryId);
     }
 
-    /** @return Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json */
+    /** @return */
     public function redeliverWebhookDelivery(string $owner, string $repo, int $hookId, int $deliveryId): \ApiClients\Client\GitHub\Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|array
     {
         return $this->operators->repos👷RedeliverWebhookDelivery()->call($owner, $repo, $hookId, $deliveryId);

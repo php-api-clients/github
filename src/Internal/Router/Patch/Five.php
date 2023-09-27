@@ -20,7 +20,7 @@ final class Five
     {
     }
 
-    /** @return |Schema\OrgHook|Schema\ProjectCard|array{code:int} */
+    /** @return |Schema\ProjectCard|array{code:int} */
     public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership|array
     {
         if ($pathChunks[0] === '') {

@@ -29,7 +29,7 @@ final class Six
     {
     }
 
-    /** @return array{code:int}|Schema\WebhookConfig||Schema\Hook */
+    /** @return array{code:int}| */
     public function call(string $call, array $params, array $pathChunks): WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory|array
     {
         if ($pathChunks[0] === '') {
