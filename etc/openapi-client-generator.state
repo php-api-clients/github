@@ -1,5 +1,5 @@
 {
-    "specHash": "cdf06887872e14c33e252a1a6bb7b705",
+    "specHash": "ac26bea3c7b43c61995d720fd1312db2",
     "generatedFiles": {
         "files": [
             {
@@ -5724,11 +5724,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/ClientInterface.php",
-                "hash": "09d7102959a02234355f3a37b4e7da24"
+                "hash": "deb6df9745de99abb02ece3666765124"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Client.php",
-                "hash": "519786bb2499e0fd1cb2b6bd5566704c"
+                "hash": "727ced4153177f7d2253e50504bb7b9b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/OperationsInterface.php",
@@ -5784,11 +5784,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "83958c6c1c436bdf153cd8bdae2e843a"
+                "hash": "dfa7cd6180b0be5c0e76cef5f38ac666"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
-                "hash": "56ce3ba7055d0d2927c95049f2480560"
+                "hash": "56e48d0312feaa0727880670a3771940"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Oidc.php",
@@ -5796,7 +5796,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeScanning.php",
-                "hash": "251dc21709d71c55674e5503b35eb1ef"
+                "hash": "c1ce482ef8c5d61be8045a6b0c7bd738"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Codespaces.php",
@@ -5820,7 +5820,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "6ffd10a523e5354b810f7666dadbd6a8"
+                "hash": "5f7b337da116882133c6663c4de721df"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -13520,7 +13520,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationDetails.php",
-                "hash": "905b45f0805df4b13768c43261f36770"
+                "hash": "971944c3f715a7f0cc62f8ee8dd71691"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Organization.php",
@@ -19772,11 +19772,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/CodeScanning\/UpdateDefaultSetup.php",
-                "hash": "395fa3b7f374cd0391010c09476a3d26"
+                "hash": "3604c2f8f8433596d675237b2e65f571"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/CodeScanning\/UpdateDefaultSetup.php",
-                "hash": "19d1658e1df87be7ac1e487e19b0e632"
+                "hash": "49062d0eeed7fa9c01bbdd84dca7163e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/CodeScanning\/UpdateDefaultSetupTest.php",
@@ -20676,7 +20676,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/CreateDeploymentBranchPolicy.php",
-                "hash": "2a71f85431198398659261f7fc4cbae0"
+                "hash": "b4f586a86746ee84ca8219f63dd7873a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/CreateDeploymentBranchPolicy.php",
@@ -20684,7 +20684,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/CreateDeploymentBranchPolicyTest.php",
-                "hash": "45ac62ce91e0aa48a0674e0caf234e60"
+                "hash": "6110b8f7bb50389b50241c1046997315"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/GetDeploymentBranchPolicy.php",
@@ -26676,7 +26676,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/CodeScanning.php",
-                "hash": "0681867646815664b70c3aa068b2e386"
+                "hash": "85e9d69893f44d313ca1511a74ed2c9d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Issues.php",
@@ -27020,7 +27020,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Six.php",
-                "hash": "8e3cafa763930d11395c2a83e10e40b7"
+                "hash": "a16146e43ebd2fbffa50463aab1e030f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Seven.php",
@@ -27480,7 +27480,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing.php",
-                "hash": "ffd979fc80cd4bc60aa454f14b758ad1"
+                "hash": "0038c6dc5f7bfd9500b08bc9a1d54592"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing\/Seats.php",
@@ -29405,6 +29405,10 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/CopilotSeatDetails\/Assignee.php",
                 "hash": "df7d2cb225bdba45cacb0d5315739a18"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DeploymentBranchPolicyNamePatternWithType.php",
+                "hash": "75ee48b1b7e1807e069f07092da95e2e"
             }
         ]
     },

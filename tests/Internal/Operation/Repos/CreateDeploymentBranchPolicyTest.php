@@ -29,7 +29,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreateDeploymentBranchPolicy::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
@@ -37,7 +37,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
             $data['environment_name'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -49,9 +49,9 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -63,7 +63,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreateDeploymentBranchPolicy::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
@@ -71,7 +71,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
             $data['environment_name'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -83,9 +83,9 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(404, $result['code']);
     }
@@ -99,7 +99,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreateDeploymentBranchPolicy::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']            = 'generated';
@@ -107,7 +107,7 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
             $data['environment_name'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -119,9 +119,9 @@ final class CreateDeploymentBranchPolicyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/environments/generated/deployment-branch-policies', Argument::type('array'), json_encode(json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->repos()->createDeploymentBranchPolicy('generated', 'generated', 'generated', json_decode(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(303, $result['code']);
     }

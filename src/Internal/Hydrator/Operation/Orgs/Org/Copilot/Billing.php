@@ -85,6 +85,17 @@ class Billing implements ObjectMapper
 
             after_publicCodeSuggestions:
 
+            $value = $payload['copilot_chat'] ?? null;
+
+            if ($value === null) {
+                $properties['copilotChat'] = null;
+                goto after_copilotChat;
+            }
+
+            $properties['copilotChat'] = $value;
+
+            after_copilotChat:
+
             $value = $payload['seat_management_setting'] ?? null;
 
             if ($value === null) {
@@ -365,6 +376,14 @@ class Billing implements ObjectMapper
 
         $publicCodeSuggestions                                                 = $object->publicCodeSuggestions;
         after_publicCodeSuggestions:        $result['public_code_suggestions'] = $publicCodeSuggestions;
+
+        $copilotChat = $object->copilotChat;
+
+        if ($copilotChat === null) {
+            goto after_copilotChat;
+        }
+
+        after_copilotChat:        $result['copilot_chat'] = $copilotChat;
 
         $seatManagementSetting                                                 = $object->seatManagementSetting;
         after_seatManagementSetting:        $result['seat_management_setting'] = $seatManagementSetting;

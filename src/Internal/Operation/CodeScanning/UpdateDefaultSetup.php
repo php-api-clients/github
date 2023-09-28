@@ -67,7 +67,7 @@ final class UpdateDefaultSetup
 
                         return $this->hydrator->hydrateObject(Schema\CodeScanningDefaultSetupUpdateResponse::class, $body);
                     /**
-                     * Response if GitHub Advanced Security is not enabled for this repository
+                     * Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository
                      **/
 
                     case 403:

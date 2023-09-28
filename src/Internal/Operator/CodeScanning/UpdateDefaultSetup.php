@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\CodeScanning;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetupUpdateResponse;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -25,7 +26,7 @@ final readonly class UpdateDefaultSetup
     {
     }
 
-    /** @return */
+    /** @return Schema\EmptyObject|Schema\CodeScanningDefaultSetupUpdateResponse */
     public function call(string $owner, string $repo, array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\UpdateDefaultSetup($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

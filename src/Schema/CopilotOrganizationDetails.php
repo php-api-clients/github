@@ -59,6 +59,15 @@ final readonly class CopilotOrganizationDetails
             "type": "string",
             "description": "The organization policy for allowing or disallowing Copilot to make suggestions that match public code."
         },
+        "copilot_chat": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "unconfigured"
+            ],
+            "type": "string",
+            "description": "The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor."
+        },
         "seat_management_setting": {
             "enum": [
                 "assign_all",
@@ -85,17 +94,20 @@ final readonly class CopilotOrganizationDetails
         "inactive_this_cycle": 19
     },
     "public_code_suggestions": "allow",
+    "copilot_chat": "unconfigured",
     "seat_management_setting": "assign_all"
 }';
 
     /**
      * seatBreakdown: The breakdown of Copilot for Business seats for the organization.
      * publicCodeSuggestions: The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
+     * copilotChat: The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
      * seatManagementSetting: The mode of assigning new seats.
      */
     public function __construct(#[MapFrom('seat_breakdown')]
     public Schema\CopilotSeatBreakdown $seatBreakdown, #[MapFrom('public_code_suggestions')]
-    public string $publicCodeSuggestions, #[MapFrom('seat_management_setting')]
+    public string $publicCodeSuggestions, #[MapFrom('copilot_chat')]
+    public string|null $copilotChat, #[MapFrom('seat_management_setting')]
     public string $seatManagementSetting,)
     {
     }

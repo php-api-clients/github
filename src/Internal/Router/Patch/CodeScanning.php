@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeScanningAlert;
 use ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetupUpdateResponse;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
@@ -21,7 +22,7 @@ final class CodeScanning
     {
     }
 
-    /** @return */
+    /** @return Schema\EmptyObject|Schema\CodeScanningDefaultSetupUpdateResponse */
     public function updateDefaultSetup(array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse|array
     {
         $arguments = [];

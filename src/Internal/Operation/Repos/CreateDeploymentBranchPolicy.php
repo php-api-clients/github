@@ -40,7 +40,7 @@ final class CreateDeploymentBranchPolicy
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\DeploymentBranchPolicyNamePattern::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
     }
