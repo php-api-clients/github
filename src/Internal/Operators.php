@@ -286,6 +286,9 @@ final class Operators
     private Internal\Operator\Repos\GetOrgRulesets|null $repos👷GetOrgRulesets                                                                                                       = null;
     private Internal\Operator\Repos\GetOrgRulesetsListing|null $repos👷GetOrgRulesetsListing                                                                                         = null;
     private Internal\Operator\Repos\CreateOrgRuleset|null $repos👷CreateOrgRuleset                                                                                                   = null;
+    private Internal\Operator\Repos\GetOrgRuleSuites|null $repos👷GetOrgRuleSuites                                                                                                   = null;
+    private Internal\Operator\Repos\GetOrgRuleSuitesListing|null $repos👷GetOrgRuleSuitesListing                                                                                     = null;
+    private Internal\Operator\Repos\GetOrgRuleSuite|null $repos👷GetOrgRuleSuite                                                                                                     = null;
     private Internal\Operator\Repos\GetOrgRuleset|null $repos👷GetOrgRuleset                                                                                                         = null;
     private Internal\Operator\Repos\UpdateOrgRuleset|null $repos👷UpdateOrgRuleset                                                                                                   = null;
     private Internal\Operator\Repos\DeleteOrgRuleset|null $repos👷DeleteOrgRuleset                                                                                                   = null;
@@ -797,6 +800,9 @@ final class Operators
     private Internal\Operator\Repos\GetRepoRulesets|null $repos👷GetRepoRulesets                                                                                                     = null;
     private Internal\Operator\Repos\GetRepoRulesetsListing|null $repos👷GetRepoRulesetsListing                                                                                       = null;
     private Internal\Operator\Repos\CreateRepoRuleset|null $repos👷CreateRepoRuleset                                                                                                 = null;
+    private Internal\Operator\Repos\GetRepoRuleSuites|null $repos👷GetRepoRuleSuites                                                                                                 = null;
+    private Internal\Operator\Repos\GetRepoRuleSuitesListing|null $repos👷GetRepoRuleSuitesListing                                                                                   = null;
+    private Internal\Operator\Repos\GetRepoRuleSuite|null $repos👷GetRepoRuleSuite                                                                                                   = null;
     private Internal\Operator\Repos\GetRepoRuleset|null $repos👷GetRepoRuleset                                                                                                       = null;
     private Internal\Operator\Repos\UpdateRepoRuleset|null $repos👷UpdateRepoRuleset                                                                                                 = null;
     private Internal\Operator\Repos\DeleteRepoRuleset|null $repos👷DeleteRepoRuleset                                                                                                 = null;
@@ -3554,6 +3560,33 @@ final class Operators
         }
 
         return $this->repos👷CreateOrgRuleset;
+    }
+
+    public function repos👷GetOrgRuleSuites(): Internal\Operator\Repos\GetOrgRuleSuites
+    {
+        if ($this->repos👷GetOrgRuleSuites instanceof Internal\Operator\Repos\GetOrgRuleSuites === false) {
+            $this->repos👷GetOrgRuleSuites = new Internal\Operator\Repos\GetOrgRuleSuites($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites());
+        }
+
+        return $this->repos👷GetOrgRuleSuites;
+    }
+
+    public function repos👷GetOrgRuleSuitesListing(): Internal\Operator\Repos\GetOrgRuleSuitesListing
+    {
+        if ($this->repos👷GetOrgRuleSuitesListing instanceof Internal\Operator\Repos\GetOrgRuleSuitesListing === false) {
+            $this->repos👷GetOrgRuleSuitesListing = new Internal\Operator\Repos\GetOrgRuleSuitesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites());
+        }
+
+        return $this->repos👷GetOrgRuleSuitesListing;
+    }
+
+    public function repos👷GetOrgRuleSuite(): Internal\Operator\Repos\GetOrgRuleSuite
+    {
+        if ($this->repos👷GetOrgRuleSuite instanceof Internal\Operator\Repos\GetOrgRuleSuite === false) {
+            $this->repos👷GetOrgRuleSuite = new Internal\Operator\Repos\GetOrgRuleSuite($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites🌀RuleSuiteId());
+        }
+
+        return $this->repos👷GetOrgRuleSuite;
     }
 
     public function repos👷GetOrgRuleset(): Internal\Operator\Repos\GetOrgRuleset
@@ -8153,6 +8186,33 @@ final class Operators
         }
 
         return $this->repos👷CreateRepoRuleset;
+    }
+
+    public function repos👷GetRepoRuleSuites(): Internal\Operator\Repos\GetRepoRuleSuites
+    {
+        if ($this->repos👷GetRepoRuleSuites instanceof Internal\Operator\Repos\GetRepoRuleSuites === false) {
+            $this->repos👷GetRepoRuleSuites = new Internal\Operator\Repos\GetRepoRuleSuites($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites());
+        }
+
+        return $this->repos👷GetRepoRuleSuites;
+    }
+
+    public function repos👷GetRepoRuleSuitesListing(): Internal\Operator\Repos\GetRepoRuleSuitesListing
+    {
+        if ($this->repos👷GetRepoRuleSuitesListing instanceof Internal\Operator\Repos\GetRepoRuleSuitesListing === false) {
+            $this->repos👷GetRepoRuleSuitesListing = new Internal\Operator\Repos\GetRepoRuleSuitesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites());
+        }
+
+        return $this->repos👷GetRepoRuleSuitesListing;
+    }
+
+    public function repos👷GetRepoRuleSuite(): Internal\Operator\Repos\GetRepoRuleSuite
+    {
+        if ($this->repos👷GetRepoRuleSuite instanceof Internal\Operator\Repos\GetRepoRuleSuite === false) {
+            $this->repos👷GetRepoRuleSuite = new Internal\Operator\Repos\GetRepoRuleSuite($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites🌀RuleSuiteId());
+        }
+
+        return $this->repos👷GetRepoRuleSuite;
     }
 
     public function repos👷GetRepoRuleset(): Internal\Operator\Repos\GetRepoRuleset

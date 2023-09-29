@@ -46,6 +46,7 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\ReleaseAsset;
 use ApiClients\Client\GitHub\Schema\RepositoryCollaboratorPermission;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
+use ApiClients\Client\GitHub\Schema\RuleSuite;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\Topic;
 use ApiClients\Client\GitHub\Schema\ViewTraffic;
@@ -298,6 +299,57 @@ final class Repos
         $operator = new Internal\Operator\Repos\ListForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Repos());
 
         return $operator->call($arguments['username'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
+    }
+
+    /** @return iterable<Schema\RuleSuites> */
+    public function getOrgRuleSuites(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('repository_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository_name');
+        }
+
+        $arguments['repository_name'] = $params['repository_name'];
+        unset($params['repository_name']);
+        if (array_key_exists('actor_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: actor_name');
+        }
+
+        $arguments['actor_name'] = $params['actor_name'];
+        unset($params['actor_name']);
+        if (array_key_exists('time_period', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: time_period');
+        }
+
+        $arguments['time_period'] = $params['time_period'];
+        unset($params['time_period']);
+        if (array_key_exists('rule_suite_result', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: rule_suite_result');
+        }
+
+        $arguments['rule_suite_result'] = $params['rule_suite_result'];
+        unset($params['rule_suite_result']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Repos\GetOrgRuleSuites($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites());
+
+        return $operator->call($arguments['org'], $arguments['repository_name'], $arguments['actor_name'], $arguments['time_period'], $arguments['rule_suite_result'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */
@@ -1152,6 +1204,27 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return Schema\RuleSuite */
+    public function getOrgRuleSuite(array $params): RuleSuite|array
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('rule_suite_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: rule_suite_id');
+        }
+
+        $arguments['rule_suite_id'] = $params['rule_suite_id'];
+        unset($params['rule_suite_id']);
+        $operator = new Internal\Operator\Repos\GetOrgRuleSuite($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites🌀RuleSuiteId());
+
+        return $operator->call($arguments['org'], $arguments['rule_suite_id']);
+    }
+
     /** @return */
     public function getAutolink(array $params): Autolink|array
     {
@@ -1660,6 +1733,63 @@ final class Repos
         $operator = new Internal\Operator\Repos\GetRelease($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id']);
+    }
+
+    /** @return iterable<Schema\RuleSuites> */
+    public function getRepoRuleSuites(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
+        if (array_key_exists('actor_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: actor_name');
+        }
+
+        $arguments['actor_name'] = $params['actor_name'];
+        unset($params['actor_name']);
+        if (array_key_exists('time_period', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: time_period');
+        }
+
+        $arguments['time_period'] = $params['time_period'];
+        unset($params['time_period']);
+        if (array_key_exists('rule_suite_result', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: rule_suite_result');
+        }
+
+        $arguments['rule_suite_result'] = $params['rule_suite_result'];
+        unset($params['rule_suite_result']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Repos\GetRepoRuleSuites($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['actor_name'], $arguments['time_period'], $arguments['rule_suite_result'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */
@@ -2521,6 +2651,33 @@ final class Repos
         $operator = new Internal\Operator\Repos\GetBranchRules($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rules🌀Branches🌀Branch());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $arguments['per_page'], $arguments['page']);
+    }
+
+    /** @return Schema\RuleSuite */
+    public function getRepoRuleSuite(array $params): RuleSuite|array
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('rule_suite_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: rule_suite_id');
+        }
+
+        $arguments['rule_suite_id'] = $params['rule_suite_id'];
+        unset($params['rule_suite_id']);
+        $operator = new Internal\Operator\Repos\GetRepoRuleSuite($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites🌀RuleSuiteId());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['rule_suite_id']);
     }
 
     /** @return Observable<Schema\ContentTraffic> */

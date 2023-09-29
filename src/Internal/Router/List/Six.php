@@ -14,7 +14,7 @@ final class Six
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|array{code:int}|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
+    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|array{code:int}|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|iterable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {
@@ -133,6 +133,12 @@ final class Six
                             if ($pathChunks[5] === 'comments') {
                                 if ($call === 'LIST /repos/{owner}/{repo}/pulls/comments') {
                                     return $this->routers->internal🔀Router🔀List🔀Pulls()->listReviewCommentsForRepoListing($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($pathChunks[5] === 'rule-suites') {
+                                if ($call === 'LIST /repos/{owner}/{repo}/rulesets/rule-suites') {
+                                    return $this->routers->internal🔀Router🔀List🔀Repos()->getRepoRuleSuitesListing($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'secret-scanning') {

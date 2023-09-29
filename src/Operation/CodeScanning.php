@@ -112,7 +112,7 @@ final class CodeScanning
         return $this->operators->codeScanning👷GetDefaultSetup()->call($owner, $repo);
     }
 
-    /** @return Schema\EmptyObject|Schema\CodeScanningDefaultSetupUpdateResponse */
+    /** @return */
     public function updateDefaultSetup(string $owner, string $repo, array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse|array
     {
         return $this->operators->codeScanning👷UpdateDefaultSetup()->call($owner, $repo, $params);

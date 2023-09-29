@@ -6452,6 +6452,92 @@ $client->operations()->repos()->createOrgRuleset(        org: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#create-an-organization-repository-ruleset).
 
 
+### repos/get-org-rule-suites
+
+List organization rule suites
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/rulesets/rule-suites', [
+        'org' => 'generated',
+        'repository_name' => 15,
+        'actor_name' => 'generated',
+        'time_period' => 'generated',
+        'rule_suite_result' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getOrgRuleSuites(        org: 'generated',
+        repository_name: 15,
+        actor_name: 'generated',
+        time_period: 'generated',
+        rule_suite_result: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites).
+
+
+### repos/get-org-rule-suites
+
+List organization rule suites
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/rulesets/rule-suites', [
+        'org' => 'generated',
+        'repository_name' => 15,
+        'actor_name' => 'generated',
+        'time_period' => 'generated',
+        'rule_suite_result' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getOrgRuleSuitesListing(        org: 'generated',
+        repository_name: 15,
+        actor_name: 'generated',
+        time_period: 'generated',
+        rule_suite_result: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites).
+
+
+### repos/get-org-rule-suite
+
+Get an organization rule suite
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}', [
+        'org' => 'generated',
+        'rule_suite_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getOrgRuleSuite(        org: 'generated',
+        rule_suite_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rule-suites#get-an-organization-rule-suite).
+
+
 ### repos/get-org-ruleset
 
 Get an organization repository ruleset
@@ -19445,6 +19531,98 @@ $client->operations()->repos()->createRepoRuleset(        owner: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset).
+
+
+### repos/get-repo-rule-suites
+
+List repository rule suites
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ref' => 'generated',
+        'actor_name' => 'generated',
+        'time_period' => 'generated',
+        'rule_suite_result' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRuleSuites(        owner: 'generated',
+        repo: 'generated',
+        ref: 'generated',
+        actor_name: 'generated',
+        time_period: 'generated',
+        rule_suite_result: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites).
+
+
+### repos/get-repo-rule-suites
+
+List repository rule suites
+
+Using the `call` method:
+```php
+$client->call('LIST /repos/{owner}/{repo}/rulesets/rule-suites', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ref' => 'generated',
+        'actor_name' => 'generated',
+        'time_period' => 'generated',
+        'rule_suite_result' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRuleSuitesListing(        owner: 'generated',
+        repo: 'generated',
+        ref: 'generated',
+        actor_name: 'generated',
+        time_period: 'generated',
+        rule_suite_result: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites).
+
+
+### repos/get-repo-rule-suite
+
+Get a repository rule suite
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'rule_suite_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRuleSuite(        owner: 'generated',
+        repo: 'generated',
+        rule_suite_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rule-suites#get-a-repository-rule-suite).
 
 
 ### repos/get-repo-ruleset
