@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Repos;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\RuleSuite;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetOrgRuleSuite
     {
     }
 
-    /** @return Schema\RuleSuite */
+    /** @return */
     public function call(string $org, int $ruleSuiteId): RuleSuite|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRuleSuite($this->responseSchemaValidator, $this->hydrator, $org, $ruleSuiteId);

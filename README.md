@@ -12525,6 +12525,32 @@ $client->operations()->codespaces()->preFlightWithRepoForAuthenticatedUser(     
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#get-default-attributes-for-a-codespace).
 
 
+### codespaces/check-permissions-for-devcontainer
+
+Check if permissions defined by a devcontainer have been accepted by the authenticated user
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/codespaces/permissions_check', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ref' => 'generated',
+        'devcontainer_path' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codespaces()->checkPermissionsForDevcontainer(        owner: 'generated',
+        repo: 'generated',
+        ref: 'generated',
+        devcontainer_path: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/codespaces/codespaces#check-if-permissions-defined-by-a-devcontainer-have-been-accepted-by-the-authenticated-user).
+
+
 ### codespaces/list-repo-secrets
 
 List repository secrets

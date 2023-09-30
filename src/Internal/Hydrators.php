@@ -306,6 +306,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Devcontainers|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers                                                                                                               = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Machines|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Machines                                                                                                                         = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\New_|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_                                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\PermissionsCheck|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck                                                                                                         = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Secrets|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets                                                                                                                           = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Secrets\PublicKey|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀PublicKey                                                                                                       = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Secrets\SecretName|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName                                                                                                     = null;
@@ -754,6 +755,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListDevcontainersInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\RepoMachinesForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Machines()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\PreFlightWithRepoForAuthenticatedUser\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\PreFlightWithRepoForAuthenticatedUser\\Response\\ApplicationJson\\Ok\\Defaults' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\CodespacesPermissionsCheckForDevcontainer' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListRepoSecrets\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepoCodespacesSecret' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryInvitation' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username()->hydrateObject($className, $payload),
@@ -1018,6 +1020,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListDevcontainersInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\RepoMachinesForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Machines()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\PreFlightWithRepoForAuthenticatedUser\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\PreFlightWithRepoForAuthenticatedUser\\Response\\ApplicationJson\\Ok\\Defaults' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\CodespacesPermissionsCheckForDevcontainer' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListRepoSecrets\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepoCodespacesSecret' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets🌀SecretName()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryInvitation' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Collaborators🌀Username()->serializeObject($object),
@@ -3782,6 +3785,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck(): Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\PermissionsCheck
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck instanceof Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\PermissionsCheck === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck = new Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\PermissionsCheck();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck;
     }
 
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Secrets(): Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Secrets

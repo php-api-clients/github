@@ -530,6 +530,7 @@ final class Operators
     private Internal\Operator\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser|null $codespaces👷ListDevcontainersInRepositoryForAuthenticatedUser                       = null;
     private Internal\Operator\Codespaces\RepoMachinesForAuthenticatedUser|null $codespaces👷RepoMachinesForAuthenticatedUser                                                         = null;
     private Internal\Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser|null $codespaces👷PreFlightWithRepoForAuthenticatedUser                                               = null;
+    private Internal\Operator\Codespaces\CheckPermissionsForDevcontainer|null $codespaces👷CheckPermissionsForDevcontainer                                                           = null;
     private Internal\Operator\Codespaces\ListRepoSecrets|null $codespaces👷ListRepoSecrets                                                                                           = null;
     private Internal\Operator\Codespaces\GetRepoPublicKey|null $codespaces👷GetRepoPublicKey                                                                                         = null;
     private Internal\Operator\Codespaces\GetRepoSecret|null $codespaces👷GetRepoSecret                                                                                               = null;
@@ -5756,6 +5757,15 @@ final class Operators
         }
 
         return $this->codespaces👷PreFlightWithRepoForAuthenticatedUser;
+    }
+
+    public function codespaces👷CheckPermissionsForDevcontainer(): Internal\Operator\Codespaces\CheckPermissionsForDevcontainer
+    {
+        if ($this->codespaces👷CheckPermissionsForDevcontainer instanceof Internal\Operator\Codespaces\CheckPermissionsForDevcontainer === false) {
+            $this->codespaces👷CheckPermissionsForDevcontainer = new Internal\Operator\Codespaces\CheckPermissionsForDevcontainer($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck());
+        }
+
+        return $this->codespaces👷CheckPermissionsForDevcontainer;
     }
 
     public function codespaces👷ListRepoSecrets(): Internal\Operator\Codespaces\ListRepoSecrets

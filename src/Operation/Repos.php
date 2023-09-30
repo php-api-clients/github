@@ -105,19 +105,19 @@ final class Repos
         return $this->operators->repos👷CreateOrgRuleset()->call($org, $params);
     }
 
-    /** @return iterable<Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getOrgRuleSuites(string $org, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetOrgRuleSuites()->call($org, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return iterable<Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getOrgRuleSuitesListing(string $org, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetOrgRuleSuitesListing()->call($org, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return Schema\RuleSuite */
+    /** @return */
     public function getOrgRuleSuite(string $org, int $ruleSuiteId): RuleSuite|array
     {
         return $this->operators->repos👷GetOrgRuleSuite()->call($org, $ruleSuiteId);
@@ -1137,19 +1137,19 @@ final class Repos
         return $this->operators->repos👷CreateRepoRuleset()->call($owner, $repo, $params);
     }
 
-    /** @return iterable<Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getRepoRuleSuites(string $owner, string $repo, string $ref, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRuleSuites()->call($owner, $repo, $ref, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return iterable<Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getRepoRuleSuitesListing(string $owner, string $repo, string $ref, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRuleSuitesListing()->call($owner, $repo, $ref, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return Schema\RuleSuite */
+    /** @return */
     public function getRepoRuleSuite(string $owner, string $repo, int $ruleSuiteId): RuleSuite|array
     {
         return $this->operators->repos👷GetRepoRuleSuite()->call($owner, $repo, $ruleSuiteId);

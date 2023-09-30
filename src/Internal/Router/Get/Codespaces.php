@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
 use ApiClients\Client\GitHub\Schema\CodespacesOrgSecret;
+use ApiClients\Client\GitHub\Schema\CodespacesPermissionsCheckForDevcontainer;
 use ApiClients\Client\GitHub\Schema\CodespacesPublicKey;
 use ApiClients\Client\GitHub\Schema\CodespacesSecret;
 use ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey;
@@ -388,6 +389,39 @@ final class Codespaces
         $operator = new Internal\Operator\Codespaces\PreFlightWithRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀New_());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['client_ip']);
+    }
+
+    /** @return Schema\CodespacesPermissionsCheckForDevcontainer */
+    public function checkPermissionsForDevcontainer(array $params): CodespacesPermissionsCheckForDevcontainer|array
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
+        if (array_key_exists('devcontainer_path', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: devcontainer_path');
+        }
+
+        $arguments['devcontainer_path'] = $params['devcontainer_path'];
+        unset($params['devcontainer_path']);
+        $operator = new Internal\Operator\Codespaces\CheckPermissionsForDevcontainer($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀PermissionsCheck());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['devcontainer_path']);
     }
 
     /** @return */
