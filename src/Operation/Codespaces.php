@@ -151,7 +151,7 @@ final class Codespaces
         return $this->operators->codespaces👷PreFlightWithRepoForAuthenticatedUser()->call($owner, $repo, $ref, $clientIp);
     }
 
-    /** @return Schema\CodespacesPermissionsCheckForDevcontainer */
+    /** @return */
     public function checkPermissionsForDevcontainer(string $owner, string $repo, string $ref, string $devcontainerPath): CodespacesPermissionsCheckForDevcontainer|array
     {
         return $this->operators->codespaces👷CheckPermissionsForDevcontainer()->call($owner, $repo, $ref, $devcontainerPath);

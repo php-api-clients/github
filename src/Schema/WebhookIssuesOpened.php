@@ -1487,6 +1487,10 @@ final readonly class WebhookIssuesOpened
                             "type": "string",
                             "format": "uri"
                         },
+                        "has_discussions": {
+                            "type": "boolean",
+                            "description": "Whether the repository has discussions enabled."
+                        },
                         "has_downloads": {
                             "type": "boolean",
                             "description": "Whether downloads are enabled.",
@@ -1863,6 +1867,10 @@ final readonly class WebhookIssuesOpened
                         },
                         "watchers_count": {
                             "type": "integer"
+                        },
+                        "web_commit_signoff_required": {
+                            "type": "boolean",
+                            "description": "Whether to require commit signoff."
                         }
                     },
                     "description": "A git repository"
@@ -5256,6 +5264,7 @@ final readonly class WebhookIssuesOpened
             "git_refs_url": "generated",
             "git_tags_url": "generated",
             "git_url": "https:\\/\\/example.com\\/",
+            "has_discussions": false,
             "has_downloads": false,
             "has_issues": false,
             "has_pages": false,
@@ -5346,7 +5355,8 @@ final readonly class WebhookIssuesOpened
             "url": "https:\\/\\/example.com\\/",
             "visibility": "internal",
             "watchers": 8,
-            "watchers_count": 14
+            "watchers_count": 14,
+            "web_commit_signoff_required": false
         }
     },
     "enterprise": {

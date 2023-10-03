@@ -391,7 +391,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['client_ip']);
     }
 
-    /** @return Schema\CodespacesPermissionsCheckForDevcontainer */
+    /** @return */
     public function checkPermissionsForDevcontainer(array $params): CodespacesPermissionsCheckForDevcontainer|array
     {
         $arguments = [];
