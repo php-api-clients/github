@@ -1,5 +1,5 @@
 {
-    "specHash": "8710a65416e46eef61e45d68de6a808a",
+    "specHash": "31be8bfdb65a495fdb443bd76a29b3a7",
     "generatedFiles": {
         "files": [
             {
@@ -5800,7 +5800,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Codespaces.php",
-                "hash": "e254a6551d96207df954c51ed5ac139c"
+                "hash": "c7041fccc814825207397271441c83bd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Packages.php",
