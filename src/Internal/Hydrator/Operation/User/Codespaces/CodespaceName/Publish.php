@@ -1479,7 +1479,7 @@ class Publish implements ObjectMapper
             $value = $payload['has_downloads'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'has_downloads';
+                $properties['hasDownloads'] = null;
                 goto after_hasDownloads;
             }
 
@@ -5864,7 +5864,12 @@ class Publish implements ObjectMapper
         $hasPages                                   = $object->hasPages;
         after_hasPages:        $result['has_pages'] = $hasPages;
 
-        $hasDownloads                                       = $object->hasDownloads;
+        $hasDownloads = $object->hasDownloads;
+
+        if ($hasDownloads === null) {
+            goto after_hasDownloads;
+        }
+
         after_hasDownloads:        $result['has_downloads'] = $hasDownloads;
 
         $hasDiscussions                                         = $object->hasDiscussions;

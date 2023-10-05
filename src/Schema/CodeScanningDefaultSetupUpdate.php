@@ -45,7 +45,7 @@ final readonly class CodeScanningDefaultSetupUpdate
                 ],
                 "type": "string"
             },
-            "description": "CodeQL languages to be analyzed. Supported values are: `c-cpp`, `csharp`, `go`, `java-kotlin`, `javascript-typescript`, `python`, `ruby`, and `swift`."
+            "description": "CodeQL languages to be analyzed."
         }
     },
     "description": "Configuration for code scanning default setup."
@@ -64,7 +64,7 @@ final readonly class CodeScanningDefaultSetupUpdate
     /**
      * state: Whether code scanning default setup has been configured or not.
      * querySuite: CodeQL query suite to be used.
-     * languages: CodeQL languages to be analyzed. Supported values are: `c-cpp`, `csharp`, `go`, `java-kotlin`, `javascript-typescript`, `python`, `ruby`, and `swift`.
+     * languages: CodeQL languages to be analyzed.
      */
     public function __construct(public string $state, #[MapFrom('query_suite')]
     public string|null $querySuite, public array|null $languages,)

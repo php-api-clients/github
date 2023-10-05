@@ -144,7 +144,7 @@ final readonly class Alert
                 "string",
                 "null"
             ],
-            "description": "The reason for dismissing or closing the alert. Can be one of: `false positive`, `won\'t fix`, and `used in tests`."
+            "description": "The reason for dismissing or closing the alert."
         },
         "html_url": {
             "type": "string",
@@ -369,7 +369,7 @@ final readonly class Alert
     /**
      * createdAt: The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
      * dismissedAt: The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-     * dismissedReason: The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+     * dismissedReason: The reason for dismissing or closing the alert.
      * htmlUrl: The GitHub URL of the alert resource.
      * number: The code scanning alert number.
      * state: State of a code scanning alert.

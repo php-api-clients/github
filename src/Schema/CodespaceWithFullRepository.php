@@ -446,7 +446,6 @@ final readonly class CodespaceWithFullRepository
                 "forks",
                 "forks_count",
                 "git_url",
-                "has_downloads",
                 "has_issues",
                 "has_projects",
                 "has_wiki",

@@ -51,7 +51,7 @@ final readonly class CheckRun
                 "string",
                 "null"
             ],
-            "description": "The result of the completed check run. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has completed."
+            "description": "The result of the completed check run. This value will be `null` until the check run has completed."
         },
         "details_url": {
             "type": "string",
@@ -118,7 +118,7 @@ final readonly class CheckRun
 }';
 
     /**
-     * conclusion: The result of the completed check run. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has completed.
+     * conclusion: The result of the completed check run. This value will be `null` until the check run has completed.
      * headSha: The SHA of the commit that is being checked.
      * id: The id of the check.
      * name: The name of the check run.

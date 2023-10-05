@@ -159,7 +159,7 @@ final readonly class WebhookCodeScanningAlertClosedByUser
                         "string",
                         "null"
                     ],
-                    "description": "The reason for dismissing or closing the alert. Can be one of: `false positive`, `won\'t fix`, and `used in tests`."
+                    "description": "The reason for dismissing or closing the alert."
                 },
                 "html_url": {
                     "type": "string",

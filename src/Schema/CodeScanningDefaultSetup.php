@@ -36,7 +36,7 @@ final readonly class CodeScanningDefaultSetup
                 ],
                 "type": "string"
             },
-            "description": "Languages to be analysed."
+            "description": "Languages to be analyzed."
         },
         "query_suite": {
             "enum": [
@@ -86,7 +86,7 @@ final readonly class CodeScanningDefaultSetup
 
     /**
      * state: Code scanning default setup has been configured or not.
-     * languages: Languages to be analysed.
+     * languages: Languages to be analyzed.
      * querySuite: CodeQL query suite to be used.
      * updatedAt: Timestamp of latest configuration update.
      * schedule: The frequency of the periodic analysis.

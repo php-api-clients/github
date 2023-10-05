@@ -63,7 +63,6 @@ final readonly class FullRepository
         "forks",
         "forks_count",
         "git_url",
-        "has_downloads",
         "has_issues",
         "has_projects",
         "has_wiki",
@@ -6714,7 +6713,7 @@ final readonly class FullRepository
     public bool $hasProjects, #[MapFrom('has_wiki')]
     public bool $hasWiki, #[MapFrom('has_pages')]
     public bool $hasPages, #[MapFrom('has_downloads')]
-    public bool $hasDownloads, #[MapFrom('has_discussions')]
+    public bool|null $hasDownloads, #[MapFrom('has_discussions')]
     public bool $hasDiscussions, public bool $archived, public bool $disabled, public string|null $visibility, #[MapFrom('pushed_at')]
     public string $pushedAt, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]

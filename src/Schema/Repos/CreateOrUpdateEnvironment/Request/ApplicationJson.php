@@ -22,6 +22,13 @@ final readonly class ApplicationJson
                 30
             ]
         },
+        "prevent_self_review": {
+            "type": "boolean",
+            "description": "Whether or not a user who created the job is prevented from approving their own job.",
+            "examples": [
+                false
+            ]
+        },
         "reviewers": {
             "type": [
                 "array",
@@ -80,6 +87,7 @@ final readonly class ApplicationJson
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
     "wait_timer": 30,
+    "prevent_self_review": false,
     "reviewers": null,
     "deployment_branch_policy": {
         "protected_branches": false,
@@ -89,11 +97,13 @@ final readonly class ApplicationJson
 
     /**
      * waitTimer: The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
+     * preventSelfReview: Whether or not a user who created the job is prevented from approving their own job.
      * reviewers: The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
      * deploymentBranchPolicy: The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
      */
     public function __construct(#[MapFrom('wait_timer')]
-    public int|null $waitTimer, public array|null $reviewers, #[MapFrom('deployment_branch_policy')]
+    public int|null $waitTimer, #[MapFrom('prevent_self_review')]
+    public bool|null $preventSelfReview, public array|null $reviewers, #[MapFrom('deployment_branch_policy')]
     public Schema\DeploymentBranchPolicySettings|null $deploymentBranchPolicy,)
     {
     }

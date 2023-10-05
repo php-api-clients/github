@@ -79,7 +79,7 @@ final readonly class ApplicationJson
                 ],
                 "type": "string"
             },
-            "description": "Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `\\"repositories\\"`."
+            "description": "Exclude related items from being returned in the response in order to improve performance of the request."
         }
     }
 }';
@@ -112,7 +112,7 @@ final readonly class ApplicationJson
      * excludeReleases: Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
      * excludeOwnerProjects: Indicates whether projects owned by the organization or users should be excluded. from the migration.
      * orgMetadataOnly: Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
-     * exclude: Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
+     * exclude: Exclude related items from being returned in the response in order to improve performance of the request.
      */
     public function __construct(public array $repositories, #[MapFrom('lock_repositories')]
     public bool|null $lockRepositories, #[MapFrom('exclude_metadata')]

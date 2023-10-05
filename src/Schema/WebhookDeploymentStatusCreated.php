@@ -69,7 +69,7 @@ final readonly class WebhookDeploymentStatusCreated
                         "string",
                         "null"
                     ],
-                    "description": "The result of the completed check run. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has completed."
+                    "description": "The result of the completed check run. This value will be `null` until the check run has completed."
                 },
                 "details_url": {
                     "type": "string",

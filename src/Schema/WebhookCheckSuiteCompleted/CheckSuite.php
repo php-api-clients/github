@@ -540,7 +540,7 @@ final readonly class CheckSuite
                 "string",
                 "null"
             ],
-            "description": "The summary conclusion for all check runs that are part of the check suite. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has `completed`."
+            "description": "The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has `completed`."
         },
         "created_at": {
             "type": "string",
@@ -947,7 +947,7 @@ final readonly class CheckSuite
 
     /**
      * app: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-     * conclusion: The summary conclusion for all check runs that are part of the check suite. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, `action_required` or `stale`. This value will be `null` until the check run has `completed`.
+     * conclusion: The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has `completed`.
      * headBranch: The head branch name the changes are on.
      * headSha: The SHA of the head commit that is being checked.
      * pullRequests: An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
