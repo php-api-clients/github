@@ -163,6 +163,17 @@ class Language implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['commit_oid'] ?? null;
+
+            if ($value === null) {
+                $properties['commitOid'] = null;
+                goto after_commitOid;
+            }
+
+            $properties['commitOid'] = $value;
+
+            after_commitOid:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase', $exception, stack: $this->hydrationStack);
         }
@@ -672,6 +683,14 @@ class Language implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        $commitOid = $object->commitOid;
+
+        if ($commitOid === null) {
+            goto after_commitOid;
+        }
+
+        after_commitOid:        $result['commit_oid'] = $commitOid;
 
         return $result;
     }

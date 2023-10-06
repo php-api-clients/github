@@ -1,5 +1,5 @@
 {
-    "specHash": "b74686f5a7ae762bfa3ad480e80383fb",
+    "specHash": "5075008eed1820f9dc6dd28e7a1fe112",
     "generatedFiles": {
         "files": [
             {
@@ -888,7 +888,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningCodeqlDatabase.php",
-                "hash": "f04ee032e1c9599f2f4298e2efa49793"
+                "hash": "2f4bbae15f81dfde86118b2ad0eed1e2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningDefaultSetup.php",
@@ -28112,7 +28112,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/CodeScanning\/Codeql\/Databases\/Language.php",
-                "hash": "d9e9a70bbd8f80ba8aba4a9ce07ef48d"
+                "hash": "81965a6c3608e160763030bae69cb675"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/CodeScanning\/DefaultSetup.php",

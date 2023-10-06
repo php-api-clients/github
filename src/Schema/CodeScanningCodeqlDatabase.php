@@ -219,6 +219,13 @@ final readonly class CodeScanningCodeqlDatabase
             "type": "string",
             "description": "The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.",
             "format": "uri"
+        },
+        "commit_oid": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The commit SHA of the CodeQL databases repository at time of database creation."
         }
     },
     "description": "A CodeQL database."
@@ -256,7 +263,8 @@ final readonly class CodeScanningCodeqlDatabase
     "size": 4,
     "created_at": "1970-01-01T00:00:00+00:00",
     "updated_at": "1970-01-01T00:00:00+00:00",
-    "url": "https:\\/\\/example.com\\/"
+    "url": "https:\\/\\/example.com\\/",
+    "commit_oid": "generated"
 }';
 
     /**
@@ -269,11 +277,13 @@ final readonly class CodeScanningCodeqlDatabase
      * createdAt: The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * updatedAt: The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * url: The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
+     * commitOid: The commit SHA of the CodeQL databases repository at time of database creation.
      */
     public function __construct(public int $id, public string $name, public string $language, public Schema\SimpleUser $uploader, #[MapFrom('content_type')]
     public string $contentType, public int $size, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
-    public string $updatedAt, public string $url,)
+    public string $updatedAt, public string $url, #[MapFrom('commit_oid')]
+    public string|null $commitOid,)
     {
     }
 }
