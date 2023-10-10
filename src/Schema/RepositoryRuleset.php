@@ -70,7 +70,7 @@ final readonly class RepositoryRuleset
                 "properties": {
                     "actor_id": {
                         "type": "integer",
-                        "description": "The ID of the actor that can bypass a ruleset"
+                        "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`."
                     },
                     "actor_type": {
                         "enum": [

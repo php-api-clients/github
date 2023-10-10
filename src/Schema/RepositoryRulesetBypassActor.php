@@ -19,7 +19,7 @@ final readonly class RepositoryRulesetBypassActor
     "properties": {
         "actor_id": {
             "type": "integer",
-            "description": "The ID of the actor that can bypass a ruleset"
+            "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`."
         },
         "actor_type": {
             "enum": [
@@ -51,7 +51,7 @@ final readonly class RepositoryRulesetBypassActor
 }';
 
     /**
-     * actorId: The ID of the actor that can bypass a ruleset
+     * actorId: The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`.
      * actorType: The type of actor that can bypass a ruleset
      * bypassMode: When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
      */

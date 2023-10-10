@@ -225,7 +225,7 @@ final readonly class CodeScanningCodeqlDatabase
                 "string",
                 "null"
             ],
-            "description": "The commit SHA of the CodeQL databases repository at time of database creation."
+            "description": "The commit SHA of the repository at the time the CodeQL database was created."
         }
     },
     "description": "A CodeQL database."
@@ -277,7 +277,7 @@ final readonly class CodeScanningCodeqlDatabase
      * createdAt: The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * updatedAt: The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
      * url: The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
-     * commitOid: The commit SHA of the CodeQL databases repository at time of database creation.
+     * commitOid: The commit SHA of the repository at the time the CodeQL database was created.
      */
     public function __construct(public int $id, public string $name, public string $language, public Schema\SimpleUser $uploader, #[MapFrom('content_type')]
     public string $contentType, public int $size, #[MapFrom('created_at')]

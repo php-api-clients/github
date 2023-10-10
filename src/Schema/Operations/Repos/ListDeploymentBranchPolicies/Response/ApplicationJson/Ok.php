@@ -30,7 +30,7 @@ final readonly class Ok
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "description": "The unique identifier of the branch policy.",
+                        "description": "The unique identifier of the branch or tag policy.",
                         "examples": [
                             361471
                         ]
@@ -43,13 +43,24 @@ final readonly class Ok
                     },
                     "name": {
                         "type": "string",
-                        "description": "The name pattern that branches must match in order to deploy to the environment.",
+                        "description": "The name pattern that branches or tags must match in order to deploy to the environment.",
                         "examples": [
                             "release\\/*"
                         ]
+                    },
+                    "type": {
+                        "enum": [
+                            "branch",
+                            "tag"
+                        ],
+                        "type": "string",
+                        "description": "Whether this rule targets a branch or tag.",
+                        "examples": [
+                            "branch"
+                        ]
                     }
                 },
-                "description": "Details of a deployment branch policy."
+                "description": "Details of a deployment branch or tag policy."
             }
         }
     }
@@ -62,12 +73,14 @@ final readonly class Ok
         {
             "id": 361471,
             "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=",
-            "name": "release\\/*"
+            "name": "release\\/*",
+            "type": "branch"
         },
         {
             "id": 361471,
             "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=",
-            "name": "release\\/*"
+            "name": "release\\/*",
+            "type": "branch"
         }
     ]
 }';

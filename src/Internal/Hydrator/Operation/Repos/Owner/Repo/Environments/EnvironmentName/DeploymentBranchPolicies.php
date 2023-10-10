@@ -123,6 +123,17 @@ class DeploymentBranchPolicies implements ObjectMapper
             $properties['name'] = $value;
 
             after_name:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy', $exception, stack: $this->hydrationStack);
         }
@@ -282,6 +293,14 @@ class DeploymentBranchPolicies implements ObjectMapper
         }
 
         after_name:        $result['name'] = $name;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        after_type:        $result['type'] = $type;
 
         return $result;
     }

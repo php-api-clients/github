@@ -14,7 +14,7 @@ final readonly class DeploymentBranchPolicy
     "properties": {
         "id": {
             "type": "integer",
-            "description": "The unique identifier of the branch policy.",
+            "description": "The unique identifier of the branch or tag policy.",
             "examples": [
                 361471
             ]
@@ -27,28 +27,41 @@ final readonly class DeploymentBranchPolicy
         },
         "name": {
             "type": "string",
-            "description": "The name pattern that branches must match in order to deploy to the environment.",
+            "description": "The name pattern that branches or tags must match in order to deploy to the environment.",
             "examples": [
                 "release\\/*"
             ]
+        },
+        "type": {
+            "enum": [
+                "branch",
+                "tag"
+            ],
+            "type": "string",
+            "description": "Whether this rule targets a branch or tag.",
+            "examples": [
+                "branch"
+            ]
         }
     },
-    "description": "Details of a deployment branch policy."
+    "description": "Details of a deployment branch or tag policy."
 }';
     public const SCHEMA_TITLE        = 'Deployment branch policy';
-    public const SCHEMA_DESCRIPTION  = 'Details of a deployment branch policy.';
+    public const SCHEMA_DESCRIPTION  = 'Details of a deployment branch or tag policy.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "id": 361471,
     "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=",
-    "name": "release\\/*"
+    "name": "release\\/*",
+    "type": "branch"
 }';
 
     /**
-     * id: The unique identifier of the branch policy.
-     * name: The name pattern that branches must match in order to deploy to the environment.
+     * id: The unique identifier of the branch or tag policy.
+     * name: The name pattern that branches or tags must match in order to deploy to the environment.
+     * type: Whether this rule targets a branch or tag.
      */
     public function __construct(public int|null $id, #[MapFrom('node_id')]
-    public string|null $nodeId, public string|null $name,)
+    public string|null $nodeId, public string|null $name, public string|null $type,)
     {
     }
 }
