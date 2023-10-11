@@ -18,9 +18,9 @@ use function explode;
 use function json_decode;
 use function str_replace;
 
-final class GetCopilotSeatAssignmentDetailsForUser
+final class GetCopilotSeatDetailsForUser
 {
-    public const OPERATION_ID    = 'copilot/get-copilot-seat-assignment-details-for-user';
+    public const OPERATION_ID    = 'copilot/get-copilot-seat-details-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/members/{username}/copilot';
     private const METHOD         = 'GET';
     private const PATH           = '/orgs/{org}/members/{username}/copilot';

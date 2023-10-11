@@ -201,7 +201,7 @@ final class Six
                                 }
                             } elseif ($pathChunks[5] === 'copilot') {
                                 if ($call === 'GET /orgs/{org}/members/{username}/copilot') {
-                                    return $this->routers->internal🔀Router🔀Get🔀Copilot()->getCopilotSeatAssignmentDetailsForUser($params);
+                                    return $this->routers->internal🔀Router🔀Get🔀Copilot()->getCopilotSeatDetailsForUser($params);
                                 }
                             }
                         }

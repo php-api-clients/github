@@ -65,7 +65,7 @@ final class Copilot
     }
 
     /** @return Schema\CopilotSeatDetails|array{code:int} */
-    public function getCopilotSeatAssignmentDetailsForUser(array $params): CopilotSeatDetails|array
+    public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|array
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -80,7 +80,7 @@ final class Copilot
 
         $arguments['username'] = $params['username'];
         unset($params['username']);
-        $operator = new Internal\Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
+        $operator = new Internal\Operator\Copilot\GetCopilotSeatDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
 
         return $operator->call($arguments['org'], $arguments['username']);
     }

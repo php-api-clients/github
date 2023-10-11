@@ -232,7 +232,7 @@ final class Operators
     private Internal\Operator\Codespaces\GetCodespacesForUserInOrg|null $codespaces👷GetCodespacesForUserInOrg                                                                       = null;
     private Internal\Operator\Codespaces\DeleteFromOrganization|null $codespaces👷DeleteFromOrganization                                                                             = null;
     private Internal\Operator\Codespaces\StopInOrganization|null $codespaces👷StopInOrganization                                                                                     = null;
-    private Internal\Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser|null $copilot👷GetCopilotSeatAssignmentDetailsForUser                                                   = null;
+    private Internal\Operator\Copilot\GetCopilotSeatDetailsForUser|null $copilot👷GetCopilotSeatDetailsForUser                                                                       = null;
     private Internal\Operator\Orgs\GetMembershipForUser|null $orgs👷GetMembershipForUser                                                                                             = null;
     private Internal\Operator\Orgs\SetMembershipForUser|null $orgs👷SetMembershipForUser                                                                                             = null;
     private Internal\Operator\Orgs\RemoveMembershipForUser|null $orgs👷RemoveMembershipForUser                                                                                       = null;
@@ -3077,13 +3077,13 @@ final class Operators
         return $this->codespaces👷StopInOrganization;
     }
 
-    public function copilot👷GetCopilotSeatAssignmentDetailsForUser(): Internal\Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser
+    public function copilot👷GetCopilotSeatDetailsForUser(): Internal\Operator\Copilot\GetCopilotSeatDetailsForUser
     {
-        if ($this->copilot👷GetCopilotSeatAssignmentDetailsForUser instanceof Internal\Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser === false) {
-            $this->copilot👷GetCopilotSeatAssignmentDetailsForUser = new Internal\Operator\Copilot\GetCopilotSeatAssignmentDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
+        if ($this->copilot👷GetCopilotSeatDetailsForUser instanceof Internal\Operator\Copilot\GetCopilotSeatDetailsForUser === false) {
+            $this->copilot👷GetCopilotSeatDetailsForUser = new Internal\Operator\Copilot\GetCopilotSeatDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
         }
 
-        return $this->copilot👷GetCopilotSeatAssignmentDetailsForUser;
+        return $this->copilot👷GetCopilotSeatDetailsForUser;
     }
 
     public function orgs👷GetMembershipForUser(): Internal\Operator\Orgs\GetMembershipForUser

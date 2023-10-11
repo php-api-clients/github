@@ -55,8 +55,8 @@ final class Copilot
     }
 
     /** @return Schema\CopilotSeatDetails|array{code:int} */
-    public function getCopilotSeatAssignmentDetailsForUser(string $org, string $username): CopilotSeatDetails|array
+    public function getCopilotSeatDetailsForUser(string $org, string $username): CopilotSeatDetails|array
     {
-        return $this->operators->copilot👷GetCopilotSeatAssignmentDetailsForUser()->call($org, $username);
+        return $this->operators->copilot👷GetCopilotSeatDetailsForUser()->call($org, $username);
     }
 }

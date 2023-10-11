@@ -18,8 +18,8 @@ use function json_decode;
 use function json_encode;
 use function React\Promise\resolve;
 
-/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser */
-final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
+/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\GetCopilotSeatDetailsForUser */
+final class GetCopilotSeatDetailsForUserTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
@@ -32,7 +32,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -51,7 +51,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
     }
 
     /** @test */
@@ -66,7 +66,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -86,7 +86,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
     }
 
     /** @test */
@@ -101,7 +101,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -121,7 +121,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
     }
 
     /** @test */
@@ -136,7 +136,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -156,7 +156,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
     }
 
     /** @test */
@@ -171,7 +171,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -191,7 +191,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
     }
 
     /** @test */
@@ -205,7 +205,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatAssignmentDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotSeatDetailsForUser::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
             $data['username'] = 'generated';
 
@@ -224,7 +224,7 @@ final class GetCopilotSeatAssignmentDetailsForUserTest extends AsyncTestCase
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
         $browser->request('GET', '/orgs/generated/members/generated/copilot', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->getCopilotSeatAssignmentDetailsForUser('generated', 'generated');
+        $result = $client->operations()->copilot()->getCopilotSeatDetailsForUser('generated', 'generated');
         self::assertArrayHasKey('code', $result);
         self::assertSame(422, $result['code']);
     }
