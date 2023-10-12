@@ -122,6 +122,13 @@ final class Rule implements PropertyCaster
                 } catch (Throwable) {
                 }
             }
+
+            if ($signature === 'type|parameters' && $value['type'] === 'workflows') {
+                try {
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleWorkflows::class, $value);
+                } catch (Throwable) {
+                }
+            }
         }
 
         return $value;

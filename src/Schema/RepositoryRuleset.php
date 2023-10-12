@@ -768,6 +768,61 @@ final readonly class RepositoryRuleset
                             }
                         },
                         "description": "Parameters to be used for the tag_name_pattern rule"
+                    },
+                    {
+                        "title": "workflows",
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "enum": [
+                                    "workflows"
+                                ],
+                                "type": "string"
+                            },
+                            "parameters": {
+                                "required": [
+                                    "workflows"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "workflows": {
+                                        "type": "array",
+                                        "items": {
+                                            "title": "WorkflowFileReference",
+                                            "required": [
+                                                "path",
+                                                "repository_id"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "path": {
+                                                    "type": "string",
+                                                    "description": "The path to the workflow file"
+                                                },
+                                                "ref": {
+                                                    "type": "string",
+                                                    "description": "The ref (branch or tag) of the workflow file to use"
+                                                },
+                                                "repository_id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the repository where the workflow is defined"
+                                                },
+                                                "sha": {
+                                                    "type": "string",
+                                                    "description": "The commit SHA of the workflow file to use"
+                                                }
+                                            },
+                                            "description": "A workflow that must run for this rule to pass"
+                                        },
+                                        "description": "Workflows that must pass for this rule to pass."
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Require all changes made to a targeted branch to pass the specified workflows before they can be merged."
                     }
                 ],
                 "description": "A repository rule."

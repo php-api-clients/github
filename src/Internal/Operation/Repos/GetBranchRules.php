@@ -51,7 +51,7 @@ final class GetBranchRules
         return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->branch, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern> */
+    /** @return Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows> */
     public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
@@ -64,7 +64,7 @@ final class GetBranchRules
                      * Response
                      **/
                     case 200:
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern {
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows {
                             $error = new RuntimeException();
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleCreation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
@@ -192,6 +192,15 @@ final class GetBranchRules
                             }
 
                             items_application_json_two_hundred_aaaan:
+                            try {
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleWorkflows::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleWorkflows::class, $body);
+                            } catch (Throwable $error) {
+                                goto items_application_json_two_hundred_aaaao;
+                            }
+
+                            items_application_json_two_hundred_aaaao:
                             throw $error;
                         });
                 }

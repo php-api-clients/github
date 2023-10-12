@@ -848,6 +848,87 @@ final readonly class RepositoryRuleDetailed
                     "description": "User-defined metadata to store domain-specific information limited to 8 keys with scalar values."
                 }
             ]
+        },
+        {
+            "allOf": [
+                {
+                    "title": "workflows",
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "workflows"
+                            ],
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "required": [
+                                "workflows"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "workflows": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "WorkflowFileReference",
+                                        "required": [
+                                            "path",
+                                            "repository_id"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "path": {
+                                                "type": "string",
+                                                "description": "The path to the workflow file"
+                                            },
+                                            "ref": {
+                                                "type": "string",
+                                                "description": "The ref (branch or tag) of the workflow file to use"
+                                            },
+                                            "repository_id": {
+                                                "type": "integer",
+                                                "description": "The ID of the repository where the workflow is defined"
+                                            },
+                                            "sha": {
+                                                "type": "string",
+                                                "description": "The commit SHA of the workflow file to use"
+                                            }
+                                        },
+                                        "description": "A workflow that must run for this rule to pass"
+                                    },
+                                    "description": "Workflows that must pass for this rule to pass."
+                                }
+                            }
+                        }
+                    },
+                    "description": "Require all changes made to a targeted branch to pass the specified workflows before they can be merged."
+                },
+                {
+                    "title": "repository ruleset data for rule",
+                    "properties": {
+                        "ruleset_source_type": {
+                            "enum": [
+                                "Repository",
+                                "Organization"
+                            ],
+                            "type": "string",
+                            "description": "The type of source for the ruleset that includes this rule."
+                        },
+                        "ruleset_source": {
+                            "type": "string",
+                            "description": "The name of the source of the ruleset that includes this rule."
+                        },
+                        "ruleset_id": {
+                            "type": "integer",
+                            "description": "The ID of the ruleset that includes this rule."
+                        }
+                    },
+                    "description": "User-defined metadata to store domain-specific information limited to 8 keys with scalar values."
+                }
+            ]
         }
     ],
     "description": "A repository rule with ruleset details."
