@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
@@ -56,6 +57,36 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\UpdateWebhook($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId());
 
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
+    }
+
+    /** @return iterable<Schema\OrgCustomProperty> */
+    public function createOrUpdateCustomProperties(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\Orgs\CreateOrUpdateCustomProperties($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema());
+
+        return $operator->call($arguments['org'], $params);
+    }
+
+    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    public function createOrUpdateCustomPropertiesValuesForRepos(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Values());
+
+        return $operator->call($arguments['org'], $params);
     }
 
     /** @return */

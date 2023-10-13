@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJ
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
+use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
@@ -337,6 +338,54 @@ final class Orgs
     public function listPatGrantRepositoriesListing(string $org, int $patId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPatGrantRepositoriesListing()->call($org, $patId, $perPage, $page);
+    }
+
+    /** @return iterable<Schema\OrgCustomProperty> */
+    public function getAllCustomProperties(string $org): iterable
+    {
+        return $this->operators->orgs👷GetAllCustomProperties()->call($org);
+    }
+
+    /** @return iterable<Schema\OrgCustomProperty> */
+    public function createOrUpdateCustomProperties(string $org, array $params): iterable
+    {
+        return $this->operators->orgs👷CreateOrUpdateCustomProperties()->call($org, $params);
+    }
+
+    /** @return Schema\OrgCustomProperty */
+    public function getCustomProperty(string $org, string $customPropertyName): OrgCustomProperty|array
+    {
+        return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
+    }
+
+    /** @return Schema\OrgCustomProperty */
+    public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): OrgCustomProperty|array
+    {
+        return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);
+    }
+
+    /** @return array{code:int} */
+    public function removeCustomProperty(string $org, string $customPropertyName): array
+    {
+        return $this->operators->orgs👷RemoveCustomProperty()->call($org, $customPropertyName);
+    }
+
+    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    public function listCustomPropertiesValuesForRepos(string $org, int $perPage, int $page): iterable
+    {
+        return $this->operators->orgs👷ListCustomPropertiesValuesForRepos()->call($org, $perPage, $page);
+    }
+
+    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    public function listCustomPropertiesValuesForReposListing(string $org, int $perPage, int $page): iterable
+    {
+        return $this->operators->orgs👷ListCustomPropertiesValuesForReposListing()->call($org, $perPage, $page);
+    }
+
+    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    public function createOrUpdateCustomPropertiesValuesForRepos(string $org, array $params): iterable
+    {
+        return $this->operators->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos()->call($org, $params);
     }
 
     /** @return Observable<Schema\SimpleUser> */

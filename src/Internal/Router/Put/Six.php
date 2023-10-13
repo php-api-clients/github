@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\Environment;
 use ApiClients\Client\GitHub\Schema\FileCommit;
+use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use InvalidArgumentException;
@@ -18,8 +19,8 @@ final class Six
     {
     }
 
-    /** @return array{code:int}|Schema\EmptyObject|Schema\RepositoryInvitation| */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset|array
+    /** @return array{code:int}|Schema\EmptyObject|Schema\OrgCustomProperty|Schema\RepositoryInvitation| */
+    public function call(string $call, array $params, array $pathChunks): EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset|array
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -59,6 +60,14 @@ final class Six
                             if ($pathChunks[5] === '{secret_name}') {
                                 if ($call === 'PUT /orgs/{org}/dependabot/secrets/{secret_name}') {
                                     return $this->routers->internal🔀Router🔀Put🔀Dependabot()->createOrUpdateOrgSecret($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'properties') {
+                        if ($pathChunks[4] === 'schema') {
+                            if ($pathChunks[5] === '{custom_property_name}') {
+                                if ($call === 'PUT /orgs/{org}/properties/schema/{custom_property_name}') {
+                                    return $this->routers->internal🔀Router🔀Put🔀Orgs()->createOrUpdateCustomProperty($params);
                                 }
                             }
                         }

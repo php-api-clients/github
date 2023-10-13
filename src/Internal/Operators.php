@@ -275,6 +275,14 @@ final class Operators
     private Internal\Operator\Projects\ListForOrg|null $projects👷ListForOrg                                                                                                         = null;
     private Internal\Operator\Projects\ListForOrgListing|null $projects👷ListForOrgListing                                                                                           = null;
     private Internal\Operator\Projects\CreateForOrg|null $projects👷CreateForOrg                                                                                                     = null;
+    private Internal\Operator\Orgs\GetAllCustomProperties|null $orgs👷GetAllCustomProperties                                                                                         = null;
+    private Internal\Operator\Orgs\CreateOrUpdateCustomProperties|null $orgs👷CreateOrUpdateCustomProperties                                                                         = null;
+    private Internal\Operator\Orgs\GetCustomProperty|null $orgs👷GetCustomProperty                                                                                                   = null;
+    private Internal\Operator\Orgs\CreateOrUpdateCustomProperty|null $orgs👷CreateOrUpdateCustomProperty                                                                             = null;
+    private Internal\Operator\Orgs\RemoveCustomProperty|null $orgs👷RemoveCustomProperty                                                                                             = null;
+    private Internal\Operator\Orgs\ListCustomPropertiesValuesForRepos|null $orgs👷ListCustomPropertiesValuesForRepos                                                                 = null;
+    private Internal\Operator\Orgs\ListCustomPropertiesValuesForReposListing|null $orgs👷ListCustomPropertiesValuesForReposListing                                                   = null;
+    private Internal\Operator\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos|null $orgs👷CreateOrUpdateCustomPropertiesValuesForRepos                                             = null;
     private Internal\Operator\Orgs\ListPublicMembers|null $orgs👷ListPublicMembers                                                                                                   = null;
     private Internal\Operator\Orgs\ListPublicMembersListing|null $orgs👷ListPublicMembersListing                                                                                     = null;
     private Internal\Operator\Orgs\CheckPublicMembershipForUser|null $orgs👷CheckPublicMembershipForUser                                                                             = null;
@@ -736,6 +744,7 @@ final class Operators
     private Internal\Operator\Projects\ListForRepo|null $projects👷ListForRepo                                                                                                       = null;
     private Internal\Operator\Projects\ListForRepoListing|null $projects👷ListForRepoListing                                                                                         = null;
     private Internal\Operator\Projects\CreateForRepo|null $projects👷CreateForRepo                                                                                                   = null;
+    private Internal\Operator\Repos\GetCustomPropertiesValues|null $repos👷GetCustomPropertiesValues                                                                                 = null;
     private Internal\Operator\Pulls\List_|null $pulls👷List_                                                                                                                         = null;
     private Internal\Operator\Pulls\ListListing|null $pulls👷ListListing                                                                                                             = null;
     private Internal\Operator\Pulls\Create|null $pulls👷Create                                                                                                                       = null;
@@ -3462,6 +3471,78 @@ final class Operators
         }
 
         return $this->projects👷CreateForOrg;
+    }
+
+    public function orgs👷GetAllCustomProperties(): Internal\Operator\Orgs\GetAllCustomProperties
+    {
+        if ($this->orgs👷GetAllCustomProperties instanceof Internal\Operator\Orgs\GetAllCustomProperties === false) {
+            $this->orgs👷GetAllCustomProperties = new Internal\Operator\Orgs\GetAllCustomProperties($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema());
+        }
+
+        return $this->orgs👷GetAllCustomProperties;
+    }
+
+    public function orgs👷CreateOrUpdateCustomProperties(): Internal\Operator\Orgs\CreateOrUpdateCustomProperties
+    {
+        if ($this->orgs👷CreateOrUpdateCustomProperties instanceof Internal\Operator\Orgs\CreateOrUpdateCustomProperties === false) {
+            $this->orgs👷CreateOrUpdateCustomProperties = new Internal\Operator\Orgs\CreateOrUpdateCustomProperties($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema());
+        }
+
+        return $this->orgs👷CreateOrUpdateCustomProperties;
+    }
+
+    public function orgs👷GetCustomProperty(): Internal\Operator\Orgs\GetCustomProperty
+    {
+        if ($this->orgs👷GetCustomProperty instanceof Internal\Operator\Orgs\GetCustomProperty === false) {
+            $this->orgs👷GetCustomProperty = new Internal\Operator\Orgs\GetCustomProperty($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName());
+        }
+
+        return $this->orgs👷GetCustomProperty;
+    }
+
+    public function orgs👷CreateOrUpdateCustomProperty(): Internal\Operator\Orgs\CreateOrUpdateCustomProperty
+    {
+        if ($this->orgs👷CreateOrUpdateCustomProperty instanceof Internal\Operator\Orgs\CreateOrUpdateCustomProperty === false) {
+            $this->orgs👷CreateOrUpdateCustomProperty = new Internal\Operator\Orgs\CreateOrUpdateCustomProperty($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName());
+        }
+
+        return $this->orgs👷CreateOrUpdateCustomProperty;
+    }
+
+    public function orgs👷RemoveCustomProperty(): Internal\Operator\Orgs\RemoveCustomProperty
+    {
+        if ($this->orgs👷RemoveCustomProperty instanceof Internal\Operator\Orgs\RemoveCustomProperty === false) {
+            $this->orgs👷RemoveCustomProperty = new Internal\Operator\Orgs\RemoveCustomProperty($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName());
+        }
+
+        return $this->orgs👷RemoveCustomProperty;
+    }
+
+    public function orgs👷ListCustomPropertiesValuesForRepos(): Internal\Operator\Orgs\ListCustomPropertiesValuesForRepos
+    {
+        if ($this->orgs👷ListCustomPropertiesValuesForRepos instanceof Internal\Operator\Orgs\ListCustomPropertiesValuesForRepos === false) {
+            $this->orgs👷ListCustomPropertiesValuesForRepos = new Internal\Operator\Orgs\ListCustomPropertiesValuesForRepos($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Values());
+        }
+
+        return $this->orgs👷ListCustomPropertiesValuesForRepos;
+    }
+
+    public function orgs👷ListCustomPropertiesValuesForReposListing(): Internal\Operator\Orgs\ListCustomPropertiesValuesForReposListing
+    {
+        if ($this->orgs👷ListCustomPropertiesValuesForReposListing instanceof Internal\Operator\Orgs\ListCustomPropertiesValuesForReposListing === false) {
+            $this->orgs👷ListCustomPropertiesValuesForReposListing = new Internal\Operator\Orgs\ListCustomPropertiesValuesForReposListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Values());
+        }
+
+        return $this->orgs👷ListCustomPropertiesValuesForReposListing;
+    }
+
+    public function orgs👷CreateOrUpdateCustomPropertiesValuesForRepos(): Internal\Operator\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos
+    {
+        if ($this->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos instanceof Internal\Operator\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos === false) {
+            $this->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos = new Internal\Operator\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Values());
+        }
+
+        return $this->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos;
     }
 
     public function orgs👷ListPublicMembers(): Internal\Operator\Orgs\ListPublicMembers
@@ -7611,6 +7692,15 @@ final class Operators
         }
 
         return $this->projects👷CreateForRepo;
+    }
+
+    public function repos👷GetCustomPropertiesValues(): Internal\Operator\Repos\GetCustomPropertiesValues
+    {
+        if ($this->repos👷GetCustomPropertiesValues instanceof Internal\Operator\Repos\GetCustomPropertiesValues === false) {
+            $this->repos👷GetCustomPropertiesValues = new Internal\Operator\Repos\GetCustomPropertiesValues($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Properties🌀Values());
+        }
+
+        return $this->repos👷GetCustomPropertiesValues;
     }
 
     public function pulls👷List_(): Internal\Operator\Pulls\List_

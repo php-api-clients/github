@@ -182,6 +182,27 @@ final class Orgs
     }
 
     /** @return array{code:int} */
+    public function removeCustomProperty(array $params): array
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('custom_property_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: custom_property_name');
+        }
+
+        $arguments['custom_property_name'] = $params['custom_property_name'];
+        unset($params['custom_property_name']);
+        $operator = new Internal\Operator\Orgs\RemoveCustomProperty($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName());
+
+        return $operator->call($arguments['org'], $arguments['custom_property_name']);
+    }
+
+    /** @return array{code:int} */
     public function removeSecurityManagerTeam(array $params): array
     {
         $arguments = [];

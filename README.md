@@ -6190,6 +6190,180 @@ $client->operations()->projects()->createForOrg(        org: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/projects/projects#create-an-organization-project).
 
 
+### orgs/get-all-custom-properties
+
+Get all custom properties for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/properties/schema', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getAllCustomProperties(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#get-all-custom-properties-for-an-organization).
+
+
+### orgs/create-or-update-custom-properties
+
+Create or update custom properties for an organization
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/properties/schema', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->createOrUpdateCustomProperties(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#create-or-update-custom-properties-for-an-organization).
+
+
+### orgs/get-custom-property
+
+Get a custom property for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/properties/schema/{custom_property_name}', [
+        'org' => 'generated',
+        'custom_property_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getCustomProperty(        org: 'generated',
+        custom_property_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#get-a-custom-property-for-an-organization).
+
+
+### orgs/create-or-update-custom-property
+
+Create or update a custom property for an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/properties/schema/{custom_property_name}', [
+        'org' => 'generated',
+        'custom_property_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->createOrUpdateCustomProperty(        org: 'generated',
+        custom_property_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#create-or-update-a-custom-property-for-an-organization).
+
+
+### orgs/remove-custom-property
+
+Remove a custom property for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/properties/schema/{custom_property_name}', [
+        'org' => 'generated',
+        'custom_property_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->removeCustomProperty(        org: 'generated',
+        custom_property_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#remove-a-custom-property-for-an-organization).
+
+
+### orgs/list-custom-properties-values-for-repos
+
+List custom property values for organization repositories
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/properties/values', [
+        'org' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listCustomPropertiesValuesForRepos(        org: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#list-custom-property-values-for-organization-repositories).
+
+
+### orgs/list-custom-properties-values-for-repos
+
+List custom property values for organization repositories
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/properties/values', [
+        'org' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listCustomPropertiesValuesForReposListing(        org: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#list-custom-property-values-for-organization-repositories).
+
+
+### orgs/create-or-update-custom-properties-values-for-repos
+
+Create or update custom property values for organization repositories
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/properties/values', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->createOrUpdateCustomPropertiesValuesForRepos(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/properties#create-or-update-custom-property-values-for-organization-repositories).
+
+
 ### orgs/list-public-members
 
 List public organization members
@@ -17837,6 +18011,28 @@ $client->operations()->projects()->createForRepo(        owner: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/projects/projects#create-a-repository-project).
+
+
+### repos/get-custom-properties-values
+
+Get all custom property values for a repository
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/properties/values', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getCustomPropertiesValues(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/properties#get-all-custom-property-values-for-a-repository).
 
 
 ### pulls/list

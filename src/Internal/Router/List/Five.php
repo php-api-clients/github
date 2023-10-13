@@ -15,7 +15,7 @@ final class Five
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|array{code:int}|Observable<Schema\CodeScanningOrganizationAlertItems>|Observable<Schema\RuleSuites>|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\ProjectCard>|Observable<Schema\SimpleUser>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Tag>|Observable<Schema\Team> */
+    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|array{code:int}|Observable<Schema\CodeScanningOrganizationAlertItems>|iterable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\ProjectCard>|Observable<Schema\SimpleUser>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Tag>|Observable<Schema\Team> */
     public function call(string $call, array $params, array $pathChunks): iterable|BasicError
     {
         if ($pathChunks[0] === '') {
@@ -45,6 +45,12 @@ final class Five
                         if ($pathChunks[4] === 'alerts') {
                             if ($call === 'LIST /orgs/{org}/code-scanning/alerts') {
                                 return $this->routers->internal🔀Router🔀List🔀CodeScanning()->listAlertsForOrgListing($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'properties') {
+                        if ($pathChunks[4] === 'values') {
+                            if ($call === 'LIST /orgs/{org}/properties/values') {
+                                return $this->routers->internal🔀Router🔀List🔀Orgs()->listCustomPropertiesValuesForReposListing($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'rulesets') {

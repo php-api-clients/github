@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use InvalidArgumentException;
@@ -103,6 +104,27 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\SetPublicMembershipForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PublicMembers🌀Username());
 
         return $operator->call($arguments['org'], $arguments['username']);
+    }
+
+    /** @return Schema\OrgCustomProperty */
+    public function createOrUpdateCustomProperty(array $params): OrgCustomProperty|array
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('custom_property_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: custom_property_name');
+        }
+
+        $arguments['custom_property_name'] = $params['custom_property_name'];
+        unset($params['custom_property_name']);
+        $operator = new Internal\Operator\Orgs\CreateOrUpdateCustomProperty($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName());
+
+        return $operator->call($arguments['org'], $arguments['custom_property_name'], $params);
     }
 
     /** @return array{code:int} */

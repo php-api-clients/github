@@ -93,6 +93,14 @@ final class Six
                                 }
                             }
                         }
+                    } elseif ($pathChunks[3] === 'properties') {
+                        if ($pathChunks[4] === 'schema') {
+                            if ($pathChunks[5] === '{custom_property_name}') {
+                                if ($call === 'DELETE /orgs/{org}/properties/schema/{custom_property_name}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀Orgs()->removeCustomProperty($params);
+                                }
+                            }
+                        }
                     } elseif ($pathChunks[3] === 'security-managers') {
                         if ($pathChunks[4] === 'teams') {
                             if ($pathChunks[5] === '{team_slug}') {

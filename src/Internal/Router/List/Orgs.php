@@ -524,6 +524,39 @@ final class Orgs
         } while (count($items) > 0);
     }
 
+    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    public function listCustomPropertiesValuesForReposListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Orgs\ListCustomPropertiesValuesForReposListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Values());
+            $items    = [...$operator->call($arguments['org'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
     /** @return Observable<Schema\Team> */
     public function listInvitationTeamsListing(array $params): iterable
     {

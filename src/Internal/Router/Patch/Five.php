@@ -20,8 +20,8 @@ final class Five
     {
     }
 
-    /** @return |Schema\ProjectCard|array{code:int} */
-    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership|array
+    /** @return |iterable<Schema\OrgCustomProperty>|iterable<Schema\OrgRepoCustomPropertyValues>|Schema\ProjectCard|array{code:int} */
+    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|iterable|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {
@@ -40,6 +40,16 @@ final class Five
                         if ($pathChunks[4] === '{hook_id}') {
                             if ($call === 'PATCH /orgs/{org}/hooks/{hook_id}') {
                                 return $this->routers->internal🔀Router🔀Patch🔀Orgs()->updateWebhook($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'properties') {
+                        if ($pathChunks[4] === 'schema') {
+                            if ($call === 'PATCH /orgs/{org}/properties/schema') {
+                                return $this->routers->internal🔀Router🔀Patch🔀Orgs()->createOrUpdateCustomProperties($params);
+                            }
+                        } elseif ($pathChunks[4] === 'values') {
+                            if ($call === 'PATCH /orgs/{org}/properties/values') {
+                                return $this->routers->internal🔀Router🔀Patch🔀Orgs()->createOrUpdateCustomPropertiesValuesForRepos($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'teams') {
