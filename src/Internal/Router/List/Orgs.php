@@ -524,7 +524,7 @@ final class Orgs
         } while (count($items) > 0);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForReposListing(array $params): iterable
     {
         $arguments = [];

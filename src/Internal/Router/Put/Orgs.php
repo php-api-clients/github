@@ -106,7 +106,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return Schema\OrgCustomProperty */
+    /** @return */
     public function createOrUpdateCustomProperty(array $params): OrgCustomProperty|array
     {
         $arguments = [];

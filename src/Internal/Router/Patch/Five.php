@@ -20,7 +20,7 @@ final class Five
     {
     }
 
-    /** @return |iterable<Schema\OrgCustomProperty>|iterable<Schema\OrgRepoCustomPropertyValues>|Schema\ProjectCard|array{code:int} */
+    /** @return |Observable<Schema\OrgCustomProperty>|Observable<Schema\OrgRepoCustomPropertyValues>|Schema\ProjectCard|array{code:int} */
     public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|iterable|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
     {
         if ($pathChunks[0] === '') {

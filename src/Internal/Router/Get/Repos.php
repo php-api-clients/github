@@ -1654,7 +1654,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return iterable<Schema\CustomPropertyValue> */
+    /** @return Observable<Schema\CustomPropertyValue> */
     public function getCustomPropertiesValues(array $params): iterable
     {
         $arguments = [];

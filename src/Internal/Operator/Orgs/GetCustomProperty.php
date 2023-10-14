@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Orgs;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,7 +24,7 @@ final readonly class GetCustomProperty
     {
     }
 
-    /** @return Schema\OrgCustomProperty */
+    /** @return */
     public function call(string $org, string $customPropertyName): OrgCustomProperty|array
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetCustomProperty($this->responseSchemaValidator, $this->hydrator, $org, $customPropertyName);

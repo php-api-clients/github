@@ -19,7 +19,7 @@ final class Six
     {
     }
 
-    /** @return array{code:int}|Schema\EmptyObject|Schema\OrgCustomProperty|Schema\RepositoryInvitation| */
+    /** @return array{code:int}|Schema\EmptyObject||Schema\RepositoryInvitation */
     public function call(string $call, array $params, array $pathChunks): EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset|array
     {
         if ($pathChunks[0] === '') {

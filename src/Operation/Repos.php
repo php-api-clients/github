@@ -1005,7 +1005,7 @@ final class Repos
         return $this->operators->repos👷DisablePrivateVulnerabilityReporting()->call($owner, $repo);
     }
 
-    /** @return iterable<Schema\CustomPropertyValue> */
+    /** @return Observable<Schema\CustomPropertyValue> */
     public function getCustomPropertiesValues(string $owner, string $repo): iterable
     {
         return $this->operators->repos👷GetCustomPropertiesValues()->call($owner, $repo);

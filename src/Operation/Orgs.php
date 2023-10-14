@@ -340,25 +340,25 @@ final class Orgs
         return $this->operators->orgs👷ListPatGrantRepositoriesListing()->call($org, $patId, $perPage, $page);
     }
 
-    /** @return iterable<Schema\OrgCustomProperty> */
+    /** @return Observable<Schema\OrgCustomProperty> */
     public function getAllCustomProperties(string $org): iterable
     {
         return $this->operators->orgs👷GetAllCustomProperties()->call($org);
     }
 
-    /** @return iterable<Schema\OrgCustomProperty> */
+    /** @return Observable<Schema\OrgCustomProperty> */
     public function createOrUpdateCustomProperties(string $org, array $params): iterable
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperties()->call($org, $params);
     }
 
-    /** @return Schema\OrgCustomProperty */
+    /** @return */
     public function getCustomProperty(string $org, string $customPropertyName): OrgCustomProperty|array
     {
         return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
     }
 
-    /** @return Schema\OrgCustomProperty */
+    /** @return */
     public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): OrgCustomProperty|array
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);
@@ -370,19 +370,19 @@ final class Orgs
         return $this->operators->orgs👷RemoveCustomProperty()->call($org, $customPropertyName);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForRepos(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListCustomPropertiesValuesForRepos()->call($org, $perPage, $page);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForReposListing(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListCustomPropertiesValuesForReposListing()->call($org, $perPage, $page);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function createOrUpdateCustomPropertiesValuesForRepos(string $org, array $params): iterable
     {
         return $this->operators->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos()->call($org, $params);

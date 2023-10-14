@@ -620,7 +620,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return iterable<Schema\OrgCustomProperty> */
+    /** @return Observable<Schema\OrgCustomProperty> */
     public function getAllCustomProperties(array $params): iterable
     {
         $arguments = [];
@@ -635,7 +635,7 @@ final class Orgs
         return $operator->call($arguments['org']);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForRepos(array $params): iterable
     {
         $arguments = [];
@@ -857,7 +857,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\OrgCustomProperty */
+    /** @return */
     public function getCustomProperty(array $params): OrgCustomProperty|array
     {
         $arguments = [];

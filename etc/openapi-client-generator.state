@@ -1,5 +1,5 @@
 {
-    "specHash": "d44d6894d755f6888947b8cdae731dc6",
+    "specHash": "4f80dcc6a78db54088c637e415d9d564",
     "generatedFiles": {
         "files": [
             {
@@ -5724,11 +5724,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/ClientInterface.php",
-                "hash": "c795644d75a45cf4bfb30982d6c52d67"
+                "hash": "888fae476b0c3c4006df9d48d1705a9c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Client.php",
-                "hash": "8c4a4679455fd21fdb62dc3ce9479c47"
+                "hash": "9aa0ccc2a8bfca88d79f627cb089293c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/OperationsInterface.php",
@@ -5784,7 +5784,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "07998cc05e045f6841282388455b648e"
+                "hash": "77e852c4d998f7ecd11f7024685cf5d4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5820,7 +5820,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "c3d3831a52ec96ebff8bd0b59218b4e5"
+                "hash": "a2fb2024bb44da7153c11141efa8959a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -26436,7 +26436,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Orgs.php",
-                "hash": "c592d46b93100524bf411851725751cd"
+                "hash": "4679942d58342348ba2150e52074d809"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/RateLimit.php",
@@ -26444,7 +26444,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "e0f2599da7dc36e05bd94bb969ad79dd"
+                "hash": "d0b43b19aaad650c109c591495cf786c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -26644,7 +26644,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Orgs.php",
-                "hash": "3129ab31b11fa854e06638e675d4ddcd"
+                "hash": "c4e13202a8b0cfd85313d8f08cbf5644"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Teams.php",
@@ -26712,7 +26712,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Orgs.php",
-                "hash": "e5ce50fe611808a62242ce8f1ccb2295"
+                "hash": "184903a3bc39c88213bc13dd3f9eb15d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Packages.php",
@@ -26856,7 +26856,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Orgs.php",
-                "hash": "442c761b85020b8a74c8059f563a590d"
+                "hash": "715e7c5f3ca68ae5e10da4c7155c4c9f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Codespaces.php",
@@ -26936,11 +26936,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "e106e11d1b273ca5451f5d3c4f5346fa"
+                "hash": "ee7efb4aabdfc92a3175a2114564a0c6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "1bb9dfb067b4f80c3a20b65dd1f7c3ea"
+                "hash": "9390387fa2927585332fe4b43cd7acd0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -27004,7 +27004,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Five.php",
-                "hash": "b6a48f625608e7a0d43c45d9ee41b70f"
+                "hash": "3a8bf5a271d05f16bae9640ad736a6cf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Six.php",
@@ -27040,7 +27040,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
-                "hash": "a2dd409e60758b4bcd1e6f68b145cdaf"
+                "hash": "5f925bd0873ab5ea26d1b361ed059b03"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
@@ -27112,7 +27112,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Six.php",
-                "hash": "97898258023520818ead323811a51a26"
+                "hash": "c79751ef732686dbd7dda87a61600df9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Eight.php",
@@ -29556,7 +29556,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/GetAllCustomProperties.php",
-                "hash": "390d1ba2009b4d81d483019cde17816f"
+                "hash": "6dd85e3544bbf8158342fa3e7bc94fe5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/GetAllCustomPropertiesTest.php",
@@ -29568,7 +29568,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/CreateOrUpdateCustomProperties.php",
-                "hash": "3bf55ff65f703be3d3b26a9d692a7d2b"
+                "hash": "bc165338f1bdf7cf2fd75a2b7f81fa76"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomPropertiesTest.php",
@@ -29580,7 +29580,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/GetCustomProperty.php",
-                "hash": "78b0b7f5441866db032e66f6b74af48d"
+                "hash": "5e94983f72c0caa1c6a8eac62c411d67"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/GetCustomPropertyTest.php",
@@ -29592,7 +29592,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/CreateOrUpdateCustomProperty.php",
-                "hash": "507f7c5dfac80244c6d90aa282727321"
+                "hash": "a2df60ad9d634ae2b2c98a1f36922f5c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomPropertyTest.php",
@@ -29616,7 +29616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListCustomPropertiesValuesForRepos.php",
-                "hash": "27c8df20787e35fec1c45bc6b8050498"
+                "hash": "2c64ef1b44b57231155e034c67c2a638"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListCustomPropertiesValuesForReposTest.php",
@@ -29628,7 +29628,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListCustomPropertiesValuesForReposListing.php",
-                "hash": "c7beed670ad8afc07cdd2a179edd79de"
+                "hash": "b2cf14859e1a4610e830ad6c92b863b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListCustomPropertiesValuesForReposListingTest.php",
@@ -29640,7 +29640,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/CreateOrUpdateCustomPropertiesValuesForRepos.php",
-                "hash": "7e9d36e2fd86e452ef440aaa6e31aa00"
+                "hash": "9fb5a849b8d861cd6cb3283560f97510"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomPropertiesValuesForReposTest.php",
@@ -29652,7 +29652,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetCustomPropertiesValues.php",
-                "hash": "865aa097d29082a8cfbe4809894263ad"
+                "hash": "3810965948727ae285cd68b8690a346e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetCustomPropertiesValuesTest.php",

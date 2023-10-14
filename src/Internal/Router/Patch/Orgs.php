@@ -59,7 +59,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
     }
 
-    /** @return iterable<Schema\OrgCustomProperty> */
+    /** @return Observable<Schema\OrgCustomProperty> */
     public function createOrUpdateCustomProperties(array $params): iterable
     {
         $arguments = [];
@@ -74,7 +74,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return iterable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
     public function createOrUpdateCustomPropertiesValuesForRepos(array $params): iterable
     {
         $arguments = [];
