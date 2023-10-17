@@ -30,3 +30,9 @@ voter:
     - ApiClients\Tools\OpenApiClientGenerator\Voter\ListOperation\PageAndPerPageInQuery
   streamOperation:
     - ApiClients\Tools\OpenApiClientGenerator\Voter\StreamOperation\DownloadInOperationId
+qa:
+  phpcs:
+    enabled: true
+  phpstan:
+    enabled: true
+    configFilePath: etc/phpstan-extension.neon
