@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f743f293995efbfe35c1dcf0e1f2004c",
+    "content-hash": "30203744b3a0710abe341dd79197fb95",
     "packages": [
         {
             "name": "api-clients/contracts",
@@ -47,17 +47,68 @@
             "time": "2023-02-22T21:38:15+00:00"
         },
         {
-            "name": "devizzent/cebe-php-openapi",
-            "version": "1.0.1",
+            "name": "api-clients/openapi-client-utils",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/DEVizzent/cebe-php-openapi.git",
-                "reference": "72b48264eaeb7afb01fae80e26e99243ab6d33f1"
+                "url": "https://github.com/php-api-clients/openapi-client-utils.git",
+                "reference": "e1c0db6cd3e2e94958cf9e99e8395a61d2354be5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DEVizzent/cebe-php-openapi/zipball/72b48264eaeb7afb01fae80e26e99243ab6d33f1",
-                "reference": "72b48264eaeb7afb01fae80e26e99243ab6d33f1",
+                "url": "https://api.github.com/repos/php-api-clients/openapi-client-utils/zipball/e1c0db6cd3e2e94958cf9e99e8395a61d2354be5",
+                "reference": "e1c0db6cd3e2e94958cf9e99e8395a61d2354be5",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/contracts": "^0.1",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "wyrihaximus/async-test-utilities": "^7.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Tools\\OpenApiClient\\Utils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Common utils for generated OpenAPI clients",
+            "support": {
+                "issues": "https://github.com/php-api-clients/openapi-client-utils/issues",
+                "source": "https://github.com/php-api-clients/openapi-client-utils/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-27T07:38:48+00:00"
+        },
+        {
+            "name": "devizzent/cebe-php-openapi",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DEVizzent/cebe-php-openapi.git",
+                "reference": "de3a406a1fa5daa275da3f6aed6765c170de7954"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DEVizzent/cebe-php-openapi/zipball/de3a406a1fa5daa275da3f6aed6765c170de7954",
+                "reference": "de3a406a1fa5daa275da3f6aed6765c170de7954",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +169,7 @@
                 "issues": "https://github.com/DEVizzent/cebe-php-openapi/issues",
                 "source": "https://github.com/DEVizzent/cebe-php-openapi"
             },
-            "time": "2023-07-12T09:00:33+00:00"
+            "time": "2023-10-26T20:41:58+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -2045,16 +2096,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v6.3.3",
+            "version": "v6.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e23292e8c07c85b971b44c1c4b87af52133e2add"
+                "reference": "9758b6c69d179936435d0ffb577c3708d57e38a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e23292e8c07c85b971b44c1c4b87af52133e2add",
-                "reference": "e23292e8c07c85b971b44c1c4b87af52133e2add",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/9758b6c69d179936435d0ffb577c3708d57e38a8",
+                "reference": "9758b6c69d179936435d0ffb577c3708d57e38a8",
                 "shasum": ""
             },
             "require": {
@@ -2097,7 +2148,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.3.3"
+                "source": "https://github.com/symfony/yaml/tree/v6.3.7"
             },
             "funding": [
                 {
@@ -2113,7 +2164,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-31T07:08:24+00:00"
+            "time": "2023-10-28T23:31:00+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -11625,7 +11676,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "api-clients/openapi-client-utils": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
